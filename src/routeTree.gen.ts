@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as ContactoRouteImport } from './routes/contacto'
@@ -19,6 +20,11 @@ import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos': typeof ProjetosIndexRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/empresa'
     | '/faq'
+    | '/politica-de-privacidade'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos/'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/empresa'
     | '/faq'
+    | '/politica-de-privacidade'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/empresa'
     | '/faq'
+    | '/politica-de-privacidade'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos/'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
   FaqRoute: typeof FaqRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
@@ -149,6 +162,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,
   FaqRoute: FaqRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
   ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
