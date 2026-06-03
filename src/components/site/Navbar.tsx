@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Início", href: "#hero" },
-  { label: "Empresa", href: "#about" },
-  { label: "Serviços", href: "#services" },
-  { label: "Projetos", href: "#projects" },
-  { label: "Contacto", href: "#footer" },
+  { label: "Início", to: "/" },
+  { label: "Empresa", to: "/empresa" },
+  { label: "Serviços", to: "/servicos" },
+  { label: "Projetos", to: "/projetos" },
+  { label: "Blog", to: "/blog" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 /** Small inline icons for X (Twitter) and TikTok since lucide lacks current marks. */
@@ -35,7 +37,7 @@ export const SOCIAL = [
 
 function Logo() {
   return (
-    <a href="#hero" className="flex items-center gap-3">
+    <Link to="/" className="flex items-center gap-3">
       <svg viewBox="0 0 48 48" width={36} height={36} fill="none" stroke="currentColor" strokeWidth={1.4} className="text-gold" aria-hidden>
         <path d="M8 22 24 8l16 14M12 20v18h24V20M20 38v-8h8v8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -43,7 +45,7 @@ function Logo() {
         <span className="font-display text-xl font-semibold tracking-wide text-foreground">DomusTech</span>
         <span className="tracked text-[9px] text-muted-foreground">Casas Modulares Inteligentes no Porto</span>
       </span>
-    </a>
+    </Link>
   );
 }
 
@@ -86,12 +88,14 @@ export function Navbar() {
           <ul className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
+                <Link
+                  to={l.to}
+                  activeOptions={{ exact: l.to === "/" }}
                   className="tracked text-[12px] text-foreground transition-colors hover:text-gold"
+                  activeProps={{ className: "tracked text-[12px] text-gold" }}
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -111,13 +115,13 @@ export function Navbar() {
             <ul className="container-1100 flex flex-col py-4">
               {NAV_LINKS.map((l) => (
                 <li key={l.label}>
-                  <a
-                    href={l.href}
+                  <Link
+                    to={l.to}
                     onClick={() => setOpen(false)}
                     className="tracked block py-3 text-[12px] text-foreground hover:text-gold"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="flex gap-5 pt-4">
