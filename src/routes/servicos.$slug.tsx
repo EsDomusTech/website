@@ -71,7 +71,7 @@ function ServiceDetail() {
           <div>
             <SectionTitle first="O QUE" second="OFERECEMOS" align="left" />
             <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
-              {s.intro.map((p, i) => (
+              {s.intro.map((p: string, i: number) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
