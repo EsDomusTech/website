@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
+import { SITE } from "@/lib/site-data";
 
 function NotFoundComponent() {
   return (
@@ -102,6 +105,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE.name,
+          url: SITE.domain,
+          description:
+            "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores e remodelação.",
+          telephone: SITE.phone,
+          email: SITE.email,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Rua das Flores 100",
+            postalCode: "4050-262",
+            addressLocality: "Porto",
+            addressCountry: "PT",
+          },
+          areaServed: "Porto, Portugal",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -111,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <head>
         <HeadContent />
       </head>
@@ -128,8 +154,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Navbar />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Footer />
     </QueryClientProvider>
   );
 }
