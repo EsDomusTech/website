@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EmpresaRouteImport } from './routes/empresa'
@@ -20,6 +21,11 @@ import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 
+const TermosECondicoesRoute = TermosECondicoesRouteImport.update({
+  id: '/termos-e-condicoes',
+  path: '/termos-e-condicoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos': typeof ProjetosIndexRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/empresa'
     | '/faq'
     | '/politica-de-privacidade'
+    | '/termos-e-condicoes'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos/'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/empresa'
     | '/faq'
     | '/politica-de-privacidade'
+    | '/termos-e-condicoes'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/empresa'
     | '/faq'
     | '/politica-de-privacidade'
+    | '/termos-e-condicoes'
     | '/projetos/$slug'
     | '/servicos/$slug'
     | '/projetos/'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   EmpresaRoute: typeof EmpresaRoute
   FaqRoute: typeof FaqRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  TermosECondicoesRoute: typeof TermosECondicoesRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
@@ -162,6 +175,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termos-e-condicoes': {
+      id: '/termos-e-condicoes'
+      path: '/termos-e-condicoes'
+      fullPath: '/termos-e-condicoes'
+      preLoaderRoute: typeof TermosECondicoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   EmpresaRoute: EmpresaRoute,
   FaqRoute: FaqRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  TermosECondicoesRoute: TermosECondicoesRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
   ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
