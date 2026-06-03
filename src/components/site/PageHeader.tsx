@@ -11,7 +11,6 @@ type PageHeaderProps = {
   breadcrumbs?: Crumb[];
 };
 
-/** Inner-page hero: full-bleed image, dark overlay, breadcrumb and two-word title. */
 export function PageHeader({
   eyebrow,
   titleFirst,
@@ -21,32 +20,45 @@ export function PageHeader({
   breadcrumbs,
 }: PageHeaderProps) {
   return (
-    <section className="relative flex min-h-[60vh] items-center overflow-hidden pt-20">
+    <section className="relative flex min-h-[55vh] items-center overflow-hidden">
       <img src={image} alt={`${titleFirst} ${titleSecond}`} className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 70%)" }} />
 
-      <div className="container-1100 relative py-24 text-center">
-        {eyebrow && <p className="tracked mb-5 text-[12px] text-gold">{eyebrow}</p>}
-        <h1 className="tracked font-display text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-          <span>{titleFirst}</span> <span className="text-gold">{titleSecond}</span>
+      <div className="container-1100 relative py-24">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
+          {eyebrow && (
+            <span
+              className="tracked text-[11px] font-bold text-white/70"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {eyebrow}
+            </span>
+          )}
+        </div>
+        <h1
+          className="text-[42px] font-black leading-tight text-white sm:text-[56px]"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {titleFirst} <span style={{ color: "var(--gold)" }}>{titleSecond}</span>
         </h1>
         {subtitle && (
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-white/85">{subtitle}</p>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/75">{subtitle}</p>
         )}
 
         {breadcrumbs && (
           <nav aria-label="Caminho" className="mt-8">
-            <ol className="tracked flex flex-wrap items-center justify-center gap-2 text-[11px] text-white/70">
+            <ol className="tracked flex flex-wrap items-center gap-2 text-[11px] text-white/55">
               {breadcrumbs.map((c, i) => (
                 <li key={c.label} className="flex items-center gap-2">
                   {c.to ? (
-                    <Link to={c.to} className="transition-colors hover:text-gold">
+                    <Link to={c.to} className="transition-colors hover:text-white">
                       {c.label}
                     </Link>
                   ) : (
-                    <span className="text-gold">{c.label}</span>
+                    <span style={{ color: "var(--gold)" }}>{c.label}</span>
                   )}
-                  {i < breadcrumbs.length - 1 && <span aria-hidden>/</span>}
+                  {i < breadcrumbs.length - 1 && <span aria-hidden className="opacity-40">/</span>}
                 </li>
               ))}
             </ol>

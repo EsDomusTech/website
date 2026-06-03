@@ -1,14 +1,9 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap');
 
 @custom-variant dark (&:is(.dark *));
-
-/*
- * DomusTech design system — architecture studio.
- * Colors are intentionally limited: background, foreground (headings),
- * muted (body text), gold accent, plus a few named neutrals.
- */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -38,44 +33,47 @@
   --color-dark-section: var(--dark-section);
   --color-logo-strip: var(--logo-strip);
   --color-ghost: var(--ghost);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Lato", system-ui, sans-serif;
+  /* #FFFFFF */
+  --font-display: "Raleway", "Segoe UI", sans-serif;
+  --font-body: "Open Sans", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.25rem;
-  /* #F5F3F0 */
-  --background: oklch(0.967 0.005 85);
+  --radius: 0.125rem;
+  /* #FFFFFF */
+  --background: oklch(1 0 0);
   /* #1C1C1C */
-  --foreground: oklch(0.235 0 0);
+  --foreground: oklch(0.2 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0 0);
+  --card-foreground: oklch(0.2 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0 0);
-  /* gold #B8965A as primary */
-  --primary: oklch(0.682 0.078 75);
+  --popover-foreground: oklch(0.2 0 0);
+  /* orange #E8901A as primary */
+  --primary: oklch(0.68 0.17 52);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.94 0.006 85);
-  --secondary-foreground: oklch(0.235 0 0);
-  --muted: oklch(0.94 0.006 85);
-  /* #6B6B6B */
-  --muted-foreground: oklch(0.52 0 0);
-  --accent: oklch(0.682 0.078 75);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.96 0 0);
+  /* #777777 */
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.68 0.17 52);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  /* very subtle border */
-  --border: oklch(0.9 0.004 85);
-  --input: oklch(0.9 0.004 85);
-  --ring: oklch(0.682 0.078 75);
-  /* named tokens */
-  --gold: oklch(0.682 0.078 75);
-  /* #3A3A38 */
-  --dark-section: oklch(0.33 0.002 90);
-  /* #F0EEE9 */
-  --logo-strip: oklch(0.945 0.006 85);
-  /* #EBEBEB */
-  --ghost: oklch(0.925 0 0);
+  /* #E8E8E8 */
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.91 0 0);
+  --ring: oklch(0.68 0.17 52);
+  /* orange accent — replaces gold */
+  --gold: oklch(0.68 0.17 52);
+  /* #1A1A1A */
+  --dark-section: oklch(0.18 0 0);
+  /* #F5F5F5 */
+  --logo-strip: oklch(0.965 0 0);
+  /* #EEEEEE */
+  --ghost: oklch(0.935 0 0);
+  /* top bar */
+  --topbar: oklch(0.14 0 0);
 }
 
 @layer base {
@@ -92,16 +90,19 @@
     color: var(--color-muted-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--color-foreground);
+    line-height: 1.2;
   }
 }
 
 @utility container-1100 {
-  max-width: 1100px;
+  max-width: 1140px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
@@ -110,8 +111,42 @@
   padding-block: 100px;
 }
 
-/* Spaced uppercase section eyebrow/title helper */
 @utility tracked {
-  letter-spacing: 0.25em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+/* Orange filled button */
+@utility btn-primary {
+  display: inline-block;
+  background-color: var(--gold);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+@utility btn-primary:hover {
+  background-color: oklch(0.58 0.17 52);
+}
+
+/* Outline button (white border on dark) */
+@utility btn-outline {
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 12px 34px;
+  transition: background-color 0.2s, color 0.2s;
+}
+@utility btn-outline:hover {
+  background-color: #fff;
+  color: var(--foreground);
 }
