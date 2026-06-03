@@ -80,7 +80,7 @@ function ServiceDetail() {
           <div className="bg-white p-10">
             <h3 className="tracked text-[13px] text-foreground">Inclui</h3>
             <ul className="mt-6 space-y-4">
-              {s.features.map((f) => (
+              {s.features.map((f: string) => (
                 <li key={f} className="flex items-start gap-3 text-[15px] text-muted-foreground">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <span>{f}</span>
