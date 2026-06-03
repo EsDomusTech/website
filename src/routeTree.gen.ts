@@ -9,15 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 
-const ServicosRoute = ServicosRouteImport.update({
-  id: '/servicos',
-  path: '/servicos',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const EmpresaRoute = EmpresaRouteImport.update({
   id: '/empresa',
   path: '/empresa',
@@ -28,46 +23,44 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosIndexRoute = ServicosIndexRouteImport.update({
+  id: '/servicos/',
+  path: '/servicos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/empresa': typeof EmpresaRoute
-  '/servicos': typeof ServicosRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/empresa': typeof EmpresaRoute
-  '/servicos': typeof ServicosRoute
+  '/servicos': typeof ServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/empresa': typeof EmpresaRoute
-  '/servicos': typeof ServicosRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/empresa' | '/servicos'
+  fullPaths: '/' | '/empresa' | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/empresa' | '/servicos'
-  id: '__root__' | '/' | '/empresa' | '/servicos'
+  id: '__root__' | '/' | '/empresa' | '/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EmpresaRoute: typeof EmpresaRoute
-  ServicosRoute: typeof ServicosRoute
+  ServicosIndexRoute: typeof ServicosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/servicos': {
-      id: '/servicos'
-      path: '/servicos'
-      fullPath: '/servicos'
-      preLoaderRoute: typeof ServicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/empresa': {
       id: '/empresa'
       path: '/empresa'
@@ -82,14 +75,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/': {
+      id: '/servicos/'
+      path: '/servicos'
+      fullPath: '/servicos/'
+      preLoaderRoute: typeof ServicosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EmpresaRoute: EmpresaRoute,
-  ServicosRoute: ServicosRoute,
+  ServicosIndexRoute: ServicosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
