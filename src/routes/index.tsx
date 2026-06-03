@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Projects } from "@/components/site/Projects";
@@ -7,7 +6,7 @@ import { Services } from "@/components/site/Services";
 import { Blog } from "@/components/site/Blog";
 import { VideoTestimonials } from "@/components/site/VideoTestimonials";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import { Footer } from "@/components/site/Footer";
+import { SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,33 +15,31 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Estúdio de arquitetura e design no Porto. Casas modulares inteligentes, design de interiores, planeamento e modelação 3D.",
+          "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores, remodelação e modelação 3D.",
       },
-      { property: "og:title", content: "DomusTech — Arquitetura no Porto" },
+      { property: "og:title", content: "DomusTech — Casas Modulares no Porto" },
       {
         property: "og:description",
         content: "Casas modulares inteligentes e arquitetura moderna no Porto.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE.domain}/` },
     ],
+    links: [{ rel: "canonical", href: `${SITE.domain}/` }],
   }),
   component: Index,
 });
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Services />
-        <Blog />
-        <VideoTestimonials />
-        <ClientLogos />
-        <Footer />
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+      <Services />
+      <Blog />
+      <VideoTestimonials />
+      <ClientLogos />
+    </main>
   );
 }
