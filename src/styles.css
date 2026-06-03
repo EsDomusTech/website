@@ -129,10 +129,6 @@
   padding: 14px 36px;
   transition: background-color 0.2s, transform 0.2s;
 }
-@utility btn-primary:hover {
-  background-color: oklch(0.58 0.17 52);
-}
-
 /* Outline button (white border on dark) */
 @utility btn-outline {
   display: inline-block;
@@ -145,8 +141,4 @@
   text-transform: uppercase;
   padding: 12px 34px;
   transition: background-color 0.2s, color 0.2s;
-}
-@utility btn-outline:hover {
-  background-color: #fff;
-  color: var(--foreground);
 }
