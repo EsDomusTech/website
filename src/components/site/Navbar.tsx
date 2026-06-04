@@ -44,7 +44,7 @@ function Logo() {
       </svg>
       <span className="flex flex-col leading-none">
         <span
-          className="text-[22px] font-black tracking-tight"
+          className="text-[22px] font-extrabold tracking-tight"
           style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
         >
           DOMUSTECH

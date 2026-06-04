@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Projects() {
   return (
-    <section id="projects" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
+    <section id="projects" className="section-pad bg-white">
       <div className="container-1100">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle eyebrow="Portfólio" first="Nossos" second="Projetos" align="left" />
@@ -20,15 +20,14 @@ export function Projects() {
           </Link>
         </div>
 
-        <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.slice(0, 6).map((p, i) => (
+        <div className="grid grid-cols-2 gap-2">
+          {PROJECTS.slice(0, 4).map((p, i) => (
             <motion.div
               key={p.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}
             >
               <Link
                 to="/projetos/$slug"
@@ -38,34 +37,36 @@ export function Projects() {
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-108"
-                />
-                {/* Base dark gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                {/* Hover orange overlay stripe */}
-                <div
-                  className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-                  style={{ backgroundColor: "var(--gold)" }}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
+                {/* Gradient always visible at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-[color:var(--gold)]/0 transition-all duration-500 group-hover:bg-[color:var(--gold)]/15" />
+
+                {/* Arrow icon on hover */}
+                <div className="absolute right-5 top-5 flex h-10 w-10 translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                  style={{ backgroundColor: "var(--gold)" }}
+                >
+                  <ArrowUpRight className="h-4 w-4 text-white" />
+                </div>
+
+                {/* Bottom text */}
+                <div className="absolute inset-x-0 bottom-0 p-6 transition-transform duration-300 group-hover:-translate-y-1">
                   <span
-                    className="tracked mb-1 text-[10px] font-bold"
-                    style={{ color: "var(--gold)" }}
+                    className="tracked mb-1 block text-[10px] font-semibold"
+                    style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                   >
                     {p.category}
                   </span>
                   <h3
-                    className="text-[20px] font-bold text-white"
+                    className="text-[18px] font-bold leading-snug text-white"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {p.name}
                   </h3>
-                </div>
-
-                {/* Arrow icon on hover */}
-                <div className="absolute right-5 top-5 flex h-9 w-9 translate-y-2 items-center justify-center bg-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <ArrowUpRight className="h-4 w-4" style={{ color: "var(--foreground)" }} />
                 </div>
               </Link>
             </motion.div>

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
 import { BLOG_POSTS } from "@/lib/site-data";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 export function Blog() {
   return (
@@ -20,51 +20,71 @@ export function Blog() {
           </Link>
         </div>
 
-        <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {BLOG_POSTS.slice(0, 3).map((n, i) => (
-            <motion.div
+            <motion.article
               key={n.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}
+              className="group flex flex-col bg-white shadow-sm ring-1 ring-border transition-shadow duration-300 hover:shadow-xl"
             >
-              <Link
-                to="/blog"
-                className="group relative block aspect-[4/3] overflow-hidden"
-              >
-                <img
-                  src={n.image}
-                  alt={n.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div
-                  className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-                  style={{ backgroundColor: "var(--gold)" }}
-                />
+              {/* Image */}
+              <Link to="/blog" className="block overflow-hidden">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={n.image}
+                    alt={n.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              </Link>
 
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
+              {/* Category badge over image bottom */}
+              <div className="flex flex-col flex-1 p-7">
+                {/* Meta row */}
+                <div className="mb-4 flex flex-wrap items-center gap-3">
                   <span
-                    className="tracked mb-1 text-[10px] font-bold"
-                    style={{ color: "var(--gold)" }}
+                    className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider"
+                    style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                   >
-                    {n.cat} · {n.date}
+                    <Tag className="h-2.5 w-2.5" />
+                    {n.cat}
                   </span>
+                  <span className="h-3 w-px" style={{ backgroundColor: "var(--border)" }} />
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Calendar className="h-2.5 w-2.5" />
+                    {n.date}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <Link to="/blog" className="block flex-1">
                   <h3
-                    className="text-[20px] font-bold text-white"
+                    className="mb-3 text-[18px] font-bold leading-snug text-foreground transition-colors duration-200 group-hover:text-[color:var(--gold)]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {n.title}
                   </h3>
-                </div>
+                  <p className="text-[14px] leading-relaxed text-muted-foreground line-clamp-3">
+                    {n.excerpt}
+                  </p>
+                </Link>
 
-                <div className="absolute right-5 top-5 flex h-9 w-9 translate-y-2 items-center justify-center bg-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <ArrowUpRight className="h-4 w-4" style={{ color: "var(--foreground)" }} />
-                </div>
-              </Link>
-            </motion.div>
+                {/* Divider */}
+                <div className="mt-6 mb-5 h-px" style={{ backgroundColor: "var(--border)" }} />
+
+                {/* Read more */}
+                <Link
+                  to="/blog"
+                  className="tracked inline-flex items-center gap-2 text-[10px] font-bold transition-all duration-200 hover:gap-3"
+                  style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
+                >
+                  Ler Artigo <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -87,13 +87,13 @@ export function About() {
               className="w-full object-cover"
             />
             <div
-              className="absolute -bottom-5 -left-5 p-5 shadow-xl"
+              className="absolute -bottom-5 -left-5 p-5 shadow-lg"
               style={{ backgroundColor: "var(--gold)" }}
             >
-              <p className="text-[11px] font-bold uppercase tracking-widest text-white">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/80">
                 Desde 2012
               </p>
-              <p className="mt-0.5 text-[22px] font-black text-white" style={{ fontFamily: "var(--font-display)" }}>
+              <p className="mt-0.5 text-[20px] font-extrabold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Porto, Portugal
               </p>
             </div>
@@ -113,7 +113,7 @@ export function About() {
               className="flex flex-col items-center justify-center border-b border-border py-10 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
             >
               <span
-                className="text-[52px] font-black leading-none"
+                className="text-[48px] font-extrabold leading-none"
                 style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}
               >
                 <Counter target={s.value} />+

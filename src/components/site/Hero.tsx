@@ -25,13 +25,13 @@ const SLIDES = [
 ];
 
 const textVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 36 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, delay, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
   }),
-  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+  exit: { opacity: 0, y: -16, transition: { duration: 0.28 } },
 };
 
 export function Hero() {
@@ -60,26 +60,26 @@ export function Hero() {
           transition={{ duration: 1.1 }}
         >
           <img src={s.img} alt={s.eyebrow} className="h-full w-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.28) 65%, rgba(0,0,0,0.08) 100%)" }} />
         </motion.div>
       ))}
 
       {/* Content */}
       <div className="container-1100 relative flex h-full flex-col justify-center">
-        <div className="max-w-[600px]">
+        <div className="max-w-[580px]">
           <AnimatePresence mode="wait">
             <motion.div key={`slide-${index}`}>
               <motion.div
-                className="mb-4 flex items-center gap-3"
+                className="mb-5 flex items-center gap-3"
                 custom={0}
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
+                <span className="block h-0.5 w-10" style={{ backgroundColor: "var(--gold)" }} />
                 <span
-                  className="tracked text-[11px] font-bold text-white/80"
+                  className="tracked text-[11px] font-semibold text-white/80"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {slide.eyebrow}
@@ -87,7 +87,7 @@ export function Hero() {
               </motion.div>
 
               <motion.h1
-                className="text-[44px] font-black leading-[1.1] text-white sm:text-[56px] md:text-[68px]"
+                className="text-[42px] font-extrabold leading-[1.1] text-white sm:text-[54px] md:text-[66px]"
                 style={{ fontFamily: "var(--font-display)", whiteSpace: "pre-line" }}
                 custom={0.12}
                 variants={textVariants}
@@ -99,7 +99,7 @@ export function Hero() {
               </motion.h1>
 
               <motion.p
-                className="mt-5 max-w-[440px] text-[15px] leading-relaxed text-white/75"
+                className="mt-5 max-w-[420px] text-[15px] leading-relaxed text-white/70"
                 custom={0.24}
                 variants={textVariants}
                 initial="hidden"
@@ -110,7 +110,7 @@ export function Hero() {
               </motion.p>
 
               <motion.div
-                className="mt-8 flex flex-wrap gap-4"
+                className="mt-9 flex flex-wrap gap-4"
                 custom={0.36}
                 variants={textVariants}
                 initial="hidden"
@@ -126,7 +126,7 @@ export function Hero() {
                 </Link>
                 <Link
                   to="/contacto"
-                  className="tracked inline-block border-2 border-white px-8 py-3 text-[11px] font-bold text-white transition-colors hover:bg-white hover:text-foreground"
+                  className="tracked inline-block border border-white/70 px-8 py-3.5 text-[11px] font-bold text-white transition-colors hover:border-white hover:bg-white/10"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Falar Connosco
@@ -142,44 +142,49 @@ export function Hero() {
         type="button"
         aria-label="Anterior"
         onClick={() => go(index - 1)}
-        className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-black/30 text-white transition-colors hover:bg-[color:var(--gold)]"
+        className="absolute left-5 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-black/25 text-white transition-colors hover:bg-[color:var(--gold)]"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <ChevronLeft className="h-4 w-4" />
       </button>
       <button
         type="button"
         aria-label="Seguinte"
         onClick={() => go(index + 1)}
-        className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-black/30 text-white transition-colors hover:bg-[color:var(--gold)]"
+        className="absolute right-5 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-black/25 text-white transition-colors hover:bg-[color:var(--gold)]"
       >
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-4 w-4" />
       </button>
 
-      {/* Slide counter */}
-      <div className="absolute bottom-8 right-8 z-10 flex items-center gap-4">
-        <span
-          className="text-[28px] font-black leading-none text-white"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="h-px w-8 bg-white/40" />
-        <span className="text-[13px] font-semibold text-white/40" style={{ fontFamily: "var(--font-display)" }}>
-          {String(SLIDES.length).padStart(2, "0")}
-        </span>
-      </div>
-
-      {/* Bottom dots */}
-      <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+      {/* Slide progress bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex">
         {SLIDES.map((_, i) => (
           <button
             key={i}
             type="button"
             aria-label={`Slide ${i + 1}`}
             onClick={() => go(i)}
-            className={`h-1 transition-all duration-300 ${i === index ? "w-8 bg-[color:var(--gold)]" : "w-4 bg-white/40"}`}
-          />
+            className="relative h-1 flex-1 bg-white/20 transition-colors"
+          >
+            <span
+              className={`absolute inset-0 origin-left transition-transform duration-[6000ms] ease-linear ${i === index ? "scale-x-100" : "scale-x-0"}`}
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+          </button>
         ))}
+      </div>
+
+      {/* Slide counter bottom-right */}
+      <div className="absolute bottom-8 right-8 z-10 flex items-center gap-3">
+        <span
+          className="text-[26px] font-extrabold leading-none text-white"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="h-px w-6 bg-white/35" />
+        <span className="text-[12px] font-semibold text-white/35" style={{ fontFamily: "var(--font-display)" }}>
+          {String(SLIDES.length).padStart(2, "0")}
+        </span>
       </div>
     </section>
   );
