@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -60,18 +60,18 @@
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  /* #E8E8E8 */
-  --border: oklch(0.91 0 0);
-  --input: oklch(0.91 0 0);
+  /* warm border */
+  --border: oklch(0.91 0.004 80);
+  --input: oklch(0.91 0.004 80);
   --ring: oklch(0.68 0.17 52);
-  /* orange accent — replaces gold */
-  --gold: oklch(0.68 0.17 52);
+  /* Bauen construction orange — slightly more yellow-warm */
+  --gold: oklch(0.71 0.17 56);
   /* #1A1A1A */
   --dark-section: oklch(0.18 0 0);
-  /* #F5F5F5 */
-  --logo-strip: oklch(0.965 0 0);
-  /* #EEEEEE */
-  --ghost: oklch(0.935 0 0);
+  /* warm off-white — Bauen section bg */
+  --logo-strip: oklch(0.963 0.006 80);
+  /* warm light gray */
+  --ghost: oklch(0.935 0.003 80);
   /* top bar */
   --topbar: oklch(0.14 0 0);
 }
@@ -108,11 +108,11 @@
 }
 
 @utility section-pad {
-  padding-block: 100px;
+  padding-block: 96px;
 }
 
 @utility tracked {
-  letter-spacing: 0.18em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 

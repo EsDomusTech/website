@@ -33,7 +33,7 @@ export function Footer() {
                 <path d="M8 22 24 8l16 14M12 20v22h24V20M20 42v-10h8v10" stroke="var(--gold)" strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" fill="none" />
               </svg>
               <span
-                className="text-[22px] font-black tracking-tight text-white"
+                className="text-[22px] font-extrabold tracking-tight text-white"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 DOMUSTECH

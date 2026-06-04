@@ -17,14 +17,13 @@ export function CtaBand({
       className="relative overflow-hidden"
       style={{ backgroundColor: "var(--dark-section)" }}
     >
-      {/* Background geometric shapes */}
+      {/* Subtle angular accent — construction / Bauen aesthetic */}
       <div
-        className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 opacity-5"
-        style={{ backgroundColor: "var(--gold)", borderRadius: "50%" }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-10 right-40 h-48 w-48 opacity-5"
-        style={{ backgroundColor: "var(--gold)", borderRadius: "50%" }}
+        className="pointer-events-none absolute inset-y-0 right-0 w-[40%] opacity-[0.03]"
+        style={{
+          backgroundImage: "repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%)",
+          backgroundSize: "20px 20px",
+        }}
       />
 
       <div className="container-1100 relative z-10 py-24">
@@ -39,14 +38,14 @@ export function CtaBand({
             <div className="mb-4 flex items-center gap-3">
               <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
               <span
-                className="tracked text-[11px] font-bold text-white/60"
+                className="tracked text-[11px] font-semibold text-white/55"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Contacte-nos
               </span>
             </div>
             <h2
-              className="text-[38px] font-black leading-tight text-white md:text-[48px]"
+              className="text-[36px] font-extrabold leading-tight text-white md:text-[46px]"
               style={{ fontFamily: "var(--font-display)", whiteSpace: "pre-line" }}
             >
               {title}
@@ -60,7 +59,7 @@ export function CtaBand({
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col gap-6"
           >
-            <p className="max-w-xs text-[14px] leading-relaxed text-white/60">{text}</p>
+            <p className="max-w-xs text-[14px] leading-relaxed text-white/55">{text}</p>
             <div>
               <Link
                 to="/contacto"

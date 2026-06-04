@@ -20,35 +20,35 @@ export function PageHeader({
   breadcrumbs,
 }: PageHeaderProps) {
   return (
-    <section className="relative flex min-h-[55vh] items-center overflow-hidden">
+    <section className="relative flex min-h-[52vh] items-center overflow-hidden">
       <img src={image} alt={`${titleFirst} ${titleSecond}`} className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 70%)" }} />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.3) 70%)" }} />
 
       <div className="container-1100 relative py-24">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
-          {eyebrow && (
+        {eyebrow && (
+          <div className="flex items-center gap-3 mb-5">
+            <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
             <span
-              className="tracked text-[11px] font-bold text-white/70"
+              className="tracked text-[11px] font-semibold text-white/65"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {eyebrow}
             </span>
-          )}
-        </div>
+          </div>
+        )}
         <h1
-          className="text-[42px] font-black leading-tight text-white sm:text-[56px]"
+          className="text-[40px] font-extrabold leading-tight text-white sm:text-[54px]"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {titleFirst} <span style={{ color: "var(--gold)" }}>{titleSecond}</span>
         </h1>
         {subtitle && (
-          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/75">{subtitle}</p>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/70">{subtitle}</p>
         )}
 
         {breadcrumbs && (
           <nav aria-label="Caminho" className="mt-8">
-            <ol className="tracked flex flex-wrap items-center gap-2 text-[11px] text-white/55">
+            <ol className="tracked flex flex-wrap items-center gap-2 text-[11px] text-white/50">
               {breadcrumbs.map((c, i) => (
                 <li key={c.label} className="flex items-center gap-2">
                   {c.to ? (

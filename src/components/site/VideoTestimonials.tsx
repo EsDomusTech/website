@@ -31,19 +31,20 @@ export function VideoTestimonials() {
           className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-14"
           style={{ backgroundImage: "url(https://picsum.photos/seed/arch4/800/500)" }}
         >
-          <div className="absolute inset-0 bg-black/65" />
+          <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 flex flex-col items-center text-center">
             <motion.button
               type="button"
               aria-label="Ver vídeo promocional"
-              whileHover={{ scale: 1.08 }}
+              whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.96 }}
-              className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-[color:var(--gold)] hover:border-[color:var(--gold)]"
+              className="flex h-18 w-18 items-center justify-center border border-white/60 text-white transition-colors hover:bg-[color:var(--gold)] hover:border-[color:var(--gold)]"
+              style={{ height: 72, width: 72 }}
             >
-              <Play className="h-7 w-7 translate-x-0.5" fill="currentColor" />
+              <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" />
             </motion.button>
             <p
-              className="tracked mt-5 text-[11px] font-bold text-white/70"
+              className="tracked mt-5 text-[11px] font-semibold text-white/60"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Ver Vídeo Promo
@@ -57,14 +58,14 @@ export function VideoTestimonials() {
             <div className="mb-5 flex items-center gap-3">
               <span className="block h-0.5 w-6" style={{ backgroundColor: "var(--gold)" }} />
               <span
-                className="tracked text-[11px] font-bold"
+                className="tracked text-[11px] font-semibold"
                 style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}
               >
                 Testemunhos
               </span>
             </div>
             <h3
-              className="mb-6 text-[26px] font-black text-foreground"
+              className="mb-6 text-[24px] font-extrabold text-foreground"
               style={{ fontFamily: "var(--font-display)" }}
             >
               O Que Dizem os Nossos Clientes?
@@ -73,18 +74,18 @@ export function VideoTestimonials() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.35 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.32 }}
               >
-                <Quote className="mb-3 h-6 w-6" style={{ color: "var(--gold)" }} />
+                <Quote className="mb-3 h-5 w-5" style={{ color: "var(--gold)" }} />
                 <p className="text-[15px] leading-[1.85] text-muted-foreground">{t.quote}</p>
                 <div className="mt-7 flex items-center gap-4">
-                  <img src={t.avatar} alt={t.name} className="h-12 w-12 object-cover" />
+                  <img src={t.avatar} alt={t.name} className="h-11 w-11 object-cover" />
                   <div>
                     <p
-                      className="text-[16px] font-bold text-foreground"
+                      className="text-[15px] font-bold text-foreground"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {t.name}
