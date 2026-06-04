@@ -9,19 +9,34 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EquipaRouteImport } from './routes/equipa'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AntesDepoisRouteImport } from './routes/antes-depois'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
+import { Route as ProjetosListaRouteImport } from './routes/projetos.lista'
+import { Route as ProjetosFiltroRouteImport } from './routes/projetos.filtro'
+import { Route as ProjetosFancyFiltroRouteImport } from './routes/projetos.fancy-filtro'
+import { Route as ProjetosFancyRouteImport } from './routes/projetos.fancy'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
+import { Route as GaleriaMasonryRouteImport } from './routes/galeria.masonry'
 
+const TestemunhosRoute = TestemunhosRouteImport.update({
+  id: '/testemunhos',
+  path: '/testemunhos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermosECondicoesRoute = TermosECondicoesRouteImport.update({
   id: '/termos-e-condicoes',
   path: '/termos-e-condicoes',
@@ -32,14 +47,29 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrecosRoute = PrecosRouteImport.update({
+  id: '/precos',
+  path: '/precos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipaRoute = EquipaRouteImport.update({
+  id: '/equipa',
+  path: '/equipa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmpresaRoute = EmpresaRouteImport.update({
@@ -55,6 +85,11 @@ const ContactoRoute = ContactoRouteImport.update({
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AntesDepoisRoute = AntesDepoisRouteImport.update({
+  id: '/antes-depois',
+  path: '/antes-depois',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -77,36 +112,81 @@ const ServicosSlugRoute = ServicosSlugRouteImport.update({
   path: '/servicos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosListaRoute = ProjetosListaRouteImport.update({
+  id: '/projetos/lista',
+  path: '/projetos/lista',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosFiltroRoute = ProjetosFiltroRouteImport.update({
+  id: '/projetos/filtro',
+  path: '/projetos/filtro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosFancyFiltroRoute = ProjetosFancyFiltroRouteImport.update({
+  id: '/projetos/fancy-filtro',
+  path: '/projetos/fancy-filtro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosFancyRoute = ProjetosFancyRouteImport.update({
+  id: '/projetos/fancy',
+  path: '/projetos/fancy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   id: '/projetos/$slug',
   path: '/projetos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GaleriaMasonryRoute = GaleriaMasonryRouteImport.update({
+  id: '/masonry',
+  path: '/masonry',
+  getParentRoute: () => GaleriaRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/antes-depois': typeof AntesDepoisRoute
   '/blog': typeof BlogRoute
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
+  '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
+  '/testemunhos': typeof TestemunhosRoute
+  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/fancy': typeof ProjetosFancyRoute
+  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
+  '/projetos/filtro': typeof ProjetosFiltroRoute
+  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/antes-depois': typeof AntesDepoisRoute
   '/blog': typeof BlogRoute
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
+  '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
+  '/testemunhos': typeof TestemunhosRoute
+  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/fancy': typeof ProjetosFancyRoute
+  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
+  '/projetos/filtro': typeof ProjetosFiltroRoute
+  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos': typeof ProjetosIndexRoute
   '/servicos': typeof ServicosIndexRoute
@@ -114,14 +194,24 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/antes-depois': typeof AntesDepoisRoute
   '/blog': typeof BlogRoute
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
+  '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
+  '/testemunhos': typeof TestemunhosRoute
+  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/fancy': typeof ProjetosFancyRoute
+  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
+  '/projetos/filtro': typeof ProjetosFiltroRoute
+  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
@@ -130,42 +220,72 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/antes-depois'
     | '/blog'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
+    | '/galeria'
     | '/politica-de-privacidade'
+    | '/precos'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
+    | '/testemunhos'
+    | '/galeria/masonry'
     | '/projetos/$slug'
+    | '/projetos/fancy'
+    | '/projetos/fancy-filtro'
+    | '/projetos/filtro'
+    | '/projetos/lista'
     | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/antes-depois'
     | '/blog'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
+    | '/galeria'
     | '/politica-de-privacidade'
+    | '/precos'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
+    | '/testemunhos'
+    | '/galeria/masonry'
     | '/projetos/$slug'
+    | '/projetos/fancy'
+    | '/projetos/fancy-filtro'
+    | '/projetos/filtro'
+    | '/projetos/lista'
     | '/servicos/$slug'
     | '/projetos'
     | '/servicos'
   id:
     | '__root__'
     | '/'
+    | '/antes-depois'
     | '/blog'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
+    | '/galeria'
     | '/politica-de-privacidade'
+    | '/precos'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
+    | '/testemunhos'
+    | '/galeria/masonry'
     | '/projetos/$slug'
+    | '/projetos/fancy'
+    | '/projetos/fancy-filtro'
+    | '/projetos/filtro'
+    | '/projetos/lista'
     | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
@@ -173,14 +293,23 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AntesDepoisRoute: typeof AntesDepoisRoute
   BlogRoute: typeof BlogRoute
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
+  EquipaRoute: typeof EquipaRoute
   FaqRoute: typeof FaqRoute
+  GaleriaRoute: typeof GaleriaRouteWithChildren
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosECondicoesRoute: typeof TermosECondicoesRoute
+  TestemunhosRoute: typeof TestemunhosRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
+  ProjetosFancyRoute: typeof ProjetosFancyRoute
+  ProjetosFancyFiltroRoute: typeof ProjetosFancyFiltroRoute
+  ProjetosFiltroRoute: typeof ProjetosFiltroRoute
+  ProjetosListaRoute: typeof ProjetosListaRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
@@ -188,6 +317,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testemunhos': {
+      id: '/testemunhos'
+      path: '/testemunhos'
+      fullPath: '/testemunhos'
+      preLoaderRoute: typeof TestemunhosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/termos-e-condicoes': {
       id: '/termos-e-condicoes'
       path: '/termos-e-condicoes'
@@ -202,6 +338,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/precos': {
+      id: '/precos'
+      path: '/precos'
+      fullPath: '/precos'
+      preLoaderRoute: typeof PrecosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -209,11 +352,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipa': {
+      id: '/equipa'
+      path: '/equipa'
+      fullPath: '/equipa'
+      preLoaderRoute: typeof EquipaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/empresa': {
@@ -235,6 +392,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/antes-depois': {
+      id: '/antes-depois'
+      path: '/antes-depois'
+      fullPath: '/antes-depois'
+      preLoaderRoute: typeof AntesDepoisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -265,6 +429,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos/lista': {
+      id: '/projetos/lista'
+      path: '/projetos/lista'
+      fullPath: '/projetos/lista'
+      preLoaderRoute: typeof ProjetosListaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos/filtro': {
+      id: '/projetos/filtro'
+      path: '/projetos/filtro'
+      fullPath: '/projetos/filtro'
+      preLoaderRoute: typeof ProjetosFiltroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos/fancy-filtro': {
+      id: '/projetos/fancy-filtro'
+      path: '/projetos/fancy-filtro'
+      fullPath: '/projetos/fancy-filtro'
+      preLoaderRoute: typeof ProjetosFancyFiltroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos/fancy': {
+      id: '/projetos/fancy'
+      path: '/projetos/fancy'
+      fullPath: '/projetos/fancy'
+      preLoaderRoute: typeof ProjetosFancyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projetos/$slug': {
       id: '/projetos/$slug'
       path: '/projetos/$slug'
@@ -272,19 +464,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galeria/masonry': {
+      id: '/galeria/masonry'
+      path: '/masonry'
+      fullPath: '/galeria/masonry'
+      preLoaderRoute: typeof GaleriaMasonryRouteImport
+      parentRoute: typeof GaleriaRoute
+    }
   }
 }
 
+interface GaleriaRouteChildren {
+  GaleriaMasonryRoute: typeof GaleriaMasonryRoute
+}
+
+const GaleriaRouteChildren: GaleriaRouteChildren = {
+  GaleriaMasonryRoute: GaleriaMasonryRoute,
+}
+
+const GaleriaRouteWithChildren =
+  GaleriaRoute._addFileChildren(GaleriaRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AntesDepoisRoute: AntesDepoisRoute,
   BlogRoute: BlogRoute,
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,
+  EquipaRoute: EquipaRoute,
   FaqRoute: FaqRoute,
+  GaleriaRoute: GaleriaRouteWithChildren,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosECondicoesRoute: TermosECondicoesRoute,
+  TestemunhosRoute: TestemunhosRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
+  ProjetosFancyRoute: ProjetosFancyRoute,
+  ProjetosFancyFiltroRoute: ProjetosFancyFiltroRoute,
+  ProjetosFiltroRoute: ProjetosFiltroRoute,
+  ProjetosListaRoute: ProjetosListaRoute,
   ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
   ServicosIndexRoute: ServicosIndexRoute,
@@ -292,3 +511,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

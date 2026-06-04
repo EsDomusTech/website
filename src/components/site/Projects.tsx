@@ -6,21 +6,23 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Projects() {
   return (
-    <section id="projects" className="section-pad bg-white">
+    <section id="projects" className="section-pad" style={{ backgroundColor: "var(--background)" }}>
       <div className="container-1100">
-        <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle eyebrow="Portfólio" first="Nossos" second="Projetos" align="left" />
           <Link
             to="/projetos"
-            className="tracked inline-flex items-center gap-2 text-[11px] font-bold transition-colors hover:text-[color:var(--gold)]"
+            className="tracked inline-flex items-center gap-3 text-[11px] font-medium transition-colors"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
           >
-            <span className="block h-0.5 w-5" style={{ backgroundColor: "var(--gold)" }} />
+            <span className="block h-px w-6" style={{ backgroundColor: "var(--gold)" }} />
             Ver Todos
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-1">
           {PROJECTS.slice(0, 4).map((p, i) => (
             <motion.div
               key={p.slug}
@@ -40,14 +42,18 @@ export function Projects() {
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Gradient always visible at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                {/* Permanent bottom gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[color:var(--gold)]/0 transition-all duration-500 group-hover:bg-[color:var(--gold)]/15" />
+                {/* Hover overlay tint */}
+                <div
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ backgroundColor: "rgba(190,147,85,0.12)" }}
+                />
 
-                {/* Arrow icon on hover */}
-                <div className="absolute right-5 top-5 flex h-10 w-10 translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                {/* Arrow on hover */}
+                <div
+                  className="absolute right-5 top-5 flex h-10 w-10 translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   style={{ backgroundColor: "var(--gold)" }}
                 >
                   <ArrowUpRight className="h-4 w-4 text-white" />
@@ -56,14 +62,14 @@ export function Projects() {
                 {/* Bottom text */}
                 <div className="absolute inset-x-0 bottom-0 p-6 transition-transform duration-300 group-hover:-translate-y-1">
                   <span
-                    className="tracked mb-1 block text-[10px] font-semibold"
+                    className="tracked mb-2 block text-[10px] font-medium"
                     style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                   >
                     {p.category}
                   </span>
                   <h3
-                    className="text-[18px] font-bold leading-snug text-white"
-                    style={{ fontFamily: "var(--font-display)" }}
+                    className="text-[17px] text-white"
+                    style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}
                   >
                     {p.name}
                   </h3>

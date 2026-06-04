@@ -20,10 +20,10 @@ export function SectionTitle({ eyebrow, first, second, className, align = "cente
       transition={{ duration: 0.55, ease: "easeOut" }}
     >
       {eyebrow && (
-        <div className={`mb-4 flex items-center gap-3 ${isCenter ? "justify-center" : ""}`}>
-          <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
+        <div className={`mb-5 flex items-center gap-3 ${isCenter ? "justify-center" : ""}`}>
+          <span className="block h-px w-8" style={{ backgroundColor: "var(--gold)" }} />
           <span
-            className="tracked text-[11px] font-semibold"
+            className="tracked text-[11px] font-medium"
             style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
           >
             {eyebrow}
@@ -31,8 +31,13 @@ export function SectionTitle({ eyebrow, first, second, className, align = "cente
         </div>
       )}
       <h2
-        className={`text-[30px] font-extrabold leading-tight md:text-[40px] ${light ? "text-white" : ""}`}
-        style={{ fontFamily: "var(--font-display)" }}
+        className={`text-[32px] leading-tight md:text-[46px] ${light ? "text-white" : ""}`}
+        style={{
+          fontFamily: "var(--font-display)",
+          fontWeight: 400,
+          letterSpacing: "0.03em",
+          textTransform: "uppercase",
+        }}
       >
         {first}{" "}
         <span style={{ color: "var(--gold)" }}>{second}</span>

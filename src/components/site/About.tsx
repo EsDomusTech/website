@@ -47,9 +47,9 @@ const fadeUp = {
 
 export function About() {
   return (
-    <section id="about" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
+    <section id="about" className="section-pad" style={{ backgroundColor: "var(--background)" }}>
       <div className="container-1100">
-        <div className="grid items-center gap-14 md:grid-cols-2">
+        <div className="grid items-center gap-16 md:grid-cols-2">
           {/* Text */}
           <motion.div
             initial="hidden"
@@ -57,17 +57,19 @@ export function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <SectionTitle eyebrow="Sobre Nós" first="Quem" second="Somos" align="left" />
-            <div className="mt-8 space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
+            <div className="mt-8 space-y-5 text-[15px] font-light leading-[1.85]" style={{ color: "var(--muted-foreground)" }}>
               <p>{LOREM}</p>
               <p>{LOREM2}</p>
             </div>
-            <div className="mt-8">
+            <div className="mt-10">
               <a
                 href="/empresa"
-                className="tracked inline-flex items-center gap-3 text-[11px] font-bold transition-colors hover:text-[color:var(--gold)]"
+                className="tracked inline-flex items-center gap-4 text-[11px] font-medium transition-colors"
                 style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
               >
-                <span className="block h-0.5 w-6" style={{ backgroundColor: "var(--gold)" }} />
+                <span className="block h-px w-8" style={{ backgroundColor: "var(--gold)" }} />
                 Conhecer a Empresa
               </a>
             </div>
@@ -79,29 +81,33 @@ export function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <img
               src="https://picsum.photos/seed/office1/700/500"
               alt="Escritório DomusTech no Porto"
               className="w-full object-cover"
             />
+            {/* Overlap badge */}
             <div
-              className="absolute -bottom-5 -left-5 p-5 shadow-lg"
+              className="absolute -bottom-6 -left-6 px-7 py-5"
               style={{ backgroundColor: "var(--gold)" }}
             >
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/80">
+              <p className="tracked text-[9px] font-medium text-white/70">
                 Desde 2012
               </p>
-              <p className="mt-0.5 text-[20px] font-extrabold text-white" style={{ fontFamily: "var(--font-display)" }}>
+              <p
+                className="mt-1 text-[22px] text-white"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em" }}
+              >
                 Porto, Portugal
               </p>
             </div>
           </motion.div>
         </div>
 
-        {/* Stats row */}
-        <div className="mt-20 grid grid-cols-2 gap-0 border border-border bg-white md:grid-cols-4">
+        {/* Stats row — dark background */}
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4" style={{ backgroundColor: "var(--dark-section)" }}>
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
@@ -110,15 +116,19 @@ export function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              className="flex flex-col items-center justify-center border-b border-border py-10 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+              className="flex flex-col items-center justify-center py-12"
+              style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}
             >
               <span
-                className="text-[48px] font-extrabold leading-none"
-                style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}
+                className="text-[52px] leading-none text-white"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--gold)" }}
               >
                 <Counter target={s.value} />+
               </span>
-              <span className="tracked mt-2 text-center text-[11px] font-semibold text-muted-foreground">
+              <span
+                className="tracked mt-3 text-center text-[10px] font-medium"
+                style={{ color: "rgba(255,255,255,0.4)" }}
+              >
                 {s.label}
               </span>
             </motion.div>

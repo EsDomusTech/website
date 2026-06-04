@@ -31,21 +31,29 @@ export function VideoTestimonials() {
           className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-14"
           style={{ backgroundImage: "url(https://picsum.photos/seed/arch4/800/500)" }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.65)" }} />
           <div className="relative z-10 flex flex-col items-center text-center">
             <motion.button
               type="button"
               aria-label="Ver vídeo promocional"
               whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.96 }}
-              className="flex h-18 w-18 items-center justify-center border border-white/60 text-white transition-colors hover:bg-[color:var(--gold)] hover:border-[color:var(--gold)]"
-              style={{ height: 72, width: 72 }}
+              className="flex items-center justify-center border text-white transition-colors"
+              style={{ height: 72, width: 72, borderColor: "rgba(255,255,255,0.4)" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "var(--gold)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--gold)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)";
+              }}
             >
               <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" />
             </motion.button>
             <p
-              className="tracked mt-5 text-[11px] font-semibold text-white/60"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="tracked mt-5 text-[11px] font-medium"
+              style={{ fontFamily: "var(--font-display)", color: "rgba(255,255,255,0.5)" }}
             >
               Ver Vídeo Promo
             </p>
@@ -56,17 +64,23 @@ export function VideoTestimonials() {
         <div className="flex flex-col justify-between bg-white p-12">
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="block h-0.5 w-6" style={{ backgroundColor: "var(--gold)" }} />
+              <span className="block h-px w-6" style={{ backgroundColor: "var(--gold)" }} />
               <span
-                className="tracked text-[11px] font-semibold"
+                className="tracked text-[11px] font-medium"
                 style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}
               >
                 Testemunhos
               </span>
             </div>
             <h3
-              className="mb-6 text-[24px] font-extrabold text-foreground"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="mb-6 text-[22px]"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 400,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: "var(--foreground)",
+              }}
             >
               O Que Dizem os Nossos Clientes?
             </h3>
@@ -79,18 +93,22 @@ export function VideoTestimonials() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.32 }}
               >
-                <Quote className="mb-3 h-5 w-5" style={{ color: "var(--gold)" }} />
-                <p className="text-[15px] leading-[1.85] text-muted-foreground">{t.quote}</p>
-                <div className="mt-7 flex items-center gap-4">
+                <Quote className="mb-4 h-5 w-5" style={{ color: "var(--gold)" }} />
+                <p className="text-[15px] font-light leading-[1.9]" style={{ color: "var(--muted-foreground)" }}>
+                  {t.quote}
+                </p>
+                <div className="mt-8 flex items-center gap-4">
                   <img src={t.avatar} alt={t.name} className="h-11 w-11 object-cover" />
                   <div>
                     <p
-                      className="text-[15px] font-bold text-foreground"
-                      style={{ fontFamily: "var(--font-display)" }}
+                      className="text-[14px]"
+                      style={{ fontFamily: "var(--font-display)", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--foreground)" }}
                     >
                       {t.name}
                     </p>
-                    <p className="text-[12px] text-muted-foreground">{t.role}</p>
+                    <p className="text-[12px] font-light" style={{ color: "var(--muted-foreground)" }}>
+                      {t.role}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -101,18 +119,39 @@ export function VideoTestimonials() {
             <button
               type="button"
               onClick={() => setI((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-              className="flex h-9 w-9 items-center justify-center border border-border transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              className="flex h-9 w-9 items-center justify-center border transition-colors"
+              style={{ borderColor: "var(--border)" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--gold)";
+                (e.currentTarget as HTMLElement).style.color = "var(--gold)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+                (e.currentTarget as HTMLElement).style.color = "inherit";
+              }}
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
               type="button"
               onClick={() => setI((prev) => (prev + 1) % TESTIMONIALS.length)}
-              className="flex h-9 w-9 items-center justify-center border border-border transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              className="flex h-9 w-9 items-center justify-center border transition-colors"
+              style={{ borderColor: "var(--border)" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--gold)";
+                (e.currentTarget as HTMLElement).style.color = "var(--gold)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+                (e.currentTarget as HTMLElement).style.color = "inherit";
+              }}
             >
               <ChevronRight className="h-4 w-4" />
             </button>
-            <span className="text-[12px] text-muted-foreground">
+            <span
+              className="text-[12px] font-light"
+              style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-display)" }}
+            >
               {String(i + 1).padStart(2, "0")} / {String(TESTIMONIALS.length).padStart(2, "0")}
             </span>
           </div>

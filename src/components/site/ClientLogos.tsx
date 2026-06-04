@@ -3,10 +3,10 @@ import { LOGO_ICONS } from "./icons";
 
 export function ClientLogos() {
   return (
-    <section className="border-y border-border bg-white py-14">
+    <section className="border-y py-14" style={{ backgroundColor: "var(--background)", borderColor: "var(--border)" }}>
       <div className="container-1100">
         <p
-          className="tracked mb-8 text-center text-[11px] font-bold"
+          className="tracked mb-8 text-center text-[11px] font-medium"
           style={{ fontFamily: "var(--font-display)", color: "var(--muted-foreground)" }}
         >
           Parceiros e Clientes de Confiança

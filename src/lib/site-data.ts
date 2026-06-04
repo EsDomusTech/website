@@ -185,6 +185,45 @@ export const PROJECTS: Project[] = [
       "Estruturas modulares, zonas verdes e mobiliário urbano sustentável definem este projeto de urbanismo.",
     ],
   },
+  {
+    slug: "cotton-house",
+    name: "Cotton House",
+    category: "Interiores",
+    location: "Bonfim, Porto",
+    year: "2024",
+    image: "https://picsum.photos/seed/cotton1/1200/800",
+    summary: "Renovação de apartamento histórico com interiores têxteis e materialidade artesanal.",
+    description: [
+      "O Cotton House é uma ode à textura e ao artesanato. Um apartamento do século XIX foi completamente renovado, preservando os azulejos originais e introduzindo interiores têxteis de luxo.",
+      "Cada divisão conta uma história de contrastes: o antigo e o contemporâneo, o rugoso e o suave, o branco e o ouro.",
+    ],
+  },
+  {
+    slug: "armada-center",
+    name: "Armada Center",
+    category: "Comercial",
+    location: "Cedofeita, Porto",
+    year: "2024",
+    image: "https://picsum.photos/seed/armada1/1200/800",
+    summary: "Edifício de escritórios com fachada modular e espaços de trabalho flexíveis.",
+    description: [
+      "O Armada Center é um edifício de escritórios premium desenhado para atrair empresas de tecnologia e criativas. A fachada modular ventilada permite personalização e eficiência energética máxima.",
+      "Os espaços interiores foram concebidos com flexibilidade total — open spaces, salas de reunião modulares e terraços jardim definem este espaço de trabalho do futuro.",
+    ],
+  },
+  {
+    slug: "solar-douro",
+    name: "Solar do Douro",
+    category: "Residencial",
+    location: "Peso da Régua",
+    year: "2023",
+    image: "https://picsum.photos/seed/solar1/1200/800",
+    summary: "Quinta de turismo rural com módulos de hospedagem integrados na paisagem.",
+    description: [
+      "O Solar do Douro é um projeto de enoturismo onde seis módulos de hospedagem foram inseridos na encosta vinhateira sem alterar a topografia.",
+      "Cada módulo tem vistas panorâmicas para o rio Douro e integra sistemas de energia solar e recolha de água da chuva.",
+    ],
+  },
 ];
 
 export function getProject(slug: string) {
@@ -209,6 +248,44 @@ export const BLOG_POSTS = [
     image: "https://picsum.photos/seed/news2/1200/800",
     excerpt:
       "Uma análise aos materiais sustentáveis que reduzem a pegada de carbono sem comprometer o design.",
+  },
+  {
+    slug: "domotica-casa-modular-futuro",
+    title: "Domótica e casas modulares: o futuro da habitação inteligente",
+    cat: "Tecnologia",
+    date: "10 Mar 2026",
+    image: "https://picsum.photos/seed/news3/1200/800",
+    excerpt:
+      "Como a integração de sistemas inteligentes transforma a experiência de habitar uma casa modular.",
+  },
+];
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+};
+
+export const TEAM: TeamMember[] = [
+  {
+    name: "Ana Ferreira",
+    role: "Fundadora & Arquitecta Principal",
+    image: "https://picsum.photos/seed/portrait-ana/600/800",
+  },
+  {
+    name: "Miguel Santos",
+    role: "Arq. Dipl. FAUP",
+    image: "https://picsum.photos/seed/portrait-miguel/600/800",
+  },
+  {
+    name: "Sofia Carvalho",
+    role: "Directora de Design",
+    image: "https://picsum.photos/seed/portrait-sofia/600/800",
+  },
+  {
+    name: "João Almeida",
+    role: "Arquitecto Técnico",
+    image: "https://picsum.photos/seed/portrait-joao/600/800",
   },
 ];
 
