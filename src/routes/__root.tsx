@@ -90,8 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "DomusTech - Casas Modulares" },
       { name: "twitter:description", content: "Desenvolvemos casas modernas, sustentáveis e totalmente personalizadas, combinando arquitetura contemporânea, eficiência energética e tecnologia que garante pre" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6606b433-5668-49b8-a982-d860820d6198/id-preview-b2400dfe--ae8d141b-ca31-443a-a1a4-382d7f4d7fb8.lovable.app-1780473522328.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6606b433-5668-49b8-a982-d860820d6198/id-preview-b2400dfe--ae8d141b-ca31-443a-a1a4-382d7f4d7fb8.lovable.app-1780473522328.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/eI34CarDmSWUXO3joaBWaHFRGFl1/social-images/social-1780578963254-Captura_de_ecrã_2026-06-04_141547.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/eI34CarDmSWUXO3joaBWaHFRGFl1/social-images/social-1780578963254-Captura_de_ecrã_2026-06-04_141547.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
