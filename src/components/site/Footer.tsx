@@ -17,7 +17,7 @@ const NAV = [
 const CONTACT_ITEMS = [
   { Icon: Phone, value: SITE.phone, href: `tel:${SITE.phone}` },
   { Icon: Mail, value: SITE.email, href: `mailto:${SITE.email}` },
-  { Icon: MapPin, value: SITE.address, href: "#" },
+  { Icon: MapPin, value: SITE.address, href: SITE.mapsUrl },
 ];
 
 export function Footer() {
@@ -46,10 +46,12 @@ export function Footer() {
 
           {/* Social icons */}
           <div className="flex gap-2">
-            {SOCIAL.map(({ Icon, label }) => (
+            {SOCIAL.map(({ Icon, label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="flex h-9 w-9 items-center justify-center border transition-colors"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.35)" }}

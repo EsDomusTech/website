@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Menu, X, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Menu, X, ChevronDown } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 type SubItem = { label: string; to: string };
@@ -55,30 +55,24 @@ const NAV_LINKS: NavLink[] = [
     to: "/blog",
   },
   { label: "Contacto", to: "/contacto" },
+  {
+    label: "Rascunho",
+    children: [
+      { label: "Portfolio Grid Filter", to: "/projetos/filtro" },
+      { label: "Portfolio Fancy", to: "/projetos/fancy" },
+      { label: "Portfolio Fancy Filter", to: "/projetos/fancy-filtro" },
+      { label: "Portfolio List", to: "/projetos/lista" },
+      { label: "Gallery Masonry", to: "/galeria/masonry" },
+    ],
+  },
 ];
-
-function XIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" width={14} height={14} fill="currentColor" className={className} aria-hidden>
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
-    </svg>
-  );
-}
-
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" width={14} height={14} fill="currentColor" className={className} aria-hidden>
-      <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12v-3.2a5.78 5.78 0 0 0-.78-.05A5.79 5.79 0 1 0 15.64 15.4V9.01a7.36 7.36 0 0 0 4.36 1.42V7.3a4.28 4.28 0 0 1-3.4-1.48Z" />
-    </svg>
-  );
-}
 
 export const SOCIAL = [
-  { Icon: Facebook, label: "Facebook" },
-  { Icon: Instagram, label: "Instagram" },
-  { Icon: XIcon, label: "X" },
-  { Icon: TikTokIcon, label: "TikTok" },
+  { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
+  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
+  { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
 ];
+
 
 function Logo() {
   return (
@@ -269,15 +263,27 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            type="button"
-            className="text-foreground xl:hidden"
-            aria-label="Abrir menu"
-            onClick={() => setMobileOpen((v) => !v)}
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Mobile: lang + CTA + toggle — always visible */}
+          <div className="flex items-center gap-4 xl:hidden">
+            <LangSelector />
+            <Link
+              to="/contacto"
+              className="tracked inline-flex items-center px-5 py-3 text-[10px] font-medium text-white transition-colors"
+              style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
+            >
+              Orçamento
+            </Link>
+            <button
+              type="button"
+              className="flex h-11 w-11 items-center justify-center text-foreground"
+              aria-label="Abrir menu"
+              onClick={() => setMobileOpen((v) => !v)}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile menu */}
