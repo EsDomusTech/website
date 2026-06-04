@@ -329,17 +329,25 @@ export function Navbar() {
                   )}
                 </li>
               ))}
-              <li className="pt-4">
-                <Link
-                  to="/contacto"
-                  onClick={() => setMobileOpen(false)}
-                  className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white"
-                  style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
-                >
-                  Pedir Orçamento
-                </Link>
-              </li>
             </ul>
+
+            {/* Always-visible bottom bar: lang + CTA */}
+            <div
+              className="container-1100 flex items-center justify-between border-t py-4"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <LangSelector />
+              <Link
+                to="/contacto"
+                onClick={() => setMobileOpen(false)}
+                className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white"
+                style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
+              >
+                Pedir Orçamento
+              </Link>
+            </div>
           </div>
         )}
       </header>
