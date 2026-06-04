@@ -1,23 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { VideoTestimonials } from "@/components/site/VideoTestimonials";
 import { SectionTitle } from "@/components/site/SectionTitle";
+import { Team } from "@/components/site/Team";
 import { SITE } from "@/lib/site-data";
 
 const VALUES = [
   {
+    num: "01",
     title: "Sustentabilidade",
     text: "Construímos com materiais responsáveis e soluções de eficiência energética que reduzem a pegada de carbono.",
   },
   {
-    title: "Rigor",
+    num: "02",
+    title: "Rigor Técnico",
     text: "Cada projeto é gerido com precisão técnica, prazos claros e controlo de qualidade em todas as fases.",
   },
   {
+    num: "03",
     title: "Personalização",
     text: "Desenhamos espaços únicos, adaptados ao estilo de vida, ao orçamento e às ambições de cada cliente.",
+  },
+  {
+    num: "04",
+    title: "Inovação Modular",
+    text: "Integramos domótica e tecnologias de construção de ponta para criar habitações preparadas para o futuro.",
   },
 ];
 
@@ -60,6 +70,7 @@ function EmpresaPage() {
         breadcrumbs={[{ label: "Início", to: "/" }, { label: "Empresa" }]}
       />
 
+      {/* História */}
       <section className="section-pad">
         <div className="container-1100 grid items-center gap-12 md:grid-cols-2">
           <div>
@@ -93,30 +104,83 @@ function EmpresaPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      {/* Valores — layout assimétrico Stitch: título esq 5/12 + grid direita 7/12 */}
+      <section className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
         <div className="container-1100">
-          <SectionTitle first="OS NOSSOS" second="VALORES" />
-          <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-3">
-            {VALUES.map((v) => (
-              <div key={v.title} className="bg-white p-10">
-                <h3 className="tracked text-[13px] text-foreground">{v.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+            {/* Left: título grande */}
+            <div className="md:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="block h-0.5 w-8" style={{ backgroundColor: "var(--gold)" }} />
+                  <span
+                    className="tracked text-[11px] font-semibold"
+                    style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
+                  >
+                    O Que Nos Define
+                  </span>
+                </div>
+                <h2
+                  className="text-[34px] font-extrabold uppercase leading-tight md:text-[44px]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  PRECISÃO EM{" "}
+                  <span style={{ color: "var(--gold)" }}>CADA DETALHE</span>
+                </h2>
+              </motion.div>
+            </div>
+
+            {/* Right: 2×2 grid de valores numerados */}
+            <div className="md:col-span-7">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                {VALUES.map((v, i) => (
+                  <motion.div
+                    key={v.num}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                  >
+                    <h4
+                      className="tracked mb-3 text-[11px] font-bold text-foreground"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {v.num} / {v.title.toUpperCase()}
+                    </h4>
+                    <p className="text-[14px] leading-relaxed text-muted-foreground">{v.text}</p>
+                  </motion.div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section style={{ backgroundColor: "var(--logo-strip)" }}>
+      {/* Stats */}
+      <section style={{ backgroundColor: "var(--dark-section)" }}>
         <div className="container-1100 grid grid-cols-2 gap-10 py-20 text-center md:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label}>
+          {STATS.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
               <p className="font-display text-5xl font-semibold text-gold">{s.value}</p>
-              <p className="tracked mt-3 text-[11px] text-muted-foreground">{s.label}</p>
-            </div>
+              <p className="tracked mt-3 text-[11px] text-white/50">{s.label}</p>
+            </motion.div>
           ))}
         </div>
       </section>
+
+      {/* Equipa — secção Stitch 4-col portrait grid */}
+      <Team />
 
       <VideoTestimonials />
       <ClientLogos />
