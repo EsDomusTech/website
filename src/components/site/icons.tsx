@@ -1,4 +1,6 @@
-type IconProps = { className?: string; size?: number; style?: React.CSSProperties };
+import type { CSSProperties } from "react";
+
+type IconProps = { className?: string; size?: number; style?: CSSProperties };
 
 const base = (size = 48) => ({
   width: size,
