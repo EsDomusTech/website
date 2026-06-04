@@ -7,9 +7,10 @@ export const SITE = {
   name: "DomusTech",
   domain: "https://domustech.lovable.app",
   tagline: "Casas Modulares Inteligentes no Porto",
-  phone: "+351 220 000 000",
-  email: "ola@domustech.pt",
-  address: "Rua das Flores 100, 4050-262 Porto",
+  phone: "+351 938 802 664",
+  email: "geral@esdomustech.com",
+  address: "Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha",
+  mapsUrl: "https://maps.app.goo.gl/LJQN6T5pS541ABgT6",
 } as const;
 
 export type Service = {
