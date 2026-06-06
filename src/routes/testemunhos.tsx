@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { SectionTitle } from "@/components/site/SectionTitle";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { SITE } from "@/lib/site-data";
 
@@ -14,8 +11,7 @@ const TESTIMONIALS = [
     name: "Maria Fernandes",
     role: "Proprietária, Villa Atlântico",
     project: "Foz do Douro, Porto · 2025",
-    avatar: "https://picsum.photos/seed/avatar1/200/200",
-    stars: 5,
+    image: "https://picsum.photos/seed/test-img1/800/600",
   },
   {
     num: "02",
@@ -23,8 +19,7 @@ const TESTIMONIALS = [
     name: "João Almeida",
     role: "Diretor, Edifício Ribeira",
     project: "Ribeira, Porto · 2024",
-    avatar: "https://picsum.photos/seed/avatar2/200/200",
-    stars: 5,
+    image: "https://picsum.photos/seed/test-img2/800/600",
   },
   {
     num: "03",
@@ -32,8 +27,7 @@ const TESTIMONIALS = [
     name: "Sofia Carvalho",
     role: "Proprietária, Loft Boavista",
     project: "Boavista, Porto · 2025",
-    avatar: "https://picsum.photos/seed/avatar3/200/200",
-    stars: 5,
+    image: "https://picsum.photos/seed/test-img3/800/600",
   },
   {
     num: "04",
@@ -41,26 +35,7 @@ const TESTIMONIALS = [
     name: "Pedro Costa",
     role: "Gestor, Espaço Comercial Matosinhos",
     project: "Matosinhos, Porto · 2023",
-    avatar: "https://picsum.photos/seed/avatar4/200/200",
-    stars: 5,
-  },
-  {
-    num: "05",
-    quote: "A nossa casa modular ficou pronta em tempo recorde e com uma qualidade de construção que rival com qualquer projeto tradicional. Fantásticos.",
-    name: "Carla Mendes",
-    role: "Proprietária, Moradia Gaia",
-    project: "Vila Nova de Gaia · 2024",
-    avatar: "https://picsum.photos/seed/avatar5/200/200",
-    stars: 5,
-  },
-  {
-    num: "06",
-    quote: "O acompanhamento foi exemplar — desde o primeiro esboço até à entrega das chaves. Sabem exatamente o que fazem e comunicam com total transparência.",
-    name: "António Ramos",
-    role: "Proprietário, Casa Braga",
-    project: "Braga · 2025",
-    avatar: "https://picsum.photos/seed/avatar6/200/200",
-    stars: 5,
+    image: null,
   },
 ];
 
@@ -87,105 +62,249 @@ export const Route = createFileRoute("/testemunhos")({
 
 function TestemunhosPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="Clientes"
-        titleFirst="Os Nossos"
-        titleSecond="Testemunhos"
-        subtitle="Histórias reais de quem confiou na DomusTech para construir o espaço dos seus sonhos."
-        image="https://picsum.photos/seed/testimonials-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Testemunhos" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Stats */}
-      <section style={{ backgroundColor: "var(--dark-section)" }}>
-        <div className="container-1100 grid grid-cols-2 md:grid-cols-4">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex flex-col items-center justify-center py-12"
-              style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}
-            >
-              <p
-                className="text-[44px] leading-none"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--gold)" }}
+      {/* Hero — display-lg sem imagem, com divider gold */}
+      <header style={{ paddingTop: 80, paddingBottom: 64 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <span
+                className="s-label-caps mb-4 block"
+                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
               >
-                {s.value}
-              </p>
-              <p className="tracked mt-3 text-center text-[10px] font-medium" style={{ color: "rgba(255,255,255,0.4)" }}>
-                {s.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials grid */}
-      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-        <div className="container-1100">
-          <div className="mb-16 text-center">
-            <SectionTitle eyebrow="Depoimentos" first="O Que Dizem" second="os Clientes" />
+                Clientes
+              </span>
+              <h1 className="s-display-lg" style={{ color: "#000000" }}>
+                Parcerias <br />
+                <span style={{ marginLeft: 80, display: "inline-block" }}>Elevadas.</span>
+              </h1>
+            </div>
           </div>
+        </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
+        {/* Divider especial gold/cinza */}
+        <div
+          className="mt-16"
+          style={{
+            height: 4,
+            background: "linear-gradient(to right, #BE9355 12%, #eeeeee 12%)",
+          }}
+        />
+      </header>
+
+      {/* Stats — fundo escuro */}
+      <section style={{ backgroundColor: "#1b1b1b" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {STATS.map((s, i) => (
               <motion.div
-                key={t.num}
-                initial={{ opacity: 0, y: 28 }}
+                key={s.label}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.55, delay: i * 0.07 }}
-                className="relative flex flex-col bg-white p-8"
-                style={{ border: "1px solid var(--border)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex flex-col items-center justify-center py-16 text-center"
+                style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}
               >
-                {/* Number */}
-                <span
-                  className="absolute right-7 top-6 select-none text-[48px] leading-none"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "rgba(0,0,0,0.04)" }}
-                  aria-hidden
+                <p
+                  className="s-display-lg leading-none"
+                  style={{ color: "#BE9355" }}
                 >
-                  {t.num}
-                </span>
-
-                {/* Stars */}
-                <div className="mb-5 flex gap-1">
-                  {Array.from({ length: t.stars }).map((_, si) => (
-                    <Star key={si} className="h-3.5 w-3.5 fill-current" style={{ color: "var(--gold)" }} />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <Quote className="mb-4 h-5 w-5" style={{ color: "var(--gold)" }} />
-                <p className="flex-1 text-[14px] font-light leading-[1.9]" style={{ color: "var(--muted-foreground)" }}>
-                  {t.quote}
+                  {s.value}
                 </p>
-
-                {/* Divider */}
-                <div className="my-6 h-px" style={{ backgroundColor: "var(--border)" }} />
-
-                {/* Author */}
-                <div className="flex items-center gap-4">
-                  <img src={t.avatar} alt={t.name} className="h-12 w-12 object-cover" />
-                  <div>
-                    <p
-                      className="text-[13px]"
-                      style={{ fontFamily: "var(--font-display)", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--foreground)" }}
-                    >
-                      {t.name}
-                    </p>
-                    <p className="text-[11px] font-light" style={{ color: "var(--muted-foreground)" }}>{t.role}</p>
-                    <p className="mt-0.5 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)", letterSpacing: "0.1em" }}>
-                      {t.project}
-                    </p>
-                  </div>
-                </div>
+                <p className="s-label-caps mt-3" style={{ color: "#858383" }}>
+                  {s.label}
+                </p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testemunhos — padrões alternados per UI.md */}
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
+          <div style={{ display: "flex", flexDirection: "column", gap: 96 }}>
+
+            {/* Padrão 1 — Citação grande com imagem (odd) */}
+            {TESTIMONIALS.filter((_, i) => i % 2 === 0).map((t, idx) => (
+              <motion.div
+                key={t.num}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="grid grid-cols-12 gap-8 items-center"
+              >
+                {/* Col texto — 7/12 */}
+                <div className="col-span-12 md:col-span-7">
+                  <p className="s-label-caps mb-8" style={{ color: "#999999" }}>
+                    {t.num} / CASO DE ESTUDO
+                  </p>
+                  <p
+                    className="s-headline-lg mb-12 relative italic"
+                    style={{ color: "#000000" }}
+                  >
+                    <span
+                      className="absolute pointer-events-none select-none"
+                      style={{
+                        left: -40,
+                        top: 0,
+                        color: "#BE9355",
+                        opacity: 0.3,
+                        fontSize: 96,
+                        fontFamily: "Oswald, sans-serif",
+                        lineHeight: 1,
+                      }}
+                      aria-hidden
+                    >
+                      "
+                    </span>
+                    {t.quote}
+                  </p>
+                  <div
+                    className="flex justify-between items-end border-l pl-6 py-2"
+                    style={{ borderColor: "#BE9355" }}
+                  >
+                    <div>
+                      <p className="s-headline-md" style={{ color: "#000000" }}>{t.name}</p>
+                      <p className="s-label-caps mt-1" style={{ color: "#999999" }}>{t.role}</p>
+                    </div>
+                    {t.image && (
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="object-cover"
+                        style={{ width: 128, height: 80, filter: "grayscale(1) opacity(0.5)", transition: "all 0.3s" }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0) opacity(1)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.filter = "grayscale(1) opacity(0.5)"; }}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                {/* Col imagem — 4/12, mt-20 stagger */}
+                {t.image && (
+                  <div
+                    className="col-span-12 md:col-span-4 md:col-start-9 hidden md:block"
+                    style={{ marginTop: 80 }}
+                  >
+                    <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+
+            {/* Padrão 2 — Card com bg claro + estrelas (even) */}
+            {TESTIMONIALS.filter((_, i) => i % 2 !== 0).map((t) => (
+              <motion.div
+                key={t.num}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div
+                  className="h-px mb-24"
+                  style={{ backgroundColor: "#eeeeee" }}
+                />
+                <div className="grid grid-cols-12 gap-8">
+                  <div className="col-span-12 md:col-span-7">
+                    <p className="s-label-caps mb-8" style={{ color: "#999999" }}>
+                      {t.num} / TESTEMUNHO
+                    </p>
+                    <p className="s-headline-lg mb-12" style={{ color: "#000000" }}>
+                      {t.quote}
+                    </p>
+                    <div
+                      className="border-l pl-6 py-2"
+                      style={{ borderColor: "#BE9355" }}
+                    >
+                      <p className="s-headline-md" style={{ color: "#000000" }}>{t.name}</p>
+                      <p className="s-label-caps mt-1" style={{ color: "#999999" }}>{t.role}</p>
+                      <p className="s-label-caps mt-1" style={{ color: "#BE9355" }}>{t.project}</p>
+                    </div>
+                  </div>
+                  {t.image && (
+                    <div className="col-span-12 md:col-span-4 md:col-start-9 hidden md:block" style={{ marginTop: 80 }}>
+                      <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* Padrão 3 — Card com bg claro + texto + logos placeholder */}
+      <section style={{ paddingBlock: 120, backgroundColor: "#f3f3f3" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-6">
+              <span className="material-symbols-outlined text-4xl mb-4 block" style={{ color: "#BE9355" }}>
+                star_rate
+              </span>
+              <h3 className="s-headline-md mb-6" style={{ color: "#000000" }}>
+                "Uma equipa que ouve e executa com perfeição."
+              </h3>
+              <p className="s-body-lg" style={{ color: "#999999", maxWidth: 480 }}>
+                A confiança dos nossos clientes é o maior reconhecimento. Construímos relações duradouras, projeto após projeto.
+              </p>
+            </div>
+            <div className="col-span-12 md:col-span-6">
+              <div className="grid grid-cols-2 gap-4">
+                {["CF", "GB", "AM", "PR"].map((initials) => (
+                  <div
+                    key={initials}
+                    className="aspect-square flex items-center justify-center"
+                    style={{ backgroundColor: "#ffffff", border: "1px solid #eeeeee" }}
+                  >
+                    <span
+                      className="s-headline-lg"
+                      style={{ color: "#000000", opacity: 0.15 }}
+                    >
+                      {initials}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final — bg escuro */}
+      <section style={{ backgroundColor: "#1b1b1b", paddingBlock: 120 }}>
+        <div className="s-wrap text-center">
+          <h2
+            className="s-headline-lg mb-12"
+            style={{ color: "#ffffff", letterSpacing: "0.2em" }}
+          >
+            Pronto para o Seu Projeto?
+          </h2>
+          <a
+            href="/contacto"
+            className="s-label-caps inline-flex items-center gap-4 border px-12 py-5 transition-all duration-300 hover:bg-[#BE9355] hover:border-[#BE9355]"
+            style={{ color: "#ffffff", borderColor: "#ffffff" }}
+          >
+            Pedir Consulta Gratuita
+            <span className="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
       </section>
 

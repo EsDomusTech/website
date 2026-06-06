@@ -270,13 +270,13 @@ function ContactoPage() {
                     />
                   </div>
 
-                  <div className="flex justify-end pt-4">
+                  <div className="pt-4">
                     <button
                       type="submit"
-                      className="s-label-caps inline-flex items-center gap-3 px-12 py-5 text-white transition-colors duration-300"
-                      style={{ backgroundColor: "#000000" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#BE9355")}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000000")}
+                      className="s-label-caps w-full inline-flex items-center justify-center gap-3 py-5 text-white transition-colors duration-300"
+                      style={{ backgroundColor: "#BE9355" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#000000")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#BE9355")}
                     >
                       Enviar Mensagem
                       <span aria-hidden>→</span>

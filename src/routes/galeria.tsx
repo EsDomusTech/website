@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 
@@ -34,18 +33,31 @@ export const Route = createFileRoute("/galeria")({
 
 function GaleriaPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="Portfólio Visual"
-        titleFirst="Image"
-        titleSecond="Gallery Grid"
-        subtitle="Uma curadoria de imagens que documentam a precisão estrutural e a poesia espacial dos nossos projetos."
-        image="https://picsum.photos/seed/gallery-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Galeria", to: "/galeria" }, { label: "Image Gallery Grid" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-        <div className="container-1100">
+      {/* Hero — display-lg editorial, sem imagem */}
+      <header style={{ paddingTop: 120, paddingBottom: 64 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8 items-end">
+            <div className="col-span-12 md:col-span-8">
+              <span className="s-label-caps mb-6 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+                Portfólio Visual
+              </span>
+              <h1 className="s-display-lg leading-none" style={{ color: "#000000" }}>
+                Galeria de <span style={{ color: "#999999" }}>Imagens</span>
+              </h1>
+            </div>
+            <div className="col-span-12 md:col-span-4 pb-4">
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 300 }}>
+                Uma curadoria de imagens que documentam a precisão estrutural e a poesia espacial dos nossos projetos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section style={{ paddingBottom: 120 }}>
+        <div className="s-wrap">
           <div className="grid grid-cols-2 gap-1 lg:grid-cols-3">
             {GALLERY_ITEMS.map((item, i) => (
               <motion.div

@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Linkedin, Instagram } from "lucide-react";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { TEAM, SITE } from "@/lib/site-data";
@@ -52,23 +51,33 @@ export const Route = createFileRoute("/equipa")({
 
 function EquipaPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="As Pessoas"
-        titleFirst="A Nossa"
-        titleSecond="Equipa"
-        subtitle="Um grupo multidisciplinar de arquitectos, engenheiros e designers unidos pela mesma paixão: criar espaços extraordinários."
-        image="https://picsum.photos/seed/team-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Empresa", to: "/empresa" }, { label: "Equipa" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
+
+      {/* Hero — display-lg, sem imagem */}
+      <header style={{ paddingBlock: "120px 0" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+                As Pessoas
+              </span>
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                A Nossa Equipa
+              </h1>
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
+                Um grupo multidisciplinar de arquitectos, engenheiros e designers unidos pela mesma paixão: criar espaços extraordinários.
+              </p>
+            </div>
+            <div className="col-span-4 self-end hidden md:block">
+              <div className="h-px w-full mb-8" style={{ backgroundColor: "#c4c7c7" }} />
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Team grid */}
-      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-        <div className="container-1100">
-          <div className="mb-16 text-center">
-            <SectionTitle eyebrow="As Pessoas Por Trás do Projeto" first="A Força" second="Criativa" />
-          </div>
-
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
           <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
             {EXTENDED_TEAM.map((member, i) => (
               <motion.div
