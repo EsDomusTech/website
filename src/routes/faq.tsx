@@ -37,33 +37,32 @@ export const Route = createFileRoute("/faq")({
   component: FaqPage,
 });
 
+/* Accordion item — estrutura exacta do Stitch */
 function AccordionItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b" style={{ borderColor: "#eeeeee" }}>
+    <div
+      className="group border-b"
+      style={{ borderColor: "#eeeeee" }}
+    >
       <button
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="group flex w-full items-center justify-between gap-4 py-8 text-left"
+        className="w-full flex justify-between items-center py-8 text-left focus:outline-none"
       >
         <span
-          className="text-[18px] uppercase leading-snug"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            letterSpacing: "0.02em",
-            color: "var(--foreground)",
-          }}
+          className="s-headline-md group-hover:text-[#BE9355] transition-colors"
+          style={{ color: "#000000" }}
         >
           {q}
         </span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-          className="shrink-0 text-[22px] font-light leading-none"
-          style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
+          transition={{ duration: 0.3 }}
+          className="shrink-0 s-headline-md"
+          style={{ color: "#BE9355" }}
           aria-hidden
         >
           +
@@ -73,19 +72,18 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
-            key="answer"
+            key="body"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
             style={{ overflow: "hidden" }}
           >
-            <p
-              className="pb-8 pr-12 text-[15px] font-light leading-[1.85]"
-              style={{ color: "var(--muted-foreground)" }}
-            >
-              {a}
-            </p>
+            <div className="pb-12 pr-12">
+              <p className="s-body-md" style={{ color: "#444748" }}>
+                {a}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -122,117 +120,101 @@ function FaqPage() {
   ];
 
   return (
-    <main>
-      {/* Display-lg hero — sem PageHeader, à risca do Stitch */}
-      <header className="container-1100 pb-12 pt-24">
-        <div className="grid md:grid-cols-12">
-          <div className="md:col-span-8">
-            <h1
-              className="mb-8 uppercase"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 400,
-                fontSize: "clamp(52px, 6vw, 80px)",
-                letterSpacing: "0.05em",
-                color: "var(--foreground)",
-                lineHeight: 1.05,
-              }}
-            >
-              Perguntas <br />
-              <span style={{ color: "var(--gold)" }}>Frequentes</span>
-            </h1>
-            <p
-              className="max-w-2xl text-[18px] font-light leading-[1.7]"
-              style={{ color: "var(--muted-foreground)" }}
-            >
-              A transparência é a base do nosso processo. Reunimos as respostas às perguntas
-              mais frequentes para o ajudar a navegar desde o conceito até à entrega.
-            </p>
+    <main style={{ backgroundColor: "#f9f9f9" }}>
+
+      {/* Hero header — display-lg, à risca do Stitch */}
+      <header style={{ paddingBlock: "120px 0" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                Perguntas <br />
+                <span style={{ color: "#BE9355" }}>Frequentes</span>
+              </h1>
+              <p
+                className="s-body-lg"
+                style={{ color: "#444748", maxWidth: 672 }}
+              >
+                A transparência é a base do nosso processo. Reunimos as respostas às perguntas
+                mais frequentes para o ajudar a navegar desde o conceito até à entrega.
+              </p>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* FAQ grid: sidebar 3col + main 9col */}
-      <section className="section-pad">
-        <div className="container-1100 grid gap-12 md:grid-cols-12">
-          {/* Sidebar sticky — categorias */}
-          <aside className="hidden md:block md:col-span-3">
-            <div className="sticky top-32">
-              <p
-                className="tracked mb-6 text-[11px] uppercase"
-                style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
-              >
-                Categorias
-              </p>
-              <ul className="space-y-4">
-                {categories.map((cat) => (
-                  <li key={cat.id}>
-                    <a
-                      href={`#${cat.id}`}
-                      className="text-[12px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-gold"
-                      style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
-                    >
-                      {cat.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+      {/* FAQ body — sidebar 3col + main 9col */}
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
 
-          {/* Main content — acordeões por categoria */}
-          <div className="md:col-span-9 space-y-16">
-            {categories.map((cat) => (
-              <section key={cat.id} id={cat.id}>
-                <h2
-                  className="mb-8 border-b pb-4 text-[18px] uppercase tracking-[0.08em]"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 400,
-                    color: "var(--foreground)",
-                    borderColor: "#eeeeee",
-                  }}
+            {/* Sidebar — categorias, sticky */}
+            <aside className="hidden md:block col-span-3">
+              <div className="sticky top-40">
+                <span
+                  className="s-label-caps mb-6 block"
+                  style={{ color: "#BE9355" }}
                 >
-                  {cat.num} / {cat.label}
-                </h2>
-                {cat.items.map((f) => (
-                  <AccordionItem key={f.q} q={f.q} a={f.a} />
-                ))}
-              </section>
-            ))}
-
-            {/* CTA inline */}
-            <div
-              className="flex flex-col items-start justify-between gap-8 p-12 sm:flex-row sm:items-center"
-              style={{ backgroundColor: "var(--logo-strip)" }}
-            >
-              <h3
-                className="uppercase leading-tight"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 400,
-                  fontSize: "32px",
-                  color: "var(--foreground)",
-                }}
-              >
-                Ainda tem <br />dúvidas?
-              </h3>
-              <div className="max-w-sm">
-                <p className="mb-6 text-[14px] font-light" style={{ color: "var(--muted-foreground)" }}>
-                  A nossa equipa está disponível para uma consulta personalizada sobre o seu projeto.
-                </p>
-                <a
-                  href="/contacto"
-                  className="inline-block border px-10 py-4 text-[12px] font-medium uppercase tracking-[0.18em] transition-all duration-300 hover:bg-foreground hover:text-white"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    borderColor: "var(--foreground)",
-                    color: "var(--foreground)",
-                  }}
-                >
-                  Agendar Consulta
-                </a>
+                  Categorias
+                </span>
+                <ul className="space-y-4">
+                  {categories.map((cat) => (
+                    <li key={cat.id}>
+                      <a
+                        href={`#${cat.id}`}
+                        className="s-label-caps transition-colors hover:text-[#BE9355]"
+                        style={{ color: "#000000" }}
+                      >
+                        {cat.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            </aside>
+
+            {/* Main — accordeões por categoria */}
+            <div className="col-span-12 md:col-span-9 space-y-12">
+              {categories.map((cat) => (
+                <section id={cat.id} key={cat.id} className="space-y-0">
+                  <h2
+                    className="s-headline-md border-b pb-4 mb-8"
+                    style={{ color: "#000000", borderColor: "#eeeeee" }}
+                  >
+                    {cat.num} / {cat.label}
+                  </h2>
+                  {cat.items.map((f) => (
+                    <AccordionItem key={f.q} q={f.q} a={f.a} />
+                  ))}
+                </section>
+              ))}
+
+              {/* Still have questions — Stitch CTA box */}
+              <section
+                className="mt-24 flex flex-col md:flex-row items-center justify-between p-12 md:p-20"
+                style={{ backgroundColor: "#eeeeee" }}
+              >
+                <div className="mb-8 md:mb-0">
+                  <h3
+                    className="s-headline-lg leading-tight"
+                    style={{ color: "#000000" }}
+                  >
+                    Ainda tem <br />perguntas?
+                  </h3>
+                </div>
+                <div style={{ maxWidth: 400 }}>
+                  <p className="s-body-md mb-8" style={{ color: "#444748" }}>
+                    A nossa equipa está disponível para consultas personalizadas sobre o seu projeto.
+                  </p>
+                  <a
+                    href="/contacto"
+                    className="s-label-caps inline-block border px-10 py-4 transition-all duration-300 hover:bg-[#000000] hover:text-white"
+                    style={{ borderColor: "#000000", color: "#000000" }}
+                  >
+                    Agendar Consulta
+                  </a>
+                </div>
+              </section>
             </div>
           </div>
         </div>

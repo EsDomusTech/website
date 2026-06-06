@@ -1,35 +1,34 @@
 import { Link } from "@tanstack/react-router";
-import { SOCIAL } from "./Navbar";
-import { SITE } from "@/lib/site-data";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { SITE } from "@/lib/site-data";
 
-const QUICK_LINKS_A = [
+const SOCIAL = [
+  { label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
+];
+
+const COL_A = [
   { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
   { label: "Projetos", to: "/projetos" },
 ] as const;
 
-const QUICK_LINKS_B = [
+const COL_B = [
   { label: "Privacidade", to: "/politica-de-privacidade" },
   { label: "Termos", to: "/termos-e-condicoes" },
 ] as const;
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "var(--logo-strip)" }}>
-      <div className="container-1100 grid gap-12 py-20 sm:grid-cols-3">
-        {/* Col 1: Brand + tagline + socials */}
-        <div>
-          <p
-            className="mb-5 text-[20px] tracking-[0.12em] uppercase"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 500, color: "var(--foreground)" }}
-          >
-            {SITE.name}
+    <footer style={{ backgroundColor: "#eeeeee", paddingBlock: 120 }}>
+      <div className="s-wrap grid grid-cols-12 gap-8 items-start">
+
+        {/* Col 1 — 4/12: Brand + tagline + socials */}
+        <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
+          <p className="s-headline-md mb-8" style={{ color: "#000000" }}>
+            {SITE.name.toUpperCase()}
           </p>
-          <p
-            className="mb-8 max-w-[240px] text-[14px] font-light leading-relaxed"
-            style={{ color: "var(--muted-foreground)" }}
-          >
+          <p className="s-body-md mb-8" style={{ color: "#444748", maxWidth: 280 }}>
             Construção modular com identidade própria — design rigoroso, prazos certos, no Porto.
           </p>
           <div className="flex gap-6">
@@ -39,8 +38,8 @@ export function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-[color:var(--gold)]"
-                style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
+                className="s-label-caps transition-colors hover:text-[#BE9355]"
+                style={{ color: "#000000" }}
               >
                 {label}
               </a>
@@ -48,50 +47,39 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Col 2: Contact */}
-        <div>
-          <h4
-            className="tracked mb-8 text-[12px] uppercase"
-            style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
-          >
+        {/* Col 2 — 4/12: Contact */}
+        <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
+          <h4 className="s-headline-md mb-8" style={{ color: "#000000" }}>
             Contacto
           </h4>
           <div className="space-y-4">
-            {[
-              { Icon: Phone, value: SITE.phone, href: `tel:${SITE.phone}` },
-              { Icon: Mail, value: SITE.email, href: `mailto:${SITE.email}` },
-              { Icon: MapPin, value: SITE.address, href: SITE.mapsUrl },
-            ].map(({ Icon, value, href }) => (
-              <a
-                key={value}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-start gap-3 text-[14px] font-light transition-colors hover:text-[color:var(--gold)]"
-                style={{ color: "var(--muted-foreground)" }}
-              >
-                <Icon className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
-                {value}
-              </a>
-            ))}
+            <p className="s-body-md flex items-center gap-4" style={{ color: "#444748" }}>
+              <Phone size={18} style={{ color: "#BE9355", flexShrink: 0 }} />
+              {SITE.phone}
+            </p>
+            <p className="s-body-md flex items-center gap-4" style={{ color: "#444748" }}>
+              <Mail size={18} style={{ color: "#BE9355", flexShrink: 0 }} />
+              {SITE.email}
+            </p>
+            <p className="s-body-md flex items-start gap-4" style={{ color: "#444748" }}>
+              <MapPin size={18} style={{ color: "#BE9355", flexShrink: 0, marginTop: 4 }} />
+              {SITE.address}
+            </p>
           </div>
         </div>
 
-        {/* Col 3: Quick Links */}
-        <div>
-          <h4
-            className="tracked mb-8 text-[12px] uppercase"
-            style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
-          >
+        {/* Col 3 — 4/12: Quick Links */}
+        <div className="col-span-12 md:col-span-4">
+          <h4 className="s-headline-md mb-8" style={{ color: "#000000" }}>
             Links Rápidos
           </h4>
           <div className="grid grid-cols-2 gap-4">
-            <ul className="space-y-3">
-              {QUICK_LINKS_A.map(({ label, to }) => (
+            <ul className="space-y-4">
+              {COL_A.map(({ label, to }) => (
                 <li key={label}>
                   <Link
                     to={to}
-                    className="text-[14px] font-light uppercase transition-colors hover:text-[color:var(--foreground)]"
+                    className="s-body-md uppercase transition-colors hover:text-[#000000]"
                     style={{ color: "#999999" }}
                   >
                     {label}
@@ -99,12 +87,12 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <ul className="space-y-3">
-              {QUICK_LINKS_B.map(({ label, to }) => (
+            <ul className="space-y-4">
+              {COL_B.map(({ label, to }) => (
                 <li key={label}>
                   <Link
                     to={to}
-                    className="text-[14px] font-light uppercase transition-colors hover:text-[color:var(--foreground)]"
+                    className="s-body-md uppercase transition-colors hover:text-[#000000]"
                     style={{ color: "#999999" }}
                   >
                     {label}
@@ -114,22 +102,17 @@ export function Footer() {
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t" style={{ borderColor: "var(--border)" }}>
-        <div className="container-1100 flex flex-col items-center gap-3 py-5 sm:flex-row sm:justify-between">
-          <p
-            className="text-[11px] font-light uppercase tracking-[0.14em]"
-            style={{ color: "#999999" }}
-          >
+        {/* Bottom bar */}
+        <div
+          className="col-span-12 mt-20 flex flex-col items-center gap-4 border-t pt-20 md:flex-row md:justify-between"
+          style={{ borderColor: "#c4c7c7" }}
+        >
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "#999999" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
-          <p
-            className="text-[11px] font-light uppercase tracking-[0.14em]"
-            style={{ color: "#999999" }}
-          >
-            Desenvolvido com dedicação
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "#999999" }}>
+            Porto, Portugal
           </p>
         </div>
       </div>
