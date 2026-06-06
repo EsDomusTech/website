@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { Services } from "@/components/site/Services";
-import { SectionTitle } from "@/components/site/SectionTitle";
 import { SERVICES, SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/servicos/")({
@@ -39,36 +37,83 @@ function ServicosPage() {
         breadcrumbs={[{ label: "Início", to: "/" }, { label: "Serviços" }]}
       />
 
-      <section className="section-pad">
+      {/* Intro header */}
+      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
         <div className="container-1100">
-          <SectionTitle first="ÁREAS DE" second="ESPECIALIDADE" />
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {SERVICES.map((s) => (
-              <Link
-                key={s.slug}
-                to="/servicos/$slug"
-                params={{ slug: s.slug }}
-                className="group relative block overflow-hidden bg-white"
+          <div className="grid gap-8 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <p
+                className="tracked mb-4 text-[11px] uppercase"
+                style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
               >
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={s.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="font-display text-2xl font-medium text-foreground">{s.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.excerpt}</p>
-                  <span className="tracked mt-5 inline-block text-[11px] text-gold">Saber mais →</span>
-                </div>
-              </Link>
-            ))}
+                As Nossas Capacidades
+              </p>
+              <h2
+                className="text-[38px] uppercase leading-tight"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.03em", color: "var(--foreground)" }}
+              >
+                Shaping the environment through design
+              </h2>
+            </div>
+          </div>
+
+          {/* Numbered rows */}
+          <div className="mt-16 border-t" style={{ borderColor: "var(--border)" }}>
+            {SERVICES.map((s, i) => {
+              const num = String(i + 1).padStart(2, "0");
+              return (
+                <Link
+                  key={s.slug}
+                  to="/servicos/$slug"
+                  params={{ slug: s.slug }}
+                  className="group block border-b py-10 transition-colors duration-300"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <div className="grid items-center gap-6 md:grid-cols-12">
+                    {/* Number */}
+                    <div className="md:col-span-1">
+                      <span
+                        className="text-[20px] transition-colors duration-300 group-hover:text-[color:var(--foreground)]"
+                        style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#999999" }}
+                      >
+                        {num}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <div className="md:col-span-4">
+                      <h3
+                        className="text-[20px] uppercase"
+                        style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.03em", color: "var(--foreground)" }}
+                      >
+                        {s.name}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <div className="md:col-start-6 md:col-span-5">
+                      <p className="text-[14px] font-light leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+                        {s.excerpt}
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex justify-end md:col-span-1">
+                      <span
+                        className="text-[22px] transition-all duration-500 group-hover:translate-x-2 group-hover:text-[color:var(--gold)]"
+                        style={{ color: "var(--foreground)" }}
+                      >
+                        →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <Services />
       <CtaBand />
     </main>
   );

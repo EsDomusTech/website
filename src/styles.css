@@ -36,7 +36,7 @@
   --color-logo-strip: var(--logo-strip);
   --color-ghost: var(--ghost);
   --font-display: "Oswald", "Segoe UI", sans-serif;
-  --font-body: "Libre Franklin", system-ui, sans-serif;
+  --font-body: "Libre Franklin", "Helvetica Neue", sans-serif;
 }
 
 :root {
@@ -124,7 +124,7 @@
 /* Primary button — architectural black with gold hover */
 @utility btn-primary {
   display: inline-block;
-  background-color: #1b1b1b;
+  background-color: var(--dark-section);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 500;
@@ -133,6 +133,9 @@
   text-transform: uppercase;
   padding: 14px 40px;
   transition: background-color 0.25s, color 0.25s;
+  &:hover {
+    background-color: var(--gold);
+  }
 }
 
 /* Outline button */
@@ -161,4 +164,38 @@
   text-transform: uppercase;
   padding: 13px 39px;
   transition: background-color 0.25s, border-color 0.25s;
+}
+
+/* Gold button — filled gold, white text, dark hover */
+@utility btn-gold {
+  display: inline-block;
+  background-color: var(--gold);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  transition: background-color 0.25s;
+  &:hover {
+    background-color: #d4a968;
+  }
+}
+
+/* Focus ring — keyboard nav */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

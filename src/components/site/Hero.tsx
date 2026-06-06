@@ -111,7 +111,7 @@ export function Hero() {
 
               {/* Subtitle */}
               <motion.p
-                className="mt-6 max-w-[400px] text-[15px] font-light leading-relaxed text-white/60"
+                className="mt-6 max-w-[400px] text-[15px] font-light leading-relaxed text-white/75"
                 style={{ fontFamily: "var(--font-body)" }}
                 custom={0.24}
                 variants={textVariants}
@@ -194,8 +194,8 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Slide counter bottom-right */}
-      <div className="absolute bottom-8 right-8 z-10 flex items-center gap-3">
+      {/* Slide counter bottom-right — above progress bars */}
+      <div className="absolute bottom-10 right-8 z-10 flex items-center gap-3">
         <span
           className="text-[28px] leading-none text-white"
           style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.05em" }}

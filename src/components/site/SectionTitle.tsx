@@ -28,10 +28,11 @@ export function SectionTitle({ eyebrow, first, second, className, align = "cente
           >
             {eyebrow}
           </span>
+          {isCenter && <span className="block h-px w-8" style={{ backgroundColor: "var(--gold)" }} />}
         </div>
       )}
       <h2
-        className={`text-[32px] leading-tight md:text-[46px] ${light ? "text-white" : ""}`}
+        className={`text-[32px] leading-tight md:text-[46px] lg:text-[56px] ${light ? "text-white" : ""}`}
         style={{
           fontFamily: "var(--font-display)",
           fontWeight: 400,
