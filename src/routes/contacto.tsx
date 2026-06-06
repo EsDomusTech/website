@@ -2,7 +2,6 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE } from "@/lib/site-data";
-import { SOCIAL } from "@/components/site/Navbar";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -23,38 +22,45 @@ export const Route = createFileRoute("/contacto")({
   component: ContactoPage,
 });
 
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
+  { label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
+];
+
+const labelClass = "tracked block text-[11px] uppercase mb-2";
 const inputClass =
-  "w-full border-0 border-b bg-transparent py-4 text-[15px] placeholder-[color:rgba(0,0,0,0.25)] outline-none transition-colors focus:border-[color:var(--gold)]";
+  "w-full border-0 border-b bg-transparent py-4 text-[15px] outline-none transition-colors";
 
 function ContactoPage() {
   const [sent, setSent] = useState(false);
 
   return (
     <main>
-      {/* Display-lg heading — no PageHeader */}
+      {/* Display-lg heading — sem PageHeader, à risca do Stitch */}
       <section className="container-1100 pb-12 pt-24">
         <div className="grid md:grid-cols-12">
           <div className="md:col-span-8">
             <h1
-              className="mb-6 uppercase leading-none"
+              className="mb-6 uppercase"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 400,
                 fontSize: "clamp(48px, 7vw, 80px)",
                 letterSpacing: "0.05em",
                 color: "var(--foreground)",
-                lineHeight: "1.1",
+                lineHeight: 1.1,
               }}
             >
-              Vamos construir<br />
+              Vamos construir <br />
               algo <span style={{ color: "var(--gold)" }}>duradouro</span>.
             </h1>
             <p
               className="max-w-xl text-[18px] font-light leading-[1.7]"
               style={{ color: "var(--muted-foreground)" }}
             >
-              O nosso estúdio está localizado no Porto. Recebemos consultas com marcação para
-              discutir a sua visão de espaço e estrutura.
+              O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
+              para discutir a sua visão de espaço e estrutura.
             </p>
           </div>
         </div>
@@ -63,8 +69,9 @@ function ContactoPage() {
       {/* Contact grid */}
       <section className="section-pad">
         <div className="container-1100 grid gap-16 md:grid-cols-12">
-          {/* Contact info — 4 cols */}
+          {/* Info — 4 cols */}
           <div className="space-y-16 md:col-span-4">
+            {/* The Office */}
             <div>
               <h3
                 className="tracked mb-6 text-[11px] uppercase"
@@ -73,13 +80,20 @@ function ContactoPage() {
                 O Escritório
               </h3>
               <p
-                className="text-[20px] leading-relaxed"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--foreground)" }}
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 400,
+                  fontSize: "20px",
+                  letterSpacing: "0.02em",
+                  color: "var(--foreground)",
+                  lineHeight: 1.5,
+                }}
               >
                 {SITE.address}
               </p>
             </div>
 
+            {/* Connect */}
             <div>
               <h3
                 className="tracked mb-6 text-[11px] uppercase"
@@ -90,7 +104,7 @@ function ContactoPage() {
               <div className="space-y-4">
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="flex items-center gap-4 text-[17px] font-light transition-colors hover:text-[color:var(--gold)]"
+                  className="flex items-center gap-4 text-[17px] font-light transition-colors hover:text-gold"
                   style={{ color: "var(--foreground)" }}
                 >
                   <Phone className="h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
@@ -98,10 +112,12 @@ function ContactoPage() {
                 </a>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="flex items-center gap-4 text-[17px] font-light underline underline-offset-8 transition-colors hover:text-[color:var(--gold)]"
+                  className="flex items-center gap-4 text-[17px] font-light transition-colors hover:text-gold"
                   style={{
                     color: "var(--foreground)",
+                    textDecoration: "underline",
                     textDecorationColor: "var(--gold)",
+                    textUnderlineOffset: "8px",
                   }}
                 >
                   <Mail className="h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
@@ -111,7 +127,7 @@ function ContactoPage() {
                   href={SITE.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 text-[17px] font-light transition-colors hover:text-[color:var(--gold)]"
+                  className="flex items-start gap-4 text-[17px] font-light transition-colors hover:text-gold"
                   style={{ color: "var(--foreground)" }}
                 >
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
@@ -120,6 +136,7 @@ function ContactoPage() {
               </div>
             </div>
 
+            {/* Social */}
             <div>
               <h3
                 className="tracked mb-6 text-[11px] uppercase"
@@ -128,13 +145,13 @@ function ContactoPage() {
                 Redes Sociais
               </h3>
               <div className="flex gap-8">
-                {SOCIAL.map(({ label, href }) => (
+                {SOCIAL_LINKS.map(({ label, href }) => (
                   <a
                     key={label}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[12px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-[color:var(--gold)]"
+                    className="text-[12px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-gold"
                     style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
                   >
                     {label}
@@ -175,7 +192,7 @@ function ContactoPage() {
                   <div className="group">
                     <label
                       htmlFor="name"
-                      className="tracked block text-[11px] uppercase transition-colors group-focus-within:text-[color:var(--gold)]"
+                      className={labelClass}
                       style={{ fontFamily: "var(--font-display)", color: "#999999" }}
                     >
                       Nome Completo
@@ -186,16 +203,16 @@ function ContactoPage() {
                       required
                       placeholder="João Silva"
                       className={inputClass}
-                      style={{ borderColor: "var(--logo-strip)", color: "var(--foreground)" }}
+                      style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
                     />
                   </div>
                   <div className="group">
                     <label
                       htmlFor="email"
-                      className="tracked block text-[11px] uppercase transition-colors group-focus-within:text-[color:var(--gold)]"
+                      className={labelClass}
                       style={{ fontFamily: "var(--font-display)", color: "#999999" }}
                     >
-                      Endereço de Email
+                      Email
                     </label>
                     <input
                       id="email"
@@ -204,15 +221,15 @@ function ContactoPage() {
                       required
                       placeholder="email@exemplo.com"
                       className={inputClass}
-                      style={{ borderColor: "var(--logo-strip)", color: "var(--foreground)" }}
+                      style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
                     />
                   </div>
                 </div>
 
-                <div className="group">
+                <div>
                   <label
                     htmlFor="subject"
-                    className="tracked block text-[11px] uppercase transition-colors group-focus-within:text-[color:var(--gold)]"
+                    className={labelClass}
                     style={{ fontFamily: "var(--font-display)", color: "#999999" }}
                   >
                     Assunto
@@ -220,21 +237,21 @@ function ContactoPage() {
                   <select
                     id="subject"
                     name="subject"
-                    className={inputClass + " appearance-none cursor-pointer"}
-                    style={{ borderColor: "var(--logo-strip)", color: "var(--foreground)" }}
+                    className={inputClass + " cursor-pointer appearance-none"}
+                    style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
                   >
                     <option>Casa Modular</option>
-                    <option>Remodelação</option>
+                    <option>Construção Modular</option>
                     <option>Design de Interiores</option>
-                    <option>Consulta Energética</option>
-                    <option>Outro</option>
+                    <option>Remodelação</option>
+                    <option>Informação Geral</option>
                   </select>
                 </div>
 
-                <div className="group">
+                <div>
                   <label
                     htmlFor="message"
-                    className="tracked block text-[11px] uppercase transition-colors group-focus-within:text-[color:var(--gold)]"
+                    className={labelClass}
                     style={{ fontFamily: "var(--font-display)", color: "#999999" }}
                   >
                     A Sua Mensagem
@@ -246,18 +263,18 @@ function ContactoPage() {
                     required
                     placeholder="Descreva o seu projeto..."
                     className={inputClass + " resize-none"}
-                    style={{ borderColor: "var(--logo-strip)", color: "var(--foreground)" }}
+                    style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
                   />
                 </div>
 
                 <div className="flex justify-end pt-4">
                   <button
                     type="submit"
-                    className="flex items-center gap-3 px-12 py-5 text-[12px] font-medium uppercase tracking-[0.18em] transition-all duration-300 hover:bg-[color:var(--gold)]"
+                    className="flex items-center gap-3 px-12 py-5 text-[12px] font-medium uppercase tracking-[0.18em] transition-colors duration-300 hover:bg-gold"
                     style={{
                       fontFamily: "var(--font-display)",
                       backgroundColor: "var(--foreground)",
-                      color: "white",
+                      color: "#ffffff",
                     }}
                   >
                     Enviar Mensagem
@@ -270,34 +287,59 @@ function ContactoPage() {
         </div>
       </section>
 
-      {/* Map */}
-      <section className="w-full" style={{ height: "500px", position: "relative" }}>
-        <div className="absolute inset-0 bg-[#e8e8e8] overflow-hidden">
-          <iframe
-            title="Localização DomusTech"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
-            width="100%"
-            height="100%"
-            style={{ border: 0, filter: "grayscale(0.5) contrast(1.1) opacity(0.7)" }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-        {/* Map pin overlay */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-          <div className="h-4 w-4 animate-ping rounded-full bg-black absolute" />
-          <div className="relative z-10 h-4 w-4 rounded-full" style={{ backgroundColor: "var(--gold)" }} />
+      {/* Map — Google Maps iframe */}
+      <section style={{ height: 500, position: "relative" }}>
+        <iframe
+          title="Localização DomusTech"
+          src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
+          width="100%"
+          height="100%"
+          style={{ border: 0, display: "block", filter: "grayscale(0.5) contrast(1.1) opacity(0.75)" }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+        {/* Pin overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <div
-            className="mt-3 flex flex-col items-center p-5 text-center"
-            style={{ backgroundColor: "white", maxWidth: "180px", boxShadow: "0 4px 24px rgba(0,0,0,0.12)" }}
+            style={{
+              width: 16,
+              height: 16,
+              borderRadius: "50%",
+              backgroundColor: "var(--gold)",
+              position: "relative",
+              zIndex: 1,
+            }}
+          />
+          <div
+            style={{
+              backgroundColor: "#ffffff",
+              padding: "20px",
+              marginTop: 12,
+              textAlign: "center",
+              maxWidth: 180,
+              boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
+            }}
           >
             <span
-              className="tracked mb-1 block text-[11px] uppercase"
+              className="tracked block mb-1 text-[11px] uppercase"
               style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
             >
               DomusTech
             </span>
-            <span className="text-[10px] uppercase tracking-widest" style={{ color: "#999999" }}>
+            <span
+              className="text-[10px] uppercase tracking-widest"
+              style={{ color: "#999999" }}
+            >
               Porto, Portugal
             </span>
           </div>
