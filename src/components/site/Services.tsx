@@ -5,11 +5,22 @@ import { SERVICES } from "@/lib/site-data";
 
 export function Services() {
   return (
-    <section id="services" className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-      <div className="container-1100">
-        <SectionTitle first="Os Nossos" second="Serviços" align="left" className="mb-16" />
+    <section style={{ backgroundColor: "#f9f9f9", paddingBlock: 120 }}>
+      <div className="s-wrap">
+        {/* Header — grid 12-col, col 6/12 */}
+        <div className="grid grid-cols-12 gap-8 mb-20">
+          <div className="col-span-12 md:col-span-6">
+            <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+              Especialidade
+            </span>
+            <h2 className="s-headline-lg" style={{ color: "#000000" }}>
+              Os Nossos Serviços
+            </h2>
+          </div>
+        </div>
 
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards — grid 12-col em 2 cols */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {SERVICES.map((svc, i) => {
             const num = String(i + 1).padStart(2, "0");
             return (
@@ -18,50 +29,53 @@ export function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: i * 0.07 }}
-                className="group border-l pb-12 pl-8 pt-4 transition-colors duration-500"
-                style={{ borderColor: "var(--border)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--gold)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group"
+                style={{
+                  borderLeft: "1px solid #c4c7c7",
+                  paddingLeft: 32,
+                  paddingTop: 16,
+                  paddingBottom: 48,
+                  transition: "border-color 0.5s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = "#BE9355")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = "#c4c7c7")}
               >
-                {/* Ghost number — top */}
+                {/* Ghost number */}
                 <span
-                  className="mb-6 block select-none text-[64px] leading-none"
+                  className="block mb-6 select-none"
                   style={{
-                    fontFamily: "var(--font-display)",
+                    fontFamily: "Oswald, sans-serif",
                     fontWeight: 400,
+                    fontSize: 48,
+                    lineHeight: "56px",
+                    letterSpacing: "0.03em",
                     color: "#e2e2e2",
-                    letterSpacing: "0.02em",
                   }}
                   aria-hidden
                 >
                   {num}
                 </span>
 
+                {/* Title */}
                 <h3
-                  className="mb-4 text-[13px] uppercase"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 500,
-                    letterSpacing: "0.12em",
-                    color: "var(--foreground)",
-                  }}
+                  className="s-headline-md mb-4"
+                  style={{ color: "#000000", letterSpacing: "0.1em" }}
                 >
                   {svc.name}
                 </h3>
 
-                <p
-                  className="mb-8 text-[14px] font-light leading-relaxed"
-                  style={{ color: "var(--muted-foreground)" }}
-                >
+                {/* Body */}
+                <p className="s-body-md mb-8" style={{ color: "#444748" }}>
                   {svc.excerpt}
                 </p>
 
+                {/* Arrow */}
                 <Link
                   to="/servicos/$slug"
                   params={{ slug: svc.slug }}
-                  className="inline-block text-[20px] transition-transform duration-500 group-hover:translate-x-2"
-                  style={{ color: "var(--gold)" }}
+                  className="inline-block transition-transform duration-500 group-hover:translate-x-4"
+                  style={{ color: "#BE9355", fontSize: 24 }}
                   aria-label={`Ver ${svc.name}`}
                 >
                   →

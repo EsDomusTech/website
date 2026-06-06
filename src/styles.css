@@ -112,6 +112,61 @@
   padding-inline: 2rem;
 }
 
+/* Stitch-faithful container — 80px gutters desktop, 24px mobile */
+@utility s-wrap {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 5.5vw, 5rem);
+}
+
+/* Stitch typography scale */
+@utility s-display-lg {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@utility s-headline-lg {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+@utility s-headline-md {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+@utility s-label-caps {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+@utility s-body-lg {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  letter-spacing: 0.01em;
+}
+@utility s-body-md {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  letter-spacing: 0;
+}
+
 @utility section-pad {
   padding-block: 120px;
 }

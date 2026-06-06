@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/contacto")({
@@ -28,322 +27,283 @@ const SOCIAL_LINKS = [
   { label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
 ];
 
-const labelClass = "tracked block text-[11px] uppercase mb-2";
-const inputClass =
-  "w-full border-0 border-b bg-transparent py-4 text-[15px] outline-none transition-colors";
-
 function ContactoPage() {
   const [sent, setSent] = useState(false);
 
   return (
-    <main>
-      {/* Display-lg heading — sem PageHeader, à risca do Stitch */}
-      <section className="container-1100 pb-12 pt-24">
-        <div className="grid md:grid-cols-12">
-          <div className="md:col-span-8">
-            <h1
-              className="mb-6 uppercase"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 400,
-                fontSize: "clamp(48px, 7vw, 80px)",
-                letterSpacing: "0.05em",
-                color: "var(--foreground)",
-                lineHeight: 1.1,
-              }}
-            >
-              Vamos construir <br />
-              algo <span style={{ color: "var(--gold)" }}>duradouro</span>.
-            </h1>
-            <p
-              className="max-w-xl text-[18px] font-light leading-[1.7]"
-              style={{ color: "var(--muted-foreground)" }}
-            >
-              O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
-              para discutir a sua visão de espaço e estrutura.
-            </p>
-          </div>
-        </div>
-      </section>
+    <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Contact grid */}
-      <section className="section-pad">
-        <div className="container-1100 grid gap-16 md:grid-cols-12">
-          {/* Info — 4 cols */}
-          <div className="space-y-16 md:col-span-4">
-            {/* The Office */}
-            <div>
-              <h3
-                className="tracked mb-6 text-[11px] uppercase"
-                style={{ color: "#999999", fontFamily: "var(--font-display)" }}
-              >
-                O Escritório
-              </h3>
-              <p
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 400,
-                  fontSize: "20px",
-                  letterSpacing: "0.02em",
-                  color: "var(--foreground)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {SITE.address}
+      {/* Display-lg hero — sem PageHeader, Stitch exacto */}
+      <header style={{ paddingBlock: "120px 0" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                Vamos construir algo <br />
+                <span style={{ color: "#BE9355" }}>duradouro</span>.
+              </h1>
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 560 }}>
+                O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
+                para discutir a sua visão de espaço e estrutura.
               </p>
             </div>
-
-            {/* Connect */}
-            <div>
-              <h3
-                className="tracked mb-6 text-[11px] uppercase"
-                style={{ color: "#999999", fontFamily: "var(--font-display)" }}
-              >
-                Contacto
-              </h3>
-              <div className="space-y-4">
-                <a
-                  href={`tel:${SITE.phone}`}
-                  className="flex items-center gap-4 text-[17px] font-light transition-colors hover:text-gold"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  <Phone className="h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
-                  {SITE.phone}
-                </a>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="flex items-center gap-4 text-[17px] font-light transition-colors hover:text-gold"
-                  style={{
-                    color: "var(--foreground)",
-                    textDecoration: "underline",
-                    textDecorationColor: "var(--gold)",
-                    textUnderlineOffset: "8px",
-                  }}
-                >
-                  <Mail className="h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
-                  {SITE.email}
-                </a>
-                <a
-                  href={SITE.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-4 text-[17px] font-light transition-colors hover:text-gold"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "var(--gold)" }} />
-                  {SITE.address}
-                </a>
-              </div>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h3
-                className="tracked mb-6 text-[11px] uppercase"
-                style={{ color: "#999999", fontFamily: "var(--font-display)" }}
-              >
-                Redes Sociais
-              </h3>
-              <div className="flex gap-8">
-                {SOCIAL_LINKS.map(({ label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[12px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-gold"
-                    style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
-                  >
-                    {label}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
+        </div>
+      </header>
 
-          {/* Form — 8 cols */}
-          <div className="bg-white p-12 md:col-span-8">
-            {sent ? (
-              <div className="flex h-full min-h-[20rem] flex-col items-center justify-center text-center">
-                <h3
-                  className="text-[28px] uppercase"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 400,
-                    letterSpacing: "0.04em",
-                    color: "var(--foreground)",
-                  }}
+      {/* Contact body — 4-col info + 8-col form */}
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+
+            {/* Info col — 4/12 */}
+            <div className="col-span-12 md:col-span-4 space-y-16">
+
+              {/* Morada */}
+              <div>
+                <span
+                  className="s-label-caps mb-4 block"
+                  style={{ color: "#999999" }}
                 >
-                  Mensagem enviada!
-                </h3>
-                <p className="mt-3 text-[15px] font-light" style={{ color: "var(--muted-foreground)" }}>
-                  Obrigado pelo seu contacto. Responderemos com a maior brevidade.
+                  O Escritório
+                </span>
+                <p className="s-headline-md" style={{ color: "#000000", lineHeight: 1.5 }}>
+                  {SITE.address}
                 </p>
               </div>
-            ) : (
-              <form
-                className="space-y-10"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-              >
-                <div className="grid gap-10 sm:grid-cols-2">
-                  <div className="group">
-                    <label
-                      htmlFor="name"
-                      className={labelClass}
-                      style={{ fontFamily: "var(--font-display)", color: "#999999" }}
+
+              {/* Contacto */}
+              <div>
+                <span
+                  className="s-label-caps mb-4 block"
+                  style={{ color: "#999999" }}
+                >
+                  Contacto Directo
+                </span>
+                <div className="space-y-4">
+                  <a
+                    href={`tel:${SITE.phone}`}
+                    className="s-body-lg block transition-colors hover:text-[#BE9355]"
+                    style={{ color: "#000000" }}
+                  >
+                    {SITE.phone}
+                  </a>
+                  <a
+                    href={`mailto:${SITE.email}`}
+                    className="s-body-lg block transition-colors hover:text-[#BE9355]"
+                    style={{ color: "#000000" }}
+                  >
+                    {SITE.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Redes sociais */}
+              <div>
+                <span
+                  className="s-label-caps mb-4 block"
+                  style={{ color: "#999999" }}
+                >
+                  Redes Sociais
+                </span>
+                <div className="flex flex-col gap-3">
+                  {SOCIAL_LINKS.map(({ label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="s-label-caps transition-colors hover:text-[#BE9355]"
+                      style={{ color: "#000000" }}
                     >
-                      Nome Completo
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Form col — 8/12 */}
+            <div
+              className="col-span-12 md:col-span-8 p-12 md:p-16"
+              style={{ backgroundColor: "#ffffff" }}
+            >
+              {sent ? (
+                <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">
+                  <h3
+                    className="s-headline-lg mb-4"
+                    style={{ color: "#000000" }}
+                  >
+                    Mensagem enviada!
+                  </h3>
+                  <p className="s-body-md" style={{ color: "#444748" }}>
+                    Obrigado pelo seu contacto. Responderemos com a maior brevidade.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  className="space-y-10"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    setSent(true);
+                  }}
+                >
+                  <div className="grid gap-10 sm:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="s-label-caps mb-2 block"
+                        style={{ color: "#999999" }}
+                      >
+                        Nome Completo
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="João Silva"
+                        className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors focus:border-b"
+                        style={{
+                          borderColor: "#eeeeee",
+                          color: "#000000",
+                        }}
+                        onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
+                        onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="s-label-caps mb-2 block"
+                        style={{ color: "#999999" }}
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="email@exemplo.com"
+                        className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors"
+                        style={{
+                          borderColor: "#eeeeee",
+                          color: "#000000",
+                        }}
+                        onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
+                        onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="s-label-caps mb-2 block"
+                      style={{ color: "#999999" }}
+                    >
+                      Serviço
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors appearance-none cursor-pointer"
+                      style={{
+                        borderColor: "#eeeeee",
+                        color: "#000000",
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                    >
+                      <option>Casa Modular</option>
+                      <option>Construção Modular</option>
+                      <option>Design de Interiores</option>
+                      <option>Remodelação</option>
+                      <option>Informação Geral</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="s-label-caps mb-2 block"
+                      style={{ color: "#999999" }}
+                    >
+                      Telefone (opcional)
                     </label>
                     <input
-                      id="name"
-                      name="name"
-                      required
-                      placeholder="João Silva"
-                      className={inputClass}
-                      style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+351 900 000 000"
+                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors"
+                      style={{
+                        borderColor: "#eeeeee",
+                        color: "#000000",
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
                     />
                   </div>
-                  <div className="group">
+
+                  <div>
                     <label
-                      htmlFor="email"
-                      className={labelClass}
-                      style={{ fontFamily: "var(--font-display)", color: "#999999" }}
+                      htmlFor="message"
+                      className="s-label-caps mb-2 block"
+                      style={{ color: "#999999" }}
                     >
-                      Email
+                      A Sua Mensagem
                     </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
                       required
-                      placeholder="email@exemplo.com"
-                      className={inputClass}
-                      style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
+                      placeholder="Descreva o seu projeto..."
+                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors resize-none"
+                      style={{
+                        borderColor: "#eeeeee",
+                        color: "#000000",
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className={labelClass}
-                    style={{ fontFamily: "var(--font-display)", color: "#999999" }}
-                  >
-                    Assunto
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className={inputClass + " cursor-pointer appearance-none"}
-                    style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
-                  >
-                    <option>Casa Modular</option>
-                    <option>Construção Modular</option>
-                    <option>Design de Interiores</option>
-                    <option>Remodelação</option>
-                    <option>Informação Geral</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className={labelClass}
-                    style={{ fontFamily: "var(--font-display)", color: "#999999" }}
-                  >
-                    A Sua Mensagem
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    placeholder="Descreva o seu projeto..."
-                    className={inputClass + " resize-none"}
-                    style={{ borderColor: "#eeeeee", color: "var(--foreground)" }}
-                  />
-                </div>
-
-                <div className="flex justify-end pt-4">
-                  <button
-                    type="submit"
-                    className="flex items-center gap-3 px-12 py-5 text-[12px] font-medium uppercase tracking-[0.18em] transition-colors duration-300 hover:bg-gold"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      backgroundColor: "var(--foreground)",
-                      color: "#ffffff",
-                    }}
-                  >
-                    Enviar Mensagem
-                    <span aria-hidden>→</span>
-                  </button>
-                </div>
-              </form>
-            )}
+                  <div className="flex justify-end pt-4">
+                    <button
+                      type="submit"
+                      className="s-label-caps inline-flex items-center gap-3 px-12 py-5 text-white transition-colors duration-300"
+                      style={{ backgroundColor: "#000000" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#BE9355")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000000")}
+                    >
+                      Enviar Mensagem
+                      <span aria-hidden>→</span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Map — Google Maps iframe */}
-      <section style={{ height: 500, position: "relative" }}>
+      {/* Google Maps embed */}
+      <section style={{ height: 500 }}>
         <iframe
           title="Localização DomusTech"
           src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
           width="100%"
           height="100%"
-          style={{ border: 0, display: "block", filter: "grayscale(0.5) contrast(1.1) opacity(0.75)" }}
+          style={{
+            border: 0,
+            display: "block",
+            filter: "grayscale(0.4) contrast(1.1) opacity(0.8)",
+          }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        {/* Pin overlay */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              width: 16,
-              height: 16,
-              borderRadius: "50%",
-              backgroundColor: "var(--gold)",
-              position: "relative",
-              zIndex: 1,
-            }}
-          />
-          <div
-            style={{
-              backgroundColor: "#ffffff",
-              padding: "20px",
-              marginTop: 12,
-              textAlign: "center",
-              maxWidth: 180,
-              boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
-            }}
-          >
-            <span
-              className="tracked block mb-1 text-[11px] uppercase"
-              style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
-            >
-              DomusTech
-            </span>
-            <span
-              className="text-[10px] uppercase tracking-widest"
-              style={{ color: "#999999" }}
-            >
-              Porto, Portugal
-            </span>
-          </div>
-        </div>
       </section>
     </main>
   );
