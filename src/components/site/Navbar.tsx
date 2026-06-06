@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Menu, X, ChevronDown } from "lucide-react";
-import { SITE } from "@/lib/site-data";
 
 type SubItem = { label: string; to: string };
 type NavLink = { label: string; to?: string; children?: SubItem[] };
@@ -55,16 +54,6 @@ const NAV_LINKS: NavLink[] = [
     to: "/blog",
   },
   { label: "Contacto", to: "/contacto" },
-  {
-    label: "Rascunho",
-    children: [
-      { label: "Portfolio Grid Filter", to: "/projetos/filtro" },
-      { label: "Portfolio Fancy", to: "/projetos/fancy" },
-      { label: "Portfolio Fancy Filter", to: "/projetos/fancy-filtro" },
-      { label: "Portfolio List", to: "/projetos/lista" },
-      { label: "Gallery Masonry", to: "/galeria/masonry" },
-    ],
-  },
 ];
 
 export const SOCIAL = [
