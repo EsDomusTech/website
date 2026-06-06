@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { VideoTestimonials } from "@/components/site/VideoTestimonials";
@@ -60,19 +59,47 @@ export const Route = createFileRoute("/empresa")({
 
 function EmpresaPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="Quem Somos"
-        titleFirst="SOBRE"
-        titleSecond="NÓS"
-        subtitle="Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas."
-        image="https://picsum.photos/seed/office1/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Empresa" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
+
+      {/* Hero assimétrico 70vh — col-span-7 texto + imagem absolute direita */}
+      <header
+        className="relative overflow-hidden"
+        style={{ height: "70vh", marginTop: 8, marginBottom: 120 }}
+      >
+        <div className="s-wrap h-full">
+          <div className="grid grid-cols-12 gap-8 h-full">
+            <div
+              className="col-span-12 md:col-span-7 flex flex-col justify-center relative z-10"
+              style={{ paddingBlock: 80 }}
+            >
+              <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+                Quem Somos
+              </span>
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                Sobre Nós
+              </h1>
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 480 }}>
+                Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Imagem absoluta à direita */}
+        <div
+          className="absolute top-0 right-0 h-full hidden md:block overflow-hidden"
+          style={{ width: "50%" }}
+        >
+          <img
+            src="https://picsum.photos/seed/office1/1200/900"
+            alt="DomusTech escritório Porto"
+            className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out hover:scale-105"
+          />
+        </div>
+      </header>
 
       {/* História */}
-      <section className="section-pad">
-        <div className="container-1100 grid items-center gap-12 md:grid-cols-2">
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap grid items-center gap-12 md:grid-cols-2">
           <div>
             <SectionTitle first="A NOSSA" second="HISTÓRIA" align="left" />
             <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
@@ -105,8 +132,8 @@ function EmpresaPage() {
       </section>
 
       {/* Valores — layout assimétrico Stitch: título esq 5/12 + grid direita 7/12 */}
-      <section className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
-        <div className="container-1100">
+      <section style={{ paddingBlock: 120, backgroundColor: "#f0f0f0" }}>
+        <div className="s-wrap">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
             {/* Left: título grande */}
             <div className="md:col-span-5">
@@ -162,8 +189,8 @@ function EmpresaPage() {
       </section>
 
       {/* Stats */}
-      <section style={{ backgroundColor: "var(--dark-section)" }}>
-        <div className="container-1100 grid grid-cols-2 gap-10 py-20 text-center md:grid-cols-4">
+      <section style={{ backgroundColor: "#1a1a1a" }}>
+        <div className="s-wrap grid grid-cols-2 gap-10 py-20 text-center md:grid-cols-4">
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
@@ -172,8 +199,8 @@ function EmpresaPage() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <p className="font-display text-5xl font-semibold text-gold">{s.value}</p>
-              <p className="tracked mt-3 text-[11px] text-white/50">{s.label}</p>
+              <p className="s-display-lg leading-none" style={{ color: "#BE9355" }}>{s.value}</p>
+              <p className="s-label-caps mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>{s.label}</p>
             </motion.div>
           ))}
         </div>

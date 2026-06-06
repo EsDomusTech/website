@@ -1,18 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { SectionTitle } from "@/components/site/SectionTitle";
 import { SITE } from "@/lib/site-data";
 
 const PLANS = [
   {
     name: "Consulta",
-    label: "Ponto de Partida",
+    label: "FASE 01",
     price: "Gratuito",
-    unit: "",
     featured: false,
     description: "Para quem está a explorar as possibilidades e quer perceber o potencial do projeto.",
     features: [
@@ -27,9 +23,8 @@ const PLANS = [
   },
   {
     name: "Projeto",
-    label: "Mais Popular",
+    label: "MAIS POPULAR",
     price: "A partir de 3.500€",
-    unit: "",
     featured: true,
     description: "Projeto de arquitetura completo, da conceção ao licenciamento, com acompanhamento dedicado.",
     features: [
@@ -45,9 +40,8 @@ const PLANS = [
   },
   {
     name: "Obra",
-    label: "Serviço Completo",
+    label: "FASE 03",
     price: "Sob Consulta",
-    unit: "",
     featured: false,
     description: "Serviço chave na mão — do projeto à entrega da obra, com gestão integral de todas as fases.",
     features: [
@@ -94,27 +88,35 @@ export const Route = createFileRoute("/precos")({
 
 function PrecosPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="Investimento"
-        titleFirst="Planos e"
-        titleSecond="Preços"
-        subtitle="Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto."
-        image="https://picsum.photos/seed/pricing-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Preços" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Plans */}
-      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-        <div className="container-1100">
-          <div className="mb-16 text-center">
-            <SectionTitle eyebrow="Planos" first="Escolha o Seu" second="Plano" />
-            <p className="mx-auto mt-6 max-w-md text-[15px] font-light leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
-              Cada projeto é único. Estes planos servem como orientação — o orçamento final é sempre personalizado.
-            </p>
+      {/* Hero — display-lg, sem imagem */}
+      <header style={{ paddingBlock: "120px 0" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <span
+                className="s-label-caps mb-4 block"
+                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+              >
+                Estrutura de Investimento
+              </span>
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                Calculado /<br />
+                <span style={{ color: "#BE9355" }}>Precisão.</span>
+              </h1>
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
+                Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto — o orçamento final é sempre personalizado.
+              </p>
+            </div>
           </div>
+        </div>
+      </header>
 
-          <div className="grid gap-6 md:grid-cols-3">
+      {/* Plans — grid 3 colunas */}
+      <section style={{ backgroundColor: "#f3f3f3", paddingBlock: 120 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {PLANS.map((plan, i) => (
               <motion.div
                 key={plan.name}
@@ -122,72 +124,72 @@ function PrecosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="relative flex flex-col"
+                className="relative flex flex-col h-full"
                 style={{
-                  backgroundColor: plan.featured ? "#1b1b1b" : "var(--card)",
-                  border: plan.featured ? "none" : "1px solid var(--border)",
+                  backgroundColor: plan.featured ? "#000000" : "#ffffff",
+                  border: plan.featured ? "none" : "1px solid #e8e8e8",
+                  transform: plan.featured ? "scale(1.04)" : "none",
                 }}
               >
                 {plan.featured && (
                   <div
-                    className="tracked absolute inset-x-0 top-0 py-2.5 text-center text-[10px] font-medium text-white"
-                    style={{ backgroundColor: "var(--gold)", fontFamily: "var(--font-display)" }}
+                    className="absolute top-0 right-0 px-4 py-2 s-label-caps text-white"
+                    style={{ backgroundColor: "#BE9355", fontSize: 10, letterSpacing: "0.2em" }}
                   >
-                    {plan.label}
+                    MAIS POPULAR
                   </div>
                 )}
 
-                <div className={`flex flex-col flex-1 p-10 ${plan.featured ? "pt-16" : ""}`}>
-                  {!plan.featured && (
-                    <p
-                      className="tracked mb-3 text-[10px] font-medium"
-                      style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
-                    >
-                      {plan.label}
-                    </p>
-                  )}
+                <div className={`flex flex-col flex-1 p-12 ${plan.featured ? "pt-16" : ""}`}>
+                  <p
+                    className="s-label-caps mb-2"
+                    style={{ color: plan.featured ? "#858383" : "#999999" }}
+                  >
+                    {plan.label}
+                  </p>
 
                   <h3
-                    className="mb-2 text-[22px]"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontWeight: 400,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: plan.featured ? "#fff" : "var(--foreground)",
-                    }}
+                    className="s-headline-lg mb-4"
+                    style={{ color: plan.featured ? "#ffffff" : "#000000" }}
                   >
                     {plan.name}
                   </h3>
 
                   <p
-                    className="mb-6 text-[28px] leading-none"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontWeight: 400,
-                      color: plan.featured ? "var(--gold)" : "var(--foreground)",
-                    }}
-                  >
-                    {plan.price}
-                  </p>
-
-                  <p
-                    className="mb-8 text-[14px] font-light leading-relaxed"
-                    style={{ color: plan.featured ? "rgba(255,255,255,0.55)" : "var(--muted-foreground)" }}
+                    className="s-body-md mb-8"
+                    style={{ color: plan.featured ? "rgba(255,255,255,0.6)" : "#444748" }}
                   >
                     {plan.description}
                   </p>
 
-                  <ul className="mb-10 flex-1 space-y-3.5">
+                  <div className="mb-8">
+                    <span
+                      className="s-label-caps mr-2"
+                      style={{ color: plan.featured ? "#858383" : "#999999" }}
+                    >
+                      DESDE
+                    </span>
+                    <span
+                      className="s-headline-lg"
+                      style={{ color: plan.featured ? "#ffffff" : "#000000" }}
+                    >
+                      {plan.price}
+                    </span>
+                  </div>
+
+                  <ul
+                    className="flex-1 space-y-6 border-t pt-8"
+                    style={{ borderColor: plan.featured ? "rgba(255,255,255,0.1)" : "#e8e8e8" }}
+                  >
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-start gap-3">
                         <Check
                           className="mt-0.5 h-4 w-4 shrink-0"
-                          style={{ color: "var(--gold)" }}
+                          style={{ color: "#BE9355" }}
                         />
                         <span
-                          className="text-[13px] font-light"
-                          style={{ color: plan.featured ? "rgba(255,255,255,0.7)" : "var(--muted-foreground)" }}
+                          className="s-body-md"
+                          style={{ color: plan.featured ? "rgba(255,255,255,0.7)" : "#444748" }}
                         >
                           {f}
                         </span>
@@ -197,17 +199,18 @@ function PrecosPage() {
 
                   <Link
                     to={plan.to as "/contacto"}
-                    className="tracked block py-4 text-center text-[11px] font-medium transition-colors"
+                    className="s-label-caps mt-12 block w-full py-5 text-center transition-colors duration-300"
                     style={{
-                      fontFamily: "var(--font-display)",
-                      backgroundColor: plan.featured ? "var(--gold)" : "#1b1b1b",
-                      color: "#fff",
+                      backgroundColor: plan.featured ? "#BE9355" : "#000000",
+                      color: "#ffffff",
                     }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "#d4a968" : "var(--gold)";
+                      (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "#ffffff" : "#BE9355";
+                      (e.currentTarget as HTMLElement).style.color = plan.featured ? "#000000" : "#ffffff";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "var(--gold)" : "#1b1b1b";
+                      (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "#BE9355" : "#000000";
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
                     }}
                   >
                     {plan.cta}
@@ -219,34 +222,68 @@ function PrecosPage() {
         </div>
       </section>
 
-      {/* FAQs sobre preços */}
-      <section className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
-        <div className="container-1100 max-w-3xl">
-          <div className="mb-12 text-center">
-            <SectionTitle eyebrow="Dúvidas" first="Perguntas" second="Frequentes" />
-          </div>
-          <div className="space-y-0">
-            {FAQS_PRECOS.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="border-b py-7"
-                style={{ borderColor: "var(--border)" }}
-              >
-                <h4
-                  className="mb-3 text-[15px]"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--foreground)" }}
+      {/* Imagem atmosférica full-width */}
+      <section className="relative overflow-hidden" style={{ height: 480 }}>
+        <img
+          src="https://picsum.photos/seed/pricing-atm/1920/900"
+          alt="DomusTech projeto modular"
+          className="w-full h-full object-cover"
+          style={{ filter: "grayscale(0.6) brightness(0.75)" }}
+        />
+        <div
+          className="absolute inset-0 flex flex-col items-center justify-center text-center"
+          style={{ backgroundColor: "rgba(0,0,0,0.2)" }}
+        >
+          <h2 className="s-display-lg mb-8" style={{ color: "#ffffff" }}>
+            Cada projeto é único
+          </h2>
+          <Link
+            to="/contacto"
+            className="s-label-caps px-12 py-6 text-white transition-colors duration-300"
+            style={{ backgroundColor: "#BE9355" }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#ffffff"; (e.currentTarget as HTMLElement).style.color = "#000000"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#BE9355"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
+          >
+            Pedir Orçamento
+          </Link>
+        </div>
+      </section>
+
+      {/* FAQ — grid 4+8 per Stitch spec */}
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-4">
+              <h2 className="s-headline-lg mb-4" style={{ color: "#000000" }}>
+                Dúvidas<br />Frequentes
+              </h2>
+              <p className="s-body-md" style={{ color: "#444748" }}>
+                Respostas directas às perguntas mais comuns sobre preços, pagamentos e orçamentos.
+              </p>
+            </div>
+            <div className="col-span-12 md:col-span-8 space-y-12">
+              {FAQS_PRECOS.map((faq, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.08 }}
+                  className="group border-b pb-8"
+                  style={{ borderColor: "#eeeeee" }}
                 >
-                  {faq.q}
-                </h4>
-                <p className="text-[14px] font-light leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
-                  {faq.a}
-                </p>
-              </motion.div>
-            ))}
+                  <h4
+                    className="s-headline-md mb-4 transition-colors group-hover:text-[#BE9355]"
+                    style={{ color: "#000000" }}
+                  >
+                    {faq.q}
+                  </h4>
+                  <p className="s-body-md" style={{ color: "#444748" }}>
+                    {faq.a}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

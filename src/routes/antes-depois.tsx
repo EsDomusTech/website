@@ -2,9 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { SectionTitle } from "@/components/site/SectionTitle";
 import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { SITE } from "@/lib/site-data";
 
@@ -67,22 +65,36 @@ export const Route = createFileRoute("/antes-depois")({
 
 function AntesDepoisPage() {
   return (
-    <main>
-      <PageHeader
-        eyebrow="Transformação"
-        titleFirst="Antes e"
-        titleSecond="Depois"
-        subtitle="A transformação é a essência da arquitectura. Arraste o divisor para ver a diferença que o nosso trabalho faz."
-        image="https://picsum.photos/seed/ba-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Antes e Depois" }]}
-      />
+    <main style={{ backgroundColor: "#f9f9f9" }}>
+
+      {/* Hero — display-lg */}
+      <header style={{ paddingBlock: "120px 0" }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-8">
+              <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+                Transformação
+              </span>
+              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+                Antes / Depois
+              </h1>
+              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
+                A transformação é a essência da arquitectura. Arraste o divisor para ver a diferença que o nosso trabalho faz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Intro */}
-      <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
-        <div className="container-1100">
+      <section style={{ paddingBlock: 120 }}>
+        <div className="s-wrap">
           <div className="grid items-end gap-16 md:grid-cols-12">
             <div className="md:col-span-7">
-              <SectionTitle eyebrow="Casos de Estudo" first="As Nossas" second="Transformações" align="left" />
+              <div>
+                <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>Casos de Estudo</span>
+                <h2 className="s-headline-lg" style={{ color: "#000000" }}>As Nossas Transformações</h2>
+              </div>
             </div>
             <div className="md:col-span-5">
               <p className="text-[15px] font-light leading-[1.85]" style={{ color: "var(--muted-foreground)" }}>
@@ -104,7 +116,7 @@ function AntesDepoisPage() {
           className="section-pad"
           style={{ backgroundColor: i % 2 === 0 ? "var(--logo-strip)" : "var(--background)" }}
         >
-          <div className="container-1100">
+          <div className="s-wrap">
             <div className={`grid items-center gap-12 md:grid-cols-2 ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
               {/* Slider */}
               <div>
