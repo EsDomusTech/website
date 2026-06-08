@@ -39,36 +39,59 @@ const PLANS = [
     to: "/contacto",
   },
   {
-    name: "Obra",
+    name: "Chave na Mão",
     label: "FASE 03",
-    price: "Sob Consulta",
+    price: "1.350 €/m² + IVA",
     featured: false,
-    description: "Serviço chave na mão — do projeto à entrega da obra, com gestão integral de todas as fases.",
+    description: "Construção modular completa — do projeto à entrega da casa pronta a habitar, com gestão integral de todas as fases.",
     features: [
-      "Tudo incluído no plano Projeto",
-      "Fabrico modular em fábrica",
-      "Gestão de obra completa",
-      "Equipas certificadas",
-      "Prazos garantidos por contrato",
-      "Garantia de 10 anos",
+      "Visita técnica, projeto e licenciamento incluídos",
+      "Estrutura, casas de banho e cozinha equipadas",
+      "Isolamento, pavimentos, janelas e portas",
+      "Eletricidade, canalizações e cobertura",
+      "Garantia estrutural de 10 anos",
+      "Pagamento em 4 prestações de 25% + IVA",
     ],
     cta: "Pedir Orçamento",
     to: "/contacto",
   },
 ];
 
+const PRICE_NOTES = [
+  {
+    label: "Variante estrutura/laje/exterior",
+    value: "≈ 1.150 €/m² + IVA",
+  },
+  {
+    label: "Faixa real observada (conforme tipologia e opções)",
+    value: "≈ 108.000 € a 230.000 € (sem IVA)",
+  },
+  {
+    label: "Plano de pagamento",
+    value: "4 prestações de 25% + IVA — assinatura, início de fabrico, compra de materiais, entrega final",
+  },
+];
+
 const FAQS_PRECOS = [
   {
     q: "Os preços incluem IVA?",
-    a: "Todos os valores apresentados são acrescidos de IVA à taxa em vigor. O orçamento final incluirá sempre a discriminação fiscal completa.",
+    a: "Não — os valores de referência (1.350 €/m² chave na mão e 1.150 €/m² na variante estrutura/laje/exterior) são apresentados sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.",
   },
   {
     q: "Como é feito o pagamento?",
-    a: "O pagamento é faseado: uma entrada na assinatura do contrato, 50% no início da obra e o restante na entrega. Para projetos, aplicamos condições específicas.",
+    a: "Em 4 prestações de 25% + IVA, associadas a marcos do projeto: assinatura do contrato, início de fabrico, compra de materiais e entrega final.",
   },
   {
-    q: "O orçamento é vinculativo?",
-    a: "Sim. Após aprovação do caderno de encargos, o orçamento fica fixo por contrato, sem surpresas durante a execução.",
+    q: "Quanto custa, na prática, uma casa DomusTech?",
+    a: "Nas propostas reais que já fizemos, o investimento total situa-se entre 108.000 € e 230.000 € (sem IVA), conforme a tipologia, a área e as opções de personalização escolhidas.",
+  },
+  {
+    q: "O que está incluído no preço chave na mão?",
+    a: "Visita técnica ao terreno, projeto de arquitetura e engenharia, licenciamento camarário, estrutura e fundações, casas de banho completas, isolamento térmico, pavimentos, janelas e portas, eletricidade e canalizações, cobertura, transporte e garantia estrutural de 10 anos.",
+  },
+  {
+    q: "O que fica fora do preço?",
+    a: "Taxas camarárias, instalação efetiva (não a pré-instalação) de ar condicionado, painéis solares e estores, projetos de especialidades orçamentáveis à parte, e extras como cozinha de upgrade, garagem, piscina ou deck.",
   },
 ];
 
@@ -216,6 +239,30 @@ function PrecosPage() {
                     {plan.cta}
                   </Link>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Notas de preço — valores reais de referência */}
+      <section style={{ paddingBlock: 100 }}>
+        <div className="s-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t pt-12" style={{ borderColor: "#eeeeee" }}>
+            {PRICE_NOTES.map((note, i) => (
+              <motion.div
+                key={note.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+              >
+                <p className="s-headline-md mb-3" style={{ color: "#BE9355" }}>
+                  {note.value}
+                </p>
+                <p className="s-body-md" style={{ color: "#444748" }}>
+                  {note.label}
+                </p>
               </motion.div>
             ))}
           </div>

@@ -2,21 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const BODY =
-  "Somos um estúdio especializado em casas modulares inteligentes, com sede no Porto. Combinamos engenharia de precisão, design contemporâneo e tecnologia sustentável para criar habitações únicas, adaptadas às necessidades e sonhos de cada cliente.";
+  "Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento termoacústico e design moderno — garantindo rapidez na construção e máxima eficiência energética. Acreditamos que a habitação do futuro deve ser personalizada, sustentável e acessível.";
 
 const BODY2 =
-  "Cada projeto começa com uma conversa. Ouvimos, desenhamos e construímos — sempre com rigor técnico, materiais premium e atenção ao menor detalhe, desde o conceito até à entrega das chaves.";
+  "Cada projeto começa com uma conversa. Personalize, construa, viva: orçamentos claros e sem surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida do cliente — do conceito até à entrega das chaves.";
 
 const STATS = [
-  { value: 12, label: "Anos de Experiência" },
-  { value: 340, label: "Projetos Concluídos" },
-  { value: 98, label: "Clientes Satisfeitos" },
-  { value: 15, label: "Prémios Ganhos" },
+  { value: 23, label: "Casas Entregues" },
+  { value: 4, label: "Anos no Mercado" },
+  { value: 13, label: "Localizações" },
+  { value: 10, label: "Anos de Garantia Estrutural" },
 ];
 
 const MINI_STATS = [
-  { value: "+340", label: "Projetos entregues em Portugal, desde habitação a espaços comerciais." },
-  { value: "Desde 2012", label: "Mais de uma década a construir com rigor e identidade no Porto." },
+  { value: "23 casas", label: "Entregues em todo o território nacional, com acompanhamento do conceito à entrega." },
+  { value: "Classe A", label: "Eficiência energética garantida pela estrutura em aço galvanizado e isolamento termoacústico." },
 ];
 
 function Counter({ target }: { target: number }) {
@@ -123,7 +123,7 @@ export function About() {
                   className="s-headline-lg leading-none"
                   style={{ color: "#BE9355", fontFamily: "Oswald, sans-serif" }}
                 >
-                  <Counter target={s.value} />+
+                  <Counter target={s.value} />
                 </span>
                 <span
                   className="s-label-caps mt-3 text-center"

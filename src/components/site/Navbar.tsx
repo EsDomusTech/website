@@ -8,6 +8,7 @@ type NavLink = { label: string; to?: string; children?: SubItem[] };
 const NAV_LINKS: NavLink[] = [
   { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
+  { label: "Sistema Construtivo", to: "/sistema-construtivo" },
   {
     label: "Serviços",
     to: "/servicos",
