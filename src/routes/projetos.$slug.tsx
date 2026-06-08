@@ -46,11 +46,6 @@ function ProjectDetail() {
         titleSecond={p.name.split(" ").slice(1).join(" ").toUpperCase() || p.location.toUpperCase()}
         subtitle={p.summary}
         image={p.image}
-        breadcrumbs={[
-          { label: "Início", to: "/" },
-          { label: "Projetos", to: "/projetos" },
-          { label: p.name },
-        ]}
       />
 
       <section className="section-pad">

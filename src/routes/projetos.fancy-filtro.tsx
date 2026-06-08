@@ -30,7 +30,6 @@ function PortfolioFancyFiltroPage() {
         titleFirst="Portfolio Fancy"
         titleSecond="Filter"
         image="https://picsum.photos/seed/portfolio-ff-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Portfolio", to: "/projetos" }, { label: "Fancy Filter" }]}
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

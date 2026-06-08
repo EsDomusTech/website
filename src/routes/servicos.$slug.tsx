@@ -59,11 +59,6 @@ function ServiceDetail() {
         titleSecond={s.titleSecond}
         subtitle={s.excerpt}
         image={s.image}
-        breadcrumbs={[
-          { label: "Início", to: "/" },
-          { label: "Serviços", to: "/servicos" },
-          { label: s.name },
-        ]}
       />
 
       <section className="section-pad">

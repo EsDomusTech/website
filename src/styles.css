@@ -246,6 +246,14 @@
   }
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f9f9f9; }
+::-webkit-scrollbar-thumb { background: #1b1b1b; }
+
+/* Text selection */
+::selection { background-color: #be9355; color: #ffffff; }
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

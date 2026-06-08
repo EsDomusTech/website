@@ -30,7 +30,6 @@ function GaleriaMasonryPage() {
         titleSecond="Masonry"
         subtitle="Composição orgânica de imagens arquitectónicas em disposição masonry."
         image="https://picsum.photos/seed/masonry-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Galeria", to: "/galeria" }, { label: "Masonry" }]}
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

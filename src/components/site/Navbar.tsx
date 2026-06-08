@@ -189,10 +189,10 @@ export function Navbar() {
     <>
       {/* Main navbar */}
       <header
-        className={`sticky top-0 z-50 bg-white transition-all ${scrolled ? "shadow-sm" : "border-b"}`}
-        style={{ borderColor: "var(--border)" }}
+        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-sm py-0" : "border-b py-0"}`}
+        style={{ backgroundColor: "#f9f9f9", borderColor: "var(--border)" }}
       >
-        <nav className="container-1100 flex h-[72px] items-center justify-between">
+        <nav className="s-wrap flex items-center justify-between" style={{ height: scrolled ? 56 : 72, transition: "height 0.3s" }}>
           <Logo />
 
           {/* Desktop nav */}
@@ -277,8 +277,8 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="border-t bg-white xl:hidden" style={{ borderColor: "var(--border)" }}>
-            <ul className="container-1100 flex flex-col py-3">
+          <div className="border-t xl:hidden" style={{ backgroundColor: "#f9f9f9", borderColor: "var(--border)" }}>
+            <ul className="s-wrap flex flex-col py-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   {link.children ? (
@@ -328,7 +328,7 @@ export function Navbar() {
 
             {/* Always-visible bottom bar: lang + CTA */}
             <div
-              className="container-1100 flex items-center justify-between border-t py-4"
+              className="s-wrap flex items-center justify-between border-t py-4"
               style={{ borderColor: "var(--border)" }}
             >
               <LangSelector />

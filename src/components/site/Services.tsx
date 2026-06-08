@@ -19,8 +19,8 @@ export function Services() {
           </div>
         </div>
 
-        {/* Cards — grid 12-col em 2 cols */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Cards — grid 3 colunas per spec */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {SERVICES.map((svc, i) => {
             const num = String(i + 1).padStart(2, "0");
             return (

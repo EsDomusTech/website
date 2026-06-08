@@ -28,7 +28,6 @@ function TermsPage() {
         titleFirst="TERMOS E"
         titleSecond="CONDIÇÕES"
         image="https://picsum.photos/seed/legal2/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Termos e Condições" }]}
       />
 
       <section className="section-pad">

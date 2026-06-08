@@ -6,8 +6,8 @@ import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 export function Blog() {
   return (
-    <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
-      <div className="container-1100">
+    <section id="blog" className="section-pad" style={{ backgroundColor: "#f3f3f3" }}>
+      <div className="s-wrap">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle eyebrow="Atualidade" first="Últimas" second="Notícias" align="left" />
           <Link
@@ -30,7 +30,7 @@ export function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col bg-white border transition-shadow duration-300 hover:shadow-md"
+              className="group flex flex-col bg-white border"
               style={{ borderColor: "var(--border)" }}
             >
               {/* Image */}
