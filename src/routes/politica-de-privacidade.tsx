@@ -28,7 +28,6 @@ function PrivacyPage() {
         titleFirst="POLÍTICA DE"
         titleSecond="PRIVACIDADE"
         image="https://picsum.photos/seed/legal1/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Política de Privacidade" }]}
       />
 
       <section className="section-pad">

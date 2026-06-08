@@ -24,7 +24,6 @@ function PortfolioFancyPage() {
         titleFirst="Portfolio"
         titleSecond="Fancy"
         image="https://picsum.photos/seed/portfolio-fancy-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Portfolio", to: "/projetos" }, { label: "Fancy" }]}
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

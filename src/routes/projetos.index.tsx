@@ -31,7 +31,6 @@ function ProjetosPage() {
         titleSecond="PROJETOS"
         subtitle="Uma seleção de projetos que refletem a nossa abordagem à arquitetura modular e ao design."
         image="https://picsum.photos/seed/project1/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Projetos" }]}
       />
 
       <section className="section-pad">

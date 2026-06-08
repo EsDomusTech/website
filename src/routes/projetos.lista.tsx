@@ -24,7 +24,6 @@ function PortfolioListaPage() {
         titleFirst="Portfolio"
         titleSecond="List"
         image="https://picsum.photos/seed/portfolio-list-hero/1600/900"
-        breadcrumbs={[{ label: "Início", to: "/" }, { label: "Portfolio", to: "/projetos" }, { label: "List" }]}
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

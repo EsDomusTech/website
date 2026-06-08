@@ -25,11 +25,11 @@ const SLIDES = [
 ];
 
 const textVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 1, delay, ease: [0.16, 1, 0.3, 1] as const },
   }),
   exit: { opacity: 0, y: -12, transition: { duration: 0.3 } },
 };
@@ -49,7 +49,7 @@ export function Hero() {
   const slide = SLIDES[index];
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
+    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
       {/* Background images */}
       {SLIDES.map((s, i) => (
         <motion.div
@@ -60,47 +60,34 @@ export function Hero() {
           transition={{ duration: 1.2 }}
         >
           <img src={s.img} alt={s.eyebrow} className="h-full w-full object-cover" />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.32) 60%, rgba(0,0,0,0.1) 100%)" }}
-          />
+          {/* Flat overlay — bg-black/30 */}
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       ))}
 
-      {/* Content */}
-      <div className="container-1100 relative flex h-full flex-col justify-center">
+      {/* Content — left-aligned, 2/3 width */}
+      <div className="s-wrap relative flex h-full flex-col justify-center">
         <div className="max-w-[640px]">
           <AnimatePresence mode="wait">
             <motion.div key={`slide-${index}`}>
               {/* Eyebrow */}
-              <motion.div
-                className="mb-6 flex items-center gap-4"
+              <motion.span
+                className="s-label-caps mb-6 block text-white/80"
+                style={{ letterSpacing: "0.5em" }}
                 custom={0}
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <span className="block h-px w-12" style={{ backgroundColor: "var(--gold)" }} />
-                <span
-                  className="tracked text-[11px] font-medium text-white/70"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {slide.eyebrow}
-                </span>
-              </motion.div>
+                {slide.eyebrow}
+              </motion.span>
 
-              {/* Headline */}
+              {/* H1 */}
               <motion.h1
-                className="text-[52px] leading-[1.05] text-white sm:text-[68px] md:text-[82px]"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 400,
-                  letterSpacing: "0.04em",
-                  textTransform: "uppercase",
-                  whiteSpace: "pre-line",
-                }}
-                custom={0.12}
+                className="s-display-lg text-white"
+                style={{ whiteSpace: "pre-line" }}
+                custom={0.15}
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
@@ -111,9 +98,8 @@ export function Hero() {
 
               {/* Subtitle */}
               <motion.p
-                className="mt-6 max-w-[400px] text-[15px] font-light leading-relaxed text-white/75"
-                style={{ fontFamily: "var(--font-body)" }}
-                custom={0.24}
+                className="s-body-lg mt-6 max-w-[440px] text-white/80"
+                custom={0.28}
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
@@ -124,30 +110,37 @@ export function Hero() {
 
               {/* CTAs */}
               <motion.div
-                className="mt-10 flex flex-wrap gap-4"
-                custom={0.36}
+                className="mt-12 flex flex-wrap items-center gap-8"
+                custom={0.4}
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
+                {/* Primary — gold filled */}
                 <Link
                   to="/projetos"
-                  className="tracked inline-block px-10 py-4 text-[11px] font-medium text-white transition-colors"
-                  style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
+                  className="s-label-caps inline-block px-10 py-5 text-white transition-all duration-500"
+                  style={{ backgroundColor: "#BE9355" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#ffffff";
+                    e.currentTarget.style.color = "#000000";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "#BE9355";
+                    e.currentTarget.style.color = "#ffffff";
+                  }}
                 >
                   Ver Projetos
                 </Link>
+
+                {/* Ghost — text + extending line */}
                 <Link
                   to="/contacto"
-                  className="tracked inline-block px-10 py-4 text-[11px] font-medium text-white/80 transition-colors hover:text-white"
-                  style={{ border: "1px solid rgba(255,255,255,0.35)", fontFamily: "var(--font-display)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)")}
+                  className="s-label-caps group inline-flex items-center gap-4 text-white uppercase"
                 >
                   Falar Connosco
+                  <span className="block h-px w-12 bg-white transition-all duration-500 group-hover:w-16" />
                 </Link>
               </motion.div>
             </motion.div>
@@ -155,15 +148,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Thin vertical line accent — right side */}
-      <div className="absolute right-16 top-1/2 hidden h-24 w-px -translate-y-1/2 lg:block" style={{ backgroundColor: "rgba(255,255,255,0.15)" }} />
-
       {/* Side arrows */}
       <button
         type="button"
         aria-label="Anterior"
         onClick={() => go(index - 1)}
-        className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[#BE9355] hover:bg-[#BE9355]"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -171,12 +161,25 @@ export function Hero() {
         type="button"
         aria-label="Seguinte"
         onClick={() => go(index + 1)}
-        className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[#BE9355] hover:bg-[#BE9355]"
       >
         <ChevronRight className="h-4 w-4" />
       </button>
 
-      {/* Bottom progress lines */}
+      {/* Slide counter — bottom-right, above progress bar */}
+      <div className="absolute bottom-10 right-8 z-10 flex items-center gap-3">
+        <span
+          className="s-headline-md text-white leading-none"
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="h-px w-8 bg-white/20" />
+        <span className="s-label-caps text-white/40">
+          {String(SLIDES.length).padStart(2, "0")}
+        </span>
+      </div>
+
+      {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 z-10 flex">
         {SLIDES.map((_, i) => (
           <button
@@ -188,24 +191,10 @@ export function Hero() {
           >
             <span
               className={`absolute inset-0 origin-left transition-transform duration-[6000ms] ease-linear ${i === index ? "scale-x-100" : "scale-x-0"}`}
-              style={{ backgroundColor: "var(--gold)" }}
+              style={{ backgroundColor: "#BE9355" }}
             />
           </button>
         ))}
-      </div>
-
-      {/* Slide counter bottom-right — above progress bars */}
-      <div className="absolute bottom-10 right-8 z-10 flex items-center gap-3">
-        <span
-          className="text-[28px] leading-none text-white"
-          style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.05em" }}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="h-px w-6 bg-white/25" />
-        <span className="text-[13px] text-white/30" style={{ fontFamily: "var(--font-display)" }}>
-          {String(SLIDES.length).padStart(2, "0")}
-        </span>
       </div>
     </section>
   );

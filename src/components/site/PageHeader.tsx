@@ -1,66 +1,56 @@
-import { Link } from "@tanstack/react-router";
-
-type Crumb = { label: string; to?: string };
-
 type PageHeaderProps = {
   titleFirst: string;
   titleSecond: string;
   image: string;
-  breadcrumbs?: Crumb[];
   eyebrow?: string;
   subtitle?: string;
   align?: "left" | "center";
 };
 
-export function PageHeader({ titleFirst, titleSecond, image, breadcrumbs }: PageHeaderProps) {
+export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, align = "left" }: PageHeaderProps) {
+  const isCenter = align === "center";
   return (
-    <>
-      {/* Faded banner — short, light overlay */}
-      <div className="relative h-[220px] overflow-hidden">
-        <img
-          src={image}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: 0.22 }}
-        />
-      </div>
+    <section className="relative overflow-hidden" style={{ height: 614 }}>
+      {/* Full-height image with brightness-50 */}
+      <img
+        src={image}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ filter: "brightness(0.5)" }}
+      />
 
-      {/* Title section on white */}
-      <div className="container-1100 pb-4 pt-12">
-        <h1
-          className="text-[34px] sm:text-[46px]"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            letterSpacing: "0.04em",
-            textTransform: "uppercase",
-            lineHeight: 1.1,
-            color: "var(--foreground)",
-          }}
-        >
-          {titleFirst}{" "}
-          <span style={{ color: "var(--gold)" }}>{titleSecond}</span>
-        </h1>
-
-        {breadcrumbs && (
-          <nav aria-label="Caminho" className="mt-4">
-            <ol className="tracked flex flex-wrap items-center gap-2 text-[11px]" style={{ color: "var(--muted-foreground)" }}>
-              {breadcrumbs.map((c, i) => (
-                <li key={c.label} className="flex items-center gap-2">
-                  {c.to ? (
-                    <Link to={c.to} className="transition-colors hover:text-[color:var(--gold)]">
-                      {c.label}
-                    </Link>
-                  ) : (
-                    <span style={{ color: "var(--gold)" }}>{c.label}</span>
-                  )}
-                  {i < breadcrumbs.length - 1 && <span aria-hidden className="opacity-40">/</span>}
-                </li>
-              ))}
-            </ol>
-          </nav>
-        )}
+      {/* Content — aligned to bottom */}
+      <div
+        className={`absolute inset-0 z-10 flex items-end ${isCenter ? "justify-center text-center" : ""}`}
+        style={{ paddingBottom: 80 }}
+      >
+        <div className="s-wrap w-full">
+          <div className={`grid grid-cols-12 ${isCenter ? "justify-items-center" : ""}`}>
+            <div className={`col-span-12 md:col-span-8 ${isCenter ? "md:col-start-3 text-center" : ""}`}>
+              {eyebrow && (
+                <span
+                  className="s-label-caps mb-6 block text-white"
+                  style={{ letterSpacing: "0.5em" }}
+                >
+                  {eyebrow}
+                </span>
+              )}
+              <h1 className="s-display-lg text-white">
+                {titleFirst}{" "}
+                <span style={{ color: "#BE9355" }}>{titleSecond}</span>
+              </h1>
+              {subtitle && (
+                <p
+                  className="s-body-lg mt-6 text-white/90"
+                  style={{ maxWidth: 560 }}
+                >
+                  {subtitle}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 }
