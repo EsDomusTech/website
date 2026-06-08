@@ -10,31 +10,31 @@ import { SITE } from "@/lib/site-data";
 const VALUES = [
   {
     num: "01",
-    title: "Sustentabilidade",
-    text: "Construímos com materiais responsáveis e soluções de eficiência energética que reduzem a pegada de carbono.",
+    title: "Orçamentos Claros",
+    text: "Sem surpresas: o orçamento aprovado fica fixo por contrato, com pagamentos facilitados em 4 etapas de 25%.",
   },
   {
     num: "02",
     title: "Rigor Técnico",
-    text: "Cada projeto é gerido com precisão técnica, prazos claros e controlo de qualidade em todas as fases.",
+    text: "Estrutura em aço galvanizado DX51D, isolamento termoacústico e classe energética A — cumprindo Eurocódigo, RSA, REBAP e SCE.",
   },
   {
     num: "03",
     title: "Personalização",
-    text: "Desenhamos espaços únicos, adaptados ao estilo de vida, ao orçamento e às ambições de cada cliente.",
+    text: "Sistema de \"plafon\": o cliente escolhe casas de banho, cozinha, portas e janelas de catálogo, pagando apenas a diferença de valor.",
   },
   {
     num: "04",
-    title: "Inovação Modular",
-    text: "Integramos domótica e tecnologias de construção de ponta para criar habitações preparadas para o futuro.",
+    title: "Construção Modular",
+    text: "Fabrico em ambiente fabril controlado, com montagem no terreno até 60% mais rápida do que a construção tradicional.",
   },
 ];
 
 const STATS = [
-  { value: "120+", label: "Projetos entregues" },
-  { value: "15", label: "Anos de experiência" },
-  { value: "98%", label: "Clientes satisfeitos" },
-  { value: "A+", label: "Eficiência energética" },
+  { value: "23", label: "Casas entregues" },
+  { value: "4", label: "Anos no mercado" },
+  { value: "13", label: "Localizações" },
+  { value: "A", label: "Classe energética" },
 ];
 
 export const Route = createFileRoute("/empresa")({
@@ -104,17 +104,20 @@ function EmpresaPage() {
             <SectionTitle first="A NOSSA" second="HISTÓRIA" align="left" />
             <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Fundada no coração do Porto, a DomusTech nasceu da convicção de que a construção pode
-                ser mais rápida, mais limpa e mais bonita. Especializámo-nos em casas modulares que
-                combinam arquitetura contemporânea com tecnologia de fabrico de precisão.
+                Acreditamos que a habitação do futuro deve ser personalizada, sustentável e acessível.
+                Por isso desenvolvemos casas modulares em estrutura metálica robusta, com isolamento
+                termoacústico e design moderno — garantindo rapidez na construção e máxima eficiência
+                energética.
               </p>
               <p>
-                Ao longo dos anos, ajudámos famílias e empresas a concretizar espaços que refletem a
-                sua identidade, sempre com foco na sustentabilidade e na eficiência energética.
+                Em poucos anos no mercado, já entregámos 23 casas em 13 localizações por todo o
+                território nacional. Cada projeto segue o mesmo princípio: orçamentos claros e sem
+                surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida
+                do cliente.
               </p>
               <p>
-                Hoje, a nossa equipa multidisciplinar de arquitetos, engenheiros e designers acompanha
-                cada projeto do conceito à entrega, com o mesmo rigor e paixão do primeiro dia.
+                Personalize, construa, viva — a nossa equipa acompanha cada casa da primeira conversa
+                à entrega das chaves, com o mesmo rigor técnico do primeiro dia.
               </p>
             </div>
           </div>

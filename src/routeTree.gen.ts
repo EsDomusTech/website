@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SistemaConstrutivoRouteImport } from './routes/sistema-construtivo'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as GaleriaRouteImport } from './routes/galeria'
@@ -45,6 +46,11 @@ const TermosECondicoesRoute = TermosECondicoesRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SistemaConstrutivoRoute = SistemaConstrutivoRouteImport.update({
+  id: '/sistema-construtivo',
+  path: '/sistema-construtivo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrecosRoute = PrecosRouteImport.update({
@@ -154,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByTo {
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
@@ -203,6 +211,7 @@ export interface FileRoutesById {
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
@@ -229,6 +238,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
@@ -253,6 +263,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
@@ -277,6 +288,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
@@ -302,6 +314,7 @@ export interface RootRouteChildren {
   GaleriaRoute: typeof GaleriaRouteWithChildren
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PrecosRoute: typeof PrecosRoute
+  SistemaConstrutivoRoute: typeof SistemaConstrutivoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosECondicoesRoute: typeof TermosECondicoesRoute
   TestemunhosRoute: typeof TestemunhosRoute
@@ -336,6 +349,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sistema-construtivo': {
+      id: '/sistema-construtivo'
+      path: '/sistema-construtivo'
+      fullPath: '/sistema-construtivo'
+      preLoaderRoute: typeof SistemaConstrutivoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/precos': {
@@ -496,6 +516,7 @@ const rootRouteChildren: RootRouteChildren = {
   GaleriaRoute: GaleriaRouteWithChildren,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PrecosRoute: PrecosRoute,
+  SistemaConstrutivoRoute: SistemaConstrutivoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosECondicoesRoute: TermosECondicoesRoute,
   TestemunhosRoute: TestemunhosRoute,

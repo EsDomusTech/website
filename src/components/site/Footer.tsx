@@ -12,6 +12,7 @@ const SOCIAL = [
 const NAV_LINKS = [
   { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
+  { label: "Sistema Construtivo", to: "/sistema-construtivo" },
   { label: "Serviços", to: "/servicos" },
   { label: "Projetos", to: "/projetos" },
   { label: "Blog", to: "/blog" },

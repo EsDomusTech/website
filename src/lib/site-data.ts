@@ -6,7 +6,7 @@
 export const SITE = {
   name: "DomusTech",
   domain: "https://domustech.lovable.app",
-  tagline: "Casas Modulares Inteligentes no Porto",
+  tagline: "Casas Modulares Tecnológicas",
   phone: "+351 938 802 664",
   email: "geral@esdomustech.com",
   address: "Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha",
@@ -274,41 +274,66 @@ export const TEAM: TeamMember[] = [
     image: "https://picsum.photos/seed/portrait-ana/600/800",
   },
   {
-    name: "Miguel Santos",
-    role: "Arq. Dipl. FAUP",
-    image: "https://picsum.photos/seed/portrait-miguel/600/800",
+    name: "Juliane Zombini",
+    role: "Administrativa & Financeira",
+    image: "https://picsum.photos/seed/portrait-juliane/600/800",
   },
   {
-    name: "Sofia Carvalho",
-    role: "Directora de Design",
-    image: "https://picsum.photos/seed/portrait-sofia/600/800",
+    name: "Marina Dias",
+    role: "Recursos Humanos",
+    image: "https://picsum.photos/seed/portrait-marina/600/800",
   },
   {
-    name: "João Almeida",
-    role: "Arquitecto Técnico",
-    image: "https://picsum.photos/seed/portrait-joao/600/800",
+    name: "Karine Ribeiro",
+    role: "Comercial",
+    image: "https://picsum.photos/seed/portrait-karine/600/800",
+  },
+  {
+    name: "Fernanda Lopes",
+    role: "Comercial",
+    image: "https://picsum.photos/seed/portrait-fernanda/600/800",
   },
 ];
 
 export const FAQS = [
   {
-    q: "Quanto tempo demora a construir uma casa modular?",
-    a: "Uma casa modular DomusTech é normalmente entregue entre 4 a 6 meses, dependendo da dimensão e dos acabamentos. O fabrico em fábrica decorre em paralelo com a preparação do terreno, reduzindo significativamente os prazos.",
+    q: "Uma casa modular é tão sólida como uma tradicional?",
+    a: "Sim — usamos os mesmos materiais de acabamento da construção tradicional, e a estrutura em aço galvanizado oferece segurança adicional e melhor isolamento térmico e acústico.",
   },
   {
-    q: "As casas modulares são tão duráveis como as tradicionais?",
-    a: "Sim. As nossas casas modulares cumprem as mesmas normas de construção e são frequentemente mais robustas, graças ao controlo de qualidade rigoroso do fabrico em ambiente controlado.",
+    q: "Quanto tempo demora a construção?",
+    a: "Até 360 dias úteis após a emissão da licença de construção, com o licenciamento camarário a demorar tipicamente entre 2 a 4 meses.",
   },
   {
-    q: "Posso personalizar totalmente o projeto?",
-    a: "Absolutamente. Personalizamos plantas, materiais, acabamentos e soluções energéticas. Cada projeto é único e adaptado ao seu estilo de vida e orçamento.",
+    q: "O que está incluído no preço?",
+    a: "Uma lista alargada que cobre desde a visita técnica e o projeto de arquitetura até à entrega chave na mão — estrutura, casas de banho completas, isolamento, pavimentos, janelas e portas, eletricidade e canalizações, cobertura, transporte, garantia estrutural de 10 anos e acompanhamento de licenciamento.",
   },
   {
-    q: "Tratam do licenciamento e das licenças?",
-    a: "Sim, o nosso serviço chave na mão inclui o projeto de arquitetura, o licenciamento camarário e todo o acompanhamento técnico até à entrega.",
+    q: "A casa pode ser ampliada no futuro?",
+    a: "Sim — a construção modular permite uma abordagem evolutiva ao longo do tempo, ajustando a casa às necessidades futuras da família.",
   },
   {
-    q: "Trabalham apenas no Porto?",
-    a: "Estamos sediados no Porto e operamos em toda a região Norte de Portugal. Para projetos noutras regiões, contacte-nos para avaliarmos a viabilidade.",
+    q: "Que classe energética tem?",
+    a: "Classe A.",
+  },
+  {
+    q: "Preciso de contratar um arquiteto?",
+    a: "Não — o projeto de arquitetura e engenharia, com imagens 3D, está incluído no nosso serviço chave na mão.",
+  },
+  {
+    q: "Como funciona o licenciamento camarário?",
+    a: "A DomusTech trata da totalidade do processo — projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias.",
+  },
+  {
+    q: "Qual é a garantia da casa?",
+    a: "10 anos de garantia estrutural, sujeita a avaliação da nossa equipa de engenharia.",
+  },
+  {
+    q: "Posso personalizar o interior?",
+    a: "Sim, através do nosso sistema de \"plafon\": pode substituir qualquer elemento de catálogo — casa de banho, cozinha, portas, janelas — pagando apenas a diferença de valor face ao item standard.",
+  },
+  {
+    q: "A DomusTech constrói em todo o país?",
+    a: "Sim — construímos em todo o território nacional. Já entregámos casas em 13 localizações diferentes.",
   },
 ];
