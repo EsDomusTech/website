@@ -114,7 +114,9 @@ export function Footer() {
                 className="flex border-b py-2"
                 style={{ borderColor: "#747878" }}
               >
+                <label htmlFor="footer-email" className="sr-only">Endereço de email para newsletter</label>
                 <input
+                  id="footer-email"
                   type="email"
                   required
                   value={email}
@@ -127,6 +129,7 @@ export function Footer() {
                   type="submit"
                   className="s-label-caps shrink-0 transition-colors hover:text-[#BE9355]"
                   style={{ color: "#000000" }}
+                  aria-label="Subscrever newsletter"
                 >
                   →
                 </button>

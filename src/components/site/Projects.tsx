@@ -4,7 +4,7 @@ import { PROJECTS } from "@/lib/site-data";
 
 export function Projects() {
   return (
-    <section id="projects" className="section-pad" style={{ backgroundColor: "#f3f3f3" }}>
+    <section id="projects" className="section-pad" style={{ backgroundColor: "var(--secondary)" }}>
       <div className="s-wrap">
 
         {/* Header — eyebrow + H2 left, "View All" right with border-b */}
@@ -12,25 +12,25 @@ export function Projects() {
           <div>
             <span
               className="s-label-caps mb-4 block"
-              style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+              style={{ color: "var(--gold)", letterSpacing: "0.3em" }}
             >
               Portfólio
             </span>
-            <h2 className="s-headline-lg" style={{ color: "#000000" }}>
+            <h2 className="s-headline-lg">
               Nossos Projetos
             </h2>
           </div>
           <Link
             to="/projetos"
             className="s-label-caps border-b pb-1 transition-colors"
-            style={{ color: "#000000", borderColor: "#000000" }}
+            style={{ color: "var(--foreground)", borderColor: "var(--foreground)" }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#BE9355";
-              e.currentTarget.style.borderColor = "#BE9355";
+              e.currentTarget.style.color = "var(--gold)";
+              e.currentTarget.style.borderColor = "var(--gold)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "#000000";
-              e.currentTarget.style.borderColor = "#000000";
+              e.currentTarget.style.color = "var(--foreground)";
+              e.currentTarget.style.borderColor = "var(--foreground)";
             }}
           >
             VER TODOS OS PROJETOS →
@@ -64,7 +64,7 @@ export function Projects() {
                 <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-12 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <span
                     className="s-label-caps mb-2 block"
-                    style={{ color: "#BE9355", letterSpacing: "0.2em" }}
+                    style={{ color: "var(--gold)", letterSpacing: "0.2em" }}
                   >
                     {p.category}
                   </span>
