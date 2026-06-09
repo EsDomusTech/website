@@ -44,7 +44,7 @@ export function About() {
   return (
     <>
       {/* About section — 5/12 text + 7/12 content */}
-      <section id="about" className="section-pad" style={{ backgroundColor: "#f9f9f9" }}>
+      <section id="about" className="section-pad" style={{ backgroundColor: "var(--background)" }}>
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8 items-start">
 
@@ -58,21 +58,21 @@ export function About() {
             >
               <span
                 className="s-label-caps mb-4 block"
-                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+                style={{ color: "var(--gold)", letterSpacing: "0.3em" }}
               >
                 Sobre Nós
               </span>
-              <h2 className="s-headline-lg mb-10" style={{ color: "#000000" }}>
+              <h2 className="s-headline-lg mb-10">
                 Quem Somos
               </h2>
               <a
                 href="/empresa"
                 className="s-label-caps inline-flex items-center gap-4 transition-colors"
-                style={{ color: "#000000" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#BE9355")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#000000")}
+                style={{ color: "var(--foreground)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
               >
-                <span className="block h-px w-8" style={{ backgroundColor: "#BE9355" }} />
+                <span className="block h-px w-8" style={{ backgroundColor: "var(--gold)" }} />
                 Conhecer a Empresa
               </a>
             </motion.div>
@@ -85,18 +85,18 @@ export function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             >
-              <p className="s-body-lg mb-6" style={{ color: "#444748" }}>{BODY}</p>
-              <p className="s-body-lg mb-10" style={{ color: "#444748" }}>{BODY2}</p>
+              <p className="s-body-lg mb-6" style={{ color: "var(--muted-foreground)" }}>{BODY}</p>
+              <p className="s-body-lg mb-10" style={{ color: "var(--muted-foreground)" }}>{BODY2}</p>
 
               {/* Mini stats — 2 cols, border-t */}
               <div
                 className="grid grid-cols-2 gap-8 border-t pt-8"
-                style={{ borderColor: "#c4c7c7" }}
+                style={{ borderColor: "var(--border)" }}
               >
                 {MINI_STATS.map((s) => (
                   <div key={s.value}>
-                    <p className="s-headline-md mb-2" style={{ color: "#000000" }}>{s.value}</p>
-                    <p className="s-body-md" style={{ color: "#444748" }}>{s.label}</p>
+                    <p className="s-headline-md mb-2">{s.value}</p>
+                    <p className="s-body-md" style={{ color: "var(--muted-foreground)" }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -106,7 +106,7 @@ export function About() {
       </section>
 
       {/* Stats dark section — separate block */}
-      <section style={{ backgroundColor: "#1a1a1a" }}>
+      <section style={{ backgroundColor: "var(--dark-section)" }}>
         <div className="s-wrap">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {STATS.map((s, i) => (
@@ -116,12 +116,19 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                className="flex flex-col items-center justify-center py-16"
-                style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}
+                className={[
+                  "flex flex-col items-center justify-center py-16",
+                  // Mobile (2-col): left column (even index) gets separator
+                  i % 2 === 0 ? "border-r border-white/[0.06]" : "",
+                  // Desktop (4-col): item 1 also needs separator (odd on mobile, no border there)
+                  i === 1 ? "md:border-r md:border-white/[0.06]" : "",
+                  // Desktop: last item explicitly no separator
+                  i === 3 ? "md:border-r-0" : "",
+                ].filter(Boolean).join(" ")}
               >
                 <span
                   className="s-headline-lg leading-none"
-                  style={{ color: "#BE9355", fontFamily: "Oswald, sans-serif" }}
+                  style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                 >
                   <Counter target={s.value} />
                 </span>

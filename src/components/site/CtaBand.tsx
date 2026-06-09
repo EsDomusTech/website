@@ -18,7 +18,7 @@ export function CtaBand({
   secondaryTo = "/empresa",
   variant = "dark",
 }: CtaBandProps) {
-  const bg = variant === "gold" ? "#BE9355" : "#1a1a1a";
+  const bg = variant === "gold" ? "var(--gold)" : "var(--dark-section)";
 
   return (
     <section className="section-pad text-center" style={{ backgroundColor: bg }}>
@@ -42,9 +42,9 @@ export function CtaBand({
             <Link
               to="/contacto"
               className="s-label-caps inline-block px-12 py-5 text-white transition-all duration-300"
-              style={{ backgroundColor: "#BE9355" }}
+              style={{ backgroundColor: "var(--gold)" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d4a968")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#BE9355")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
             >
               {label}
             </Link>

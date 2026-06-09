@@ -10,10 +10,10 @@ export function Services() {
         {/* Header — grid 12-col, col 6/12 */}
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 md:col-span-6">
-            <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+            <span className="s-label-caps mb-4 block" style={{ color: "var(--gold)", letterSpacing: "0.3em" }}>
               Especialidade
             </span>
-            <h2 className="s-headline-lg" style={{ color: "#000000" }}>
+            <h2 className="s-headline-lg">
               Os Nossos Serviços
             </h2>
           </div>
@@ -30,27 +30,24 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group"
+                className="group border-t pt-6 pb-12"
                 style={{
-                  borderLeft: "1px solid #c4c7c7",
-                  paddingLeft: 32,
-                  paddingTop: 16,
-                  paddingBottom: 48,
-                  transition: "border-color 0.5s",
+                  borderColor: "var(--border)",
+                  transition: "border-color 0.4s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = "#BE9355")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = "#c4c7c7")}
+                onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = "var(--gold)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = "var(--border)")}
               >
                 {/* Ghost number */}
                 <span
                   className="block mb-6 select-none"
                   style={{
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "var(--font-display)",
                     fontWeight: 400,
                     fontSize: 48,
                     lineHeight: "56px",
                     letterSpacing: "0.03em",
-                    color: "#e2e2e2",
+                    color: "var(--ghost)",
                   }}
                   aria-hidden
                 >
@@ -60,13 +57,13 @@ export function Services() {
                 {/* Title */}
                 <h3
                   className="s-headline-md mb-4"
-                  style={{ color: "#000000", letterSpacing: "0.1em" }}
+                  style={{ letterSpacing: "0.1em" }}
                 >
                   {svc.name}
                 </h3>
 
                 {/* Body */}
-                <p className="s-body-md mb-8" style={{ color: "#444748" }}>
+                <p className="s-body-md mb-8" style={{ color: "var(--muted-foreground)" }}>
                   {svc.excerpt}
                 </p>
 
@@ -75,7 +72,7 @@ export function Services() {
                   to="/servicos/$slug"
                   params={{ slug: svc.slug }}
                   className="inline-block transition-transform duration-500 group-hover:translate-x-4"
-                  style={{ color: "#BE9355", fontSize: 24 }}
+                  style={{ color: "var(--gold)", fontSize: 24 }}
                   aria-label={`Ver ${svc.name}`}
                 >
                   →

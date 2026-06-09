@@ -60,8 +60,9 @@ export function Hero() {
           transition={{ duration: 1.2 }}
         >
           <img src={s.img} alt={s.eyebrow} className="h-full w-full object-cover" />
-          {/* Flat overlay — bg-black/30 */}
           <div className="absolute inset-0 bg-black/30" />
+          {/* Gradient to ensure navbar legibility */}
+          <div className="absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%)" }} />
         </motion.div>
       ))}
 
@@ -121,13 +122,13 @@ export function Hero() {
                 <Link
                   to="/projetos"
                   className="s-label-caps inline-block px-10 py-5 text-white transition-all duration-500"
-                  style={{ backgroundColor: "#BE9355" }}
+                  style={{ backgroundColor: "var(--gold)" }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = "#ffffff";
-                    e.currentTarget.style.color = "#000000";
+                    e.currentTarget.style.color = "var(--foreground)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "#BE9355";
+                    e.currentTarget.style.backgroundColor = "var(--gold)";
                     e.currentTarget.style.color = "#ffffff";
                   }}
                 >
@@ -153,7 +154,7 @@ export function Hero() {
         type="button"
         aria-label="Anterior"
         onClick={() => go(index - 1)}
-        className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[#BE9355] hover:bg-[#BE9355]"
+        className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -161,7 +162,7 @@ export function Hero() {
         type="button"
         aria-label="Seguinte"
         onClick={() => go(index + 1)}
-        className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[#BE9355] hover:bg-[#BE9355]"
+        className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
       >
         <ChevronRight className="h-4 w-4" />
       </button>
@@ -191,7 +192,7 @@ export function Hero() {
           >
             <span
               className={`absolute inset-0 origin-left transition-transform duration-[6000ms] ease-linear ${i === index ? "scale-x-100" : "scale-x-0"}`}
-              style={{ backgroundColor: "#BE9355" }}
+              style={{ backgroundColor: "var(--gold)" }}
             />
           </button>
         ))}
