@@ -10,6 +10,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
   { label: "Sistema Construtivo", to: "/sistema-construtivo" },
+  { label: "Vantagens Fiscais", to: "/vantagens-fiscais" },
   {
     label: "Serviços",
     to: "/servicos",
@@ -44,6 +45,7 @@ const NAV_LINKS: NavLink[] = [
   {
     label: "Páginas",
     children: [
+      { label: "Blog", to: "/blog" },
       { label: "Before After", to: "/antes-depois" },
       { label: "Pricing", to: "/precos" },
       { label: "Team", to: "/equipa" },
@@ -51,14 +53,13 @@ const NAV_LINKS: NavLink[] = [
       { label: "FAQs", to: "/faq" },
     ],
   },
-  { label: "Blog", to: "/blog" },
   { label: "Contacto", to: "/contacto" },
 ];
 
 export const SOCIAL = [
-  { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
-  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
-  { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
+  { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
+  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
+  { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
 ];
 
 const LANGS = [
@@ -210,7 +211,7 @@ const itemVariants = {
   open: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: 0.12 + i * 0.05, duration: 0.3, ease: "easeOut" },
+    transition: { delay: 0.12 + i * 0.05, duration: 0.3, ease: "easeOut" as const },
   }),
 };
 
@@ -254,12 +255,12 @@ export function Navbar() {
           borderBottom: scrolled ? "1px solid var(--border)" : "none",
         }}
       >
-        <nav className="s-wrap flex items-center justify-between" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
+        <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
           <Logo light={!scrolled} />
 
-          {/* Desktop nav links */}
-          <ul className="hidden items-center gap-6 xl:flex">
-            {NAV_LINKS.map((link) => (
+          {/* Desktop nav links — Início omitido (o logo já liga a home) */}
+          <ul className="hidden items-center gap-5 xl:flex 2xl:gap-6">
+            {NAV_LINKS.filter((link) => link.to !== "/").map((link) => (
               <li
                 key={link.label}
                 className="relative"

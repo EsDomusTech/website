@@ -22,9 +22,9 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
-  { label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
+  { label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
 ];
 
 function ContactoPage() {
@@ -96,6 +96,19 @@ function ContactoPage() {
                     {SITE.email}
                   </a>
                 </div>
+              </div>
+
+              {/* Horário */}
+              <div>
+                <span
+                  className="s-label-caps mb-4 block"
+                  style={{ color: "#999999" }}
+                >
+                  Horário
+                </span>
+                <p className="s-body-lg" style={{ color: "#000000" }}>
+                  {SITE.hours}
+                </p>
               </div>
 
               {/* Redes sociais */}
