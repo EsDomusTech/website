@@ -7,9 +7,10 @@ export const SITE = {
   name: "DomusTech",
   domain: "https://domustech.lovable.app",
   tagline: "Casas Modulares Tecnológicas",
-  phone: "+351 938 802 664",
+  phone: "+351 935 677 556",
   email: "geral@esdomustech.com",
   address: "Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha",
+  hours: "Segunda a Sexta, 8h–17h",
   mapsUrl: "https://maps.app.goo.gl/LJQN6T5pS541ABgT6",
 } as const;
 

@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "GeneralContractor",
           name: SITE.name,
           url: SITE.domain,
           description:
@@ -119,12 +119,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           email: SITE.email,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Rua das Flores 100",
-            postalCode: "4050-262",
-            addressLocality: "Porto",
+            streetAddress: "Tv. Joaquim Dias Salgueiro 186",
+            postalCode: "4470-558",
+            addressLocality: "Vila Nova da Telha",
+            addressRegion: "Porto",
             addressCountry: "PT",
           },
+          openingHours: "Mo-Fr 08:00-17:00",
           areaServed: "Porto, Portugal",
+          sameAs: [
+            "https://www.instagram.com/esdomustech_porto",
+            "https://www.facebook.com/esdomustech/",
+            "https://www.linkedin.com/company/esdomustech-casas-modulares",
+          ],
         }),
       },
     ],

@@ -40,7 +40,7 @@ function ServiceRow({ s, i }: { s: typeof SERVICES[0]; i: number }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="grid grid-cols-12 gap-8 items-center">
+      <div className="grid grid-cols-12 gap-x-4 gap-y-2 md:gap-8 items-center">
         {/* 01 */}
         <div className="col-span-2 md:col-span-1">
           <span

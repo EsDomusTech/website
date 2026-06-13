@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 const SOCIAL = [
-  { label: "Instagram", href: "https://www.instagram.com/domustech_porto/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/domustech-casas-modulares-546498342/" },
-  { label: "Facebook", href: "https://www.facebook.com/p/Domustech-61579105953005/" },
+  { label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
 ];
 
 const NAV_LINKS = [
@@ -70,6 +70,10 @@ export function Footer() {
             <p className="s-body-md flex items-start gap-4" style={{ color: "#444748" }}>
               <MapPin size={16} style={{ color: "#BE9355", flexShrink: 0, marginTop: 4 }} />
               {SITE.address}
+            </p>
+            <p className="s-body-md flex items-center gap-4" style={{ color: "#444748" }}>
+              <Clock size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
+              {SITE.hours}
             </p>
           </div>
         </div>

@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VantagensFiscaisRouteImport } from './routes/vantagens-fiscais'
 import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -33,6 +34,11 @@ import { Route as ProjetosFancyRouteImport } from './routes/projetos.fancy'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as GaleriaMasonryRouteImport } from './routes/galeria.masonry'
 
+const VantagensFiscaisRoute = VantagensFiscaisRouteImport.update({
+  id: '/vantagens-fiscais',
+  path: '/vantagens-fiscais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TestemunhosRoute = TestemunhosRouteImport.update({
   id: '/testemunhos',
   path: '/testemunhos',
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
+  '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
@@ -189,6 +196,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
+  '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
@@ -215,6 +223,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/testemunhos': typeof TestemunhosRoute
+  '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
@@ -242,6 +251,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
+    | '/vantagens-fiscais'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
@@ -267,6 +277,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
+    | '/vantagens-fiscais'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
@@ -292,6 +303,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termos-e-condicoes'
     | '/testemunhos'
+    | '/vantagens-fiscais'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
@@ -318,6 +330,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosECondicoesRoute: typeof TermosECondicoesRoute
   TestemunhosRoute: typeof TestemunhosRoute
+  VantagensFiscaisRoute: typeof VantagensFiscaisRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ProjetosFancyRoute: typeof ProjetosFancyRoute
   ProjetosFancyFiltroRoute: typeof ProjetosFancyFiltroRoute
@@ -330,6 +343,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vantagens-fiscais': {
+      id: '/vantagens-fiscais'
+      path: '/vantagens-fiscais'
+      fullPath: '/vantagens-fiscais'
+      preLoaderRoute: typeof VantagensFiscaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/testemunhos': {
       id: '/testemunhos'
       path: '/testemunhos'
@@ -520,6 +540,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosECondicoesRoute: TermosECondicoesRoute,
   TestemunhosRoute: TestemunhosRoute,
+  VantagensFiscaisRoute: VantagensFiscaisRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
   ProjetosFancyRoute: ProjetosFancyRoute,
   ProjetosFancyFiltroRoute: ProjetosFancyFiltroRoute,
