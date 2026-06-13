@@ -71,10 +71,16 @@ export function Footer() {
               <Mail size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
               <span className="min-w-0 break-words">{SITE.email}</span>
             </a>
-            <p className="s-body-md flex items-start gap-4" style={{ color: "#444748" }}>
+            <a
+              href={SITE.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="s-body-md flex items-start gap-4 transition-colors hover:text-[#BE9355]"
+              style={{ color: "#444748" }}
+            >
               <MapPin size={16} style={{ color: "#BE9355", flexShrink: 0, marginTop: 4 }} />
               {SITE.address}
-            </p>
+            </a>
             <p className="s-body-md flex items-center gap-4" style={{ color: "#444748" }}>
               <Clock size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
               {SITE.hours}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
 
@@ -222,6 +222,17 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Rotas com hero escuro full-bleed atrás do header (texto branco fica legível).
+  // Restantes têm topo claro -> texto escuro.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const darkHero =
+    pathname === "/" ||
+    pathname.startsWith("/servicos") ||
+    pathname.startsWith("/projetos") ||
+    pathname === "/politica-de-privacidade" ||
+    pathname === "/termos-e-condicoes";
+  const overHero = !scrolled && darkHero;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
@@ -258,7 +269,7 @@ export function Navbar() {
         }}
       >
         <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
-          <Logo light={!scrolled} />
+          <Logo light={overHero} />
 
           {/* Desktop nav links — Início omitido (o logo já liga a home) */}
           <ul className="hidden items-center gap-5 xl:flex 2xl:gap-6">
@@ -274,7 +285,7 @@ export function Navbar() {
                     to={link.to as "/"}
                     activeOptions={{ exact: link.to === "/" }}
                     className="relative flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: scrolled ? "var(--foreground)" : "#fff" }}
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
                     activeProps={{
                       className: "relative flex items-center gap-1 text-[11px] font-medium after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-[color:var(--gold)]",
                       style: { fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gold)" },
@@ -287,7 +298,7 @@ export function Navbar() {
                   <button
                     type="button"
                     className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: scrolled ? "var(--foreground)" : "#fff" }}
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
                   >
                     {link.label}
                     {link.children && <ChevronDown className="h-3 w-3 opacity-50" />}
@@ -305,19 +316,19 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {/* Desktop extras */}
             <div className="hidden items-center gap-5 xl:flex">
-              <LangSelector light={!scrolled} />
-              <div className="h-4 w-px" style={{ backgroundColor: scrolled ? "var(--border)" : "rgba(255,255,255,0.3)" }} />
+              <LangSelector light={overHero} />
+              <div className="h-4 w-px" style={{ backgroundColor: overHero ? "rgba(255,255,255,0.3)" : "var(--border)" }} />
               <Link
                 to="/contacto"
                 className="tracked inline-block px-6 py-3 text-[11px] font-medium transition-colors"
                 style={{
-                  backgroundColor: scrolled ? "#1b1b1b" : "transparent",
-                  border: scrolled ? "none" : "1px solid rgba(255,255,255,0.7)",
+                  backgroundColor: overHero ? "transparent" : "#1b1b1b",
+                  border: overHero ? "1px solid rgba(255,255,255,0.7)" : "none",
                   color: "#fff",
                   fontFamily: "var(--font-display)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--gold)"; e.currentTarget.style.borderColor = "var(--gold)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = scrolled ? "#1b1b1b" : "transparent"; e.currentTarget.style.borderColor = scrolled ? "transparent" : "rgba(255,255,255,0.7)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = overHero ? "transparent" : "#1b1b1b"; e.currentTarget.style.borderColor = overHero ? "rgba(255,255,255,0.7)" : "transparent"; }}
               >
                 Pedir Orçamento
               </Link>
@@ -327,7 +338,7 @@ export function Navbar() {
             <button
               type="button"
               className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
-              style={{ color: scrolled ? "var(--foreground)" : "#fff" }}
+              style={{ color: overHero ? "#fff" : "var(--foreground)" }}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((v) => !v)}
