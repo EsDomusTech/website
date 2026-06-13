@@ -218,6 +218,7 @@ const itemVariants = {
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSub, setOpenSub] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -233,6 +234,7 @@ export function Navbar() {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      setOpenSub(null);
     }
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
@@ -388,40 +390,99 @@ export function Navbar() {
               </div>
 
               {/* Nav items */}
-              <nav className="flex flex-1 flex-col justify-center px-8 md:px-14">
+              <nav className="flex flex-1 flex-col justify-center overflow-y-auto px-8 py-6 md:px-14">
                 <ul className="space-y-0">
-                  {NAV_LINKS.map((link, i) => (
-                    <motion.li
-                      key={link.label}
-                      custom={i}
-                      variants={itemVariants}
-                      initial="closed"
-                      animate="open"
-                    >
-                      {link.to ? (
-                        <Link
-                          to={link.to as "/"}
-                          activeOptions={{ exact: link.to === "/" }}
-                          onClick={() => setMenuOpen(false)}
-                          className="block py-[0.55rem] text-[1.75rem] font-medium uppercase leading-none tracking-[0.2em] transition-colors duration-200 hover:text-[color:var(--gold)] md:text-[2.2rem]"
-                          style={{ fontFamily: "var(--font-display)", color: "var(--muted-foreground)" }}
-                          activeProps={{
-                            style: { fontFamily: "var(--font-display)", color: "var(--gold)" },
-                          }}
-                        >
-                          {link.label}
-                        </Link>
-                      ) : (
-                        <button
-                          type="button"
-                          className="block w-full py-[0.55rem] text-left text-[1.75rem] font-medium uppercase leading-none tracking-[0.2em] transition-colors duration-200 hover:text-[color:var(--gold)] md:text-[2.2rem]"
-                          style={{ fontFamily: "var(--font-display)", color: "var(--muted-foreground)" }}
-                        >
-                          {link.label}
-                        </button>
-                      )}
-                    </motion.li>
-                  ))}
+                  {NAV_LINKS.map((link, i) => {
+                    const labelClass =
+                      "block py-[0.55rem] text-[1.6rem] font-medium uppercase leading-none tracking-[0.2em] transition-colors duration-200 hover:text-[color:var(--gold)] md:text-[2rem]";
+                    const labelStyle = { fontFamily: "var(--font-display)", color: "var(--muted-foreground)" } as const;
+                    return (
+                      <motion.li
+                        key={link.label}
+                        custom={i}
+                        variants={itemVariants}
+                        initial="closed"
+                        animate="open"
+                      >
+                        {link.children ? (
+                          <>
+                            <div className="flex items-center justify-between gap-3">
+                              {link.to ? (
+                                <Link
+                                  to={link.to as "/"}
+                                  onClick={() => setMenuOpen(false)}
+                                  className={labelClass}
+                                  style={labelStyle}
+                                >
+                                  {link.label}
+                                </Link>
+                              ) : (
+                                <button
+                                  type="button"
+                                  onClick={() => setOpenSub((v) => (v === link.label ? null : link.label))}
+                                  className={`${labelClass} flex-1 text-left`}
+                                  style={labelStyle}
+                                >
+                                  {link.label}
+                                </button>
+                              )}
+                              <button
+                                type="button"
+                                aria-label={`Mostrar submenu ${link.label}`}
+                                aria-expanded={openSub === link.label}
+                                onClick={() => setOpenSub((v) => (v === link.label ? null : link.label))}
+                                className="flex h-11 w-11 shrink-0 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
+                                style={{ color: "var(--muted-foreground)" }}
+                              >
+                                <ChevronDown
+                                  className={`h-6 w-6 transition-transform duration-300 ${openSub === link.label ? "rotate-180" : ""}`}
+                                />
+                              </button>
+                            </div>
+                            <AnimatePresence initial={false}>
+                              {openSub === link.label && (
+                                <motion.ul
+                                  key="sub"
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
+                                  style={{ overflow: "hidden" }}
+                                  className="pl-4"
+                                >
+                                  {link.children.map((sub) => (
+                                    <li key={sub.to}>
+                                      <Link
+                                        to={sub.to as "/"}
+                                        onClick={() => setMenuOpen(false)}
+                                        className="block py-2 text-base uppercase tracking-[0.18em] transition-colors duration-200 hover:text-[color:var(--gold)]"
+                                        style={{ fontFamily: "var(--font-display)", color: "var(--muted-foreground)" }}
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </motion.ul>
+                              )}
+                            </AnimatePresence>
+                          </>
+                        ) : (
+                          <Link
+                            to={link.to as "/"}
+                            activeOptions={{ exact: link.to === "/" }}
+                            onClick={() => setMenuOpen(false)}
+                            className={labelClass}
+                            style={labelStyle}
+                            activeProps={{
+                              style: { fontFamily: "var(--font-display)", color: "var(--gold)" },
+                            }}
+                          >
+                            {link.label}
+                          </Link>
+                        )}
+                      </motion.li>
+                    );
+                  })}
                 </ul>
               </nav>
 
