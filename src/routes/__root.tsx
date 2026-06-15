@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MotionConfig } from "framer-motion";
 import {
   Outlet,
   Link,
@@ -82,18 +83,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "DomusTech - Casas Modulares" },
       { name: "description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "DomusTech" },
       { property: "og:title", content: "DomusTech - Casas Modulares" },
       { property: "og:description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE.domain },
       { property: "og:site_name", content: SITE.name },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "DomusTech - Casas Modulares" },
       { name: "twitter:description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/eI34CarDmSWUXO3joaBWaHFRGFl1/social-images/social-1780578963254-Captura_de_ecrã_2026-06-04_141547.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/eI34CarDmSWUXO3joaBWaHFRGFl1/social-images/social-1780578963254-Captura_de_ecrã_2026-06-04_141547.webp" },
+      { property: "og:image", content: `${SITE.domain}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: `${SITE.domain}/og-image.jpg` },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -115,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": ["GeneralContractor", "LocalBusiness"],
           name: SITE.name,
           url: SITE.domain,
-          image: "https://storage.googleapis.com/gpt-engineer-file-uploads/eI34CarDmSWUXO3joaBWaHFRGFl1/social-images/social-1780578963254-Captura_de_ecrã_2026-06-04_141547.webp",
+          image: `${SITE.domain}/og-image.jpg`,
           priceRange: "€€€",
           description:
             "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores e remodelação.",
@@ -165,10 +167,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Navbar />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-      <Footer />
+      <MotionConfig reducedMotion="user">
+        <Navbar />
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+        <Footer />
+      </MotionConfig>
     </QueryClientProvider>
   );
 }

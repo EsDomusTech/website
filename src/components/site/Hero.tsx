@@ -66,6 +66,16 @@ export function Hero() {
         </motion.div>
       ))}
 
+      {/* Diagonal cut — bottom edge transitions into the About section's background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 md:h-32"
+        style={{
+          backgroundColor: "var(--background)",
+          clipPath: "polygon(0 100%, 100% 0, 100% 100%)",
+        }}
+      />
+
       {/* Content — left-aligned, 2/3 width */}
       <div className="s-wrap relative flex h-full flex-col justify-center">
         <div className="max-w-[640px]">

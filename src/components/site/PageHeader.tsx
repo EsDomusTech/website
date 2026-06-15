@@ -7,7 +7,7 @@ type PageHeaderProps = {
   align?: "left" | "center";
 };
 
-export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, align = "left" }: PageHeaderProps) {
+export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, align = "center" }: PageHeaderProps) {
   const isCenter = align === "center";
   return (
     <section className="relative overflow-hidden" style={{ height: 614 }}>

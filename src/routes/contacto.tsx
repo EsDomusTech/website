@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SITE } from "@/lib/site-data";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -27,22 +30,25 @@ const SOCIAL_LINKS = [
   { label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
 ];
 
+const FIELD_CLASS =
+  "w-full h-auto rounded-none border-0 border-b border-muted bg-transparent px-0 py-4 shadow-none text-foreground transition-colors focus-visible:ring-0 focus-visible:border-gold";
+
 function ContactoPage() {
   const [sent, setSent] = useState(false);
 
   return (
-    <main style={{ backgroundColor: "#f9f9f9" }}>
+    <main style={{ backgroundColor: "var(--background)" }}>
 
       {/* Display-lg hero — sem PageHeader, Stitch exacto */}
       <header style={{ paddingBlock: "120px 0" }}>
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
-              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+              <h1 className="s-display-lg mb-8" style={{ color: "var(--foreground)" }}>
                 Vamos construir algo <br />
-                <span style={{ color: "#BE9355" }}>duradouro</span>.
+                <span style={{ color: "var(--gold)" }}>duradouro</span>.
               </h1>
-              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 560 }}>
+              <p className="s-body-lg" style={{ color: "var(--muted-foreground)", maxWidth: 560 }}>
                 O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
                 para discutir a sua visão de espaço e estrutura.
               </p>
@@ -63,11 +69,11 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#767676" }}
+                  style={{ color: "var(--label-muted)" }}
                 >
                   O Escritório
                 </span>
-                <p className="s-headline-md" style={{ color: "#000000", lineHeight: 1.5 }}>
+                <p className="s-headline-md" style={{ color: "var(--foreground)", lineHeight: 1.5 }}>
                   {SITE.address}
                 </p>
               </div>
@@ -76,7 +82,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#767676" }}
+                  style={{ color: "var(--label-muted)" }}
                 >
                   Contacto Directo
                 </span>
@@ -84,14 +90,14 @@ function ContactoPage() {
                   <a
                     href={`tel:${SITE.phone}`}
                     className="s-body-lg block transition-colors hover:text-[#BE9355]"
-                    style={{ color: "#000000" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {SITE.phone}
                   </a>
                   <a
                     href={`mailto:${SITE.email}`}
                     className="s-body-lg block transition-colors hover:text-[#BE9355]"
-                    style={{ color: "#000000" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {SITE.email}
                   </a>
@@ -102,11 +108,11 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#767676" }}
+                  style={{ color: "var(--label-muted)" }}
                 >
                   Horário
                 </span>
-                <p className="s-body-lg" style={{ color: "#000000" }}>
+                <p className="s-body-lg" style={{ color: "var(--foreground)" }}>
                   {SITE.hours}
                 </p>
               </div>
@@ -115,7 +121,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#767676" }}
+                  style={{ color: "var(--label-muted)" }}
                 >
                   Redes Sociais
                 </span>
@@ -127,7 +133,7 @@ function ContactoPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="s-label-caps transition-colors hover:text-[#BE9355]"
-                      style={{ color: "#000000" }}
+                      style={{ color: "var(--foreground)" }}
                     >
                       {label}
                     </a>
@@ -139,17 +145,17 @@ function ContactoPage() {
             {/* Form col — 8/12 */}
             <div
               className="col-span-12 md:col-span-8 p-12 md:p-16"
-              style={{ backgroundColor: "#ffffff" }}
+              style={{ backgroundColor: "var(--card)" }}
             >
               {sent ? (
                 <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">
                   <h3
                     className="s-headline-lg mb-4"
-                    style={{ color: "#000000" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     Mensagem enviada!
                   </h3>
-                  <p className="s-body-md" style={{ color: "#444748" }}>
+                  <p className="s-body-md" style={{ color: "var(--muted-foreground)" }}>
                     Obrigado pelo seu contacto. Responderemos com a maior brevidade.
                   </p>
                 </div>
@@ -166,45 +172,33 @@ function ContactoPage() {
                       <label
                         htmlFor="name"
                         className="s-label-caps mb-2 block"
-                        style={{ color: "#767676" }}
+                        style={{ color: "var(--label-muted)" }}
                       >
                         Nome Completo
                       </label>
-                      <input
+                      <Input
                         id="name"
                         name="name"
                         required
                         placeholder="João Silva"
-                        className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors focus:border-b"
-                        style={{
-                          borderColor: "#eeeeee",
-                          color: "#000000",
-                        }}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                        className={FIELD_CLASS}
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
                         className="s-label-caps mb-2 block"
-                        style={{ color: "#767676" }}
+                        style={{ color: "var(--label-muted)" }}
                       >
                         Email
                       </label>
-                      <input
+                      <Input
                         id="email"
                         name="email"
                         type="email"
                         required
                         placeholder="email@exemplo.com"
-                        className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors"
-                        style={{
-                          borderColor: "#eeeeee",
-                          color: "#000000",
-                        }}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                        className={FIELD_CLASS}
                       />
                     </div>
                   </div>
@@ -213,49 +207,38 @@ function ContactoPage() {
                     <label
                       htmlFor="subject"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#767676" }}
+                      style={{ color: "var(--label-muted)" }}
                     >
                       Serviço
                     </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors appearance-none cursor-pointer"
-                      style={{
-                        borderColor: "#eeeeee",
-                        color: "#000000",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
-                    >
-                      <option>Casa Modular</option>
-                      <option>Construção Modular</option>
-                      <option>Design de Interiores</option>
-                      <option>Remodelação</option>
-                      <option>Informação Geral</option>
-                    </select>
+                    <Select name="subject" defaultValue="Casa Modular">
+                      <SelectTrigger id="subject" className={`${FIELD_CLASS} focus:ring-0 focus:border-gold`}>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Casa Modular">Casa Modular</SelectItem>
+                        <SelectItem value="Construção Modular">Construção Modular</SelectItem>
+                        <SelectItem value="Design de Interiores">Design de Interiores</SelectItem>
+                        <SelectItem value="Remodelação">Remodelação</SelectItem>
+                        <SelectItem value="Informação Geral">Informação Geral</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div>
                     <label
                       htmlFor="phone"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#767676" }}
+                      style={{ color: "var(--label-muted)" }}
                     >
                       Telefone (opcional)
                     </label>
-                    <input
+                    <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       placeholder="+351 900 000 000"
-                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors"
-                      style={{
-                        borderColor: "#eeeeee",
-                        color: "#000000",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                      className={FIELD_CLASS}
                     />
                   </div>
 
@@ -263,23 +246,17 @@ function ContactoPage() {
                     <label
                       htmlFor="message"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#767676" }}
+                      style={{ color: "var(--label-muted)" }}
                     >
                       A Sua Mensagem
                     </label>
-                    <textarea
+                    <Textarea
                       id="message"
                       name="message"
                       rows={4}
                       required
                       placeholder="Descreva o seu projeto..."
-                      className="w-full border-0 border-b bg-transparent py-4 s-body-md outline-none transition-colors resize-none"
-                      style={{
-                        borderColor: "#eeeeee",
-                        color: "#000000",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#BE9355")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#eeeeee")}
+                      className={`${FIELD_CLASS} resize-none`}
                     />
                   </div>
 
@@ -287,9 +264,9 @@ function ContactoPage() {
                     <button
                       type="submit"
                       className="s-label-caps w-full inline-flex items-center justify-center gap-3 py-5 text-white transition-colors duration-300"
-                      style={{ backgroundColor: "#BE9355" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#000000")}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#BE9355")}
+                      style={{ backgroundColor: "var(--gold)" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--foreground)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
                     >
                       Enviar Mensagem
                       <span aria-hidden>→</span>

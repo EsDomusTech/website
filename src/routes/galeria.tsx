@@ -44,7 +44,7 @@ function GaleriaPage() {
                 Portfólio Visual
               </span>
               <h1 className="s-display-lg leading-none" style={{ color: "#000000" }}>
-                Galeria de <span style={{ color: "#767676" }}>Imagens</span>
+                Galeria de <span style={{ color: "var(--label-muted)" }}>Imagens</span>
               </h1>
             </div>
             <div className="col-span-12 md:col-span-4 pb-4">
