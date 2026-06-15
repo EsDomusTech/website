@@ -9,9 +9,11 @@ import { PROJECTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/projetos/fancy")({
   head: () => ({
     meta: [
-      { title: "Portfolio Fancy | DomusTech" },
+      { title: "Projetos — Vista Editorial | DomusTech" },
+      { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/projetos/fancy` },
     ],
+    links: [{ rel: "canonical", href: `${SITE.domain}/projetos` }],
   }),
   component: PortfolioFancyPage,
 });

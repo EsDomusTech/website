@@ -234,6 +234,16 @@ export function getProject(slug: string) {
 
 export const BLOG_POSTS = [
   {
+    slug: "quanto-custa-casa-modular-portugal",
+    title: "Quanto Custa uma Casa Modular em Portugal? Guia de Preços 2026",
+    cat: "Preços",
+    date: "15 Jun 2026",
+    image: "https://picsum.photos/seed/news4/1200/800",
+    excerpt:
+      "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 108.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
+    href: "/precos",
+  },
+  {
     slug: "tendencias-design-modular-2026",
     title: "Tendências do design modular em 2026",
     cat: "Arquitetura",
@@ -241,6 +251,7 @@ export const BLOG_POSTS = [
     image: "https://picsum.photos/seed/news1/1200/800",
     excerpt:
       "Do fabrico digital aos materiais bio-baseados, exploramos as tendências que vão definir a construção modular.",
+    href: "/blog",
   },
   {
     slug: "materiais-ecologicos-construcao",
@@ -250,6 +261,7 @@ export const BLOG_POSTS = [
     image: "https://picsum.photos/seed/news2/1200/800",
     excerpt:
       "Uma análise aos materiais sustentáveis que reduzem a pegada de carbono sem comprometer o design.",
+    href: "/blog",
   },
   {
     slug: "domotica-casa-modular-futuro",
@@ -259,6 +271,7 @@ export const BLOG_POSTS = [
     image: "https://picsum.photos/seed/news3/1200/800",
     excerpt:
       "Como a integração de sistemas inteligentes transforma a experiência de habitar uma casa modular.",
+    href: "/blog",
   },
 ];
 

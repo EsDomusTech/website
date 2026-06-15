@@ -98,7 +98,7 @@ const FAQS_PRECOS = [
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
-      { title: "Preços | Planos e Orçamentos para Casas Modulares — DomusTech Porto" },
+      { title: "Preços | Casas Modulares — DomusTech Porto" },
       { name: "description", content: "Consulte os planos e preços da DomusTech para projetos de arquitetura e construção modular no Porto. Transparência total, sem surpresas." },
       { property: "og:title", content: "Preços — DomusTech" },
       { property: "og:type", content: "website" },
@@ -166,7 +166,7 @@ function PrecosPage() {
                 <div className={`flex flex-col flex-1 p-12 ${plan.featured ? "pt-16" : ""}`}>
                   <p
                     className="s-label-caps mb-2"
-                    style={{ color: plan.featured ? "#858383" : "#999999" }}
+                    style={{ color: plan.featured ? "#858383" : "#767676" }}
                   >
                     {plan.label}
                   </p>
@@ -188,7 +188,7 @@ function PrecosPage() {
                   <div className="mb-8">
                     <span
                       className="s-label-caps mr-2"
-                      style={{ color: plan.featured ? "#858383" : "#999999" }}
+                      style={{ color: plan.featured ? "#858383" : "#767676" }}
                     >
                       DESDE
                     </span>
@@ -273,7 +273,7 @@ function PrecosPage() {
       <section className="relative overflow-hidden" style={{ height: 480 }}>
         <img
           src="https://picsum.photos/seed/pricing-atm/1920/900"
-          alt="DomusTech projeto modular"
+          alt="Casa modular DomusTech entregue no Porto"
           className="w-full h-full object-cover"
           style={{ filter: "grayscale(0.6) brightness(0.75)" }}
         />

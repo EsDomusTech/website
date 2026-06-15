@@ -44,7 +44,7 @@ function GaleriaPage() {
                 Portfólio Visual
               </span>
               <h1 className="s-display-lg leading-none" style={{ color: "#000000" }}>
-                Galeria de <span style={{ color: "#999999" }}>Imagens</span>
+                Galeria de <span style={{ color: "#767676" }}>Imagens</span>
               </h1>
             </div>
             <div className="col-span-12 md:col-span-4 pb-4">
@@ -69,7 +69,7 @@ function GaleriaPage() {
                 className="group relative overflow-hidden cursor-pointer"
                 style={{ aspectRatio: "4/3" }}
               >
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={item.image} alt={`${item.title} — projeto DomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                 <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>

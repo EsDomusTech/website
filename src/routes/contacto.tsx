@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
-      { title: "Contacto | Peça um Orçamento de Casa Modular — DomusTech Porto" },
+      { title: "Contacto | Orçamento de Casa Modular — DomusTech Porto" },
       {
         name: "description",
         content:
@@ -63,7 +63,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#999999" }}
+                  style={{ color: "#767676" }}
                 >
                   O Escritório
                 </span>
@@ -76,7 +76,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#999999" }}
+                  style={{ color: "#767676" }}
                 >
                   Contacto Directo
                 </span>
@@ -102,7 +102,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#999999" }}
+                  style={{ color: "#767676" }}
                 >
                   Horário
                 </span>
@@ -115,7 +115,7 @@ function ContactoPage() {
               <div>
                 <span
                   className="s-label-caps mb-4 block"
-                  style={{ color: "#999999" }}
+                  style={{ color: "#767676" }}
                 >
                   Redes Sociais
                 </span>
@@ -166,7 +166,7 @@ function ContactoPage() {
                       <label
                         htmlFor="name"
                         className="s-label-caps mb-2 block"
-                        style={{ color: "#999999" }}
+                        style={{ color: "#767676" }}
                       >
                         Nome Completo
                       </label>
@@ -188,7 +188,7 @@ function ContactoPage() {
                       <label
                         htmlFor="email"
                         className="s-label-caps mb-2 block"
-                        style={{ color: "#999999" }}
+                        style={{ color: "#767676" }}
                       >
                         Email
                       </label>
@@ -213,7 +213,7 @@ function ContactoPage() {
                     <label
                       htmlFor="subject"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#999999" }}
+                      style={{ color: "#767676" }}
                     >
                       Serviço
                     </label>
@@ -240,7 +240,7 @@ function ContactoPage() {
                     <label
                       htmlFor="phone"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#999999" }}
+                      style={{ color: "#767676" }}
                     >
                       Telefone (opcional)
                     </label>
@@ -263,7 +263,7 @@ function ContactoPage() {
                     <label
                       htmlFor="message"
                       className="s-label-caps mb-2 block"
-                      style={{ color: "#999999" }}
+                      style={{ color: "#767676" }}
                     >
                       A Sua Mensagem
                     </label>

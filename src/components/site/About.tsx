@@ -63,7 +63,7 @@ export function About() {
                 Sobre Nós
               </span>
               <h2 className="s-headline-lg mb-10">
-                Quem Somos
+                Arquitetura Modular Feita no Porto
               </h2>
               <a
                 href="/empresa"
