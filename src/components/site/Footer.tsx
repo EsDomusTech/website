@@ -22,15 +22,15 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "var(--muted)", paddingBlock: 120 }}>
+    <footer style={{ backgroundColor: "var(--dark-section)", paddingBlock: 120 }}>
       <div className="s-wrap grid grid-cols-12 gap-8 lg:gap-12 items-start">
 
         {/* Col 1 — 4/12: Brand + tagline + sociais */}
         <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
-          <p className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
+          <p className="s-headline-md mb-6" style={{ color: "#fff" }}>
             {SITE.name.toUpperCase()}
           </p>
-          <p className="s-body-md mb-8" style={{ color: "var(--muted-foreground)", maxWidth: 300 }}>
+          <p className="s-body-md mb-8" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>
             Construção modular com identidade própria — design rigoroso, prazos certos, no Porto.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
@@ -41,7 +41,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="s-label-caps transition-colors hover:text-[#BE9355]"
-                style={{ color: "var(--foreground)" }}
+                style={{ color: "#fff" }}
               >
                 {label}
               </a>
@@ -51,14 +51,14 @@ export function Footer() {
 
         {/* Col 2 — 4/12: Contact */}
         <div className="col-span-12 md:col-span-4 mb-12 md:mb-0 min-w-0">
-          <h3 className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
+          <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
             Contacto
           </h3>
           <div className="space-y-4">
             <a
               href={`tel:${SITE.phone}`}
               className="s-body-md flex items-center gap-4 transition-colors hover:text-[#BE9355]"
-              style={{ color: "var(--muted-foreground)" }}
+              style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <Phone size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               {SITE.phone}
@@ -66,7 +66,7 @@ export function Footer() {
             <a
               href={`mailto:${SITE.email}`}
               className="s-body-md flex items-center gap-4 min-w-0 transition-colors hover:text-[#BE9355]"
-              style={{ color: "var(--muted-foreground)" }}
+              style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <Mail size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               <span className="min-w-0 break-words">{SITE.email}</span>
@@ -76,12 +76,12 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="s-body-md flex items-start gap-4 transition-colors hover:text-[#BE9355]"
-              style={{ color: "var(--muted-foreground)" }}
+              style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <MapPin size={16} style={{ color: "var(--gold)", flexShrink: 0, marginTop: 4 }} />
               {SITE.address}
             </a>
-            <p className="s-body-md flex items-center gap-4" style={{ color: "var(--muted-foreground)" }}>
+            <p className="s-body-md flex items-center gap-4" style={{ color: "rgba(255,255,255,0.6)" }}>
               <Clock size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               {SITE.hours}
             </p>
@@ -90,7 +90,7 @@ export function Footer() {
 
         {/* Col 3 — 4/12: Quick Links */}
         <div className="col-span-12 md:col-span-4">
-          <h3 className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
+          <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
             Links Rápidos
           </h3>
           <nav aria-label="Links rápidos">
@@ -100,7 +100,7 @@ export function Footer() {
                   <Link
                     to={to}
                     className="s-body-md transition-colors hover:text-[#BE9355]"
-                    style={{ color: "var(--muted-foreground)" }}
+                    style={{ color: "rgba(255,255,255,0.6)" }}
                   >
                     {label}
                   </Link>
@@ -113,12 +113,12 @@ export function Footer() {
         {/* Bottom bar */}
         <div
           className="col-span-12 mt-20 flex flex-col items-center gap-4 border-t pt-8 md:flex-row md:justify-between"
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "rgba(255,255,255,0.1)" }}
         >
-          <p className="s-body-md uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
-          <p className="s-body-md uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
             Porto, Portugal
           </p>
         </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
 
@@ -217,17 +217,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Rotas com hero escuro full-bleed atrás do header (texto branco fica legível).
-  // Restantes têm topo claro -> texto escuro.
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const darkHero =
-    pathname === "/" ||
-    pathname.startsWith("/servicos") ||
-    pathname.startsWith("/projetos") ||
-    pathname === "/politica-de-privacidade" ||
-    pathname === "/termos-e-condicoes";
-  const overHero = !scrolled && darkHero;
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
@@ -268,12 +257,12 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${scrolled ? "shadow-sm" : ""}`}
         style={{
-          backgroundColor: scrolled ? "#f9f9f9" : "transparent",
-          borderBottom: scrolled ? "1px solid var(--border)" : "none",
+          backgroundColor: "var(--dark-section)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
         <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
-          <Logo light={overHero} />
+          <Logo light />
 
           {/* Desktop nav links — Início omitido (o logo já liga a home) */}
           <ul className="hidden items-center gap-5 xl:flex 2xl:gap-6">
@@ -297,7 +286,7 @@ export function Navbar() {
                     aria-haspopup={link.children ? "true" : undefined}
                     aria-expanded={link.children ? openDropdown === link.label : undefined}
                     className="relative flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}
                     activeProps={{
                       className: "relative flex items-center gap-1 text-[11px] font-medium after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-[color:var(--gold)]",
                       style: { fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gold)" },
@@ -314,7 +303,7 @@ export function Navbar() {
                     aria-haspopup="true"
                     aria-expanded={openDropdown === link.label}
                     className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}
                   >
                     {link.label}
                     {link.children && (
@@ -334,19 +323,19 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {/* Desktop extras */}
             <div className="hidden items-center gap-5 xl:flex">
-              <LangSelector light={overHero} />
-              <div className="h-4 w-px" style={{ backgroundColor: overHero ? "rgba(255,255,255,0.3)" : "var(--border)" }} />
+              <LangSelector light />
+              <div className="h-4 w-px" style={{ backgroundColor: "rgba(255,255,255,0.3)" }} />
               <Link
                 to="/contacto"
                 className="tracked inline-block px-6 py-3 text-[11px] font-medium transition-colors"
                 style={{
-                  backgroundColor: overHero ? "transparent" : "#1b1b1b",
-                  border: overHero ? "1px solid rgba(255,255,255,0.7)" : "none",
+                  backgroundColor: "transparent",
+                  border: "1px solid rgba(255,255,255,0.7)",
                   color: "#fff",
                   fontFamily: "var(--font-display)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--gold)"; e.currentTarget.style.borderColor = "var(--gold)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = overHero ? "transparent" : "#1b1b1b"; e.currentTarget.style.borderColor = overHero ? "rgba(255,255,255,0.7)" : "transparent"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.7)"; }}
               >
                 Pedir Orçamento
               </Link>
@@ -356,7 +345,7 @@ export function Navbar() {
             <button
               type="button"
               className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
-              style={{ color: overHero ? "#fff" : "var(--foreground)" }}
+              style={{ color: "#fff" }}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((v) => !v)}

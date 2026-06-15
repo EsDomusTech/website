@@ -27,7 +27,7 @@ export function CtaBand({
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 md:h-32"
         style={{
-          backgroundColor: "var(--muted)",
+          backgroundColor: "var(--dark-section)",
           clipPath: "polygon(0 100%, 100% 0, 100% 100%)",
         }}
       />

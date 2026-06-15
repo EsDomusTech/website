@@ -119,6 +119,7 @@ Utilitários CSS:
 - [x] `PageHeader.tsx`: prop `align?: "left" | "center"` default agora `"center"` (era `"left"`)
 - [x] Separadores diagonais (`clip-path`): wedge em `Hero.tsx` (→About) e `CtaBand.tsx` (→Footer)
 - [x] `og:image`/`twitter:image`/JSON-LD: `public/og-image.jpg` (1200×630, gerado) referenciado em `__root.tsx`
+- [x] Navbar e Footer com fundo `--dark-section` (preto) — sempre, em todos os estados/rotas, para contraste forte com o `--background` off-white do resto da página; lógica `darkHero`/`overHero` removida (texto do header passa a branco fixo)
 
 ---
 

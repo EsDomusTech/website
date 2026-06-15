@@ -106,6 +106,13 @@
 - `public/og-image.jpg` (1200×630) gerado — fundo `--dark-section`, wordmark DomusTech + tagline + wedge dourado (mesmo motivo diagonal dos separadores)
 - `__root.tsx`: `og:image`/`twitter:image`/JSON-LD `image` → `${SITE.domain}/og-image.jpg`; `twitter:card` → `summary_large_image`; adicionado `og:image:width`/`height`
 
+### Header e Footer pretos (2026-06-15)
+- `Navbar.tsx`: fundo do `<header>` passa a `var(--dark-section)` fixo (era transparente/`#f9f9f9` dependente de scroll+rota) — texto, logo, links, lang selector, divisor, CTA outline e hamburger sempre na variante "light" (branco/translúcido). Lógica `darkHero`/`overHero`/`useRouterState` removida (já não é route-aware)
+- `Footer.tsx`: fundo passa a `var(--dark-section)` (era `var(--muted)`) — headings a `#fff`, corpo/links a `rgba(255,255,255,0.6)`, bottom-bar border a `rgba(255,255,255,0.1)` e copyright a `rgba(255,255,255,0.4)`; ícones/hover gold mantêm-se
+- `CtaBand.tsx`: cor do wedge diagonal (→Footer) atualizada de `var(--muted)` para `var(--dark-section)` para corresponder ao novo fundo do Footer
+- Menu overlay mobile (painel branco) não foi alterado — mantém logo/texto escuros sobre fundo branco
+- Verificado via screenshot (desktop 1440×900 e mobile 390×844) em `/`, `/blog` e overlay do menu mobile
+
 ---
 
 ## 🔴 Por Fazer
