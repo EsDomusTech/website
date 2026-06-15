@@ -21,7 +21,16 @@ export function CtaBand({
   const bg = variant === "gold" ? "var(--gold)" : "var(--dark-section)";
 
   return (
-    <section className="section-pad text-center" style={{ backgroundColor: bg }}>
+    <section className="section-pad relative text-center" style={{ backgroundColor: bg }}>
+      {/* Diagonal cut — bottom edge transitions into the Footer's background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 md:h-32"
+        style={{
+          backgroundColor: "var(--muted)",
+          clipPath: "polygon(0 100%, 100% 0, 100% 100%)",
+        }}
+      />
       <div className="s-wrap">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

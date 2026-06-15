@@ -76,7 +76,7 @@ function BlogPage() {
                       />
                     </div>
                     <div className="p-8">
-                      <p className="s-label-caps mb-3" style={{ color: "#767676" }}>
+                      <p className="s-label-caps mb-3" style={{ color: "var(--label-muted)" }}>
                         {n.cat} · {n.date}
                       </p>
                       <h2 className="s-headline-md mb-4" style={{ color: "#000000" }}>
@@ -170,7 +170,7 @@ function BlogPage() {
                           >
                             {post.title}
                           </p>
-                          <p className="s-label-caps" style={{ color: "#767676" }}>
+                          <p className="s-label-caps" style={{ color: "var(--label-muted)" }}>
                             {post.date}
                           </p>
                         </div>
@@ -197,7 +197,7 @@ function BlogPage() {
                         style={{ color: "#444748" }}
                       >
                         <span>{cat.label}</span>
-                        <span style={{ color: "#767676" }}>({cat.count})</span>
+                        <span style={{ color: "var(--label-muted)" }}>({cat.count})</span>
                       </button>
                     </li>
                   ))}

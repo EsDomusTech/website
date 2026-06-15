@@ -22,15 +22,15 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "#eeeeee", paddingBlock: 120 }}>
+    <footer style={{ backgroundColor: "var(--muted)", paddingBlock: 120 }}>
       <div className="s-wrap grid grid-cols-12 gap-8 lg:gap-12 items-start">
 
         {/* Col 1 — 4/12: Brand + tagline + sociais */}
         <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
-          <p className="s-headline-md mb-6" style={{ color: "#000000" }}>
+          <p className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
             {SITE.name.toUpperCase()}
           </p>
-          <p className="s-body-md mb-8" style={{ color: "#444748", maxWidth: 300 }}>
+          <p className="s-body-md mb-8" style={{ color: "var(--muted-foreground)", maxWidth: 300 }}>
             Construção modular com identidade própria — design rigoroso, prazos certos, no Porto.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
@@ -41,7 +41,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="s-label-caps transition-colors hover:text-[#BE9355]"
-                style={{ color: "#000000" }}
+                style={{ color: "var(--foreground)" }}
               >
                 {label}
               </a>
@@ -51,24 +51,24 @@ export function Footer() {
 
         {/* Col 2 — 4/12: Contact */}
         <div className="col-span-12 md:col-span-4 mb-12 md:mb-0 min-w-0">
-          <h4 className="s-headline-md mb-6" style={{ color: "#000000" }}>
+          <h3 className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
             Contacto
-          </h4>
+          </h3>
           <div className="space-y-4">
             <a
               href={`tel:${SITE.phone}`}
               className="s-body-md flex items-center gap-4 transition-colors hover:text-[#BE9355]"
-              style={{ color: "#444748" }}
+              style={{ color: "var(--muted-foreground)" }}
             >
-              <Phone size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
+              <Phone size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
               className="s-body-md flex items-center gap-4 min-w-0 transition-colors hover:text-[#BE9355]"
-              style={{ color: "#444748" }}
+              style={{ color: "var(--muted-foreground)" }}
             >
-              <Mail size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
+              <Mail size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               <span className="min-w-0 break-words">{SITE.email}</span>
             </a>
             <a
@@ -76,13 +76,13 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="s-body-md flex items-start gap-4 transition-colors hover:text-[#BE9355]"
-              style={{ color: "#444748" }}
+              style={{ color: "var(--muted-foreground)" }}
             >
-              <MapPin size={16} style={{ color: "#BE9355", flexShrink: 0, marginTop: 4 }} />
+              <MapPin size={16} style={{ color: "var(--gold)", flexShrink: 0, marginTop: 4 }} />
               {SITE.address}
             </a>
-            <p className="s-body-md flex items-center gap-4" style={{ color: "#444748" }}>
-              <Clock size={16} style={{ color: "#BE9355", flexShrink: 0 }} />
+            <p className="s-body-md flex items-center gap-4" style={{ color: "var(--muted-foreground)" }}>
+              <Clock size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               {SITE.hours}
             </p>
           </div>
@@ -90,33 +90,35 @@ export function Footer() {
 
         {/* Col 3 — 4/12: Quick Links */}
         <div className="col-span-12 md:col-span-4">
-          <h4 className="s-headline-md mb-6" style={{ color: "#000000" }}>
+          <h3 className="s-headline-md mb-6" style={{ color: "var(--foreground)" }}>
             Links Rápidos
-          </h4>
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
-            {NAV_LINKS.map(({ label, to }) => (
-              <li key={label}>
-                <Link
-                  to={to}
-                  className="s-body-md transition-colors hover:text-[#BE9355]"
-                  style={{ color: "#444748" }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          </h3>
+          <nav aria-label="Links rápidos">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+              {NAV_LINKS.map(({ label, to }) => (
+                <li key={label}>
+                  <Link
+                    to={to}
+                    className="s-body-md transition-colors hover:text-[#BE9355]"
+                    style={{ color: "var(--muted-foreground)" }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         {/* Bottom bar */}
         <div
           className="col-span-12 mt-20 flex flex-col items-center gap-4 border-t pt-8 md:flex-row md:justify-between"
-          style={{ borderColor: "#c4c7c7" }}
+          style={{ borderColor: "var(--border)" }}
         >
-          <p className="s-body-md uppercase tracking-widest" style={{ color: "#444748" }}>
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
-          <p className="s-body-md uppercase tracking-widest" style={{ color: "#444748" }}>
+          <p className="s-body-md uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
             Porto, Portugal
           </p>
         </div>

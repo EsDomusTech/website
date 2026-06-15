@@ -107,16 +107,22 @@ function HamburgerIcon({ open }: { open: boolean }) {
   );
 }
 
-function DropdownMenu({ items }: { items: SubItem[] }) {
+function DropdownMenu({ items, open }: { items: SubItem[]; open: boolean }) {
   return (
     <div
-      className="absolute left-0 top-full z-50 min-w-[210px] bg-white py-2 shadow-xl"
+      role="menu"
+      aria-hidden={!open}
+      className={`absolute left-0 top-full z-50 min-w-[210px] bg-white py-2 shadow-md transition-[opacity,transform] duration-200 ${
+        open ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-1"
+      }`}
       style={{ borderTop: "2px solid var(--gold)" }}
     >
       {items.map((item) => (
         <Link
           key={item.to}
           to={item.to as "/"}
+          role="menuitem"
+          tabIndex={open ? 0 : -1}
           className="block px-5 py-2.5 text-[11px] font-medium transition-colors hover:bg-[var(--logo-strip)] hover:text-[color:var(--gold)]"
           style={{ fontFamily: "var(--font-display)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--foreground)" }}
         >
@@ -156,7 +162,7 @@ function LangSelector({ light = false }: { light?: boolean }) {
       </button>
       {open && (
         <div
-          className="absolute right-0 top-full z-50 min-w-[130px] bg-white py-2 shadow-xl"
+          className="absolute right-0 top-full z-50 min-w-[130px] bg-white py-2 shadow-md"
           style={{ borderTop: "2px solid var(--gold)" }}
         >
           {LANGS.map((lang) => (
@@ -239,6 +245,15 @@ export function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenDropdown(null);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openDropdown]);
+
   const openDd = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenDropdown(label);
@@ -268,11 +283,19 @@ export function Navbar() {
                 className="relative"
                 onMouseEnter={() => link.children && openDd(link.label)}
                 onMouseLeave={() => link.children && scheduleDdClose()}
+                onFocus={() => link.children && openDd(link.label)}
+                onBlur={(e) => {
+                  if (link.children && !e.currentTarget.contains(e.relatedTarget as Node)) {
+                    setOpenDropdown(null);
+                  }
+                }}
               >
                 {link.to ? (
                   <Link
                     to={link.to as "/"}
                     activeOptions={{ exact: link.to === "/" }}
+                    aria-haspopup={link.children ? "true" : undefined}
+                    aria-expanded={link.children ? openDropdown === link.label : undefined}
                     className="relative flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
                     activeProps={{
@@ -281,21 +304,27 @@ export function Navbar() {
                     }}
                   >
                     {link.label}
-                    {link.children && <ChevronDown className="h-3 w-3 opacity-50" />}
+                    {link.children && (
+                      <ChevronDown className={`h-3 w-3 opacity-50 transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                    )}
                   </Link>
                 ) : (
                   <button
                     type="button"
+                    aria-haspopup="true"
+                    aria-expanded={openDropdown === link.label}
                     className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: overHero ? "#fff" : "var(--foreground)" }}
                   >
                     {link.label}
-                    {link.children && <ChevronDown className="h-3 w-3 opacity-50" />}
+                    {link.children && (
+                      <ChevronDown className={`h-3 w-3 opacity-50 transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                    )}
                   </button>
                 )}
-                {link.children && openDropdown === link.label && (
+                {link.children && (
                   <div onMouseEnter={() => openDd(link.label)} onMouseLeave={scheduleDdClose}>
-                    <DropdownMenu items={link.children} />
+                    <DropdownMenu items={link.children} open={openDropdown === link.label} />
                   </div>
                 )}
               </li>

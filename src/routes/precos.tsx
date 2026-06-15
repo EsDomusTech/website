@@ -166,7 +166,7 @@ function PrecosPage() {
                 <div className={`flex flex-col flex-1 p-12 ${plan.featured ? "pt-16" : ""}`}>
                   <p
                     className="s-label-caps mb-2"
-                    style={{ color: plan.featured ? "#858383" : "#767676" }}
+                    style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
                   >
                     {plan.label}
                   </p>
@@ -188,7 +188,7 @@ function PrecosPage() {
                   <div className="mb-8">
                     <span
                       className="s-label-caps mr-2"
-                      style={{ color: plan.featured ? "#858383" : "#767676" }}
+                      style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
                     >
                       DESDE
                     </span>

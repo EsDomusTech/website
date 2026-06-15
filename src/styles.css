@@ -5,13 +5,11 @@
 @source "./lib";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: var(--radius);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,20 +41,22 @@
   --radius: 0px;
   /* #F9F9F9 — off-white canvas */
   --background: #f9f9f9;
-  /* #1A1B1B — deep off-black */
-  --foreground: #1a1b1b;
+  /* #000000 — Stitch DESIGN.md canonical black */
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #1a1b1b;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #1a1b1b;
+  --popover-foreground: #000000;
   /* Architectural gold #BE9355 as primary */
   --primary: #be9355;
   --primary-foreground: #ffffff;
   --secondary: #f3f3f3;
-  --secondary-foreground: #1a1b1b;
+  --secondary-foreground: #000000;
   --muted: #eeeeee;
   /* #444748 — warm medium gray */
   --muted-foreground: #444748;
+  /* #6B6B6B — AA-safe (5.06:1) on #f9f9f9 for small caps labels */
+  --label-muted: #6b6b6b;
   --accent: #be9355;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);

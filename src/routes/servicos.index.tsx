@@ -46,7 +46,7 @@ function ServiceRow({ s, i }: { s: typeof SERVICES[0]; i: number }) {
           <span
             className="s-headline-md"
             style={{
-              color: hovered ? "#000000" : "#767676",
+              color: hovered ? "#000000" : "var(--label-muted)",
               transition: "color 0.3s",
             }}
           >
