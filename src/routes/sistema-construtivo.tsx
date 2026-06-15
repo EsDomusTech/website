@@ -84,7 +84,7 @@ const REFERENCES = [
 export const Route = createFileRoute("/sistema-construtivo")({
   head: () => ({
     meta: [
-      { title: "Sistema Construtivo | Estrutura, Materiais e Personalização — DomusTech" },
+      { title: "Sistema Construtivo | Casas Modulares — DomusTech" },
       {
         name: "description",
         content:

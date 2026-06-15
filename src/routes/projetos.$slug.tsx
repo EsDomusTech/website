@@ -27,6 +27,30 @@ export const Route = createFileRoute("/projetos/$slug")({
         { name: "twitter:image", content: p.image },
       ],
       links: [{ rel: "canonical", href: `${SITE.domain}/projetos/${p.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: p.name,
+            description: p.summary,
+            image: p.image,
+            url: `${SITE.domain}/projetos/${p.slug}`,
+            dateCreated: p.year,
+            locationCreated: {
+              "@type": "Place",
+              name: p.location,
+            },
+            creator: {
+              "@type": "Organization",
+              name: SITE.name,
+              url: SITE.domain,
+            },
+            about: p.category,
+          }),
+        },
+      ],
     };
   },
   component: ProjectDetail,
@@ -89,7 +113,7 @@ function ProjectDetail() {
               >
                 <img
                   src={o.image}
-                  alt={o.name}
+                  alt={`${o.name} — projeto de ${o.category.toLowerCase()} DomusTech no Porto`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />

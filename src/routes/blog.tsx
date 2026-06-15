@@ -6,7 +6,7 @@ import { BLOG_POSTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog | Arquitetura, Construção Modular e Sustentabilidade — DomusTech" },
+      { title: "Blog | Construção Modular e Sustentabilidade — DomusTech" },
       {
         name: "description",
         content:
@@ -23,6 +23,7 @@ export const Route = createFileRoute("/blog")({
 });
 
 const CATEGORIES = [
+  { label: "Preços", count: 1 },
   { label: "Arquitetura", count: 1 },
   { label: "Sustentabilidade", count: 1 },
   { label: "Tecnologia", count: 1 },
@@ -66,16 +67,16 @@ function BlogPage() {
             <div className="col-span-12 md:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {displayed.map((n) => (
-                  <Link key={n.slug} to="/blog" className="group block" style={{ backgroundColor: "#ffffff" }}>
+                  <Link key={n.slug} to={n.href as "/blog" | "/precos"} className="group block" style={{ backgroundColor: "#ffffff" }}>
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
                         src={n.image}
-                        alt={n.title}
+                        alt={`${n.title} — artigo do blog DomusTech`}
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-8">
-                      <p className="s-label-caps mb-3" style={{ color: "#999999" }}>
+                      <p className="s-label-caps mb-3" style={{ color: "#767676" }}>
                         {n.cat} · {n.date}
                       </p>
                       <h2 className="s-headline-md mb-4" style={{ color: "#000000" }}>
@@ -154,11 +155,11 @@ function BlogPage() {
                 <ul className="space-y-6">
                   {BLOG_POSTS.map((post) => (
                     <li key={post.slug}>
-                      <Link to="/blog" className="flex gap-4 group">
+                      <Link to={post.href as "/blog" | "/precos"} className="flex gap-4 group">
                         <div className="w-16 h-12 shrink-0 overflow-hidden">
                           <img
                             src={post.image}
-                            alt={post.title}
+                            alt={`${post.title} — artigo do blog DomusTech`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
@@ -169,7 +170,7 @@ function BlogPage() {
                           >
                             {post.title}
                           </p>
-                          <p className="s-label-caps" style={{ color: "#999999" }}>
+                          <p className="s-label-caps" style={{ color: "#767676" }}>
                             {post.date}
                           </p>
                         </div>
@@ -196,7 +197,7 @@ function BlogPage() {
                         style={{ color: "#444748" }}
                       >
                         <span>{cat.label}</span>
-                        <span style={{ color: "#999999" }}>({cat.count})</span>
+                        <span style={{ color: "#767676" }}>({cat.count})</span>
                       </button>
                     </li>
                   ))}

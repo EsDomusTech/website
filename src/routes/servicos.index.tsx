@@ -6,7 +6,7 @@ import { SERVICES, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços | Construção Modular, Interiores e Remodelação — DomusTech" },
+      { title: "Serviços | Construção Modular e Remodelação — DomusTech" },
       {
         name: "description",
         content:
@@ -46,7 +46,7 @@ function ServiceRow({ s, i }: { s: typeof SERVICES[0]; i: number }) {
           <span
             className="s-headline-md"
             style={{
-              color: hovered ? "#000000" : "#999999",
+              color: hovered ? "#000000" : "#767676",
               transition: "color 0.3s",
             }}
           >
@@ -98,7 +98,7 @@ function ServicosPage() {
         <div className="absolute inset-0">
           <img
             src="https://picsum.photos/seed/services-hero/1600/900"
-            alt="Serviços DomusTech"
+            alt="Serviços de construção modular DomusTech no Porto"
             className="h-full w-full object-cover"
             style={{ filter: "brightness(0.5)" }}
           />
@@ -135,7 +135,7 @@ function ServicosPage() {
                 className="s-headline-lg"
                 style={{ color: "#000000", lineHeight: 1.1 }}
               >
-                Shaping the environment through design
+                Construção modular pensada ao detalhe
               </h3>
             </div>
           </div>
@@ -158,7 +158,7 @@ function ServicosPage() {
           <div className="col-span-12 md:col-span-7">
             <img
               src="https://picsum.photos/seed/services-break/1200/800"
-              alt="Filosofia de Design"
+              alt="Design de interiores e acabamentos DomusTech — filosofia de projeto"
               className="w-full object-cover"
               style={{ height: 600 }}
             />

@@ -12,9 +12,11 @@ const CATS = ["Todos", "Residencial", "Comercial", "Interiores", "Urbanismo"];
 export const Route = createFileRoute("/projetos/filtro")({
   head: () => ({
     meta: [
-      { title: "Portfolio Grid Filter | DomusTech" },
+      { title: "Projetos — Grid com Filtros | DomusTech" },
+      { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/projetos/filtro` },
     ],
+    links: [{ rel: "canonical", href: `${SITE.domain}/projetos` }],
   }),
   component: PortfolioFiltroPage,
 });

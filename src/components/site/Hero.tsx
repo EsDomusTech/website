@@ -7,19 +7,19 @@ const SLIDES = [
   {
     img: "https://picsum.photos/seed/arch1/1600/900",
     eyebrow: "Arquitetura Moderna",
-    title: "Espaços que\nInspiram Viver",
+    title: "Casas Modulares que\nInspiram Viver",
     sub: "Criamos casas modulares que unem estética, tecnologia e sustentabilidade no coração do Porto.",
   },
   {
     img: "https://picsum.photos/seed/arch2/1600/900",
     eyebrow: "Design Inteligente",
-    title: "Do Conceito\nà Realidade",
+    title: "Construção Modular:\nDo Conceito à Realidade",
     sub: "Casas modulares pensadas para a vida contemporânea, com soluções personalizadas para cada cliente.",
   },
   {
     img: "https://picsum.photos/seed/arch3/1600/900",
     eyebrow: "Construção Premium",
-    title: "Rigor e Detalhe\nem Cada Projeto",
+    title: "Casas Modulares no Porto,\ncom Rigor e Detalhe",
     sub: "Do projeto à entrega, acompanhamos cada etapa com precisão e comprometimento total.",
   },
 ];
@@ -59,7 +59,7 @@ export function Hero() {
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1.2 }}
         >
-          <img src={s.img} alt={s.eyebrow} className="h-full w-full object-cover" />
+          <img src={s.img} alt={`${s.eyebrow} — casas modulares DomusTech no Porto`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-black/30" />
           {/* Gradient to ensure navbar legibility */}
           <div className="absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%)" }} />

@@ -98,7 +98,7 @@ export function VideoTestimonials() {
                   {t.quote}
                 </p>
                 <div className="mt-8 flex items-center gap-4">
-                  <img src={t.avatar} alt={t.name} className="h-11 w-11 object-cover" />
+                  <img src={t.avatar} alt={`${t.name} — cliente DomusTech`} className="h-11 w-11 object-cover" />
                   <div>
                     <p
                       className="text-[14px]"

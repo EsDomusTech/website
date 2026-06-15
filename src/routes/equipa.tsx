@@ -92,7 +92,7 @@ function EquipaPage() {
                 <div className="relative aspect-[3/4] overflow-hidden" style={{ backgroundColor: "var(--logo-strip)" }}>
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name}, ${member.role} na DomusTech`}
                     className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
                   {/* Dark overlay */}

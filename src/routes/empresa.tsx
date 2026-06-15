@@ -40,7 +40,7 @@ const STATS = [
 export const Route = createFileRoute("/empresa")({
   head: () => ({
     meta: [
-      { title: "Empresa | Estúdio de Arquitetura Modular no Porto — DomusTech" },
+      { title: "Empresa | Arquitetura Modular no Porto — DomusTech" },
       {
         name: "description",
         content:
@@ -76,7 +76,7 @@ function EmpresaPage() {
                 Quem Somos
               </span>
               <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
-                Sobre Nós
+                Arquitetura e Construção Modular no Porto
               </h1>
               <p className="s-body-lg" style={{ color: "#444748", maxWidth: 480 }}>
                 Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas.

@@ -14,9 +14,11 @@ const MASONRY_ITEMS = GALLERY_ITEMS.map((item, i) => ({
 export const Route = createFileRoute("/galeria/masonry")({
   head: () => ({
     meta: [
-      { title: "Image Gallery Masonry | DomusTech" },
+      { title: "Galeria — Vista Masonry | DomusTech" },
+      { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/galeria/masonry` },
     ],
+    links: [{ rel: "canonical", href: `${SITE.domain}/galeria` }],
   }),
   component: GaleriaMasonryPage,
 });

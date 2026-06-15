@@ -139,7 +139,7 @@ function TestemunhosPage() {
               >
                 {/* Col texto — 7/12 */}
                 <div className="col-span-12 md:col-span-7">
-                  <p className="s-label-caps mb-8" style={{ color: "#999999" }}>
+                  <p className="s-label-caps mb-8" style={{ color: "#767676" }}>
                     {t.num} / CASO DE ESTUDO
                   </p>
                   <p
@@ -169,12 +169,12 @@ function TestemunhosPage() {
                   >
                     <div>
                       <p className="s-headline-md" style={{ color: "#000000" }}>{t.name}</p>
-                      <p className="s-label-caps mt-1" style={{ color: "#999999" }}>{t.role}</p>
+                      <p className="s-label-caps mt-1" style={{ color: "#767676" }}>{t.role}</p>
                     </div>
                     {t.image && (
                       <img
                         src={t.image}
-                        alt={t.name}
+                        alt={`${t.name} — cliente DomusTech`}
                         className="object-cover"
                         style={{ width: 128, height: 80, filter: "grayscale(1) opacity(0.5)", transition: "all 0.3s" }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0) opacity(1)"; }}
@@ -193,7 +193,7 @@ function TestemunhosPage() {
                     <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                       <img
                         src={t.image}
-                        alt={t.name}
+                        alt={`${t.name} — cliente DomusTech`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
@@ -217,7 +217,7 @@ function TestemunhosPage() {
                 />
                 <div className="grid grid-cols-12 gap-8">
                   <div className="col-span-12 md:col-span-7">
-                    <p className="s-label-caps mb-8" style={{ color: "#999999" }}>
+                    <p className="s-label-caps mb-8" style={{ color: "#767676" }}>
                       {t.num} / TESTEMUNHO
                     </p>
                     <p className="s-headline-lg mb-12" style={{ color: "#000000" }}>
@@ -228,7 +228,7 @@ function TestemunhosPage() {
                       style={{ borderColor: "#BE9355" }}
                     >
                       <p className="s-headline-md" style={{ color: "#000000" }}>{t.name}</p>
-                      <p className="s-label-caps mt-1" style={{ color: "#999999" }}>{t.role}</p>
+                      <p className="s-label-caps mt-1" style={{ color: "#767676" }}>{t.role}</p>
                       <p className="s-label-caps mt-1" style={{ color: "#BE9355" }}>{t.project}</p>
                     </div>
                   </div>
@@ -237,7 +237,7 @@ function TestemunhosPage() {
                       <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                         <img
                           src={t.image}
-                          alt={t.name}
+                          alt={`${t.name} — cliente DomusTech`}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -262,7 +262,7 @@ function TestemunhosPage() {
               <h3 className="s-headline-md mb-6" style={{ color: "#000000" }}>
                 "Uma equipa que ouve e executa com perfeição."
               </h3>
-              <p className="s-body-lg" style={{ color: "#999999", maxWidth: 480 }}>
+              <p className="s-body-lg" style={{ color: "#767676", maxWidth: 480 }}>
                 A confiança dos nossos clientes é o maior reconhecimento. Construímos relações duradouras, projeto após projeto.
               </p>
             </div>

@@ -75,7 +75,7 @@ const FAQS = [
 export const Route = createFileRoute("/vantagens-fiscais")({
   head: () => ({
     meta: [
-      { title: "Vantagens Fiscais | Casas Modulares e o Pacote Fiscal 2026 — DomusTech" },
+      { title: "Vantagens Fiscais | Pacote Fiscal 2026 — DomusTech" },
       {
         name: "description",
         content:
