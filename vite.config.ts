@@ -12,8 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Port 8080 colide com o XAMPP — corremos o dev server em 7070.
-  vite: {
-    server: { port: 7070, strictPort: true },
-  },
 });
