@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
 
@@ -217,6 +217,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { scrollY } = useScroll();
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     setScrolled(scrollY.get() > 30);
@@ -256,8 +258,8 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${scrolled ? "shadow-sm" : ""}`}
         style={{
-          backgroundColor: scrolled ? "var(--dark-section)" : "transparent",
-          borderBottom: `1px solid ${scrolled ? "rgba(255,255,255,0.08)" : "transparent"}`,
+          backgroundColor: isHome && !scrolled ? "transparent" : "var(--dark-section)",
+          borderBottom: `1px solid ${isHome && !scrolled ? "transparent" : "rgba(255,255,255,0.08)"}`,
         }}
       >
         <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
