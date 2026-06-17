@@ -159,23 +159,25 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Side arrows — hidden on mobile to avoid overlap with content */}
-      <button
-        type="button"
-        aria-label="Anterior"
-        onClick={() => go(index - 1)}
-        className="absolute left-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)] sm:flex"
-      >
-        <ChevronLeft className="h-4 w-4" />
-      </button>
-      <button
-        type="button"
-        aria-label="Seguinte"
-        onClick={() => go(index + 1)}
-        className="absolute right-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)] sm:flex"
-      >
-        <ChevronRight className="h-4 w-4" />
-      </button>
+      {/* Arrows — bottom-right cluster, editorial style */}
+      <div className="absolute bottom-8 right-8 z-10 hidden sm:flex gap-2">
+        <button
+          type="button"
+          aria-label="Anterior"
+          onClick={() => go(index - 1)}
+          className="h-11 w-11 flex items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          aria-label="Seguinte"
+          onClick={() => go(index + 1)}
+          className="h-11 w-11 flex items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
 
       {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 z-10 flex">

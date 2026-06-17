@@ -64,7 +64,7 @@ function EmpresaPage() {
       {/* Hero assimétrico 70vh — col-span-7 texto + imagem absolute direita */}
       <header
         className="relative overflow-hidden"
-        style={{ height: "70vh", marginTop: 8, marginBottom: 120 }}
+        style={{ height: "70vh", marginTop: 80, marginBottom: 120 }}
       >
         <div className="s-wrap h-full">
           <div className="grid grid-cols-12 gap-8 h-full">
