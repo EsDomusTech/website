@@ -11,13 +11,13 @@ import { SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DomusTech — Casas Modulares Inteligentes no Porto" },
+      { title: "DomusTech | Casas Modulares Inteligentes no Porto" },
       {
         name: "description",
         content:
           "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores, remodelação e modelação 3D.",
       },
-      { property: "og:title", content: "DomusTech — Casas Modulares no Porto" },
+      { property: "og:title", content: "DomusTech | Casas Modulares no Porto" },
       {
         property: "og:description",
         content: "Casas modulares inteligentes e arquitetura moderna no Porto.",

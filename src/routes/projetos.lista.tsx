@@ -9,7 +9,7 @@ import { PROJECTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/projetos/lista")({
   head: () => ({
     meta: [
-      { title: "Projetos — Vista em Lista | DomusTech" },
+      { title: "Projetos, Vista em Lista | DomusTech" },
       { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/projetos/lista` },
     ],

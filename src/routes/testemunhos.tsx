@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site-data";
 const TESTIMONIALS = [
   {
     num: "01",
-    quote: "Do projeto à entrega, a equipa DomusTech foi impecável. A casa superou todas as expectativas — moderna, funcional e exatamente o que sonhámos.",
+    quote: "Do projeto à entrega, a equipa DomusTech foi impecável. A casa superou todas as expectativas. Moderna, funcional e exatamente o que sonhámos.",
     name: "Maria Fernandes",
     role: "Proprietária, Villa Atlântico",
     project: "Foz do Douro, Porto · 2025",
@@ -49,9 +49,9 @@ const STATS = [
 export const Route = createFileRoute("/testemunhos")({
   head: () => ({
     meta: [
-      { title: "Testemunhos | O Que Dizem os Nossos Clientes — DomusTech" },
+      { title: "Testemunhos | O Que Dizem os Nossos Clientes, DomusTech" },
       { name: "description", content: "Veja o que os nossos clientes dizem sobre os projetos DomusTech. Testemunhos reais de famílias e empresas que confiaram em nós." },
-      { property: "og:title", content: "Testemunhos — DomusTech" },
+      { property: "og:title", content: "Testemunhos | DomusTech" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/testemunhos` },
     ],
@@ -174,7 +174,7 @@ function TestemunhosPage() {
                     {t.image && (
                       <img
                         src={t.image}
-                        alt={`${t.name} — cliente DomusTech`}
+                        alt={`${t.name}, cliente DomusTech`}
                         className="object-cover"
                         style={{ width: 128, height: 80, filter: "grayscale(1) opacity(0.5)", transition: "all 0.3s" }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0) opacity(1)"; }}
@@ -193,7 +193,7 @@ function TestemunhosPage() {
                     <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                       <img
                         src={t.image}
-                        alt={`${t.name} — cliente DomusTech`}
+                        alt={`${t.name}, cliente DomusTech`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
@@ -237,7 +237,7 @@ function TestemunhosPage() {
                       <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                         <img
                           src={t.image}
-                          alt={`${t.name} — cliente DomusTech`}
+                          alt={`${t.name}, cliente DomusTech`}
                           className="w-full h-full object-cover"
                         />
                       </div>

@@ -12,7 +12,7 @@ const CATS = ["Todos", "Residencial", "Comercial", "Interiores", "Urbanismo"];
 export const Route = createFileRoute("/projetos/fancy-filtro")({
   head: () => ({
     meta: [
-      { title: "Projetos — Vista Editorial com Filtros | DomusTech" },
+      { title: "Projetos, Vista Editorial com Filtros | DomusTech" },
       { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/projetos/fancy-filtro` },
     ],
@@ -72,7 +72,7 @@ function PortfolioFancyFiltroPage() {
                       <span className="tracked absolute left-5 top-5 bg-white px-3 py-1.5 text-[10px] font-medium" style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}>{p.year}</span>
                     </div>
                     <div className={`flex flex-col justify-center p-10 lg:p-14 ${isEven ? "" : "md:order-1"}`} style={{ backgroundColor: i % 4 < 2 ? "var(--logo-strip)" : "#fff" }}>
-                      <p className="tracked mb-3 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>{String(i + 1).padStart(2, "0")} — {p.category}</p>
+                      <p className="tracked mb-3 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>{p.category}</p>
                       <h2 className="mb-3 text-[26px] leading-tight md:text-[32px]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--foreground)" }}>{p.name}</h2>
                       <p className="mb-2 text-[12px] font-medium" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-display)", letterSpacing: "0.08em" }}>{p.location}</p>
                       <p className="mb-7 text-[14px] font-light leading-relaxed" style={{ color: "var(--muted-foreground)" }}>{p.summary}</p>

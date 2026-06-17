@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 export function Blog() {
   return (
-    <section id="blog" className="section-pad" style={{ backgroundColor: "#f3f3f3" }}>
+    <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
       <div className="s-wrap">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle eyebrow="Atualidade" first="Últimas" second="Notícias" align="left" />
@@ -38,7 +38,7 @@ export function Blog() {
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={n.image}
-                    alt={`${n.title} — artigo do blog DomusTech`}
+                    alt={`${n.title}, artigo do blog DomusTech`}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>

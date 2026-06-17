@@ -5,13 +5,13 @@ import { SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/politica-de-privacidade")({
   head: () => ({
     meta: [
-      { title: "Política de Privacidade — DomusTech" },
+      { title: "Política de Privacidade | DomusTech" },
       {
         name: "description",
         content:
           "Política de Privacidade da DomusTech: como recolhemos, utilizamos e protegemos os seus dados pessoais.",
       },
-      { property: "og:title", content: "Política de Privacidade — DomusTech" },
+      { property: "og:title", content: "Política de Privacidade | DomusTech" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/politica-de-privacidade` },
     ],

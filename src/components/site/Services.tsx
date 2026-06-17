@@ -1,26 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { SectionTitle } from "./SectionTitle";
 import { SERVICES } from "@/lib/site-data";
 
 export function Services() {
   return (
-    <section style={{ backgroundColor: "#f9f9f9", paddingBlock: 120 }}>
+    <section style={{ backgroundColor: "var(--background)", paddingBlock: 120 }}>
       <div className="s-wrap">
-        {/* Header — grid 12-col, col 6/12 */}
-        <div className="grid grid-cols-12 gap-8 mb-20">
-          <div className="col-span-12 md:col-span-6">
-            <span className="s-label-caps mb-4 block" style={{ color: "var(--gold)", letterSpacing: "0.3em" }}>
-              Especialidade
-            </span>
-            <h2 className="s-headline-lg">
-              Os Nossos Serviços
-            </h2>
-          </div>
+        <div className="mb-16">
+          <h2 className="s-headline-lg">Os Nossos Serviços</h2>
         </div>
 
-        {/* Cards — grid 3 colunas per spec */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="border-t" style={{ borderColor: "var(--border)" }}>
           {SERVICES.map((svc, i) => {
             const num = String(i + 1).padStart(2, "0");
             return (
@@ -29,23 +19,15 @@ export function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group border-t pt-6 pb-12"
-                style={{
-                  borderColor: "var(--border)",
-                  transition: "border-color 0.4s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = "var(--gold)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = "var(--border)")}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                className="group grid grid-cols-12 items-center gap-6 border-b py-10 md:gap-8"
+                style={{ borderColor: "var(--border)" }}
               >
-                {/* Ghost number */}
                 <span
-                  className="block mb-6 select-none"
+                  className="col-span-2 md:col-span-1 select-none text-[40px] leading-none"
                   style={{
                     fontFamily: "var(--font-display)",
                     fontWeight: 400,
-                    fontSize: 48,
-                    lineHeight: "56px",
                     letterSpacing: "0.03em",
                     color: "var(--ghost)",
                   }}
@@ -54,29 +36,28 @@ export function Services() {
                   {num}
                 </span>
 
-                {/* Title */}
                 <h3
-                  className="s-headline-md mb-4"
+                  className="col-span-10 md:col-span-3 s-headline-md transition-colors duration-300 group-hover:text-[color:var(--gold)]"
                   style={{ letterSpacing: "0.1em" }}
                 >
                   {svc.name}
                 </h3>
 
-                {/* Body */}
-                <p className="s-body-md mb-8" style={{ color: "var(--muted-foreground)" }}>
+                <p className="col-span-12 md:col-span-6 s-body-md" style={{ color: "var(--muted-foreground)" }}>
                   {svc.excerpt}
                 </p>
 
-                {/* Arrow */}
-                <Link
-                  to="/servicos/$slug"
-                  params={{ slug: svc.slug }}
-                  className="inline-block transition-transform duration-500 group-hover:translate-x-4"
-                  style={{ color: "var(--gold)", fontSize: 24 }}
-                  aria-label={`Ver ${svc.name}`}
-                >
-                  →
-                </Link>
+                <div className="col-span-12 md:col-span-2 flex md:justify-end">
+                  <Link
+                    to="/servicos/$slug"
+                    params={{ slug: svc.slug }}
+                    className="s-label-caps inline-flex items-center gap-3 transition-all duration-500 group-hover:gap-5"
+                    style={{ color: "var(--gold)" }}
+                    aria-label={`Ver ${svc.name}`}
+                  >
+                    Ver Serviço <span aria-hidden>→</span>
+                  </Link>
+                </div>
               </motion.div>
             );
           })}

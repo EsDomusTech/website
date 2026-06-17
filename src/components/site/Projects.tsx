@@ -10,12 +10,6 @@ export function Projects() {
         {/* Header — eyebrow + H2 left, "View All" right with border-b */}
         <div className="mb-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span
-              className="s-label-caps mb-4 block"
-              style={{ color: "var(--gold)", letterSpacing: "0.3em" }}
-            >
-              Portfólio
-            </span>
             <h2 className="s-headline-lg">
               Nossos Projetos
             </h2>
@@ -56,7 +50,7 @@ export function Projects() {
                 {/* Image — grayscale default, color on hover */}
                 <img
                   src={p.image}
-                  alt={`${p.name} — projeto de ${p.category.toLowerCase()} DomusTech no Porto`}
+                  alt={`${p.name}, projeto de ${p.category.toLowerCase()} DomusTech no Porto`}
                   className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05]"
                 />
 

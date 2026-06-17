@@ -5,13 +5,13 @@ import { SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/termos-e-condicoes")({
   head: () => ({
     meta: [
-      { title: "Termos e Condições — DomusTech" },
+      { title: "Termos e Condições | DomusTech" },
       {
         name: "description",
         content:
           "Termos e Condições de utilização do website e dos serviços da DomusTech, estúdio de arquitetura e construção modular no Porto.",
       },
-      { property: "og:title", content: "Termos e Condições — DomusTech" },
+      { property: "og:title", content: "Termos e Condições | DomusTech" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/termos-e-condicoes` },
     ],

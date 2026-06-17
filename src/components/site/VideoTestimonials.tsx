@@ -5,7 +5,7 @@ import { Play, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const TESTIMONIALS = [
   {
     quote:
-      "Do projeto à entrega, a equipa DomusTech foi impecável. A casa superou todas as expectativas — moderna, funcional e exactamente o que sonhámos.",
+      "Do projeto à entrega, a equipa DomusTech foi impecável. A casa superou todas as expectativas: moderna, funcional e exactamente o que sonhámos.",
     name: "Maria Fernandes",
     role: "Proprietária, Villa Atlântico",
     avatar: "https://picsum.photos/seed/avatar1/120/120",
@@ -98,7 +98,7 @@ export function VideoTestimonials() {
                   {t.quote}
                 </p>
                 <div className="mt-8 flex items-center gap-4">
-                  <img src={t.avatar} alt={`${t.name} — cliente DomusTech`} className="h-11 w-11 object-cover" />
+                  <img src={t.avatar} alt={`${t.name}, cliente DomusTech`} className="h-11 w-11 object-cover" />
                   <div>
                     <p
                       className="text-[14px]"

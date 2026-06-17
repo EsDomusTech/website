@@ -49,7 +49,7 @@ export function Hero() {
   const slide = SLIDES[index];
 
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+    <section className="relative min-h-[100dvh] w-full overflow-hidden">
       {/* Background images */}
       {SLIDES.map((s, i) => (
         <motion.div
@@ -59,7 +59,7 @@ export function Hero() {
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1.2 }}
         >
-          <img src={s.img} alt={`${s.eyebrow} — casas modulares DomusTech no Porto`} className="h-full w-full object-cover" />
+          <img src={s.img} alt={`${s.eyebrow}, casas modulares DomusTech no Porto`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-black/30" />
           {/* Gradient to ensure navbar legibility */}
           <div className="absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%)" }} />
@@ -176,19 +176,6 @@ export function Hero() {
       >
         <ChevronRight className="h-4 w-4" />
       </button>
-
-      {/* Slide counter — bottom-right, above progress bar */}
-      <div className="absolute bottom-10 right-8 z-10 flex items-center gap-3">
-        <span
-          className="s-headline-md text-white leading-none"
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="h-px w-8 bg-white/20" />
-        <span className="s-label-caps text-white/40">
-          {String(SLIDES.length).padStart(2, "0")}
-        </span>
-      </div>
 
       {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 z-10 flex">

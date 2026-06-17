@@ -7,13 +7,13 @@ import { FAQS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ | Perguntas Frequentes sobre Casas Modulares — DomusTech" },
+      { title: "FAQ | Perguntas Frequentes sobre Casas Modulares, DomusTech" },
       {
         name: "description",
         content:
           "Respostas às perguntas mais frequentes sobre casas modulares, prazos, personalização e licenciamento no Porto. Tire as suas dúvidas com a DomusTech.",
       },
-      { property: "og:title", content: "Perguntas Frequentes — DomusTech" },
+      { property: "og:title", content: "Perguntas Frequentes | DomusTech" },
       { property: "og:description", content: "Tudo o que precisa de saber sobre casas modulares." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/faq` },

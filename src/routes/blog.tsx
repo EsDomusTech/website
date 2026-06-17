@@ -6,13 +6,13 @@ import { BLOG_POSTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog | Construção Modular e Sustentabilidade — DomusTech" },
+      { title: "Blog | Construção Modular e Sustentabilidade, DomusTech" },
       {
         name: "description",
         content:
           "Artigos e novidades sobre arquitetura modular, sustentabilidade e design de interiores no Porto. Insights da equipa DomusTech.",
       },
-      { property: "og:title", content: "Blog — DomusTech Porto" },
+      { property: "og:title", content: "Blog | DomusTech Porto" },
       { property: "og:description", content: "Novidades sobre arquitetura e construção modular." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/blog` },
@@ -71,7 +71,7 @@ function BlogPage() {
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
                         src={n.image}
-                        alt={`${n.title} — artigo do blog DomusTech`}
+                        alt={`${n.title} , artigo do blog DomusTech`}
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
@@ -159,7 +159,7 @@ function BlogPage() {
                         <div className="w-16 h-12 shrink-0 overflow-hidden">
                           <img
                             src={post.image}
-                            alt={`${post.title} — artigo do blog DomusTech`}
+                            alt={`${post.title} , artigo do blog DomusTech`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>

@@ -6,13 +6,13 @@ import { PROJECTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
     meta: [
-      { title: "Projetos | Arquitetura Modular no Porto — DomusTech" },
+      { title: "Projetos | Arquitetura Modular no Porto, DomusTech" },
       {
         name: "description",
         content:
           "Explore o portfólio DomusTech: casas modulares, reabilitações, interiores e projetos de urbanismo realizados no Porto e região Norte.",
       },
-      { property: "og:title", content: "Projetos — DomusTech Porto" },
+      { property: "og:title", content: "Projetos | DomusTech Porto" },
       { property: "og:description", content: "Portfólio de arquitetura e construção modular no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/projetos` },
@@ -44,7 +44,7 @@ function ProjetosPage() {
             >
               <img
                 src={p.image}
-                alt={`${p.name} — projeto de ${p.category.toLowerCase()} DomusTech no Porto`}
+                alt={`${p.name}, projeto de ${p.category.toLowerCase()} DomusTech no Porto`}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />

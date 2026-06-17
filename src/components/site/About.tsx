@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const BODY =
-  "Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento termoacústico e design moderno — garantindo rapidez na construção e máxima eficiência energética. Acreditamos que a habitação do futuro deve ser personalizada, sustentável e acessível.";
+  "Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento termoacústico e design moderno, garantindo rapidez na construção e máxima eficiência energética. Acreditamos que a habitação do futuro deve ser personalizada, sustentável e acessível.";
 
 const BODY2 =
-  "Cada projeto começa com uma conversa. Personalize, construa, viva: orçamentos claros e sem surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida do cliente — do conceito até à entrega das chaves.";
+  "Cada projeto começa com uma conversa. Personalize, construa, viva: orçamentos claros e sem surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida do cliente, do conceito até à entrega das chaves.";
 
 const STATS = [
   { value: 23, label: "Casas Entregues" },
@@ -56,12 +56,6 @@ export function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span
-                className="s-label-caps mb-4 block"
-                style={{ color: "var(--gold)", letterSpacing: "0.3em" }}
-              >
-                Sobre Nós
-              </span>
               <h2 className="s-headline-lg mb-10">
                 Arquitetura Modular Feita no Porto
               </h2>
