@@ -77,7 +77,7 @@ export function Hero() {
       />
 
       {/* Content — left-aligned, 2/3 width */}
-      <div className="s-wrap relative flex h-full flex-col justify-center">
+      <div className="s-wrap relative z-10 flex min-h-[100dvh] flex-col justify-center pt-20 pb-12">
         <div className="max-w-[640px]">
           <AnimatePresence mode="wait">
             <motion.div key={`slide-${index}`}>
@@ -159,12 +159,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Side arrows */}
+      {/* Side arrows — hidden on mobile to avoid overlap with content */}
       <button
         type="button"
         aria-label="Anterior"
         onClick={() => go(index - 1)}
-        className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        className="absolute left-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)] sm:flex"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -172,7 +172,7 @@ export function Hero() {
         type="button"
         aria-label="Seguinte"
         onClick={() => go(index + 1)}
-        className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]"
+        className="absolute right-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)] sm:flex"
       >
         <ChevronRight className="h-4 w-4" />
       </button>
