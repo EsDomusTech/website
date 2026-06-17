@@ -8,13 +8,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
-      { title: "Contacto | Orçamento de Casa Modular — DomusTech Porto" },
+      { title: "Contacto | Orçamento de Casa Modular, DomusTech Porto" },
       {
         name: "description",
         content:
           "Contacte a DomusTech no Porto. Peça um orçamento para a sua casa modular, remodelação ou projeto de interiores. Resposta rápida e personalizada.",
       },
-      { property: "og:title", content: "Contacto — DomusTech Porto" },
+      { property: "og:title", content: "Contacto | DomusTech Porto" },
       { property: "og:description", content: "Fale connosco e peça um orçamento personalizado." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/contacto` },

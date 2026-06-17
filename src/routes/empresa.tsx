@@ -16,7 +16,7 @@ const VALUES = [
   {
     num: "02",
     title: "Rigor Técnico",
-    text: "Estrutura em aço galvanizado DX51D, isolamento termoacústico e classe energética A — cumprindo Eurocódigo, RSA, REBAP e SCE.",
+    text: "Estrutura em aço galvanizado DX51D, isolamento termoacústico e classe energética A, cumprindo Eurocódigo, RSA, REBAP e SCE.",
   },
   {
     num: "03",
@@ -40,13 +40,13 @@ const STATS = [
 export const Route = createFileRoute("/empresa")({
   head: () => ({
     meta: [
-      { title: "Empresa | Arquitetura Modular no Porto — DomusTech" },
+      { title: "Empresa | Arquitetura Modular no Porto, DomusTech" },
       {
         name: "description",
         content:
           "Conheça a DomusTech: estúdio de arquitetura e construção modular no Porto. A nossa missão, valores e equipa dedicada a casas inteligentes e sustentáveis.",
       },
-      { property: "og:title", content: "Sobre a DomusTech — Arquitetura Modular no Porto" },
+      { property: "og:title", content: "Sobre a DomusTech | Arquitetura Modular no Porto" },
       { property: "og:description", content: "A nossa história, missão e valores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/empresa` },
@@ -106,7 +106,7 @@ function EmpresaPage() {
               <p>
                 Acreditamos que a habitação do futuro deve ser personalizada, sustentável e acessível.
                 Por isso desenvolvemos casas modulares em estrutura metálica robusta, com isolamento
-                termoacústico e design moderno — garantindo rapidez na construção e máxima eficiência
+                termoacústico e design moderno, garantindo rapidez na construção e máxima eficiência
                 energética.
               </p>
               <p>
@@ -116,7 +116,7 @@ function EmpresaPage() {
                 do cliente.
               </p>
               <p>
-                Personalize, construa, viva — a nossa equipa acompanha cada casa da primeira conversa
+                Personalize, construa, viva. A nossa equipa acompanha cada casa da primeira conversa
                 à entrega das chaves, com o mesmo rigor técnico do primeiro dia.
               </p>
             </div>

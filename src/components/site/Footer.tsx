@@ -31,7 +31,7 @@ export function Footer() {
             {SITE.name.toUpperCase()}
           </p>
           <p className="s-body-md mb-8" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>
-            Construção modular com identidade própria — design rigoroso, prazos certos, no Porto.
+            Construção modular com identidade própria. Design rigoroso, prazos certos, no Porto.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             {SOCIAL.map(({ label, href }) => (
@@ -40,7 +40,7 @@ export function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="s-label-caps transition-colors hover:text-[#BE9355]"
+                className="s-label-caps transition-colors hover:text-[var(--gold)]"
                 style={{ color: "#fff" }}
               >
                 {label}
@@ -57,7 +57,7 @@ export function Footer() {
           <div className="space-y-4">
             <a
               href={`tel:${SITE.phone}`}
-              className="s-body-md flex items-center gap-4 transition-colors hover:text-[#BE9355]"
+              className="s-body-md flex items-center gap-4 transition-colors hover:text-[var(--gold)]"
               style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <Phone size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
@@ -65,7 +65,7 @@ export function Footer() {
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="s-body-md flex items-center gap-4 min-w-0 transition-colors hover:text-[#BE9355]"
+              className="s-body-md flex items-center gap-4 min-w-0 transition-colors hover:text-[var(--gold)]"
               style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <Mail size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
@@ -75,7 +75,7 @@ export function Footer() {
               href={SITE.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="s-body-md flex items-start gap-4 transition-colors hover:text-[#BE9355]"
+              className="s-body-md flex items-start gap-4 transition-colors hover:text-[var(--gold)]"
               style={{ color: "rgba(255,255,255,0.6)" }}
             >
               <MapPin size={16} style={{ color: "var(--gold)", flexShrink: 0, marginTop: 4 }} />
@@ -99,7 +99,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     to={to}
-                    className="s-body-md transition-colors hover:text-[#BE9355]"
+                    className="s-body-md transition-colors hover:text-[var(--gold)]"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
                     {label}

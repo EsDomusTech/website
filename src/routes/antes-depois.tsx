@@ -15,7 +15,7 @@ const PROJECTS = [
     cat: "Remodelação de Interiores",
     before: "https://picsum.photos/seed/before1a/1200/675",
     after: "https://picsum.photos/seed/after1b/1200/675",
-    description: "Uma cozinha completamente repensada — dos pavimentos à iluminação, cada detalhe foi substituído por materiais de topo.",
+    description: "Uma cozinha completamente repensada: dos pavimentos à iluminação, cada detalhe foi substituído por materiais de topo.",
   },
   {
     num: "02",
@@ -52,9 +52,9 @@ const PROJECTS = [
 export const Route = createFileRoute("/antes-depois")({
   head: () => ({
     meta: [
-      { title: "Antes e Depois | Renovações — DomusTech Porto" },
+      { title: "Antes e Depois | Renovações, DomusTech Porto" },
       { name: "description", content: "Veja as transformações antes e depois dos projetos DomusTech. Remodelações e reabilitações no Porto que exemplificam o nosso método de trabalho." },
-      { property: "og:title", content: "Antes e Depois — DomusTech" },
+      { property: "og:title", content: "Antes e Depois | DomusTech" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/antes-depois` },
     ],

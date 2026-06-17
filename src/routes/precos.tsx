@@ -43,7 +43,7 @@ const PLANS = [
     label: "FASE 03",
     price: "1.350 €/m² + IVA",
     featured: false,
-    description: "Construção modular completa — do projeto à entrega da casa pronta a habitar, com gestão integral de todas as fases.",
+    description: "Construção modular completa: do projeto à entrega da casa pronta a habitar, com gestão integral de todas as fases.",
     features: [
       "Visita técnica, projeto e licenciamento incluídos",
       "Estrutura, casas de banho e cozinha equipadas",
@@ -68,14 +68,14 @@ const PRICE_NOTES = [
   },
   {
     label: "Plano de pagamento",
-    value: "4 prestações de 25% + IVA — assinatura, início de fabrico, compra de materiais, entrega final",
+    value: "4 prestações de 25% + IVA: assinatura, início de fabrico, compra de materiais, entrega final",
   },
 ];
 
 const FAQS_PRECOS = [
   {
     q: "Os preços incluem IVA?",
-    a: "Não — os valores de referência (1.350 €/m² chave na mão e 1.150 €/m² na variante estrutura/laje/exterior) são apresentados sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.",
+    a: "Não. Os valores de referência (1.350 €/m² chave na mão e 1.150 €/m² na variante estrutura/laje/exterior) são apresentados sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.",
   },
   {
     q: "Como é feito o pagamento?",
@@ -98,9 +98,9 @@ const FAQS_PRECOS = [
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
-      { title: "Preços | Casas Modulares — DomusTech Porto" },
+      { title: "Preços | Casas Modulares, DomusTech Porto" },
       { name: "description", content: "Consulte os planos e preços da DomusTech para projetos de arquitetura e construção modular no Porto. Transparência total, sem surpresas." },
-      { property: "og:title", content: "Preços — DomusTech" },
+      { property: "og:title", content: "Preços | DomusTech" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/precos` },
     ],
@@ -129,7 +129,7 @@ function PrecosPage() {
                 <span style={{ color: "#BE9355" }}>Precisão.</span>
               </h1>
               <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
-                Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto — o orçamento final é sempre personalizado.
+                Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto. O orçamento final é sempre personalizado.
               </p>
             </div>
           </div>

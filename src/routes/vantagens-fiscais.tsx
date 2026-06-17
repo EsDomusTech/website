@@ -22,7 +22,7 @@ const BENEFITS = [
     title: "Isenção / redução de IMT",
     points: [
       "Isenção de IMT para imóveis até 106.346 € (1.º escalão de 2026).",
-      "Depende de deliberação da câmara municipal — não é automático em todo o país.",
+      "Depende de deliberação da câmara municipal. Não é automático em todo o país.",
       "Dedução adicional em Imposto do Selo correspondente ao 1.º escalão de IMT.",
     ],
   },
@@ -46,14 +46,14 @@ const FIT = [
   },
   {
     title: "Custos previsíveis desde o início",
-    text: "Facilita o planeamento fiscal e o cumprimento de prazos — 24 meses para venda, 36 meses para arrendamento.",
+    text: "Facilita o planeamento fiscal e o cumprimento de prazos: 24 meses para venda, 36 meses para arrendamento.",
   },
 ];
 
 /* Licenciamento: o que NÃO muda */
 const LICENSING = [
   "Uma casa modular com fundações e ligação à rede segue as mesmas regras RJUE que a construção tradicional (DL 10/2024).",
-  "Única exceção: módulos móveis de lazer sem fundações fixas e de uso temporário — não aplicável a habitação permanente.",
+  "Única exceção: módulos móveis de lazer sem fundações fixas e de uso temporário. Não aplicável a habitação permanente.",
   "Vantagem real: a fabricação corre em paralelo com a aprovação camarária, reduzindo o tempo total até habitar.",
 ];
 
@@ -75,13 +75,13 @@ const FAQS = [
 export const Route = createFileRoute("/vantagens-fiscais")({
   head: () => ({
     meta: [
-      { title: "Vantagens Fiscais | Pacote Fiscal 2026 — DomusTech" },
+      { title: "Vantagens Fiscais | Pacote Fiscal 2026, DomusTech" },
       {
         name: "description",
         content:
           "IVA a 6% na construção, isenção de IMT e restituição de IVA na autoconstrução: como as casas modulares se encaixam no Pacote Fiscal 2026 (DL n.º 97/2026).",
       },
-      { property: "og:title", content: "Vantagens Fiscais — Pacote Fiscal 2026 | DomusTech" },
+      { property: "og:title", content: "Vantagens Fiscais, Pacote Fiscal 2026 | DomusTech" },
       { property: "og:description", content: "IVA 6%, IMT e restituição de IVA: o que muda para a sua casa modular em 2026." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/vantagens-fiscais` },
@@ -282,7 +282,7 @@ function VantagensFiscaisPage() {
         <div className="s-wrap text-center">
           <SectionTitle eyebrow="Como Ajudamos" first="DO PROJETO À" second="LIGAÇÃO ÀS REDES" light className="mb-8 items-center" />
           <p className="s-body-lg mt-8 mx-auto" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 680 }}>
-            Acompanhamos todo o processo — projeto, licenciamento, construção e ligação às redes — para
+            Acompanhamos todo o processo: projeto, licenciamento, construção e ligação às redes, para
             que a sua casa modular cumpra os requisitos do pacote fiscal e os respetivos prazos.
           </p>
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

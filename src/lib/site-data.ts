@@ -10,7 +10,7 @@ export const SITE = {
   phone: "+351 935 677 556",
   email: "geral@esdomustech.com",
   address: "Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha",
-  hours: "Segunda a Sexta, 8h–17h",
+  hours: "Segunda a Sexta, 8h-17h",
   mapsUrl: "https://maps.app.goo.gl/LJQN6T5pS541ABgT6",
 } as const;
 
@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     name: "Casas Modulares no Porto",
     titleFirst: "CASAS",
     titleSecond: "MODULARES",
-    metaTitle: "Casas Modulares no Porto | Construção Modular Chave na Mão — DomusTech",
+    metaTitle: "Casas Modulares no Porto | Construção Modular Chave na Mão | DomusTech",
     metaDescription:
       "Casas modulares no Porto: rápidas, sustentáveis e totalmente personalizadas. Projeto, fabrico e montagem chave na mão pela DomusTech.",
     excerpt:
@@ -56,13 +56,13 @@ export const SERVICES: Service[] = [
     name: "Construção Modular",
     titleFirst: "CONSTRUÇÃO",
     titleSecond: "MODULAR",
-    metaTitle: "Construção Modular no Porto | Edifícios e Soluções Industriais — DomusTech",
+    metaTitle: "Construção Modular no Porto | Edifícios e Soluções Industriais | DomusTech",
     metaDescription:
       "Construção modular para habitação, comércio e espaços corporativos no Porto. Soluções pré-fabricadas escaláveis, sustentáveis e de montagem rápida.",
     excerpt:
       "Soluções de construção modular escaláveis para habitação, comércio e espaços corporativos, com montagem rápida e limpa.",
     intro: [
-      "A nossa construção modular adapta-se a projetos de qualquer escala — desde moradias unifamiliares a edifícios comerciais e estruturas corporativas. O fabrico em fábrica reduz desperdício, ruído e impacto ambiental na obra.",
+      "A nossa construção modular adapta-se a projetos de qualquer escala: desde moradias unifamiliares a edifícios comerciais e estruturas corporativas. O fabrico em fábrica reduz desperdício, ruído e impacto ambiental na obra.",
       "Combinamos engenharia rigorosa com design flexível, permitindo expandir ou reconfigurar os espaços à medida que as suas necessidades evoluem.",
     ],
     features: [
@@ -78,13 +78,13 @@ export const SERVICES: Service[] = [
     name: "Design de Interiores",
     titleFirst: "DESIGN DE",
     titleSecond: "INTERIORES",
-    metaTitle: "Design de Interiores no Porto | Projetos Personalizados — DomusTech",
+    metaTitle: "Design de Interiores no Porto | Projetos Personalizados | DomusTech",
     metaDescription:
       "Design de interiores no Porto: projetos personalizados que valorizam cada espaço. Conceito, mobiliário, iluminação e decoração chave na mão.",
     excerpt:
       "Projetos de interiores personalizados que equilibram estética, funcionalidade e conforto em cada divisão.",
     intro: [
-      "Criamos interiores que contam uma história — a sua. Estudamos a luz, o fluxo e a utilização de cada espaço para desenhar ambientes elegantes e funcionais.",
+      "Criamos interiores que contam a sua história. Estudamos a luz, o fluxo e a utilização de cada espaço para desenhar ambientes elegantes e funcionais.",
       "Da seleção de materiais e mobiliário à iluminação e decoração final, entregamos projetos de interiores completos, prontos a viver.",
     ],
     features: [
@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     name: "Remodelação",
     titleFirst: "REMODELAÇÃO",
     titleSecond: "DE ESPAÇOS",
-    metaTitle: "Remodelação no Porto | Renovação de Casas e Espaços — DomusTech",
+    metaTitle: "Remodelação no Porto | Renovação de Casas e Espaços | DomusTech",
     metaDescription:
       "Remodelação de casas e espaços comerciais no Porto. Renovamos por completo com rigor, prazos cumpridos e acabamentos de qualidade.",
     excerpt:
@@ -210,7 +210,7 @@ export const PROJECTS: Project[] = [
     summary: "Edifício de escritórios com fachada modular e espaços de trabalho flexíveis.",
     description: [
       "O Armada Center é um edifício de escritórios premium desenhado para atrair empresas de tecnologia e criativas. A fachada modular ventilada permite personalização e eficiência energética máxima.",
-      "Os espaços interiores foram concebidos com flexibilidade total — open spaces, salas de reunião modulares e terraços jardim definem este espaço de trabalho do futuro.",
+      "Os espaços interiores foram concebidos com flexibilidade total: open spaces, salas de reunião modulares e terraços jardim definem este espaço de trabalho do futuro.",
     ],
   },
   {
@@ -312,7 +312,7 @@ export const TEAM: TeamMember[] = [
 export const FAQS = [
   {
     q: "Uma casa modular é tão sólida como uma tradicional?",
-    a: "Sim — usamos os mesmos materiais de acabamento da construção tradicional, e a estrutura em aço galvanizado oferece segurança adicional e melhor isolamento térmico e acústico.",
+    a: "Sim. Usamos os mesmos materiais de acabamento da construção tradicional, e a estrutura em aço galvanizado oferece segurança adicional e melhor isolamento térmico e acústico.",
   },
   {
     q: "Quanto tempo demora a construção?",
@@ -320,11 +320,11 @@ export const FAQS = [
   },
   {
     q: "O que está incluído no preço?",
-    a: "Uma lista alargada que cobre desde a visita técnica e o projeto de arquitetura até à entrega chave na mão — estrutura, casas de banho completas, isolamento, pavimentos, janelas e portas, eletricidade e canalizações, cobertura, transporte, garantia estrutural de 10 anos e acompanhamento de licenciamento.",
+    a: "Uma lista alargada que cobre desde a visita técnica e o projeto de arquitetura até à entrega chave na mão: estrutura, casas de banho completas, isolamento, pavimentos, janelas e portas, eletricidade e canalizações, cobertura, transporte, garantia estrutural de 10 anos e acompanhamento de licenciamento.",
   },
   {
     q: "A casa pode ser ampliada no futuro?",
-    a: "Sim — a construção modular permite uma abordagem evolutiva ao longo do tempo, ajustando a casa às necessidades futuras da família.",
+    a: "Sim. A construção modular permite uma abordagem evolutiva ao longo do tempo, ajustando a casa às necessidades futuras da família.",
   },
   {
     q: "Que classe energética tem?",
@@ -332,11 +332,11 @@ export const FAQS = [
   },
   {
     q: "Preciso de contratar um arquiteto?",
-    a: "Não — o projeto de arquitetura e engenharia, com imagens 3D, está incluído no nosso serviço chave na mão.",
+    a: "Não. O projeto de arquitetura e engenharia, com imagens 3D, está incluído no nosso serviço chave na mão.",
   },
   {
     q: "Como funciona o licenciamento camarário?",
-    a: "A DomusTech trata da totalidade do processo — projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias.",
+    a: "A DomusTech trata da totalidade do processo: projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias.",
   },
   {
     q: "Qual é a garantia da casa?",
@@ -344,10 +344,10 @@ export const FAQS = [
   },
   {
     q: "Posso personalizar o interior?",
-    a: "Sim, através do nosso sistema de \"plafon\": pode substituir qualquer elemento de catálogo — casa de banho, cozinha, portas, janelas — pagando apenas a diferença de valor face ao item standard.",
+    a: "Sim, através do nosso sistema de \"plafon\": pode substituir qualquer elemento de catálogo (casa de banho, cozinha, portas, janelas), pagando apenas a diferença de valor face ao item standard.",
   },
   {
     q: "A DomusTech constrói em todo o país?",
-    a: "Sim — construímos em todo o território nacional. Já entregámos casas em 13 localizações diferentes.",
+    a: "Sim. Construímos em todo o território nacional e já entregámos casas em 13 localizações diferentes.",
   },
 ];

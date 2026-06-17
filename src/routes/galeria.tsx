@@ -5,24 +5,24 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
-  { id: 1, cat: "Exterior", title: "Villa Atlântico — Fachada", year: "2025", image: "https://picsum.photos/seed/gal1/800/600" },
-  { id: 2, cat: "Interior", title: "Loft Boavista — Sala Principal", year: "2025", image: "https://picsum.photos/seed/gal2/800/600" },
-  { id: 3, cat: "Comercial", title: "Edifício Ribeira — Lobby", year: "2024", image: "https://picsum.photos/seed/gal3/800/600" },
-  { id: 4, cat: "Exterior", title: "Moradia Gaia — Vista Aérea", year: "2024", image: "https://picsum.photos/seed/gal4/800/600" },
-  { id: 5, cat: "Detalhe", title: "Materiality — Betão e Madeira", year: "2025", image: "https://picsum.photos/seed/gal5/800/600" },
-  { id: 6, cat: "Interior", title: "Cotton House — Cozinha", year: "2024", image: "https://picsum.photos/seed/gal6/800/600" },
-  { id: 7, cat: "Urbano", title: "Praça Central — Espaço Público", year: "2023", image: "https://picsum.photos/seed/gal7/800/600" },
-  { id: 8, cat: "Exterior", title: "Armada Center — Fachada", year: "2024", image: "https://picsum.photos/seed/gal8/800/600" },
-  { id: 9, cat: "Interior", title: "Suite Atlântico — Master", year: "2025", image: "https://picsum.photos/seed/gal9/800/600" },
-  { id: 10, cat: "Detalhe", title: "Caixilharia — Nó Estrutural", year: "2024", image: "https://picsum.photos/seed/gal10/800/600" },
-  { id: 11, cat: "Comercial", title: "Armada Center — Open Space", year: "2024", image: "https://picsum.photos/seed/gal11/800/600" },
-  { id: 12, cat: "Urbano", title: "Solar do Douro — Terraço", year: "2023", image: "https://picsum.photos/seed/gal12/800/600" },
+  { id: 1, cat: "Exterior", title: "Villa Atlântico, Fachada", year: "2025", image: "https://picsum.photos/seed/gal1/800/600" },
+  { id: 2, cat: "Interior", title: "Loft Boavista, Sala Principal", year: "2025", image: "https://picsum.photos/seed/gal2/800/600" },
+  { id: 3, cat: "Comercial", title: "Edifício Ribeira, Lobby", year: "2024", image: "https://picsum.photos/seed/gal3/800/600" },
+  { id: 4, cat: "Exterior", title: "Moradia Gaia, Vista Aérea", year: "2024", image: "https://picsum.photos/seed/gal4/800/600" },
+  { id: 5, cat: "Detalhe", title: "Materiality, Betão e Madeira", year: "2025", image: "https://picsum.photos/seed/gal5/800/600" },
+  { id: 6, cat: "Interior", title: "Cotton House, Cozinha", year: "2024", image: "https://picsum.photos/seed/gal6/800/600" },
+  { id: 7, cat: "Urbano", title: "Praça Central, Espaço Público", year: "2023", image: "https://picsum.photos/seed/gal7/800/600" },
+  { id: 8, cat: "Exterior", title: "Armada Center, Fachada", year: "2024", image: "https://picsum.photos/seed/gal8/800/600" },
+  { id: 9, cat: "Interior", title: "Suite Atlântico, Master", year: "2025", image: "https://picsum.photos/seed/gal9/800/600" },
+  { id: 10, cat: "Detalhe", title: "Caixilharia, Nó Estrutural", year: "2024", image: "https://picsum.photos/seed/gal10/800/600" },
+  { id: 11, cat: "Comercial", title: "Armada Center, Open Space", year: "2024", image: "https://picsum.photos/seed/gal11/800/600" },
+  { id: 12, cat: "Urbano", title: "Solar do Douro, Terraço", year: "2023", image: "https://picsum.photos/seed/gal12/800/600" },
 ];
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
-      { title: "Galeria de Imagens | Projectos DomusTech — Porto" },
+      { title: "Galeria de Imagens | Projectos DomusTech, Porto" },
       { name: "description", content: "Galeria de imagens dos projectos de arquitectura e construção modular DomusTech no Porto." },
       { property: "og:url", content: `${SITE.domain}/galeria` },
     ],
@@ -69,7 +69,7 @@ function GaleriaPage() {
                 className="group relative overflow-hidden cursor-pointer"
                 style={{ aspectRatio: "4/3" }}
               >
-                <img src={item.image} alt={`${item.title} — projeto DomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={item.image} alt={`${item.title}, projeto DomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                 <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>

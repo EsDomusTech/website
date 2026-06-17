@@ -13,7 +13,7 @@ export const Route = createFileRoute("/servicos/$slug")({
   },
   head: ({ loaderData }) => {
     const s = loaderData?.service;
-    if (!s) return { meta: [{ title: "Serviço não encontrado — DomusTech" }] };
+    if (!s) return { meta: [{ title: "Serviço não encontrado | DomusTech" }] };
     return {
       meta: [
         { title: s.metaTitle },
@@ -105,7 +105,7 @@ function ServiceDetail() {
               >
                 <img
                   src={o.image}
-                  alt={`${o.name} — serviço DomusTech no Porto`}
+                  alt={`${o.name}, serviço DomusTech no Porto`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />

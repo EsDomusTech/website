@@ -9,7 +9,7 @@ import { PROJECTS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/projetos/fancy")({
   head: () => ({
     meta: [
-      { title: "Projetos — Vista Editorial | DomusTech" },
+      { title: "Projetos, Vista Editorial | DomusTech" },
       { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: `${SITE.domain}/projetos/fancy` },
     ],
@@ -60,7 +60,7 @@ function PortfolioFancyPage() {
                   style={{ backgroundColor: i % 4 < 2 ? "var(--logo-strip)" : "#fff" }}
                 >
                   <p className="tracked mb-4 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
-                    {String(i + 1).padStart(2, "0")} — {p.category}
+                    {p.category}
                   </p>
                   <h2
                     className="mb-4 text-[28px] leading-tight md:text-[36px]"

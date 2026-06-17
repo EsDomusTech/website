@@ -6,18 +6,18 @@ import { SITE } from "@/lib/site-data";
 
 /* Anatomia da casa — sequência "Física das Construções" (12 camadas, exterior → interior) */
 const LAYERS = [
-  { num: "01", title: "Acabamento de piso", text: "Revestimento à escolha — laminado/flutuante ou cerâmico." },
+  { num: "01", title: "Acabamento de piso", text: "Revestimento à escolha: laminado/flutuante ou cerâmico." },
   { num: "02", title: "Placa OSB 22 mm", text: "Base estrutural do piso, fixada sobre a laje." },
-  { num: "03", title: "ETICS — EPS 50 mm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
+  { num: "03", title: "ETICS / EPS 50 mm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
   { num: "04", title: "Lã de Rocha", text: "Isolamento térmico e acústico no interior das paredes." },
   { num: "05", title: "Placa OSB 12 mm", text: "Revestimento estrutural da parede." },
-  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 2 mm — o esqueleto da casa." },
+  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 2 mm. O esqueleto da casa." },
   { num: "07", title: "Guias e montantes", text: "Subestrutura metálica de fixação e alinhamento." },
-  { num: "08", title: "Gesso cartonado", text: "Acabamento interior — branco, hidrófugo (WC) ou anti-fogo, conforme a zona." },
+  { num: "08", title: "Gesso cartonado", text: "Acabamento interior: branco, hidrófugo (WC) ou anti-fogo, conforme a zona." },
   { num: "09", title: "Camada impermeabilizante", text: "Barreira entre a laje e a estrutura, protege da humidade ascendente." },
   { num: "10", title: "Chapa metálica + varão roscado", text: "Ligação mecânica entre a estrutura e o terreno." },
-  { num: "11", title: "Laje em betão armado", text: "Fundação contínua — permite ainda a instalação de piso radiante." },
-  { num: "12", title: "Cobertura — telha sandwich", text: "5 cm de espessura, com lã de rocha e teto falso em gesso cartonado por baixo." },
+  { num: "11", title: "Laje em betão armado", text: "Fundação contínua, permite ainda a instalação de piso radiante." },
+  { num: "12", title: "Cobertura, telha sandwich", text: "5 cm de espessura, com lã de rocha e teto falso em gesso cartonado por baixo." },
 ];
 
 /* Os dois sistemas construtivos */
@@ -38,9 +38,9 @@ const SYSTEMS = [
     name: "Painel Técnico Pré-Fabricado",
     tag: "XPS + Cimentícia",
     composition:
-      "Exterior: painel sandwich pré-fabricado — núcleo XPS + 2 placas FBR-ECO, sobre estrutura em aço galvanizado. Interior: lã de rocha + placa OSB + pladur.",
+      "Exterior: painel sandwich pré-fabricado, núcleo XPS + 2 placas FBR-ECO, sobre estrutura em aço galvanizado. Interior: lã de rocha + placa OSB + pladur.",
     advantages: [
-      "Montagem ultra-rápida — até 120 m² por dia",
+      "Montagem ultra-rápida, até 120 m² por dia",
       "Elevada resistência à humidade",
       "Mínimo desperdício em obra",
       "Ideal para prazos reduzidos",
@@ -53,13 +53,13 @@ const THICKNESS = [
   { item: "Estrutura", spec: "Tubo de aço galvanizado DX51D, 2 mm, perfis ómega (EN 10346 / EN 10143)" },
   { item: "OSB Parede", spec: "12 mm" },
   { item: "OSB Piso", spec: "22 mm" },
-  { item: "Capoto / ETICS (exterior)", spec: "10 cm — pormenor construtivo: EPS 50 mm" },
-  { item: "Isolamento de piso (XPS)", spec: "Placa de Esferovite Azul XPS — 6 cm (apenas no chão)" },
+  { item: "Capoto / ETICS (exterior)", spec: "10 cm (EPS 50 mm, pormenor construtivo)" },
+  { item: "Isolamento de piso (XPS)", spec: "Placa de Esferovite Azul XPS, 6 cm (apenas no chão)" },
   { item: "Lã de rocha", spec: "10 cm" },
   { item: "Pladur Branco / Hidrófugo / Anti-fogo", spec: "10 mm / 13 mm / 13 mm, conforme a zona" },
-  { item: "Telha sandwich (cobertura)", spec: "5 cm — perfil 5 ondas (6 cores) ou imitação telha lusa (1 cor)" },
-  { item: "Espessura total — parede externa", spec: "21 cm" },
-  { item: "Espessura total — parede interna", spec: "8 cm" },
+  { item: "Telha sandwich (cobertura)", spec: "5 cm, perfil 5 ondas (6 cores) ou imitação telha lusa (1 cor)" },
+  { item: "Espessura total, parede externa", spec: "21 cm" },
+  { item: "Espessura total, parede interna", spec: "8 cm" },
 ];
 
 /* Referências reais de produto — personalização via sistema "plafon" */
@@ -67,30 +67,30 @@ const REFERENCES = [
   {
     cat: "Casas de Banho",
     note: "Garantia: uma casa de banho completa a cada 35 m² construídos.",
-    items: ["Móveis de lavatório — AML Trevi, Essential, Ministone Mármore, Nerea", "Sanitários — NEREA, Sanitana Regina, Essential Sensea", "Cabines e bases de duche — Sensea Essential, Oceania, Sensai, Shimmer"],
+    items: ["Móveis de lavatório: AML Trevi, Essential, Ministone Mármore, Nerea", "Sanitários: NEREA, Sanitana Regina, Essential Sensea", "Cabines e bases de duche: Sensea Essential, Oceania, Sensai, Shimmer"],
   },
   {
     cat: "Cozinha",
     note: "Solução base incluída: lava-loiça + móvel + acessórios + torneira.",
-    items: ["Lava-loiças — KILSVIKEN, HAVSEN, FYNDIG", "Bancadas — JARSTORP, EKBACKEN", "Puxadores — BAGGANAS"],
+    items: ["Lava-loiças: KILSVIKEN, HAVSEN, FYNDIG", "Bancadas: JARSTORP, EKBACKEN", "Puxadores: BAGGANAS"],
   },
   {
     cat: "Portas e Janelas",
-    note: "Garantem conforto, eficiência térmica e luminosidade — substituíveis via plafon.",
-    items: ["Portas de entrada — Drava Vidro, Sevilha", "Portas interiores — Setúbal Branca", "Portas-janela ARTENS e janelas PVC em várias dimensões"],
+    note: "Garantem conforto, eficiência térmica e luminosidade. Substituíveis via plafon.",
+    items: ["Portas de entrada: Drava Vidro, Sevilha", "Portas interiores: Setúbal Branca", "Portas-janela ARTENS e janelas PVC em várias dimensões"],
   },
 ];
 
 export const Route = createFileRoute("/sistema-construtivo")({
   head: () => ({
     meta: [
-      { title: "Sistema Construtivo | Casas Modulares — DomusTech" },
+      { title: "Sistema Construtivo | Casas Modulares, DomusTech" },
       {
         name: "description",
         content:
           "Conheça o sistema construtivo DomusTech: estrutura em aço galvanizado, isolamento termoacústico, os dois sistemas de parede disponíveis e a ficha técnica completa de materiais.",
       },
-      { property: "og:title", content: "Sistema Construtivo — DomusTech" },
+      { property: "og:title", content: "Sistema Construtivo | DomusTech" },
       { property: "og:description", content: "Estrutura em aço galvanizado, composição por camada e ficha técnica de materiais." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/sistema-construtivo` },
@@ -121,7 +121,7 @@ function SistemaConstrutivoPage() {
               </h1>
               <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
                 Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento
-                termoacústico e design moderno — garantindo rapidez na construção e máxima
+                termoacústico e design moderno, garantindo rapidez na construção e máxima
                 eficiência energética. Estrutura tubular em aço galvanizado DX51D (2 mm, normas
                 EN&nbsp;10346 / EN&nbsp;10143), com perfis ómega e dois sistemas construtivos à escolha.
               </p>
@@ -135,7 +135,7 @@ function SistemaConstrutivoPage() {
         <div className="s-wrap">
           <SectionTitle eyebrow="Anatomia da Casa" first="DO EXTERIOR" second="AO INTERIOR" align="left" className="mb-16" />
           <p className="s-body-lg mb-16" style={{ color: "#444748", maxWidth: 720 }}>
-            A sequência confirmada no esquema técnico oficial "Física das Construções" — pormenor de
+            A sequência confirmada no esquema técnico oficial "Física das Construções", pormenor de
             parede, cobertura e ligação ao terreno, numerada de 1 a 12.
           </p>
 
@@ -207,8 +207,8 @@ function SistemaConstrutivoPage() {
             <div className="col-span-12 md:col-span-4">
               <SectionTitle eyebrow="Ficha Técnica" first="ESPESSURAS" second="EXATAS" align="left" />
               <p className="s-body-md mt-8" style={{ color: "#444748", maxWidth: 360 }}>
-                Especificações extraídas literalmente da lista de materiais dos catálogos oficiais —
-                um nível de detalhe que a generalidade da concorrência não publica.
+                Especificações extraídas literalmente da lista de materiais dos catálogos oficiais.
+                Um nível de detalhe que a generalidade da concorrência não publica.
               </p>
             </div>
             <div className="col-span-12 md:col-span-8">
@@ -262,7 +262,7 @@ function SistemaConstrutivoPage() {
           <p className="s-body-md mt-16 text-center mx-auto" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 720 }}>
             Conformidade legal e técnica: Despacho 6476-H/2021, ITE 50 (LNEC), Eurocódigo 3 e 4, RSA,
             REBAP e SCE. O ponto de orvalho é mantido garantidamente no exterior da parede graças à
-            camada ETICS combinada com lã de rocha — e o baixo peso da estrutura em aço favorece o
+            camada ETICS combinada com lã de rocha, e o baixo peso da estrutura em aço favorece o
             comportamento sísmico da casa.
           </p>
         </div>
@@ -273,7 +273,7 @@ function SistemaConstrutivoPage() {
         <div className="s-wrap">
           <SectionTitle eyebrow="Sistema de Plafon" first="PERSONALIZE" second="CADA DETALHE" className="mb-6" />
           <p className="s-body-lg mb-16 mx-auto text-center" style={{ color: "#444748", maxWidth: 680 }}>
-            Substitua qualquer elemento de catálogo — casa de banho, cozinha, portas ou janelas —
+            Substitua qualquer elemento de catálogo (casa de banho, cozinha, portas ou janelas)
             pagando apenas a diferença de valor face ao item standard.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

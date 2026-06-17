@@ -12,8 +12,8 @@ export const Route = createFileRoute("/projetos/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.project;
-    if (!p) return { meta: [{ title: "Projeto não encontrado — DomusTech" }] };
-    const title = `${p.name} | ${p.category} no ${p.location} — DomusTech`;
+    if (!p) return { meta: [{ title: "Projeto não encontrado | DomusTech" }] };
+    const title = `${p.name} | ${p.category} no ${p.location} | DomusTech`;
     return {
       meta: [
         { title },
@@ -113,7 +113,7 @@ function ProjectDetail() {
               >
                 <img
                   src={o.image}
-                  alt={`${o.name} — projeto de ${o.category.toLowerCase()} DomusTech no Porto`}
+                  alt={`${o.name}, projeto de ${o.category.toLowerCase()} DomusTech no Porto`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />

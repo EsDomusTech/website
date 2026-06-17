@@ -6,13 +6,13 @@ import { SERVICES, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços | Construção Modular e Remodelação — DomusTech" },
+      { title: "Serviços | Construção Modular e Remodelação, DomusTech" },
       {
         name: "description",
         content:
           "Serviços DomusTech no Porto: casas modulares, construção modular, design de interiores e remodelação. Soluções chave na mão, sustentáveis e personalizadas.",
       },
-      { property: "og:title", content: "Serviços — DomusTech Porto" },
+      { property: "og:title", content: "Serviços | DomusTech Porto" },
       { property: "og:description", content: "Casas modulares, construção modular, design de interiores e remodelação no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/servicos` },
@@ -158,7 +158,7 @@ function ServicosPage() {
           <div className="col-span-12 md:col-span-7">
             <img
               src="https://picsum.photos/seed/services-break/1200/800"
-              alt="Design de interiores e acabamentos DomusTech — filosofia de projeto"
+              alt="Design de interiores e acabamentos DomusTech, filosofia de projeto"
               className="w-full object-cover"
               style={{ height: 600 }}
             />
@@ -172,7 +172,7 @@ function ServicosPage() {
             </h3>
             <p className="s-body-md mb-10" style={{ color: "#444748" }}>
               A nossa equipa multidisciplinar trabalha em harmonia para garantir que cada detalhe
-              serve uma visão unificada — do planeamento urbano ao décor final.
+              serve uma visão unificada, do planeamento urbano ao décor final.
             </p>
             <Link
               to="/empresa"

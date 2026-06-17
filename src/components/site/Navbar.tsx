@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
 
 type SubItem = { label: string; to: string };
@@ -216,13 +216,12 @@ export function Navbar() {
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { scrollY } = useScroll();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    setScrolled(scrollY.get() > 30);
+    return scrollY.on("change", (y) => setScrolled(y > 30));
+  }, [scrollY]);
 
   useEffect(() => {
     if (menuOpen) {
