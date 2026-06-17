@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SERVICES, SITE } from "@/lib/site-data";
 
@@ -183,7 +184,7 @@ function ServicosPage() {
               }}
             >
               Ver o Nosso Processo
-              <span className="material-symbols-outlined text-lg">north_east</span>
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
