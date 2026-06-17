@@ -91,7 +91,7 @@ function GaleriaPage() {
         </div>
       </section>
 
-      <CtaBand title="Quer o Seu\nProjeto Aqui?" text="Cada obra é uma história. Deixe-nos contar a sua." label="Iniciar Projeto" />
+      <CtaBand title={"Quer o Seu\nProjeto Aqui?"} text="Cada obra é uma história. Deixe-nos contar a sua." label="Iniciar Projeto" />
     </main>
   );
 }

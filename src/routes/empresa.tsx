@@ -69,7 +69,7 @@ function EmpresaPage() {
         <div className="s-wrap h-full">
           <div className="grid grid-cols-12 gap-8 h-full">
             <div
-              className="col-span-12 md:col-span-7 flex flex-col justify-center relative z-10"
+              className="col-span-12 md:col-span-6 flex flex-col justify-center relative z-10"
               style={{ paddingBlock: 80 }}
             >
               <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
