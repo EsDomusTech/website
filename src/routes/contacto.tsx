@@ -40,7 +40,7 @@ function ContactoPage() {
     <main style={{ backgroundColor: "var(--background)" }}>
 
       {/* Display-lg hero — sem PageHeader, Stitch exacto */}
-      <header style={{ paddingBlock: "120px 0" }}>
+      <header className="pt-16 md:pt-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
@@ -58,7 +58,7 @@ function ContactoPage() {
       </header>
 
       {/* Contact body — 4-col info + 8-col form */}
-      <section style={{ paddingBlock: 120 }}>
+      <section className="py-16 md:py-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
 
@@ -144,7 +144,7 @@ function ContactoPage() {
 
             {/* Form col — 8/12 */}
             <div
-              className="col-span-12 md:col-span-8 p-12 md:p-16"
+              className="col-span-12 md:col-span-8 p-6 md:p-12 lg:p-16"
               style={{ backgroundColor: "var(--card)" }}
             >
               {sent ? (
@@ -277,23 +277,6 @@ function ContactoPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Google Maps embed */}
-      <section style={{ height: 500 }}>
-        <iframe
-          title="Localização DomusTech"
-          src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
-          width="100%"
-          height="100%"
-          style={{
-            border: 0,
-            display: "block",
-            filter: "grayscale(0.4) contrast(1.1) opacity(0.8)",
-          }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
       </section>
     </main>
   );

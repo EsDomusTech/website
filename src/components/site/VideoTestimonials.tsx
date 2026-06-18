@@ -28,7 +28,7 @@ export function VideoTestimonials() {
       <div className="container-1100 grid items-stretch gap-0 md:grid-cols-2">
         {/* Left: video promo */}
         <div
-          className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-14"
+          className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-8 md:p-14"
           style={{ backgroundImage: "url(https://picsum.photos/seed/arch4/800/500)" }}
         >
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.65)" }} />
@@ -61,7 +61,7 @@ export function VideoTestimonials() {
         </div>
 
         {/* Right: testimonial */}
-        <div className="flex flex-col justify-between bg-white p-12">
+        <div className="flex flex-col justify-between bg-white p-8 md:p-12">
           <div>
             <div className="mb-5 flex items-center gap-3">
               <span className="block h-px w-6" style={{ backgroundColor: "var(--gold)" }} />

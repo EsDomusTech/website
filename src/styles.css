@@ -168,7 +168,7 @@
 }
 
 @utility section-pad {
-  padding-block: 120px;
+  padding-block: clamp(60px, 8.5vw, 120px);
 }
 
 @utility tracked {

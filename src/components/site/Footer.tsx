@@ -22,7 +22,7 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "var(--dark-section)", paddingBlock: 120 }}>
+    <footer className="py-16 md:py-[120px]" style={{ backgroundColor: "var(--dark-section)", borderTop: "3px solid var(--gold)" }}>
       <div className="s-wrap grid grid-cols-12 gap-8 lg:gap-12 items-start">
 
         {/* Col 1 — 4/12: Brand + tagline + sociais */}

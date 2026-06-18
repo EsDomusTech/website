@@ -151,7 +151,7 @@ export function Hero() {
                   className="s-label-caps group inline-flex items-center gap-4 text-white uppercase"
                 >
                   Falar Connosco
-                  <span className="block h-px w-12 bg-white transition-all duration-500 group-hover:w-16" />
+                  <span className="hidden sm:block h-px w-12 bg-white transition-all duration-500 group-hover:w-16" />
                 </Link>
               </motion.div>
             </motion.div>
@@ -159,8 +159,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Arrows — bottom-right cluster, editorial style */}
-      <div className="absolute bottom-8 right-8 z-10 hidden sm:flex gap-2">
+      {/* Arrows — bottom-right, above the diagonal wedge (sm:h-24 / md:h-32) */}
+      <div className="absolute bottom-36 right-8 z-10 hidden sm:flex gap-4">
         <button
           type="button"
           aria-label="Anterior"
