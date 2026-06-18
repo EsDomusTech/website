@@ -15,7 +15,6 @@ const NAV_LINKS: NavLink[] = [
       { label: "Sobre Nós", to: "/empresa" },
       { label: "Equipa", to: "/equipa" },
       { label: "Sistema Construtivo", to: "/sistema-construtivo" },
-      { label: "Vantagens Fiscais", to: "/vantagens-fiscais" },
       { label: "Testemunhos", to: "/testemunhos" },
     ],
   },
@@ -38,7 +37,14 @@ const NAV_LINKS: NavLink[] = [
       { label: "Antes e Depois", to: "/antes-depois" },
     ],
   },
-  { label: "Preços", to: "/precos" },
+  {
+    label: "Preços",
+    to: "/precos",
+    children: [
+      { label: "Preços e Modelos", to: "/precos" },
+      { label: "Vantagens Fiscais", to: "/vantagens-fiscais" },
+    ],
+  },
   { label: "Blog", to: "/blog" },
   { label: "FAQ", to: "/faq" },
   { label: "Contacto", to: "/contacto" },
