@@ -151,7 +151,7 @@ function ProjectError({ error, reset }: { error: Error; reset: () => void }) {
     <main className="flex min-h-[70vh] items-center justify-center pt-20 text-center">
       <div>
         <h1 className="font-display text-3xl font-semibold text-foreground">Algo correu mal</h1>
-        <p className="mt-4 text-muted-foreground">{error.message}</p>
+        <p className="mt-4 text-muted-foreground">Ocorreu um erro inesperado. Por favor, tente novamente.</p>
         <button
           onClick={() => {
             router.invalidate();

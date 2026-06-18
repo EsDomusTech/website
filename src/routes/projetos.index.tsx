@@ -52,7 +52,7 @@ function ProjetosPage() {
                 <p className="tracked text-[10px] text-gold">
                   {p.category} · {p.location}
                 </p>
-                <h3 className="mt-1 font-display text-[22px] font-medium text-white">{p.name}</h3>
+                <h2 className="mt-1 font-display text-[22px] font-medium text-white">{p.name}</h2>
               </div>
             </Link>
           ))}
