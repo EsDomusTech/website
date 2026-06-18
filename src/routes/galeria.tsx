@@ -24,6 +24,9 @@ export const Route = createFileRoute("/galeria")({
     meta: [
       { title: "Galeria de Imagens | Projectos DomusTech, Porto" },
       { name: "description", content: "Galeria de imagens dos projectos de arquitectura e construção modular DomusTech no Porto." },
+      { property: "og:title", content: "Galeria de Imagens | DomusTech Porto" },
+      { property: "og:description", content: "Galeria de imagens dos projectos de arquitectura e construção modular DomusTech no Porto." },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/galeria` },
     ],
     links: [{ rel: "canonical", href: `${SITE.domain}/galeria` }],

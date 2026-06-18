@@ -25,7 +25,10 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/` },
     ],
-    links: [{ rel: "canonical", href: `${SITE.domain}/` }],
+    links: [
+      { rel: "canonical", href: `${SITE.domain}/` },
+      { rel: "preload", as: "image", href: "https://picsum.photos/seed/arch1/1600/900" },
+    ],
   }),
   component: Index,
 });

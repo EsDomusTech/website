@@ -13,7 +13,7 @@ export const Route = createFileRoute("/projetos/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.project;
     if (!p) return { meta: [{ title: "Projeto não encontrado | DomusTech" }] };
-    const title = `${p.name} | ${p.category} no ${p.location} | DomusTech`;
+    const title = `${p.name} | ${p.category} | DomusTech`;
     return {
       meta: [
         { title },

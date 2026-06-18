@@ -16,6 +16,8 @@ export const Route = createFileRoute("/galeria/masonry")({
     meta: [
       { title: "Galeria, Vista Masonry | DomusTech" },
       { name: "robots", content: "noindex, follow" },
+      { property: "og:title", content: "Galeria Masonry | DomusTech" },
+      { property: "og:description", content: "Composição orgânica de imagens arquitectónicas em disposição masonry." },
       { property: "og:url", content: `${SITE.domain}/galeria/masonry` },
     ],
     links: [{ rel: "canonical", href: `${SITE.domain}/galeria` }],

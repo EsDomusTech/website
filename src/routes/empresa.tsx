@@ -176,12 +176,12 @@ function EmpresaPage() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                   >
-                    <h4
+                    <h3
                       className="tracked mb-3 text-[11px] font-bold text-foreground"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {v.num} / {v.title.toUpperCase()}
-                    </h4>
+                    </h3>
                     <p className="text-[14px] leading-relaxed text-muted-foreground">{v.text}</p>
                   </motion.div>
                 ))}
@@ -203,7 +203,7 @@ function EmpresaPage() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <p className="s-display-lg leading-none" style={{ color: "#BE9355" }}>{s.value}</p>
-              <p className="s-label-caps mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>{s.label}</p>
+              <p className="s-label-caps mt-3" style={{ color: "rgba(255,255,255,0.65)" }}>{s.label}</p>
             </motion.div>
           ))}
         </div>
