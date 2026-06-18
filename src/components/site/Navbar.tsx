@@ -8,9 +8,17 @@ type NavLink = { label: string; to?: string; children?: SubItem[] };
 
 const NAV_LINKS: NavLink[] = [
   { label: "Início", to: "/" },
-  { label: "Empresa", to: "/empresa" },
-  { label: "Sistema Construtivo", to: "/sistema-construtivo" },
-  { label: "Vantagens Fiscais", to: "/vantagens-fiscais" },
+  {
+    label: "Empresa",
+    to: "/empresa",
+    children: [
+      { label: "Sobre Nós", to: "/empresa" },
+      { label: "Equipa", to: "/equipa" },
+      { label: "Sistema Construtivo", to: "/sistema-construtivo" },
+      { label: "Vantagens Fiscais", to: "/vantagens-fiscais" },
+      { label: "Testemunhos", to: "/testemunhos" },
+    ],
+  },
   {
     label: "Serviços",
     to: "/servicos",
@@ -26,22 +34,13 @@ const NAV_LINKS: NavLink[] = [
     to: "/projetos",
     children: [
       { label: "Todos os Projetos", to: "/projetos" },
-      { label: "Cotton House", to: "/projetos/cotton-house" },
-      { label: "Armada Center", to: "/projetos/armada-center" },
-    ],
-  },
-  { label: "Galeria", to: "/galeria" },
-  {
-    label: "Páginas",
-    children: [
-      { label: "Blog", to: "/blog" },
+      { label: "Galeria", to: "/galeria" },
       { label: "Antes e Depois", to: "/antes-depois" },
-      { label: "Preços", to: "/precos" },
-      { label: "Equipa", to: "/equipa" },
-      { label: "Testemunhos", to: "/testemunhos" },
-      { label: "FAQ", to: "/faq" },
     ],
   },
+  { label: "Preços", to: "/precos" },
+  { label: "Blog", to: "/blog" },
+  { label: "FAQ", to: "/faq" },
   { label: "Contacto", to: "/contacto" },
 ];
 
@@ -133,7 +132,7 @@ function DropdownMenu({ items, open }: { items: SubItem[]; open: boolean }) {
   );
 }
 
-function LangSelector({ light = false }: { light?: boolean }) {
+function LangSelector({ light = false, dropUp = false }: { light?: boolean; dropUp?: boolean }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("PT");
   const ref = useRef<HTMLDivElement>(null);
@@ -162,8 +161,8 @@ function LangSelector({ light = false }: { light?: boolean }) {
       </button>
       {open && (
         <div
-          className="absolute right-0 top-full z-50 min-w-[130px] bg-white py-2 shadow-md"
-          style={{ borderTop: "2px solid var(--gold)" }}
+          className={`absolute right-0 z-50 min-w-[130px] bg-white py-2 shadow-md ${dropUp ? "bottom-full mb-1" : "top-full"}`}
+          style={{ borderTop: dropUp ? "none" : "2px solid var(--gold)", borderBottom: dropUp ? "2px solid var(--gold)" : "none" }}
         >
           {LANGS.map((lang) => (
             <button
@@ -525,7 +524,7 @@ export function Navbar() {
                   ))}
                 </div>
                 <div className="flex items-center gap-5">
-                  <LangSelector />
+                  <LangSelector dropUp />
                   <Link
                     to="/contacto"
                     onClick={() => setMenuOpen(false)}
