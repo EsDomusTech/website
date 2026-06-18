@@ -59,7 +59,13 @@ export function Hero() {
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1.2 }}
         >
-          <img src={s.img} alt={`${s.eyebrow}, casas modulares DomusTech no Porto`} className="h-full w-full object-cover" />
+          <img
+            src={s.img}
+            alt={`${s.eyebrow}, casas modulares DomusTech no Porto`}
+            className="h-full w-full object-cover"
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "low"}
+          />
           <div className="absolute inset-0 bg-black/30" />
           {/* Gradient to ensure navbar legibility */}
           <div className="absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%)" }} />

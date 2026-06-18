@@ -120,7 +120,7 @@ function PrecosPage() {
             <div className="col-span-12 md:col-span-8">
               <span
                 className="s-label-caps mb-4 block"
-                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+                style={{ color: "var(--muted-foreground)", letterSpacing: "0.3em" }}
               >
                 Estrutura de Investimento
               </span>
@@ -165,17 +165,17 @@ function PrecosPage() {
                 <div className={`flex flex-col flex-1 p-8 lg:p-12 ${plan.featured ? "pt-12 lg:pt-16" : ""}`}>
                   <p
                     className="s-label-caps mb-2"
-                    style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
+                    style={{ color: plan.featured ? "#858383" : "var(--muted-foreground)" }}
                   >
                     {plan.label}
                   </p>
 
-                  <h3
+                  <h2
                     className="s-headline-lg mb-4"
                     style={{ color: plan.featured ? "#ffffff" : "#000000" }}
                   >
                     {plan.name}
-                  </h3>
+                  </h2>
 
                   <p
                     className="s-body-md mb-8"
@@ -188,7 +188,7 @@ function PrecosPage() {
                     {plan.price !== "Gratuito" && (
                       <span
                         className="s-label-caps mr-2"
-                        style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
+                        style={{ color: plan.featured ? "#858383" : "var(--muted-foreground)" }}
                       >
                         DESDE
                       </span>
@@ -320,12 +320,12 @@ function PrecosPage() {
                   className="group border-b pb-8"
                   style={{ borderColor: "#eeeeee" }}
                 >
-                  <h4
+                  <h3
                     className="s-headline-md mb-4 transition-colors group-hover:text-[#BE9355]"
                     style={{ color: "#000000" }}
                   >
                     {faq.q}
-                  </h4>
+                  </h3>
                   <p className="s-body-md" style={{ color: "#444748" }}>
                     {faq.a}
                   </p>
