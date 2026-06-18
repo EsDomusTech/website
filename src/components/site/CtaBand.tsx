@@ -50,7 +50,7 @@ export function CtaBand({
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               to="/contacto"
-              className="s-label-caps inline-block px-12 py-5 text-white transition-all duration-300"
+              className="s-label-caps block w-full text-center px-12 py-5 text-white transition-all duration-300 sm:inline-block sm:w-auto"
               style={{ backgroundColor: "var(--gold)" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d4a968")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
@@ -59,7 +59,7 @@ export function CtaBand({
             </Link>
             <Link
               to={secondaryTo as "/"}
-              className="s-label-caps inline-block border border-white px-12 py-5 text-white transition-all duration-300 hover:bg-white hover:text-black"
+              className="s-label-caps block w-full text-center border border-white px-12 py-5 text-white transition-all duration-300 hover:bg-white hover:text-black sm:inline-block sm:w-auto"
             >
               {secondaryLabel}
             </Link>

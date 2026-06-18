@@ -23,7 +23,7 @@ const PLANS = [
   },
   {
     name: "Projeto",
-    label: "MAIS POPULAR",
+    label: "FASE 02",
     price: "A partir de 3.500€",
     featured: true,
     description: "Projeto de arquitetura completo, da conceção ao licenciamento, com acompanhamento dedicado.",
@@ -114,7 +114,7 @@ function PrecosPage() {
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
       {/* Hero — display-lg, sem imagem */}
-      <header style={{ paddingBlock: "120px 0" }}>
+      <header className="pt-16 md:pt-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
@@ -137,9 +137,9 @@ function PrecosPage() {
       </header>
 
       {/* Plans — grid 3 colunas */}
-      <section style={{ backgroundColor: "#f3f3f3", paddingBlock: 120 }}>
+      <section className="py-16 md:py-[120px]" style={{ backgroundColor: "#f3f3f3" }}>
         <div className="s-wrap">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:py-4">
             {PLANS.map((plan, i) => (
               <motion.div
                 key={plan.name}
@@ -147,11 +147,10 @@ function PrecosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="relative flex flex-col h-full"
+                className={`relative flex flex-col h-full${plan.featured ? " md:scale-[1.04]" : ""}`}
                 style={{
                   backgroundColor: plan.featured ? "#000000" : "#ffffff",
                   border: plan.featured ? "none" : "1px solid #e8e8e8",
-                  transform: plan.featured ? "scale(1.04)" : "none",
                 }}
               >
                 {plan.featured && (
@@ -163,7 +162,7 @@ function PrecosPage() {
                   </div>
                 )}
 
-                <div className={`flex flex-col flex-1 p-12 ${plan.featured ? "pt-16" : ""}`}>
+                <div className={`flex flex-col flex-1 p-8 lg:p-12 ${plan.featured ? "pt-12 lg:pt-16" : ""}`}>
                   <p
                     className="s-label-caps mb-2"
                     style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
@@ -186,12 +185,14 @@ function PrecosPage() {
                   </p>
 
                   <div className="mb-8">
-                    <span
-                      className="s-label-caps mr-2"
-                      style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
-                    >
-                      DESDE
-                    </span>
+                    {plan.price !== "Gratuito" && (
+                      <span
+                        className="s-label-caps mr-2"
+                        style={{ color: plan.featured ? "#858383" : "var(--label-muted)" }}
+                      >
+                        DESDE
+                      </span>
+                    )}
                     <span
                       className="s-headline-lg"
                       style={{ color: plan.featured ? "#ffffff" : "#000000" }}
@@ -246,7 +247,7 @@ function PrecosPage() {
       </section>
 
       {/* Notas de preço — valores reais de referência */}
-      <section style={{ paddingBlock: 100 }}>
+      <section className="py-14 md:py-[100px]">
         <div className="s-wrap">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t pt-12" style={{ borderColor: "#eeeeee" }}>
             {PRICE_NOTES.map((note, i) => (
@@ -270,7 +271,7 @@ function PrecosPage() {
       </section>
 
       {/* Imagem atmosférica full-width */}
-      <section className="relative overflow-hidden" style={{ height: 480 }}>
+      <section className="relative overflow-hidden h-[280px] md:h-[480px]">
         <img
           src="https://picsum.photos/seed/pricing-atm/1920/900"
           alt="Casa modular DomusTech entregue no Porto"
@@ -297,7 +298,7 @@ function PrecosPage() {
       </section>
 
       {/* FAQ — grid 4+8 per Stitch spec */}
-      <section style={{ paddingBlock: 120 }}>
+      <section className="py-16 md:py-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-4">

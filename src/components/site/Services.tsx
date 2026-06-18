@@ -4,7 +4,7 @@ import { SERVICES } from "@/lib/site-data";
 
 export function Services() {
   return (
-    <section style={{ backgroundColor: "var(--background)", paddingBlock: 120 }}>
+    <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
       <div className="s-wrap">
         <div className="mb-16">
           <h2 className="s-headline-lg">Os Nossos Serviços</h2>
