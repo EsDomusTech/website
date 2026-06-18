@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     name: "Casas Modulares no Porto",
     titleFirst: "CASAS",
     titleSecond: "MODULARES",
-    metaTitle: "Casas Modulares no Porto | Construção Modular Chave na Mão | DomusTech",
+    metaTitle: "Casas Modulares Porto | Construção Modular | DomusTech",
     metaDescription:
       "Casas modulares no Porto: rápidas, sustentáveis e totalmente personalizadas. Projeto, fabrico e montagem chave na mão pela DomusTech.",
     excerpt:
@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
     name: "Construção Modular",
     titleFirst: "CONSTRUÇÃO",
     titleSecond: "MODULAR",
-    metaTitle: "Construção Modular no Porto | Edifícios e Soluções Industriais | DomusTech",
+    metaTitle: "Construção Modular Porto | Edifícios e Habitação | DomusTech",
     metaDescription:
       "Construção modular para habitação, comércio e espaços corporativos no Porto. Soluções pré-fabricadas escaláveis, sustentáveis e de montagem rápida.",
     excerpt:
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
     name: "Design de Interiores",
     titleFirst: "DESIGN DE",
     titleSecond: "INTERIORES",
-    metaTitle: "Design de Interiores no Porto | Projetos Personalizados | DomusTech",
+    metaTitle: "Design de Interiores Porto | Projetos | DomusTech",
     metaDescription:
       "Design de interiores no Porto: projetos personalizados que valorizam cada espaço. Conceito, mobiliário, iluminação e decoração chave na mão.",
     excerpt:
@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     name: "Remodelação",
     titleFirst: "REMODELAÇÃO",
     titleSecond: "DE ESPAÇOS",
-    metaTitle: "Remodelação no Porto | Renovação de Casas e Espaços | DomusTech",
+    metaTitle: "Remodelação Porto | Renovação de Espaços | DomusTech",
     metaDescription:
       "Remodelação de casas e espaços comerciais no Porto. Renovamos por completo com rigor, prazos cumpridos e acabamentos de qualidade.",
     excerpt:

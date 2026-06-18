@@ -41,6 +41,7 @@ export const Route = createFileRoute("/equipa")({
       { title: "Equipa | Os Arquitectos e Designers da DomusTech, Porto" },
       { name: "description", content: "Conheça a equipa multidisciplinar da DomusTech: arquitectos, engenheiros e designers dedicados a criar casas modulares de excelência no Porto." },
       { property: "og:title", content: "A Nossa Equipa | DomusTech" },
+      { property: "og:description", content: "Conheça a equipa multidisciplinar da DomusTech: arquitectos, engenheiros e designers dedicados a casas modulares de excelência." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/equipa` },
     ],

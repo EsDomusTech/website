@@ -52,6 +52,7 @@ export const Route = createFileRoute("/testemunhos")({
       { title: "Testemunhos | O Que Dizem os Nossos Clientes, DomusTech" },
       { name: "description", content: "Veja o que os nossos clientes dizem sobre os projetos DomusTech. Testemunhos reais de famílias e empresas que confiaram em nós." },
       { property: "og:title", content: "Testemunhos | DomusTech" },
+      { property: "og:description", content: "Veja o que os nossos clientes dizem sobre os projetos DomusTech. Testemunhos reais de famílias e empresas." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/testemunhos` },
     ],
