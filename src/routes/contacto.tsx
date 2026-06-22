@@ -117,7 +117,7 @@ function ContactoPage() {
     <main style={{ backgroundColor: "var(--background)" }}>
 
       {/* Hero */}
-      <header className="pt-16 md:pt-[120px]">
+      <header className="pt-[100px] md:pt-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
