@@ -163,13 +163,6 @@ function PrecosPage() {
                 )}
 
                 <div className={`flex flex-col flex-1 p-8 lg:p-12 ${plan.featured ? "pt-12 lg:pt-16" : ""}`}>
-                  <p
-                    className="s-label-caps mb-2"
-                    style={{ color: plan.featured ? "#858383" : "var(--muted-foreground)" }}
-                  >
-                    {plan.label}
-                  </p>
-
                   <h2
                     className="s-headline-lg mb-4"
                     style={{ color: plan.featured ? "#ffffff" : "#000000" }}
@@ -246,6 +239,74 @@ function PrecosPage() {
         </div>
       </section>
 
+      {/* Estimativas por Tipologia */}
+      <section className="py-16 md:py-[100px]">
+        <div className="s-wrap">
+          <div className="grid grid-cols-12 gap-8 mb-14">
+            <div className="col-span-12 md:col-span-6">
+              <span className="s-label-caps block mb-4" style={{ color: "var(--muted-foreground)" }}>
+                Estimativas de Investimento
+              </span>
+              <h2 className="s-headline-lg mb-4" style={{ color: "#000000" }}>
+                Quanto custa<br />cada tipologia?
+              </h2>
+              <p className="s-body-md" style={{ color: "#444748" }}>
+                O preço chave-na-mão é de <strong>1.350 €/m²</strong>, sem IVA.
+                As áreas abaixo são os mínimos de referência (RGEU) — projetos reais
+                são habitualmente maiores.
+              </p>
+            </div>
+          </div>
+
+          {/* Tabela */}
+          <div className="border-t" style={{ borderColor: "#e8e8e8" }}>
+            {/* Header */}
+            <div className="grid grid-cols-4 gap-4 py-4 border-b" style={{ borderColor: "#e8e8e8" }}>
+              {["Tipologia", "Área mín.", "1.350 €/m²", "Total s/ IVA"].map((h) => (
+                <span key={h} className="s-label-caps" style={{ color: "var(--muted-foreground)" }}>{h}</span>
+              ))}
+            </div>
+            {[
+              { t: "T1", area: 52,  note: "mínimo que trabalhamos" },
+              { t: "T2", area: 72,  note: "1–2 quartos" },
+              { t: "T3", area: 91,  note: "2–3 quartos" },
+              { t: "T4", area: 120, note: "3–4 quartos" },
+              { t: "T5+", area: 122, note: "sob projeto, área variável" },
+            ].map((row, i) => (
+              <motion.div
+                key={row.t}
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.06 }}
+                className="grid grid-cols-4 gap-4 items-center py-6 border-b group"
+                style={{ borderColor: "#e8e8e8" }}
+              >
+                <div className="flex items-center gap-4">
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", color: "#BE9355", letterSpacing: "0.05em" }}>
+                    {row.t}
+                  </span>
+                  <span className="s-label-caps hidden md:block" style={{ color: "var(--muted-foreground)" }}>{row.note}</span>
+                </div>
+                <span className="s-body-lg" style={{ color: "#444748" }}>
+                  {row.t === "T5+" ? `≥ ${row.area} m²` : `${row.area} m²`}
+                </span>
+                <span className="s-body-md" style={{ color: "#444748" }}>
+                  × 1.350 €
+                </span>
+                <span className="s-headline-md" style={{ color: "#000000" }}>
+                  {row.t === "T5+" ? "+" : ""}
+                  {(row.area * 1350).toLocaleString("pt-PT")} €
+                </span>
+              </motion.div>
+            ))}
+          </div>
+          <p className="s-body-sm mt-6" style={{ color: "var(--muted-foreground)" }}>
+            * Valores sem IVA. Áreas mínimas RGEU — projetos reais situam-se entre 108.000 € e 230.000 € conforme localização e opções de personalização.
+          </p>
+        </div>
+      </section>
+
       {/* Notas de preço — valores reais de referência */}
       <section className="py-14 md:py-[100px]">
         <div className="s-wrap">
@@ -273,7 +334,7 @@ function PrecosPage() {
       {/* Imagem atmosférica full-width */}
       <section className="relative overflow-hidden h-[280px] md:h-[480px]">
         <img
-          src="https://images.unsplash.com/photo-1510596956-a9fe3d12a62e?w=1920&h=900&fit=crop&auto=format&q=80"
+          src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1920&h=900&fit=crop&auto=format&q=80"
           alt="Casa modular DomusTech entregue no Porto"
           className="w-full h-full object-cover"
           style={{ filter: "grayscale(0.6) brightness(0.75)" }}
@@ -337,7 +398,7 @@ function PrecosPage() {
       </section>
 
       <CtaBand
-        title="Pronto para\nComeçar?"
+        title="Pronto para Começar?"
         text="Fale connosco. A primeira consulta é gratuita e sem compromisso."
         label="Consulta Gratuita"
       />
