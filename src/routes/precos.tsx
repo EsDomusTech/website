@@ -114,7 +114,7 @@ function PrecosPage() {
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
       {/* Hero — display-lg, sem imagem */}
-      <header className="pt-16 md:pt-[120px]">
+      <header className="pt-[100px] md:pt-[120px]">
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
