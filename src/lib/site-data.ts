@@ -329,3 +329,26 @@ export const FAQS = [
     a: "Sim. Construímos em todo o território nacional e já entregámos casas em 13 localizações diferentes.",
   },
 ];
+
+export const DISTRITOS_PT = [
+  "Aveiro",
+  "Beja",
+  "Braga",
+  "Bragança",
+  "Castelo Branco",
+  "Coimbra",
+  "Évora",
+  "Faro",
+  "Guarda",
+  "Leiria",
+  "Lisboa",
+  "Portalegre",
+  "Porto",
+  "Santarém",
+  "Setúbal",
+  "Viana do Castelo",
+  "Vila Real",
+  "Viseu",
+  "Açores",
+  "Madeira",
+] as const;

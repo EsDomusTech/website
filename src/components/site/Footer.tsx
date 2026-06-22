@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram, Linkedin, Facebook } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 const SOCIAL = [
-  { label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
-  { label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
+  { label: "Instagram", Icon: Instagram, href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", Icon: Linkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", Icon: Facebook, href: "https://www.facebook.com/esdomustech/" },
 ];
 
 const NAV_LINKS = [
@@ -33,17 +33,18 @@ export function Footer() {
           <p className="s-body-md mb-8" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>
             Construção modular com identidade própria. Design rigoroso, prazos certos, no Porto.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {SOCIAL.map(({ label, href }) => (
+          <div className="flex gap-4">
+            {SOCIAL.map(({ label, Icon, href }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="s-label-caps transition-colors hover:text-[var(--gold)]"
-                style={{ color: "#fff" }}
+                aria-label={label}
+                className="transition-colors hover:text-[var(--gold)]"
+                style={{ color: "rgba(255,255,255,0.6)" }}
               >
-                {label}
+                <Icon size={20} />
               </a>
             ))}
           </div>

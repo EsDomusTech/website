@@ -50,10 +50,10 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex justify-between items-center py-8 text-left focus:outline-none"
+        className="w-full flex justify-between items-center gap-8 py-8 text-left focus:outline-none"
       >
         <span
-          className="s-headline-md group-hover:text-[#BE9355] transition-colors"
+          className="s-body-lg group-hover:text-[#BE9355] transition-colors font-medium"
           style={{ color: "#000000" }}
         >
           {q}
@@ -61,7 +61,7 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.3 }}
-          className="shrink-0 s-headline-md"
+          className="shrink-0 text-2xl"
           style={{ color: "#BE9355" }}
           aria-hidden
         >
@@ -94,28 +94,28 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 function FaqPage() {
   const categories = [
     {
+      id: "produto",
+      label: "O PRODUTO",
+      num: "01",
+      items: [FAQS[0], FAQS[4], FAQS[7]],
+    },
+    {
       id: "processo",
       label: "O PROCESSO",
-      num: "01",
-      items: [FAQS[3], FAQS[2]],
-    },
-    {
-      id: "prazos",
-      label: "PRAZOS",
       num: "02",
-      items: [FAQS[0]],
+      items: [FAQS[3], FAQS[5], FAQS[6]],
     },
     {
-      id: "qualidade",
-      label: "QUALIDADE",
+      id: "prazos-precos",
+      label: "PRAZOS & PREÇOS",
       num: "03",
-      items: [FAQS[1]],
+      items: [FAQS[1], FAQS[2]],
     },
     {
-      id: "sobre-nos",
-      label: "SOBRE NÓS",
+      id: "personalizacao",
+      label: "PERSONALIZAÇÃO",
       num: "04",
-      items: [FAQS[4]],
+      items: [FAQS[8], FAQS[9]],
     },
   ];
 
@@ -188,33 +188,36 @@ function FaqPage() {
                   ))}
                 </section>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Still have questions — Stitch CTA box */}
-              <section
-                className="mt-24 flex flex-col md:flex-row items-center justify-between p-12 md:p-20"
-                style={{ backgroundColor: "#eeeeee" }}
+      {/* CTA box — fora do grid para não colidir com sidebar sticky */}
+      <section className="pb-24">
+        <div className="s-wrap">
+          <div
+            className="flex flex-col md:flex-row items-center justify-between p-12 md:p-20"
+            style={{ backgroundColor: "#eeeeee" }}
+          >
+            <div className="mb-8 md:mb-0">
+              <h3 className="s-headline-lg leading-tight" style={{ color: "#000000" }}>
+                Ainda tem <br />perguntas?
+              </h3>
+            </div>
+            <div style={{ maxWidth: 400 }}>
+              <p className="s-body-md mb-8" style={{ color: "#444748" }}>
+                A nossa equipa está disponível para consultas personalizadas sobre o seu projeto.
+              </p>
+              <a
+                href="/contacto"
+                className="s-label-caps inline-block border px-10 py-4 transition-all duration-300"
+                style={{ borderColor: "#000000", color: "#000000" }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#000000"; e.currentTarget.style.color = "#ffffff"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "#000000"; }}
               >
-                <div className="mb-8 md:mb-0">
-                  <h3
-                    className="s-headline-lg leading-tight"
-                    style={{ color: "#000000" }}
-                  >
-                    Ainda tem <br />perguntas?
-                  </h3>
-                </div>
-                <div style={{ maxWidth: 400 }}>
-                  <p className="s-body-md mb-8" style={{ color: "#444748" }}>
-                    A nossa equipa está disponível para consultas personalizadas sobre o seu projeto.
-                  </p>
-                  <a
-                    href="/contacto"
-                    className="s-label-caps inline-block border px-10 py-4 transition-all duration-300 hover:bg-[#000000] hover:text-white"
-                    style={{ borderColor: "#000000", color: "#000000" }}
-                  >
-                    Agendar Consulta
-                  </a>
-                </div>
-              </section>
+                Agendar Consulta
+              </a>
             </div>
           </div>
         </div>
