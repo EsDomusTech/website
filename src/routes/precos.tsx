@@ -64,7 +64,7 @@ const PRICE_NOTES = [
   },
   {
     label: "Faixa real observada (conforme tipologia e opções)",
-    value: "≈ 108.000 € a 230.000 € (sem IVA)",
+    value: "≈ 47.000 € a 230.000 € (sem IVA)",
   },
   {
     label: "Plano de pagamento",
@@ -260,7 +260,7 @@ function PrecosPage() {
               { t: "T2", area: 72,  note: "1–2 quartos" },
               { t: "T3", area: 91,  note: "2–3 quartos" },
               { t: "T4", area: 120, note: "3–4 quartos" },
-              { t: "T5+", area: 122, note: "sob projeto, área variável" },
+              { t: "T5+", area: 150, note: "sob projeto, área variável" },
             ].map((row, i) => (
               <motion.div
                 key={row.t}
