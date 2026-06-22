@@ -49,8 +49,7 @@ export function Services() {
 
                 <div className="col-span-12 md:col-span-2 flex md:justify-end">
                   <Link
-                    to="/servicos/$slug"
-                    params={{ slug: svc.slug }}
+                    to="/servicos"
                     className="s-label-caps inline-flex items-center gap-3 transition-all duration-500 group-hover:gap-5"
                     style={{ color: "var(--gold)" }}
                     aria-label={`Ver ${svc.name}`}

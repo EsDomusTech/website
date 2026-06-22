@@ -26,6 +26,7 @@ export type Service = {
   intro: string[];
   features: string[];
   image: string;
+  process: { num: string; title: string; text: string }[];
 };
 
 export const SERVICES: Service[] = [
@@ -50,6 +51,12 @@ export const SERVICES: Service[] = [
       "Acabamentos totalmente personalizáveis",
     ],
     image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&h=800&fit=crop&auto=format&q=80",
+    process: [
+      { num: "01", title: "Consulta e Terreno", text: "Visita técnica ao terreno, análise de condicionantes legais e briefing detalhado do programa de necessidades." },
+      { num: "02", title: "Projeto e Licenciamento", text: "Arquitetura, engenharia estrutural e gestão completa do processo de licenciamento camarário." },
+      { num: "03", title: "Fabrico em Fábrica", text: "Produção dos módulos em ambiente fabril controlado, em paralelo com a aprovação do projeto — sem paragens de obra." },
+      { num: "04", title: "Montagem e Entrega", text: "Instalação no terreno em 60 a 90 dias, com entrega chave na mão, ligações às redes e garantia estrutural de 10 anos." },
+    ],
   },
   {
     slug: "construcao-modular",
@@ -72,28 +79,12 @@ export const SERVICES: Service[] = [
       "Integração de domótica e energias renováveis",
     ],
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&auto=format&q=80",
-  },
-  {
-    slug: "design-de-interiores",
-    name: "Design de Interiores",
-    titleFirst: "DESIGN DE",
-    titleSecond: "INTERIORES",
-    metaTitle: "Design de Interiores Porto | Projetos | DomusTech",
-    metaDescription:
-      "Design de interiores no Porto: projetos personalizados que valorizam cada espaço. Conceito, mobiliário, iluminação e decoração chave na mão.",
-    excerpt:
-      "Projetos de interiores personalizados que equilibram estética, funcionalidade e conforto em cada divisão.",
-    intro: [
-      "Criamos interiores que contam a sua história. Estudamos a luz, o fluxo e a utilização de cada espaço para desenhar ambientes elegantes e funcionais.",
-      "Da seleção de materiais e mobiliário à iluminação e decoração final, entregamos projetos de interiores completos, prontos a viver.",
+    process: [
+      { num: "01", title: "Análise de Requisitos", text: "Estudo da escala do projeto, uso pretendido (habitacional, comercial ou corporativo) e requisitos técnicos e regulamentares." },
+      { num: "02", title: "Engenharia e Sistemas", text: "Cálculo estrutural, dimensionamento de especialidades (AVAC, elétrica, redes) e integração de domótica e energias renováveis." },
+      { num: "03", title: "Pré-fabricação", text: "Módulos produzidos em fábrica com controlo de qualidade rigoroso — rastreabilidade total de materiais e inspecção final antes do envio." },
+      { num: "04", title: "Montagem no Local", text: "Instalação com mínima perturbação do entorno, baixa produção de resíduos e cronograma cumprido — entregamos o que prometemos." },
     ],
-    features: [
-      "Conceito e moodboard personalizados",
-      "Seleção de materiais e mobiliário",
-      "Planeamento de iluminação",
-      "Acompanhamento de obra e styling final",
-    ],
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&auto=format&q=80",
   },
 ];
 

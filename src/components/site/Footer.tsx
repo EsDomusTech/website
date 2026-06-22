@@ -9,7 +9,6 @@ const SOCIAL = [
 ];
 
 const NAV_LINKS = [
-  { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
   { label: "Serviços", to: "/servicos" },
   { label: "Portfolio", to: "/projetos" },
@@ -17,9 +16,8 @@ const NAV_LINKS = [
   { label: "Blog", to: "/blog" },
   { label: "FAQ", to: "/faq" },
   { label: "Contacto", to: "/contacto" },
-  { label: "Privacidade", to: "/politica-de-privacidade" },
-  { label: "Termos", to: "/termos-e-condicoes" },
 ] as const;
+
 
 export function Footer() {
   return (

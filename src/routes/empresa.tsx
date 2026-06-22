@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
-import { ClientLogos } from "@/components/site/ClientLogos";
 import { VideoTestimonials } from "@/components/site/VideoTestimonials";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { Team } from "@/components/site/Team";
+import { PageHeader } from "@/components/site/PageHeader";
 import { SITE } from "@/lib/site-data";
 
 const VALUES = [
@@ -30,12 +30,6 @@ const VALUES = [
   },
 ];
 
-const STATS = [
-  { value: "23", label: "Casas entregues" },
-  { value: "4", label: "Anos no mercado" },
-  { value: "13", label: "Localizações" },
-  { value: "A", label: "Classe energética" },
-];
 
 export const Route = createFileRoute("/empresa")({
   head: () => ({
@@ -61,41 +55,14 @@ function EmpresaPage() {
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Hero assimétrico 70vh — col-span-7 texto + imagem absolute direita */}
-      <header
-        className="relative overflow-hidden"
-        style={{ height: "70vh", marginTop: 80, marginBottom: 120 }}
-      >
-        <div className="s-wrap h-full">
-          <div className="grid grid-cols-12 gap-8 h-full">
-            <div
-              className="col-span-12 md:col-span-6 flex flex-col justify-center relative z-10"
-              style={{ paddingBlock: 80 }}
-            >
-              <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
-                Quem Somos
-              </span>
-              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
-                Arquitetura e Construção Modular no Porto
-              </h1>
-              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 480 }}>
-                Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas.
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* Imagem absoluta à direita */}
-        <div
-          className="absolute top-0 right-0 h-full hidden md:block overflow-hidden"
-          style={{ width: "50%" }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=900&fit=crop&auto=format&q=80"
-            alt="DomusTech escritório Porto"
-            className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out hover:scale-105"
-          />
-        </div>
-      </header>
+      <PageHeader
+        eyebrow="Quem Somos"
+        titleFirst="Arquitetura e Construção"
+        titleSecond="Modular no Porto"
+        image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=900&fit=crop&auto=format&q=80"
+        subtitle="Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas."
+        align="left"
+      />
 
       {/* História */}
       <section style={{ paddingBlock: 120 }}>
@@ -191,29 +158,10 @@ function EmpresaPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section style={{ backgroundColor: "#1a1a1a" }}>
-        <div className="s-wrap grid grid-cols-2 gap-10 py-20 text-center md:grid-cols-4">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <p className="s-display-lg leading-none" style={{ color: "#BE9355" }}>{s.value}</p>
-              <p className="s-label-caps mt-3" style={{ color: "rgba(255,255,255,0.65)" }}>{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Equipa — secção Stitch 4-col portrait grid */}
       <Team />
 
       <VideoTestimonials />
-      <ClientLogos />
       <CtaBand />
     </main>
   );

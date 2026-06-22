@@ -18,15 +18,7 @@ const NAV_LINKS: NavLink[] = [
       { label: "Testemunhos", to: "/testemunhos" },
     ],
   },
-  {
-    label: "Serviços",
-    to: "/servicos",
-    children: [
-      { label: "Casas Modulares", to: "/servicos/casas-modulares-porto" },
-      { label: "Construção Modular", to: "/servicos/construcao-modular" },
-      { label: "Design de Interiores", to: "/servicos/design-de-interiores" },
-    ],
-  },
+  { label: "Serviços", to: "/servicos" },
   {
     label: "Portfolio",
     to: "/projetos",
@@ -413,7 +405,7 @@ export function Navbar() {
               </div>
 
               {/* Nav items */}
-              <nav className="flex flex-1 flex-col justify-center overflow-y-auto px-8 py-6 md:px-14">
+              <nav className="flex flex-1 flex-col overflow-y-auto px-8 py-10 md:px-14 md:py-16">
                 <ul className="space-y-0">
                   {NAV_LINKS.map((link, i) => {
                     const labelClass =

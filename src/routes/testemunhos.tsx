@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { ClientLogos } from "@/components/site/ClientLogos";
+import { ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/site-data";
 
 const TESTIMONIALS = [
@@ -39,12 +40,6 @@ const TESTIMONIALS = [
   },
 ];
 
-const STATS = [
-  { value: "98%", label: "Clientes Satisfeitos" },
-  { value: "340+", label: "Projetos Entregues" },
-  { value: "12", label: "Anos de Experiência" },
-  { value: "5★", label: "Avaliação Média" },
-];
 
 export const Route = createFileRoute("/testemunhos")({
   head: () => ({
@@ -66,7 +61,7 @@ function TestemunhosPage() {
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
       {/* Hero — display-lg sem imagem, com divider gold */}
-      <header style={{ paddingTop: 80, paddingBottom: 64 }}>
+      <header style={{ paddingTop: 140, paddingBottom: 64 }}>
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
@@ -93,35 +88,6 @@ function TestemunhosPage() {
           }}
         />
       </header>
-
-      {/* Stats — fundo escuro */}
-      <section style={{ backgroundColor: "#1b1b1b" }}>
-        <div className="s-wrap">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center justify-center py-16 text-center"
-                style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}
-              >
-                <p
-                  className="s-display-lg leading-none"
-                  style={{ color: "#BE9355" }}
-                >
-                  {s.value}
-                </p>
-                <p className="s-label-caps mt-3" style={{ color: "#858383" }}>
-                  {s.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testemunhos — padrões alternados per UI.md */}
       <section style={{ paddingBlock: 120 }}>
@@ -252,43 +218,6 @@ function TestemunhosPage() {
         </div>
       </section>
 
-      {/* Padrão 3 — Card com bg claro + texto + logos placeholder */}
-      <section style={{ paddingBlock: 120, backgroundColor: "#f3f3f3" }}>
-        <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-6">
-              <span className="material-symbols-outlined text-4xl mb-4 block" style={{ color: "#BE9355" }}>
-                star_rate
-              </span>
-              <h3 className="s-headline-md mb-6" style={{ color: "#000000" }}>
-                "Uma equipa que ouve e executa com perfeição."
-              </h3>
-              <p className="s-body-lg" style={{ color: "var(--label-muted)", maxWidth: 480 }}>
-                A confiança dos nossos clientes é o maior reconhecimento. Construímos relações duradouras, projeto após projeto.
-              </p>
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-2 gap-4">
-                {["CF", "GB", "AM", "PR"].map((initials) => (
-                  <div
-                    key={initials}
-                    className="aspect-square flex items-center justify-center"
-                    style={{ backgroundColor: "#ffffff", border: "1px solid #eeeeee" }}
-                  >
-                    <span
-                      className="s-headline-lg"
-                      style={{ color: "#000000", opacity: 0.15 }}
-                    >
-                      {initials}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA final — bg escuro */}
       <section style={{ backgroundColor: "#1b1b1b", paddingBlock: 120 }}>
         <div className="s-wrap text-center">
@@ -304,7 +233,7 @@ function TestemunhosPage() {
             style={{ color: "#ffffff", borderColor: "#ffffff" }}
           >
             Pedir Consulta Gratuita
-            <span className="material-symbols-outlined text-base">arrow_forward</span>
+            <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </section>
