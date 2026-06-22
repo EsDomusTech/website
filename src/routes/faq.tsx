@@ -148,33 +148,8 @@ function FaqPage() {
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
 
-            {/* Sidebar — categorias, sticky */}
-            <aside className="hidden md:block col-span-3">
-              <div className="sticky top-40">
-                <span
-                  className="s-label-caps mb-6 block"
-                  style={{ color: "#BE9355" }}
-                >
-                  Categorias
-                </span>
-                <ul className="space-y-4">
-                  {categories.map((cat) => (
-                    <li key={cat.id}>
-                      <a
-                        href={`#${cat.id}`}
-                        className="s-label-caps transition-colors hover:text-[#BE9355]"
-                        style={{ color: "#000000" }}
-                      >
-                        {cat.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
-
-            {/* Main — accordeões por categoria */}
-            <div className="col-span-12 md:col-span-9 space-y-12">
+            {/* Accordeões por categoria */}
+            <div className="col-span-12 space-y-12">
               {categories.map((cat) => (
                 <section id={cat.id} key={cat.id} className="space-y-0">
                   <h2
@@ -193,7 +168,7 @@ function FaqPage() {
         </div>
       </section>
 
-      {/* CTA box — fora do grid para não colidir com sidebar sticky */}
+      {/* CTA box */}
       <section className="pb-24">
         <div className="s-wrap">
           <div

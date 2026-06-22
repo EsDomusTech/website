@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
     ],
     features: [
       "Projeto e licenciamento incluídos",
-      "Eficiência energética classe A+",
+      "Eficiência energética classe A",
       "Prazos de construção até 60% mais rápidos",
       "Acabamentos totalmente personalizáveis",
     ],
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     location: "Foz do Douro, Porto",
     year: "2025",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Moradia modular de três pisos com vista para o mar e eficiência energética A+.",
+    summary: "Moradia modular de três pisos com vista para o mar e eficiência energética classe A.",
     description: [
       "A Villa Atlântico é uma moradia modular contemporânea desenhada para tirar o máximo partido da luz natural e das vistas sobre o Atlântico.",
       "Os módulos pré-fabricados permitiram uma construção rápida e limpa, integrando soluções de energia renovável e domótica de ponta.",
@@ -209,7 +209,7 @@ export const BLOG_POSTS = [
     date: "15 Jun 2026",
     image: "https://images.unsplash.com/photo-1560440021-33f9b867899d?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
-      "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 108.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
+      "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 47.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
     href: "/precos",
   },
   {
