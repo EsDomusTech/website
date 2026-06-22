@@ -273,7 +273,7 @@ function PrecosPage() {
       {/* Imagem atmosférica full-width */}
       <section className="relative overflow-hidden h-[280px] md:h-[480px]">
         <img
-          src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1920&h=900&fit=crop&auto=format&q=80"
+          src="https://images.unsplash.com/photo-1510596956-a9fe3d12a62e?w=1920&h=900&fit=crop&auto=format&q=80"
           alt="Casa modular DomusTech entregue no Porto"
           className="w-full h-full object-cover"
           style={{ filter: "grayscale(0.6) brightness(0.75)" }}

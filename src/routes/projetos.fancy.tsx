@@ -25,7 +25,7 @@ function PortfolioFancyPage() {
         eyebrow="Portfolio"
         titleFirst="Portfolio"
         titleSecond="Fancy"
-        image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1548169268-2f47441cba90?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

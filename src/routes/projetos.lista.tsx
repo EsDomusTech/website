@@ -25,7 +25,7 @@ function PortfolioListaPage() {
         eyebrow="Portfolio"
         titleFirst="Portfolio"
         titleSecond="List"
-        image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1494526585-0d02b6ab9e3d?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>

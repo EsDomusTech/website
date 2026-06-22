@@ -33,7 +33,7 @@ function GaleriaMasonryPage() {
         titleFirst="Image Gallery"
         titleSecond="Masonry"
         subtitle="Composição orgânica de imagens arquitectónicas em disposição masonry."
-        image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1552832311753-31d4a4f3e6b5?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
