@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
     category: "Residencial",
     location: "Foz do Douro, Porto",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&h=800&fit=crop&auto=format&q=80",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Moradia modular de três pisos com vista para o mar e eficiência energética A+.",
     description: [
       "A Villa Atlântico é uma moradia modular contemporânea desenhada para tirar o máximo partido da luz natural e das vistas sobre o Atlântico.",
@@ -216,7 +216,7 @@ export const BLOG_POSTS = [
     title: "Quanto Custa uma Casa Modular em Portugal? Guia de Preços 2026",
     cat: "Preços",
     date: "15 Jun 2026",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop&auto=format&q=80",
+    image: "https://images.unsplash.com/photo-1560440021-33f9b867899d?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 108.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
     href: "/precos",

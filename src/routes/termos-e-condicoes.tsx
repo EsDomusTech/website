@@ -27,7 +27,7 @@ function TermsPage() {
         eyebrow="Legal"
         titleFirst="TERMOS E"
         titleSecond="CONDIÇÕES"
-        image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1493246640-e3c0a3f2bb9d?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad">

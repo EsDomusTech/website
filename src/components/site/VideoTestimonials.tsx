@@ -29,7 +29,7 @@ export function VideoTestimonials() {
         {/* Left: video promo */}
         <div
           className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-8 md:p-14"
-          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=500&fit=crop&auto=format&q=80)" }}
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1529408632839-a54952c491e5?w=800&h=500&fit=crop&auto=format&q=80)" }}
         >
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.65)" }} />
           <div className="relative z-10 flex flex-col items-center text-center">

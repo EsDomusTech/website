@@ -191,7 +191,7 @@ function LangSelector({ light = false, dropUp = false }: { light?: boolean; drop
   );
 }
 
-const MENU_IMAGE = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=1000&fit=crop&auto=format&q=80";
+const MENU_IMAGE = "https://images.unsplash.com/photo-1567767633709-1b2ae0f95c17?w=600&h=1000&fit=crop&auto=format&q=80";
 
 const overlayVariants = {
   closed: { opacity: 0 },

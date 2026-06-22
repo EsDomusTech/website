@@ -31,7 +31,7 @@ function PortfolioFiltroPage() {
         eyebrow="Portfolio"
         titleFirst="Portfolio Grid"
         titleSecond="Filter"
-        image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1483366428-f7f71498b979?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
