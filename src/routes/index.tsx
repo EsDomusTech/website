@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores, remodelação e modelação 3D.",
+          "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores e modelação 3D.",
       },
       { property: "og:title", content: "DomusTech | Casas Modulares no Porto" },
       {
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE.domain}/` },
-      { rel: "preload", as: "image", href: "https://picsum.photos/seed/arch1/1600/900" },
+      { rel: "preload", as: "image", href: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80" },
     ],
   }),
   component: Index,

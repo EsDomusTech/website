@@ -7,14 +7,14 @@ import { SERVICES, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços | Construção Modular e Remodelação, DomusTech" },
+      { title: "Serviços | Construção Modular e Design de Interiores, DomusTech" },
       {
         name: "description",
         content:
-          "Serviços DomusTech no Porto: casas modulares, construção modular, design de interiores e remodelação. Soluções chave na mão, sustentáveis e personalizadas.",
+          "Serviços DomusTech no Porto: casas modulares, construção modular e design de interiores. Soluções chave na mão, sustentáveis e personalizadas.",
       },
       { property: "og:title", content: "Serviços | DomusTech Porto" },
-      { property: "og:description", content: "Casas modulares, construção modular, design de interiores e remodelação no Porto." },
+      { property: "og:description", content: "Casas modulares, construção modular e design de interiores no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/servicos` },
     ],
@@ -98,7 +98,7 @@ function ServicosPage() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://picsum.photos/seed/services-hero/1600/900"
+            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&h=900&fit=crop&auto=format&q=80"
             alt="Serviços de construção modular DomusTech no Porto"
             className="h-full w-full object-cover"
             style={{ filter: "brightness(0.5)" }}
@@ -158,7 +158,7 @@ function ServicosPage() {
         <div className="s-wrap grid grid-cols-12 gap-8 items-center">
           <div className="col-span-12 md:col-span-7">
             <img
-              src="https://picsum.photos/seed/services-break/1200/800"
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&auto=format&q=80"
               alt="Design de interiores e acabamentos DomusTech, filosofia de projeto"
               className="w-full object-cover"
               style={{ height: 600 }}

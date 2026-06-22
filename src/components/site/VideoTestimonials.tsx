@@ -8,14 +8,14 @@ const TESTIMONIALS = [
       "Do projeto à entrega, a equipa DomusTech foi impecável. A casa superou todas as expectativas: moderna, funcional e exactamente o que sonhámos.",
     name: "Maria Fernandes",
     role: "Proprietária, Villa Atlântico",
-    avatar: "https://picsum.photos/seed/avatar1/120/120",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&auto=format&q=80",
   },
   {
     quote:
       "Profissionalismo e atenção ao detalhe a um nível excecional. O processo foi transparente do início ao fim e o resultado fala por si.",
     name: "João Almeida",
     role: "Diretor, Edifício Ribeira",
-    avatar: "https://picsum.photos/seed/avatar2/120/120",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&auto=format&q=80",
   },
 ];
 
@@ -29,7 +29,7 @@ export function VideoTestimonials() {
         {/* Left: video promo */}
         <div
           className="relative flex min-h-[340px] flex-col items-center justify-center gap-6 bg-cover bg-center p-8 md:p-14"
-          style={{ backgroundImage: "url(https://picsum.photos/seed/arch4/800/500)" }}
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=500&fit=crop&auto=format&q=80)" }}
         >
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.65)" }} />
           <div className="relative z-10 flex flex-col items-center text-center">

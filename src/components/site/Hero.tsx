@@ -5,19 +5,19 @@ import { Link } from "@tanstack/react-router";
 
 const SLIDES = [
   {
-    img: "https://picsum.photos/seed/arch1/1600/900",
+    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80",
     eyebrow: "Arquitetura Moderna",
     title: "Casas Modulares que\nInspiram Viver",
     sub: "Criamos casas modulares que unem estética, tecnologia e sustentabilidade no coração do Porto.",
   },
   {
-    img: "https://picsum.photos/seed/arch2/1600/900",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&h=900&fit=crop&auto=format&q=80",
     eyebrow: "Design Inteligente",
     title: "Construção Modular:\nDo Conceito à Realidade",
     sub: "Casas modulares pensadas para a vida contemporânea, com soluções personalizadas para cada cliente.",
   },
   {
-    img: "https://picsum.photos/seed/arch3/1600/900",
+    img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&h=900&fit=crop&auto=format&q=80",
     eyebrow: "Construção Premium",
     title: "Casas Modulares no Porto,\ncom Rigor e Detalhe",
     sub: "Do projeto à entrega, acompanhamos cada etapa com precisão e comprometimento total.",

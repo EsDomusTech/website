@@ -10,22 +10,22 @@ const EXTENDED_TEAM = [
   {
     name: "Rui Oliveira",
     role: "Engenheiro de Estruturas",
-    image: "https://picsum.photos/seed/portrait-rui/600/800",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Mariana Silva",
     role: "Gestora de Projetos",
-    image: "https://picsum.photos/seed/portrait-mariana/600/800",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Tiago Monteiro",
     role: "Especialista em BIM",
-    image: "https://picsum.photos/seed/portrait-tiago/600/800",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Inês Rodrigues",
     role: "Arquitecta de Interiores",
-    image: "https://picsum.photos/seed/portrait-ines/600/800",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop&auto=format&q=80",
   },
 ];
 

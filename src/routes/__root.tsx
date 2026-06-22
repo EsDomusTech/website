@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           image: `${SITE.domain}/og-image.jpg`,
           priceRange: "€€€",
           description:
-            "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores e remodelação.",
+            "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes e design de interiores.",
           telephone: SITE.phone,
           email: SITE.email,
           address: {

@@ -30,7 +30,7 @@ function ProjetosPage() {
         titleFirst="OS NOSSOS"
         titleSecond="PROJETOS"
         subtitle="Uma seleção de projetos que refletem a nossa abordagem à arquitetura modular e ao design."
-        image="https://picsum.photos/seed/project1/1600/900"
+        image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad">

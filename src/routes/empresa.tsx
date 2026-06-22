@@ -50,7 +50,7 @@ export const Route = createFileRoute("/empresa")({
       { property: "og:description", content: "A nossa história, missão e valores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/empresa` },
-      { property: "og:image", content: "https://picsum.photos/seed/office1/1200/630" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=630&fit=crop&auto=format&q=80" },
     ],
     links: [{ rel: "canonical", href: `${SITE.domain}/empresa` }],
   }),
@@ -90,7 +90,7 @@ function EmpresaPage() {
           style={{ width: "50%" }}
         >
           <img
-            src="https://picsum.photos/seed/office1/1200/900"
+            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=900&fit=crop&auto=format&q=80"
             alt="DomusTech escritório Porto"
             className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out hover:scale-105"
           />
@@ -123,7 +123,7 @@ function EmpresaPage() {
           </div>
           <div className="relative">
             <img
-              src="https://picsum.photos/seed/team1/700/520"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&h=520&fit=crop&auto=format&q=80"
               alt="Equipa DomusTech no Porto"
               className="w-full object-cover"
             />

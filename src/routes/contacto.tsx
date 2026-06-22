@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contacto")({
       {
         name: "description",
         content:
-          "Contacte a DomusTech no Porto. Peça um orçamento para a sua casa modular, remodelação ou projeto de interiores. Resposta rápida e personalizada.",
+          "Contacte a DomusTech no Porto. Peça um orçamento para a sua casa modular ou projeto de interiores. Resposta rápida e personalizada.",
       },
       { property: "og:title", content: "Contacto | DomusTech Porto" },
       { property: "og:description", content: "Fale connosco e peça um orçamento personalizado." },
@@ -219,7 +219,6 @@ function ContactoPage() {
                         <SelectItem value="Casa Modular">Casa Modular</SelectItem>
                         <SelectItem value="Construção Modular">Construção Modular</SelectItem>
                         <SelectItem value="Design de Interiores">Design de Interiores</SelectItem>
-                        <SelectItem value="Remodelação">Remodelação</SelectItem>
                         <SelectItem value="Informação Geral">Informação Geral</SelectItem>
                       </SelectContent>
                     </Select>

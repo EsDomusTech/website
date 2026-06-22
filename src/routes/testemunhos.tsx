@@ -11,7 +11,7 @@ const TESTIMONIALS = [
     name: "Maria Fernandes",
     role: "Proprietária, Villa Atlântico",
     project: "Foz do Douro, Porto · 2025",
-    image: "https://picsum.photos/seed/test-img1/800/600",
+    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=600&fit=crop&auto=format&q=80",
   },
   {
     num: "02",
@@ -19,7 +19,7 @@ const TESTIMONIALS = [
     name: "João Almeida",
     role: "Diretor, Edifício Ribeira",
     project: "Ribeira, Porto · 2024",
-    image: "https://picsum.photos/seed/test-img2/800/600",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&auto=format&q=80",
   },
   {
     num: "03",
@@ -27,7 +27,7 @@ const TESTIMONIALS = [
     name: "Sofia Carvalho",
     role: "Proprietária, Loft Boavista",
     project: "Boavista, Porto · 2025",
-    image: "https://picsum.photos/seed/test-img3/800/600",
+    image: "https://images.unsplash.com/photo-1613490493576-4a48d6622a4a?w=800&h=600&fit=crop&auto=format&q=80",
   },
   {
     num: "04",
