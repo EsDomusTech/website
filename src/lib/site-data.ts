@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
       "Prazos de construção até 60% mais rápidos",
       "Acabamentos totalmente personalizáveis",
     ],
-    image: "https://images.unsplash.com/photo-1613490493576-4a48d6622a4a?w=1200&h=800&fit=crop&auto=format&q=80",
+    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {
     slug: "construcao-modular",
@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
     category: "Comercial",
     location: "Cedofeita, Porto",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1448630358273-1e5ccc24bc87?w=1200&h=800&fit=crop&auto=format&q=80",
+    image: "https://images.unsplash.com/photo-1461088945293-0c17689e48ac?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Edifício de escritórios com fachada modular e espaços de trabalho flexíveis.",
     description: [
       "O Armada Center é um edifício de escritórios premium desenhado para atrair empresas de tecnologia e criativas. A fachada modular ventilada permite personalização e eficiência energética máxima.",

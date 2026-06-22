@@ -5,18 +5,18 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
-  { id: 1, cat: "Exterior", title: "Villa Atlântico, Fachada", year: "2025", image: "https://images.unsplash.com/photo-1565182999177-2c977399b19a?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 1, cat: "Exterior", title: "Villa Atlântico, Fachada", year: "2025", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 2, cat: "Interior", title: "Loft Boavista, Sala Principal", year: "2025", image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 3, cat: "Comercial", title: "Edifício Ribeira, Lobby", year: "2024", image: "https://images.unsplash.com/photo-1520116468816-95b69f847357?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 4, cat: "Exterior", title: "Moradia Gaia, Vista Aérea", year: "2024", image: "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 5, cat: "Detalhe", title: "Materiality, Betão e Madeira", year: "2025", image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 6, cat: "Interior", title: "Cotton House, Cozinha", year: "2024", image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 6, cat: "Interior", title: "Cotton House, Cozinha", year: "2024", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 7, cat: "Urbano", title: "Praça Central, Espaço Público", year: "2023", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 8, cat: "Exterior", title: "Armada Center, Fachada", year: "2024", image: "https://images.unsplash.com/photo-1482398650753-af8d0d776e5b?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 9, cat: "Interior", title: "Suite Atlântico, Master", year: "2025", image: "https://images.unsplash.com/photo-1576941089067-2de3c901b126?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 10, cat: "Detalhe", title: "Caixilharia, Nó Estrutural", year: "2024", image: "https://images.unsplash.com/photo-1507652313519-a088143a7d4f?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 8, cat: "Exterior", title: "Armada Center, Fachada", year: "2024", image: "https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 9, cat: "Interior", title: "Suite Atlântico, Master", year: "2025", image: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 10, cat: "Detalhe", title: "Caixilharia, Nó Estrutural", year: "2024", image: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=800&h=600&fit=crop&auto=format&q=80" },
   { id: 11, cat: "Comercial", title: "Armada Center, Open Space", year: "2024", image: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 12, cat: "Urbano", title: "Solar do Douro, Terraço", year: "2023", image: "https://images.unsplash.com/photo-1542621334-8427f6f75a6e?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 12, cat: "Urbano", title: "Solar do Douro, Terraço", year: "2023", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop&auto=format&q=80" },
 ];
 
 export const Route = createFileRoute("/galeria")({

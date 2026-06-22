@@ -11,10 +11,11 @@ const SOCIAL = [
 const NAV_LINKS = [
   { label: "Início", to: "/" },
   { label: "Empresa", to: "/empresa" },
-  { label: "Sistema Construtivo", to: "/sistema-construtivo" },
   { label: "Serviços", to: "/servicos" },
-  { label: "Projetos", to: "/projetos" },
+  { label: "Portfolio", to: "/projetos" },
+  { label: "Preços", to: "/precos" },
   { label: "Blog", to: "/blog" },
+  { label: "FAQ", to: "/faq" },
   { label: "Contacto", to: "/contacto" },
   { label: "Privacidade", to: "/politica-de-privacidade" },
   { label: "Termos", to: "/termos-e-condicoes" },

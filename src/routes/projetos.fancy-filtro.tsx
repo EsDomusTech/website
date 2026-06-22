@@ -31,7 +31,7 @@ function PortfolioFancyFiltroPage() {
         eyebrow="Portfolio"
         titleFirst="Portfolio Fancy"
         titleSecond="Filter"
-        image="https://images.unsplash.com/photo-1559494004-bf2ccf4a3aa4?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad" style={{ backgroundColor: "var(--background)" }}>
