@@ -26,7 +26,6 @@ import { Route as AntesDepoisRouteImport } from './routes/antes-depois'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
-import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosListaRouteImport } from './routes/projetos.lista'
 import { Route as ProjetosFiltroRouteImport } from './routes/projetos.filtro'
 import { Route as ProjetosFancyFiltroRouteImport } from './routes/projetos.fancy-filtro'
@@ -119,11 +118,6 @@ const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
   path: '/projetos/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicosSlugRoute = ServicosSlugRouteImport.update({
-  id: '/servicos/$slug',
-  path: '/servicos/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjetosListaRoute = ProjetosListaRouteImport.update({
   id: '/projetos/lista',
   path: '/projetos/lista',
@@ -177,7 +171,6 @@ export interface FileRoutesByFullPath {
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -203,7 +196,6 @@ export interface FileRoutesByTo {
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos': typeof ProjetosIndexRoute
   '/servicos': typeof ServicosIndexRoute
 }
@@ -230,7 +222,6 @@ export interface FileRoutesById {
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -258,7 +249,6 @@ export interface FileRouteTypes {
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
-    | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
@@ -284,7 +274,6 @@ export interface FileRouteTypes {
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
-    | '/servicos/$slug'
     | '/projetos'
     | '/servicos'
   id:
@@ -310,7 +299,6 @@ export interface FileRouteTypes {
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
-    | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
   fileRoutesById: FileRoutesById
@@ -336,7 +324,6 @@ export interface RootRouteChildren {
   ProjetosFancyFiltroRoute: typeof ProjetosFancyFiltroRoute
   ProjetosFiltroRoute: typeof ProjetosFiltroRoute
   ProjetosListaRoute: typeof ProjetosListaRoute
-  ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
 }
@@ -462,13 +449,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/servicos/$slug': {
-      id: '/servicos/$slug'
-      path: '/servicos/$slug'
-      fullPath: '/servicos/$slug'
-      preLoaderRoute: typeof ServicosSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projetos/lista': {
       id: '/projetos/lista'
       path: '/projetos/lista'
@@ -546,7 +526,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProjetosFancyFiltroRoute: ProjetosFancyFiltroRoute,
   ProjetosFiltroRoute: ProjetosFiltroRoute,
   ProjetosListaRoute: ProjetosListaRoute,
-  ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
   ServicosIndexRoute: ServicosIndexRoute,
 }

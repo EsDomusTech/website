@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 import { SITE, DISTRITOS_PT } from "@/lib/site-data";
 
 export const Route = createFileRoute("/contacto")({
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
-  { label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
+  { label: "Instagram", Icon: Instagram, href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", Icon: Linkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", Icon: Facebook, href: "https://www.facebook.com/esdomustech/" },
 ];
 
 type FormData = {
@@ -149,12 +150,12 @@ function ContactoPage() {
               </div>
               <div>
                 <span className="s-label-caps mb-4 block" style={{ color: "var(--label-muted)" }}>Redes Sociais</span>
-                <div className="flex flex-col gap-3">
-                  {SOCIAL_LINKS.map(({ label, href }) => (
-                    <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                      className="s-label-caps transition-colors hover:text-[#BE9355]"
+                <div className="flex items-center gap-5">
+                  {SOCIAL_LINKS.map(({ label, Icon, href }) => (
+                    <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                      className="transition-colors hover:text-[#BE9355]"
                       style={{ color: "var(--foreground)" }}>
-                      {label}
+                      <Icon size={20} />
                     </a>
                   ))}
                 </div>

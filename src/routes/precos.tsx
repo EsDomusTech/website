@@ -136,87 +136,74 @@ function PrecosPage() {
         </div>
       </header>
 
-      {/* Plans — grid 3 colunas */}
+      {/* Plans — editorial rows */}
       <section className="py-16 md:py-[120px]" style={{ backgroundColor: "#f3f3f3" }}>
-        <div className="s-wrap">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:py-4">
-            {PLANS.map((plan, i) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.55, delay: i * 0.1 }}
-                className={`relative flex flex-col h-full${plan.featured ? " md:scale-[1.04]" : ""}`}
-                style={{
-                  backgroundColor: plan.featured ? "#000000" : "#ffffff",
-                  border: plan.featured ? "none" : "1px solid #e8e8e8",
-                }}
-              >
-                {plan.featured && (
-                  <div
-                    className="absolute top-0 right-0 px-4 py-2 s-label-caps text-white"
-                    style={{ backgroundColor: "#BE9355", fontSize: 10, letterSpacing: "0.2em" }}
-                  >
-                    MAIS POPULAR
-                  </div>
-                )}
+        <div className="s-wrap space-y-4">
+          {PLANS.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              style={{
+                backgroundColor: plan.featured ? "#111111" : "#ffffff",
+                borderLeft: `4px solid ${plan.featured ? "#BE9355" : "#e8e8e8"}`,
+              }}
+            >
+              <div className="grid grid-cols-12 gap-6 p-8 md:p-10 items-start">
 
-                <div className={`flex flex-col flex-1 p-8 lg:p-12 ${plan.featured ? "pt-12 lg:pt-16" : ""}`}>
+                {/* Phase label + name */}
+                <div className="col-span-12 md:col-span-3">
+                  <span
+                    className="s-label-caps block mb-2"
+                    style={{ color: "#BE9355", letterSpacing: "0.25em" }}
+                  >
+                    {plan.label}
+                  </span>
                   <h2
-                    className="s-headline-lg mb-4"
-                    style={{ color: plan.featured ? "#ffffff" : "#000000" }}
+                    className="text-[1.6rem] font-bold uppercase leading-tight"
+                    style={{ fontFamily: "var(--font-display)", color: plan.featured ? "#ffffff" : "#000000", letterSpacing: "0.04em" }}
                   >
                     {plan.name}
                   </h2>
+                </div>
 
-                  <p
-                    className="s-body-md mb-8"
-                    style={{ color: plan.featured ? "rgba(255,255,255,0.6)" : "#444748" }}
-                  >
+                {/* Description + price */}
+                <div className="col-span-12 md:col-span-3">
+                  <p className="s-body-md mb-5" style={{ color: plan.featured ? "rgba(255,255,255,0.55)" : "#444748" }}>
                     {plan.description}
                   </p>
-
-                  <div className="mb-8">
+                  <p
+                    className="s-headline-md"
+                    style={{ color: plan.featured ? "#BE9355" : "#000000" }}
+                  >
                     {plan.price !== "Gratuito" && (
-                      <span
-                        className="s-label-caps mr-2"
-                        style={{ color: plan.featured ? "#858383" : "var(--muted-foreground)" }}
-                      >
-                        DESDE
+                      <span className="s-label-caps mr-2" style={{ color: plan.featured ? "rgba(255,255,255,0.4)" : "var(--muted-foreground)" }}>
+                        DESDE{" "}
                       </span>
                     )}
-                    <span
-                      className="s-headline-lg"
-                      style={{ color: plan.featured ? "#ffffff" : "#000000" }}
-                    >
-                      {plan.price}
-                    </span>
-                  </div>
+                    {plan.price}
+                  </p>
+                </div>
 
-                  <ul
-                    className="flex-1 space-y-6 border-t pt-8"
-                    style={{ borderColor: plan.featured ? "rgba(255,255,255,0.1)" : "#e8e8e8" }}
-                  >
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3">
-                        <Check
-                          className="mt-0.5 h-4 w-4 shrink-0"
-                          style={{ color: "#BE9355" }}
-                        />
-                        <span
-                          className="s-body-md"
-                          style={{ color: plan.featured ? "rgba(255,255,255,0.7)" : "#444748" }}
-                        >
-                          {f}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Features */}
+                <ul className="col-span-12 md:col-span-4 space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#BE9355" }} />
+                      <span className="s-body-md" style={{ color: plan.featured ? "rgba(255,255,255,0.65)" : "#444748" }}>
+                        {f}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
 
+                {/* CTA */}
+                <div className="col-span-12 md:col-span-2 flex md:justify-end md:items-start">
                   <Link
                     to={plan.to as "/contacto"}
-                    className="s-label-caps mt-12 block w-full py-5 text-center transition-colors duration-300"
+                    className="s-label-caps inline-block px-8 py-4 text-center transition-colors duration-300 w-full md:w-auto"
                     style={{
                       backgroundColor: plan.featured ? "#BE9355" : "#000000",
                       color: "#ffffff",
@@ -233,9 +220,10 @@ function PrecosPage() {
                     {plan.cta}
                   </Link>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

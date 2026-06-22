@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SERVICES, SITE } from "@/lib/site-data";
 
@@ -23,79 +23,11 @@ export const Route = createFileRoute("/servicos/")({
   component: ServicosPage,
 });
 
-/* Stitch service-row pattern — hover gerido por useState */
-function ServiceRow({ s, i }: { s: typeof SERVICES[0]; i: number }) {
-  const [hovered, setHovered] = useState(false);
-  const num = String(i + 1).padStart(2, "0");
-
-  return (
-    <Link
-      to="/servicos/$slug"
-      params={{ slug: s.slug }}
-      className="block border-b py-12 px-4 transition-colors duration-500"
-      style={{
-        borderColor: "#c4c7c7",
-        backgroundColor: hovered ? "#f3f3f3" : "transparent",
-        cursor: "pointer",
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="grid grid-cols-12 gap-x-4 gap-y-2 md:gap-8 items-center">
-        {/* 01 */}
-        <div className="col-span-2 md:col-span-1">
-          <span
-            className="s-headline-md"
-            style={{
-              color: hovered ? "#000000" : "var(--label-muted)",
-              transition: "color 0.3s",
-            }}
-          >
-            {num}
-          </span>
-        </div>
-
-        {/* Title */}
-        <div className="col-span-10 md:col-span-4">
-          <h4 className="s-headline-md" style={{ color: "#000000" }}>
-            {s.name}
-          </h4>
-        </div>
-
-        {/* Description */}
-        <div className="col-span-12 md:col-start-6 md:col-span-5 py-4 md:py-0">
-          <p className="s-body-md" style={{ color: "#444748" }}>
-            {s.excerpt}
-          </p>
-        </div>
-
-        {/* Arrow */}
-        <div className="col-span-12 md:col-span-1 flex justify-end">
-          <span
-            className="text-3xl"
-            style={{
-              color: "#000000",
-              transform: hovered ? "translateX(10px)" : "none",
-              transition: "transform 0.3s, color 0.3s",
-              display: "inline-block",
-            }}
-          >
-            →
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
 function ServicosPage() {
   return (
     <main>
-      {/* Hero — full-bleed h-614, imagem com overlay */}
-      <section
-        className="relative flex items-end overflow-hidden"
-        style={{ height: 614 }}
-      >
+      {/* Hero — full-bleed h-614 */}
+      <section className="relative flex items-end overflow-hidden" style={{ height: 614 }}>
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?w=1600&h=900&fit=crop&auto=format&q=80"
@@ -106,91 +38,96 @@ function ServicosPage() {
         </div>
         <div className="s-wrap relative z-10 pb-20 w-full grid grid-cols-12">
           <div className="col-span-12 md:col-span-8">
-            <h1
-              className="s-display-lg mb-6"
-              style={{ color: "#ffffff" }}
-            >
+            <h1 className="s-display-lg mb-6" style={{ color: "#ffffff" }}>
               Expertise <span style={{ color: "#BE9355" }}>&amp;</span> Precisão
             </h1>
             <p className="s-body-lg" style={{ color: "rgba(255,255,255,0.9)", maxWidth: 560 }}>
-              Transformamos visões complexas em realidades estruturais através de uma abordagem
-              disciplinada ao design minimalista e engenharia inovadora.
+              Construção modular do projeto à entrega — casas, edifícios e interiores, tudo com a
+              mesma equipa e o mesmo rigor técnico.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services list section */}
-      <section style={{ backgroundColor: "#f9f9f9", paddingBlock: 120 }}>
-        <div className="s-wrap">
-          {/* Section header */}
-          <div className="grid grid-cols-12 gap-8 mb-24">
-            <div className="col-span-12 md:col-span-4">
-              <span
-                className="s-label-caps mb-4 block"
-                style={{ color: "#BE9355" }}
-              >
-                As Nossas Capacidades
-              </span>
-              <h3
-                className="s-headline-lg"
-                style={{ color: "#000000", lineHeight: 1.1 }}
-              >
-                Construção modular pensada ao detalhe
-              </h3>
-            </div>
-          </div>
-
-          {/* Rows */}
-          <div
-            className="border-t"
-            style={{ borderColor: "#c4c7c7" }}
+      {/* Services — alternating image/content per service */}
+      {SERVICES.map((s, i) => {
+        const reversed = i % 2 !== 0;
+        return (
+          <section
+            key={s.slug}
+            className="overflow-hidden"
+            style={{ backgroundColor: i % 2 === 0 ? "#f9f9f9" : "#ffffff" }}
+            id={s.slug}
           >
-            {SERVICES.map((s, i) => (
-              <ServiceRow key={s.slug} s={s} i={i} />
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className={`s-wrap grid grid-cols-12 gap-0 md:gap-8 items-stretch py-0 md:py-0`}>
+              {/* Image */}
+              <motion.div
+                initial={{ opacity: 0, x: reversed ? 32 : -32 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7 }}
+                className={`col-span-12 md:col-span-6 ${reversed ? "md:order-last" : ""} min-h-[320px] md:min-h-[600px]`}
+              >
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  className="w-full h-full object-cover"
+                  style={{ display: "block" }}
+                />
+              </motion.div>
 
-      {/* Asymmetric visual break — Stitch pattern */}
-      <section style={{ backgroundColor: "#eeeeee", paddingBlock: 120 }}>
-        <div className="s-wrap grid grid-cols-12 gap-8 items-center">
-          <div className="col-span-12 md:col-span-7">
-            <img
-              src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&h=800&fit=crop&auto=format&q=80"
-              alt="Design de interiores e acabamentos DomusTech, filosofia de projeto"
-              className="w-full object-cover"
-              style={{ height: 600 }}
-            />
-          </div>
-          <div className="col-span-12 md:col-start-9 md:col-span-4 py-8">
-            <h3
-              className="s-headline-lg mb-8"
-              style={{ color: "#000000" }}
-            >
-              Filosofia de Design Integrado
-            </h3>
-            <p className="s-body-md mb-10" style={{ color: "#444748" }}>
-              A nossa equipa multidisciplinar trabalha em harmonia para garantir que cada detalhe
-              serve uma visão unificada, do planeamento urbano ao décor final.
-            </p>
-            <Link
-              to="/empresa"
-              className="s-label-caps inline-flex items-center gap-4 pb-2 transition-colors hover:text-[#BE9355]"
-              style={{
-                color: "#000000",
-                borderBottom: "1px solid #000000",
-              }}
-            >
-              Ver o Nosso Processo
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+              {/* Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`col-span-12 md:col-span-6 flex flex-col justify-center px-8 py-16 md:px-14 md:py-20 ${reversed ? "md:order-first" : ""}`}
+              >
+                <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h2 className="s-headline-lg mb-6" style={{ color: "#000000" }}>
+                  {s.name}
+                </h2>
+                <p className="s-body-md mb-8" style={{ color: "#444748", maxWidth: 480 }}>
+                  {s.intro[0]}
+                </p>
 
-      <CtaBand />
+                {/* Features */}
+                <ul className="space-y-3 mb-10 border-t pt-8" style={{ borderColor: "#e8e8e8" }}>
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#BE9355" }} />
+                      <span className="s-body-md" style={{ color: "#444748" }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Process steps — compact 2×2 */}
+                <div className="grid grid-cols-2 gap-4">
+                  {s.process.map((step) => (
+                    <div key={step.num} className="p-4" style={{ backgroundColor: i % 2 === 0 ? "#ffffff" : "#f9f9f9" }}>
+                      <span className="block text-[10px] font-bold tracking-[0.2em] mb-2" style={{ fontFamily: "var(--font-display)", color: "#BE9355" }}>
+                        {step.num}
+                      </span>
+                      <p className="text-[12px] font-semibold mb-1" style={{ fontFamily: "var(--font-display)", color: "#000000", letterSpacing: "0.05em" }}>
+                        {step.title}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* CTA */}
+      <CtaBand
+        secondaryLabel="Pedir Orçamento"
+        secondaryTo="/contacto"
+      />
     </main>
   );
 }
