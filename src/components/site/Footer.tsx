@@ -118,9 +118,22 @@ export function Footer() {
           <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
-          <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
-            Porto, Portugal
-          </p>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/politica-de-privacidade"
+              className="s-body-md uppercase tracking-widest transition-colors hover:text-[var(--gold)]"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Política de Privacidade
+            </Link>
+            <Link
+              to="/termos-e-condicoes"
+              className="s-body-md uppercase tracking-widest transition-colors hover:text-[var(--gold)]"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Termos e Condições
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

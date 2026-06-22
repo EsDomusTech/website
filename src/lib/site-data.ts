@@ -271,11 +271,6 @@ export const TEAM: TeamMember[] = [
     role: "Comercial",
     image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop&auto=format&q=80",
   },
-  {
-    name: "Fernanda Lopes",
-    role: "Comercial",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&h=800&fit=crop&auto=format&q=80",
-  },
 ];
 
 export const FAQS = [

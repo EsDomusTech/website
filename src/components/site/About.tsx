@@ -8,14 +8,13 @@ const BODY2 =
   "Cada projeto começa com uma conversa. Personalize, construa, viva: orçamentos claros e sem surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida do cliente, do conceito até à entrega das chaves.";
 
 const STATS = [
-  { value: 23, label: "Casas Entregues" },
-  { value: 4, label: "Anos no Mercado" },
-  { value: 13, label: "Localizações" },
-  { value: 10, label: "Anos de Garantia Estrutural" },
-];
+  { num: 10, label: "Anos de Garantia Estrutural" },
+  { num: null, str: "A+", label: "Classe Energética" },
+  { num: null, str: "PT", label: "Cobertura Nacional" },
+] as Array<{ num: number | null; str?: string; label: string }>;
 
 const MINI_STATS = [
-  { value: "23 casas", label: "Entregues em todo o território nacional, com acompanhamento do conceito à entrega." },
+  { value: "Portugal", label: "Construímos em todo o território nacional, do Algarve ao Minho." },
   { value: "Classe A", label: "Eficiência energética garantida pela estrutura em aço galvanizado e isolamento termoacústico." },
 ];
 
@@ -102,7 +101,7 @@ export function About() {
       {/* Stats dark section — separate block */}
       <section style={{ backgroundColor: "var(--dark-section)" }}>
         <div className="s-wrap">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-3">
             {STATS.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -112,19 +111,14 @@ export function About() {
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                 className={[
                   "flex flex-col items-center justify-center py-16",
-                  // Mobile (2-col): left column (even index) gets separator
-                  i % 2 === 0 ? "border-r border-white/[0.06]" : "",
-                  // Desktop (4-col): item 1 also needs separator (odd on mobile, no border there)
-                  i === 1 ? "md:border-r md:border-white/[0.06]" : "",
-                  // Desktop: last item explicitly no separator
-                  i === 3 ? "md:border-r-0" : "",
+                  i < STATS.length - 1 ? "border-r border-white/[0.06]" : "",
                 ].filter(Boolean).join(" ")}
               >
                 <span
                   className="s-headline-lg leading-none"
                   style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                 >
-                  <Counter target={s.value} />
+                  {s.num !== null ? <Counter target={s.num} /> : s.str}
                 </span>
                 <span
                   className="s-label-caps mt-3 text-center"
