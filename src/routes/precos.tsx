@@ -249,9 +249,9 @@ function PrecosPage() {
           {/* Tabela */}
           <div className="border-t" style={{ borderColor: "#e8e8e8" }}>
             {/* Header */}
-            <div className="grid grid-cols-4 gap-4 py-4 border-b" style={{ borderColor: "#e8e8e8" }}>
-              {["Tipologia", "Área mín.", "1.350 €/m²", "Total s/ IVA"].map((h) => (
-                <span key={h} className="s-label-caps" style={{ color: "var(--muted-foreground)" }}>{h}</span>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-4 py-4 border-b" style={{ borderColor: "#e8e8e8" }}>
+              {["Tipologia", "Área mín.", "1.350 €/m²", "Total s/ IVA"].map((h, hi) => (
+                <span key={h} className={`s-label-caps${hi === 2 ? " hidden md:block" : ""}`} style={{ color: "var(--muted-foreground)" }}>{h}</span>
               ))}
             </div>
             {[
@@ -268,7 +268,7 @@ function PrecosPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
-                className="grid grid-cols-4 gap-4 items-center py-6 border-b group"
+                className="grid grid-cols-3 md:grid-cols-4 gap-4 items-center py-6 border-b group"
                 style={{ borderColor: "#e8e8e8" }}
               >
                 <div className="flex items-center gap-4">
@@ -280,7 +280,7 @@ function PrecosPage() {
                 <span className="s-body-lg" style={{ color: "#444748" }}>
                   {row.t === "T5+" ? `≥ ${row.area} m²` : `${row.area} m²`}
                 </span>
-                <span className="s-body-md" style={{ color: "#444748" }}>
+                <span className="s-body-md hidden md:block" style={{ color: "#444748" }}>
                   × 1.350 €
                 </span>
                 <span className="s-headline-md" style={{ color: "#000000" }}>
