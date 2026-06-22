@@ -13,8 +13,8 @@ const PROJECTS = [
     location: "Foz do Douro, Porto",
     year: "2025",
     cat: "Remodelação de Interiores",
-    before: "https://picsum.photos/seed/before1a/1200/675",
-    after: "https://picsum.photos/seed/after1b/1200/675",
+    before: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=675&fit=crop&auto=format&q=80",
+    after: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=675&fit=crop&auto=format&q=80",
     description: "Uma cozinha completamente repensada: dos pavimentos à iluminação, cada detalhe foi substituído por materiais de topo.",
   },
   {
@@ -23,8 +23,8 @@ const PROJECTS = [
     location: "Ribeira, Porto",
     year: "2024",
     cat: "Reabilitação de Edifício",
-    before: "https://picsum.photos/seed/before2a/1200/675",
-    after: "https://picsum.photos/seed/after2b/1200/675",
+    before: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=675&fit=crop&auto=format&q=80",
+    after: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=675&fit=crop&auto=format&q=80",
     description: "Um edifício histórico transformado em espaço de trabalho contemporâneo, preservando os elementos originais de valor patrimonial.",
   },
   {
@@ -33,8 +33,8 @@ const PROJECTS = [
     location: "Boavista, Porto",
     year: "2025",
     cat: "Renovação Completa",
-    before: "https://picsum.photos/seed/before3a/1200/675",
-    after: "https://picsum.photos/seed/after3b/1200/675",
+    before: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=675&fit=crop&auto=format&q=80",
+    after: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&h=675&fit=crop&auto=format&q=80",
     description: "Transformação radical de um espaço industrial em loft premium com ceilings altos e materialidade sofisticada.",
   },
   {
@@ -43,8 +43,8 @@ const PROJECTS = [
     location: "Antas, Porto",
     year: "2023",
     cat: "Renovação de Moradia",
-    before: "https://picsum.photos/seed/before4a/1200/675",
-    after: "https://picsum.photos/seed/after4b/1200/675",
+    before: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=675&fit=crop&auto=format&q=80",
+    after: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=675&fit=crop&auto=format&q=80",
     description: "Uma moradia dos anos 80 reconvertida em habitação moderna com eficiência energética classe A e novo conceito espacial.",
   },
 ];

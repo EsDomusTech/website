@@ -27,7 +27,7 @@ function PrivacyPage() {
         eyebrow="Legal"
         titleFirst="POLÍTICA DE"
         titleSecond="PRIVACIDADE"
-        image="https://picsum.photos/seed/legal1/1600/900"
+        image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80"
       />
 
       <section className="section-pad">

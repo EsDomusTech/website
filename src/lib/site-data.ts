@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
       "Prazos de construção até 60% mais rápidos",
       "Acabamentos totalmente personalizáveis",
     ],
-    image: "https://picsum.photos/seed/modular1/1200/800",
+    image: "https://images.unsplash.com/photo-1613490493576-4a48d6622a4a?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {
     slug: "construcao-modular",
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
       "Controlo de qualidade em fábrica",
       "Integração de domótica e energias renováveis",
     ],
-    image: "https://picsum.photos/seed/modular2/1200/800",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&auto=format&q=80",
   },
   {
     slug: "design-de-interiores",
@@ -93,29 +93,7 @@ export const SERVICES: Service[] = [
       "Planeamento de iluminação",
       "Acompanhamento de obra e styling final",
     ],
-    image: "https://picsum.photos/seed/interior1/1200/800",
-  },
-  {
-    slug: "remodelacao",
-    name: "Remodelação",
-    titleFirst: "REMODELAÇÃO",
-    titleSecond: "DE ESPAÇOS",
-    metaTitle: "Remodelação Porto | Renovação de Espaços | DomusTech",
-    metaDescription:
-      "Remodelação de casas e espaços comerciais no Porto. Renovamos por completo com rigor, prazos cumpridos e acabamentos de qualidade.",
-    excerpt:
-      "Renovação completa de casas e espaços comerciais, com gestão de obra rigorosa e acabamentos de excelência.",
-    intro: [
-      "Transformamos espaços antigos em ambientes modernos e funcionais. A nossa equipa gere toda a remodelação, desde a demolição às instalações e acabamentos finais.",
-      "Trabalhamos com prazos claros e orçamentos transparentes, garantindo uma renovação sem surpresas e com resultados que valorizam o seu imóvel.",
-    ],
-    features: [
-      "Diagnóstico técnico e orçamento detalhado",
-      "Gestão integral da obra",
-      "Soluções de eficiência energética",
-      "Acabamentos de qualidade superior",
-    ],
-    image: "https://picsum.photos/seed/remodel1/1200/800",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&auto=format&q=80",
   },
 ];
 
@@ -141,7 +119,7 @@ export const PROJECTS: Project[] = [
     category: "Residencial",
     location: "Foz do Douro, Porto",
     year: "2025",
-    image: "https://picsum.photos/seed/project1/1200/800",
+    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Moradia modular de três pisos com vista para o mar e eficiência energética A+.",
     description: [
       "A Villa Atlântico é uma moradia modular contemporânea desenhada para tirar o máximo partido da luz natural e das vistas sobre o Atlântico.",
@@ -154,7 +132,7 @@ export const PROJECTS: Project[] = [
     category: "Comercial",
     location: "Ribeira, Porto",
     year: "2024",
-    image: "https://picsum.photos/seed/project2/1200/800",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Reabilitação modular de um edifício histórico para uso comercial e escritórios.",
     description: [
       "Um projeto de reabilitação que preserva a fachada histórica enquanto introduz interiores modulares modernos e flexíveis.",
@@ -167,7 +145,7 @@ export const PROJECTS: Project[] = [
     category: "Interiores",
     location: "Boavista, Porto",
     year: "2025",
-    image: "https://picsum.photos/seed/project3/1200/800",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Projeto de interiores de um loft urbano com linhas minimalistas e materiais naturais.",
     description: [
       "O Loft Boavista é um exercício de design de interiores minimalista, onde cada elemento foi escolhido a dedo.",
@@ -180,7 +158,7 @@ export const PROJECTS: Project[] = [
     category: "Urbanismo",
     location: "Matosinhos, Porto",
     year: "2023",
-    image: "https://picsum.photos/seed/project4/1200/800",
+    image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Requalificação de um espaço público com soluções modulares e mobiliário urbano.",
     description: [
       "A requalificação da Praça Central devolveu à comunidade um espaço público moderno e funcional.",
@@ -193,7 +171,7 @@ export const PROJECTS: Project[] = [
     category: "Interiores",
     location: "Bonfim, Porto",
     year: "2024",
-    image: "https://picsum.photos/seed/cotton1/1200/800",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Renovação de apartamento histórico com interiores têxteis e materialidade artesanal.",
     description: [
       "O Cotton House é uma ode à textura e ao artesanato. Um apartamento do século XIX foi completamente renovado, preservando os azulejos originais e introduzindo interiores têxteis de luxo.",
@@ -206,7 +184,7 @@ export const PROJECTS: Project[] = [
     category: "Comercial",
     location: "Cedofeita, Porto",
     year: "2024",
-    image: "https://picsum.photos/seed/armada1/1200/800",
+    image: "https://images.unsplash.com/photo-1448630358273-1e5ccc24bc87?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Edifício de escritórios com fachada modular e espaços de trabalho flexíveis.",
     description: [
       "O Armada Center é um edifício de escritórios premium desenhado para atrair empresas de tecnologia e criativas. A fachada modular ventilada permite personalização e eficiência energética máxima.",
@@ -219,7 +197,7 @@ export const PROJECTS: Project[] = [
     category: "Residencial",
     location: "Peso da Régua",
     year: "2023",
-    image: "https://picsum.photos/seed/solar1/1200/800",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop&auto=format&q=80",
     summary: "Quinta de turismo rural com módulos de hospedagem integrados na paisagem.",
     description: [
       "O Solar do Douro é um projeto de enoturismo onde seis módulos de hospedagem foram inseridos na encosta vinhateira sem alterar a topografia.",
@@ -238,7 +216,7 @@ export const BLOG_POSTS = [
     title: "Quanto Custa uma Casa Modular em Portugal? Guia de Preços 2026",
     cat: "Preços",
     date: "15 Jun 2026",
-    image: "https://picsum.photos/seed/news4/1200/800",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 108.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
     href: "/precos",
@@ -248,7 +226,7 @@ export const BLOG_POSTS = [
     title: "Tendências do design modular em 2026",
     cat: "Arquitetura",
     date: "12 Mai 2026",
-    image: "https://picsum.photos/seed/news1/1200/800",
+    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Do fabrico digital aos materiais bio-baseados, exploramos as tendências que vão definir a construção modular.",
     href: "/blog",
@@ -258,7 +236,7 @@ export const BLOG_POSTS = [
     title: "Materiais ecológicos na construção moderna",
     cat: "Sustentabilidade",
     date: "28 Abr 2026",
-    image: "https://picsum.photos/seed/news2/1200/800",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Uma análise aos materiais sustentáveis que reduzem a pegada de carbono sem comprometer o design.",
     href: "/blog",
@@ -268,7 +246,7 @@ export const BLOG_POSTS = [
     title: "Domótica e casas modulares: o futuro da habitação inteligente",
     cat: "Tecnologia",
     date: "10 Mar 2026",
-    image: "https://picsum.photos/seed/news3/1200/800",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Como a integração de sistemas inteligentes transforma a experiência de habitar uma casa modular.",
     href: "/blog",
@@ -285,27 +263,27 @@ export const TEAM: TeamMember[] = [
   {
     name: "Ana Ferreira",
     role: "Fundadora & Arquitecta Principal",
-    image: "https://picsum.photos/seed/portrait-ana/600/800",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Juliane Zombini",
     role: "Administrativa & Financeira",
-    image: "https://picsum.photos/seed/portrait-juliane/600/800",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Marina Dias",
     role: "Recursos Humanos",
-    image: "https://picsum.photos/seed/portrait-marina/600/800",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Karine Ribeiro",
     role: "Comercial",
-    image: "https://picsum.photos/seed/portrait-karine/600/800",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Fernanda Lopes",
     role: "Comercial",
-    image: "https://picsum.photos/seed/portrait-fernanda/600/800",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&h=800&fit=crop&auto=format&q=80",
   },
 ];
 

@@ -25,7 +25,6 @@ const NAV_LINKS: NavLink[] = [
       { label: "Casas Modulares", to: "/servicos/casas-modulares-porto" },
       { label: "Construção Modular", to: "/servicos/construcao-modular" },
       { label: "Design de Interiores", to: "/servicos/design-de-interiores" },
-      { label: "Remodelação", to: "/servicos/remodelacao" },
     ],
   },
   {
@@ -192,7 +191,7 @@ function LangSelector({ light = false, dropUp = false }: { light?: boolean; drop
   );
 }
 
-const MENU_IMAGE = "https://picsum.photos/seed/domustech-nav-panel/600/1000";
+const MENU_IMAGE = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=1000&fit=crop&auto=format&q=80";
 
 const overlayVariants = {
   closed: { opacity: 0 },
