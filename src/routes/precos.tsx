@@ -255,7 +255,8 @@ function PrecosPage() {
               ))}
             </div>
             {[
-              { t: "T1", area: 52,  note: "mínimo que trabalhamos" },
+              { t: "T0", area: 35,  note: "estúdio / espaço compacto" },
+              { t: "T1", area: 52,  note: "1 quarto" },
               { t: "T2", area: 72,  note: "1–2 quartos" },
               { t: "T3", area: 91,  note: "2–3 quartos" },
               { t: "T4", area: 120, note: "3–4 quartos" },
@@ -290,7 +291,7 @@ function PrecosPage() {
             ))}
           </div>
           <p className="s-body-sm mt-6" style={{ color: "var(--muted-foreground)" }}>
-            * Valores sem IVA. Áreas mínimas RGEU — projetos reais situam-se entre 108.000 € e 230.000 € conforme localização e opções de personalização.
+            * Valores sem IVA. T0 a partir de 35 m² — projetos reais situam-se entre 47.000 € e 230.000 € conforme tipologia, localização e opções de personalização.
           </p>
         </div>
       </section>

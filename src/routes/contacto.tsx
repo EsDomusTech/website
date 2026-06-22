@@ -32,6 +32,7 @@ const SOCIAL_LINKS = [
 type FormData = {
   uso: string;
   tipoTerreno: string;
+  credito: string;
   distrito: string;
   tipologia: string;
   nome: string;
@@ -52,14 +53,20 @@ const TIPO_TERRENO = [
 ];
 
 const TIPOLOGIA_OPTIONS = [
-  { id: "T1", label: "T1", sub: "até 52 m²" },
-  { id: "T2", label: "T2", sub: "até 72 m²" },
-  { id: "T3", label: "T3", sub: "até 91 m²" },
-  { id: "T4", label: "T4", sub: "até 120 m²" },
-  { id: "T5+", label: "T5+", sub: "+ 120 m²" },
+  { id: "T0", label: "T0", sub: "a partir de 35 m²" },
+  { id: "T1", label: "T1", sub: "a partir de 52 m²" },
+  { id: "T2", label: "T2", sub: "a partir de 72 m²" },
+  { id: "T3", label: "T3", sub: "a partir de 91 m²" },
+  { id: "T4", label: "T4", sub: "a partir de 120 m²" },
+  { id: "T5+", label: "T5+", sub: "a partir de 150 m²" },
 ];
 
-const STEPS = ["Uso", "Terreno", "Localização", "Tipologia", "Contacto"];
+const STEPS = ["Uso", "Terreno", "Crédito", "Localização", "Tipologia", "Contacto"];
+
+const CREDITO_OPTIONS = [
+  { id: "sim", label: "Sim" },
+  { id: "nao", label: "Não" },
+];
 
 const variants = {
   enter: (dir: number) => ({ x: dir > 0 ? 40 : -40, opacity: 0 }),
@@ -75,6 +82,7 @@ function ContactoPage() {
   const [data, setData] = useState<FormData>({
     uso: "",
     tipoTerreno: "",
+    credito: "",
     distrito: "",
     tipologia: "",
     nome: "",
@@ -192,16 +200,21 @@ function ContactoPage() {
                     />
                     {STEPS.map((label, i) => (
                       <div key={i} className="relative z-10 flex flex-col items-center gap-2">
-                        <div
+                        <button
+                          type="button"
+                          disabled={i >= step}
+                          onClick={() => { if (i < step) { setDir(-1); setStep(i); } }}
                           className="w-8 h-8 flex items-center justify-center text-sm font-bold transition-colors duration-300"
                           style={{
                             background: i <= step ? "var(--gold)" : "var(--ghost)",
                             color: i <= step ? "#fff" : "var(--muted-foreground)",
                             fontFamily: "var(--font-display)",
+                            cursor: i < step ? "pointer" : "default",
                           }}
+                          aria-label={`Voltar ao passo ${i + 1}: ${label}`}
                         >
                           {i + 1}
-                        </div>
+                        </button>
                         <span
                           className="tracked text-xs whitespace-nowrap hidden sm:block"
                           style={{
@@ -256,10 +269,26 @@ function ContactoPage() {
                           </div>
                         )}
 
-                        {/* STEP 3 — Localização */}
+                        {/* STEP 3 — Crédito */}
                         {step === 2 && (
                           <div>
-                            <StepTitle n={3} text="Onde fica o seu terreno?" />
+                            <StepTitle n={3} text="Vai recorrer a crédito habitação?" />
+                            <div className="flex flex-col gap-3 mt-6">
+                              {CREDITO_OPTIONS.map((opt) => (
+                                <OptionBtn key={opt.id} label={opt.label} selected={data.credito === opt.id}
+                                  onClick={() => { set("credito", opt.id); setTimeout(() => go(1), 200); }} />
+                              ))}
+                            </div>
+                            <div className="mt-8">
+                              <BackBtn onClick={() => go(-1)} />
+                            </div>
+                          </div>
+                        )}
+
+                        {/* STEP 4 — Localização */}
+                        {step === 3 && (
+                          <div>
+                            <StepTitle n={4} text="Onde fica o seu terreno?" />
                             <select
                               className="w-full mt-6 px-0 py-3 border-b-2 bg-transparent outline-none text-base"
                               style={{ borderColor: "var(--gold)", fontFamily: "var(--font-body)", color: "var(--foreground)" }}
@@ -275,11 +304,11 @@ function ContactoPage() {
                           </div>
                         )}
 
-                        {/* STEP 4 — Tipologia */}
-                        {step === 3 && (
+                        {/* STEP 5 — Tipologia */}
+                        {step === 4 && (
                           <div>
-                            <StepTitle n={4} text="Qual a tipologia pretendida?" />
-                            <div className="grid grid-cols-3 gap-3 mt-6 sm:grid-cols-5">
+                            <StepTitle n={5} text="Qual a tipologia pretendida?" />
+                            <div className="grid grid-cols-3 gap-3 mt-6 sm:grid-cols-6">
                               {TIPOLOGIA_OPTIONS.map((opt) => (
                                 <button
                                   key={opt.id}
@@ -307,10 +336,10 @@ function ContactoPage() {
                           </div>
                         )}
 
-                        {/* STEP 5 — Contacto */}
-                        {step === 4 && (
+                        {/* STEP 6 — Contacto */}
+                        {step === 5 && (
                           <form onSubmit={handleSubmit}>
-                            <StepTitle n={5} text="Os seus dados de contacto" />
+                            <StepTitle n={6} text="Os seus dados de contacto" />
                             <div className="grid grid-cols-2 gap-x-6 gap-y-5 mt-6">
                               <FormField label="Nome" value={data.nome} onChange={(v) => set("nome", v)} required />
                               <FormField label="Sobrenome" value={data.sobrenome} onChange={(v) => set("sobrenome", v)} required />
@@ -404,12 +433,22 @@ function NavButtons({ onBack, onNext, nextDisabled }: { onBack: () => void; onNe
 function FormField({ label, value, onChange, type = "text", required, className = "" }: {
   label: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean; className?: string;
 }) {
+  const isTel = type === "tel";
   return (
     <div className={className}>
       <label className="s-label-caps block mb-2" style={{ color: "var(--label-muted)" }}>{label}</label>
-      <input type={type} value={value} onChange={(e) => onChange(e.target.value)} required={required}
+      <input
+        type={isTel ? "tel" : type}
+        inputMode={isTel ? "numeric" : undefined}
+        value={value}
+        onChange={(e) => {
+          const v = isTel ? e.target.value.replace(/\D/g, "") : e.target.value;
+          onChange(v);
+        }}
+        required={required}
         className="w-full border-b outline-none py-3 bg-transparent text-base"
-        style={{ borderColor: "var(--gold)", fontFamily: "var(--font-body)", color: "var(--foreground)" }} />
+        style={{ borderColor: "var(--gold)", fontFamily: "var(--font-body)", color: "var(--foreground)" }}
+      />
     </div>
   );
 }

@@ -13,7 +13,6 @@ const NAV_LINKS: NavLink[] = [
     to: "/empresa",
     children: [
       { label: "Sobre Nós", to: "/empresa" },
-      { label: "Equipa", to: "/equipa" },
       { label: "Sistema Construtivo", to: "/sistema-construtivo" },
       { label: "Testemunhos", to: "/testemunhos" },
     ],
