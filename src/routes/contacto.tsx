@@ -215,15 +215,6 @@ function ContactoPage() {
                         >
                           {i + 1}
                         </button>
-                        <span
-                          className="tracked text-xs whitespace-nowrap hidden sm:block"
-                          style={{
-                            color: i <= step ? "var(--foreground)" : "var(--muted-foreground)",
-                            fontFamily: "var(--font-display)",
-                          }}
-                        >
-                          {label}
-                        </span>
                       </div>
                     ))}
                   </div>

@@ -51,11 +51,11 @@ export function Projects() {
                 <img
                   src={p.image}
                   alt={`${p.name}, projeto de ${p.category.toLowerCase()} DomusTech no Porto`}
-                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05]"
+                  className="h-full w-full object-cover md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05]"
                 />
 
-                {/* Overlay — appears on hover */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-12 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                {/* Overlay — always visible on mobile, hover on desktop */}
+                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-8 md:p-12 opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
                   <span
                     className="s-label-caps mb-2 block"
                     style={{ color: "var(--gold)", letterSpacing: "0.2em" }}
