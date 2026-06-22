@@ -98,7 +98,7 @@ function ServicosPage() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1503224282-30e0b1b42e63?w=1600&h=900&fit=crop&auto=format&q=80"
+            src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?w=1600&h=900&fit=crop&auto=format&q=80"
             alt="Serviços de construção modular DomusTech no Porto"
             className="h-full w-full object-cover"
             style={{ filter: "brightness(0.5)" }}
@@ -158,7 +158,7 @@ function ServicosPage() {
         <div className="s-wrap grid grid-cols-12 gap-8 items-center">
           <div className="col-span-12 md:col-span-7">
             <img
-              src="https://images.unsplash.com/photo-1551524163-f7a51bca87af?w=1200&h=800&fit=crop&auto=format&q=80"
+              src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&h=800&fit=crop&auto=format&q=80"
               alt="Design de interiores e acabamentos DomusTech, filosofia de projeto"
               className="w-full object-cover"
               style={{ height: 600 }}
