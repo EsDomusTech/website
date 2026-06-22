@@ -183,7 +183,7 @@ function EquipaPage() {
 
       <CtaBand
         title="Trabalhe\nConnosco"
-        text="Estamos sempre à procura de talento. Envie o seu portfólio para joinus@domustech.pt"
+        text="Estamos sempre à procura de talento. Envie o seu portfólio para geral@esdomustech.com"
         label="Ver Vagas"
       />
     </main>
