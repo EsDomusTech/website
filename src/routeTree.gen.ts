@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VantagensFiscaisRouteImport } from './routes/vantagens-fiscais'
-import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaConstrutivoRouteImport } from './routes/sistema-construtivo'
@@ -26,21 +25,18 @@ import { Route as AntesDepoisRouteImport } from './routes/antes-depois'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
+import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosListaRouteImport } from './routes/projetos.lista'
 import { Route as ProjetosFiltroRouteImport } from './routes/projetos.filtro'
 import { Route as ProjetosFancyFiltroRouteImport } from './routes/projetos.fancy-filtro'
 import { Route as ProjetosFancyRouteImport } from './routes/projetos.fancy'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as GaleriaMasonryRouteImport } from './routes/galeria.masonry'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const VantagensFiscaisRoute = VantagensFiscaisRouteImport.update({
   id: '/vantagens-fiscais',
   path: '/vantagens-fiscais',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TestemunhosRoute = TestemunhosRouteImport.update({
-  id: '/testemunhos',
-  path: '/testemunhos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermosECondicoesRoute = TermosECondicoesRouteImport.update({
@@ -118,6 +114,11 @@ const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
   path: '/projetos/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosSlugRoute = ServicosSlugRouteImport.update({
+  id: '/servicos/$slug',
+  path: '/servicos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjetosListaRoute = ProjetosListaRouteImport.update({
   id: '/projetos/lista',
   path: '/projetos/lista',
@@ -148,11 +149,16 @@ const GaleriaMasonryRoute = GaleriaMasonryRouteImport.update({
   path: '/masonry',
   getParentRoute: () => GaleriaRoute,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/antes-depois': typeof AntesDepoisRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/equipa': typeof EquipaRoute
@@ -163,21 +169,22 @@ export interface FileRoutesByFullPath {
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/antes-depois': typeof AntesDepoisRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/equipa': typeof EquipaRoute
@@ -188,14 +195,15 @@ export interface FileRoutesByTo {
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos': typeof ProjetosIndexRoute
   '/servicos': typeof ServicosIndexRoute
 }
@@ -203,7 +211,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/antes-depois': typeof AntesDepoisRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/equipa': typeof EquipaRoute
@@ -214,14 +222,15 @@ export interface FileRoutesById {
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/fancy': typeof ProjetosFancyRoute
   '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -241,14 +250,15 @@ export interface FileRouteTypes {
     | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
-    | '/testemunhos'
     | '/vantagens-fiscais'
+    | '/blog/$slug'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
+    | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
@@ -266,14 +276,15 @@ export interface FileRouteTypes {
     | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
-    | '/testemunhos'
     | '/vantagens-fiscais'
+    | '/blog/$slug'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
+    | '/servicos/$slug'
     | '/projetos'
     | '/servicos'
   id:
@@ -291,14 +302,15 @@ export interface FileRouteTypes {
     | '/sistema-construtivo'
     | '/sitemap.xml'
     | '/termos-e-condicoes'
-    | '/testemunhos'
     | '/vantagens-fiscais'
+    | '/blog/$slug'
     | '/galeria/masonry'
     | '/projetos/$slug'
     | '/projetos/fancy'
     | '/projetos/fancy-filtro'
     | '/projetos/filtro'
     | '/projetos/lista'
+    | '/servicos/$slug'
     | '/projetos/'
     | '/servicos/'
   fileRoutesById: FileRoutesById
@@ -306,7 +318,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AntesDepoisRoute: typeof AntesDepoisRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
   EquipaRoute: typeof EquipaRoute
@@ -317,13 +329,13 @@ export interface RootRouteChildren {
   SistemaConstrutivoRoute: typeof SistemaConstrutivoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosECondicoesRoute: typeof TermosECondicoesRoute
-  TestemunhosRoute: typeof TestemunhosRoute
   VantagensFiscaisRoute: typeof VantagensFiscaisRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ProjetosFancyRoute: typeof ProjetosFancyRoute
   ProjetosFancyFiltroRoute: typeof ProjetosFancyFiltroRoute
   ProjetosFiltroRoute: typeof ProjetosFiltroRoute
   ProjetosListaRoute: typeof ProjetosListaRoute
+  ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
 }
@@ -335,13 +347,6 @@ declare module '@tanstack/react-router' {
       path: '/vantagens-fiscais'
       fullPath: '/vantagens-fiscais'
       preLoaderRoute: typeof VantagensFiscaisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/testemunhos': {
-      id: '/testemunhos'
-      path: '/testemunhos'
-      fullPath: '/testemunhos'
-      preLoaderRoute: typeof TestemunhosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/termos-e-condicoes': {
@@ -449,6 +454,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/$slug': {
+      id: '/servicos/$slug'
+      path: '/servicos/$slug'
+      fullPath: '/servicos/$slug'
+      preLoaderRoute: typeof ServicosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projetos/lista': {
       id: '/projetos/lista'
       path: '/projetos/lista'
@@ -491,8 +503,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GaleriaMasonryRouteImport
       parentRoute: typeof GaleriaRoute
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface GaleriaRouteChildren {
   GaleriaMasonryRoute: typeof GaleriaMasonryRoute
@@ -508,7 +537,7 @@ const GaleriaRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AntesDepoisRoute: AntesDepoisRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,
   EquipaRoute: EquipaRoute,
@@ -519,13 +548,13 @@ const rootRouteChildren: RootRouteChildren = {
   SistemaConstrutivoRoute: SistemaConstrutivoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosECondicoesRoute: TermosECondicoesRoute,
-  TestemunhosRoute: TestemunhosRoute,
   VantagensFiscaisRoute: VantagensFiscaisRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
   ProjetosFancyRoute: ProjetosFancyRoute,
   ProjetosFancyFiltroRoute: ProjetosFancyFiltroRoute,
   ProjetosFiltroRoute: ProjetosFiltroRoute,
   ProjetosListaRoute: ProjetosListaRoute,
+  ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
   ServicosIndexRoute: ServicosIndexRoute,
 }

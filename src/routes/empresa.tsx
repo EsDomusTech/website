@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
-import { VideoTestimonials } from "@/components/site/VideoTestimonials";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { Team } from "@/components/site/Team";
 import { PageHeader } from "@/components/site/PageHeader";
@@ -161,7 +160,6 @@ function EmpresaPage() {
       {/* Equipa — secção Stitch 4-col portrait grid */}
       <Team />
 
-      <VideoTestimonials />
       <CtaBand />
     </main>
   );
