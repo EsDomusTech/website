@@ -11,7 +11,7 @@ const LAYERS = [
   { num: "03", title: "ETICS / EPS 50 mm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
   { num: "04", title: "Lã de Rocha", text: "Isolamento térmico e acústico no interior das paredes." },
   { num: "05", title: "Placa OSB 12 mm", text: "Revestimento estrutural da parede." },
-  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 2 mm. O esqueleto da casa." },
+  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 3 mm (parede do tubo). O esqueleto da casa." },
   { num: "07", title: "Guias e montantes", text: "Subestrutura metálica de fixação e alinhamento." },
   { num: "08", title: "Gesso cartonado", text: "Acabamento interior: branco, hidrófugo (WC) ou anti-fogo, conforme a zona." },
   { num: "09", title: "Camada impermeabilizante", text: "Barreira entre a laje e a estrutura, protege da humidade ascendente." },
@@ -50,7 +50,7 @@ const SYSTEMS = [
 
 /* Ficha de espessuras — modelo base */
 const THICKNESS = [
-  { item: "Estrutura", spec: "Tubo de aço galvanizado DX51D, 2 mm, perfis ómega (EN 10346 / EN 10143)" },
+  { item: "Estrutura", spec: "Tubo de aço galvanizado DX51D, 3 mm (parede do tubo), perfis ómega (EN 10346 / EN 10143)" },
   { item: "OSB Parede", spec: "12 mm" },
   { item: "OSB Piso", spec: "22 mm" },
   { item: "Capoto / ETICS (exterior)", spec: "10 cm (EPS 50 mm, pormenor construtivo)" },
@@ -66,7 +66,7 @@ const THICKNESS = [
 const REFERENCES = [
   {
     cat: "Casas de Banho",
-    note: "Garantia: uma casa de banho completa a cada 35 m² construídos.",
+    note: "Garantia: uma casa de banho completa a cada 40 m² construídos.",
     items: ["Móveis de lavatório: AML Trevi, Essential, Ministone Mármore, Nerea", "Sanitários: NEREA, Sanitana Regina, Essential Sensea", "Cabines e bases de duche: Sensea Essential, Oceania, Sensai, Shimmer"],
   },
   {
@@ -122,7 +122,7 @@ function SistemaConstrutivoPage() {
               <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
                 Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento
                 termoacústico e design moderno, garantindo rapidez na construção e máxima
-                eficiência energética. Estrutura tubular em aço galvanizado DX51D (2 mm, normas
+                eficiência energética. Estrutura tubular em aço galvanizado DX51D (3 mm de parede, normas
                 EN&nbsp;10346 / EN&nbsp;10143), com perfis ómega e dois sistemas construtivos à escolha.
               </p>
             </div>
@@ -244,7 +244,7 @@ function SistemaConstrutivoPage() {
             {[
               { value: "Classe A", label: "Eficiência energética" },
               { value: "10 anos", label: "Garantia estrutural" },
-              { value: "DX51D", label: "Aço galvanizado, 2 mm" },
+              { value: "3 mm", label: "Parede do tubo de aço galvanizado" },
               { value: "120 m²/dia", label: "Montagem do painel pré-fabricado" },
             ].map((s, i) => (
               <motion.div

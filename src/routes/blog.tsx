@@ -67,7 +67,7 @@ function BlogPage() {
             <div className="col-span-12 md:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {displayed.map((n) => (
-                  <Link key={n.slug} to={n.href as "/blog" | "/precos"} className="group block" style={{ backgroundColor: "#ffffff" }}>
+                  <Link key={n.slug} to="/blog/$slug" params={{ slug: n.slug }} className="group block" style={{ backgroundColor: "#ffffff" }}>
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
                         src={n.image}
@@ -155,7 +155,7 @@ function BlogPage() {
                 <ul className="space-y-6">
                   {BLOG_POSTS.map((post) => (
                     <li key={post.slug}>
-                      <Link to={post.href as "/blog" | "/precos"} className="flex gap-4 group">
+                      <Link to="/blog/$slug" params={{ slug: post.slug }} className="flex gap-4 group">
                         <div className="w-16 h-12 shrink-0 overflow-hidden">
                           <img
                             src={post.image}

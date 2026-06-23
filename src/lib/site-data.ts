@@ -11,7 +11,7 @@ export const SITE = {
   email: "geral@esdomustech.com",
   address: "Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha",
   hours: "Segunda a Sexta, 8h-17h",
-  mapsUrl: "https://maps.app.goo.gl/LJQN6T5pS541ABgT6",
+  mapsUrl: "https://maps.app.goo.gl/g1MDpujHhEtBvNqs7",
 } as const;
 
 export type Service = {
@@ -201,48 +201,96 @@ export function getProject(slug: string) {
   return PROJECTS.find((p) => p.slug === slug);
 }
 
-export const BLOG_POSTS = [
+export type BlogPost = {
+  slug: string;
+  title: string;
+  cat: string;
+  date: string;
+  image: string;
+  excerpt: string;
+  readTime: string;
+  body: string[];
+};
+
+export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "quanto-custa-casa-modular-portugal",
     title: "Quanto Custa uma Casa Modular em Portugal? Guia de Preços 2026",
     cat: "Preços",
     date: "15 Jun 2026",
+    readTime: "6 min",
     image: "https://images.unsplash.com/photo-1560440021-33f9b867899d?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
-      "Da variante estrutura/laje/exterior a partir de 1.150 €/m² ao chave-na-mão a 1.350 €/m², veja exemplos reais entre 47.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
-    href: "/precos",
+      "Do chave-na-mão a 1.350 €/m², veja exemplos reais entre 108.000 € e 230.000 € e como funciona o plano de pagamento em 4 prestações.",
+    body: [
+      "Para quem está a considerar construir uma casa modular em Portugal, o preço é, naturalmente, uma das primeiras perguntas. Neste artigo, reunimos os valores de referência reais da DomusTech para 2026, com total transparência sobre o que está incluído e o que fica fora.",
+      "O preço de referência para uma casa modular chave-na-mão é de 1.350 €/m², sem IVA. Este valor cobre um pacote completo: projeto de arquitetura e engenharia com 4 imagens 3D, acompanhamento do licenciamento camarário, estrutura em aço galvanizado (3 mm de parede, durabilidade estimada de 50 anos), casas de banho completas, isolamento termoacústico em lã de rocha, pavimentos, janelas e portas, eletricidade e canalizações (ramal até 10 m), cobertura em telha sandwich e garantia estrutural de 10 anos.",
+      "Usando as áreas mínimas de referência do RGEU e o preço de 1.350 €/m², os valores por tipologia ficam: T1 (52 m²) a partir de 70.200 €; T2 (72 m²) a partir de 97.200 €; T3 (91 m²) a partir de 122.850 €; T4 (120 m²) a partir de 162.000 €. Na prática, os projetos reais da DomusTech situam-se entre 108.000 € e 230.000 €, conforme tipologia, localização e opções de personalização.",
+      "O plano de pagamento está estruturado em 4 prestações iguais de 25% + IVA, associadas a marcos concretos: assinatura do contrato, início de fabrico, compra de materiais e entrega final. O orçamento aprovado fica fixo por contrato — não há revisões de preço a meio do caminho.",
+      "Ficam fora do preço chave-na-mão as taxas camarárias (variáveis por município), a instalação efetiva — não a pré-instalação — de ar condicionado, painéis solares e estores elétricos, projetos de especialidades (estimativa até 4.000 €) e extras como garagem, piscina ou cozinha equipada de gama superior. Estes podem ser orçamentados à parte e são frequentemente propostos como opcionais de fecho.",
+      "Em 2026, o Pacote Fiscal (DL n.º 97/2026) permite aplicar IVA reduzido de 6% a empreitadas de construção para habitação própria permanente (até 660.982 €), em obras iniciadas entre setembro de 2025 e dezembro de 2029. Numa casa de 120.000 €, a diferença entre IVA a 23% e IVA a 6% representa uma poupança de mais de 20.000 €. Consulte a nossa página de vantagens fiscais para saber se o seu projeto é elegível.",
+      "A pergunta mais frequente: 'vale a pena em comparação com a construção tradicional?' A resposta honesta: a construção modular situa-se tendencialmente no mesmo intervalo de preço por metro quadrado que a construção tradicional de qualidade. A vantagem real não é o custo, mas a previsibilidade: orçamento fixo, prazo definido e processo industrial com controlo de qualidade em fábrica.",
+    ],
   },
   {
     slug: "tendencias-design-modular-2026",
     title: "Tendências do design modular em 2026",
     cat: "Arquitetura",
     date: "12 Mai 2026",
+    readTime: "5 min",
     image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Do fabrico digital aos materiais bio-baseados, exploramos as tendências que vão definir a construção modular.",
-    href: "/blog",
+    body: [
+      "A construção modular está a mudar mais rápido do que o mercado imagina. Em 2026, cinco tendências dominam os projetos que chegam ao nosso atelier e moldam o que os clientes pedem — e esperam.",
+      "A classe energética A deixou de ser um diferenciador para se tornar uma expectativa de base. O SCE (Sistema de Certificação Energética) tornou obrigatório o cálculo do desempenho térmico em qualquer nova construção. Casas modulares em estrutura metálica, com 10 cm de lã de rocha e sistema ETICS, chegam naturalmente à classe A sem tecnologias dispendiosas — menos custo de certificação, menos correções no final.",
+      "Os clientes de 2026 querem ver antes de decidir. Plantas 3D, simuladores de materiais e visualizações fotorrealistas tornaram-se parte do processo de venda. O projeto DomusTech inclui 4 imagens 3D no standard — mas a tendência é ir mais longe, com modelos BIM que permitem 'entrar' na casa antes da primeira sapata e testar variações de planta sem custos adicionais.",
+      "O painel técnico pré-fabricado (XPS + cimentícia) está a ganhar terreno face ao sistema OSB + ETICS para projetos com prazos apertados: permite montar até 120 m² de parede por dia, reduz o desperdício e tem maior resistência à humidade. Para projetos de arrendamento ou segunda habitação, onde o retorno depende da rapidez de execução, esta opção faz cada vez mais sentido económico.",
+      "A construção modular permite acrescentar módulos, mudar a disposição interior ou adaptar a casa a novas realidades de forma muito menos dispendiosa do que na construção tradicional. Clientes que antecipam um quarto adicional em 5 a 10 anos, ou que pensam em transformar parte da casa em alojamento local, perguntam cada vez mais por esta flexibilidade desde o projeto.",
+      "Pré-instalação de painéis solares, pontos de carregamento para veículo elétrico e automatismos de iluminação entram nos contratos standard. A DomusTech inclui pré-instalação de AC, painéis solares e estores elétricos como padrão — a instalação efetiva fica a cargo do cliente, mas a infraestrutura está preparada, evitando obras dispendiosas no futuro.",
+    ],
   },
   {
     slug: "materiais-ecologicos-construcao",
     title: "Materiais ecológicos na construção moderna",
     cat: "Sustentabilidade",
     date: "28 Abr 2026",
+    readTime: "5 min",
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Uma análise aos materiais sustentáveis que reduzem a pegada de carbono sem comprometer o design.",
-    href: "/blog",
+    body: [
+      "Construir de forma sustentável não é apenas uma questão de imagem — afeta o conforto térmico, a durabilidade e os custos de manutenção ao longo de décadas. Analisamos os materiais que fazem a diferença nas casas modulares DomusTech e o porquê de cada escolha.",
+      "A lã de rocha é o isolamento térmico e acústico de eleição nas paredes e cobertura (10 cm, não inflamável). Ao contrário do EPS standard, a lã de rocha não inflama — fator crítico para a segurança e para a conformidade com exigências anti-fogo em cozinhas e salas com lareira. O seu fabrico usa rocha basáltica, um recurso abundante, e o material é reciclável no fim de vida.",
+      "O capoto (ETICS com EPS de 10 cm) no exterior garante que o ponto de orvalho se mantém fora da parede, evitando condensações internas — um problema frequente em paredes sem isolamento exterior. Combinado com a lã de rocha interior, o resultado é uma parede com 21 cm de espessura total e desempenho térmico superior à construção de tijolo de espessura equivalente.",
+      "As casas DomusTech usam três tipos de pladur conforme a zona: branco (uso geral), hidrófugo verde (casas de banho) e anti-fogo vermelho (obrigatório em cozinha e salas com lareira). Este detalhe, ignorado em construção de menor qualidade, tem impacto direto na durabilidade do interior e na resistência ao fogo da habitação.",
+      "A estrutura tubular em aço galvanizado DX51D (3 mm de parede, EN 10346 e EN 10143) tem durabilidade estimada de 50 anos. A galvanização protege o aço da corrosão permanentemente, sem tratamentos adicionais periódicos — um fator subestimado quando se compara o custo total de propriedade com betão armado.",
+      "As placas OSB (9 mm nas paredes, 22 mm no piso) são produzidas com madeira de reflorestação em processo industrial com mínimo desperdício. Face ao MDF, o OSB tem maior resistência mecânica e menor absorção de humidade — a escolha mais sustentável e tecnicamente correta para uso estrutural.",
+    ],
   },
   {
     slug: "domotica-casa-modular-futuro",
     title: "Domótica e casas modulares: o futuro da habitação inteligente",
     cat: "Tecnologia",
     date: "10 Mar 2026",
+    readTime: "5 min",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt:
       "Como a integração de sistemas inteligentes transforma a experiência de habitar uma casa modular.",
-    href: "/blog",
+    body: [
+      "As casas inteligentes já não são um nicho de luxo. Em 2026, a automação doméstica está a tornar-se uma expectativa de base em projetos de construção nova — e as casas modulares têm uma vantagem estrutural neste domínio que vale a pena perceber.",
+      "Uma das vantagens mais práticas das casas DomusTech é que a pré-instalação de domótica está incluída no standard: pontos preparados para ar condicionado, painéis solares e estores elétricos ficam integrados durante a construção. É muito mais económico integrar a infraestrutura elétrica durante o fabrico — quando as paredes ainda estão abertas — do que instalar sistemas num imóvel já acabado.",
+      "Os sistemas de automatização de iluminação e climatização são hoje compatíveis com os principais assistentes de voz (Google Home, Amazon Alexa, Apple HomeKit). Uma casa modular preparada com calhas para cabos, caixas de encastrar nas posições certas e quadro elétrico com circuitos dedicados pode integrar estes sistemas sem obras de roço — que são o principal custo numa habitação existente.",
+      "A combinação de painéis solares com monitorização em tempo real do consumo permite reduzir significativamente a fatura energética. Numa casa de classe A com boa orientação solar, a autoprodução pode cobrir a maioria das necessidades nos meses de maior insolação. O sistema de baterias domésticas ainda tem relação custo-benefício marginal em 2026, mas os preços estão a baixar rapidamente.",
+      "A infraestrutura elétrica adequada facilita a integração de câmeras IP, fechaduras eletrónicas e centrais de alarme. Em construção nova, a diferença de custo entre uma instalação básica e uma preparada para segurança inteligente é pequena — ao contrário da adaptação posterior, que implica abertura de roços e revisão do quadro elétrico.",
+      "A recomendação prática: os sistemas com melhor relação custo-benefício em 2026 são ainda os relativamente simples — termostatos programáveis, iluminação por cenas pré-definidas e estores automatizados. Preparar a infraestrutura agora durante a construção, instalar o que faz sentido hoje, e expandir à medida que a tecnologia amadurece.",
+    ],
   },
 ];
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((p) => p.slug === slug);
+}
 
 export type TeamMember = {
   name: string;
@@ -252,35 +300,35 @@ export type TeamMember = {
 
 export const TEAM: TeamMember[] = [
   {
-    name: "Ana Ferreira",
-    role: "Fundadora & Arquitecta Principal",
+    name: "Raquel Figueiredo",
+    role: "Gestora de Obras",
+    image: "/images/equipa/raquel.webp",
+  },
+  {
+    name: "Marisa Xavier",
+    role: "Administrativo de Obras e Compras",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop&auto=format&q=80",
   },
   {
     name: "Juliane Zombini",
-    role: "Administrativa & Financeira",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&auto=format&q=80",
+    role: "Responsável Administrativo",
+    image: "/images/equipa/julliana.webp",
   },
   {
     name: "Marina Dias",
-    role: "Recursos Humanos",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&auto=format&q=80",
-  },
-  {
-    name: "Karine Ribeiro",
-    role: "Comercial",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop&auto=format&q=80",
+    role: "Assistente Administrativo e de RH",
+    image: "/images/equipa/marina.webp",
   },
 ];
 
 export const FAQS = [
   {
     q: "Uma casa modular é tão sólida como uma tradicional?",
-    a: "Sim. Usamos os mesmos materiais de acabamento da construção tradicional, e a estrutura em aço galvanizado oferece segurança adicional e melhor isolamento térmico e acústico.",
+    a: "Sim. Usamos os mesmos materiais de acabamento da construção tradicional, e a estrutura em aço galvanizado (espessura mínima 3 mm, durabilidade estimada de 50 anos) oferece segurança adicional e melhor isolamento térmico e acústico.",
   },
   {
     q: "Quanto tempo demora a construção?",
-    a: "Até 360 dias úteis após a emissão da licença de construção, com o licenciamento camarário a demorar tipicamente entre 2 a 4 meses.",
+    a: "Entre 12 e 18 meses após a emissão da licença de construção, com o licenciamento camarário a demorar tipicamente entre 2 a 4 meses.",
   },
   {
     q: "O que está incluído no preço?",
@@ -313,6 +361,14 @@ export const FAQS = [
   {
     q: "A DomusTech constrói em todo o país?",
     a: "Sim. Construímos em todo o território nacional e já entregámos casas em 13 localizações diferentes.",
+  },
+  {
+    q: "A casa pode ser construída em terreno rústico?",
+    a: "Caso a caso — em terreno rústico é necessário analisar a necessidade de pilares. Fale connosco para avaliarmos as condições específicas do seu terreno.",
+  },
+  {
+    q: "Existe financiamento bancário disponível?",
+    a: "Não temos parceria formal com nenhuma instituição bancária. Os nossos clientes recorrem habitualmente ao crédito bancário por iniciativa própria. Podemos fornecer toda a documentação técnica necessária para o processo.",
   },
 ];
 

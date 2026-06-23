@@ -103,13 +103,13 @@ function FaqPage() {
       id: "processo",
       label: "O PROCESSO",
       num: "02",
-      items: [FAQS[3], FAQS[5], FAQS[6]],
+      items: [FAQS[3], FAQS[5], FAQS[6], FAQS[10]],
     },
     {
       id: "prazos-precos",
       label: "PRAZOS & PREÇOS",
       num: "03",
-      items: [FAQS[1], FAQS[2]],
+      items: [FAQS[1], FAQS[2], FAQS[11]],
     },
     {
       id: "personalizacao",
