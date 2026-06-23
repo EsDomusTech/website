@@ -105,7 +105,7 @@ function ServicosPage() {
                 </ul>
 
                 {/* Process steps — compact 2×2 */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 mb-10">
                   {s.process.map((step) => (
                     <div key={step.num} className="p-4" style={{ backgroundColor: i % 2 === 0 ? "#ffffff" : "#f9f9f9" }}>
                       <span className="block text-[10px] font-bold tracking-[0.2em] mb-2" style={{ fontFamily: "var(--font-display)", color: "#BE9355" }}>
@@ -117,6 +117,15 @@ function ServicosPage() {
                     </div>
                   ))}
                 </div>
+
+                <Link
+                  to="/servicos/$slug"
+                  params={{ slug: s.slug }}
+                  className="s-label-caps inline-block border-b pb-1 transition-colors duration-300 hover:text-[#BE9355] hover:border-[#BE9355]"
+                  style={{ color: "#000000", borderColor: "#000000" }}
+                >
+                  Ver detalhe do serviço →
+                </Link>
               </motion.div>
             </div>
           </section>

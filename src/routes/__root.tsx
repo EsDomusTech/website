@@ -23,16 +23,22 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Página não encontrada</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          A página que procura não existe ou foi movida.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Página inicial
+          </Link>
+          <Link
+            to="/contacto"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Contacto
           </Link>
         </div>
       </div>
@@ -51,10 +57,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Esta página não carregou
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Ocorreu um erro inesperado. Tente recarregar a página ou volte ao início.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -64,13 +70,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Tentar novamente
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Página inicial
           </a>
         </div>
       </div>
@@ -86,6 +92,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "DomusTech - Casas Modulares" },
       { name: "description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { name: "author", content: "DomusTech" },
+      { name: "google-site-verification", content: "google66209e8887b438e6" },
+      { name: "google-site-verification", content: "wP7jArwcuTWSXocJiPBNILSJBLXQlSf75kDP9qyFE-0" },
       { property: "og:title", content: "DomusTech - Casas Modulares" },
       { property: "og:description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { property: "og:type", content: "website" },
@@ -134,7 +142,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "PT",
           },
           openingHours: "Mo-Fr 08:00-17:00",
-          areaServed: "Porto, Portugal",
+          areaServed: "Portugal",
           sameAs: [
             "https://www.instagram.com/esdomustech_porto",
             "https://www.facebook.com/esdomustech/",

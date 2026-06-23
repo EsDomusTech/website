@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { SERVICES, PROJECTS, SITE } from "@/lib/site-data";
+import { SERVICES, PROJECTS, BLOG_POSTS, SITE } from "@/lib/site-data";
 
 const BASE_URL = SITE.domain;
 
@@ -17,12 +17,17 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/empresa", changefreq: "monthly", priority: "0.8" },
-          { path: "/sistema-construtivo", changefreq: "monthly", priority: "0.8" },
+          { path: "/equipa", changefreq: "monthly", priority: "0.7" },
+          { path: "/sistema-construtivo", changefreq: "monthly", priority: "0.9" },
           { path: "/vantagens-fiscais", changefreq: "monthly", priority: "0.8" },
           { path: "/servicos", changefreq: "monthly", priority: "0.9" },
+          { path: "/precos", changefreq: "monthly", priority: "0.8" },
           { path: "/projetos", changefreq: "monthly", priority: "0.8" },
+          { path: "/galeria", changefreq: "monthly", priority: "0.6" },
+          { path: "/testemunhos", changefreq: "monthly", priority: "0.6" },
+          { path: "/antes-depois", changefreq: "monthly", priority: "0.5" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },
-          { path: "/faq", changefreq: "monthly", priority: "0.6" },
+          { path: "/faq", changefreq: "monthly", priority: "0.7" },
           { path: "/contacto", changefreq: "yearly", priority: "0.7" },
           { path: "/politica-de-privacidade", changefreq: "yearly", priority: "0.3" },
           { path: "/termos-e-condicoes", changefreq: "yearly", priority: "0.3" },
@@ -35,6 +40,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/projetos/${p.slug}`,
             changefreq: "monthly" as const,
             priority: "0.6",
+          })),
+          ...BLOG_POSTS.map((p) => ({
+            path: `/blog/${p.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
           })),
         ];
 

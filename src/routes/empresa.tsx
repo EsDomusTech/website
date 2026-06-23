@@ -44,7 +44,7 @@ export const Route = createFileRoute("/empresa")({
       { property: "og:description", content: "A nossa história, missão e valores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/empresa` },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=630&fit=crop&auto=format&q=80" },
+      { property: "og:image", content: `${SITE.domain}/og-image.jpg` },
     ],
     links: [{ rel: "canonical", href: `${SITE.domain}/empresa` }],
   }),

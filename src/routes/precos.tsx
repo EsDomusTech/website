@@ -64,7 +64,7 @@ const PRICE_NOTES = [
   },
   {
     label: "Faixa real observada (conforme tipologia e opções)",
-    value: "≈ 47.000 € a 230.000 € (sem IVA)",
+    value: "≈ 108.000 € a 230.000 € (sem IVA)",
   },
   {
     label: "Plano de pagamento",
@@ -291,7 +291,7 @@ function PrecosPage() {
             ))}
           </div>
           <p className="s-body-sm mt-6" style={{ color: "var(--muted-foreground)" }}>
-            * Valores sem IVA. T0 a partir de 35 m² — projetos reais situam-se entre 47.000 € e 230.000 € conforme tipologia, localização e opções de personalização.
+            * Valores sem IVA. Projetos reais situam-se entre 108.000 € e 230.000 € conforme tipologia, localização e opções de personalização.
           </p>
         </div>
       </section>

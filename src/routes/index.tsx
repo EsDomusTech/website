@@ -14,12 +14,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Estúdio de arquitetura e construção modular no Porto. Casas modulares inteligentes, design de interiores e modelação 3D.",
+          "Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a 1.350 €/m². 23 casas entregues em 13 localizações em todo o território nacional.",
       },
-      { property: "og:title", content: "DomusTech | Casas Modulares no Porto" },
+      { property: "og:title", content: "DomusTech | Casas Modulares Tecnológicas no Porto" },
       {
         property: "og:description",
-        content: "Casas modulares inteligentes e arquitetura moderna no Porto.",
+        content: "Casas modulares chave-na-mão no Porto. Classe A, estrutura em aço galvanizado, 23 casas entregues em todo o território nacional.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/` },
