@@ -22,12 +22,13 @@ export const Route = createFileRoute("/blog")({
   component: BlogPage,
 });
 
-const CATEGORIES = [
-  { label: "Preços", count: 1 },
-  { label: "Arquitetura", count: 1 },
-  { label: "Sustentabilidade", count: 1 },
-  { label: "Tecnologia", count: 1 },
-];
+const CATEGORIES = Array.from(
+  BLOG_POSTS.reduce((map, p) => {
+    map.set(p.cat, (map.get(p.cat) ?? 0) + 1);
+    return map;
+  }, new Map<string, number>()),
+  ([label, count]) => ({ label, count }),
+);
 
 const POSTS_PER_PAGE = 4;
 

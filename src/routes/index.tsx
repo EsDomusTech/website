@@ -3,7 +3,6 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Projects } from "@/components/site/Projects";
 import { Blog } from "@/components/site/Blog";
-import { VideoTestimonials } from "@/components/site/VideoTestimonials";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { SITE } from "@/lib/site-data";
 
@@ -39,7 +38,6 @@ function Index() {
       <About />
       <Projects />
       <Blog />
-      <VideoTestimonials />
       <ClientLogos />
     </main>
   );

@@ -34,7 +34,7 @@ export function Blog() {
               style={{ borderColor: "var(--border)" }}
             >
               {/* Image */}
-              <Link to={n.href as "/blog" | "/precos"} className="block overflow-hidden">
+              <Link to="/blog/$slug" params={{ slug: n.slug }} className="block overflow-hidden">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={n.image}
@@ -62,7 +62,7 @@ export function Blog() {
                 </div>
 
                 {/* Title */}
-                <Link to={n.href as "/blog" | "/precos"} className="block flex-1">
+                <Link to="/blog/$slug" params={{ slug: n.slug }} className="block flex-1">
                   <h3
                     className="mb-3 text-[18px] leading-snug text-foreground transition-colors duration-200 group-hover:text-[color:var(--gold)]"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.03em", textTransform: "uppercase" }}
@@ -79,7 +79,8 @@ export function Blog() {
 
                 {/* Read more */}
                 <Link
-                  to={n.href as "/blog" | "/precos"}
+                  to="/blog/$slug"
+                  params={{ slug: n.slug }}
                   className="tracked inline-flex items-center gap-2 text-[10px] font-medium transition-all duration-200 hover:gap-3"
                   style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
                 >

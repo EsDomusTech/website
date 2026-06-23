@@ -29,7 +29,6 @@ src/
     Services.tsx          ← grid 3×2 de serviços (homepage section)
     Projects.tsx          ← grid 2×2 portfólio (homepage section)
     Blog.tsx              ← grid 3 col notícias (homepage section)
-    VideoTestimonials.tsx ← vídeo promo + carousel testemunhos
     ClientLogos.tsx       ← strip logos parceiros
     CtaBand.tsx           ← banda CTA "Pedir Orçamento"
     Footer.tsx            ← footer 4 colunas
@@ -53,7 +52,6 @@ src/
     antes-depois.tsx            ← /antes-depois (BeforeAfterSlider)
     galeria.tsx                 ← /galeria (grid uniforme)
     galeria.masonry.tsx         ← /galeria/masonry (grid masonry)
-    testemunhos.tsx             ← /testemunhos
     precos.tsx                  ← /precos (pricing)
     blog.tsx                    ← /blog (listagem)
     faq.tsx                     ← /faq (accordion)
@@ -100,18 +98,17 @@ Utilitários CSS:
 - [x] Blog section (homepage): flat cards — imagem topo, category · date, título, excerpt, "Ler Mais →"
 - [x] `/blog`: grid 2 col + sidebar (Posts Recentes, Categorias) + paginação Prev·1·2·Next
 - [x] Projects section (homepage): grid 2×2, hover overlay + ícone `+` centrado, category + título
-- [x] VideoTestimonials: split 50/50 — vídeo promo + carousel testemunhos
 - [x] ClientLogos: strip logos grayscale + hover color
 - [x] CtaBand: banda CTA com título + botão
 - [x] Footer: 4 colunas (contacto, nav, serviços, newsletter), barra social, bottom bar
 - [x] PageHeader: banner com overlay, título, breadcrumbs (todas as páginas internas)
 - [x] BeforeAfterSlider: drag handle central, página `/antes-depois`
 - [x] Team.tsx: cards de equipa, página `/equipa`
-- [x] Rotas: empresa, equipa, serviços, projetos (+ variantes), blog, faq, contacto, galeria, precos, testemunhos, antes-depois, políticas
+- [x] Rotas: empresa, equipa, serviços, projetos (+ variantes), blog, faq, contacto, galeria, precos, antes-depois, políticas
 - [x] SEO: meta tags, canonical, LD+JSON por página, sitemap dinâmico
 - [x] Dados reais (contacto, redes sociais, equipa) em `site-data.ts`
 - [x] CtaBand: prop `variant="gold"` (fundo `--gold`, botão dark) além da versão dark default
-- [x] `/faq`: accordion Framer Motion (`height: 0 → auto`, ícone `+`/`−` roda 45°, `aria-expanded`)
+- [x] `/faq`: texto sempre exposto (sem accordion) — SEO-friendly, Google indexa todas as respostas
 - [x] `/contacto`: inputs underline (shadcn `Input`/`Textarea`/`Select`), `btn-gold` no submit, iframe Google Maps
 - [x] About: stats row com fundo `--dark-section`
 - [x] Audit `/impeccable` (12/20 → 10/10 itens): navbar a11y (aria-expanded/haspopup/role=menu, foco/Escape), contraste `--label-muted`, hex sprawl → CSS vars, `MotionConfig reducedMotion="user"`, `shadow-xl`→`shadow-md`, meta `author`/`twitter:site`, Footer `h3`+`<nav aria-label>`, `--radius-*` zerados, `@custom-variant dark` morto removido
@@ -138,3 +135,6 @@ _(nenhum item pendente)_
 - `container-1100` em todas as secções (max-width 1140px)
 - `section-pad` para padding vertical uniforme (100px top/bottom)
 - Dados de conteúdo sempre em `src/lib/site-data.ts` — nunca hardcoded nos components
+- **Sem testemunhos** — secção removida deliberadamente (sem testemunhos reais disponíveis); não adicionar VideoTestimonials, carousels de reviews, ou rota `/testemunhos`
+- **Blog: 3 placeholders** em `site-data.ts` (`artigo-1/2/3`) — slugs/títulos/categorias/conteúdo a definir pelo utilizador antes do lançamento; CATEGORIES em `blog.tsx` derivadas dinamicamente de `BLOG_POSTS`
+- **FAQ: texto sempre exposto** — sem accordion/dropdown; conteúdo sempre no DOM para indexação por crawlers

@@ -15,7 +15,6 @@ const NAV_LINKS: NavLink[] = [
     children: [
       { label: "Sobre Nós", to: "/empresa" },
       { label: "Sistema Construtivo", to: "/sistema-construtivo" },
-      { label: "Testemunhos", to: "/testemunhos" },
     ],
   },
   { label: "Serviços", to: "/servicos" },
@@ -424,25 +423,14 @@ export function Navbar() {
                         {link.children ? (
                           <>
                             <div className="flex items-center justify-between gap-3">
-                              {link.to ? (
-                                <Link
-                                  to={link.to as "/"}
-                                  onClick={() => setMenuOpen(false)}
-                                  className={labelClass}
-                                  style={labelStyle}
-                                >
-                                  {link.label}
-                                </Link>
-                              ) : (
-                                <button
-                                  type="button"
-                                  onClick={() => setOpenSub((v) => (v === link.label ? null : link.label))}
-                                  className={`${labelClass} flex-1 text-left`}
-                                  style={labelStyle}
-                                >
-                                  {link.label}
-                                </button>
-                              )}
+                              <button
+                                type="button"
+                                onClick={() => setOpenSub((v) => (v === link.label ? null : link.label))}
+                                className={`${labelClass} flex-1 text-left`}
+                                style={labelStyle}
+                              >
+                                {link.label}
+                              </button>
                               <button
                                 type="button"
                                 aria-label={`Mostrar submenu ${link.label}`}
