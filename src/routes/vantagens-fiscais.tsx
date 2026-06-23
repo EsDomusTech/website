@@ -330,7 +330,7 @@ function VantagensFiscaisPage() {
       </section>
 
       <CtaBand
-        title="Quer Aproveitar\no Pacote Fiscal?"
+        title={"Quer Aproveitar\no Pacote Fiscal?"}
         text="Fale connosco e descubra como enquadrar a sua casa modular nos benefícios fiscais de 2026."
         label="Pedir Orçamento"
         secondaryLabel="Ver Sistema Construtivo"

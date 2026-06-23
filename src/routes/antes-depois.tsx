@@ -180,7 +180,7 @@ function AntesDepoisPage() {
       ))}
 
       <CtaBand
-        title="Comece a Sua\nEvolução"
+        title={"Comece a Sua\nEvolução"}
         text="A sua próxima transformação começa com uma conversa. Contacte-nos hoje."
         label="Consulta Gratuita"
       />

@@ -240,7 +240,7 @@ function TestemunhosPage() {
 
       <ClientLogos />
       <CtaBand
-        title="Pronto para o\nSeu Projeto?"
+        title={"Pronto para o\nSeu Projeto?"}
         text="Junte-se a centenas de clientes satisfeitos. Contacte-nos para uma consulta gratuita."
       />
     </main>
