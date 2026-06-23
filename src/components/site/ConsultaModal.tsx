@@ -5,12 +5,13 @@ import { Link } from "@tanstack/react-router";
 import { useConsultaModal } from "@/lib/consulta-store";
 import { DISTRITOS_PT } from "@/lib/site-data";
 
+const DISTRITOS = DISTRITOS_PT.filter((d) => d !== "Açores" && d !== "Madeira");
+
 type FormData = {
   tipoProjeto: string;
   tipologia: string;
   quando: string;
   situacao: string;
-  orcamento: string;
   localizacao: string;
   descricao: string;
   nome: string;
@@ -21,7 +22,7 @@ type FormData = {
 
 const EMPTY: FormData = {
   tipoProjeto: "", tipologia: "", quando: "", situacao: "",
-  orcamento: "", localizacao: "", descricao: "",
+  localizacao: "", descricao: "",
   nome: "", email: "", telefone: "", aceitoTermos: false,
 };
 
@@ -45,12 +46,6 @@ const SITUACAO = [
   "Já tenho terreno",
   "Estou em processo de compra de terreno",
   "Ainda estou a explorar possibilidades",
-];
-const ORCAMENTO = [
-  "300 mil — 450 mil",
-  "450 mil — 600 mil",
-  "600 mil — 800 mil",
-  "Mais de 800 mil",
 ];
 
 const slideVariants = {
@@ -85,7 +80,7 @@ export function ConsultaModal() {
   const go = (delta: number) => { setDir(delta); setStep((s) => s + delta); };
 
   const step1Valid = !!(data.tipoProjeto && data.tipologia && data.quando && data.situacao);
-  const step2Valid = !!data.orcamento;
+  const step2Valid = true;
   const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -242,16 +237,10 @@ export function ConsultaModal() {
                         {step === 1 && (
                           <div className="space-y-4">
                             <SelectField
-                              label="Orçamento previsto"
-                              value={data.orcamento}
-                              onChange={(v) => set("orcamento", v)}
-                              options={ORCAMENTO}
-                            />
-                            <SelectField
                               label="Localização"
                               value={data.localizacao}
                               onChange={(v) => set("localizacao", v)}
-                              options={DISTRITOS_PT}
+                              options={DISTRITOS}
                             />
                             <TextareaField
                               label="Descrição do projeto"
@@ -259,7 +248,6 @@ export function ConsultaModal() {
                               onChange={(v) => set("descricao", v)}
                             />
                             <NavBtns onBack={() => go(-1)} onNext={() => go(1)} nextDisabled={!step2Valid} />
-                            <Note />
                           </div>
                         )}
 
@@ -316,7 +304,6 @@ export function ConsultaModal() {
                               submitting={submitting}
                               submitDisabled={!step3Valid}
                             />
-                            <Note />
                           </form>
                         )}
                       </motion.div>
@@ -546,13 +533,3 @@ function NavBtns({
   );
 }
 
-function Note() {
-  return (
-    <p
-      className="text-center text-[11px] italic"
-      style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}
-    >
-      Trabalhamos apenas com orçamentos mínimos de 300 mil.
-    </p>
-  );
-}
