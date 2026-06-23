@@ -110,9 +110,6 @@ function ContactoPage() {
                 >
                   Iniciar Consulta →
                 </button>
-                <p className="mt-6 text-xs italic" style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-body)" }}>
-                  Trabalhamos apenas com orçamentos mínimos de 300 mil.
-                </p>
               </div>
             </div>
 
