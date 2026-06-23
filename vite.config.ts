@@ -7,6 +7,16 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        // The dev preview can request TanStack's client entry directly from node_modules;
+        // keep this private import resolvable so hydration does not 500-loop.
+        "#tanstack-start-plugin-adapters":
+          "/dev-server/node_modules/@tanstack/start-client-core/dist/esm/fake-entries/plugin-adapters.js",
+      },
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
