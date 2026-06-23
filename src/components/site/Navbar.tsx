@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
+import { useConsultaModal } from "@/lib/consulta-store";
 
 type SubItem = { label: string; to: string };
 type NavLink = { label: string; to?: string; children?: SubItem[] };
@@ -213,6 +214,7 @@ export function Navbar() {
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { scrollY } = useScroll();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { open: openConsulta } = useConsultaModal();
   const isHome = pathname === "/";
 
   useEffect(() => {
@@ -321,9 +323,10 @@ export function Navbar() {
             <div className="hidden items-center gap-5 xl:flex">
               <LangSelector light />
               <div className="h-4 w-px" style={{ backgroundColor: "rgba(255,255,255,0.3)" }} />
-              <Link
-                to="/contacto"
-                className="tracked inline-block px-6 py-3 text-[11px] font-medium transition-colors"
+              <button
+                type="button"
+                onClick={openConsulta}
+                className="tracked inline-block px-6 py-3 text-[11px] font-medium transition-colors cursor-pointer"
                 style={{
                   backgroundColor: "transparent",
                   border: "1px solid rgba(255,255,255,0.7)",
@@ -334,7 +337,7 @@ export function Navbar() {
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.7)"; }}
               >
                 Pedir Orçamento
-              </Link>
+              </button>
             </div>
 
             {/* Hamburger — visible on all sizes */}
@@ -521,16 +524,16 @@ export function Navbar() {
                 </div>
                 <div className="flex items-center gap-5">
                   <LangSelector dropUp />
-                  <Link
-                    to="/contacto"
-                    onClick={() => setMenuOpen(false)}
-                    className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white transition-colors"
+                  <button
+                    type="button"
+                    onClick={() => { setMenuOpen(false); openConsulta(); }}
+                    className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white transition-colors cursor-pointer"
                     style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
                     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
                   >
                     Pedir Orçamento
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>

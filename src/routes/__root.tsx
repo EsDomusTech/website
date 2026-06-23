@@ -14,6 +14,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { ConsultaModal } from "@/components/site/ConsultaModal";
+import { ConsultaModalProvider } from "@/lib/consulta-store";
 import { SITE } from "@/lib/site-data";
 
 function NotFoundComponent() {
@@ -167,12 +169,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MotionConfig reducedMotion="user">
-        <Navbar />
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-        <Footer />
-      </MotionConfig>
+      <ConsultaModalProvider>
+        <MotionConfig reducedMotion="user">
+          <Navbar />
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+          <Footer />
+          <ConsultaModal />
+        </MotionConfig>
+      </ConsultaModalProvider>
     </QueryClientProvider>
   );
 }
