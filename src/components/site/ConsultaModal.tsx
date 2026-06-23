@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useConsultaModal } from "@/lib/consulta-store";
+import { DISTRITOS_PT } from "@/lib/site-data";
 
 type FormData = {
   tipoProjeto: string;
@@ -31,7 +32,14 @@ const TIPO_PROJETO = [
   "Viabilidade do terreno",
   "Fase inicial / a avaliar",
 ];
-const TIPOLOGIAS = ["T0", "T1", "T2", "T3", "T4 ou +", "Ainda por definir"];
+const TIPOLOGIAS = [
+  { label: "T0", sub: "a partir de 35 m²" },
+  { label: "T1", sub: "a partir de 52 m²" },
+  { label: "T2", sub: "a partir de 72 m²" },
+  { label: "T3", sub: "a partir de 91 m²" },
+  { label: "T4 ou +", sub: "a partir de 120 m²" },
+  { label: "Ainda por definir", sub: "" },
+];
 const QUANDO = ["1 a 2 meses", "2 a 4 meses", "4 a 6 meses", "Mais de 6 meses"];
 const SITUACAO = [
   "Já tenho terreno",
@@ -211,11 +219,9 @@ export function ConsultaModal() {
                               onChange={(v) => set("tipoProjeto", v)}
                               options={TIPO_PROJETO}
                             />
-                            <SelectField
-                              label="Tipologia"
+                            <TipologiaField
                               value={data.tipologia}
                               onChange={(v) => set("tipologia", v)}
-                              options={TIPOLOGIAS}
                             />
                             <SelectField
                               label="Quando pretende avançar"
@@ -241,11 +247,11 @@ export function ConsultaModal() {
                               onChange={(v) => set("orcamento", v)}
                               options={ORCAMENTO}
                             />
-                            <TextField
+                            <SelectField
                               label="Localização"
                               value={data.localizacao}
                               onChange={(v) => set("localizacao", v)}
-                              placeholder="Ex: Porto, Braga, Guimarães"
+                              options={DISTRITOS_PT}
                             />
                             <TextareaField
                               label="Descrição do projeto"
@@ -326,6 +332,48 @@ export function ConsultaModal() {
   );
 }
 
+function TipologiaField({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  return (
+    <div>
+      <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
+        Tipologia
+      </p>
+      <div className="grid grid-cols-3 gap-2">
+        {TIPOLOGIAS.map((opt) => {
+          const selected = value === opt.label;
+          return (
+            <button
+              key={opt.label}
+              type="button"
+              onClick={() => onChange(opt.label)}
+              className="flex flex-col items-center justify-center px-2 py-3 text-center transition-colors duration-150"
+              style={{
+                fontFamily: "var(--font-display)",
+                backgroundColor: selected ? "var(--foreground)" : "transparent",
+                color: selected ? "#fff" : "var(--foreground)",
+                border: `1px solid ${selected ? "var(--foreground)" : "var(--ghost)"}`,
+              }}
+            >
+              <span className="text-sm font-bold" style={{ letterSpacing: "0.08em" }}>{opt.label}</span>
+              {opt.sub && (
+                <span
+                  className="text-[10px] mt-0.5"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    color: selected ? "rgba(255,255,255,0.75)" : "var(--muted-foreground)",
+                  }}
+                >
+                  {opt.sub}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function StepDot({ n, state }: { n: number; state: "done" | "active" | "idle" }) {
   const filled = state === "done" || state === "active";
   return (
@@ -354,7 +402,7 @@ function StepLine({ done }: { done: boolean }) {
 
 function SelectField({
   label, value, onChange, options,
-}: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
+}: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
   return (
     <div>
       <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
