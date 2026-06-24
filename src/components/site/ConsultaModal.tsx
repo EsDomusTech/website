@@ -281,7 +281,8 @@ export function ConsultaModal() {
                               label="Número telemóvel"
                               type="tel"
                               value={data.telefone}
-                              onChange={(v) => set("telefone", v.replace(/\D/g, ""))}
+                              onChange={(v) => set("telefone", v.replace(/\D/g, "").slice(0, 9))}
+                              maxLength={9}
                               required
                             />
                             <label className="flex items-start gap-3 cursor-pointer pt-1">
@@ -435,10 +436,10 @@ function SelectField({
 }
 
 function TextField({
-  label, value, onChange, type = "text", placeholder, required,
+  label, value, onChange, type = "text", placeholder, required, maxLength,
 }: {
   label: string; value: string; onChange: (v: string) => void;
-  type?: string; placeholder?: string; required?: boolean;
+  type?: string; placeholder?: string; required?: boolean; maxLength?: number;
 }) {
   return (
     <div>
@@ -451,6 +452,7 @@ function TextField({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
+        maxLength={maxLength}
         inputMode={type === "tel" ? "numeric" : undefined}
         className="w-full px-4 py-[14px] bg-transparent outline-none text-sm"
         style={{
