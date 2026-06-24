@@ -48,8 +48,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="transition-colors hover:text-[var(--gold)]"
+                className="transition-colors"
                 style={{ color: "rgba(255,255,255,0.6)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
               >
                 <Icon size={20} />
               </a>
@@ -71,16 +73,20 @@ export function Footer() {
           <div className="space-y-4">
             <a
               href={`tel:${SITE.phone}`}
-              className="s-body-md flex items-center gap-4 transition-colors hover:text-[var(--gold)]"
+              className="s-body-md flex items-center gap-4 transition-colors group"
               style={{ color: "rgba(255,255,255,0.6)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
             >
               <Phone size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="s-body-md flex items-center gap-4 min-w-0 transition-colors hover:text-[var(--gold)]"
+              className="s-body-md flex items-center gap-4 min-w-0 transition-colors group"
               style={{ color: "rgba(255,255,255,0.6)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
             >
               <Mail size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />
               <span className="min-w-0 break-words">{SITE.email}</span>
@@ -89,8 +95,10 @@ export function Footer() {
               href={SITE.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="s-body-md flex items-start gap-4 transition-colors hover:text-[var(--gold)]"
+              className="s-body-md flex items-start gap-4 transition-colors group"
               style={{ color: "rgba(255,255,255,0.6)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
             >
               <MapPin size={16} style={{ color: "var(--gold)", flexShrink: 0, marginTop: 4 }} />
               {SITE.address}
