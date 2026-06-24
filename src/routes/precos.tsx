@@ -101,6 +101,7 @@ export const Route = createFileRoute("/precos")({
       { title: "Preços | Casas Modulares, DomusTech Porto" },
       { name: "description", content: "Consulte os planos e preços da DomusTech para projetos de arquitetura e construção modular no Porto. Transparência total, sem surpresas." },
       { property: "og:title", content: "Preços | DomusTech" },
+      { property: "og:description", content: "Planos e preços DomusTech para construção modular no Porto. Transparência total, sem surpresas." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/precos` },
     ],

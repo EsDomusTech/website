@@ -55,6 +55,7 @@ export const Route = createFileRoute("/antes-depois")({
       { title: "Antes e Depois | Renovações, DomusTech Porto" },
       { name: "description", content: "Veja as transformações antes e depois dos projetos DomusTech. Remodelações e reabilitações no Porto que exemplificam o nosso método de trabalho." },
       { property: "og:title", content: "Antes e Depois | DomusTech" },
+      { property: "og:description", content: "Veja as transformações antes e depois dos projetos DomusTech. Remodelações e reabilitações no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/antes-depois` },
     ],

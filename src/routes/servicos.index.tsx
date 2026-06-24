@@ -7,7 +7,7 @@ import { SERVICES, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços | Construção Modular e Design de Interiores, DomusTech" },
+      { title: "Serviços de Construção Modular | DomusTech" },
       {
         name: "description",
         content:

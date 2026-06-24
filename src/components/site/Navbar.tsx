@@ -259,7 +259,7 @@ export function Navbar() {
           borderBottom: `1px solid ${isHome && !scrolled ? "transparent" : "rgba(255,255,255,0.08)"}`,
         }}
       >
-        <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
+        <nav aria-label="Navegação principal" className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 lg:px-10" style={{ height: scrolled ? 56 : 80, transition: "height 0.4s" }}>
           <Logo light />
 
           {/* Desktop nav links — Início omitido (o logo já liga a home) */}
@@ -281,7 +281,7 @@ export function Navbar() {
                   <Link
                     to={link.to as "/"}
                     activeOptions={{ exact: link.to === "/" }}
-                    aria-haspopup={link.children ? "true" : undefined}
+                    aria-haspopup={link.children ? "menu" : undefined}
                     aria-expanded={link.children ? openDropdown === link.label : undefined}
                     className="relative flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}
@@ -298,7 +298,7 @@ export function Navbar() {
                 ) : (
                   <button
                     type="button"
-                    aria-haspopup="true"
+                    aria-haspopup="menu"
                     aria-expanded={openDropdown === link.label}
                     className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}

@@ -55,7 +55,7 @@ export function Hero() {
         <motion.div
           key={s.img}
           className="absolute inset-0"
-          initial={{ opacity: 0 }}
+          initial={i === 0 ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: i === index ? 1 : 0 }}
           transition={{ duration: 1.2 }}
         >
