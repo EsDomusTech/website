@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CtaBand } from "@/components/site/CtaBand";
 import { BLOG_POSTS, getBlogPost, SITE } from "@/lib/site-data";
+import { useConsultaModal } from "@/lib/consulta-store";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -88,6 +89,7 @@ function BlogNotFound() {
 
 function BlogPostPage() {
   const { post: p } = Route.useLoaderData();
+  const { open: openConsulta } = useConsultaModal();
   const others = BLOG_POSTS.filter((x) => x.slug !== p.slug).slice(0, 3);
 
   return (
@@ -126,6 +128,17 @@ function BlogPostPage() {
 
             {/* Article */}
             <article className="col-span-12 md:col-span-8">
+              {/* Back link */}
+              <div className="mb-8">
+                <Link
+                  to="/blog"
+                  className="s-label-caps transition-colors hover:text-[#BE9355]"
+                  style={{ color: "var(--label-muted)" }}
+                >
+                  ← Blog
+                </Link>
+              </div>
+
               {/* Meta */}
               <div
                 className="flex items-center gap-6 mb-10 pb-8 border-b"
@@ -179,15 +192,16 @@ function BlogPostPage() {
                 <p className="s-body-md mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
                   Fale com a nossa equipa. Primeira consulta sem compromisso.
                 </p>
-                <Link
-                  to="/contacto"
-                  className="s-label-caps inline-block px-8 py-4 text-white transition-colors duration-300"
+                <button
+                  type="button"
+                  onClick={openConsulta}
+                  className="s-label-caps inline-block px-8 py-4 text-white transition-colors duration-300 cursor-pointer"
                   style={{ backgroundColor: "#BE9355" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#d4a968")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#BE9355")}
                 >
                   Contactar
-                </Link>
+                </button>
               </div>
 
               {/* Other articles */}

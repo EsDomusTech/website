@@ -145,10 +145,7 @@ function ServicosPage() {
       })}
 
       {/* CTA */}
-      <CtaBand
-        secondaryLabel="Pedir Orçamento"
-        secondaryTo="/contacto"
-      />
+      <CtaBand />
     </main>
   );
 }

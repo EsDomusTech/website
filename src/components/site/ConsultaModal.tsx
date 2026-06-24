@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -61,15 +61,20 @@ export function ConsultaModal() {
   const [data, setData] = useState<FormData>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const openedAt = useRef<number | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) openedAt.current = Date.now();
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
-      const t = setTimeout(() => { setStep(0); setSubmitted(false); setData(EMPTY); }, 350);
+      const t = setTimeout(() => {
+        setStep(0); setSubmitted(false); setData(EMPTY); setHoneypot("");
+      }, 350);
       return () => clearTimeout(t);
     }
   }, [isOpen]);
@@ -83,17 +88,26 @@ export function ConsultaModal() {
   const step2Valid = true;
   const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
 
+  const isBot = () => {
+    if (honeypot) return true;
+    const elapsed = openedAt.current ? Date.now() - openedAt.current : 0;
+    if (elapsed < 8000) return true;
+    return false;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!step3Valid) return;
     setSubmitting(true);
-    try {
-      await fetch("https://hook.eu1.make.com/4yct8vzklq3r325srg35i7w6ef1oscxo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, timestamp: new Date().toISOString() }),
-      });
-    } catch { /* show success regardless */ }
+    if (!isBot()) {
+      try {
+        await fetch("https://hook.eu1.make.com/4yct8vzklq3r325srg35i7w6ef1oscxo", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data, timestamp: new Date().toISOString() }),
+        });
+      } catch { /* show success regardless */ }
+    }
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -250,6 +264,17 @@ export function ConsultaModal() {
 
                         {step === 2 && (
                           <form onSubmit={handleSubmit} className="space-y-4">
+                            {/* honeypot — bots fill this, humans never see it */}
+                            <div style={{ position: "absolute", left: "-9999px", top: "-9999px", width: 1, height: 1, overflow: "hidden" }} aria-hidden="true">
+                              <input
+                                type="text"
+                                name="website"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                tabIndex={-1}
+                                autoComplete="off"
+                              />
+                            </div>
                             <TextField
                               label="Nome"
                               value={data.nome}

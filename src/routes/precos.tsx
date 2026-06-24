@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
+import { useConsultaModal } from "@/lib/consulta-store";
 
 const PLANS = [
   {
@@ -111,6 +112,7 @@ export const Route = createFileRoute("/precos")({
 });
 
 function PrecosPage() {
+  const { open: openConsulta } = useConsultaModal();
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
@@ -217,9 +219,10 @@ function PrecosPage() {
 
                 {/* CTA */}
                 <div className="col-span-12 md:col-span-2 flex md:justify-end md:items-start">
-                  <Link
-                    to={plan.to as "/contacto"}
-                    className="s-label-caps inline-block px-8 py-4 text-center transition-colors duration-300 w-full md:w-auto"
+                  <button
+                    type="button"
+                    onClick={openConsulta}
+                    className="s-label-caps inline-block px-8 py-4 text-center transition-colors duration-300 w-full md:w-auto cursor-pointer"
                     style={{
                       backgroundColor: plan.featured ? "#BE9355" : "#000000",
                       color: "#ffffff",
@@ -234,7 +237,7 @@ function PrecosPage() {
                     }}
                   >
                     {plan.cta}
-                  </Link>
+                  </button>
                 </div>
 
               </div>
@@ -351,15 +354,16 @@ function PrecosPage() {
           <h2 className="s-display-lg mb-8" style={{ color: "#ffffff" }}>
             Cada projeto é único
           </h2>
-          <Link
-            to="/contacto"
-            className="s-label-caps px-12 py-6 text-white transition-colors duration-300"
+          <button
+            type="button"
+            onClick={openConsulta}
+            className="s-label-caps px-12 py-6 text-white transition-colors duration-300 cursor-pointer"
             style={{ backgroundColor: "#BE9355" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#ffffff"; (e.currentTarget as HTMLElement).style.color = "#000000"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#BE9355"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
           >
             Pedir Orçamento
-          </Link>
+          </button>
         </div>
       </section>
 

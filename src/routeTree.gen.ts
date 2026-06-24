@@ -25,6 +25,7 @@ import { Route as AntesDepoisRouteImport } from './routes/antes-depois'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosListaRouteImport } from './routes/projetos.lista'
 import { Route as ProjetosFiltroRouteImport } from './routes/projetos.filtro'
@@ -114,6 +115,11 @@ const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
   path: '/projetos/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
 const ServicosSlugRoute = ServicosSlugRouteImport.update({
   id: '/servicos/$slug',
   path: '/servicos/$slug',
@@ -178,13 +184,13 @@ export interface FileRoutesByFullPath {
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/antes-depois': typeof AntesDepoisRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/equipa': typeof EquipaRoute
@@ -204,6 +210,7 @@ export interface FileRoutesByTo {
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/blog': typeof BlogIndexRoute
   '/projetos': typeof ProjetosIndexRoute
   '/servicos': typeof ServicosIndexRoute
 }
@@ -231,6 +238,7 @@ export interface FileRoutesById {
   '/projetos/filtro': typeof ProjetosFiltroRoute
   '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -259,13 +267,13 @@ export interface FileRouteTypes {
     | '/projetos/filtro'
     | '/projetos/lista'
     | '/servicos/$slug'
+    | '/blog/'
     | '/projetos/'
     | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/antes-depois'
-    | '/blog'
     | '/contacto'
     | '/empresa'
     | '/equipa'
@@ -285,6 +293,7 @@ export interface FileRouteTypes {
     | '/projetos/filtro'
     | '/projetos/lista'
     | '/servicos/$slug'
+    | '/blog'
     | '/projetos'
     | '/servicos'
   id:
@@ -311,6 +320,7 @@ export interface FileRouteTypes {
     | '/projetos/filtro'
     | '/projetos/lista'
     | '/servicos/$slug'
+    | '/blog/'
     | '/projetos/'
     | '/servicos/'
   fileRoutesById: FileRoutesById
@@ -454,6 +464,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/servicos/$slug': {
       id: '/servicos/$slug'
       path: '/servicos/$slug'
@@ -515,10 +532,12 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
