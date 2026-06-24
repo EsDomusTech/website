@@ -138,3 +138,126 @@ _(nenhum item pendente)_
 - **Sem testemunhos** — secção removida deliberadamente (sem testemunhos reais disponíveis); não adicionar VideoTestimonials, carousels de reviews, ou rota `/testemunhos`
 - **Blog: 3 placeholders** em `site-data.ts` (`artigo-1/2/3`) — slugs/títulos/categorias/conteúdo a definir pelo utilizador antes do lançamento; CATEGORIES em `blog.tsx` derivadas dinamicamente de `BLOG_POSTS`
 - **FAQ: texto sempre exposto** — sem accordion/dropdown; conteúdo sempre no DOM para indexação por crawlers
+- **Cartões de fases removidos de `/precos`** — secção "Plans — editorial rows" (FASE 01 Consulta / FASE 02 Projeto / FASE 03 Chave na Mão) removida a pedido. Para repor, adicionar antes da secção "Estimativas por Tipologia" (linha `{/* Estimativas por Tipologia */}`):
+
+<details>
+<summary>Código das fases (colar em precos.tsx)</summary>
+
+```tsx
+// Constante PLANS — colar antes de PRICE_NOTES
+const PLANS = [
+  {
+    name: "Consulta",
+    label: "FASE 01",
+    price: "Gratuito",
+    featured: false,
+    description: "Para quem está a explorar as possibilidades e quer perceber o potencial do projeto.",
+    features: [
+      "Reunião inicial de 60 minutos",
+      "Análise do terreno ou espaço",
+      "Estimativa de custo orientativa",
+      "Apresentação de casos de estudo",
+      "Sem compromisso",
+    ],
+    cta: "Agendar Consulta",
+    to: "/contacto",
+  },
+  {
+    name: "Projeto",
+    label: "FASE 02",
+    price: "A partir de 3.500€",
+    featured: true,
+    description: "Projeto de arquitetura completo, da conceção ao licenciamento, com acompanhamento dedicado.",
+    features: [
+      "Projeto de arquitetura completo",
+      "Renderizações 3D fotorrealistas",
+      "Projeto de interiores",
+      "Gestão de licenciamento",
+      "Caderno de encargos detalhado",
+      "Revisões ilimitadas",
+    ],
+    cta: "Iniciar Projeto",
+    to: "/contacto",
+  },
+  {
+    name: "Chave na Mão",
+    label: "FASE 03",
+    price: "1.350 €/m² + IVA",
+    featured: false,
+    description: "Construção modular completa: do projeto à entrega da casa pronta a habitar, com gestão integral de todas as fases.",
+    features: [
+      "Visita técnica, projeto e licenciamento incluídos",
+      "Estrutura, casas de banho e cozinha equipadas",
+      "Isolamento, pavimentos, janelas e portas",
+      "Eletricidade, canalizações e cobertura",
+      "Garantia estrutural de 10 anos",
+      "Pagamento em 4 prestações de 25% + IVA",
+    ],
+    cta: "Pedir Orçamento",
+    to: "/contacto",
+  },
+];
+
+// Secção JSX — colar antes de {/* Estimativas por Tipologia */}
+      {/* Plans — editorial rows */}
+      <section className="py-16 md:py-[120px]" style={{ backgroundColor: "#f3f3f3" }}>
+        <div className="s-wrap space-y-4">
+          {PLANS.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              style={{
+                backgroundColor: plan.featured ? "#111111" : "#ffffff",
+                borderLeft: `4px solid ${plan.featured ? "#BE9355" : "#e8e8e8"}`,
+              }}
+            >
+              <div className="grid grid-cols-12 gap-6 p-8 md:p-10 items-start">
+                <div className="col-span-12 md:col-span-3">
+                  <span className="s-label-caps block mb-2" style={{ color: "#BE9355", letterSpacing: "0.25em" }}>
+                    {plan.label}
+                  </span>
+                  <h2 className="text-[1.6rem] font-bold uppercase leading-tight" style={{ fontFamily: "var(--font-display)", color: plan.featured ? "#ffffff" : "#000000", letterSpacing: "0.04em" }}>
+                    {plan.name}
+                  </h2>
+                </div>
+                <div className="col-span-12 md:col-span-3">
+                  <p className="s-body-md mb-5" style={{ color: plan.featured ? "rgba(255,255,255,0.55)" : "#444748" }}>
+                    {plan.description}
+                  </p>
+                  <p className="s-headline-md" style={{ color: plan.featured ? "#BE9355" : "#000000" }}>
+                    {plan.price !== "Gratuito" && (
+                      <span className="s-label-caps mr-2" style={{ color: plan.featured ? "rgba(255,255,255,0.4)" : "var(--muted-foreground)" }}>DESDE </span>
+                    )}
+                    {plan.price}
+                  </p>
+                </div>
+                <ul className="col-span-12 md:col-span-4 space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#BE9355" }} />
+                      <span className="s-body-md" style={{ color: plan.featured ? "rgba(255,255,255,0.65)" : "#444748" }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="col-span-12 md:col-span-2 flex md:justify-end md:items-start">
+                  <button
+                    type="button"
+                    onClick={openConsulta}
+                    className="s-label-caps inline-block px-8 py-4 text-center transition-colors duration-300 w-full md:w-auto cursor-pointer"
+                    style={{ backgroundColor: plan.featured ? "#BE9355" : "#000000", color: "#ffffff" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "#ffffff" : "#BE9355"; (e.currentTarget as HTMLElement).style.color = plan.featured ? "#000000" : "#ffffff"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = plan.featured ? "#BE9355" : "#000000"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
+                  >
+                    {plan.cta}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+```
+</details>
