@@ -8,7 +8,6 @@ import { DISTRITOS_PT } from "@/lib/site-data";
 const DISTRITOS = DISTRITOS_PT.filter((d) => d !== "Açores" && d !== "Madeira");
 
 type FormData = {
-  tipoProjeto: string;
   tipologia: string;
   quando: string;
   situacaoTerreno: string;
@@ -22,18 +21,11 @@ type FormData = {
 };
 
 const EMPTY: FormData = {
-  tipoProjeto: "", tipologia: "", quando: "", situacaoTerreno: "",
+  tipologia: "", quando: "", situacaoTerreno: "",
   localizacao: "", descricao: "", formaPagamento: "",
   nome: "", email: "", telefone: "", aceitoTermos: false,
 };
 
-const TIPO_PROJETO = [
-  "Moradia (projeto + construção)",
-  "Projeto de arquitetura",
-  "Projeto + engenharia",
-  "Viabilidade do terreno",
-  "Fase inicial / a avaliar",
-];
 const TIPOLOGIAS = [
   { label: "T0", sub: "a partir de 35 m²" },
   { label: "T1", sub: "a partir de 52 m²" },
@@ -87,7 +79,7 @@ export function ConsultaModal() {
 
   const go = (delta: number) => { setDir(delta); setStep((s) => s + delta); };
 
-  const step1Valid = !!(data.tipoProjeto && data.tipologia && data.quando && data.situacaoTerreno);
+  const step1Valid = !!(data.tipologia && data.quando && data.situacaoTerreno);
   const step2Valid = true;
   const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
 
@@ -213,12 +205,6 @@ export function ConsultaModal() {
                       >
                         {step === 0 && (
                           <div className="space-y-4">
-                            <SelectField
-                              label="Tipo de projeto"
-                              value={data.tipoProjeto}
-                              onChange={(v) => set("tipoProjeto", v)}
-                              options={TIPO_PROJETO}
-                            />
                             <TipologiaField
                               value={data.tipologia}
                               onChange={(v) => set("tipologia", v)}
