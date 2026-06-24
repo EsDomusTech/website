@@ -14,19 +14,73 @@ const PRICE_NOTES = [
     value: "≈ 108.000 € a 230.000 € (sem IVA)",
   },
   {
-    label: "Plano de pagamento",
-    value: "4 prestações de 25% + IVA: assinatura, início de fabrico, compra de materiais, entrega final",
+    label: "Plano de pagamento (5 marcos contratuais)",
+    value: "25% + 25% + 25% + 15% + 10% + IVA",
   },
 ];
 
-const FAQS_PRECOS = [
+type PaymentPhase = { pct: string; label: string; items: string[] };
+type FaqPrecos = { q: string; a: string; phases?: PaymentPhase[] };
+
+const PAYMENT_PHASES: PaymentPhase[] = [
+  {
+    pct: "25%",
+    label: "Adjudicação do contrato e trabalhos iniciais",
+    items: [
+      "Reuniões de arquitetura para definição do Estudo Prévio",
+      "Desenvolvimento dos trabalhos de projeto de arquitetura, engenharia e especialidades",
+      "Elaboração de desenhos 3D exteriores",
+      "Visita técnica do engenheiro ao terreno",
+      "Entrega de toda a documentação junto dos serviços competentes",
+    ],
+  },
+  {
+    pct: "25%",
+    label: "Início da construção em fábrica",
+    items: [
+      "Aquisição de materiais",
+      "Construção das estruturas em fábrica",
+    ],
+  },
+  {
+    pct: "25%",
+    label: "Montagem das estruturas em obra e execução da base",
+    items: [
+      "Execução da base em betão, de acordo com o projeto de arquitetura aprovado",
+      "Montagem da cobertura",
+      "Execução das paredes exteriores e interiores",
+      "Implementação de todas as infraestruturas de especialidades",
+    ],
+  },
+  {
+    pct: "15%",
+    label: "Acabamentos finais e instalações",
+    items: [
+      "Aquisição de materiais de acabamentos finos",
+      "Instalação de equipamentos de instalações sanitárias",
+      "Execução de revestimentos, pavimentos, janelas, portadas e demais acabamentos incluídos no projeto",
+    ],
+  },
+  {
+    pct: "10%",
+    label: "Finalização e entrega da habitação",
+    items: [
+      "Conclusão da obra",
+      "Entrega da habitação ao contratante",
+      "Habitação devidamente licenciada para habitação",
+    ],
+  },
+];
+
+const FAQS_PRECOS: FaqPrecos[] = [
   {
     q: "Os preços incluem IVA?",
     a: "Não. Os valores de referência (1.350 €/m² chave na mão e 1.150 €/m² na variante estrutura/laje/exterior) são apresentados sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.",
   },
   {
     q: "Como é feito o pagamento?",
-    a: "Em 4 prestações de 25% + IVA, associadas a marcos do projeto: assinatura do contrato, início de fabrico, compra de materiais e entrega final.",
+    a: "O pagamento é distribuído por 5 marcos contratuais, associados ao avanço real da obra:",
+    phases: PAYMENT_PHASES,
   },
   {
     q: "Quanto custa, na prática, uma casa DomusTech?",
@@ -38,7 +92,7 @@ const FAQS_PRECOS = [
   },
   {
     q: "O que fica fora do preço?",
-    a: "Taxas camarárias, instalação efetiva (não a pré-instalação) de ar condicionado, painéis solares e estores, projetos de especialidades orçamentáveis à parte, e extras como cozinha de upgrade, garagem, piscina ou deck.",
+    a: "Taxas camarárias, fiscal de obras, terraplanagem, ligação efetiva às redes de água e energia, instalação efetiva (não a pré-instalação) de ar condicionado, painéis solares e estores, projetos de especialidades orçamentáveis à parte, e extras como cozinha de upgrade, garagem, piscina ou deck.",
   },
 ];
 
@@ -253,6 +307,26 @@ function PrecosPage() {
                   <p className="s-body-md" style={{ color: "#444748" }}>
                     {faq.a}
                   </p>
+                  {faq.phases && (
+                    <div className="mt-6 space-y-5">
+                      {faq.phases.map((phase) => (
+                        <div key={phase.label}>
+                          <div className="flex items-baseline gap-3 mb-2">
+                            <span style={{ fontFamily: "var(--font-display)", color: "#BE9355", fontSize: "1.05rem", letterSpacing: "0.04em" }}>{phase.pct}</span>
+                            <span className="s-body-md" style={{ color: "#000000", fontWeight: 600 }}>{phase.label}</span>
+                          </div>
+                          <ul className="space-y-1 pl-10">
+                            {phase.items.map((item) => (
+                              <li key={item} className="s-body-sm flex items-start gap-2" style={{ color: "#444748" }}>
+                                <span className="shrink-0 mt-1.5 block h-px w-4" style={{ backgroundColor: "#BE9355" }} />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>

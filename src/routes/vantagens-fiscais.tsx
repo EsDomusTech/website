@@ -10,12 +10,13 @@ import { useConsultaModal } from "@/lib/consulta-store";
 const BENEFITS = [
   {
     num: "01",
-    title: "IVA a 6% na construção",
+    title: "IVA a 6% na construção *",
     points: [
       "Aplica-se a empreitadas de construção/reabilitação para habitação própria permanente (até 660.982 €) ou arrendamento habitacional (renda até 2.300 €/mês).",
       "Válido para obras iniciadas entre 23/set/2025 e 31/dez/2029, com vigência até 31/dez/2032.",
       "Se for para venda, esta tem de ocorrer no prazo de 24 meses após o início de utilização.",
       "Se for para arrendamento, o imóvel tem de ficar arrendado pelo menos 36 meses nos primeiros 5 anos.",
+      "* Sujeito a condições e requisitos — confirme a sua situação com um contabilista.",
     ],
   },
   {
@@ -35,6 +36,16 @@ const BENEFITS = [
       "Recupera a diferença entre os 23% pagos e os 6% que seriam devidos.",
       "Pedidos abrem em outubro de 2026, com prazo de resposta até 150 dias.",
       "Documentação: contrato de empreitada escrito, faturas, título de utilização e valor do terreno.",
+    ],
+  },
+  {
+    num: "04",
+    title: "Mais-valias: mesma regra que a construção tradicional",
+    points: [
+      "A exclusão de mais-valias na venda da habitação própria permanente aplica-se a casas modulares exatamente como às tradicionais.",
+      "Condição: os valores de realização devem ser reinvestidos na aquisição de outra habitação própria permanente num prazo de 36 meses.",
+      "O Código do IRS não faz distinção entre construção modular e tradicional para efeitos de mais-valias.",
+      "Este benefício é independente do Pacote Fiscal 2026 e já estava em vigor.",
     ],
   },
 ];
@@ -70,6 +81,10 @@ const FAQS = [
   {
     q: "Até quando dura este pacote?",
     a: "O IVA a 6% é válido para obras iniciadas entre 23/set/2025 e 31/dez/2029, com vigência até 31/dez/2032. Os pedidos de restituição parcial de IVA para autoconstrução abrem em outubro de 2026, com prazo de resposta até 150 dias.",
+  },
+  {
+    q: "A exclusão de mais-valias aplica-se a casas modulares?",
+    a: "Sim. O Código do IRS não distingue construção modular de tradicional. A exclusão de mais-valias na venda de habitação própria permanente aplica-se desde que os valores de realização sejam reinvestidos na aquisição de outra habitação própria permanente no prazo de 36 meses. Este benefício é independente do Pacote Fiscal 2026.",
   },
 ];
 
@@ -185,8 +200,8 @@ function VantagensFiscaisPage() {
       {/* As três medidas fiscais */}
       <section style={{ paddingBlock: 120 }}>
         <div className="s-wrap">
-          <SectionTitle eyebrow="O Que Muda" first="TRÊS MEDIDAS" second="CHAVE" align="left" className="mb-16" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <SectionTitle eyebrow="O Que Muda" first="QUATRO MEDIDAS" second="CHAVE" align="left" className="mb-16" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {BENEFITS.map((b, i) => (
               <motion.div
                 key={b.num}

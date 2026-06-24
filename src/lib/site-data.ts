@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
       { num: "01", title: "Consulta e Terreno", text: "Visita técnica ao terreno, análise de condicionantes legais e briefing detalhado do programa de necessidades." },
       { num: "02", title: "Projeto e Licenciamento", text: "Arquitetura, engenharia estrutural e gestão completa do processo de licenciamento camarário." },
       { num: "03", title: "Fabrico em Fábrica", text: "Produção dos módulos em ambiente fabril controlado, em paralelo com a aprovação do projeto — sem paragens de obra." },
-      { num: "04", title: "Montagem e Entrega", text: "Instalação no terreno em 60 a 90 dias, com entrega chave na mão, ligações às redes e garantia estrutural de 10 anos." },
+      { num: "04", title: "Montagem e Entrega", text: "Instalação no terreno em 60 a 90 dias, com entrega chave na mão, ligações às redes e garantia estrutural de 10 anos. Prazos e condições sob consulta." },
     ],
   },
   {
