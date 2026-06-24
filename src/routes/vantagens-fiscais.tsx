@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { SITE } from "@/lib/site-data";
+import { useConsultaModal } from "@/lib/consulta-store";
 
 /* Medidas do pacote fiscal 2026 — DL n.º 97/2026 (20 maio 2026) */
 const BENEFITS = [
@@ -151,6 +152,7 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 }
 
 function VantagensFiscaisPage() {
+  const { open: openConsulta } = useConsultaModal();
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
@@ -286,15 +288,16 @@ function VantagensFiscaisPage() {
             que a sua casa modular cumpra os requisitos do pacote fiscal e os respetivos prazos.
           </p>
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              to="/contacto"
-              className="s-label-caps inline-block px-12 py-5 text-white transition-all duration-300"
+            <button
+              type="button"
+              onClick={openConsulta}
+              className="s-label-caps inline-block px-12 py-5 text-white transition-all duration-300 cursor-pointer"
               style={{ backgroundColor: "var(--gold)" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d4a968")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
             >
               Pedir Orçamento
-            </Link>
+            </button>
             <Link
               to="/precos"
               className="s-label-caps inline-block border border-white px-12 py-5 text-white transition-all duration-300 hover:bg-white hover:text-black"

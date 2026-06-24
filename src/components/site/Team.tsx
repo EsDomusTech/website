@@ -27,7 +27,7 @@ export function Team() {
                 <img
                   src={member.image}
                   alt={`${member.name}, ${member.role} na DomusTech`}
-                  className="h-full w-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-15" />
                 {/* Gold line reveal on hover */}
