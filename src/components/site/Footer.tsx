@@ -40,6 +40,9 @@ export function Footer() {
           <p className="s-body-md mb-8" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>
             Construção modular com identidade própria. Design rigoroso, prazos certos, no Porto.
           </p>
+          <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
+            Redes Sociais
+          </h3>
           <div className="flex gap-4">
             {SOCIAL.map(({ label, Icon, href }) => (
               <a

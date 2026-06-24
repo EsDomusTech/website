@@ -9,7 +9,7 @@ export function Blog() {
     <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
       <div className="s-wrap">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <SectionTitle eyebrow="Atualidade" first="Últimas" second="Notícias" align="left" />
+          <SectionTitle eyebrow="Atualidade" first="Do" second="Blog" align="left" />
           <Link
             to="/blog"
             className="tracked inline-flex items-center gap-3 text-[11px] font-medium transition-colors"

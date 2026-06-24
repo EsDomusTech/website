@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { motion, useInView } from "framer-motion";
 
 const BODY =
@@ -58,8 +59,8 @@ export function About() {
               <h2 className="s-headline-lg mb-10">
                 Arquitetura Modular Feita no Porto
               </h2>
-              <a
-                href="/empresa"
+              <Link
+                to="/empresa"
                 className="s-label-caps inline-flex items-center gap-4 transition-colors"
                 style={{ color: "var(--foreground)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
@@ -67,7 +68,7 @@ export function About() {
               >
                 <span className="block h-px w-8" style={{ backgroundColor: "var(--gold)" }} />
                 Conhecer a Empresa
-              </a>
+              </Link>
             </motion.div>
 
             {/* Col 7/12 — paragraph + mini stats grid */}
