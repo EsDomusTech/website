@@ -38,13 +38,25 @@ function ServicosPage() {
         </div>
         <div className="s-wrap relative z-10 pb-20 w-full grid grid-cols-12">
           <div className="col-span-12 md:col-span-8">
-            <h1 className="s-display-lg mb-6" style={{ color: "#ffffff" }}>
+            <motion.h1
+              className="s-display-lg mb-6"
+              style={{ color: "#ffffff" }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               Expertise <span style={{ color: "#BE9355" }}>&amp;</span> Precisão
-            </h1>
-            <p className="s-body-lg" style={{ color: "rgba(255,255,255,0.9)", maxWidth: 560 }}>
+            </motion.h1>
+            <motion.p
+              className="s-body-lg"
+              style={{ color: "rgba(255,255,255,0.9)", maxWidth: 560 }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            >
               Construção modular do projeto à entrega — casas, edifícios e interiores, tudo com a
               mesma equipa e o mesmo rigor técnico.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>

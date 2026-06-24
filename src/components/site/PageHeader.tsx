@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 type PageHeaderProps = {
   titleFirst: string;
   titleSecond: string;
@@ -28,24 +30,35 @@ export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, 
           <div className={`grid grid-cols-12 ${isCenter ? "justify-items-center" : ""}`}>
             <div className={`col-span-12 md:col-span-8 ${isCenter ? "md:col-start-3 text-center" : ""}`}>
               {eyebrow && (
-                <span
+                <motion.span
                   className="s-label-caps mb-6 block text-white"
                   style={{ letterSpacing: "0.5em" }}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   {eyebrow}
-                </span>
+                </motion.span>
               )}
-              <h1 className="s-display-lg text-white">
+              <motion.h1
+                className="s-display-lg text-white"
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: eyebrow ? 0.1 : 0, ease: "easeOut" }}
+              >
                 {titleFirst}{" "}
                 <span style={{ color: "#BE9355" }}>{titleSecond}</span>
-              </h1>
+              </motion.h1>
               {subtitle && (
-                <p
+                <motion.p
                   className="s-body-lg mt-6 text-white/90"
                   style={{ maxWidth: 560 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: eyebrow ? 0.2 : 0.1, ease: "easeOut" }}
                 >
                   {subtitle}
-                </p>
+                </motion.p>
               )}
             </div>
           </div>

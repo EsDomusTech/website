@@ -11,9 +11,10 @@ type FormData = {
   tipoProjeto: string;
   tipologia: string;
   quando: string;
-  situacao: string;
+  situacaoTerreno: string;
   localizacao: string;
   descricao: string;
+  formaPagamento: string;
   nome: string;
   email: string;
   telefone: string;
@@ -21,8 +22,8 @@ type FormData = {
 };
 
 const EMPTY: FormData = {
-  tipoProjeto: "", tipologia: "", quando: "", situacao: "",
-  localizacao: "", descricao: "",
+  tipoProjeto: "", tipologia: "", quando: "", situacaoTerreno: "",
+  localizacao: "", descricao: "", formaPagamento: "",
   nome: "", email: "", telefone: "", aceitoTermos: false,
 };
 
@@ -42,10 +43,17 @@ const TIPOLOGIAS = [
   { label: "Ainda por definir", sub: "" },
 ];
 const QUANDO = ["1 a 2 meses", "2 a 4 meses", "4 a 6 meses", "Mais de 6 meses"];
-const SITUACAO = [
+const SITUACAO_TERRENO = [
   "Já tenho terreno",
-  "Estou em processo de compra de terreno",
-  "Ainda estou a explorar possibilidades",
+  "Estou a negociar / à procura",
+  "Ainda não tenho terreno",
+  "Preciso de ajuda com o terreno",
+];
+const FORMA_PAGAMENTO = [
+  "Capital próprio",
+  "Financiamento bancário",
+  "Capital próprio + financiamento",
+  "Ainda estou a avaliar",
 ];
 
 const slideVariants = {
@@ -79,7 +87,7 @@ export function ConsultaModal() {
 
   const go = (delta: number) => { setDir(delta); setStep((s) => s + delta); };
 
-  const step1Valid = !!(data.tipoProjeto && data.tipologia && data.quando && data.situacao);
+  const step1Valid = !!(data.tipoProjeto && data.tipologia && data.quando && data.situacaoTerreno);
   const step2Valid = true;
   const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
 
@@ -225,10 +233,10 @@ export function ConsultaModal() {
                               options={QUANDO}
                             />
                             <SelectField
-                              label="Qual é a sua situação atual?"
-                              value={data.situacao}
-                              onChange={(v) => set("situacao", v)}
-                              options={SITUACAO}
+                              label="Situação do terreno"
+                              value={data.situacaoTerreno}
+                              onChange={(v) => set("situacaoTerreno", v)}
+                              options={SITUACAO_TERRENO}
                             />
                             <NavBtns isFirst onNext={() => go(1)} nextDisabled={!step1Valid} />
                           </div>
@@ -246,6 +254,12 @@ export function ConsultaModal() {
                               label="Descrição do projeto"
                               value={data.descricao}
                               onChange={(v) => set("descricao", v)}
+                            />
+                            <SelectField
+                              label="Forma de pagamento"
+                              value={data.formaPagamento}
+                              onChange={(v) => set("formaPagamento", v)}
+                              options={FORMA_PAGAMENTO}
                             />
                             <NavBtns onBack={() => go(-1)} onNext={() => go(1)} nextDisabled={!step2Valid} />
                           </div>

@@ -41,16 +41,17 @@ export function CtaBand({
             {text}
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <button
+            <motion.button
               type="button"
               onClick={openConsulta}
               className="s-label-caps block w-full text-center px-12 py-5 text-white transition-all duration-300 sm:inline-block sm:w-auto cursor-pointer"
               style={{ backgroundColor: "var(--gold)" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d4a968")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+              whileTap={{ scale: 0.97 }}
             >
               {label}
-            </button>
+            </motion.button>
             <Link
               to={secondaryTo as "/"}
               className="s-label-caps block w-full text-center border border-white px-12 py-5 text-white transition-all duration-300 hover:bg-white hover:text-black sm:inline-block sm:w-auto"

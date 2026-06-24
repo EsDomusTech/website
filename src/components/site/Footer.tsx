@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Clock, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { SITE } from "@/lib/site-data";
 
 const SOCIAL = [
-  { label: "Instagram", Icon: Instagram, href: "https://www.instagram.com/esdomustech_porto" },
-  { label: "LinkedIn", Icon: Linkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
-  { label: "Facebook", Icon: Facebook, href: "https://www.facebook.com/esdomustech/" },
+  { label: "Instagram", Icon: FaInstagram, href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", Icon: FaLinkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", Icon: FaFacebook, href: "https://www.facebook.com/esdomustech/" },
 ];
 
 const NAV_LINKS = [
@@ -25,7 +27,13 @@ export function Footer() {
       <div className="s-wrap grid grid-cols-12 gap-8 lg:gap-12 items-start">
 
         {/* Col 1 — 4/12: Brand + tagline + sociais */}
-        <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
+        <motion.div
+          className="col-span-12 md:col-span-4 mb-12 md:mb-0"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
           <p className="s-headline-md mb-6" style={{ color: "#fff" }}>
             {SITE.name.toUpperCase()}
           </p>
@@ -47,10 +55,16 @@ export function Footer() {
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Col 2 — 4/12: Contact */}
-        <div className="col-span-12 md:col-span-4 mb-12 md:mb-0 min-w-0">
+        <motion.div
+          className="col-span-12 md:col-span-4 mb-12 md:mb-0 min-w-0"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+        >
           <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
             Contacto
           </h3>
@@ -86,10 +100,16 @@ export function Footer() {
               {SITE.hours}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Col 3 — 4/12: Quick Links */}
-        <div className="col-span-12 md:col-span-4">
+        <motion.div
+          className="col-span-12 md:col-span-4"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
+        >
           <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
             Links Rápidos
           </h3>
@@ -108,12 +128,16 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-        </div>
+        </motion.div>
 
         {/* Bottom bar */}
-        <div
+        <motion.div
           className="col-span-12 mt-20 flex flex-col items-center gap-4 border-t pt-8 md:flex-row md:justify-between"
           style={{ borderColor: "rgba(255,255,255,0.1)" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
@@ -134,7 +158,7 @@ export function Footer() {
               Termos e Condições
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

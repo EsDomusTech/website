@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PROJECTS, SITE } from "@/lib/site-data";
@@ -35,9 +36,15 @@ function ProjetosPage() {
 
       <section className="section-pad">
         <div className="container-1100 grid gap-6 sm:grid-cols-2">
-          {PROJECTS.map((p) => (
-            <Link
+          {PROJECTS.map((p, i) => (
+            <motion.div
               key={p.slug}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.55, delay: i * 0.07, ease: "easeOut" }}
+            >
+            <Link
               to="/projetos/$slug"
               params={{ slug: p.slug }}
               className="group relative block aspect-[3/2] overflow-hidden"
@@ -55,6 +62,7 @@ function ProjetosPage() {
                 <h2 className="mt-1 font-display text-[22px] font-medium text-white">{p.name}</h2>
               </div>
             </Link>
+            </motion.div>
           ))}
         </div>
       </section>

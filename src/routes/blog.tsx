@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { BLOG_POSTS, SITE } from "@/lib/site-data";
 
@@ -45,15 +46,24 @@ function BlogPage() {
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
-              <span
+              <motion.span
                 className="s-label-caps mb-4 block"
                 style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 Insights
-              </span>
-              <h1 className="s-display-lg" style={{ color: "#000000" }}>
+              </motion.span>
+              <motion.h1
+                className="s-display-lg"
+                style={{ color: "#000000" }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              >
                 O Nosso Blog
-              </h1>
+              </motion.h1>
             </div>
           </div>
         </div>
@@ -67,8 +77,15 @@ function BlogPage() {
             {/* Artigos — col 8/12 */}
             <div className="col-span-12 md:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {displayed.map((n) => (
-                  <Link key={n.slug} to="/blog/$slug" params={{ slug: n.slug }} className="group block" style={{ backgroundColor: "#ffffff" }}>
+                {displayed.map((n, i) => (
+                  <motion.div
+                    key={n.slug}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                  >
+                  <Link to="/blog/$slug" params={{ slug: n.slug }} className="group block" style={{ backgroundColor: "#ffffff" }}>
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
                         src={n.image}
@@ -94,6 +111,7 @@ function BlogPage() {
                       </span>
                     </div>
                   </Link>
+                  </motion.div>
                 ))}
               </div>
 
