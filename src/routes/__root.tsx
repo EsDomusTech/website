@@ -179,9 +179,18 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ConsultaModalProvider>
         <MotionConfig reducedMotion="user">
+          <a
+            href="#main-content"
+            className="fixed left-4 top-4 z-[9999] -translate-y-16 bg-white px-4 py-2 text-sm font-medium text-black focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]"
+            style={{ transition: "transform 0.2s" }}
+          >
+            Saltar para conteúdo
+          </a>
           <Navbar />
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
+          <div id="main-content">
+            <Outlet />
+          </div>
           <Footer />
           <ConsultaModal />
         </MotionConfig>

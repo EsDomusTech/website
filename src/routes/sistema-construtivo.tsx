@@ -88,7 +88,7 @@ export const Route = createFileRoute("/sistema-construtivo")({
       {
         name: "description",
         content:
-          "Conheça o sistema construtivo DomusTech: estrutura em aço galvanizado, isolamento termoacústico, os dois sistemas de parede disponíveis e a ficha técnica completa de materiais.",
+          "Sistema construtivo DomusTech: aço galvanizado, isolamento termoacústico, dois sistemas de parede e ficha técnica de materiais.",
       },
       { property: "og:title", content: "Sistema Construtivo | DomusTech" },
       { property: "og:description", content: "Estrutura em aço galvanizado, composição por camada e ficha técnica de materiais." },
