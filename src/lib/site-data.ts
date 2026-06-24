@@ -270,7 +270,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Marisa Xavier",
     role: "Administrativo de Obras e Compras",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop&auto=format&q=80",
+    image: "/images/equipa/mariza.webp",
   },
   {
     name: "Juliane Zombini",

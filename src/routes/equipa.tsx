@@ -59,15 +59,33 @@ function EquipaPage() {
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
-              <span className="s-label-caps mb-4 block" style={{ color: "#BE9355", letterSpacing: "0.3em" }}>
+              <motion.span
+                className="s-label-caps mb-4 block"
+                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
                 As Pessoas
-              </span>
-              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
+              </motion.span>
+              <motion.h1
+                className="s-display-lg mb-8"
+                style={{ color: "#000000" }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              >
                 A Nossa Equipa
-              </h1>
-              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
+              </motion.h1>
+              <motion.p
+                className="s-body-lg"
+                style={{ color: "#444748", maxWidth: 640 }}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              >
                 Um grupo multidisciplinar de arquitectos, engenheiros e designers unidos pela mesma paixão: criar espaços extraordinários.
-              </p>
+              </motion.p>
             </div>
             <div className="col-span-4 self-end hidden md:block">
               <div className="h-px w-full mb-8" style={{ backgroundColor: "#c4c7c7" }} />

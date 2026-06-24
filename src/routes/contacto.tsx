@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Linkedin, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SITE } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
 
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", Icon: Instagram, href: "https://www.instagram.com/esdomustech_porto" },
-  { label: "LinkedIn", Icon: Linkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
-  { label: "Facebook", Icon: Facebook, href: "https://www.facebook.com/esdomustech/" },
+  { label: "Instagram", Icon: FaInstagram, href: "https://www.instagram.com/esdomustech_porto" },
+  { label: "LinkedIn", Icon: FaLinkedin, href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { label: "Facebook", Icon: FaFacebook, href: "https://www.facebook.com/esdomustech/" },
 ];
 
 function ContactoPage() {
@@ -39,14 +40,26 @@ function ContactoPage() {
         <div className="s-wrap">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-8">
-              <h1 className="s-display-lg mb-8" style={{ color: "var(--foreground)" }}>
+              <motion.h1
+                className="s-display-lg mb-8"
+                style={{ color: "var(--foreground)" }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
                 Vamos construir algo <br />
                 <span style={{ color: "var(--gold)" }}>duradouro</span>.
-              </h1>
-              <p className="s-body-lg" style={{ color: "var(--muted-foreground)", maxWidth: 560 }}>
+              </motion.h1>
+              <motion.p
+                className="s-body-lg"
+                style={{ color: "var(--muted-foreground)", maxWidth: 560 }}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+              >
                 O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
                 para discutir a sua visão de espaço e estrutura.
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -58,10 +71,22 @@ function ContactoPage() {
           <div className="grid grid-cols-12 gap-8 items-start">
 
             {/* Info col */}
-            <div className="col-span-12 md:col-span-4 space-y-16">
+            <motion.div
+              className="col-span-12 md:col-span-4 space-y-16"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <div>
                 <span className="s-label-caps mb-4 block" style={{ color: "var(--label-muted)" }}>O Escritório</span>
-                <p className="s-headline-md" style={{ color: "var(--foreground)", lineHeight: 1.5 }}>{SITE.address}</p>
+                <a
+                  href={SITE.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="s-headline-md transition-[text-decoration-color] underline decoration-transparent hover:decoration-current"
+                  style={{ color: "var(--foreground)", lineHeight: 1.5, textUnderlineOffset: "4px" }}
+                >{SITE.address}</a>
               </div>
               <div>
                 <span className="s-label-caps mb-4 block" style={{ color: "var(--label-muted)" }}>Contacto Directo</span>
@@ -86,10 +111,16 @@ function ContactoPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA col */}
-            <div className="col-span-12 md:col-span-7 md:col-start-6">
+            <motion.div
+              className="col-span-12 md:col-span-7 md:col-start-6"
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
+            >
               <div className="p-10 md:p-16" style={{ backgroundColor: "var(--dark-section)" }}>
                 <span className="s-label-caps block mb-6" style={{ color: "var(--gold)" }}>
                   Agendar Consulta
@@ -111,7 +142,7 @@ function ContactoPage() {
                   Iniciar Consulta →
                 </button>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

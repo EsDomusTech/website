@@ -300,11 +300,7 @@ function SistemaConstrutivoPage() {
         </div>
       </section>
 
-      <CtaBand
-        title={"Quer Saber\nMais?"}
-        text="Peça a ficha técnica completa e descubra qual o sistema construtivo certo para o seu projeto."
-        label="Pedir Ficha Técnica"
-      />
+      <CtaBand />
     </main>
   );
 }

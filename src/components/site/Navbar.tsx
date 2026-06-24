@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useConsultaModal } from "@/lib/consulta-store";
 
 type SubItem = { label: string; to: string };
@@ -41,9 +42,9 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL = [
-  { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
-  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
-  { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
+  { Icon: FaFacebook, label: "Facebook", href: "https://www.facebook.com/esdomustech/" },
+  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/esdomustech_porto" },
+  { Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
 ];
 
 const LANGS = [
@@ -394,15 +395,18 @@ export function Navbar() {
               {/* Top bar inside overlay */}
               <div className="flex items-center justify-between px-8 pt-7 pb-0 md:px-14">
                 <Logo />
-                <button
-                  type="button"
-                  className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
-                  style={{ color: "var(--foreground)" }}
-                  aria-label="Fechar menu"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <HamburgerIcon open={true} />
-                </button>
+                <div className="flex items-center gap-4">
+                  <LangSelector />
+                  <button
+                    type="button"
+                    className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
+                    style={{ color: "var(--foreground)" }}
+                    aria-label="Fechar menu"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <HamburgerIcon open={true} />
+                  </button>
+                </div>
               </div>
 
               {/* Nav items */}
@@ -510,19 +514,16 @@ export function Navbar() {
                     </a>
                   ))}
                 </div>
-                <div className="flex items-center gap-5">
-                  <LangSelector dropUp />
-                  <button
-                    type="button"
-                    onClick={() => { setMenuOpen(false); openConsulta(); }}
-                    className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white transition-colors cursor-pointer"
-                    style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
-                  >
-                    Pedir Orçamento
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => { setMenuOpen(false); openConsulta(); }}
+                  className="tracked inline-block px-7 py-3 text-[11px] font-medium text-white transition-colors cursor-pointer"
+                  style={{ backgroundColor: "#1b1b1b", fontFamily: "var(--font-display)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1b1b1b")}
+                >
+                  Pedir Orçamento
+                </button>
               </div>
             </motion.div>
           </motion.div>
