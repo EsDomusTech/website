@@ -95,16 +95,13 @@ export function ConsultaModal() {
     e.preventDefault();
     if (!step3Valid) return;
     setSubmitting(true);
-    const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL as string | undefined;
-    if (webhookUrl) {
-      try {
-        await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-      } catch { /* show success regardless */ }
-    }
+    try {
+      await fetch("https://hook.eu1.make.com/4yct8vzklq3r325srg35i7w6ef1oscxo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    } catch { /* show success regardless */ }
     setSubmitting(false);
     setSubmitted(true);
   };
