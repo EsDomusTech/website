@@ -72,7 +72,7 @@ function ContactoPage() {
 
             {/* Info col */}
             <motion.div
-              className="col-span-12 md:col-span-4 space-y-16"
+              className="col-span-12 md:col-span-4 space-y-8 md:space-y-16"
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -123,7 +123,7 @@ function ContactoPage() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
             >
-              <div className="p-10 md:p-16" style={{ backgroundColor: "var(--dark-section)" }}>
+              <div className="p-8 md:p-16" style={{ backgroundColor: "var(--dark-section)" }}>
                 <span className="s-label-caps block mb-6" style={{ color: "var(--gold)" }}>
                   Agendar Consulta
                 </span>
@@ -136,7 +136,7 @@ function ContactoPage() {
                 <button
                   type="button"
                   onClick={openConsulta}
-                  className="s-label-caps inline-block px-12 py-5 text-white transition-all duration-300 cursor-pointer"
+                  className="s-label-caps inline-block w-full md:w-auto px-12 py-5 text-center text-white transition-all duration-300 cursor-pointer"
                   style={{ backgroundColor: "var(--gold)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d4a968")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
