@@ -104,8 +104,10 @@ function ContactoPage() {
                 <div className="flex items-center gap-5">
                   {SOCIAL_LINKS.map(({ label, Icon, href }) => (
                     <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                      className="transition-colors hover:text-[#BE9355]"
-                      style={{ color: "var(--foreground)" }}>
+                      className="transition-colors"
+                      style={{ color: "var(--foreground)" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}>
                       <Icon size={20} />
                     </a>
                   ))}

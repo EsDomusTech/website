@@ -478,17 +478,25 @@ function TextField({
   );
 }
 
+const DESCRICAO_MAX = 350;
+
 function TextareaField({
   label, value, onChange,
 }: { label: string; value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
-        {label}
-      </p>
+      <div className="mb-1.5 flex items-baseline justify-between">
+        <p className="text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
+          {label}
+        </p>
+        <span className="text-xs" style={{ color: value.length >= DESCRICAO_MAX ? "var(--gold)" : "var(--label-muted)" }}>
+          {value.length}/{DESCRICAO_MAX}
+        </span>
+      </div>
       <textarea
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value.slice(0, DESCRICAO_MAX))}
+        maxLength={DESCRICAO_MAX}
         rows={4}
         className="w-full px-4 py-[14px] bg-transparent outline-none text-sm resize-none"
         style={{

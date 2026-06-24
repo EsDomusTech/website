@@ -3,7 +3,6 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Projects } from "@/components/site/Projects";
 import { Blog } from "@/components/site/Blog";
-import { ClientLogos } from "@/components/site/ClientLogos";
 import { SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -38,7 +37,6 @@ function Index() {
       <About />
       <Projects />
       <Blog />
-      <ClientLogos />
     </main>
   );
 }
