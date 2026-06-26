@@ -168,6 +168,15 @@ export function Footer() {
             >
               Termos e Condições
             </Link>
+            <a
+              href="https://www.livroreclamacoes.pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="s-body-md uppercase tracking-widest transition-colors hover:text-[var(--gold)]"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Livro de Reclamações
+            </a>
           </div>
         </motion.div>
       </div>

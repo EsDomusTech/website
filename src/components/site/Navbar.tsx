@@ -328,13 +328,13 @@ export function Navbar() {
                 onClick={openConsulta}
                 className="tracked inline-block px-6 py-3 text-[11px] font-medium transition-colors cursor-pointer"
                 style={{
-                  backgroundColor: "transparent",
-                  border: "1px solid rgba(255,255,255,0.7)",
+                  backgroundColor: "var(--gold)",
+                  border: "1px solid var(--gold)",
                   color: "#fff",
                   fontFamily: "var(--font-display)",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--gold)"; e.currentTarget.style.borderColor = "var(--gold)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.7)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#a67d44"; e.currentTarget.style.borderColor = "#a67d44"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--gold)"; e.currentTarget.style.borderColor = "var(--gold)"; }}
               >
                 Pedir Orçamento
               </button>

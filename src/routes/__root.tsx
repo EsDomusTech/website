@@ -15,7 +15,10 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ConsultaModal } from "@/components/site/ConsultaModal";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import { ConsultaModalProvider } from "@/lib/consulta-store";
+import { getConsent } from "@/lib/cookie-consent";
+import { loadGA } from "@/lib/analytics";
 import { SITE } from "@/lib/site-data";
 
 function NotFoundComponent() {
@@ -175,6 +178,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (getConsent() === "accepted") loadGA();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ConsultaModalProvider>
@@ -193,6 +200,7 @@ function RootComponent() {
           </div>
           <Footer />
           <ConsultaModal />
+          <CookieBanner />
         </MotionConfig>
       </ConsultaModalProvider>
     </QueryClientProvider>

@@ -123,7 +123,7 @@ export function About() {
                 </span>
                 <span
                   className="s-label-caps mt-3 text-center"
-                  style={{ color: "rgba(255,255,255,0.4)" }}
+                  style={{ color: "rgba(255,255,255,0.65)" }}
                 >
                   {s.label}
                 </span>

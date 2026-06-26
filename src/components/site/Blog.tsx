@@ -49,9 +49,9 @@ export function Blog() {
                 <div className="mb-4 flex flex-wrap items-center gap-3">
                   <span
                     className="tracked inline-flex items-center gap-1.5 text-[10px] font-medium"
-                    style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}
+                    style={{ color: "var(--foreground)", fontFamily: "var(--font-display)" }}
                   >
-                    <Tag className="h-2.5 w-2.5" />
+                    <Tag className="h-2.5 w-2.5 shrink-0" style={{ color: "var(--gold)" }} />
                     {n.cat}
                   </span>
                   <span className="h-3 w-px" style={{ backgroundColor: "var(--border)" }} />

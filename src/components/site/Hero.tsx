@@ -65,6 +65,10 @@ export function Hero() {
             className="h-full w-full object-cover"
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
+            {...(i === 0 ? {
+              srcSet: `${s.img.replace("w=1600&h=900", "w=800&h=450")} 800w, ${s.img} 1600w`,
+              sizes: "100vw",
+            } : {})}
           />
           <div className="absolute inset-0 bg-black/30" />
           {/* Gradient to ensure navbar legibility */}
@@ -85,11 +89,11 @@ export function Hero() {
       {/* Content — left-aligned, 2/3 width */}
       <div className="s-wrap relative z-10 flex min-h-[100dvh] flex-col justify-center pt-20 pb-12">
         <div className="max-w-[640px]">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div key={`slide-${index}`}>
               {/* Eyebrow */}
               <motion.span
-                className="s-label-caps mb-6 block text-white/80"
+                className="s-label-caps mb-6 block text-white"
                 style={{ letterSpacing: "0.5em" }}
                 custom={0}
                 variants={textVariants}
@@ -115,7 +119,7 @@ export function Hero() {
 
               {/* Subtitle */}
               <motion.p
-                className="s-body-lg mt-6 max-w-[440px] text-white/80"
+                className="s-body-lg mt-6 max-w-[440px] text-white/90"
                 custom={0.28}
                 variants={textVariants}
                 initial="hidden"
