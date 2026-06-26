@@ -16,7 +16,7 @@ const LOCAL_ADAPTER_PATH = resolve(
 
 export default defineConfig({
   vite: {
-    server: { port: 5352 },
+    server: { port: 5173 },
     resolve: {
       alias: {
         // The dev preview can request TanStack's client entry directly from node_modules;

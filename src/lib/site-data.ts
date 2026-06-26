@@ -1,10 +1,10 @@
 /**
- * Central content data for DomusTech — drives the SEO landing pages,
+ * Central content data for EsDomusTech — drives the SEO landing pages,
  * service detail pages, project portfolio and listing pages.
  */
 
 export const SITE = {
-  name: "DomusTech",
+  name: "EsDomusTech",
   domain: "https://domustech.lovable.app",
   tagline: "Casas Modulares Tecnológicas",
   phone: "+351 935 677 556",
@@ -35,9 +35,9 @@ export const SERVICES: Service[] = [
     name: "Casas Modulares no Porto",
     titleFirst: "CASAS",
     titleSecond: "MODULARES",
-    metaTitle: "Casas Modulares Porto | Construção Modular | DomusTech",
+    metaTitle: "Casas Modulares Porto | Construção Modular | EsDomusTech",
     metaDescription:
-      "Casas modulares no Porto: rápidas, sustentáveis e totalmente personalizadas. Projeto, fabrico e montagem chave na mão pela DomusTech.",
+      "Casas modulares no Porto: rápidas, sustentáveis e totalmente personalizadas. Projeto, fabrico e montagem chave na mão pela EsDomusTech.",
     excerpt:
       "Casas modulares pré-fabricadas, entregues chave na mão, com eficiência energética e prazos de construção reduzidos.",
     intro: [
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
     name: "Construção Modular",
     titleFirst: "CONSTRUÇÃO",
     titleSecond: "MODULAR",
-    metaTitle: "Construção Modular Porto | Edifícios e Habitação | DomusTech",
+    metaTitle: "Construção Modular Porto | Edifícios e Habitação | EsDomusTech",
     metaDescription:
       "Construção modular para habitação, comércio e espaços corporativos no Porto. Soluções pré-fabricadas escaláveis, sustentáveis e de montagem rápida.",
     excerpt:
@@ -214,6 +214,25 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "licenciamento-casas-modulares-portugal",
+    title: "Licenciamento de casas modulares em Portugal: guia completo 2026",
+    cat: "Licenciamento",
+    date: "Jul 2026",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=800&fit=crop&auto=format&q=80",
+    excerpt: "Comunicação prévia ou licença de construção? Quais as taxas camarárias a contar? Quanto tempo demora? Tudo o que precisa de saber sobre o licenciamento de casas modulares em Portugal.",
+    body: [
+      "O licenciamento é, de longe, a fase que mais dúvidas gera em quem pondera construir uma casa modular. A boa notícia: o processo é idêntico ao de qualquer construção convencional. A casa modular não tem um regime especial, mais complicado ou mais lento. O que muda é o prazo de obra — não o de licenciamento.",
+      "Em Portugal, existem dois regimes principais para licenciar uma habitação: a comunicação prévia e o pedido de licença de construção. A comunicação prévia aplica-se a obras que cumpram os planos municipais de ordenamento do território (PMOT) e não se situem em zonas condicionadas (RAN, REN, áreas protegidas). Neste regime, após a submissão da documentação, o município tem um prazo legal de 20 dias úteis para rejeitar — findo esse prazo sem resposta, a obra pode arrancar. Na prática, é o caminho mais rápido e o mais comum para moradias unifamiliares modulares em terreno urbano.",
+      "Quando o terreno está em zona condicionada, quando o projeto exige consulta a entidades externas (ICNF, APA, CCDR) ou quando o município assim o exige, o processo passa pelo pedido de licença de construção. Aqui os prazos são mais longos: tipicamente entre 3 a 6 meses, podendo estender-se em casos com pareceres externos. O alvará é emitido após aprovação e pagamento das taxas.",
+      "Que documentação é necessária? O projeto de arquitetura (peças desenhadas e escritas), projeto de estabilidade, especialidades (elétrica, AVAC, abastecimento de água e drenagem) e certificação energética. Na EsDomusTech, toda esta documentação é preparada pelos nossos técnicos — o cliente não precisa de contratar arquitecto nem engenheiro separadamente. Fazemos parte do processo.",
+      "As taxas camarárias variam de município para município e dependem da área de construção, do tipo de uso e dos índices urbanísticos locais. Para uma moradia de 100 m² em zona urbana, os valores mais comuns situam-se entre 2.000 € e 6.000 €. Municípios de maior dimensão (Porto, Lisboa, Braga) tendem a ter taxas mais elevadas; municípios do interior podem aplicar valores significativamente mais baixos. Este custo não está incluído no preço de construção e deve ser orçamentado separadamente.",
+      "Uma questão que surge frequentemente: a casa modular precisa de licença de habitação? Sim, obrigatoriamente. Após a conclusão da obra, é necessário solicitar a autorização de utilização (vulgo licença de habitação) ao município, que verifica a conformidade com o projeto aprovado e emite o documento. Sem este passo, a casa não pode ser registada na conservatória do registo predial como habitação permanente — e sem registo, o acesso a crédito habitação fica inviabilizado.",
+      "E em terreno rústico? Este é um ponto sensível. A legislação portuguesa restringe significativamente a construção em solo rústico. Existem exceções — como habitação para agricultores em explorações ativas, ou em áreas incluídas em planos de pormenor que permitam habitação — mas cada caso exige uma análise camarária prévia. A EsDomusTech avalia estas situações individualmente antes de avançar com qualquer proposta.",
+      "O nosso conselho prático: antes de comprar um terreno com o objetivo de construir uma casa modular, peça informação prévia ao município. Esta consulta é gratuita, não tem prazo vinculativo para o requerente e permite perceber, com segurança jurídica, o que é permitido construir naquele lote. Evita surpresas — e investimentos num terreno que depois não permite o projeto que tinha em mente.",
+    ],
+  },
+  {
     slug: "quanto-custa-casa-modular",
     title: "Quanto custa uma casa modular? Guia de preços 2026",
     cat: "Preços e Custos",
@@ -223,10 +242,10 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: "Estrutura a 1.150 €/m² ou chave-na-mão a 1.350 €/m²? Descubra o que está incluído em cada opção, o que pagar fora do preço de construção, e como funciona o financiamento.",
     body: [
       "A pergunta que mais recebemos é direta: quanto custa uma casa modular? A resposta honesta — e útil — é que o custo depende do tamanho, dos acabamentos e dos serviços incluídos. Mas há números concretos que pode usar como referência.",
-      "Na DomusTech, trabalhamos com dois referenciais de custo principais. A estrutura com laje e trabalhos exteriores fica em torno de 1.150 €/m² (+ IVA), enquanto a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — parte de 1.350 €/m² (+ IVA). Para uma casa de 80 m², estamos a falar de valores entre 108.000 € e 150.000 €; para 170 m², entre 195.000 € e 230.000 €.",
-      "O que está incluído no preço chave-na-mão? Estrutura metálica em aço galvanizado DX51D de 2 mm, fundações e laje, isolamentos, paredes e teto em gesso cartonado, cozinha equipada, casas de banho completas, instalações elétrica e hidráulica, janelas e portas. Quando recebe as chaves, a casa está pronta a habitar.",
+      "Na EsDomusTech, trabalhamos com dois referenciais de custo principais. A estrutura com laje e trabalhos exteriores ronda os 1.150 €/m² (+ IVA), enquanto a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — parte de 1.350 €/m² (+ IVA). Para uma casa de 80 m², estamos a falar de valores entre 108.000 € e 150.000 €; para 170 m², entre 195.000 € e 230.000 €.",
+      "O que está incluído no preço chave-na-mão? Estrutura metálica em aço galvanizado DX51D de 2 mm, fundações e laje, isolamentos, paredes e tecto em gesso cartonado, cozinha equipada, casas de banho completas, instalações elétrica e hidráulica, janelas e portas. Quando recebe as chaves, a casa está pronta a habitar.",
       "Muitas vezes comparamos os custos por metro quadrado com a construção tradicional. Em Portugal, a construção convencional ronda frequentemente os 1.500 €/m² a 2.200 €/m² para soluções equivalentes — sem incluir os imprevistos que derivam de obras longas a céu aberto. Com construção modular, a maior parte do processo acontece em fábrica, com controlo de qualidade mais rigoroso e prazos mais previsíveis.",
-      "O pagamento na DomusTech está estruturado em quatro fases iguais de 25%: assinatura do contrato, início de produção, entrega em obra e conclusão. Esta divisão permite planear o financiamento ao longo do processo, sem grandes adiantamentos numa única fase.",
+      "O pagamento na EsDomusTech está estruturado em quatro fases iguais de 25%: assinatura do contrato, início de produção, entrega em obra e conclusão. Esta divisão permite planear o financiamento ao longo do processo, sem grandes adiantamentos numa única fase.",
       "Há custos que não entram no preço de construção e que deve orçamentar separadamente: o terreno, o projeto de arquitetura (obrigatório para licenciamento), as taxas camarárias e as ligações às redes de água, esgotos e eletricidade. Estes variam conforme a localização e o município.",
       "Uma dúvida frequente é se casas modulares têm acesso a crédito habitação. A resposta é sim — desde que a casa tenha alvará de construção e seja registada na conservatória, os bancos financiam-na como qualquer outra habitação permanente. O processo de licenciamento é idêntico ao de uma construção convencional.",
       "Se está a fazer o cálculo de viabilidade, o nosso conselho é começar pela área desejada e depois contactar-nos para um orçamento sem compromisso. Acumulámos experiência suficiente para perceber rapidamente o que é exequível para cada situação.",
@@ -244,7 +263,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A comparação entre construção modular e tradicional surge em quase todas as conversas que temos com clientes. Há mitos de ambos os lados — e algumas verdades que vale a pena clarificar.",
       "O primeiro ponto é o processo. Numa obra tradicional, tudo acontece no terreno: fundações, paredes, cobertura, instalações — meses de trabalho exposto às condições meteorológicas, a subcontratados diferentes, a imprevistos em cadeia. Numa casa modular, a estrutura é produzida em fábrica, em condições controladas, antes de ser transportada e montada em obra. O que chega ao terreno é um produto já fabricado, não uma obra a construir.",
       "Em termos de prazo, a diferença é significativa. Uma construção tradicional de 120 m² pode demorar entre 18 e 36 meses, dependendo de licenciamentos, disponibilidade de mão-de-obra e imprevistos. Com construção modular, o prazo desde aprovação do projeto até à entrega ronda os 4 a 6 meses para a maioria das tipologias.",
-      "E a qualidade? É aqui que mais surpresas existem. As casas modulares modernas usam materiais de especificação industrial — na DomusTech, a estrutura é em aço galvanizado DX51D de 2 mm, com isolamentos de alto desempenho nas paredes, piso e teto. A produção em fábrica permite controlos de qualidade que são difíceis de replicar em obra, onde as condições mudam todos os dias.",
+      "E a qualidade? É aqui que mais surpresas existem. As casas modulares modernas usam materiais de especificação industrial — na EsDomusTech, a estrutura é em aço galvanizado DX51D de 2 mm, com isolamentos de alto desempenho nas paredes, piso e tecto. A produção em fábrica permite controlos de qualidade que são difíceis de replicar em obra, onde as condições mudam todos os dias.",
       "No que toca à durabilidade e comportamento estrutural, uma casa modular bem executada é equivalente — ou superior — a uma construção convencional. Está sujeita às mesmas normas sísmicas e de segurança aplicáveis em Portugal. O facto de ser modular não significa que seja temporária ou menos robusta.",
       "A personalização também é maior do que a maioria imagina. Dentro de limites técnicos, é possível configurar o número de divisões, o pé-direito, os acabamentos interiores, a orientação solar e a expansibilidade futura da casa. Não é um produto de catálogo — é uma construção pensada para a situação específica de cada cliente.",
       "Onde a construção tradicional ainda tem vantagem é na integração de soluções muito específicas ou em lotes com geometrias complexas. Para terrenos com acessos difíceis ou inclinações pronunciadas, o transporte e montagem dos módulos pode exigir soluções adicionais. É algo que avaliamos caso a caso antes de avançar.",
@@ -262,7 +281,7 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       "Uma das maiores vantagens da construção modular é a previsibilidade. Ao contrário de uma obra convencional, onde o processo pode deparar-se com bloqueios a qualquer momento, a construção modular tem fases claras e sequências bem definidas. Explicamos como funciona, passo a passo.",
       "Tudo começa na reunião de briefing. Nesta fase, percebemos as necessidades do cliente: quantos quartos, qual o orçamento, que uso vai ter a casa — habitação permanente, residência secundária, geração de rendimento — e as características do terreno. Esta informação alimenta a proposta inicial e o orçamento preliminar.",
-      "Aprovada a proposta, avançamos para o projeto de arquitetura. Um arquiteto credenciado elabora o projeto técnico e submete-o ao município para licenciamento. Este processo — idêntico ao de uma construção convencional — demora tipicamente entre 2 e 6 meses, dependendo do município e da complexidade do projeto. É nesta fase que é emitido o alvará de construção.",
+      "Aprovada a proposta, avançamos para o projeto de arquitetura. Um arquitecto credenciado elabora o projeto técnico e submete-o ao município para licenciamento. Este processo — idêntico ao de uma construção convencional — demora tipicamente entre 2 e 6 meses, dependendo do município e da complexidade do projeto. É nesta fase que é emitido o alvará de construção.",
       "Com o alvará em mão, começa a produção em fábrica. Os módulos são fabricados em ambiente controlado: estrutura metálica em aço DX51D, paredes, pavimentos, cobertura, instalações elétrica e hidráulica — tudo montado e verificado antes de sair da fábrica. Esta fase demora geralmente entre 6 a 10 semanas para a maioria das tipologias.",
       "Paralelamente à produção, preparam-se as fundações no terreno. Escavação, betão e laje decorrem enquanto os módulos estão a ser fabricados — e é aqui que está uma das razões pelas quais o prazo total é mais curto do que numa obra tradicional: as fases acontecem em simultâneo, não em sequência.",
       "A montagem em obra é rápida. O transporte dos módulos para o local e a sua montagem demora tipicamente 2 a 5 dias, dependendo do número de módulos e das condições de acesso. A seguir vêm os acabamentos interiores — pintura, pavimentos, montagem de cozinha e casas de banho — e as ligações às redes públicas.",
@@ -327,12 +346,12 @@ export const FAQS = [
     a: "Classe A.",
   },
   {
-    q: "Preciso de contratar um arquiteto?",
+    q: "Preciso de contratar um arquitecto?",
     a: "Não. O projeto de arquitetura e engenharia, com imagens 3D, está incluído no nosso serviço chave na mão.",
   },
   {
     q: "Como funciona o licenciamento camarário?",
-    a: "A DomusTech trata da totalidade do processo: projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias.",
+    a: "A EsDomusTech trata da totalidade do processo: projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias.",
   },
   {
     q: "Qual é a garantia da casa?",
@@ -343,7 +362,7 @@ export const FAQS = [
     a: "Sim, através do nosso sistema de \"plafon\": pode substituir qualquer elemento de catálogo (casa de banho, cozinha, portas, janelas), pagando apenas a diferença de valor face ao item standard.",
   },
   {
-    q: "A DomusTech constrói em todo o país?",
+    q: "A EsDomusTech constrói em todo o país?",
     a: "Sim. Construímos em todo o território nacional e já entregámos casas em 13 localizações diferentes.",
   },
   {

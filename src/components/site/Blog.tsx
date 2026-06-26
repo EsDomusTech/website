@@ -38,7 +38,7 @@ export function Blog() {
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={n.image}
-                    alt={`${n.title}, artigo do blog DomusTech`}
+                    alt={`${n.title}, artigo do blog EsDomusTech`}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>

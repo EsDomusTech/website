@@ -8,13 +8,13 @@ import { SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DomusTech | Casas Modulares Inteligentes no Porto" },
+      { title: "EsDomusTech | Casas Modulares Inteligentes no Porto" },
       {
         name: "description",
         content:
           "Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a 1.350 €/m². 23 casas entregues em todo o território nacional.",
       },
-      { property: "og:title", content: "DomusTech | Casas Modulares Tecnológicas no Porto" },
+      { property: "og:title", content: "EsDomusTech | Casas Modulares Tecnológicas no Porto" },
       {
         property: "og:description",
         content: "Casas modulares chave-na-mão no Porto. Classe A, estrutura em aço galvanizado, 23 casas entregues em todo o território nacional.",

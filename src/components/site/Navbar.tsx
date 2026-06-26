@@ -56,10 +56,7 @@ const LANGS = [
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-3">
-      <svg viewBox="0 0 48 48" width={36} height={36} fill="none" aria-hidden>
-        <polygon points="24,4 44,20 44,44 4,44 4,20" fill="var(--gold)" opacity="0.12" />
-        <path d="M8 22 24 8l16 14M12 20v22h24V20M20 42v-10h8v10" stroke="var(--gold)" strokeWidth={1.5} strokeLinecap="square" strokeLinejoin="miter" fill="none" />
-      </svg>
+      <img src="/logo-casinha.png" alt="" aria-hidden width={36} height={36} style={{ objectFit: "contain" }} />
       <span className="flex flex-col leading-none">
         <span
           className="text-[20px] leading-none"
@@ -71,7 +68,7 @@ function Logo({ light = false }: { light?: boolean }) {
             textTransform: "uppercase",
           }}
         >
-          DomusTech
+          EsDomusTech
         </span>
         <span
           className="tracked mt-1 text-[8px] font-medium"
@@ -340,10 +337,10 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Hamburger — visible on all sizes */}
+            {/* Hamburger — visible below xl (when nav links collapse) */}
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
+              className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)] xl:hidden"
               style={{ color: "#fff" }}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}

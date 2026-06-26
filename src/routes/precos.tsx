@@ -83,7 +83,7 @@ const FAQS_PRECOS: FaqPrecos[] = [
     phases: PAYMENT_PHASES,
   },
   {
-    q: "Quanto custa, na prática, uma casa DomusTech?",
+    q: "Quanto custa, na prática, uma casa EsDomusTech?",
     a: "Nas propostas reais que já fizemos, o investimento total situa-se entre 108.000 € e 230.000 € (sem IVA), conforme a tipologia, a área e as opções de personalização escolhidas.",
   },
   {
@@ -99,10 +99,10 @@ const FAQS_PRECOS: FaqPrecos[] = [
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
-      { title: "Preços | Casas Modulares, DomusTech Porto" },
-      { name: "description", content: "Consulte os planos e preços da DomusTech para projetos de arquitetura e construção modular no Porto. Transparência total, sem surpresas." },
-      { property: "og:title", content: "Preços | DomusTech" },
-      { property: "og:description", content: "Planos e preços DomusTech para construção modular no Porto. Transparência total, sem surpresas." },
+      { title: "Preços | Casas Modulares, EsDomusTech Porto" },
+      { name: "description", content: "Consulte os planos e preços da EsDomusTech para projetos de arquitetura e construção modular no Porto. Transparência total, sem surpresas." },
+      { property: "og:title", content: "Preços | EsDomusTech" },
+      { property: "og:description", content: "Planos e preços EsDomusTech para construção modular no Porto. Transparência total, sem surpresas." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/precos` },
     ],
@@ -251,7 +251,7 @@ function PrecosPage() {
       <section className="relative overflow-hidden h-[280px] md:h-[480px]">
         <img
           src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1920&h=900&fit=crop&auto=format&q=80"
-          alt="Casa modular DomusTech entregue no Porto"
+          alt="Casa modular EsDomusTech entregue no Porto"
           className="w-full h-full object-cover"
           style={{ filter: "grayscale(0.6) brightness(0.75)" }}
         />

@@ -22,10 +22,10 @@ export const GALLERY_ITEMS = [
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
-      { title: "Galeria de Imagens | Projectos DomusTech, Porto" },
-      { name: "description", content: "Galeria de imagens dos projectos de arquitectura e construção modular DomusTech no Porto." },
-      { property: "og:title", content: "Galeria de Imagens | DomusTech Porto" },
-      { property: "og:description", content: "Galeria de imagens dos projectos de arquitectura e construção modular DomusTech no Porto." },
+      { title: "Galeria de Imagens | Projectos EsDomusTech, Porto" },
+      { name: "description", content: "Galeria de imagens dos projectos de arquitectura e construção modular EsDomusTech no Porto." },
+      { property: "og:title", content: "Galeria de Imagens | EsDomusTech Porto" },
+      { property: "og:description", content: "Galeria de imagens dos projectos de arquitectura e construção modular EsDomusTech no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/galeria` },
     ],
@@ -72,7 +72,7 @@ function GaleriaPage() {
                 className="group relative overflow-hidden cursor-pointer"
                 style={{ aspectRatio: "4/3" }}
               >
-                <img src={item.image} alt={`${item.title}, projeto DomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={item.image} alt={`${item.title}, projeto EsDomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                 <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
