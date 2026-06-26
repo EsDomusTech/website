@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowUp } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { BLOG_POSTS, getBlogPost, SITE } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
@@ -117,6 +118,15 @@ function BlogPostPage() {
             >
               {p.title}
             </h1>
+            <Link
+              to="/blog"
+              className="s-label-caps mt-6 inline-flex items-center gap-2 transition-colors"
+              style={{ color: "rgba(255,255,255,0.7)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+            >
+              ← Todos os artigos
+            </Link>
           </div>
         </div>
       </div>
@@ -128,17 +138,6 @@ function BlogPostPage() {
 
             {/* Article */}
             <article className="col-span-12 md:col-span-8">
-              {/* Back link */}
-              <div className="mb-8">
-                <Link
-                  to="/blog"
-                  className="s-label-caps transition-colors hover:text-[#BE9355]"
-                  style={{ color: "var(--label-muted)" }}
-                >
-                  ← Blog
-                </Link>
-              </div>
-
               {/* Meta */}
               <div
                 className="flex items-center gap-6 mb-10 pb-8 border-b"
@@ -166,15 +165,19 @@ function BlogPostPage() {
                 ))}
               </div>
 
-              {/* Back link */}
+              {/* Scroll to top */}
               <div className="mt-16 pt-8 border-t" style={{ borderColor: "#e8e8e8" }}>
-                <Link
-                  to="/blog"
-                  className="s-label-caps transition-colors hover:text-[#BE9355]"
-                  style={{ color: "#000000" }}
+                <button
+                  type="button"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="s-label-caps inline-flex items-center gap-3 px-8 py-4 text-white transition-colors cursor-pointer"
+                  style={{ backgroundColor: "#000000" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000000")}
                 >
-                  ← Todos os artigos
-                </Link>
+                  <ArrowUp className="h-3.5 w-3.5" />
+                  Voltar ao Topo
+                </button>
               </div>
             </article>
 
