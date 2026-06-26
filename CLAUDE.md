@@ -51,7 +51,6 @@ src/
     projetos.lista.tsx          ← /projetos/lista (vista lista)
     projetos.fancy.tsx          ← /projetos/fancy (estilo editorial)
     projetos.fancy-filtro.tsx   ← /projetos/fancy-filtro
-    antes-depois.tsx            ← /antes-depois (BeforeAfterSlider)
     galeria.tsx                 ← /galeria (grid uniforme)
     galeria.masonry.tsx         ← /galeria/masonry (grid masonry)
     precos.tsx                  ← /precos (pricing)
@@ -105,9 +104,9 @@ Utilitários CSS:
 - [x] CtaBand: banda CTA com título + botão
 - [x] Footer: 4 colunas (contacto, nav, serviços, newsletter), barra social, bottom bar
 - [x] PageHeader: banner com overlay, título, breadcrumbs (todas as páginas internas)
-- [x] BeforeAfterSlider: drag handle central, página `/antes-depois`
+- [x] BeforeAfterSlider: componente `BeforeAfterSlider.tsx` existe mas página `/antes-depois` **removida** — restaurar rota quando houver imagens reais antes/depois
 - [x] Team.tsx: cards de equipa, página `/equipa`
-- [x] Rotas: empresa, equipa, serviços, projetos (+ variantes), blog, faq, contacto, galeria, precos, antes-depois, políticas
+- [x] Rotas: empresa, equipa, serviços, projetos (+ variantes), blog, faq, contacto, galeria, precos, políticas
 - [x] SEO: meta tags, canonical, LD+JSON por página, sitemap dinâmico
 - [x] Dados reais (contacto, redes sociais, equipa) em `site-data.ts`
 - [x] CtaBand: prop `variant="gold"` (fundo `--gold`, botão dark) além da versão dark default
