@@ -94,6 +94,7 @@ Utilitários CSS:
 ### ✅ Concluído
 - [x] Design system Structural Elegance via Stitch MCP — Oswald + Libre Franklin, gold #BE9355
 - [x] Navbar: top-bar (tel + email + sociais) + nav + mega menu + mobile CTA "Pedir Orçamento"
+- [x] Navbar: seletor de idiomas **removido** — quando existirem versões PT/EN/ES do site, restaurar `LANGS` + `LangSelector` em `Navbar.tsx` (desktop: junto ao botão "Pedir Orçamento"; mobile overlay: top-bar e bottom-bar)
 - [x] Hero slider: 3 slides, texto esquerda, arrows laterais, counter bottom-right, dots
 - [x] About section: 2 colunas (texto + imagem), badge "Desde 2012", stats counters animados
 - [x] Services grid: 3×2, ícone, título, descrição, número decorativo top-right quasi-fantasma

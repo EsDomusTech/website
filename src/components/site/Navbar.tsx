@@ -47,11 +47,6 @@ export const SOCIAL = [
   { Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/esdomustech-casas-modulares" },
 ];
 
-const LANGS = [
-  { code: "PT", label: "Português" },
-  { code: "EN", label: "English" },
-  { code: "ES", label: "Español" },
-];
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -126,59 +121,7 @@ function DropdownMenu({ items, open }: { items: SubItem[]; open: boolean }) {
   );
 }
 
-function LangSelector({ light = false, dropUp = false }: { light?: boolean; dropUp?: boolean }) {
-  const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("PT");
-  const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  const textColor = light ? "#fff" : "var(--foreground)";
-
-  return (
-    <div ref={ref} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
-        style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", color: textColor }}
-        aria-label="Selecionar idioma"
-      >
-        {active}
-        <ChevronDown className={`h-3 w-3 opacity-50 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div
-          className={`absolute right-0 z-50 min-w-[130px] bg-white py-2 shadow-md ${dropUp ? "bottom-full mb-1" : "top-full"}`}
-          style={{ borderTop: dropUp ? "none" : "2px solid var(--gold)", borderBottom: dropUp ? "2px solid var(--gold)" : "none" }}
-        >
-          {LANGS.map((lang) => (
-            <button
-              key={lang.code}
-              type="button"
-              onClick={() => { setActive(lang.code); setOpen(false); }}
-              className="flex w-full items-center gap-3 px-5 py-2.5 text-[11px] font-medium transition-colors hover:bg-[var(--logo-strip)] hover:text-[color:var(--gold)]"
-              style={{
-                fontFamily: "var(--font-display)",
-                letterSpacing: "0.1em",
-                color: active === lang.code ? "var(--gold)" : "var(--foreground)",
-              }}
-            >
-              <span className="w-7 text-left">{lang.code}</span>
-              <span className="text-[10px] font-light opacity-60">{lang.label}</span>
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 const MENU_IMAGE = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=1000&fit=crop&auto=format&q=80";
 
@@ -318,8 +261,6 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {/* Desktop extras */}
             <div className="hidden items-center gap-5 xl:flex">
-              <LangSelector light />
-              <div className="h-4 w-px" style={{ backgroundColor: "rgba(255,255,255,0.3)" }} />
               <button
                 type="button"
                 onClick={openConsulta}
@@ -393,7 +334,6 @@ export function Navbar() {
               <div className="flex items-center justify-between px-8 pt-7 pb-0 md:px-14">
                 <Logo />
                 <div className="flex items-center gap-4">
-                  <LangSelector />
                   <button
                     type="button"
                     className="flex h-11 w-11 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
