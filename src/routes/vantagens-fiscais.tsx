@@ -54,7 +54,7 @@ const BENEFITS = [
 const FIT = [
   {
     title: "Custo por m² mais baixo",
-    text: "Facilita ficar dentro dos tetos de 660.982 € / renda de 2.300 €, mantendo o projeto elegível ao IVA a 6%.",
+    text: "Facilita ficar dentro dos plafonds de 660.982 € / renda de 2.300 €, mantendo o projecto elegível ao IVA a 6%.",
   },
   {
     title: "Custos previsíveis desde o início",
@@ -91,13 +91,13 @@ const FAQS = [
 export const Route = createFileRoute("/vantagens-fiscais")({
   head: () => ({
     meta: [
-      { title: "Vantagens Fiscais | Pacote Fiscal 2026, DomusTech" },
+      { title: "Vantagens Fiscais | Pacote Fiscal 2026, EsDomusTech" },
       {
         name: "description",
         content:
           "IVA a 6% na construção, isenção de IMT e restituição de IVA na autoconstrução: como as casas modulares se encaixam no Pacote Fiscal 2026 (DL n.º 97/2026).",
       },
-      { property: "og:title", content: "Vantagens Fiscais, Pacote Fiscal 2026 | DomusTech" },
+      { property: "og:title", content: "Vantagens Fiscais, Pacote Fiscal 2026 | EsDomusTech" },
       { property: "og:description", content: "IVA 6%, IMT e restituição de IVA: o que muda para a sua casa modular em 2026." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/vantagens-fiscais` },

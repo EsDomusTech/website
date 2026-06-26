@@ -1,7 +1,9 @@
-# DomusTech — Site de Casas Modulares no Porto
+# EsDomusTech — Site de Casas Modulares no Porto
 
 ## Objetivo
 Site institucional premium para empresa de casas modulares no Porto. Estética **Structural Elegance** — inspirada no tema Bauen mas com identidade própria desenvolvida via Stitch MCP. Referência visual: `SAMPLES A SEGUIR/` (PDFs do demo Bauen).
+
+> **Domínio**: o domínio real é `esdomustech.com` (já adquirido), mas **ainda não foi migrado** para este site. Enquanto não migrar, o `SITE.domain` em `site-data.ts` aponta para `https://domustech.lovable.app`. Quando migrar: atualizar `SITE.domain` para `https://esdomustech.com` e rever todos os canonical/og:url.
 
 ---
 

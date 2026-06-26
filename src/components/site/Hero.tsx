@@ -61,7 +61,7 @@ export function Hero() {
         >
           <img
             src={s.img}
-            alt={`${s.eyebrow}, casas modulares DomusTech no Porto`}
+            alt={`${s.eyebrow}, casas modulares EsDomusTech no Porto`}
             className="h-full w-full object-cover"
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}

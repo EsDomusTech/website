@@ -14,7 +14,7 @@ export const Route = createFileRoute("/servicos/$slug")({
   },
   head: ({ loaderData }) => {
     const s = loaderData?.service;
-    if (!s) return { meta: [{ title: "Serviço não encontrado | DomusTech" }] };
+    if (!s) return { meta: [{ title: "Serviço não encontrado | EsDomusTech" }] };
     return {
       meta: [
         { title: s.metaTitle },

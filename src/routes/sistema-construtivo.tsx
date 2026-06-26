@@ -17,7 +17,7 @@ const LAYERS = [
   { num: "09", title: "Camada impermeabilizante", text: "Barreira entre a laje e a estrutura, protege da humidade ascendente." },
   { num: "10", title: "Chapa metálica + varão roscado", text: "Ligação mecânica entre a estrutura e o terreno." },
   { num: "11", title: "Laje em betão armado", text: "Fundação contínua, permite ainda a instalação de piso radiante." },
-  { num: "12", title: "Cobertura, telha sandwich", text: "5 cm de espessura, com lã de rocha e teto falso em gesso cartonado por baixo." },
+  { num: "12", title: "Cobertura, telha sandwich", text: "5 cm de espessura, com lã de rocha e tecto falso em gesso cartonado por baixo." },
 ];
 
 /* Os dois sistemas construtivos */
@@ -84,13 +84,13 @@ const REFERENCES = [
 export const Route = createFileRoute("/sistema-construtivo")({
   head: () => ({
     meta: [
-      { title: "Sistema Construtivo | Casas Modulares, DomusTech" },
+      { title: "Sistema Construtivo | Casas Modulares, EsDomusTech" },
       {
         name: "description",
         content:
-          "Sistema construtivo DomusTech: aço galvanizado, isolamento termoacústico, dois sistemas de parede e ficha técnica de materiais.",
+          "Sistema construtivo EsDomusTech: aço galvanizado, isolamento termoacústico, dois sistemas de parede e ficha técnica de materiais.",
       },
-      { property: "og:title", content: "Sistema Construtivo | DomusTech" },
+      { property: "og:title", content: "Sistema Construtivo | EsDomusTech" },
       { property: "og:description", content: "Estrutura em aço galvanizado, composição por camada e ficha técnica de materiais." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/sistema-construtivo` },

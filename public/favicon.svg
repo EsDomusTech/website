@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- Left crane post -->
+  <line x1="11" y1="2" x2="11" y2="58" stroke="#BE9355" stroke-width="3" stroke-linecap="square"/>
+  <!-- Left bracket -->
+  <polyline points="11,2 6,6 11,6" stroke="#BE9355" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square"/>
+  <!-- Right crane post -->
+  <line x1="49" y1="2" x2="49" y2="58" stroke="#BE9355" stroke-width="3" stroke-linecap="square"/>
+  <!-- Right bracket -->
+  <polyline points="49,2 54,6 49,6" stroke="#BE9355" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square"/>
+  <!-- Roof -->
+  <polyline points="11,21 30,10 49,21" stroke="#BE9355" stroke-width="3" stroke-linejoin="miter"/>
+  <!-- House top beam -->
+  <line x1="17" y1="21" x2="43" y2="21" stroke="#BE9355" stroke-width="3" stroke-linecap="square"/>
+  <!-- House walls -->
+  <line x1="17" y1="21" x2="17" y2="58" stroke="#BE9355" stroke-width="3" stroke-linecap="square"/>
+  <line x1="43" y1="21" x2="43" y2="58" stroke="#BE9355" stroke-width="3" stroke-linecap="square"/>
+  <!-- Door -->
+  <polyline points="25,58 25,37 35,37 35,58" stroke="#BE9355" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square"/>
+</svg>

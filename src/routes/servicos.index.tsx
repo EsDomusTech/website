@@ -7,13 +7,13 @@ import { SERVICES, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços de Construção Modular | DomusTech" },
+      { title: "Serviços de Construção Modular | EsDomusTech" },
       {
         name: "description",
         content:
-          "Serviços DomusTech no Porto: casas modulares, construção modular e design de interiores. Soluções chave na mão, sustentáveis e personalizadas.",
+          "Serviços EsDomusTech no Porto: casas modulares, construção modular e design de interiores. Soluções chave na mão, sustentáveis e personalizadas.",
       },
-      { property: "og:title", content: "Serviços | DomusTech Porto" },
+      { property: "og:title", content: "Serviços | EsDomusTech Porto" },
       { property: "og:description", content: "Casas modulares, construção modular e design de interiores no Porto." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/servicos` },
@@ -31,7 +31,7 @@ function ServicosPage() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?w=1600&h=900&fit=crop&auto=format&q=80"
-            alt="Serviços de construção modular DomusTech no Porto"
+            alt="Serviços de construção modular EsDomusTech no Porto"
             className="h-full w-full object-cover"
             style={{ filter: "brightness(0.5)" }}
           />

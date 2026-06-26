@@ -33,13 +33,13 @@ const VALUES = [
 export const Route = createFileRoute("/empresa")({
   head: () => ({
     meta: [
-      { title: "Empresa | Arquitetura Modular no Porto, DomusTech" },
+      { title: "Empresa | Arquitetura Modular no Porto, EsDomusTech" },
       {
         name: "description",
         content:
-          "Conheça a DomusTech: estúdio de arquitetura e construção modular no Porto. A nossa missão, valores e equipa dedicada a casas inteligentes e sustentáveis.",
+          "Conheça a EsDomusTech: estúdio de arquitetura e construção modular no Porto. A nossa missão, valores e equipa dedicada a casas inteligentes e sustentáveis.",
       },
-      { property: "og:title", content: "Sobre a DomusTech | Arquitetura Modular no Porto" },
+      { property: "og:title", content: "Sobre a EsDomusTech | Arquitetura Modular no Porto" },
       { property: "og:description", content: "A nossa história, missão e valores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/empresa` },
@@ -90,7 +90,7 @@ function EmpresaPage() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&h=520&fit=crop&auto=format&q=80"
-              alt="Equipa DomusTech no Porto"
+              alt="Equipa EsDomusTech no Porto"
               className="w-full object-cover"
             />
             <span className="tracked absolute bottom-5 right-5 bg-white px-5 py-3 text-[11px] text-foreground shadow-sm">

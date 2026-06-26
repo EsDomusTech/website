@@ -12,10 +12,10 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.post;
-    if (!p) return { meta: [{ title: "Artigo não encontrado | DomusTech" }] };
+    if (!p) return { meta: [{ title: "Artigo não encontrado | EsDomusTech" }] };
     return {
       meta: [
-        { title: `${p.title} | DomusTech` },
+        { title: `${p.title} | EsDomusTech` },
         { name: "description", content: p.excerpt },
         { property: "og:title", content: p.title },
         { property: "og:description", content: p.excerpt },
