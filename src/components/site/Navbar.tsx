@@ -25,7 +25,6 @@ const NAV_LINKS: NavLink[] = [
     children: [
       { label: "Todos os Projetos", to: "/projetos" },
       { label: "Galeria", to: "/galeria" },
-      { label: "Antes e Depois", to: "/antes-depois" },
     ],
   },
   {
