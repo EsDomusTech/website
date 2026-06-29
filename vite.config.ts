@@ -15,6 +15,7 @@ const LOCAL_ADAPTER_PATH = resolve(
 );
 
 export default defineConfig({
+  nitro: process.env.VERCEL ? { preset: "vercel" } : true,
   vite: {
     server: { port: 5173 },
     resolve: {
