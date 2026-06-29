@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/site/SectionTitle";
 import { Team } from "@/components/site/Team";
 import { PageHeader } from "@/components/site/PageHeader";
 import { SITE } from "@/lib/site-data";
+import { fetchTeam } from "@/lib/sanity-queries";
 
 const VALUES = [
   {
@@ -31,6 +32,7 @@ const VALUES = [
 
 
 export const Route = createFileRoute("/empresa")({
+  loader: async () => ({ team: await fetchTeam() }),
   head: () => ({
     meta: [
       { title: "Empresa | Arquitetura Modular no Porto, EsDomusTech" },
@@ -51,6 +53,7 @@ export const Route = createFileRoute("/empresa")({
 });
 
 function EmpresaPage() {
+  const { team } = Route.useLoaderData();
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
@@ -158,7 +161,7 @@ function EmpresaPage() {
       </section>
 
       {/* Equipa — secção Stitch 4-col portrait grid */}
-      <Team />
+      <Team team={team} />
 
       <CtaBand />
     </main>

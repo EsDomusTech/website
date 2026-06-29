@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { SERVICES, PROJECTS, BLOG_POSTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchServices, fetchProjects, fetchBlogPosts } from "@/lib/sanity-queries";
 
 const BASE_URL = SITE.domain;
 
@@ -14,6 +15,9 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const [SERVICES, PROJECTS, BLOG_POSTS] = await Promise.all([
+          fetchServices(), fetchProjects(), fetchBlogPosts(),
+        ]);
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/empresa", changefreq: "monthly", priority: "0.8" },

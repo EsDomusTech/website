@@ -4,13 +4,14 @@ import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { PageHeader } from "@/components/site/PageHeader";
-import { getService, SERVICES, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchService, fetchServices } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/servicos/$slug")({
-  loader: ({ params }) => {
-    const service = getService(params.slug);
+  loader: async ({ params }) => {
+    const [service, allServices] = await Promise.all([fetchService(params.slug), fetchServices()]);
     if (!service) throw notFound();
-    return { service };
+    return { service, allServices };
   },
   head: ({ loaderData }) => {
     const s = loaderData?.service;
@@ -81,8 +82,8 @@ function ServicoNotFound() {
 }
 
 function ServicoDetailPage() {
-  const { service: s } = Route.useLoaderData();
-  const others = SERVICES.filter((x) => x.slug !== s.slug);
+  const { service: s, allServices } = Route.useLoaderData();
+  const others = allServices.filter((x) => x.slug !== s.slug);
 
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>

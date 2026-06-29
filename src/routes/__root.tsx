@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from "@vercel/analytics/react";
 import { MotionConfig } from "framer-motion";
 import {
   Outlet,
@@ -202,6 +203,7 @@ function RootComponent() {
           <Footer />
           <ConsultaModal />
           <CookieBanner />
+          <Analytics />
         </MotionConfig>
       </ConsultaModalProvider>
     </QueryClientProvider>

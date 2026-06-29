@@ -4,8 +4,13 @@ import { About } from "@/components/site/About";
 import { Projects } from "@/components/site/Projects";
 import { Blog } from "@/components/site/Blog";
 import { SITE } from "@/lib/site-data";
+import { fetchProjects, fetchBlogPosts } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const [projects, posts] = await Promise.all([fetchProjects(), fetchBlogPosts()]);
+    return { projects, posts };
+  },
   head: () => ({
     meta: [
       { title: "EsDomusTech | Casas Modulares Inteligentes no Porto" },
@@ -31,12 +36,13 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const { projects, posts } = Route.useLoaderData();
   return (
     <main>
       <Hero />
       <About />
-      <Projects />
-      <Blog />
+      <Projects projects={projects} />
+      <Blog posts={posts} />
     </main>
   );
 }

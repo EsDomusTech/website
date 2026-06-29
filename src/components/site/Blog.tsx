@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
-import { BLOG_POSTS } from "@/lib/site-data";
+import { BLOG_POSTS, type BlogPost } from "@/lib/site-data";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 
-export function Blog() {
+export function Blog({ posts }: { posts?: BlogPost[] }) {
+  const items = posts ?? BLOG_POSTS;
   return (
     <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
       <div className="s-wrap">
@@ -23,7 +24,7 @@ export function Blog() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.slice(0, 3).map((n, i) => (
+          {items.slice(0, 3).map((n, i) => (
             <motion.article
               key={n.slug}
               initial={{ opacity: 0, y: 24 }}

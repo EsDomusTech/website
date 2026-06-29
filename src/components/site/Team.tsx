@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { TEAM } from "@/lib/site-data";
+import { TEAM, type TeamMember } from "@/lib/site-data";
 import { SectionTitle } from "./SectionTitle";
 
-export function Team() {
+export function Team({ team }: { team?: TeamMember[] }) {
+  const members = team ?? TEAM;
   return (
     <section className="section-pad bg-white">
       <div className="container-1100">
@@ -13,7 +14,7 @@ export function Team() {
         />
 
         <div className="mt-14 grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
-          {TEAM.map((member, i) => (
+          {members.map((member, i) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 24 }}

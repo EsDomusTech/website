@@ -1,14 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowUp } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
-import { BLOG_POSTS, getBlogPost, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchBlogPost, fetchBlogPosts } from "@/lib/sanity-queries";
 import { useConsultaModal } from "@/lib/consulta-store";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
-    const post = getBlogPost(params.slug);
+  loader: async ({ params }) => {
+    const [post, allPosts] = await Promise.all([fetchBlogPost(params.slug), fetchBlogPosts()]);
     if (!post) throw notFound();
-    return { post };
+    return { post, allPosts };
   },
   head: ({ loaderData }) => {
     const p = loaderData?.post;
@@ -89,9 +90,9 @@ function BlogNotFound() {
 }
 
 function BlogPostPage() {
-  const { post: p } = Route.useLoaderData();
+  const { post: p, allPosts } = Route.useLoaderData();
   const { open: openConsulta } = useConsultaModal();
-  const others = BLOG_POSTS.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const others = allPosts.filter((x) => x.slug !== p.slug).slice(0, 3);
 
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
