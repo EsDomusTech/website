@@ -2,13 +2,14 @@ import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-rout
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
-import { getProject, PROJECTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchProject, fetchProjects } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/projetos/$slug")({
-  loader: ({ params }) => {
-    const project = getProject(params.slug);
+  loader: async ({ params }) => {
+    const [project, allProjects] = await Promise.all([fetchProject(params.slug), fetchProjects()]);
     if (!project) throw notFound();
-    return { project };
+    return { project, allProjects };
   },
   head: ({ loaderData }) => {
     const p = loaderData?.project;
@@ -59,8 +60,8 @@ export const Route = createFileRoute("/projetos/$slug")({
 });
 
 function ProjectDetail() {
-  const { project: p } = Route.useLoaderData();
-  const others = PROJECTS.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const { project: p, allProjects } = Route.useLoaderData();
+  const others = allProjects.filter((x) => x.slug !== p.slug).slice(0, 3);
 
   return (
     <main>

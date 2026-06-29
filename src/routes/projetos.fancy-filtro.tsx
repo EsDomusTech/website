@@ -5,11 +5,13 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { PROJECTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchProjects } from "@/lib/sanity-queries";
 
 const CATS = ["Todos", "Residencial", "Comercial", "Interiores", "Urbanismo"];
 
 export const Route = createFileRoute("/projetos/fancy-filtro")({
+  loader: async () => ({ projects: await fetchProjects() }),
   head: () => ({
     meta: [
       { title: "Projetos, Vista Editorial com Filtros | EsDomusTech" },
@@ -22,6 +24,7 @@ export const Route = createFileRoute("/projetos/fancy-filtro")({
 });
 
 function PortfolioFancyFiltroPage() {
+  const { projects: PROJECTS } = Route.useLoaderData();
   const [active, setActive] = useState("Todos");
   const filtered = PROJECTS.filter((p) => active === "Todos" || p.category === active);
 

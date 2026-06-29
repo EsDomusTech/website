@@ -20,7 +20,6 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AntesDepoisRouteImport } from './routes/antes-depois'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
@@ -89,11 +88,6 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AntesDepoisRoute = AntesDepoisRouteImport.update({
-  id: '/antes-depois',
-  path: '/antes-depois',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -157,7 +151,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/antes-depois': typeof AntesDepoisRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
@@ -183,7 +176,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/antes-depois': typeof AntesDepoisRoute
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
@@ -209,7 +201,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/antes-depois': typeof AntesDepoisRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
@@ -237,7 +228,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/antes-depois'
     | '/blog'
     | '/contacto'
     | '/empresa'
@@ -263,7 +253,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/antes-depois'
     | '/contacto'
     | '/empresa'
     | '/faq'
@@ -288,7 +277,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/antes-depois'
     | '/blog'
     | '/contacto'
     | '/empresa'
@@ -315,7 +303,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AntesDepoisRoute: typeof AntesDepoisRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
@@ -414,13 +401,6 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/antes-depois': {
-      id: '/antes-depois'
-      path: '/antes-depois'
-      fullPath: '/antes-depois'
-      preLoaderRoute: typeof AntesDepoisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -535,7 +515,6 @@ const GaleriaRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AntesDepoisRoute: AntesDepoisRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,

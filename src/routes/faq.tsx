@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { useConsultaModal } from "@/lib/consulta-store";
 import { FAQS, SITE } from "@/lib/site-data";
+import { fetchFaqs } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
+  loader: async () => ({ faqs: await fetchFaqs() }),
+  head: ({ loaderData }) => ({
     meta: [
       { title: "FAQ | Perguntas Frequentes sobre Casas Modulares, EsDomusTech" },
       {
@@ -25,7 +27,7 @@ export const Route = createFileRoute("/faq")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: FAQS.map((f) => ({
+          mainEntity: (loaderData?.faqs ?? FAQS).map((f) => ({
             "@type": "Question",
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -51,31 +53,33 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 function FaqPage() {
+  const { faqs } = Route.useLoaderData();
+  const F = faqs.length > 0 ? faqs : FAQS;
   const { open: openConsulta } = useConsultaModal();
   const categories = [
     {
       id: "produto",
       label: "O PRODUTO",
       num: "01",
-      items: [FAQS[0], FAQS[4], FAQS[7]],
+      items: [F[0], F[4], F[7]].filter(Boolean),
     },
     {
       id: "processo",
       label: "O PROCESSO",
       num: "02",
-      items: [FAQS[3], FAQS[5], FAQS[6], FAQS[10]],
+      items: [F[3], F[5], F[6], F[10]].filter(Boolean),
     },
     {
       id: "prazos-precos",
       label: "PRAZOS & PREÇOS",
       num: "03",
-      items: [FAQS[1], FAQS[2], FAQS[11]],
+      items: [F[1], F[2], F[11]].filter(Boolean),
     },
     {
       id: "personalizacao",
       label: "PERSONALIZAÇÃO",
       num: "04",
-      items: [FAQS[8], FAQS[9]],
+      items: [F[8], F[9]].filter(Boolean),
     },
   ];
 

@@ -2,9 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
-import { SERVICES, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchServices } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/servicos/")({
+  loader: async () => ({ services: await fetchServices() }),
   head: () => ({
     meta: [
       { title: "Serviços de Construção Modular | EsDomusTech" },
@@ -24,6 +26,7 @@ export const Route = createFileRoute("/servicos/")({
 });
 
 function ServicosPage() {
+  const { services: SERVICES } = Route.useLoaderData();
   return (
     <main>
       {/* Hero — full-bleed h-614 */}

@@ -16,6 +16,14 @@ dist-ssr
 .nitro
 *.local
 
+# Env files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Vercel build output
+.vercel/
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
@@ -30,3 +38,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel

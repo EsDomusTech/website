@@ -4,9 +4,11 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { PROJECTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchProjects } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/projetos/lista")({
+  loader: async () => ({ projects: await fetchProjects() }),
   head: () => ({
     meta: [
       { title: "Projetos, Vista em Lista | EsDomusTech" },
@@ -19,6 +21,7 @@ export const Route = createFileRoute("/projetos/lista")({
 });
 
 function PortfolioListaPage() {
+  const { projects: PROJECTS } = Route.useLoaderData();
   return (
     <main>
       <PageHeader

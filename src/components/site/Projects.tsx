@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { PROJECTS } from "@/lib/site-data";
+import { PROJECTS, type Project } from "@/lib/site-data";
 
-export function Projects() {
+export function Projects({ projects }: { projects?: Project[] }) {
+  const items = projects ?? PROJECTS;
   return (
     <section id="projects" className="section-pad" style={{ backgroundColor: "var(--secondary)" }}>
       <div className="s-wrap">
@@ -33,7 +34,7 @@ export function Projects() {
 
         {/* 2×2 staggered grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {PROJECTS.slice(0, 4).map((p, i) => (
+          {items.slice(0, 4).map((p, i) => (
             <motion.div
               key={p.slug}
               className={i % 2 === 1 ? "mt-0 md:mt-24" : ""}

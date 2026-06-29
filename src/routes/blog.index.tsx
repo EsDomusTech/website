@@ -2,9 +2,11 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
-import { BLOG_POSTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchBlogPosts } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/blog/")({
+  loader: async () => ({ posts: await fetchBlogPosts() }),
   head: () => ({
     meta: [
       { title: "Blog | Construção Modular e Sustentabilidade, EsDomusTech" },
@@ -23,20 +25,33 @@ export const Route = createFileRoute("/blog/")({
   component: BlogPage,
 });
 
-const CATEGORIES = Array.from(
-  BLOG_POSTS.reduce((map, p) => {
-    map.set(p.cat, (map.get(p.cat) ?? 0) + 1);
-    return map;
-  }, new Map<string, number>()),
-  ([label, count]) => ({ label, count }),
-);
-
 const POSTS_PER_PAGE = 4;
 
 function BlogPage() {
+  const { posts: BLOG_POSTS } = Route.useLoaderData();
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE);
-  const displayed = BLOG_POSTS.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+  const [search, setSearch] = useState("");
+
+  const filtered = search.trim()
+    ? BLOG_POSTS.filter((p) => {
+        const q = search.toLowerCase();
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.excerpt.toLowerCase().includes(q) ||
+          p.cat.toLowerCase().includes(q)
+        );
+      })
+    : BLOG_POSTS;
+
+  const CATEGORIES = Array.from(
+    BLOG_POSTS.reduce((map, p) => {
+      map.set(p.cat, (map.get(p.cat) ?? 0) + 1);
+      return map;
+    }, new Map<string, number>()),
+    ([label, count]) => ({ label, count }),
+  );
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const displayed = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
@@ -163,6 +178,45 @@ function BlogPage() {
 
             {/* Sidebar — col 4/12 */}
             <aside className="col-span-12 md:col-span-4 space-y-12">
+
+              {/* Pesquisa */}
+              <div>
+                <h4
+                  className="s-label-caps mb-6 pb-4 border-b"
+                  style={{ color: "#000000", borderColor: "#eeeeee" }}
+                >
+                  Pesquisa
+                </h4>
+                <div className="flex" style={{ border: "1px solid #d8d8d8" }}>
+                  <input
+                    type="text"
+                    placeholder="Pesquisar..."
+                    value={search}
+                    onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+                    className="flex-1 px-4 py-3 s-body-md bg-white outline-none placeholder:text-[#9a9a9a]"
+                    style={{ color: "#000000" }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setPage(1)}
+                    className="px-4 flex items-center justify-center transition-colors"
+                    style={{ backgroundColor: "#000000", color: "#ffffff" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#BE9355"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#000000"; }}
+                    aria-label="Pesquisar"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <circle cx="11" cy="11" r="8" />
+                      <path strokeLinecap="round" d="m21 21-4.35-4.35" />
+                    </svg>
+                  </button>
+                </div>
+                {search.trim() && (
+                  <p className="s-label-caps mt-3" style={{ color: "var(--label-muted)" }}>
+                    {filtered.length} resultado{filtered.length !== 1 ? "s" : ""} para "{search}"
+                  </p>
+                )}
+              </div>
 
               {/* Posts Recentes */}
               <div>

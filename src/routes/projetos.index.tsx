@@ -2,9 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
-import { PROJECTS, SITE } from "@/lib/site-data";
+import { SITE } from "@/lib/site-data";
+import { fetchProjects } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/projetos/")({
+  loader: async () => ({ projects: await fetchProjects() }),
   head: () => ({
     meta: [
       { title: "Projetos | Arquitetura Modular no Porto, EsDomusTech" },
@@ -24,6 +26,7 @@ export const Route = createFileRoute("/projetos/")({
 });
 
 function ProjetosPage() {
+  const { projects: PROJECTS } = Route.useLoaderData();
   return (
     <main>
       <PageHeader
