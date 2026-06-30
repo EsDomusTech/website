@@ -207,7 +207,7 @@ function PrecosPage() {
             ))}
           </div>
           <p className="s-body-sm mt-6" style={{ color: "var(--muted-foreground)" }}>
-            * Valores sem IVA. Projetos reais situam-se entre 108.000 € e 230.000 € conforme tipologia, localização e opções de personalização.
+            * Valores sem IVA, calculados sobre a área mínima de referência. A área final do seu projeto — e por isso o investimento total — é definida em função do terreno e do programa pretendido.
           </p>
         </div>
       </section>
