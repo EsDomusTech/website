@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site-data";
 const LAYERS = [
   { num: "01", title: "Acabamento de piso", text: "Revestimento à escolha: laminado/flutuante ou cerâmico." },
   { num: "02", title: "Placa OSB 22 mm", text: "Base estrutural do piso, fixada sobre a laje." },
-  { num: "03", title: "ETICS / EPS 50 mm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
+  { num: "03", title: "ETICS / EPS 10 cm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
   { num: "04", title: "Lã de Rocha", text: "Isolamento térmico e acústico no interior das paredes." },
   { num: "05", title: "Placa OSB 12 mm", text: "Revestimento estrutural da parede." },
   { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 3 mm (parede do tubo). O esqueleto da casa." },
@@ -53,7 +53,7 @@ const THICKNESS = [
   { item: "Estrutura", spec: "Tubo de aço galvanizado DX51D, 3 mm (parede do tubo), perfis ómega (EN 10346 / EN 10143)" },
   { item: "OSB Parede", spec: "12 mm" },
   { item: "OSB Piso", spec: "22 mm" },
-  { item: "Capoto / ETICS (exterior)", spec: "10 cm (EPS 50 mm, pormenor construtivo)" },
+  { item: "Capoto / ETICS (exterior)", spec: "10 cm (EPS — sistema SATE: capoto + tela de fibra de vidro + argamassa)" },
   { item: "Isolamento de piso (XPS)", spec: "Placa de Esferovite Azul XPS, 6 cm (apenas no chão)" },
   { item: "Lã de rocha", spec: "10 cm" },
   { item: "Pladur Branco / Hidrófugo / Anti-fogo", spec: "10 mm / 13 mm / 13 mm, conforme a zona" },

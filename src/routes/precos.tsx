@@ -14,8 +14,8 @@ const PRICE_NOTES = [
     value: "≈ 108.000 € a 230.000 € (sem IVA)",
   },
   {
-    label: "Plano de pagamento (5 marcos contratuais)",
-    value: "25% + 25% + 25% + 15% + 10% + IVA",
+    label: "Plano de pagamento (4 prestações)",
+    value: "25% + 25% + 25% + 25% + IVA",
   },
 ];
 
@@ -25,7 +25,7 @@ type FaqPrecos = { q: string; a: string; phases?: PaymentPhase[] };
 const PAYMENT_PHASES: PaymentPhase[] = [
   {
     pct: "25%",
-    label: "Adjudicação do contrato e trabalhos iniciais",
+    label: "Assinatura do contrato",
     items: [
       "Reuniões de arquitetura para definição do Estudo Prévio",
       "Desenvolvimento dos trabalhos de projeto de arquitetura, engenharia e especialidades",
@@ -36,38 +36,27 @@ const PAYMENT_PHASES: PaymentPhase[] = [
   },
   {
     pct: "25%",
-    label: "Início da construção em fábrica",
+    label: "Início de fabrico",
     items: [
-      "Aquisição de materiais",
       "Construção das estruturas em fábrica",
+      "Execução da base em betão, de acordo com o projeto de arquitetura aprovado",
     ],
   },
   {
     pct: "25%",
-    label: "Montagem das estruturas em obra e execução da base",
+    label: "Compra de materiais",
     items: [
-      "Execução da base em betão, de acordo com o projeto de arquitetura aprovado",
-      "Montagem da cobertura",
-      "Execução das paredes exteriores e interiores",
-      "Implementação de todas as infraestruturas de especialidades",
-    ],
-  },
-  {
-    pct: "15%",
-    label: "Acabamentos finais e instalações",
-    items: [
+      "Aquisição de materiais de estrutura, cobertura e paredes",
       "Aquisição de materiais de acabamentos finos",
-      "Instalação de equipamentos de instalações sanitárias",
-      "Execução de revestimentos, pavimentos, janelas, portadas e demais acabamentos incluídos no projeto",
     ],
   },
   {
-    pct: "10%",
-    label: "Finalização e entrega da habitação",
+    pct: "25%",
+    label: "Entrega final",
     items: [
-      "Conclusão da obra",
-      "Entrega da habitação ao contratante",
-      "Habitação devidamente licenciada para habitação",
+      "Montagem da cobertura, paredes exteriores e interiores e infraestruturas de especialidades",
+      "Instalação de equipamentos de instalações sanitárias, revestimentos, pavimentos, janelas e portadas",
+      "Conclusão da obra e entrega da habitação devidamente licenciada",
     ],
   },
 ];
@@ -79,7 +68,7 @@ const FAQS_PRECOS: FaqPrecos[] = [
   },
   {
     q: "Como é feito o pagamento?",
-    a: "O pagamento é distribuído por 5 marcos contratuais, associados ao avanço real da obra:",
+    a: "O pagamento é distribuído por 4 prestações iguais de 25%, associadas ao avanço real da obra:",
     phases: PAYMENT_PHASES,
   },
   {
