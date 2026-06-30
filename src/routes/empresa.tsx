@@ -79,10 +79,9 @@ function EmpresaPage() {
                 energética.
               </p>
               <p>
-                Em poucos anos no mercado, já entregámos 23 casas em 13 localizações por todo o
-                território nacional. Cada projeto segue o mesmo princípio: orçamentos claros e sem
-                surpresas, pagamentos facilitados por etapas e projetos modernos e exclusivos à medida
-                do cliente.
+                Construímos em todo o território nacional, do briefing à entrega chave na mão. Cada
+                projeto segue o mesmo princípio: orçamentos claros e sem surpresas, pagamentos
+                facilitados por etapas e projetos modernos e exclusivos à medida do cliente.
               </p>
               <p>
                 Personalize, construa, viva. A nossa equipa acompanha cada casa da primeira conversa

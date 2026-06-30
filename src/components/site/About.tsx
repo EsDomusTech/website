@@ -10,7 +10,7 @@ const BODY2 =
 
 const STATS = [
   { num: 10, label: "Anos de Garantia Estrutural" },
-  { num: null, str: "A+", label: "Classe Energética" },
+  { num: null, str: "A", label: "Classe Energética" },
   { num: null, str: "PT", label: "Cobertura Nacional" },
 ] as Array<{ num: number | null; str?: string; label: string }>;
 
