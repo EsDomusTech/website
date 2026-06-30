@@ -41,7 +41,7 @@ const SERVICES = [
       { _key: "01", num: "01", title: "Consulta e Terreno", text: "Visita técnica ao terreno, análise de condicionantes legais e briefing detalhado do programa de necessidades." },
       { _key: "02", num: "02", title: "Projeto e Licenciamento", text: "Arquitetura, engenharia estrutural e gestão completa do processo de licenciamento camarário." },
       { _key: "03", num: "03", title: "Fabrico em Fábrica", text: "Produção dos módulos em ambiente fabril controlado, em paralelo com a aprovação do projeto — sem paragens de obra." },
-      { _key: "04", num: "04", title: "Montagem e Entrega", text: "Instalação no terreno em 60 a 90 dias, com entrega chave na mão, ligações às redes e garantia estrutural de 10 anos. Prazos e condições sob consulta." },
+      { _key: "04", num: "04", title: "Montagem e Entrega", text: "Transporte e montagem dos módulos no terreno em poucos dias, seguidos de acabamentos e ligações às redes. Entrega chave na mão com garantia estrutural de 10 anos. Prazos e condições sob consulta." },
     ],
   },
   {
@@ -121,8 +121,8 @@ const BLOG_POSTS = [
     excerpt: "Estrutura a 1.150 €/m² ou chave-na-mão a 1.350 €/m²? Descubra o que está incluído em cada opção, o que pagar fora do preço de construção, e como funciona o financiamento.",
     body: [
       "A pergunta que mais recebemos é direta: quanto custa uma casa modular? A resposta honesta — e útil — é que o custo depende do tamanho, dos acabamentos e dos serviços incluídos. Mas há números concretos que pode usar como referência.",
-      "Na EsDomusTech, trabalhamos com dois referenciais de custo principais. A estrutura com laje e trabalhos exteriores ronda os 1.150 €/m² (+ IVA), enquanto a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — parte de 1.350 €/m² (+ IVA). Para uma casa de 80 m², estamos a falar de valores entre 108.000 € e 150.000 €; para 170 m², entre 195.000 € e 230.000 €.",
-      "O que está incluído no preço chave-na-mão? Estrutura metálica em aço galvanizado DX51D de 2 mm, fundações e laje, isolamentos, paredes e tecto em gesso cartonado, cozinha equipada, casas de banho completas, instalações elétrica e hidráulica, janelas e portas. Quando recebe as chaves, a casa está pronta a habitar.",
+      "Na EsDomusTech, trabalhamos com dois referenciais de custo principais. A estrutura com laje e trabalhos exteriores ronda os 1.150 €/m² (+ IVA), enquanto a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — parte de 1.350 €/m² (+ IVA). Para uma casa de 80 m², estamos a falar de valores entre 92.000 € e 108.000 €; para 170 m², entre 195.000 € e 230.000 €.",
+      "O que está incluído no preço chave-na-mão? Estrutura metálica em aço galvanizado DX51D de 3 mm, fundações e laje, isolamentos, paredes e tecto em gesso cartonado, cozinha equipada, casas de banho completas, instalações elétrica e hidráulica, janelas e portas. Quando recebe as chaves, a casa está pronta a habitar.",
       "Muitas vezes comparamos os custos por metro quadrado com a construção tradicional. Em Portugal, a construção convencional ronda frequentemente os 1.500 €/m² a 2.200 €/m² para soluções equivalentes — sem incluir os imprevistos que derivam de obras longas a céu aberto. Com construção modular, a maior parte do processo acontece em fábrica, com controlo de qualidade mais rigoroso e prazos mais previsíveis.",
       "O pagamento na EsDomusTech está estruturado em quatro fases iguais de 25%: assinatura do contrato, início de produção, entrega em obra e conclusão. Esta divisão permite planear o financiamento ao longo do processo, sem grandes adiantamentos numa única fase.",
       "Há custos que não entram no preço de construção e que deve orçamentar separadamente: o terreno, o projeto de arquitetura (obrigatório para licenciamento), as taxas camarárias e as ligações às redes de água, esgotos e eletricidade. Estes variam conforme a localização e o município.",
@@ -143,8 +143,8 @@ const BLOG_POSTS = [
     body: [
       "A comparação entre construção modular e tradicional surge em quase todas as conversas que temos com clientes. Há mitos de ambos os lados — e algumas verdades que vale a pena clarificar.",
       "O primeiro ponto é o processo. Numa obra tradicional, tudo acontece no terreno: fundações, paredes, cobertura, instalações — meses de trabalho exposto às condições meteorológicas, a subcontratados diferentes, a imprevistos em cadeia. Numa casa modular, a estrutura é produzida em fábrica, em condições controladas, antes de ser transportada e montada em obra. O que chega ao terreno é um produto já fabricado, não uma obra a construir.",
-      "Em termos de prazo, a diferença é significativa. Uma construção tradicional de 120 m² pode demorar entre 18 e 36 meses, dependendo de licenciamentos, disponibilidade de mão-de-obra e imprevistos. Com construção modular, o prazo desde aprovação do projeto até à entrega ronda os 4 a 6 meses para a maioria das tipologias.",
-      "E a qualidade? É aqui que mais surpresas existem. As casas modulares modernas usam materiais de especificação industrial — na EsDomusTech, a estrutura é em aço galvanizado DX51D de 2 mm, com isolamentos de alto desempenho nas paredes, piso e tecto. A produção em fábrica permite controlos de qualidade que são difíceis de replicar em obra, onde as condições mudam todos os dias.",
+      "Em termos de prazo, a diferença é significativa. Uma construção tradicional de 120 m² pode demorar entre 18 e 36 meses, dependendo de licenciamentos, disponibilidade de mão-de-obra e imprevistos. Com construção modular, o licenciamento camarário ronda os 2 a 4 meses e a construção em si fica concluída entre 12 a 18 meses após aprovação — um prazo mais previsível, mesmo que não instantâneo.",
+      "E a qualidade? É aqui que mais surpresas existem. As casas modulares modernas usam materiais de especificação industrial — na EsDomusTech, a estrutura é em aço galvanizado DX51D de 3 mm, com isolamentos de alto desempenho nas paredes, piso e tecto. A produção em fábrica permite controlos de qualidade que são difíceis de replicar em obra, onde as condições mudam todos os dias.",
       "No que toca à durabilidade e comportamento estrutural, uma casa modular bem executada é equivalente — ou superior — a uma construção convencional. Está sujeita às mesmas normas sísmicas e de segurança aplicáveis em Portugal. O facto de ser modular não significa que seja temporária ou menos robusta.",
       "A personalização também é maior do que a maioria imagina. Dentro de limites técnicos, é possível configurar o número de divisões, o pé-direito, os acabamentos interiores, a orientação solar e a expansibilidade futura da casa. Não é um produto de catálogo — é uma construção pensada para a situação específica de cada cliente.",
       "Onde a construção tradicional ainda tem vantagem é na integração de soluções muito específicas ou em lotes com geometrias complexas. Para terrenos com acessos difíceis ou inclinações pronunciadas, o transporte e montagem dos módulos pode exigir soluções adicionais. É algo que avaliamos caso a caso antes de avançar.",
@@ -164,12 +164,12 @@ const BLOG_POSTS = [
     body: [
       "Uma das maiores vantagens da construção modular é a previsibilidade. Ao contrário de uma obra convencional, onde o processo pode deparar-se com bloqueios a qualquer momento, a construção modular tem fases claras e sequências bem definidas. Explicamos como funciona, passo a passo.",
       "Tudo começa na reunião de briefing. Nesta fase, percebemos as necessidades do cliente: quantos quartos, qual o orçamento, que uso vai ter a casa — habitação permanente, residência secundária, geração de rendimento — e as características do terreno. Esta informação alimenta a proposta inicial e o orçamento preliminar.",
-      "Aprovada a proposta, avançamos para o projeto de arquitetura. Um arquitecto credenciado elabora o projeto técnico e submete-o ao município para licenciamento. Este processo — idêntico ao de uma construção convencional — demora tipicamente entre 2 e 6 meses, dependendo do município e da complexidade do projeto. É nesta fase que é emitido o alvará de construção.",
+      "Aprovada a proposta, avançamos para o projeto de arquitetura. Um arquitecto credenciado elabora o projeto técnico e submete-o ao município para licenciamento. Este processo — idêntico ao de uma construção convencional — demora tipicamente entre 2 e 4 meses, dependendo do município e da complexidade do projeto. É nesta fase que é emitido o alvará de construção.",
       "Com o alvará em mão, começa a produção em fábrica. Os módulos são fabricados em ambiente controlado: estrutura metálica em aço DX51D, paredes, pavimentos, cobertura, instalações elétrica e hidráulica — tudo montado e verificado antes de sair da fábrica. Esta fase demora geralmente entre 6 a 10 semanas para a maioria das tipologias.",
       "Paralelamente à produção, preparam-se as fundações no terreno. Escavação, betão e laje decorrem enquanto os módulos estão a ser fabricados — e é aqui que está uma das razões pelas quais o prazo total é mais curto do que numa obra tradicional: as fases acontecem em simultâneo, não em sequência.",
       "A montagem em obra é rápida. O transporte dos módulos para o local e a sua montagem demora tipicamente 2 a 5 dias, dependendo do número de módulos e das condições de acesso. A seguir vêm os acabamentos interiores — pintura, pavimentos, montagem de cozinha e casas de banho — e as ligações às redes públicas.",
       "Antes da entrega, realizamos uma vistoria completa. Verificamos todas as instalações, os acabamentos e o correto funcionamento de todos os equipamentos. Só depois de aprovada nesta vistoria é que emitimos a folha de entrega e entregamos as chaves.",
-      "O prazo total desde a assinatura do contrato até à entrega da casa depende sobretudo do licenciamento municipal. Em média, os nossos projetos ficam concluídos entre 4 a 8 meses após aprovação do alvará. É um prazo muito inferior ao de uma obra convencional equivalente — e, na nossa experiência, muito mais próximo do prazo original do que os clientes estão habituados a ouvir na construção tradicional.",
+      "O prazo total desde a assinatura do contrato até à entrega da casa depende sobretudo do licenciamento municipal. Em média, os nossos projetos ficam concluídos entre 12 a 18 meses após aprovação do alvará. É um prazo mais previsível do que o de uma obra convencional equivalente — e, na nossa experiência, muito mais próximo do prazo original do que os clientes estão habituados a ouvir na construção tradicional.",
     ],
   },
 ];
@@ -186,7 +186,7 @@ const FAQS = [
   { _type: "faq", q: "Como funciona o licenciamento camarário?", a: "A EsDomusTech trata da totalidade do processo: projeto, comunicação prévia ou licença de construção e acompanhamento até à licença de habitação. O cliente paga apenas as taxas camarárias." },
   { _type: "faq", q: "Qual é a garantia da casa?", a: "10 anos de garantia estrutural, sujeita a avaliação da nossa equipa de engenharia." },
   { _type: "faq", q: "Posso personalizar o interior?", a: "Sim, através do nosso sistema de \"plafon\": pode substituir qualquer elemento de catálogo (casa de banho, cozinha, portas, janelas), pagando apenas a diferença de valor face ao item standard." },
-  { _type: "faq", q: "A EsDomusTech constrói em todo o país?", a: "Sim. Construímos em todo o território nacional e já entregámos casas em 13 localizações diferentes." },
+  { _type: "faq", q: "A EsDomusTech constrói em todo o país?", a: "Sim. Construímos em todo o território nacional, do Algarve ao Minho." },
   { _type: "faq", q: "A casa pode ser construída em terreno rústico?", a: "Caso a caso — em terreno rústico é necessário analisar a necessidade de pilares. Fale connosco para avaliarmos as condições específicas do seu terreno." },
   { _type: "faq", q: "Existe financiamento bancário disponível?", a: "Não temos parceria formal com nenhuma instituição bancária. Os nossos clientes recorrem habitualmente ao crédito bancário por iniciativa própria. Podemos fornecer toda a documentação técnica necessária para o processo." },
 ];
@@ -202,6 +202,24 @@ const TEAM = [
 
 // ─── SEED ─────────────────────────────────────────────────────────────────────
 
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    .slice(0, 60);
+}
+
+/** Deterministic _id so re-running this script updates docs instead of duplicating them. */
+function makeId(doc) {
+  const slug = doc.slug?.current;
+  if (slug) return `${doc._type}-${slug}`;
+  if (doc._type === "faq") return `faq-${slugify(doc.q)}`;
+  if (doc._type === "teamMember") return `teamMember-${slugify(doc.name)}`;
+  return undefined;
+}
+
 async function seed() {
   if (!process.env.SANITY_AUTH_TOKEN && !process.env.SANITY_TOKEN) {
     console.error("Missing SANITY_TOKEN. Get a write token at sanity.io/manage → API → Tokens.");
@@ -212,7 +230,10 @@ async function seed() {
   console.log(`Seeding ${all.length} documents…`);
 
   for (const doc of all) {
-    const result = await client.create(doc);
+    const _id = makeId(doc);
+    const result = _id
+      ? await client.createOrReplace({ _id, ...doc })
+      : await client.create(doc);
     console.log(`  ✓ ${result._type}: ${result._id}`);
   }
 
