@@ -146,7 +146,7 @@ function ProjectNotFound() {
   );
 }
 
-function ProjectError({ error, reset }: { error: Error; reset: () => void }) {
+function ProjectError({ reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
   return (
     <main className="flex min-h-[70vh] items-center justify-center pt-20 text-center">
