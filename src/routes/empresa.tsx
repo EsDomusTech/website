@@ -42,7 +42,7 @@ export const Route = createFileRoute("/empresa")({
           "Conheça a EsDomusTech: estúdio de arquitetura e construção modular no Porto. A nossa missão, valores e equipa dedicada a casas inteligentes e sustentáveis.",
       },
       { property: "og:title", content: "Sobre a EsDomusTech | Arquitetura Modular no Porto" },
-      { property: "og:description", content: "A nossa história, missão e valores." },
+      { property: "og:description", content: "Conheça a EsDomusTech: estúdio de arquitetura e construção modular no Porto. Missão, valores e a equipa que entrega casas modulares chave na mão com rigor técnico." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE.domain}/empresa` },
       { property: "og:image", content: `${SITE.domain}/og-image.jpg` },

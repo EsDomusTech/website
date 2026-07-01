@@ -206,6 +206,7 @@ export type BlogPost = {
   title: string;
   cat: string;
   date: string;
+  isoDate: string;
   image: string;
   excerpt: string;
   readTime: string;
@@ -218,6 +219,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Licenciamento de casas modulares em Portugal: guia completo 2026",
     cat: "Licenciamento",
     date: "Jul 2026",
+    isoDate: "2026-07-01",
     readTime: "7 min",
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt: "Comunicação prévia ou licença de construção? Quais as taxas camarárias a contar? Quanto tempo demora? Tudo o que precisa de saber sobre o licenciamento de casas modulares em Portugal.",
@@ -237,6 +239,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Quanto custa uma casa modular? Guia de preços 2026",
     cat: "Preços e Custos",
     date: "Jun 2026",
+    isoDate: "2026-06-01",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt: "Estrutura a 1.150 €/m² ou chave-na-mão a 1.350 €/m²? Descubra o que está incluído em cada opção, o que pagar fora do preço de construção, e como funciona o financiamento.",
@@ -256,6 +259,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Casa modular vs. construção tradicional: o que muda de facto",
     cat: "Construção Modular",
     date: "Mai 2026",
+    isoDate: "2026-05-01",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt: "Prazo, qualidade, custos, personalização e durabilidade — comparação honesta entre as duas formas de construir, sem exageros de nenhum lado.",
@@ -275,6 +279,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Do projeto à entrega: como funciona o processo de construção modular",
     cat: "Processo",
     date: "Abr 2026",
+    isoDate: "2026-04-01",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=1200&h=800&fit=crop&auto=format&q=80",
     excerpt: "Desde o briefing inicial até à entrega das chaves, o processo modular tem fases claras e sequências previsíveis. Explicamos cada passo — e quanto tempo demora.",

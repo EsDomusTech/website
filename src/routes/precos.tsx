@@ -96,6 +96,39 @@ export const Route = createFileRoute("/precos")({
       { property: "og:url", content: `${SITE.domain}/precos` },
     ],
     links: [{ rel: "canonical", href: `${SITE.domain}/precos` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Casa Modular Chave na Mão — EsDomusTech",
+          description: "Construção modular chave na mão: estrutura, licenciamento, acabamentos, entrega. Classe energética A.",
+          brand: { "@type": "Brand", name: "EsDomusTech" },
+          offers: {
+            "@type": "Offer",
+            url: `${SITE.domain}/precos`,
+            priceCurrency: "EUR",
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: 1350,
+              priceCurrency: "EUR",
+              referenceQuantity: {
+                "@type": "QuantitativeValue",
+                value: 1,
+                unitCode: "MTK",
+              },
+            },
+            seller: {
+              "@type": "Organization",
+              name: SITE.name,
+              url: SITE.domain,
+            },
+            areaServed: "Portugal",
+          },
+        }),
+      },
+    ],
   }),
   component: PrecosPage,
 });
