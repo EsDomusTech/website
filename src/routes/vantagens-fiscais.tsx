@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { SITE } from "@/lib/site-data";
@@ -121,47 +120,11 @@ export const Route = createFileRoute("/vantagens-fiscais")({
   component: VantagensFiscaisPage,
 });
 
-function AccordionItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-
+function FaqItem({ q, a }: { q: string; a: string }) {
   return (
-    <div className="group border-b" style={{ borderColor: "#eeeeee" }}>
-      <button
-        type="button"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex justify-between items-center py-8 text-left focus:outline-none"
-      >
-        <span className="s-headline-md group-hover:text-[#BE9355] transition-colors" style={{ color: "#000000" }}>
-          {q}
-        </span>
-        <motion.span
-          animate={{ rotate: open ? 45 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="shrink-0 s-headline-md"
-          style={{ color: "#BE9355" }}
-          aria-hidden
-        >
-          +
-        </motion.span>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="body"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-            style={{ overflow: "hidden" }}
-          >
-            <div className="pb-12 pr-12">
-              <p className="s-body-md" style={{ color: "#444748" }}>{a}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className="border-b py-8" style={{ borderColor: "#eeeeee" }}>
+      <p className="s-body-lg font-medium mb-3" style={{ color: "#000000" }}>{q}</p>
+      <p className="s-body-md pr-12" style={{ color: "#444748" }}>{a}</p>
     </div>
   );
 }
@@ -332,7 +295,7 @@ function VantagensFiscaisPage() {
             </div>
             <div className="col-span-12 md:col-span-8">
               {FAQS.map((f) => (
-                <AccordionItem key={f.q} q={f.q} a={f.a} />
+                <FaqItem key={f.q} q={f.q} a={f.a} />
               ))}
             </div>
           </div>
