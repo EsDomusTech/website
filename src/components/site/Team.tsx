@@ -28,12 +28,12 @@ export function Team({ team }: { team?: TeamMember[] }) {
                 <img
                   src={member.image}
                   alt={`${member.name}, ${member.role} na EsDomusTech`}
-                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 touch:grayscale-0 touch:scale-105"
                 />
-                <div className="absolute inset-0 bg-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-15" />
+                <div className="absolute inset-0 bg-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-15 touch:opacity-15" />
                 {/* Gold line reveal on hover */}
                 <span
-                  className="absolute bottom-0 left-0 h-[3px] w-0 transition-all duration-500 group-hover:w-full"
+                  className="absolute bottom-0 left-0 h-[3px] w-0 transition-all duration-500 group-hover:w-full touch:w-full"
                   style={{ backgroundColor: "var(--gold)" }}
                 />
               </div>

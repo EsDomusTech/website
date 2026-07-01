@@ -1,4 +1,5 @@
 @import "tailwindcss" source(none);
+@custom-variant touch (@media (hover: none));
 @source "./components";
 @source "./routes";
 @source "./hooks";
