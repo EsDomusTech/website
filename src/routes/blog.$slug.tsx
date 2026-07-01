@@ -37,7 +37,8 @@ export const Route = createFileRoute("/blog/$slug")({
             description: p.excerpt,
             image: p.image,
             url: `${SITE.domain}/blog/${p.slug}`,
-            datePublished: p.date,
+            datePublished: p.isoDate,
+            dateModified: p.isoDate,
             author: {
               "@type": "Organization",
               name: SITE.name,

@@ -128,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": ["GeneralContractor", "LocalBusiness"],
+          "@type": ["GeneralContractor", "LocalBusiness", "HomeBuilder"],
           name: SITE.name,
           url: SITE.domain,
           image: `${SITE.domain}/og-image.jpg`,
