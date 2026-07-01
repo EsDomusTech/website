@@ -39,14 +39,30 @@ export const Route = createFileRoute("/faq")({
   component: FaqPage,
 });
 
-function FaqItem({ q, a }: { q: string; a: string }) {
+const FALE_CONNOSCO = "Fale connosco";
+
+function FaqItem({ q, a, onConsulta }: { q: string; a: string; onConsulta?: () => void }) {
+  const parts = onConsulta && a.includes(FALE_CONNOSCO) ? a.split(FALE_CONNOSCO) : null;
   return (
     <div className="border-b py-8" style={{ borderColor: "#eeeeee" }}>
       <p className="s-body-lg font-medium mb-3" style={{ color: "#000000" }}>
         {q}
       </p>
       <p className="s-body-md pr-12" style={{ color: "#444748" }}>
-        {a}
+        {parts ? (
+          <>
+            {parts[0]}
+            <button
+              type="button"
+              onClick={onConsulta}
+              className="underline transition-colors cursor-pointer hover:text-[#BE9355]"
+              style={{ color: "#000000" }}
+            >
+              {FALE_CONNOSCO}
+            </button>
+            {parts[1]}
+          </>
+        ) : a}
       </p>
     </div>
   );
@@ -140,7 +156,7 @@ function FaqPage() {
                     {cat.num} / {cat.label}
                   </h2>
                   {cat.items.map((f) => (
-                    <FaqItem key={f.q} q={f.q} a={f.a} />
+                    <FaqItem key={f.q} q={f.q} a={f.a} onConsulta={openConsulta} />
                   ))}
                 </motion.section>
               ))}

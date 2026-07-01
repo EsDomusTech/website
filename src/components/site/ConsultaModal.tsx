@@ -85,7 +85,7 @@ export function ConsultaModal() {
   const go = (delta: number) => { setDir(delta); setStep((s) => s + delta); };
 
   const step1Valid = !!(data.tipologia && data.quando && data.situacaoTerreno);
-  const step2Valid = true;
+  const step2Valid = !!(data.localizacao && data.formaPagamento);
   const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
 
   const isBot = () => {

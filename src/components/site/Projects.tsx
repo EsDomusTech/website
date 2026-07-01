@@ -52,11 +52,11 @@ export function Projects({ projects }: { projects?: Project[] }) {
                 <img
                   src={p.image}
                   alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech no Porto`}
-                  className="h-full w-full object-cover md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05]"
+                  className="h-full w-full object-cover md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05] touch:!grayscale-0 touch:scale-[1.05]"
                 />
 
                 {/* Overlay — always visible on mobile, hover on desktop */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-8 md:p-12 opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-8 md:p-12 opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 touch:!opacity-100">
                   <span
                     className="s-label-caps mb-2 block"
                     style={{ color: "var(--gold)", letterSpacing: "0.2em" }}

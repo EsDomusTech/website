@@ -17,6 +17,7 @@ import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EquipaRouteImport } from './routes/equipa'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -71,6 +72,11 @@ const GaleriaRoute = GaleriaRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipaRoute = EquipaRouteImport.update({
+  id: '/equipa',
+  path: '/equipa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmpresaRoute = EmpresaRouteImport.update({
@@ -154,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
+  '/equipa': typeof EquipaRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRouteWithChildren
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -231,6 +240,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
     | '/galeria'
     | '/politica-de-privacidade'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
     | '/galeria'
     | '/politica-de-privacidade'
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contacto'
     | '/empresa'
+    | '/equipa'
     | '/faq'
     | '/galeria'
     | '/politica-de-privacidade'
@@ -306,6 +318,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
+  EquipaRoute: typeof EquipaRoute
   FaqRoute: typeof FaqRoute
   GaleriaRoute: typeof GaleriaRouteWithChildren
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
@@ -380,6 +393,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipa': {
+      id: '/equipa'
+      path: '/equipa'
+      fullPath: '/equipa'
+      preLoaderRoute: typeof EquipaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/empresa': {
@@ -518,6 +538,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,
+  EquipaRoute: EquipaRoute,
   FaqRoute: FaqRoute,
   GaleriaRoute: GaleriaRouteWithChildren,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
