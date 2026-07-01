@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
@@ -62,27 +62,24 @@ function PortfolioFiltroPage() {
             ))}
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div key={active} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 gap-1 lg:grid-cols-3">
-              {filtered.map((p, i) => (
-                <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.06 }}>
-                  <Link to="/projetos/$slug" params={{ slug: p.slug }} className="group relative block overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                    <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
-                    <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ backgroundColor: "rgba(190,147,85,0.12)" }} />
-                    <div className="absolute right-4 top-4 flex h-9 w-9 translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100" style={{ backgroundColor: "var(--gold)" }}>
-                      <ArrowUpRight className="h-4 w-4 text-white" />
-                    </div>
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <span className="tracked mb-1 block text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>{p.category}</span>
-                      <h3 className="text-[16px] text-white" style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>{p.name}</h3>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+          <div className="grid grid-cols-2 gap-1 lg:grid-cols-3">
+            {filtered.map((p, i) => (
+              <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.06 }}>
+                <Link to="/projetos/$slug" params={{ slug: p.slug }} className="group relative block overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ backgroundColor: "rgba(190,147,85,0.12)" }} />
+                  <div className="absolute right-4 top-4 flex h-9 w-9 translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100" style={{ backgroundColor: "var(--gold)" }}>
+                    <ArrowUpRight className="h-4 w-4 text-white" />
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <span className="tracked mb-1 block text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>{p.category}</span>
+                    <h3 className="text-[16px] text-white" style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>{p.name}</h3>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
       <CtaBand />
