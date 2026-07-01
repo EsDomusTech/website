@@ -110,8 +110,8 @@ function DropdownMenu({ items, open }: { items: SubItem[]; open: boolean }) {
           to={item.to as "/"}
           role="menuitem"
           tabIndex={open ? 0 : -1}
-          className="block px-5 py-2.5 text-[11px] font-medium transition-colors hover:bg-[var(--logo-strip)] hover:text-[color:var(--gold)]"
-          style={{ fontFamily: "var(--font-display)", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--foreground)" }}
+          className="block px-5 py-2.5 text-[11px] font-medium text-[color:var(--foreground)] transition-colors hover:bg-[var(--logo-strip)] hover:text-[color:var(--gold)]"
+          style={{ fontFamily: "var(--font-display)", letterSpacing: "0.1em", textTransform: "uppercase" }}
         >
           {item.label}
         </Link>
@@ -222,8 +222,8 @@ export function Navbar() {
                     activeOptions={{ exact: link.to === "/" }}
                     aria-haspopup={link.children ? "menu" : undefined}
                     aria-expanded={link.children ? openDropdown === link.label : undefined}
-                    className="relative flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}
+                    className="relative flex items-center gap-1 text-[11px] font-medium text-white transition-colors hover:text-[color:var(--gold)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[color:var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase" }}
                     activeProps={{
                       className: "relative flex items-center gap-1 text-[11px] font-medium after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-[color:var(--gold)]",
                       style: { fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gold)" },
@@ -239,8 +239,8 @@ export function Navbar() {
                     type="button"
                     aria-haspopup="menu"
                     aria-expanded={openDropdown === link.label}
-                    className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[color:var(--gold)]"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff" }}
+                    className="flex items-center gap-1 text-[11px] font-medium text-white transition-colors hover:text-[color:var(--gold)]"
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em", textTransform: "uppercase" }}
                   >
                     {link.label}
                     {link.children && (
@@ -350,8 +350,8 @@ export function Navbar() {
                 <ul className="space-y-0">
                   {NAV_LINKS.map((link, i) => {
                     const labelClass =
-                      "block py-[0.55rem] text-[1.6rem] font-medium uppercase leading-none tracking-[0.2em] transition-colors duration-200 hover:text-[color:var(--gold)] md:text-[2rem]";
-                    const labelStyle = { fontFamily: "var(--font-display)", color: "var(--muted-foreground)" } as const;
+                      "block py-[0.55rem] text-[1.6rem] font-medium uppercase leading-none tracking-[0.2em] transition-colors duration-200 text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)] md:text-[2rem]";
+                    const labelStyle = { fontFamily: "var(--font-display)" } as const;
                     return (
                       <motion.li
                         key={link.label}
@@ -376,8 +376,7 @@ export function Navbar() {
                                 aria-label={`Mostrar submenu ${link.label}`}
                                 aria-expanded={openSub === link.label}
                                 onClick={() => setOpenSub((v) => (v === link.label ? null : link.label))}
-                                className="flex h-11 w-11 shrink-0 items-center justify-center transition-colors hover:text-[color:var(--gold)]"
-                                style={{ color: "var(--muted-foreground)" }}
+                                className="flex h-11 w-11 shrink-0 items-center justify-center text-[color:var(--muted-foreground)] transition-colors hover:text-[color:var(--gold)]"
                               >
                                 <ChevronDown
                                   className={`h-6 w-6 transition-transform duration-300 ${openSub === link.label ? "rotate-180" : ""}`}
@@ -400,8 +399,8 @@ export function Navbar() {
                                       <Link
                                         to={sub.to as "/"}
                                         onClick={() => setMenuOpen(false)}
-                                        className="block py-2 text-base uppercase tracking-[0.18em] transition-colors duration-200 hover:text-[color:var(--gold)]"
-                                        style={{ fontFamily: "var(--font-display)", color: "var(--muted-foreground)" }}
+                                        className="block py-2 text-base uppercase tracking-[0.18em] transition-colors duration-200 text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
+                                        style={{ fontFamily: "var(--font-display)" }}
                                       >
                                         {sub.label}
                                       </Link>
