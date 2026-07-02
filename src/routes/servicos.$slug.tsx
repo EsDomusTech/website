@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { PageHeader } from "@/components/site/PageHeader";
-import { SITE } from "@/lib/site-data";
+import { SITE, AREA_SERVED_NORTE } from "@/lib/site-data";
 import { fetchService, fetchServices } from "@/lib/sanity-queries";
 
 export const Route = createFileRoute("/servicos/$slug")({
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/servicos/$slug")({
               telephone: SITE.phone,
               email: SITE.email,
             },
-            areaServed: "Portugal",
+            areaServed: AREA_SERVED_NORTE,
             serviceType: s.name,
           }),
         },

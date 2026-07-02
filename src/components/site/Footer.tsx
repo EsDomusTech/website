@@ -153,7 +153,7 @@ export function Footer() {
           <p className="s-body-md uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link
               to="/politica-de-privacidade"
               className="s-body-md uppercase tracking-widest transition-colors hover:text-[var(--gold)]"

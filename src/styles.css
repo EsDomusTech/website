@@ -6,6 +6,11 @@
 @source "./lib";
 @import "tw-animate-css";
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 @theme inline {
   --radius-sm: var(--radius);
   --radius-md: var(--radius);
