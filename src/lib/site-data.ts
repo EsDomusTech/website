@@ -14,6 +14,17 @@ export const SITE = {
   mapsUrl: "https://maps.app.goo.gl/g1MDpujHhEtBvNqs7",
 } as const;
 
+/** Schema.org areaServed — Norte de Portugal, onde fazemos entrega e acompanhamento direto da obra. */
+export const AREA_SERVED_NORTE = [
+  { "@type": "AdministrativeArea", name: "Norte de Portugal" },
+  { "@type": "City", name: "Porto" },
+  { "@type": "City", name: "Braga" },
+  { "@type": "City", name: "Aveiro" },
+  { "@type": "City", name: "Viana do Castelo" },
+  { "@type": "City", name: "Vila Real" },
+  { "@type": "City", name: "Bragança" },
+] as const;
+
 export type Service = {
   slug: string;
   name: string;

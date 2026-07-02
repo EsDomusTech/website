@@ -2,18 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
 import { BLOG_POSTS, type BlogPost } from "@/lib/site-data";
-import { ArrowRight, Calendar, Tag } from "lucide-react";
+import { ArrowRight, Calendar, Newspaper } from "lucide-react";
 
 export function Blog({ posts }: { posts?: BlogPost[] }) {
   const items = posts ?? BLOG_POSTS;
   return (
     <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
       <div className="s-wrap">
-        <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-16 flex flex-row flex-wrap items-center justify-between gap-6">
           <SectionTitle eyebrow="Atualidade" first="Do" second="Blog" align="left" />
           <Link
             to="/blog"
-            className="tracked inline-flex items-center gap-3 text-[11px] font-medium transition-colors"
+            className="tracked inline-flex items-center gap-3 whitespace-nowrap text-[11px] font-medium transition-colors"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
@@ -52,7 +52,7 @@ export function Blog({ posts }: { posts?: BlogPost[] }) {
                     className="tracked inline-flex items-center gap-1.5 text-[10px] font-medium"
                     style={{ color: "var(--foreground)", fontFamily: "var(--font-display)" }}
                   >
-                    <Tag className="h-2.5 w-2.5 shrink-0" style={{ color: "var(--gold)" }} />
+                    <Newspaper className="h-2.5 w-2.5 shrink-0" style={{ color: "var(--gold)" }} />
                     {n.cat}
                   </span>
                   <span className="h-3 w-px" style={{ backgroundColor: "var(--border)" }} />

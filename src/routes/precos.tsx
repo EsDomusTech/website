@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
-import { SITE } from "@/lib/site-data";
+import { SITE, AREA_SERVED_NORTE } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
 
 const PRICE_NOTES = [
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/precos")({
               name: SITE.name,
               url: SITE.domain,
             },
-            areaServed: "Portugal",
+            areaServed: AREA_SERVED_NORTE,
           },
         }),
       },
@@ -232,7 +232,7 @@ function PrecosPage() {
                 <span className="s-body-md hidden md:block" style={{ color: "#444748" }}>
                   × 1.350 €
                 </span>
-                <span className="s-headline-md" style={{ color: "#000000" }}>
+                <span className="s-headline-md whitespace-nowrap text-[1.05rem] sm:text-[1.5rem]" style={{ color: "#000000" }}>
                   {row.t === "T5+" ? "+" : ""}
                   {(row.area * 1350).toLocaleString("pt-PT")} €
                 </span>

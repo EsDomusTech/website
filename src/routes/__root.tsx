@@ -20,7 +20,7 @@ import { CookieBanner } from "@/components/site/CookieBanner";
 import { ConsultaModalProvider } from "@/lib/consulta-store";
 import { getConsent } from "@/lib/cookie-consent";
 import { loadGA } from "@/lib/analytics";
-import { SITE } from "@/lib/site-data";
+import { SITE, AREA_SERVED_NORTE } from "@/lib/site-data";
 
 function NotFoundComponent() {
   return (
@@ -93,18 +93,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "EsDomusTech - Casas Modulares" },
-      { name: "description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
+      { name: "description", content: "Casas modulares modernas e sustentáveis no Porto e no Norte de Portugal, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { name: "author", content: "EsDomusTech" },
       { name: "google-site-verification", content: "google66209e8887b438e6" },
       { name: "google-site-verification", content: "wP7jArwcuTWSXocJiPBNILSJBLXQlSf75kDP9qyFE-0" },
       { property: "og:title", content: "EsDomusTech - Casas Modulares" },
-      { property: "og:description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
+      { property: "og:description", content: "Casas modulares modernas e sustentáveis no Porto e no Norte de Portugal, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE.domain },
       { property: "og:site_name", content: SITE.name },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "EsDomusTech - Casas Modulares" },
-      { name: "twitter:description", content: "Casas modulares modernas e sustentáveis no Porto, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
+      { name: "twitter:description", content: "Casas modulares modernas e sustentáveis no Porto e no Norte de Portugal, com arquitetura contemporânea, eficiência energética e tecnologia que garante rapidez e precisão." },
       { property: "og:image", content: `${SITE.domain}/og-image.jpg` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -146,7 +146,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "PT",
           },
           openingHours: "Mo-Fr 08:00-17:00",
-          areaServed: "Portugal",
+          areaServed: AREA_SERVED_NORTE,
           sameAs: [
             "https://www.instagram.com/esdomustech_porto",
             "https://www.facebook.com/esdomustech/",
