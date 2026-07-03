@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
+import { PageHeader } from "@/components/site/PageHeader";
 import { useConsultaModal } from "@/lib/consulta-store";
 import { FAQS, SITE } from "@/lib/site-data";
 import { fetchFaqs } from "@/lib/sanity-queries";
@@ -102,35 +103,15 @@ function FaqPage() {
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Hero header — display-lg, à risca do Stitch */}
-      <header style={{ paddingBlock: "120px 0" }}>
-        <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-8">
-              <motion.h1
-                className="s-display-lg mb-8"
-                style={{ color: "#000000" }}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-              >
-                Perguntas <br />
-                <span style={{ color: "#BE9355" }}>Frequentes</span>
-              </motion.h1>
-              <motion.p
-                className="s-body-lg"
-                style={{ color: "#444748", maxWidth: 672 }}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-              >
-                A transparência é a base do nosso processo. Reunimos as respostas às perguntas
-                mais frequentes para o ajudar a navegar desde o conceito até à entrega.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Hero header */}
+      <PageHeader
+        titleFirst="Perguntas"
+        titleSecond="Frequentes"
+        subtitle="A transparência é a base do nosso processo. Reunimos as respostas às perguntas mais frequentes para o ajudar a navegar desde o conceito até à entrega."
+        image="/images/hero/page-header-fallback.webp"
+        variant="light"
+        align="left"
+      />
 
       {/* FAQ body — sidebar 3col + main 9col */}
       <section style={{ paddingBlock: 120 }}>

@@ -25,12 +25,7 @@ import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
-import { Route as ProjetosListaRouteImport } from './routes/projetos.lista'
-import { Route as ProjetosFiltroRouteImport } from './routes/projetos.filtro'
-import { Route as ProjetosFancyFiltroRouteImport } from './routes/projetos.fancy-filtro'
-import { Route as ProjetosFancyRouteImport } from './routes/projetos.fancy'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
-import { Route as GaleriaMasonryRouteImport } from './routes/galeria.masonry'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const VantagensFiscaisRoute = VantagensFiscaisRouteImport.update({
@@ -113,35 +108,10 @@ const ServicosSlugRoute = ServicosSlugRouteImport.update({
   path: '/servicos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjetosListaRoute = ProjetosListaRouteImport.update({
-  id: '/projetos/lista',
-  path: '/projetos/lista',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosFiltroRoute = ProjetosFiltroRouteImport.update({
-  id: '/projetos/filtro',
-  path: '/projetos/filtro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosFancyFiltroRoute = ProjetosFancyFiltroRouteImport.update({
-  id: '/projetos/fancy-filtro',
-  path: '/projetos/fancy-filtro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosFancyRoute = ProjetosFancyRouteImport.update({
-  id: '/projetos/fancy',
-  path: '/projetos/fancy',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   id: '/projetos/$slug',
   path: '/projetos/$slug',
   getParentRoute: () => rootRouteImport,
-} as any)
-const GaleriaMasonryRoute = GaleriaMasonryRouteImport.update({
-  id: '/masonry',
-  path: '/masonry',
-  getParentRoute: () => GaleriaRoute,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -155,7 +125,7 @@ export interface FileRoutesByFullPath {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
-  '/galeria': typeof GaleriaRouteWithChildren
+  '/galeria': typeof GaleriaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
@@ -163,12 +133,7 @@ export interface FileRoutesByFullPath {
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/projetos/fancy': typeof ProjetosFancyRoute
-  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
-  '/projetos/filtro': typeof ProjetosFiltroRoute
-  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -179,7 +144,7 @@ export interface FileRoutesByTo {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
-  '/galeria': typeof GaleriaRouteWithChildren
+  '/galeria': typeof GaleriaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
@@ -187,12 +152,7 @@ export interface FileRoutesByTo {
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/projetos/fancy': typeof ProjetosFancyRoute
-  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
-  '/projetos/filtro': typeof ProjetosFiltroRoute
-  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/blog': typeof BlogIndexRoute
   '/projetos': typeof ProjetosIndexRoute
@@ -205,7 +165,7 @@ export interface FileRoutesById {
   '/contacto': typeof ContactoRoute
   '/empresa': typeof EmpresaRoute
   '/faq': typeof FaqRoute
-  '/galeria': typeof GaleriaRouteWithChildren
+  '/galeria': typeof GaleriaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sistema-construtivo': typeof SistemaConstrutivoRoute
@@ -213,12 +173,7 @@ export interface FileRoutesById {
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/galeria/masonry': typeof GaleriaMasonryRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/projetos/fancy': typeof ProjetosFancyRoute
-  '/projetos/fancy-filtro': typeof ProjetosFancyFiltroRoute
-  '/projetos/filtro': typeof ProjetosFiltroRoute
-  '/projetos/lista': typeof ProjetosListaRoute
   '/servicos/$slug': typeof ServicosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -240,12 +195,7 @@ export interface FileRouteTypes {
     | '/termos-e-condicoes'
     | '/vantagens-fiscais'
     | '/blog/$slug'
-    | '/galeria/masonry'
     | '/projetos/$slug'
-    | '/projetos/fancy'
-    | '/projetos/fancy-filtro'
-    | '/projetos/filtro'
-    | '/projetos/lista'
     | '/servicos/$slug'
     | '/blog/'
     | '/projetos/'
@@ -264,12 +214,7 @@ export interface FileRouteTypes {
     | '/termos-e-condicoes'
     | '/vantagens-fiscais'
     | '/blog/$slug'
-    | '/galeria/masonry'
     | '/projetos/$slug'
-    | '/projetos/fancy'
-    | '/projetos/fancy-filtro'
-    | '/projetos/filtro'
-    | '/projetos/lista'
     | '/servicos/$slug'
     | '/blog'
     | '/projetos'
@@ -289,12 +234,7 @@ export interface FileRouteTypes {
     | '/termos-e-condicoes'
     | '/vantagens-fiscais'
     | '/blog/$slug'
-    | '/galeria/masonry'
     | '/projetos/$slug'
-    | '/projetos/fancy'
-    | '/projetos/fancy-filtro'
-    | '/projetos/filtro'
-    | '/projetos/lista'
     | '/servicos/$slug'
     | '/blog/'
     | '/projetos/'
@@ -307,7 +247,7 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   EmpresaRoute: typeof EmpresaRoute
   FaqRoute: typeof FaqRoute
-  GaleriaRoute: typeof GaleriaRouteWithChildren
+  GaleriaRoute: typeof GaleriaRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PrecosRoute: typeof PrecosRoute
   SistemaConstrutivoRoute: typeof SistemaConstrutivoRoute
@@ -315,10 +255,6 @@ export interface RootRouteChildren {
   TermosECondicoesRoute: typeof TermosECondicoesRoute
   VantagensFiscaisRoute: typeof VantagensFiscaisRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
-  ProjetosFancyRoute: typeof ProjetosFancyRoute
-  ProjetosFancyFiltroRoute: typeof ProjetosFancyFiltroRoute
-  ProjetosFiltroRoute: typeof ProjetosFiltroRoute
-  ProjetosListaRoute: typeof ProjetosListaRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
@@ -438,47 +374,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projetos/lista': {
-      id: '/projetos/lista'
-      path: '/projetos/lista'
-      fullPath: '/projetos/lista'
-      preLoaderRoute: typeof ProjetosListaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos/filtro': {
-      id: '/projetos/filtro'
-      path: '/projetos/filtro'
-      fullPath: '/projetos/filtro'
-      preLoaderRoute: typeof ProjetosFiltroRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos/fancy-filtro': {
-      id: '/projetos/fancy-filtro'
-      path: '/projetos/fancy-filtro'
-      fullPath: '/projetos/fancy-filtro'
-      preLoaderRoute: typeof ProjetosFancyFiltroRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos/fancy': {
-      id: '/projetos/fancy'
-      path: '/projetos/fancy'
-      fullPath: '/projetos/fancy'
-      preLoaderRoute: typeof ProjetosFancyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projetos/$slug': {
       id: '/projetos/$slug'
       path: '/projetos/$slug'
       fullPath: '/projetos/$slug'
       preLoaderRoute: typeof ProjetosSlugRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/galeria/masonry': {
-      id: '/galeria/masonry'
-      path: '/masonry'
-      fullPath: '/galeria/masonry'
-      preLoaderRoute: typeof GaleriaMasonryRouteImport
-      parentRoute: typeof GaleriaRoute
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -502,24 +403,13 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
-interface GaleriaRouteChildren {
-  GaleriaMasonryRoute: typeof GaleriaMasonryRoute
-}
-
-const GaleriaRouteChildren: GaleriaRouteChildren = {
-  GaleriaMasonryRoute: GaleriaMasonryRoute,
-}
-
-const GaleriaRouteWithChildren =
-  GaleriaRoute._addFileChildren(GaleriaRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   EmpresaRoute: EmpresaRoute,
   FaqRoute: FaqRoute,
-  GaleriaRoute: GaleriaRouteWithChildren,
+  GaleriaRoute: GaleriaRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PrecosRoute: PrecosRoute,
   SistemaConstrutivoRoute: SistemaConstrutivoRoute,
@@ -527,10 +417,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermosECondicoesRoute: TermosECondicoesRoute,
   VantagensFiscaisRoute: VantagensFiscaisRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
-  ProjetosFancyRoute: ProjetosFancyRoute,
-  ProjetosFancyFiltroRoute: ProjetosFancyFiltroRoute,
-  ProjetosFiltroRoute: ProjetosFiltroRoute,
-  ProjetosListaRoute: ProjetosListaRoute,
   ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
   ServicosIndexRoute: ServicosIndexRoute,

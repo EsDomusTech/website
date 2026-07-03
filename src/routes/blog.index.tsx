@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { Newspaper } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 import { fetchBlogPosts } from "@/lib/sanity-queries";
@@ -110,7 +111,8 @@ function BlogPage() {
                         />
                       </div>
                       <div className="p-8">
-                        <p className="s-label-caps mb-3" style={{ color: "var(--label-muted)" }}>
+                        <p className="s-label-caps mb-3 inline-flex items-center gap-1.5" style={{ color: "var(--label-muted)" }}>
+                          <Newspaper className="h-2.5 w-2.5 shrink-0" style={{ color: "var(--gold)" }} />
                           {n.cat} · {n.date}
                         </p>
                         <h2 className="s-headline-md mb-4" style={{ color: "#000000" }}>

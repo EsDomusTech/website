@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
+import { PageHeader } from "@/components/site/PageHeader";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { SITE } from "@/lib/site-data";
 
@@ -104,31 +105,16 @@ function SistemaConstrutivoPage() {
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Hero — display-lg, sem imagem */}
-      <header style={{ paddingBlock: "120px 0" }}>
-        <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-8">
-              <span
-                className="s-label-caps mb-4 block"
-                style={{ color: "#BE9355", letterSpacing: "0.3em" }}
-              >
-                O Produto
-              </span>
-              <h1 className="s-display-lg mb-8" style={{ color: "#000000" }}>
-                Sistema /<br />
-                <span style={{ color: "#BE9355" }}>Construtivo.</span>
-              </h1>
-              <p className="s-body-lg" style={{ color: "#444748", maxWidth: 640 }}>
-                Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento
-                termoacústico e design moderno, garantindo rapidez na construção e máxima
-                eficiência energética. Estrutura tubular em aço galvanizado DX51D (3 mm de parede, normas
-                EN&nbsp;10346 / EN&nbsp;10143), com perfis ómega e dois sistemas construtivos à escolha.
-              </p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Hero */}
+      <PageHeader
+        eyebrow="O Produto"
+        titleFirst="Sistema /"
+        titleSecond="Construtivo."
+        subtitle="Casas modulares desenvolvidas em estrutura metálica robusta, com isolamento termoacústico e design moderno, garantindo rapidez na construção e máxima eficiência energética. Estrutura tubular em aço galvanizado DX51D (3 mm de parede, normas EN 10346 / EN 10143), com perfis ómega e dois sistemas construtivos à escolha."
+        image="/images/hero/sistema-construtivo-hero.webp"
+        variant="light"
+        align="left"
+      />
 
       {/* Anatomia da casa — 12 camadas numeradas */}
       <section style={{ paddingBlock: 120 }}>

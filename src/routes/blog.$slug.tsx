@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Newspaper } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 import { fetchBlogPost, fetchBlogPosts } from "@/lib/sanity-queries";
@@ -109,9 +109,10 @@ function BlogPostPage() {
         <div className="absolute inset-0 flex flex-col justify-end">
           <div className="s-wrap pb-14">
             <span
-              className="s-label-caps block mb-3"
+              className="s-label-caps mb-3 inline-flex items-center gap-2"
               style={{ color: "#BE9355", letterSpacing: "0.3em" }}
             >
+              <Newspaper className="h-3 w-3 shrink-0" />
               {p.cat}
             </span>
             <h1

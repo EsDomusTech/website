@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
+import { PageHeader } from "@/components/site/PageHeader";
 import { SITE, AREA_SERVED_NORTE } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
 
@@ -138,43 +139,16 @@ function PrecosPage() {
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Hero — display-lg, sem imagem */}
-      <header className="pt-[100px] md:pt-[120px]">
-        <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-8">
-              <motion.span
-                className="s-label-caps mb-4 block"
-                style={{ color: "var(--muted-foreground)", letterSpacing: "0.3em" }}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                Estrutura de Investimento
-              </motion.span>
-              <motion.h1
-                className="s-display-lg mb-8"
-                style={{ color: "#000000" }}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-              >
-                Calculado /<br />
-                <span style={{ color: "#BE9355" }}>Precisão.</span>
-              </motion.h1>
-              <motion.p
-                className="s-body-lg"
-                style={{ color: "#444748", maxWidth: 640 }}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              >
-                Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto. O orçamento final é sempre personalizado.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Hero */}
+      <PageHeader
+        eyebrow="Estrutura de Investimento"
+        titleFirst="Calculado /"
+        titleSecond="Precisão."
+        subtitle="Transparência total desde o início. Escolha o plano que melhor se adapta ao seu projeto. O orçamento final é sempre personalizado."
+        image="/images/hero/page-header-fallback.webp"
+        variant="light"
+        align="left"
+      />
 
       {/* Estimativas por Tipologia */}
       <section className="py-16 md:py-[100px]">
