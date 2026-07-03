@@ -1,0 +1,87 @@
+{
+  "name": "DomusTech — Lead Form → Google Sheets",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": {
+        "hook": {
+          "name": "DomusTech Form Orçamento"
+        },
+        "maxResults": 1
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 },
+        "restore": {
+          "parameters": {
+            "hook": { "label": "DomusTech Form Orçamento" }
+          }
+        },
+        "parameters": [
+          {
+            "name": "hook",
+            "type": "hook:gateway-webhook",
+            "label": "Webhook",
+            "required": true
+          },
+          {
+            "name": "maxResults",
+            "type": "number",
+            "label": "Maximum number of results"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "module": "google-sheets:addRow",
+      "version": 2,
+      "parameters": {
+        "__IMTCONN__": "SUBSTITUI_PELO_ID_DA_LIGACAO_GOOGLE"
+      },
+      "mapper": {
+        "spreadsheetId": "SUBSTITUI_PELO_ID_DO_SPREADSHEET",
+        "sheetId": "Sheet1",
+        "includesHeaders": true,
+        "values": {
+          "Data": "{{formatDate(now; \"DD/MM/YYYY HH:mm\")}}",
+          "Nome": "{{1.nome}}",
+          "Sobrenome": "{{1.sobrenome}}",
+          "Telefone": "{{1.telefone}}",
+          "Email": "{{1.email}}",
+          "Uso": "{{1.uso}}",
+          "Tipo Terreno": "{{1.tipoTerreno}}",
+          "Distrito": "{{1.distrito}}",
+          "Tipologia": "{{1.tipologia}}"
+        }
+      },
+      "metadata": {
+        "designer": { "x": 300, "y": 0 },
+        "restore": {
+          "parameters": {
+            "__IMTCONN__": { "label": "Google Sheets (DomusTech)" }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu1.make.com"
+  }
+}

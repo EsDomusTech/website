@@ -61,7 +61,8 @@ function EmpresaPage() {
         eyebrow="Quem Somos"
         titleFirst="Arquitetura e Construção"
         titleSecond="Modular no Porto"
-        image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=900&fit=crop&auto=format&q=80"
+        image="/images/hero/hero-rural.webp"
+        variant="light"
         subtitle="Um estúdio de arquitetura e construção modular sediado no Porto, dedicado a criar casas inteligentes, sustentáveis e profundamente humanas."
         align="left"
       />

@@ -34,7 +34,8 @@ function ProjetosPage() {
         titleFirst="OS NOSSOS"
         titleSecond="PROJETOS"
         subtitle="Uma seleção de projetos que refletem a nossa abordagem à arquitetura modular e ao design."
-        image="https://images.unsplash.com/photo-1626178793926-22b28830aa30?w=1600&h=900&fit=crop&auto=format&q=80"
+        image="/images/hero/page-header-fallback.webp"
+        variant="light"
       />
 
       <section className="section-pad">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SITE } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
+import { PageHeader } from "@/components/site/PageHeader";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -36,34 +37,14 @@ function ContactoPage() {
     <main style={{ backgroundColor: "var(--background)" }}>
 
       {/* Hero */}
-      <header className="pt-[100px] md:pt-[120px]">
-        <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-8">
-              <motion.h1
-                className="s-display-lg mb-8"
-                style={{ color: "var(--foreground)" }}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-              >
-                Vamos construir algo <br />
-                <span style={{ color: "var(--gold)" }}>duradouro</span>.
-              </motion.h1>
-              <motion.p
-                className="s-body-lg"
-                style={{ color: "var(--muted-foreground)", maxWidth: 560 }}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-              >
-                O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas
-                para discutir a sua visão de espaço e estrutura.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </header>
+      <PageHeader
+        titleFirst="Vamos construir algo"
+        titleSecond="duradouro."
+        subtitle="O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas para discutir a sua visão de espaço e estrutura."
+        image="/images/hero/page-header-fallback.webp"
+        variant="light"
+        align="left"
+      />
 
       {/* Body — info + CTA */}
       <section className="py-16 md:py-[120px]">

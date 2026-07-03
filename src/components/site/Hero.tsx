@@ -5,19 +5,19 @@ import { Link } from "@tanstack/react-router";
 
 const SLIDES = [
   {
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&h=900&fit=crop&auto=format&q=80",
+    img: "/images/hero/hero-arquitetura-moderna.webp",
     eyebrow: "Arquitetura Moderna",
     title: "Casas Modulares que\nInspiram Viver",
     sub: "Criamos casas modulares que unem estética, tecnologia e sustentabilidade no coração do Porto.",
   },
   {
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&h=900&fit=crop&auto=format&q=80",
+    img: "/images/hero/hero-design-inteligente.webp",
     eyebrow: "Design Inteligente",
     title: "Construção Modular:\nDo Conceito à Realidade",
     sub: "Casas modulares pensadas para a vida contemporânea, com soluções personalizadas para cada cliente.",
   },
   {
-    img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&h=900&fit=crop&auto=format&q=80",
+    img: "/images/hero/hero-construcao-premium.webp",
     eyebrow: "Construção Premium",
     title: "Casas Modulares no Porto,\ncom Rigor e Detalhe",
     sub: "Do projeto à entrega, acompanhamos cada etapa com precisão e comprometimento total.",
@@ -44,7 +44,7 @@ export function Hero() {
   useEffect(() => {
     const t = setInterval(() => setIndex((p) => (p + 1) % SLIDES.length), 6000);
     return () => clearInterval(t);
-  }, []);
+  }, [index]);
 
   const slide = SLIDES[index];
 
@@ -65,10 +65,6 @@ export function Hero() {
             className="h-full w-full object-cover"
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
-            {...(i === 0 ? {
-              srcSet: `${s.img.replace("w=1600&h=900", "w=800&h=450")} 800w, ${s.img} 1600w`,
-              sizes: "100vw",
-            } : {})}
           />
           <div className="absolute inset-0 bg-black/30" />
           {/* Gradient to ensure navbar legibility */}

@@ -34,16 +34,19 @@ export function Footer() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
         >
-          <p className="s-headline-md mb-6" style={{ color: "#fff" }}>
-            {SITE.name.toUpperCase()}
-          </p>
+          <div className="mb-6 flex items-center gap-3">
+            <img src="/logo-casinha.png" alt="" aria-hidden width={32} height={32} style={{ objectFit: "contain" }} />
+            <p className="s-headline-md" style={{ color: "#fff" }}>
+              {SITE.name.toUpperCase()}
+            </p>
+          </div>
           <p className="s-body-md mb-8" style={{ color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>
             Construção modular com identidade própria. Design rigoroso, prazos certos, no Porto.
           </p>
           <h3 className="s-headline-md mb-6" style={{ color: "#fff" }}>
             Redes Sociais
           </h3>
-          <div className="flex gap-4">
+          <div className="flex -ml-3 gap-1 sm:gap-2">
             {SOCIAL.map(({ label, Icon, href }) => (
               <a
                 key={label}
@@ -51,7 +54,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="transition-colors"
+                className="flex items-center justify-center p-3 transition-colors"
                 style={{ color: "rgba(255,255,255,0.6)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
