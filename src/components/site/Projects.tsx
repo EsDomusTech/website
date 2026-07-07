@@ -51,7 +51,7 @@ export function Projects({ projects }: { projects?: Project[] }) {
                 {/* Image — grayscale default, color on hover */}
                 <img
                   src={p.image}
-                  alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech no Porto`}
+                  alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
                   className="h-full w-full object-cover md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05] touch:!grayscale-0 touch:scale-[1.05]"
                 />
 

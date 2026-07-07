@@ -119,12 +119,15 @@ Utilitários CSS:
 - [x] Separadores diagonais (`clip-path`): wedge em `Hero.tsx` (→About) e `CtaBand.tsx` (→Footer)
 - [x] `og:image`/`twitter:image`/JSON-LD: `public/og-image.jpg` (1200×630, gerado) referenciado em `__root.tsx`
 - [x] Navbar e Footer com fundo `--dark-section` (preto) — sempre, em todos os estados/rotas, para contraste forte com o `--background` off-white do resto da página; lógica `darkHero`/`overHero` removida (texto do header passa a branco fixo)
+- [x] **Projetos reais** (2026-07-07): PROJECTS fictícios (Villa Atlântico etc.) e GALLERY_ITEMS Unsplash substituídos por 5 obras reais — fotos de `DomusTech\Trello\Clientes\` otimizadas em `public/projects/` (sharp, 1600px, q80). Nomes anónimos por tipologia ("Moradia T2 · 72 m²"); campo `location` → `spec` (tipologia/área — localizações desconhecidas); `gallery?: string[]` novo no type `Project` renderiza secção "Registo de Obra" no detalhe. Sónia Gaspar (só fotos pladur) ficou apenas na galeria como "Acabamentos Interiores"
 
 ---
 
 ### 🔴 Por fazer
 
-_(nenhum item pendente)_
+- [ ] Fotos do estado final de Anderson (T2 92m²), Ema e Quim (100m²) e Ivan Barroso — trocar heros/galerias quando existirem
+- [ ] Confirmar tipologia/área de Ivan Barroso e Ema e Quim (dados em falta nas pastas de cliente)
+- [ ] 152 vídeos MP4 em `Trello\Clientes\Transporte casa cleila` — potencial vídeo/reel "processo de transporte e montagem"
 
 ---
 

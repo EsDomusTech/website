@@ -107,103 +107,101 @@ export type Project = {
   slug: string;
   name: string;
   category: string;
-  location: string;
+  spec: string;
   year: string;
   image: string;
   summary: string;
   description: string[];
+  gallery?: string[];
 };
 
 export const PROJECTS: Project[] = [
   {
-    slug: "villa-atlantico",
-    name: "Villa Atlântico",
-    category: "Residencial",
-    location: "Foz do Douro, Porto",
+    slug: "moradia-t2-72",
+    name: "Moradia T2 · 72 m²",
+    category: "Casa Modular",
+    spec: "T2 · 72 m²",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Moradia modular de três pisos com vista para o mar e eficiência energética classe A.",
+    image: "/projects/t2-72-hero.jpg",
+    summary:
+      "Moradia térrea chave na mão com fachada em reboco branco e revestimento em compósito de madeira, zona exterior com piscina e interiores totalmente equipados.",
     description: [
-      "A Villa Atlântico é uma moradia modular contemporânea desenhada para tirar o máximo partido da luz natural e das vistas sobre o Atlântico.",
-      "Os módulos pré-fabricados permitiram uma construção rápida e limpa, integrando soluções de energia renovável e domótica de ponta.",
+      "Esta moradia T2 de 72 m² é um exemplo completo do nosso conceito chave na mão: estrutura em aço leve galvanizado produzida em fábrica, montagem rápida em obra e acabamentos prontos a habitar — cozinha equipada, caixilharia com estores elétricos e climatização preparada.",
+      "O exterior combina reboco branco com painéis de compósito de madeira, deck, relvado e piscina, criando uma zona de estar exterior que prolonga a área útil da casa durante todo o ano.",
+    ],
+    gallery: [
+      "/projects/t2-72-exterior.jpg",
+      "/projects/t2-72-piscina.jpg",
+      "/projects/t2-72-cozinha.jpg",
+      "/projects/t2-72-terraco.jpg",
     ],
   },
   {
-    slug: "edificio-ribeira",
-    name: "Edifício Ribeira",
-    category: "Comercial",
-    location: "Ribeira, Porto",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Reabilitação modular de um edifício histórico para uso comercial e escritórios.",
+    slug: "moradia-t1-48",
+    name: "Moradia T1 · 48 m²",
+    category: "Casa Modular",
+    spec: "T1 · 48 m²",
+    year: "2026",
+    image: "/projects/t1-48-hero.jpg",
+    summary:
+      "Moradia compacta de linhas puras com fachada bitone em cinza e branco, cobertura plana e deck exterior em madeira.",
     description: [
-      "Um projeto de reabilitação que preserva a fachada histórica enquanto introduz interiores modulares modernos e flexíveis.",
-      "O resultado combina o carácter da Ribeira com espaços de trabalho eficientes e sustentáveis.",
+      "Com 48 m² de área útil, esta moradia T1 prova que uma casa compacta pode ter presença arquitetónica: volumes limpos, cobertura plana com remate saliente e uma paleta bitone que valoriza a geometria do edifício.",
+      "A estrutura em aço leve (LSF) foi montada em poucas semanas — do esqueleto galvanizado ao isolamento, painéis OSB e reboco final — um processo controlado que garante rigor dimensional e eficiência térmica muito acima da construção tradicional.",
+    ],
+    gallery: [
+      "/projects/t1-48-fachada.jpg",
+      "/projects/t1-48-deck.jpg",
+      "/projects/t1-48-estrutura.jpg",
     ],
   },
   {
-    slug: "loft-boavista",
-    name: "Loft Boavista",
-    category: "Interiores",
-    location: "Boavista, Porto",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Projeto de interiores de um loft urbano com linhas minimalistas e materiais naturais.",
+    slug: "moradia-100",
+    name: "Moradia · 100 m²",
+    category: "Casa Modular",
+    spec: "100 m²",
+    year: "2026",
+    image: "/projects/m100-hero.jpg",
+    summary:
+      "Moradia térrea de 100 m² com pátio coberto, palas marcadas e volumetria em L que organiza as zonas de dia e de noite.",
     description: [
-      "O Loft Boavista é um exercício de design de interiores minimalista, onde cada elemento foi escolhido a dedo.",
-      "Materiais naturais, iluminação cuidada e mobiliário à medida criam um ambiente sereno e sofisticado.",
+      "Esta moradia de 100 m² desenvolve-se num volume em L que separa naturalmente a zona social da zona privada, com um pátio coberto de transição que funciona como alpendre e zona de sombra.",
+      "As palas salientes sobre os vãos principais dão profundidade à fachada e protegem os envidraçados da exposição solar direta — um desenho pensado para o conforto térmico passivo, complementado pelo isolamento contínuo do sistema modular.",
     ],
+    gallery: ["/projects/m100-exterior.jpg"],
   },
   {
-    slug: "praca-central",
-    name: "Praça Central",
-    category: "Urbanismo",
-    location: "Matosinhos, Porto",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Requalificação de um espaço público com soluções modulares e mobiliário urbano.",
+    slug: "moradia-t2-92",
+    name: "Moradia T2 · 92 m²",
+    category: "Casa Modular",
+    spec: "T2 · 92 m²",
+    year: "2026",
+    image: "/projects/t2-92-hero.jpg",
+    summary:
+      "Moradia T2 de 92 m² implantada em terreno arborizado, com módulos transportados prontos e assentes sobre fundações pontuais.",
     description: [
-      "A requalificação da Praça Central devolveu à comunidade um espaço público moderno e funcional.",
-      "Estruturas modulares, zonas verdes e mobiliário urbano sustentável definem este projeto de urbanismo.",
+      "Os módulos desta moradia T2 chegaram à obra já com paredes, vãos e instalações integradas, sendo assentes sobre apoios pontuais — uma implantação de impacto mínimo no terreno, sem grandes movimentações de terras.",
+      "O registo fotográfico da fase de obra mostra a vantagem do sistema: em poucos dias a casa fica fechada e estanque, pronta para a fase de acabamentos, independentemente das condições do terreno envolvente.",
     ],
+    gallery: ["/projects/t2-92-exterior.jpg"],
   },
   {
-    slug: "cotton-house",
-    name: "Cotton House",
-    category: "Interiores",
-    location: "Bonfim, Porto",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Renovação de apartamento histórico com interiores têxteis e materialidade artesanal.",
+    slug: "moradia-dois-pisos",
+    name: "Moradia de Dois Pisos",
+    category: "Casa Modular",
+    spec: "Dois pisos",
+    year: "2026",
+    image: "/projects/dois-pisos-hero.jpg",
+    summary:
+      "Moradia de dois pisos em estrutura de aço leve, com painéis de fachada em betão reforçado e instalações técnicas integradas na estrutura.",
     description: [
-      "O Cotton House é uma ode à textura e ao artesanato. Um apartamento do século XIX foi completamente renovado, preservando os azulejos originais e introduzindo interiores têxteis de luxo.",
-      "Cada divisão conta uma história de contrastes: o antigo e o contemporâneo, o rugoso e o suave, o branco e o ouro.",
+      "Este projeto demonstra a escalabilidade do sistema construtivo: dois pisos completos em estrutura de aço leve galvanizado, com lajes treliçadas, painéis de fachada e pé-direito generoso no vazio da escada.",
+      "Toda a rede técnica — eletricidade, águas e climatização — é integrada na estrutura antes do fecho das paredes, o que elimina roços e retrabalho e permite inspecionar cada instalação antes dos acabamentos.",
     ],
-  },
-  {
-    slug: "armada-center",
-    name: "Armada Center",
-    category: "Comercial",
-    location: "Cedofeita, Porto",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1461088945293-0c17689e48ac?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Edifício de escritórios com fachada modular e espaços de trabalho flexíveis.",
-    description: [
-      "O Armada Center é um edifício de escritórios premium desenhado para atrair empresas de tecnologia e criativas. A fachada modular ventilada permite personalização e eficiência energética máxima.",
-      "Os espaços interiores foram concebidos com flexibilidade total: open spaces, salas de reunião modulares e terraços jardim definem este espaço de trabalho do futuro.",
-    ],
-  },
-  {
-    slug: "solar-douro",
-    name: "Solar do Douro",
-    category: "Residencial",
-    location: "Peso da Régua",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop&auto=format&q=80",
-    summary: "Quinta de turismo rural com módulos de hospedagem integrados na paisagem.",
-    description: [
-      "O Solar do Douro é um projeto de enoturismo onde seis módulos de hospedagem foram inseridos na encosta vinhateira sem alterar a topografia.",
-      "Cada módulo tem vistas panorâmicas para o rio Douro e integra sistemas de energia solar e recolha de água da chuva.",
+    gallery: [
+      "/projects/dois-pisos-exterior.jpg",
+      "/projects/dois-pisos-estrutura.jpg",
+      "/projects/dois-pisos-instalacoes.jpg",
     ],
   },
 ];

@@ -23,9 +23,9 @@ export const Route = createFileRoute("/projetos/$slug")({
         { property: "og:description", content: p.summary },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `${SITE.domain}/projetos/${p.slug}` },
-        { property: "og:image", content: p.image },
+        { property: "og:image", content: `${SITE.domain}${p.image}` },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: p.image },
+        { name: "twitter:image", content: `${SITE.domain}${p.image}` },
       ],
       links: [{ rel: "canonical", href: `${SITE.domain}/projetos/${p.slug}` }],
       scripts: [
@@ -36,13 +36,9 @@ export const Route = createFileRoute("/projetos/$slug")({
             "@type": "CreativeWork",
             name: p.name,
             description: p.summary,
-            image: p.image,
+            image: `${SITE.domain}${p.image}`,
             url: `${SITE.domain}/projetos/${p.slug}`,
             dateCreated: p.year,
-            locationCreated: {
-              "@type": "Place",
-              name: p.location,
-            },
             creator: {
               "@type": "Organization",
               name: SITE.name,
@@ -68,7 +64,7 @@ function ProjectDetail() {
       <PageHeader
         eyebrow={p.category}
         titleFirst={p.name.split(" ")[0].toUpperCase()}
-        titleSecond={p.name.split(" ").slice(1).join(" ").toUpperCase() || p.location.toUpperCase()}
+        titleSecond={p.name.split(" ").slice(1).join(" ").toUpperCase() || p.spec.toUpperCase()}
         subtitle={p.summary}
         image={p.image}
       />
@@ -81,8 +77,8 @@ function ProjectDetail() {
               <p className="mt-2 text-[15px] text-foreground">{p.category}</p>
             </div>
             <div>
-              <p className="tracked text-[11px] text-gold">Localização</p>
-              <p className="mt-2 text-[15px] text-foreground">{p.location}</p>
+              <p className="tracked text-[11px] text-gold">Tipologia</p>
+              <p className="mt-2 text-[15px] text-foreground">{p.spec}</p>
             </div>
             <div>
               <p className="tracked text-[11px] text-gold">Ano</p>
@@ -101,6 +97,26 @@ function ProjectDetail() {
         </div>
       </section>
 
+      {p.gallery && p.gallery.length > 0 && (
+        <section className="pb-[100px]">
+          <div className="container-1100">
+            <SectionTitle first="REGISTO" second="DE OBRA" align="left" />
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {p.gallery.map((src: string, i: number) => (
+                <div key={src} className={`overflow-hidden ${i === 0 && p.gallery!.length % 2 !== 0 ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
+                  <img
+                    src={src}
+                    alt={`${p.name}, registo de obra ${i + 1}, EsDomusTech`}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section-pad bg-white">
         <div className="container-1100">
           <SectionTitle first="OUTROS" second="PROJETOS" />
@@ -114,7 +130,7 @@ function ProjectDetail() {
               >
                 <img
                   src={o.image}
-                  alt={`${o.name}, projeto de ${o.category.toLowerCase()} EsDomusTech no Porto`}
+                  alt={`${o.name}, projeto de ${o.category.toLowerCase()} EsDomusTech`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />

@@ -55,13 +55,13 @@ function ProjetosPage() {
             >
               <img
                 src={p.image}
-                alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech no Porto`}
+                alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <div className="absolute bottom-6 left-6">
                 <p className="tracked text-[10px] text-gold">
-                  {p.category} · {p.location}
+                  {p.category} · {p.spec}
                 </p>
                 <h2 className="mt-1 font-display text-[22px] font-medium text-white">{p.name}</h2>
               </div>

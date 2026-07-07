@@ -124,7 +124,7 @@ function DropdownMenu({ items, open }: { items: SubItem[]; open: boolean }) {
 
 
 
-const MENU_IMAGE = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=1000&fit=crop&auto=format&q=80";
+const MENU_IMAGE = "/images/hero/page-header-fallback.webp";
 
 const overlayVariants = {
   closed: { opacity: 0 },
