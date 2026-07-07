@@ -5,18 +5,18 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
-  { id: 1, cat: "Exterior", title: "Villa Atlântico, Fachada", year: "2025", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 2, cat: "Interior", title: "Loft Boavista, Sala Principal", year: "2025", image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 3, cat: "Comercial", title: "Edifício Ribeira, Lobby", year: "2024", image: "https://images.unsplash.com/photo-1520116468816-95b69f847357?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 4, cat: "Exterior", title: "Moradia Gaia, Vista Aérea", year: "2024", image: "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 5, cat: "Detalhe", title: "Materiality, Betão e Madeira", year: "2025", image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 6, cat: "Interior", title: "Cotton House, Cozinha", year: "2024", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 7, cat: "Urbano", title: "Praça Central, Espaço Público", year: "2023", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 8, cat: "Exterior", title: "Armada Center, Fachada", year: "2024", image: "https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 9, cat: "Interior", title: "Suite Atlântico, Master", year: "2025", image: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 10, cat: "Detalhe", title: "Caixilharia, Nó Estrutural", year: "2024", image: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 11, cat: "Comercial", title: "Armada Center, Open Space", year: "2024", image: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=800&h=600&fit=crop&auto=format&q=80" },
-  { id: 12, cat: "Urbano", title: "Solar do Douro, Terraço", year: "2023", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop&auto=format&q=80" },
+  { id: 1, cat: "Exterior", title: "Moradia T2 · 72 m², Fachada", year: "2025", image: "/projects/t2-72-hero.jpg" },
+  { id: 2, cat: "Exterior", title: "Moradia T2 · 72 m², Piscina e Deck", year: "2025", image: "/projects/t2-72-piscina.jpg" },
+  { id: 3, cat: "Interior", title: "Moradia T2 · 72 m², Cozinha", year: "2025", image: "/projects/t2-72-cozinha.jpg" },
+  { id: 4, cat: "Detalhe", title: "Moradia T2 · 72 m², Terraço", year: "2025", image: "/projects/t2-72-terraco.jpg" },
+  { id: 5, cat: "Exterior", title: "Moradia T1 · 48 m², Volume Principal", year: "2026", image: "/projects/t1-48-hero.jpg" },
+  { id: 6, cat: "Exterior", title: "Moradia T1 · 48 m², Fachada Bitone", year: "2026", image: "/projects/t1-48-fachada.jpg" },
+  { id: 7, cat: "Estrutura", title: "Moradia T1 · 48 m², Estrutura LSF", year: "2026", image: "/projects/t1-48-estrutura.jpg" },
+  { id: 8, cat: "Exterior", title: "Moradia · 100 m², Pátio Coberto", year: "2026", image: "/projects/m100-hero.jpg" },
+  { id: 9, cat: "Exterior", title: "Moradia T2 · 92 m², Implantação dos Módulos", year: "2026", image: "/projects/t2-92-hero.jpg" },
+  { id: 10, cat: "Estrutura", title: "Moradia de Dois Pisos, Painéis de Fachada", year: "2026", image: "/projects/dois-pisos-hero.jpg" },
+  { id: 11, cat: "Estrutura", title: "Moradia de Dois Pisos, Instalações Técnicas", year: "2026", image: "/projects/dois-pisos-instalacoes.jpg" },
+  { id: 12, cat: "Interior", title: "Acabamentos Interiores, Gesso Cartonado", year: "2026", image: "/projects/interiores-pladur-01.jpg" },
 ];
 
 export const Route = createFileRoute("/galeria")({
@@ -72,7 +72,7 @@ function GaleriaPage() {
                 className="group relative overflow-hidden cursor-pointer"
                 style={{ aspectRatio: "4/3" }}
               >
-                <img src={item.image} alt={`${item.title}, projeto EsDomusTech no Porto`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={item.image} alt={`${item.title}, projeto EsDomusTech`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                 <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                   <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
