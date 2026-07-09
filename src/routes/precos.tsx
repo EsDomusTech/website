@@ -7,16 +7,12 @@ import { useConsultaModal } from "@/lib/consulta-store";
 
 const PRICE_NOTES = [
   {
-    label: "Variante estrutura/laje/exterior",
-    value: "≈ 1.150 €/m² + IVA",
-  },
-  {
-    label: "Faixa real observada (conforme tipologia e opções)",
-    value: "≈ 108.000 € a 230.000 € (sem IVA)",
-  },
-  {
     label: "Plano de pagamento (4 prestações)",
     value: "25% + 25% + 25% + 25% + IVA",
+  },
+  {
+    label: "Reduções sobre o valor de referência",
+    value: "Consulte campanhas em curso",
   },
 ];
 
@@ -65,7 +61,7 @@ const PAYMENT_PHASES: PaymentPhase[] = [
 const FAQS_PRECOS: FaqPrecos[] = [
   {
     q: "Os preços incluem IVA?",
-    a: "Não. Os valores de referência (1.350 €/m² chave na mão e 1.150 €/m² na variante estrutura/laje/exterior) são apresentados sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.",
+    a: "Não. O valor de referência (1.500 €/m² chave na mão) é apresentado sem IVA. Podem aplicar-se reduções sobre este valor mediante campanhas ativas. O orçamento final incluirá sempre a discriminação fiscal completa.",
   },
   {
     q: "Como é feito o pagamento?",
@@ -74,7 +70,7 @@ const FAQS_PRECOS: FaqPrecos[] = [
   },
   {
     q: "Quanto custa, na prática, uma casa EsDomusTech?",
-    a: "Nas propostas reais que já fizemos, o investimento total situa-se entre 108.000 € e 230.000 € (sem IVA), conforme a tipologia, a área e as opções de personalização escolhidas.",
+    a: "Ao valor de referência de 1.500 €/m² (sem IVA), uma casa de 80 m² ronda os 120.000 € e uma de 170 m² ronda os 255.000 €. O investimento final varia com a tipologia, a área e as opções de personalização escolhidas.",
   },
   {
     q: "O que está incluído no preço chave na mão?",
@@ -83,6 +79,10 @@ const FAQS_PRECOS: FaqPrecos[] = [
   {
     q: "O que fica fora do preço?",
     a: "Taxas camarárias, fiscal de obras, terraplanagem, ligação efetiva às redes de água e energia, instalação efetiva (não a pré-instalação) de ar condicionado, painéis solares e estores, projetos de especialidades orçamentáveis à parte, e extras como cozinha de upgrade, garagem, piscina ou deck.",
+  },
+  {
+    q: "O valor pode ser inferior a 1.500 €/m²?",
+    a: "Sim, por duas vias: campanhas ativas em curso, ou o cliente optar por excluir do pacote determinadas fases da obra (por exemplo, laje ou trabalhos exteriores), executando-as por conta própria. Esta opção reduz o valor por m² e é avaliada caso a caso — fale com a nossa equipa comercial.",
   },
 ];
 
@@ -112,7 +112,7 @@ export const Route = createFileRoute("/precos")({
             priceCurrency: "EUR",
             priceSpecification: {
               "@type": "UnitPriceSpecification",
-              price: 1350,
+              price: 1500,
               priceCurrency: "EUR",
               referenceQuantity: {
                 "@type": "QuantitativeValue",
@@ -162,7 +162,7 @@ function PrecosPage() {
                 Quanto custa<br />cada tipologia?
               </h2>
               <p className="s-body-md" style={{ color: "#444748" }}>
-                O preço chave-na-mão é de <strong>1.350 €/m²</strong>, sem IVA.
+                O preço chave-na-mão é de <strong>1.500 €/m²</strong>, sem IVA.
                 As áreas abaixo são os mínimos de referência (RGEU) — projetos reais
                 são habitualmente maiores.
               </p>
@@ -173,7 +173,7 @@ function PrecosPage() {
           <div className="border-t" style={{ borderColor: "#e8e8e8" }}>
             {/* Header */}
             <div className="grid grid-cols-3 md:grid-cols-4 gap-4 py-4 border-b" style={{ borderColor: "#e8e8e8" }}>
-              {["Tipologia", "Área mín.", "1.350 €/m²", "Total s/ IVA"].map((h, hi) => (
+              {["Tipologia", "Área mín.", "1.500 €/m²", "Total s/ IVA"].map((h, hi) => (
                 <span key={h} className={`s-label-caps${hi === 2 ? " hidden md:block" : ""}`} style={{ color: "var(--muted-foreground)" }}>{h}</span>
               ))}
             </div>
@@ -204,11 +204,11 @@ function PrecosPage() {
                   {row.t === "T5+" ? `≥ ${row.area} m²` : `${row.area} m²`}
                 </span>
                 <span className="s-body-md hidden md:block" style={{ color: "#444748" }}>
-                  × 1.350 €
+                  × 1.500 €
                 </span>
                 <span className="s-headline-md whitespace-nowrap text-[1.05rem] sm:text-[1.5rem]" style={{ color: "#000000" }}>
                   {row.t === "T5+" ? "+" : ""}
-                  {(row.area * 1350).toLocaleString("pt-PT")} €
+                  {(row.area * 1500).toLocaleString("pt-PT")} €
                 </span>
               </motion.div>
             ))}
@@ -222,7 +222,7 @@ function PrecosPage() {
       {/* Notas de preço — valores reais de referência */}
       <section className="py-14 md:py-[100px]">
         <div className="s-wrap">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t pt-12" style={{ borderColor: "#eeeeee" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t pt-12" style={{ borderColor: "#eeeeee" }}>
             {PRICE_NOTES.map((note, i) => (
               <motion.div
                 key={note.label}

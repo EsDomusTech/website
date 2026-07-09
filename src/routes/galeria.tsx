@@ -5,18 +5,21 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
-  { id: 1, cat: "Exterior", title: "Moradia T2 · 72 m², Fachada", year: "2025", image: "/projects/t2-72-hero.jpg" },
-  { id: 2, cat: "Exterior", title: "Moradia T2 · 72 m², Piscina e Deck", year: "2025", image: "/projects/t2-72-piscina.jpg" },
-  { id: 3, cat: "Interior", title: "Moradia T2 · 72 m², Cozinha", year: "2025", image: "/projects/t2-72-cozinha.jpg" },
-  { id: 4, cat: "Detalhe", title: "Moradia T2 · 72 m², Terraço", year: "2025", image: "/projects/t2-72-terraco.jpg" },
-  { id: 5, cat: "Exterior", title: "Moradia T1 · 48 m², Volume Principal", year: "2026", image: "/projects/t1-48-hero.jpg" },
-  { id: 6, cat: "Exterior", title: "Moradia T1 · 48 m², Fachada Bitone", year: "2026", image: "/projects/t1-48-fachada.jpg" },
-  { id: 7, cat: "Estrutura", title: "Moradia T1 · 48 m², Estrutura LSF", year: "2026", image: "/projects/t1-48-estrutura.jpg" },
-  { id: 8, cat: "Exterior", title: "Moradia · 100 m², Pátio Coberto", year: "2026", image: "/projects/m100-hero.jpg" },
-  { id: 9, cat: "Exterior", title: "Moradia T2 · 92 m², Implantação dos Módulos", year: "2026", image: "/projects/t2-92-hero.jpg" },
-  { id: 10, cat: "Estrutura", title: "Moradia de Dois Pisos, Painéis de Fachada", year: "2026", image: "/projects/dois-pisos-hero.jpg" },
-  { id: 11, cat: "Estrutura", title: "Moradia de Dois Pisos, Instalações Técnicas", year: "2026", image: "/projects/dois-pisos-instalacoes.jpg" },
-  { id: 12, cat: "Interior", title: "Acabamentos Interiores, Gesso Cartonado", year: "2026", image: "/projects/interiores-pladur-01.jpg" },
+  { id: 1, cat: "Exterior", title: "Moradia T3, Entrada e Jardim", year: "2026", image: "/projects/t3-hero.jpg" },
+  { id: 2, cat: "Exterior", title: "Moradia T2, Fachada em Madeira", year: "2026", image: "/projects/t2-nova-hero.jpg" },
+  { id: 3, cat: "Exterior", title: "Moradia T1 · 48 m², Deck e Fachada Branca", year: "2026", image: "/projects/t1-48-ii-hero.jpg" },
+  { id: 4, cat: "Exterior", title: "Moradia T2 · 72 m², Fachada", year: "2025", image: "/projects/t2-72-hero.jpg" },
+  { id: 5, cat: "Exterior", title: "Moradia T2 · 72 m², Piscina e Deck", year: "2025", image: "/projects/t2-72-piscina.jpg" },
+  { id: 6, cat: "Interior", title: "Moradia T2 · 72 m², Cozinha", year: "2025", image: "/projects/t2-72-cozinha.jpg" },
+  { id: 7, cat: "Detalhe", title: "Moradia T2 · 72 m², Terraço", year: "2025", image: "/projects/t2-72-terraco.jpg" },
+  { id: 8, cat: "Exterior", title: "Moradia T1 · 48 m², Volume Principal", year: "2026", image: "/projects/t1-48-hero.jpg" },
+  { id: 9, cat: "Exterior", title: "Moradia T1 · 48 m², Fachada Bitone", year: "2026", image: "/projects/t1-48-fachada.jpg" },
+  { id: 10, cat: "Estrutura", title: "Moradia T1 · 48 m², Estrutura LSF", year: "2026", image: "/projects/t1-48-estrutura.jpg" },
+  { id: 11, cat: "Exterior", title: "Moradia · 100 m², Pátio Coberto", year: "2026", image: "/projects/m100-hero.jpg" },
+  { id: 12, cat: "Exterior", title: "Moradia T2 · 92 m², Implantação dos Módulos", year: "2026", image: "/projects/t2-92-hero.jpg" },
+  { id: 13, cat: "Estrutura", title: "Moradia de Dois Pisos, Painéis de Fachada", year: "2026", image: "/projects/dois-pisos-hero.jpg" },
+  { id: 14, cat: "Estrutura", title: "Moradia de Dois Pisos, Instalações Técnicas", year: "2026", image: "/projects/dois-pisos-instalacoes.jpg" },
+  { id: 15, cat: "Interior", title: "Acabamentos Interiores, Gesso Cartonado", year: "2026", image: "/projects/interiores-pladur-01.jpg" },
 ];
 
 export const Route = createFileRoute("/galeria")({
