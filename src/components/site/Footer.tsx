@@ -107,7 +107,10 @@ export function Footer() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
             >
               <MapPin size={16} style={{ color: "var(--gold)", flexShrink: 0, marginTop: 4 }} />
-              {SITE.address}
+              <span>
+                {SITE.address.split(", ")[0]},{" "}
+                <span style={{ whiteSpace: "nowrap" }}>{SITE.address.split(", ")[1]}</span>
+              </span>
             </a>
             <p className="s-body-md flex items-center gap-4" style={{ color: "rgba(255,255,255,0.6)" }}>
               <Clock size={16} style={{ color: "var(--gold)", flexShrink: 0 }} />

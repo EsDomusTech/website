@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a 1.350 €/m². Construção em todo o território nacional.",
+          "Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a 1.500 €/m². Construção em todo o território nacional.",
       },
       { property: "og:title", content: "EsDomusTech | Casas Modulares Tecnológicas no Porto" },
       {

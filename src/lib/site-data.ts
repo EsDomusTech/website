@@ -117,6 +117,51 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "moradia-t3-jardim",
+    name: "Moradia T3",
+    category: "Casa Modular",
+    spec: "T3",
+    year: "2026",
+    image: "/projects/t3-hero.jpg",
+    summary:
+      "Moradia térrea T3 com fachada branca contínua, entrada em pátio recuado e jardim de acesso com iluminação exterior integrada no muro.",
+    description: [
+      "Esta moradia T3 destaca-se pela entrada recuada sob a cobertura saliente, criando um pátio de transição que protege a porta principal e o envidraçado de correr da sala.",
+      "O muro perimetral em reboco branco integra iluminação led embutida e portão automatizado, e o jardim de acesso foi desenhado com percurso em lajetas sobre relva — um remate exterior cuidado até ao portão.",
+    ],
+    gallery: ["/projects/t3-hero.jpg"],
+  },
+  {
+    slug: "moradia-t2-madeira",
+    name: "Moradia T2",
+    category: "Casa Modular",
+    spec: "T2",
+    year: "2026",
+    image: "/projects/t2-nova-hero.jpg",
+    summary:
+      "Moradia T2 térrea com fachada mista em reboco branco e revestimento em compósito de madeira, deck exterior e relva sintética de baixa manutenção.",
+    description: [
+      "O contraste entre o reboco branco e as réguas de compósito de madeira na fachada principal dá profundidade ao volume, reforçado pela caixilharia escura dos envidraçados de correr.",
+      "O deck em compósito prolonga-se da entrada até à zona de estar exterior, sobre um jardim em relva sintética que elimina manutenção — uma solução pensada para quem procura uma segunda casa pronta a usar.",
+    ],
+    gallery: ["/projects/t2-nova-hero.jpg"],
+  },
+  {
+    slug: "moradia-t1-48-ii",
+    name: "Moradia T1 · 48 m²",
+    category: "Casa Modular",
+    spec: "T1 · 48 m²",
+    year: "2026",
+    image: "/projects/t1-48-ii-hero.jpg",
+    summary:
+      "Moradia T1 de 48 m² com fachada totalmente branca, cobertura plana e deck em compósito de madeira ao longo de toda a frente envidraçada.",
+    description: [
+      "Um volume compacto e limpo: fachada branca sem interrupções, alpendre integrado sob a cobertura e uma frente contínua de portas e estores elétricos que abre a casa para o deck exterior.",
+      "O deck em compósito de madeira acompanha todo o comprimento da fachada, criando uma zona de estar exterior directamente ligada à sala — o mesmo conceito chave-na-mão da tipologia T1 · 48 m², aplicado a um terreno diferente.",
+    ],
+    gallery: ["/projects/t1-48-ii-hero.jpg"],
+  },
+  {
     slug: "moradia-t2-72",
     name: "Moradia T2 · 72 m²",
     category: "Casa Modular",
@@ -251,10 +296,10 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: "2026-06-01",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop&auto=format&q=80",
-    excerpt: "Estrutura a 1.150 €/m² ou chave-na-mão a 1.350 €/m²? Descubra o que está incluído em cada opção, o que pagar fora do preço de construção, e como funciona o financiamento.",
+    excerpt: "Quanto custa uma casa modular chave-na-mão? Descubra o preço de referência por m², o que está incluído, o que pagar fora do preço de construção, e como funciona o financiamento.",
     body: [
-      "A pergunta que mais recebemos é direta: quanto custa uma casa modular? A resposta honesta — e útil — é que o custo depende do tamanho, dos acabamentos e dos serviços incluídos. Mas há números concretos que pode usar como referência.",
-      "Na EsDomusTech, trabalhamos com dois referenciais de custo principais. A estrutura com laje e trabalhos exteriores ronda os 1.150 €/m² (+ IVA), enquanto a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — parte de 1.350 €/m² (+ IVA). Para uma casa de 80 m², estamos a falar de valores entre 92.000 € e 108.000 €; para 170 m², entre 195.000 € e 230.000 €.",
+      "A pergunta que mais recebemos é direta: quanto custa uma casa modular? A resposta honesta — e útil — é que o custo depende do tamanho, dos acabamentos e dos serviços incluídos. Mas há um número concreto que pode usar como referência.",
+      "Na EsDomusTech, o valor de referência para a solução chave-na-mão — que inclui tudo, desde fundações ao mobiliário de cozinha e casa de banho — é de 1.500 €/m² (+ IVA), podendo haver reduções sobre este valor mediante campanhas ativas. Para uma casa de 80 m², estamos a falar de um investimento de referência de 120.000 €; para 170 m², de 255.000 €. O valor final depende sempre da tipologia, da área e das opções de personalização escolhidas.",
       "O que está incluído no preço chave-na-mão? Estrutura metálica em aço galvanizado DX51D de 3 mm, fundações e laje, isolamentos, paredes e tecto em gesso cartonado, cozinha equipada, casas de banho completas, instalações elétrica e hidráulica, janelas e portas. Quando recebe as chaves, a casa está pronta a habitar.",
       "Muitas vezes comparamos os custos por metro quadrado com a construção tradicional. Em Portugal, a construção convencional ronda frequentemente os 1.500 €/m² a 2.200 €/m² para soluções equivalentes — sem incluir os imprevistos que derivam de obras longas a céu aberto. Com construção modular, a maior parte do processo acontece em fábrica, com controlo de qualidade mais rigoroso e prazos mais previsíveis.",
       "O pagamento na EsDomusTech está estruturado em quatro fases iguais de 25%: assinatura do contrato, início de produção, entrega em obra e conclusão. Esta divisão permite planear o financiamento ao longo do processo, sem grandes adiantamentos numa única fase.",
