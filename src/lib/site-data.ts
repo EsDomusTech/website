@@ -14,6 +14,13 @@ export const SITE = {
   mapsUrl: "https://maps.app.goo.gl/g1MDpujHhEtBvNqs7",
 } as const;
 
+/** Preço de referência chave-na-mão. Desativar campanha: CAMPAIGN_ACTIVE = false. */
+export const PRICING = {
+  CAMPAIGN_ACTIVE: true,
+  REGULAR: 1500,
+  CAMPAIGN: 1350,
+} as const;
+
 /** Schema.org areaServed — Norte de Portugal, onde fazemos entrega e acompanhamento direto da obra. */
 export const AREA_SERVED_NORTE = [
   { "@type": "AdministrativeArea", name: "Norte de Portugal" },
@@ -353,35 +360,6 @@ export const BLOG_POSTS: BlogPost[] = [
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
-
-export type TeamMember = {
-  name: string;
-  role: string;
-  image: string;
-};
-
-export const TEAM: TeamMember[] = [
-  {
-    name: "Raquel Figueiredo",
-    role: "Gestora de Obras",
-    image: "/images/equipa/raquel.webp",
-  },
-  {
-    name: "Marisa Xavier",
-    role: "Administrativo de Obras e Compras",
-    image: "/images/equipa/mariza.webp",
-  },
-  {
-    name: "Juliane Zombini",
-    role: "Responsável Administrativo",
-    image: "/images/equipa/julliana.webp",
-  },
-  {
-    name: "Marina Dias",
-    role: "Assistente Administrativo e de RH",
-    image: "/images/equipa/marina.webp",
-  },
-];
 
 export const FAQS = [
   {

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHeader } from "@/components/site/PageHeader";
-import { SITE, AREA_SERVED_NORTE } from "@/lib/site-data";
+import { SITE, AREA_SERVED_NORTE, PRICING } from "@/lib/site-data";
 import { useConsultaModal } from "@/lib/consulta-store";
 
 const PRICE_NOTES = [
@@ -12,7 +12,9 @@ const PRICE_NOTES = [
   },
   {
     label: "Reduções sobre o valor de referência",
-    value: "Consulte campanhas em curso",
+    value: PRICING.CAMPAIGN_ACTIVE
+      ? `Campanha ativa: ${PRICING.CAMPAIGN.toLocaleString("pt-PT")} €/m²`
+      : "Consulte campanhas em curso",
   },
 ];
 
@@ -61,7 +63,9 @@ const PAYMENT_PHASES: PaymentPhase[] = [
 const FAQS_PRECOS: FaqPrecos[] = [
   {
     q: "Os preços incluem IVA?",
-    a: "Não. O valor de referência (1.500 €/m² chave na mão) é apresentado sem IVA. Podem aplicar-se reduções sobre este valor mediante campanhas ativas. O orçamento final incluirá sempre a discriminação fiscal completa.",
+    a: PRICING.CAMPAIGN_ACTIVE
+      ? `Não. O valor de referência (${PRICING.REGULAR.toLocaleString("pt-PT")} €/m² chave na mão) é apresentado sem IVA. Com a campanha ativa, o valor passa a ${PRICING.CAMPAIGN.toLocaleString("pt-PT")} €/m², também sem IVA. O orçamento final incluirá sempre a discriminação fiscal completa.`
+      : "Não. O valor de referência (1.500 €/m² chave na mão) é apresentado sem IVA. Podem aplicar-se reduções sobre este valor mediante campanhas ativas. O orçamento final incluirá sempre a discriminação fiscal completa.",
   },
   {
     q: "Como é feito o pagamento?",
@@ -70,7 +74,9 @@ const FAQS_PRECOS: FaqPrecos[] = [
   },
   {
     q: "Quanto custa, na prática, uma casa EsDomusTech?",
-    a: "Ao valor de referência de 1.500 €/m² (sem IVA), uma casa de 80 m² ronda os 120.000 € e uma de 170 m² ronda os 255.000 €. O investimento final varia com a tipologia, a área e as opções de personalização escolhidas.",
+    a: PRICING.CAMPAIGN_ACTIVE
+      ? `Com a campanha ativa, ao valor de ${PRICING.CAMPAIGN.toLocaleString("pt-PT")} €/m² (sem IVA), uma casa de 80 m² ronda os ${(80 * PRICING.CAMPAIGN).toLocaleString("pt-PT")} € e uma de 170 m² ronda os ${(170 * PRICING.CAMPAIGN).toLocaleString("pt-PT")} €. O investimento final varia com a tipologia, a área e as opções de personalização escolhidas.`
+      : "Ao valor de referência de 1.500 €/m² (sem IVA), uma casa de 80 m² ronda os 120.000 € e uma de 170 m² ronda os 255.000 €. O investimento final varia com a tipologia, a área e as opções de personalização escolhidas.",
   },
   {
     q: "O que está incluído no preço chave na mão?",
@@ -81,8 +87,10 @@ const FAQS_PRECOS: FaqPrecos[] = [
     a: "Taxas camarárias, fiscal de obras, terraplanagem, ligação efetiva às redes de água e energia, instalação efetiva (não a pré-instalação) de ar condicionado, painéis solares e estores, projetos de especialidades orçamentáveis à parte, e extras como cozinha de upgrade, garagem, piscina ou deck.",
   },
   {
-    q: "O valor pode ser inferior a 1.500 €/m²?",
-    a: "Sim, por duas vias: campanhas ativas em curso, ou o cliente optar por excluir do pacote determinadas fases da obra (por exemplo, laje ou trabalhos exteriores), executando-as por conta própria. Esta opção reduz o valor por m² e é avaliada caso a caso — fale com a nossa equipa comercial.",
+    q: `O valor pode ser inferior a ${PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN.toLocaleString("pt-PT") : PRICING.REGULAR.toLocaleString("pt-PT")} €/m²?`,
+    a: PRICING.CAMPAIGN_ACTIVE
+      ? `Sim, por duas vias: o cliente optar por excluir do pacote determinadas fases da obra (por exemplo, laje ou trabalhos exteriores), executando-as por conta própria; ou eventuais reduções adicionais sobre o valor de campanha, avaliadas caso a caso — fale com a nossa equipa comercial.`
+      : "Sim, por duas vias: campanhas ativas em curso, ou o cliente optar por excluir do pacote determinadas fases da obra (por exemplo, laje ou trabalhos exteriores), executando-as por conta própria. Esta opção reduz o valor por m² e é avaliada caso a caso — fale com a nossa equipa comercial.",
   },
 ];
 
@@ -112,7 +120,7 @@ export const Route = createFileRoute("/precos")({
             priceCurrency: "EUR",
             priceSpecification: {
               "@type": "UnitPriceSpecification",
-              price: 1500,
+              price: PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN : PRICING.REGULAR,
               priceCurrency: "EUR",
               referenceQuantity: {
                 "@type": "QuantitativeValue",
@@ -162,7 +170,17 @@ function PrecosPage() {
                 Quanto custa<br />cada tipologia?
               </h2>
               <p className="s-body-md" style={{ color: "#444748" }}>
-                O preço chave-na-mão é de <strong>1.500 €/m²</strong>, sem IVA.
+                {PRICING.CAMPAIGN_ACTIVE ? (
+                  <>
+                    Campanha ativa: o preço chave-na-mão desce de{" "}
+                    <span style={{ textDecoration: "line-through", opacity: 0.6 }}>
+                      {PRICING.REGULAR.toLocaleString("pt-PT")} €/m²
+                    </span>{" "}
+                    para <strong style={{ color: "#BE9355" }}>{PRICING.CAMPAIGN.toLocaleString("pt-PT")} €/m²</strong>, sem IVA.
+                  </>
+                ) : (
+                  <>O preço chave-na-mão é de <strong>{PRICING.REGULAR.toLocaleString("pt-PT")} €/m²</strong>, sem IVA.</>
+                )}{" "}
                 As áreas abaixo são os mínimos de referência (RGEU) — projetos reais
                 são habitualmente maiores.
               </p>
@@ -173,7 +191,7 @@ function PrecosPage() {
           <div className="border-t" style={{ borderColor: "#e8e8e8" }}>
             {/* Header */}
             <div className="grid grid-cols-3 md:grid-cols-4 gap-4 py-4 border-b" style={{ borderColor: "#e8e8e8" }}>
-              {["Tipologia", "Área mín.", "1.500 €/m²", "Total s/ IVA"].map((h, hi) => (
+              {["Tipologia", "Área mín.", `${PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN.toLocaleString("pt-PT") : PRICING.REGULAR.toLocaleString("pt-PT")} €/m²`, "Total s/ IVA"].map((h, hi) => (
                 <span key={h} className={`s-label-caps${hi === 2 ? " hidden md:block" : ""}`} style={{ color: "var(--muted-foreground)" }}>{h}</span>
               ))}
             </div>
@@ -204,11 +222,28 @@ function PrecosPage() {
                   {row.t === "T5+" ? `≥ ${row.area} m²` : `${row.area} m²`}
                 </span>
                 <span className="s-body-md hidden md:block" style={{ color: "#444748" }}>
-                  × 1.500 €
+                  {PRICING.CAMPAIGN_ACTIVE ? (
+                    <>
+                      <span style={{ textDecoration: "line-through", opacity: 0.5 }}>× {PRICING.REGULAR.toLocaleString("pt-PT")} €</span>
+                      {" "}× {PRICING.CAMPAIGN.toLocaleString("pt-PT")} €
+                    </>
+                  ) : (
+                    `× ${PRICING.REGULAR.toLocaleString("pt-PT")} €`
+                  )}
                 </span>
                 <span className="s-headline-md whitespace-nowrap text-[1.05rem] sm:text-[1.5rem]" style={{ color: "#000000" }}>
-                  {row.t === "T5+" ? "+" : ""}
-                  {(row.area * 1500).toLocaleString("pt-PT")} €
+                  {PRICING.CAMPAIGN_ACTIVE && (
+                    <span
+                      className="block text-[0.75rem] sm:text-[0.85rem]"
+                      style={{ textDecoration: "line-through", opacity: 0.5, fontFamily: "var(--font-body)", fontWeight: 400 }}
+                    >
+                      {(row.area * PRICING.REGULAR).toLocaleString("pt-PT")} €
+                    </span>
+                  )}
+                  <span style={{ color: PRICING.CAMPAIGN_ACTIVE ? "#BE9355" : "#000000" }}>
+                    {row.t === "T5+" ? "+" : ""}
+                    {(row.area * (PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN : PRICING.REGULAR)).toLocaleString("pt-PT")} €
+                  </span>
                 </span>
               </motion.div>
             ))}
@@ -246,7 +281,7 @@ function PrecosPage() {
       {/* Imagem atmosférica full-width */}
       <section className="relative overflow-hidden h-[280px] md:h-[480px]">
         <img
-          src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1920&h=900&fit=crop&auto=format&q=80"
+          src="/projects/t2-72-exterior.jpg"
           alt="Casa modular EsDomusTech entregue no Porto"
           className="w-full h-full object-cover"
           style={{ filter: "grayscale(0.6) brightness(0.75)" }}

@@ -16,6 +16,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ConsultaModal } from "@/components/site/ConsultaModal";
+import { CampaignPopup } from "@/components/site/CampaignPopup";
 import { CookieBanner } from "@/components/site/CookieBanner";
 import { ConsultaModalProvider } from "@/lib/consulta-store";
 import { getConsent } from "@/lib/cookie-consent";
@@ -201,6 +202,7 @@ function RootComponent() {
           </div>
           <Footer />
           <ConsultaModal />
+          <CampaignPopup />
           <CookieBanner />
           <Analytics />
         </MotionConfig>

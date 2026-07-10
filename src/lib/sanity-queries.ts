@@ -1,5 +1,5 @@
-import type { Service, Project, BlogPost, TeamMember } from "./site-data";
-import { SERVICES, PROJECTS, BLOG_POSTS, FAQS, TEAM } from "./site-data";
+import type { Service, Project, BlogPost } from "./site-data";
+import { SERVICES, PROJECTS, BLOG_POSTS, FAQS } from "./site-data";
 
 export type Faq = { q: string; a: string };
 
@@ -29,8 +29,4 @@ export async function fetchBlogPost(slug: string): Promise<BlogPost | null> {
 
 export async function fetchFaqs(): Promise<Faq[]> {
   return FAQS;
-}
-
-export async function fetchTeam(): Promise<TeamMember[]> {
-  return TEAM;
 }

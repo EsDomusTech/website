@@ -2,10 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionTitle } from "@/components/site/SectionTitle";
-import { Team } from "@/components/site/Team";
 import { PageHeader } from "@/components/site/PageHeader";
 import { SITE } from "@/lib/site-data";
-import { fetchTeam } from "@/lib/sanity-queries";
 
 const VALUES = [
   {
@@ -32,7 +30,6 @@ const VALUES = [
 
 
 export const Route = createFileRoute("/empresa")({
-  loader: async () => ({ team: await fetchTeam() }),
   head: () => ({
     meta: [
       { title: "Empresa | Arquitetura Modular no Porto, EsDomusTech" },
@@ -53,7 +50,6 @@ export const Route = createFileRoute("/empresa")({
 });
 
 function EmpresaPage() {
-  const { team } = Route.useLoaderData();
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
@@ -92,7 +88,7 @@ function EmpresaPage() {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&h=520&fit=crop&auto=format&q=80"
+              src="/images/sobre/escritorio-porto.webp"
               alt="Equipa EsDomusTech no Porto"
               className="w-full object-cover"
             />
@@ -159,9 +155,6 @@ function EmpresaPage() {
           </div>
         </div>
       </section>
-
-      {/* Equipa — secção Stitch 4-col portrait grid */}
-      <Team team={team} />
 
       <CtaBand />
     </main>
