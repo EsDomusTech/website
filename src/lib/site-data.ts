@@ -139,21 +139,6 @@ export const PROJECTS: Project[] = [
     gallery: ["/projects/t3-hero.jpg"],
   },
   {
-    slug: "moradia-t2-madeira",
-    name: "Moradia T2",
-    category: "Casa Modular",
-    spec: "T2",
-    year: "2026",
-    image: "/projects/t2-nova-hero.jpg",
-    summary:
-      "Moradia T2 térrea com fachada mista em reboco branco e revestimento em compósito de madeira, deck exterior e relva sintética de baixa manutenção.",
-    description: [
-      "O contraste entre o reboco branco e as réguas de compósito de madeira na fachada principal dá profundidade ao volume, reforçado pela caixilharia escura dos envidraçados de correr.",
-      "O deck em compósito prolonga-se da entrada até à zona de estar exterior, sobre um jardim em relva sintética que elimina manutenção — uma solução pensada para quem procura uma segunda casa pronta a usar.",
-    ],
-    gallery: ["/projects/t2-nova-hero.jpg"],
-  },
-  {
     slug: "moradia-t1-48-ii",
     name: "Moradia T1 · 48 m²",
     category: "Casa Modular",
