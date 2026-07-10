@@ -128,6 +128,7 @@ Utilitários CSS:
 - [ ] Fotos do estado final de Anderson (T2 92m²), Ema e Quim (100m²) e Ivan Barroso — trocar heros/galerias quando existirem
 - [ ] Confirmar tipologia/área de Ivan Barroso e Ema e Quim (dados em falta nas pastas de cliente)
 - [ ] 152 vídeos MP4 em `Trello\Clientes\Transporte casa cleila` — potencial vídeo/reel "processo de transporte e montagem"
+- [ ] **Blog post "novas regras de crédito" — publicar em agosto 2026**: artigo escrito (2026-07-09), pronto a colar em `BLOG_POSTS` (`src/lib/site-data.ts`) quando chegar a data. Motivo do adiamento: regra entra em vigor 1 ago 2026, faz sentido editorial publicar à volta dessa data, não antes. Ver bloco pronto a colar mais abaixo (secção "Draft: blog post crédito habitação").
 
 ---
 
@@ -265,4 +266,38 @@ const PLANS = [
         </div>
       </section>
 ```
+</details>
+
+---
+
+## Draft: blog post crédito habitação (publicar agosto 2026)
+
+Artigo pronto sobre o Aviso do Banco de Portugal (DSTI 50%→45%, margem de exceção 15%→10%) que entra em vigor 1 ago 2026. Fonte: [eco.sapo.pt, 2026-07-02](https://eco.sapo.pt/2026/07/02/banco-de-portugal-aperta-regras-do-credito-a-partir-de-agosto/). **Não colar antes de agosto** — timing editorial (regra só entra em vigor então).
+
+Para publicar: colar o objecto abaixo no início do array `BLOG_POSTS` em `src/lib/site-data.ts` (linha ~270, antes do post `licenciamento-casas-modulares-portugal`). **Trocar `image` antes de publicar** — está repetida do post de licenciamento como placeholder.
+
+<details>
+<summary>Código do post (colar em BLOG_POSTS)</summary>
+
+```tsx
+  {
+    slug: "novas-regras-credito-habitacao-2026",
+    title: "Novas regras de crédito à habitação a partir de agosto 2026: o que muda",
+    cat: "Financiamento",
+    date: "Ago 2026",
+    isoDate: "2026-08-01",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=800&fit=crop&auto=format&q=80",
+    excerpt: "A partir de 1 de agosto, o Banco de Portugal reduz o limite de esforço de crédito de 50% para 45% do rendimento. Explicamos o que muda e como planear a construção da sua casa modular tendo isto em conta.",
+    body: [
+      "A partir de 1 de agosto de 2026, entram em vigor novas regras do Banco de Portugal para a concessão de crédito à habitação e ao consumo. A mudança mais relevante: o limite da taxa de esforço (DSTI — rácio entre prestações mensais e rendimento) desce de 50% para 45%. Se está a planear construir casa e vai recorrer a financiamento, esta é uma alteração a ter em conta desde já.",
+      "Na prática, o DSTI soma todas as prestações mensais do agregado — crédito habitação, crédito automóvel, cartões de crédito e outros empréstimos pessoais. Uma família com rendimento de 2.000 € por mês, que antes podia ter prestações até 1.000 €, passa a estar limitada a 900 €. O Banco de Portugal reduz também a margem de exceções que os bancos podem conceder fora deste limite, de 15% para 10% do crédito concedido por semestre — e passa a fixar prazos máximos de maturidade consoante a idade do mutuário (até 40 anos para quem tem menos de 35, até 35 anos para quem tem mais).",
+      "O que isto significa para quem quer construir? Menos margem para acumular crédito habitação com outros compromissos financeiros — automóvel, cartões, crédito pessoal. Quem já tem créditos em curso deve contar com uma capacidade de financiamento mais apertada do que teria hoje. O próprio Banco de Portugal antecipa um impacto limitado na concessão de crédito no global, com efeitos praticamente nulos no longo prazo — mas quem está a planear pedir crédito nos próximos meses beneficia de perceber a mudança antes de avançar.",
+      "É aqui que o modelo de pagamento faseado da EsDomusTech ajuda a planear com mais folga. Não exigimos uma única aprovação de crédito de grande valor no arranque, como é comum na construção tradicional: o pagamento está dividido em 4 tranches de 25% — assinatura do contrato, início de produção, entrega em obra e conclusão. Isto dá tempo para reorganizar finanças, amortizar outros créditos ou negociar condições com o banco entre fases, em vez de depender de uma aprovação única no primeiro dia.",
+      "O nosso conselho prático: se está a pensar construir e vai precisar de financiamento bancário, fale com o seu banco antes de comprar terreno ou avançar com o projeto. Uma simulação de crédito prévia — mesmo informal — evita surpresas mais tarde, sobretudo com o limite mais apertado a partir de agosto. Se tiver outros créditos em curso, avaliar se compensa liquidá-los ou consolidá-los antes de pedir o crédito habitação pode fazer diferença na capacidade de financiamento aprovada.",
+      "Este artigo é informativo e não substitui aconselhamento financeiro personalizado. As condições finais de crédito dependem sempre da análise de cada banco. Para informação oficial e atualizada, consulte o site do Banco de Portugal.",
+    ],
+  },
+```
+
 </details>
