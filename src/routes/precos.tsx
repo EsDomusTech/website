@@ -249,7 +249,7 @@ function PrecosPage() {
             ))}
           </div>
           <p className="s-body-sm mt-6" style={{ color: "var(--muted-foreground)" }}>
-            * Valores sem IVA, calculados sobre a área mínima de referência. A área final do seu projeto — e por isso o investimento total — é definida em função do terreno e do programa pretendido.
+            * Valores sem IVA, calculados sobre a área mínima de referência. A área final do seu projeto — e por isso o investimento total — é definida em função do terreno e do programa pretendido. Em casas com 100 m² ou mais, a fundação é sempre laje contínua betonada no terreno.
           </p>
         </div>
       </section>
