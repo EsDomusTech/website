@@ -102,8 +102,9 @@ export function ConsultaModal() {
     setSubmitting(true);
     if (!isBot()) {
       try {
-        await submitConsultaLead({ data: { ...data, timestamp: new Date().toISOString() } });
-      } catch { /* show success regardless */ }
+        const result = await submitConsultaLead({ data: { ...data, timestamp: new Date().toISOString() } });
+        if (result.errors.length) console.error("Lead enviado mas com erros no fan-out:", result.errors);
+      } catch (err) { console.error("submitConsultaLead failed:", err); /* still show success to visitor */ }
     }
     setSubmitting(false);
     setSubmitted(true);
