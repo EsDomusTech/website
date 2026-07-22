@@ -42,8 +42,11 @@ function leadEmailHtml(lead: z.infer<typeof leadSchema>) {
 
 async function sendResendEmail(lead: z.infer<typeof leadSchema>) {
   const { resendApiKey, resendFromEmail, resendToEmail } = getServerConfig();
-  if (!resendApiKey) return;
-  await fetch("https://api.resend.com/emails", {
+  if (!resendApiKey) {
+    console.warn("submitConsultaLead: RESEND_API_KEY not set, skipping email");
+    return;
+  }
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,24 +60,31 @@ async function sendResendEmail(lead: z.infer<typeof leadSchema>) {
       html: leadEmailHtml(lead),
     }),
   });
+  if (!res.ok) {
+    throw new Error(`Resend ${res.status}: ${await res.text()}`);
+  }
 }
 
 async function appendToGoogleSheet(lead: z.infer<typeof leadSchema>) {
   const { googleSheetsWebhookUrl } = getServerConfig();
   if (!googleSheetsWebhookUrl) return;
-  await fetch(googleSheetsWebhookUrl, {
+  const res = await fetch(googleSheetsWebhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(lead),
   });
+  if (!res.ok) {
+    throw new Error(`Google Sheets webhook ${res.status}: ${await res.text()}`);
+  }
 }
 
 export const submitConsultaLead = createServerFn({ method: "POST" })
   .inputValidator(leadSchema)
   .handler(async ({ data }) => {
     const results = await Promise.allSettled([sendResendEmail(data), appendToGoogleSheet(data)]);
-    for (const r of results) {
-      if (r.status === "rejected") console.error("submitConsultaLead: fan-out failed", r.reason);
-    }
-    return { ok: true };
+    const errors = results
+      .filter((r): r is PromiseRejectedResult => r.status === "rejected")
+      .map((r) => String(r.reason));
+    for (const e of errors) console.error("submitConsultaLead: fan-out failed —", e);
+    return { ok: true, errors };
   });
