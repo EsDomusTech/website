@@ -19,8 +19,12 @@ import process from "node:process";
 export function getServerConfig() {
   return {
     nodeEnv: process.env.NODE_ENV,
-    // Add server-only values here, e.g.:
-    //   databaseUrl: process.env.DATABASE_URL,
-    //   stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+    resendApiKey: process.env.RESEND_API_KEY,
+    // Must be a verified domain/sender in the Resend account, e.g. "EsDomusTech <leads@esdomustech.com>".
+    // Falls back to Resend's shared testing address (only deliverable to the Resend account owner).
+    resendFromEmail: process.env.RESEND_FROM_EMAIL ?? "EsDomusTech <onboarding@resend.dev>",
+    resendToEmail: process.env.RESEND_TO_EMAIL ?? "marketing@esdomustech.com",
+    // Google Apps Script Web App URL (see scripts/google-sheets-leads.gs) that appends a row per lead.
+    googleSheetsWebhookUrl: process.env.GOOGLE_SHEETS_WEBHOOK_URL,
   };
 }
