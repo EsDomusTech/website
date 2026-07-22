@@ -32,38 +32,37 @@ export function Projects({ projects }: { projects?: Project[] }) {
           </Link>
         </div>
 
-        {/* 2×2 staggered grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {items.slice(0, 4).map((p, i) => (
+        {/* 3-col grid — smaller tiles */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.slice(0, 6).map((p, i) => (
             <motion.div
               key={p.slug}
-              className={i % 2 === 1 ? "mt-0 md:mt-24" : ""}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
             >
               <Link
                 to="/projetos/$slug"
                 params={{ slug: p.slug }}
-                className="group relative block aspect-[4/5] overflow-hidden"
+                className="group relative block aspect-square overflow-hidden"
               >
-                {/* Image — grayscale default, color on hover */}
+                {/* Image — grayscale default, color on hover. First tile pre-activated on desktop so users notice it's interactive. */}
                 <img
                   src={p.image}
                   alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
-                  className="h-full w-full object-cover md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05] touch:!grayscale-0 touch:scale-[1.05]"
+                  className={`h-full w-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05] touch:!grayscale-0 touch:scale-[1.05] ${i === 0 ? "" : "md:grayscale"}`}
                 />
 
-                {/* Overlay — always visible on mobile, hover on desktop */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-8 md:p-12 opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 touch:!opacity-100">
+                {/* Overlay — always visible on mobile, hover on desktop (first tile pre-activated) */}
+                <div className={`absolute inset-0 flex flex-col justify-end bg-black/40 p-6 md:p-8 opacity-100 transition-opacity duration-500 md:group-hover:opacity-100 touch:!opacity-100 ${i === 0 ? "" : "md:opacity-0"}`}>
                   <span
                     className="s-label-caps mb-2 block"
                     style={{ color: "var(--gold)", letterSpacing: "0.2em" }}
                   >
                     {p.category}
                   </span>
-                  <h3 className="s-headline-md mb-6 text-white">
+                  <h3 className="s-headline-md mb-4 text-white">
                     {p.name}
                   </h3>
                   <span className="block h-px w-12 bg-white" />

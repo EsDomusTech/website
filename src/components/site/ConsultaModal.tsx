@@ -4,6 +4,7 @@ import { X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useConsultaModal } from "@/lib/consulta-store";
 import { DISTRITOS_PT } from "@/lib/site-data";
+import { submitConsultaLead } from "@/lib/api/consulta.functions";
 
 const DISTRITOS = DISTRITOS_PT.filter((d) => d !== "Açores" && d !== "Madeira");
 
@@ -101,11 +102,7 @@ export function ConsultaModal() {
     setSubmitting(true);
     if (!isBot()) {
       try {
-        await fetch("https://hook.eu1.make.com/4yct8vzklq3r325srg35i7w6ef1oscxo", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...data, timestamp: new Date().toISOString() }),
-        });
+        await submitConsultaLead({ data: { ...data, timestamp: new Date().toISOString() } });
       } catch { /* show success regardless */ }
     }
     setSubmitting(false);
