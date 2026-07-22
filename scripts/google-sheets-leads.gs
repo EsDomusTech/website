@@ -29,7 +29,9 @@ function doPost(e) {
     ]);
   }
 
-  const data = JSON.parse(e.postData.contents);
+  // e.postData.contents mis-decodes UTF-8 (mojibake on á/ã/ç/ó...) — read raw bytes and decode explicitly.
+  const jsonStr = Utilities.newBlob(e.postData.getBytes()).getDataAsString("UTF-8");
+  const data = JSON.parse(jsonStr);
 
   sheet.appendRow([
     data.timestamp || new Date().toISOString(),
