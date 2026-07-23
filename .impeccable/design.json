@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-15T00:00:00Z",
+  "title": "Design System: DomusTech — Structural Elegance",
+  "extensions": {
+    "colorMeta": {
+      "architectural-gold": {
+        "role": "primary",
+        "displayName": "Architectural Gold",
+        "canonical": "oklch(68% 0.095 70)",
+        "tonalRamp": [
+          "oklch(15% 0.03 70)",
+          "oklch(28% 0.05 70)",
+          "oklch(40% 0.07 70)",
+          "oklch(52% 0.085 70)",
+          "oklch(68% 0.095 70)",
+          "oklch(78% 0.075 70)",
+          "oklch(87% 0.05 70)",
+          "oklch(95% 0.02 70)"
+        ]
+      },
+      "canvas-white": {
+        "role": "neutral",
+        "displayName": "Canvas White",
+        "canonical": "oklch(98% 0.001 90)",
+        "tonalRamp": [
+          "oklch(15% 0.002 90)",
+          "oklch(28% 0.002 90)",
+          "oklch(40% 0.002 90)",
+          "oklch(55% 0.002 90)",
+          "oklch(70% 0.002 90)",
+          "oklch(85% 0.002 90)",
+          "oklch(93% 0.001 90)",
+          "oklch(98% 0.001 90)"
+        ]
+      },
+      "deep-graphite": {
+        "role": "neutral",
+        "displayName": "Deep Graphite",
+        "canonical": "oklch(12% 0.002 90)",
+        "tonalRamp": [
+          "oklch(5% 0.002 90)",
+          "oklch(12% 0.002 90)",
+          "oklch(25% 0.002 90)",
+          "oklch(38% 0.002 90)",
+          "oklch(52% 0.002 90)",
+          "oklch(68% 0.002 90)",
+          "oklch(85% 0.001 90)",
+          "oklch(96% 0.001 90)"
+        ]
+      },
+      "warm-medium-gray": {
+        "role": "neutral",
+        "displayName": "Warm Medium Gray",
+        "canonical": "oklch(40% 0.006 220)",
+        "tonalRamp": [
+          "oklch(12% 0.004 220)",
+          "oklch(22% 0.005 220)",
+          "oklch(33% 0.006 220)",
+          "oklch(40% 0.006 220)",
+          "oklch(52% 0.005 220)",
+          "oklch(68% 0.004 220)",
+          "oklch(84% 0.003 220)",
+          "oklch(95% 0.002 220)"
+        ]
+      },
+      "structural-black": {
+        "role": "neutral",
+        "displayName": "Structural Black",
+        "canonical": "oklch(11% 0 0)",
+        "tonalRamp": [
+          "oklch(5% 0 0)",
+          "oklch(11% 0 0)",
+          "oklch(22% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(66% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "panel-gray": {
+        "role": "neutral",
+        "displayName": "Panel Gray",
+        "canonical": "oklch(94.5% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(94.5% 0 0)",
+          "oklch(99% 0 0)"
+        ]
+      },
+      "ghost-gray": {
+        "role": "neutral",
+        "displayName": "Ghost Gray",
+        "canonical": "oklch(93.3% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(93.3% 0 0)",
+          "oklch(98% 0 0)"
+        ]
+      },
+      "hairline-gray": {
+        "role": "neutral",
+        "displayName": "Hairline Gray",
+        "canonical": "oklch(90% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(90% 0 0)",
+          "oklch(97% 0 0)"
+        ]
+      },
+      "topbar-black": {
+        "role": "neutral",
+        "displayName": "Topbar Black",
+        "canonical": "oklch(6.5% 0 0)",
+        "tonalRamp": [
+          "oklch(6.5% 0 0)",
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(96% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero / page header titles. Máx. 1 por página (The Single Display Rule)." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de secção (SectionTitle)." },
+      "title": { "displayName": "Title", "purpose": "Títulos de card / subsecção." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, leads e parágrafos longos (65-75ch)." },
+      "label": { "displayName": "Label", "purpose": "Botões, navegação, legendas, kickers — sempre maiúsculo e tracked." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-standard", "value": "ease-out", "purpose": "Transições de hover (cor de fundo, borda, texto) — 0.2s–0.5s." },
+      { "name": "underline-grow", "value": "width 0.3s ease-out", "purpose": "Sublinhado dourado animado dos links de navegação." },
+      { "name": "arrow-slide", "value": "transform 0.5s ease-out", "purpose": "Seta '→' que avança no hover dos Service Cards." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal sobre fundos claros. Fundo Structural Black, hover dourado.",
+      "html": "<button class=\"ds-btn-primary\">PEDIR ORÇAMENTO</button>",
+      "css": ".ds-btn-primary { background-color: #1A1A1A; color: #fff; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 40px; border: none; border-radius: 0; transition: background-color 0.25s; cursor: pointer; } .ds-btn-primary:hover { background-color: #BE9355; } .ds-btn-primary:focus-visible { outline: 2px solid #BE9355; outline-offset: 2px; }"
+    },
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "CTA de destaque (ex: 'Ver Projetos', formulário de contacto). Fundo dourado, hover dourado mais claro.",
+      "html": "<button class=\"ds-btn-gold\">VER PROJETOS</button>",
+      "css": ".ds-btn-gold { background-color: #BE9355; color: #fff; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 40px; border: none; border-radius: 0; transition: background-color 0.25s; cursor: pointer; } .ds-btn-gold:hover { background-color: #D4A968; } .ds-btn-gold:focus-visible { outline: 2px solid #BE9355; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "CTA secundário sobre fundos claros. Sem fundo, contorno deep graphite, inverte no hover.",
+      "html": "<button class=\"ds-btn-outline\">SABER MAIS</button>",
+      "css": ".ds-btn-outline { background-color: transparent; color: #1B1B1B; border: 1px solid #1B1B1B; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 13px 39px; border-radius: 0; transition: background-color 0.25s, color 0.25s, border-color 0.25s; cursor: pointer; } .ds-btn-outline:hover { background-color: #1B1B1B; color: #fff; } .ds-btn-outline:focus-visible { outline: 2px solid #BE9355; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Link de navegação principal, com sublinhado dourado animado no hover e estado ativo já sublinhado.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Serviços</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\" aria-current=\"page\">Início</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 28px; } .ds-nav-link { position: relative; display: inline-flex; align-items: center; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #1A1B1B; text-decoration: none; padding-bottom: 4px; transition: color 0.2s; } .ds-nav-link::after { content: ''; position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background-color: #BE9355; transition: width 0.3s ease-out; } .ds-nav-link:hover { color: #BE9355; } .ds-nav-link:hover::after { width: 100%; } .ds-nav-link--active { color: #BE9355; } .ds-nav-link--active::after { width: 100%; } .ds-nav-link:focus-visible { outline: 2px solid #BE9355; outline-offset: 2px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Card de serviço (grid 3x2). Número fantasma no canto, ícone, título, descrição e link com seta animada. Único sítio do sistema onde um número decorativo é aceitável.",
+      "html": "<div class=\"ds-service-card\"><span class=\"ds-service-card__number\">01</span><div class=\"ds-service-card__icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\"/><path d=\"M4 4l8 8 8-8M4 20l8-8 8 8\"/></svg></div><h3 class=\"ds-service-card__title\">Construção Modular</h3><p class=\"ds-service-card__desc\">Casas pré-fabricadas de alta performance, entregues em semanas.</p><span class=\"ds-service-card__link\">Saber Mais <span class=\"ds-service-card__arrow\">→</span></span></div>",
+      "css": ".ds-service-card { position: relative; border-top: 1px solid #E2E2E2; padding: 24px 0 48px; font-family: 'Libre Franklin', sans-serif; transition: border-color 0.25s; max-width: 320px; } .ds-service-card:hover { border-top-color: #BE9355; } .ds-service-card__number { position: absolute; top: 0; right: 0; font-family: 'Oswald', sans-serif; font-size: 64px; font-weight: 400; color: #EEEEEE; line-height: 1; pointer-events: none; } .ds-service-card__icon { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-bottom: 24px; border: 1px solid #E2E2E2; color: #BE9355; transition: background-color 0.25s, color 0.25s; } .ds-service-card:hover .ds-service-card__icon { background-color: #BE9355; color: #fff; } .ds-service-card__title { font-family: 'Oswald', sans-serif; font-size: 1.5rem; line-height: 2rem; letter-spacing: 0.02em; text-transform: uppercase; color: #1A1B1B; margin: 0 0 12px; } .ds-service-card__desc { font-size: 0.9375rem; line-height: 1.625rem; color: #444748; margin: 0 0 16px; } .ds-service-card__link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #1A1B1B; } .ds-service-card__arrow { display: inline-block; color: #BE9355; font-size: 18px; transition: transform 0.5s ease-out; } .ds-service-card:hover .ds-service-card__arrow { transform: translateX(8px); }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Campo de formulário 'underline-style' (contacto): sem caixa, label acima, apenas border-bottom.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"ds-name\">Nome</label><input class=\"ds-field__input\" id=\"ds-name\" type=\"text\" placeholder=\"O seu nome\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; font-family: 'Libre Franklin', sans-serif; } .ds-field__label { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #1A1B1B; } .ds-field__input { background: transparent; border: none; border-bottom: 1px solid #E2E2E2; padding: 8px 0; font-size: 0.9375rem; color: #1A1B1B; transition: border-color 0.25s; } .ds-field__input::placeholder { color: #444748; } .ds-field__input:focus { border-bottom-color: #BE9355; outline: 2px solid #BE9355; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Structural Elegance",
+    "overview": "DomusTech vende casas modulares a famílias que estão a comparar construtoras — a interface tem de transmitir, em segundos, \"isto é uma marca de arquitetura, não uma construtora genérica\". O sistema parte de um plano arquitetónico: linhas a 90°, blocos de cor sólidos (off-black sobre off-white), um único acento dourado (#BE9355) usado com moderação para CTAs e estados de hover, e tipografia Oswald maiúscula e tracked a fazer o papel de \"rótulos de planta técnica\". O corpo de texto em Libre Franklin Light mantém a leitura humana e acessível por baixo desse rigor.\n\nO sistema rejeita explicitamente o AI slop genérico: sem fundos cream/sand SaaS, sem gradient text, sem cards com border-radius grande, sem eyebrows numerados \"01 / 02 / 03\" repetidos em cada secção, sem ghost-cards (border 1px + box-shadow largo). Rejeita também a estética playful/infantil (cores vivas, formas orgânicas, ilustrações soltas) e os clichés de construtora tradicional (stock photos de capacetes, layouts pesados).",
+    "keyCharacteristics": [
+      "Cantos a 90° em absolutamente tudo — nenhum border-radius > 0.",
+      "Um único acento (--gold) usado em ≤10% de qualquer ecrã — CTAs, hovers, sublinhados ativos, números fantasma.",
+      "Blocos de cor sólidos (--background ↔ --dark-section) criam contraste, não sombras.",
+      "Tipografia em maiúsculas tracked (Oswald) para tudo o que é 'label' — títulos, botões, nav, legendas.",
+      "Grelha consistente: container-1100 / s-wrap (1440px) + section-pad (120px) em todas as páginas."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "--gold aparece em CTAs, hovers, estados ativos e detalhes decorativos — nunca como background-color de uma secção completa. Se uma secção precisa de destaque forte, usa --dark-section, não dourado.", "section": "colors" },
+      { "name": "The No-Hex Rule", "body": "Cores só entram em componentes via custom properties (var(--gold), var(--dark-section), ...). Um hex novo no JSX/CSS é sinal de token em falta, não de exceção.", "section": "colors" },
+      { "name": "The All-Caps Label Rule", "body": "Qualquer texto Oswald é maiúsculo e tracked (≥0.02em). Oswald em minúsculas/sem tracking é sinal de erro, não de variação.", "section": "typography" },
+      { "name": "The Single Display Rule", "body": "No máximo um elemento s-display-lg por página (o título do Hero/PageHeader). Secções usam headline ou title, nunca display.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superfícies não têm sombra em repouso. Se precisares de separar um elemento do fundo, muda a cor de fundo ou adiciona uma hairline (border-top/border 1px --border), não uma sombra.", "section": "elevation" },
+      { "name": "The No Ghost-Card Rule", "body": "Nunca combinar border: 1px solid com box-shadow de blur ≥16px no mesmo elemento. Escolhe um: hairline OU shadow-md pontual.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do manter border-radius: 0 em botões, cards, inputs, modais — sem excecões.",
+      "Do usar --gold apenas em CTAs, hovers, sublinhados ativos e detalhes decorativos (≤10% do ecrã).",
+      "Do criar contraste com blocos de cor (--background ↔ --dark-section ↔ --logo-strip), não com sombras.",
+      "Do manter toda a tipografia Oswald em maiúsculas + tracking ≥0.02em.",
+      "Do ler/escrever conteúdo em site-data.ts — nunca strings hardcoded em componentes."
+    ],
+    "donts": [
+      "Don't introduzir fundos cream/sand 'SaaS', gradient text, ou cards com border-radius grande — é o AI slop genérico que este sistema rejeita.",
+      "Don't repetir eyebrows numerados '01 / 02 / 03' no topo de cada secção — o único número decorativo aceitável é o 'ghost number' dos Service Cards.",
+      "Don't combinar border: 1px solid com box-shadow de blur ≥16px (ghost-card).",
+      "Don't usar cores vivas saturadas, formas orgânicas ou ilustrações sketch/doodle — contraria o registo premium/arquitetónico e o anti-reference 'playful/infantil'.",
+      "Don't usar stock photos genéricas de capacetes/obra ou layouts densos típicos de construtora tradicional."
+    ]
+  }
+}

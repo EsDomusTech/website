@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHITECTURAL | Modern Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&amp;family=Libre+Franklin:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#291800",
+                    "secondary-fixed-dim": "#eebf7c",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-container": "#838484",
+                    "on-secondary-container": "#78551d",
+                    "on-primary-fixed": "#1b1b1b",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fdcc89",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-container": "#1a1c1c",
+                    "on-background": "#1a1c1c",
+                    "tertiary": "#000000",
+                    "outline": "#747878",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "architectural-gold": "#BE9355",
+                    "on-secondary-fixed-variant": "#604008",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444748",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-low": "#f3f3f3",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-dim": "#dadada",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "pure-white": "#FFFFFF",
+                    "secondary": "#7b581f",
+                    "surface-bright": "#f9f9f9",
+                    "primary": "#000000",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "surface-container-high": "#e8e8e8",
+                    "tertiary-fixed": "#e3e2e2",
+                    "muted-gray": "#999999",
+                    "secondary-fixed": "#ffddb2",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-tint": "#5f5e5e",
+                    "surface-container": "#eeeeee",
+                    "primary-container": "#1b1b1b",
+                    "on-primary-container": "#858383",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "80px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Oswald"],
+                    "headline-md": ["Oswald"],
+                    "headline-lg": ["Oswald"],
+                    "body-md": ["Libre Franklin"],
+                    "display-lg": ["Oswald"],
+                    "body-lg": ["Libre Franklin"],
+                    "headline-lg-mobile": ["Oswald"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-primary selection:bg-architectural-gold selection:text-pure-white overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-background">
+<nav class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">ARCHITECTURAL</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1 transition-colors duration-300" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">CONTACT</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:bg-architectural-gold transition-all duration-300 ease-in-out">
+                INQUIRE
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter items-end">
+<div class="col-span-12 md:col-span-8">
+<span class="font-label-caps text-label-caps text-architectural-gold block mb-6">SELECTED WORKS 2024</span>
+<h1 class="font-display-lg text-display-lg uppercase leading-none reveal-on-scroll">
+                        Defining the <br/> <span class="text-muted-gray">Modern Era</span>
+</h1>
+</div>
+<div class="col-span-12 md:col-span-4 pb-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs">
+                        An exploration of spatial purity, material honesty, and the intersection of light and structure.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Asymmetrical Project 01 -->
+<section class="py-section-padding bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 md:col-span-7 reveal-on-scroll">
+<div class="relative overflow-hidden group">
+<img alt="Project Horizon" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping wide-angle shot of a minimalist architectural masterpiece during the blue hour. The building features clean horizontal lines, expansive floor-to-ceiling glass walls, and a warm interior glow that contrasts with the cool evening atmosphere. The setting is a serene, high-end landscape with perfectly manicured lawns and a sense of quiet authority, reflecting a modern Bauhaus influence." src="https://lh3.googleusercontent.com/aida/AP1WRLvW-rWtsRyc4tTZkABpy65CXUqdgnu3H_vS9LkaO-xzSkd9OewVyo94SRae4XgkltMkuzl3Ar0a1ElAWeMlosL9dSs_cu17F6uk7R-TK9D4LzXkVMGWFfbEfos6bF6KqIsCQDOL9xcwb--Tbndr5OQ6MTGRxzfyLoVt92Jx-yvbaOaceBmw8FKll21gBUXPNQylbzlyt-wKLnhG_JIGKs7G8a9dwH_fuMZfB1_7IsHsqzeE0ql7L1URS-PY"/>
+<div class="absolute top-8 left-8 bg-pure-white px-6 py-4">
+<span class="font-label-caps text-label-caps text-primary">01 / VILLA HORIZON</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 md:col-start-9 reveal-on-scroll" style="transition-delay: 200ms;">
+<h2 class="font-headline-lg text-headline-lg mb-8 uppercase">A Study in <br/> Transparency</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12">
+                            Villa Horizon sits as a silent observer of the coastal landscape. By removing the traditional boundaries of the home, we've created a space where the sky and the sea become the primary interior elements.
+                        </p>
+<a class="group inline-flex items-center gap-4" href="#">
+<span class="font-label-caps text-label-caps text-primary group-hover:text-architectural-gold transition-colors">VIEW PROJECT</span>
+<span class="material-symbols-outlined text-architectural-gold transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetrical Project 02 -->
+<section class="py-section-padding bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 md:col-span-4 reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-muted-gray mb-4 block">SUSTAINABILITY</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 uppercase">The Kinetic <br/> Pavilion</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12">
+                            Modular geometry meets raw industrial materials. This urban installation serves as a flexible community space, adapting its form to the needs of the neighborhood through movable panels and pivoting structural elements.
+                        </p>
+<div class="border-l border-architectural-gold pl-8 py-2">
+<p class="font-body-md text-body-md italic text-primary">
+                                "Architecture should speak of its time and place, but yearn for timelessness."
+                            </p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll" style="transition-delay: 200ms;">
+<div class="relative overflow-hidden group shadow-2xl">
+<img alt="Project Kinetic" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="A low-angle dramatic shot of a modern geometric structure characterized by sharp angles and concrete textures. The lighting is harsh and direct, creating deep shadows and bright highlights that emphasize the architectural forms. The sky is a stark, clear blue, providing a minimalist backdrop to the complex structural interplay of the pavilion. The overall mood is futuristic and bold." src="https://lh3.googleusercontent.com/aida/AP1WRLuVCMIlY6bmvlveZz6V0Ak8Ti61c5BzyvAbKXThW8Aus1w4nIcILNQnpoVmVCF-mMKVJVM9836Y6kJzt0Ng_Ds_Gi461X8Y735SkRz8Wo6UdbEVxl0w11nTf3Ddrz_dh1PczRHTKKRYxQQ6uiK3f7ifr8SjT8P7m13T6I1kWEyob0PbKMpwIIz5Y2XdwLOLixJU1skZ91vKGgboScsmQ1APNoqEqlerwNp54SsvrCvbxJtJdUVmsl_oDOyF"/>
+<div class="absolute bottom-8 right-8 bg-primary text-on-primary px-6 py-4">
+<span class="font-label-caps text-label-caps">02 / KINETIC URBANISM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Bento Section -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-3 bg-surface-container p-12 flex flex-col justify-between reveal-on-scroll">
+<span class="font-display-lg text-display-lg leading-none">12</span>
+<div>
+<h3 class="font-label-caps text-label-caps text-architectural-gold">INTERNATIONAL AWARDS</h3>
+<p class="font-body-md text-body-md mt-4">Recognition for structural innovation and excellence in minimalist design.</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 bg-primary text-on-primary p-12 reveal-on-scroll" style="transition-delay: 100ms;">
+<div class="h-full flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6">Our Design Philosophy</h2>
+<p class="font-body-lg text-body-lg opacity-80 mb-8">
+                            We believe that every line serves a purpose. Our approach is reductive—stripping away the unnecessary to reveal the essential core of a structure. This is the essence of ARCHITECTURAL.
+                        </p>
+<button class="w-fit border border-pure-white px-8 py-3 font-label-caps text-label-caps hover:bg-pure-white hover:text-primary transition-all">
+                            READ MANIFESTO
+                        </button>
+</div>
+</div>
+<div class="col-span-12 md:col-span-3 bg-architectural-gold p-12 flex flex-col justify-between reveal-on-scroll" style="transition-delay: 200ms;">
+<span class="font-display-lg text-display-lg text-pure-white leading-none">84+</span>
+<div>
+<h3 class="font-label-caps text-label-caps text-pure-white">GLOBAL PROJECTS</h3>
+<p class="font-body-md text-body-md text-pure-white opacity-90 mt-4">From private residences to cultural landmarks across four continents.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-section-padding bg-surface-container-highest">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<span class="font-label-caps text-label-caps text-architectural-gold block mb-6">STAY CONNECTED</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-12 reveal-on-scroll">Insights from the studio</h2>
+<form class="max-w-2xl mx-auto flex flex-col md:flex-row gap-0">
+<input class="flex-grow bg-pure-white border-none focus:ring-1 focus:ring-architectural-gold font-label-caps text-label-caps px-8 py-5" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps hover:bg-architectural-gold transition-colors">
+                        SUBSCRIBE
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container">
+<div class="grid grid-cols-12 px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4">
+<div class="font-headline-md text-headline-md text-primary mb-8">ARCHITECTURAL</div>
+<p class="font-body-md text-body-md text-muted-gray max-w-xs">
+                    Crafting spaces that define the future of living. Minimum noise, maximum impact.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">NAVIGATION</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">HOME</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">ABOUT</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PROJECTS</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">SERVICES</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">SOCIAL</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">LINKEDIN</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">BEHANCE</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a></li>
+</ul>
+<div class="mt-12 font-body-md text-body-md text-muted-gray uppercase">
+                    © 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal on Scroll logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Smooth header shadow toggle
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

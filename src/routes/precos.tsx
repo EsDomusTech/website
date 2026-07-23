@@ -306,19 +306,18 @@ function PrecosPage() {
         </div>
       </section>
 
-      {/* FAQ — grid 4+8 per Stitch spec */}
+      {/* FAQ — centered header */}
       <section className="py-16 md:py-[120px]">
         <div className="s-wrap">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-4">
-              <h2 className="s-headline-lg mb-4" style={{ color: "#000000" }}>
-                Dúvidas<br />Frequentes
-              </h2>
-              <p className="s-body-md" style={{ color: "#444748" }}>
-                Respostas directas às perguntas mais comuns sobre preços, pagamentos e orçamentos.
-              </p>
-            </div>
-            <div className="col-span-12 md:col-span-8 space-y-12">
+          <div className="text-center mb-14">
+            <h2 className="s-headline-lg mb-4" style={{ color: "#000000" }}>
+              Dúvidas Frequentes
+            </h2>
+            <p className="s-body-md mx-auto max-w-xl" style={{ color: "#444748" }}>
+              Respostas directas às perguntas mais comuns sobre preços, pagamentos e orçamentos.
+            </p>
+          </div>
+          <div className="mx-auto max-w-3xl space-y-12">
               {FAQS_PRECOS.map((faq, i) => (
                 <motion.div
                   key={i}
@@ -360,7 +359,6 @@ function PrecosPage() {
                   )}
                 </motion.div>
               ))}
-            </div>
           </div>
         </div>
       </section>

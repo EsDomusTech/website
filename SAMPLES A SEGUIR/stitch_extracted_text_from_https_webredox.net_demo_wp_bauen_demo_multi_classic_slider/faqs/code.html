@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQs | ARCHITECTURAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Libre+Franklin:wght@200;300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            transition: max-height 1s ease-in-out;
+        }
+        .accordion-item.active .icon-rotate {
+            transform: rotate(45deg);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e3e2e2",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#1a1c1c",
+                    "secondary-container": "#fdcc89",
+                    "on-tertiary-container": "#838484",
+                    "surface-variant": "#e2e2e2",
+                    "on-background": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed-dim": "#eebf7c",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "tertiary": "#000000",
+                    "background": "#f9f9f9",
+                    "secondary-fixed": "#ffddb2",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c7c7",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-container": "#1b1b1b",
+                    "architectural-gold": "#BE9355",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-tint": "#5f5e5e",
+                    "outline": "#747878",
+                    "on-surface-variant": "#444748",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#291800",
+                    "muted-gray": "#999999",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-fixed-variant": "#604008",
+                    "surface-container": "#eeeeee",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary": "#ffffff",
+                    "secondary": "#7b581f",
+                    "pure-white": "#FFFFFF",
+                    "on-secondary-container": "#78551d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px",
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Oswald"],
+                    "headline-lg": ["Oswald"],
+                    "display-lg": ["Oswald"],
+                    "body-lg": ["Libre Franklin"],
+                    "headline-lg-mobile": ["Oswald"],
+                    "headline-md": ["Oswald"],
+                    "body-md": ["Libre Franklin"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-background dark:bg-background z-50">
+<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background tracking-widest">
+                ARCHITECTURAL
+            </div>
+<div class="hidden md:flex space-x-12">
+<a class="font-label-caps text-label-caps transition-colors duration-300 text-primary dark:text-on-background pb-1 hover:text-architectural-gold" href="#">HOME</a>
+<a class="font-label-caps text-label-caps transition-colors duration-300 text-primary dark:text-on-background pb-1 hover:text-architectural-gold" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps transition-colors duration-300 text-primary dark:text-on-background pb-1 hover:text-architectural-gold" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps transition-colors duration-300 text-primary dark:text-on-background pb-1 hover:text-architectural-gold" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps transition-colors duration-300 text-primary dark:text-on-background pb-1 hover:text-architectural-gold" href="#">CONTACT</a>
+</div>
+<button class="font-label-caps text-label-caps bg-primary-container text-on-primary px-8 py-3 transition-all duration-300 hover:bg-architectural-gold">
+                INQUIRE
+            </button>
+</div>
+</nav>
+<!-- Hero Header -->
+<header class="pt-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-display-lg text-display-lg uppercase mb-8">Common <br/><span class="text-architectural-gold">Inquiries</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Transparency is the foundation of our design process. We have curated responses to the most frequent architectural questions to help you navigate your journey from concept to completion.
+                </p>
+</div>
+</div>
+</header>
+<!-- FAQ Section -->
+<main class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Table of Contents / Sidebar -->
+<aside class="hidden md:block col-span-3">
+<div class="sticky top-40">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-6 block">CATEGORIES</span>
+<ul class="space-y-4">
+<li><a class="font-label-caps text-label-caps hover:text-architectural-gold transition-colors" href="#process">THE PROCESS</a></li>
+<li><a class="font-label-caps text-label-caps hover:text-architectural-gold transition-colors" href="#financials">BUDGETING</a></li>
+<li><a class="font-label-caps text-label-caps hover:text-architectural-gold transition-colors" href="#timeline">TIMELINES</a></li>
+<li><a class="font-label-caps text-label-caps hover:text-architectural-gold transition-colors" href="#legal">LEGAL &amp; PERMITS</a></li>
+</ul>
+</div>
+</aside>
+<!-- Questions -->
+<div class="col-span-12 md:col-span-9 space-y-12">
+<!-- Category: Design Process -->
+<section class="space-y-6" id="process">
+<h2 class="font-headline-md text-headline-md border-b border-surface-container pb-4 mb-8">01 / DESIGN PROCESS</h2>
+<!-- Accordion Item 1 -->
+<div class="accordion-item group border-b border-surface-container">
+<button class="w-full flex justify-between items-center py-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md group-hover:text-architectural-gold transition-colors uppercase">How does the initial design phase begin?</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300 text-architectural-gold" data-icon="add">add</span>
+</button>
+<div class="accordion-content">
+<div class="pb-12 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    Our process begins with a comprehensive consultation to understand your lifestyle, aesthetic preferences, and functional needs. We then conduct a site analysis before presenting a conceptual framework that balances structural integrity with artistic vision.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item group border-b border-surface-container">
+<button class="w-full flex justify-between items-center py-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md group-hover:text-architectural-gold transition-colors uppercase">Can I request modifications during the build?</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300 text-architectural-gold" data-icon="add">add</span>
+</button>
+<div class="accordion-content">
+<div class="pb-12 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    While we strive for perfection in the schematic phase, we understand that vision evolves. Change orders are managed through a formal review process to assess impacts on both budget and structural timelines.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Budgeting -->
+<section class="space-y-6 pt-12" id="financials">
+<h2 class="font-headline-md text-headline-md border-b border-surface-container pb-4 mb-8">02 / BUDGETING</h2>
+<div class="accordion-item group border-b border-surface-container">
+<button class="w-full flex justify-between items-center py-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md group-hover:text-architectural-gold transition-colors uppercase">How are architectural fees calculated?</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300 text-architectural-gold" data-icon="add">add</span>
+</button>
+<div class="accordion-content">
+<div class="pb-12 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    Fees typically range from 10% to 15% of the total construction cost, depending on the project's complexity and scope of services required—from basic drafting to full-service interior design and project management.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Project Timelines -->
+<section class="space-y-6 pt-12" id="timeline">
+<h2 class="font-headline-md text-headline-md border-b border-surface-container pb-4 mb-8">03 / PROJECT TIMELINES</h2>
+<div class="accordion-item group border-b border-surface-container">
+<button class="w-full flex justify-between items-center py-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md group-hover:text-architectural-gold transition-colors uppercase">What is the average duration for a residential project?</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300 text-architectural-gold" data-icon="add">add</span>
+</button>
+<div class="accordion-content">
+<div class="pb-12 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    High-end residential projects generally span 18 to 24 months. This includes 4–6 months of design and permitting, followed by 12–18 months of meticulous construction and finishing.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 bg-surface-container p-12 md:p-20 flex flex-col md:flex-row items-center justify-between">
+<div class="mb-8 md:mb-0">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase leading-tight">Still have <br/>questions?</h3>
+</div>
+<div class="max-w-md">
+<p class="font-body-md text-body-md mb-8">Our team is available for personalized consultations to discuss the specific nuances of your upcoming project.</p>
+<a class="inline-block font-label-caps text-label-caps border border-primary px-10 py-4 hover:bg-primary hover:text-white transition-all duration-300" href="#">SCHEDULE A CALL</a>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Visual Anchor Section -->
+<section class="w-full h-[614px] bg-surface relative overflow-hidden">
+<img alt="Architectural precision" class="w-full h-full object-cover grayscale opacity-80" data-alt="A low-angle, wide-shot photograph of a modern skyscraper's glass and steel facade reflecting a clear sky. The image has a clean, minimalist, high-contrast look with sharp geometric lines and a monochrome color palette, echoing an editorial architectural magazine style. The lighting is bright and crisp, highlighting the structural precision and expansive glass surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmp8b0jjqPH5BuLPdwOup-Kdv678WINu3WID7PkYY5mKJhC72-geWG_qW0b8vrtRqUyS9s5u8LgbpYLx8C5yHZOgUeUyCdEMYR_l5F07Ch3PU7RmPnMUWmnN3wBblQQ3YsEFkUnlWkSU2bYBXWwAfq7offE1bz9B2TxQ4DPC4V53dfhIUuyNlpRuTsDSOAtqKtQB241Y33GDE-tMk9OTnjdnvptDn3_oY--FY97-FdgCh8llhlakKSJHZBiAzXAke3A34bndZUpxgj"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<div class="text-center bg-background px-12 py-10">
+<span class="font-label-caps text-label-caps text-architectural-gold block mb-2">PRECISION IN EVERY DETAIL</span>
+<p class="font-headline-md text-headline-md uppercase">Building Future Icons</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container w-full py-section-padding">
+<div class="grid grid-cols-12 px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background mb-6">ARCHITECTURAL STUDIO.</div>
+<p class="font-body-md text-body-md text-muted-gray max-w-xs">
+                    Redefining modern living through structural honesty and minimalist innovation.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">OFFICE</span>
+<address class="font-body-md text-body-md text-muted-gray not-italic space-y-2">
+                    1245 Design District<br/>
+                    New York, NY 10001
+                </address>
+</div>
+<div class="col-span-6 md:col-span-2">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">CONNECT</span>
+<div class="flex flex-col space-y-2">
+<a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+<a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">LINKEDIN</a>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0 flex flex-col justify-between">
+<div class="flex flex-wrap gap-4">
+<a class="font-label-caps text-label-caps text-muted-gray hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-label-caps text-muted-gray hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a>
+</div>
+<div class="font-body-md text-body-md text-primary dark:text-on-background mt-8">
+                    © 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // If it wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body></html>

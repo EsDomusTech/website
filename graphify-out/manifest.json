@@ -1,0 +1,757 @@
+{
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\components.json": {
+    "mtime": 1780522342.1686678,
+    "ast_hash": "d9a5358de725b840c808a17fa6638620",
+    "semantic_hash": "d9a5358de725b840c808a17fa6638620"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\eslint.config.js": {
+    "mtime": 1780522342.1696756,
+    "ast_hash": "20097f0c1a669549b3a8d3a194c3c25d",
+    "semantic_hash": "20097f0c1a669549b3a8d3a194c3c25d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\package.json": {
+    "mtime": 1780522702.060811,
+    "ast_hash": "5918b4ba6547c6a4a5f683e12ce4b56a",
+    "semantic_hash": "5918b4ba6547c6a4a5f683e12ce4b56a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\tsconfig.json": {
+    "mtime": 1780522342.282206,
+    "ast_hash": "662721996bc74d1469c21a681e37be5e",
+    "semantic_hash": "662721996bc74d1469c21a681e37be5e"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\vite.config.ts": {
+    "mtime": 1780522342.284437,
+    "ast_hash": "b4e8af3f0f230eee39d6bd32d195195f",
+    "semantic_hash": "b4e8af3f0f230eee39d6bd32d195195f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\.claude\\mcp.json": {
+    "mtime": 1780564585.192835,
+    "ast_hash": "060608f5a1b05ab921847aaf57da1c03",
+    "semantic_hash": "060608f5a1b05ab921847aaf57da1c03"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\.claude\\settings.json": {
+    "mtime": 1780588196.2381604,
+    "ast_hash": "5ddac2dcee2c0da8627007a4a1bc6fe8",
+    "semantic_hash": "5ddac2dcee2c0da8627007a4a1bc6fe8"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\.claude\\settings.local.json": {
+    "mtime": 1780911007.63035,
+    "ast_hash": "08680329ef6f2726bfeb3234fa7c4faf",
+    "semantic_hash": "08680329ef6f2726bfeb3234fa7c4faf"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\.lovable\\project.json": {
+    "mtime": 1780522342.1612625,
+    "ast_hash": "261cf764e3c98dd108797bb3a3d0c919",
+    "semantic_hash": "261cf764e3c98dd108797bb3a3d0c919"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\router.tsx": {
+    "mtime": 1780522342.261114,
+    "ast_hash": "1399708ae830799467737d473ea53a30",
+    "semantic_hash": "1399708ae830799467737d473ea53a30"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routeTree.gen.ts": {
+    "mtime": 1780917125.0643303,
+    "ast_hash": "1589f14f3534426248cc42c8b24624f7",
+    "semantic_hash": "1589f14f3534426248cc42c8b24624f7"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\server.ts": {
+    "mtime": 1780522342.2797213,
+    "ast_hash": "a738831e2dbbdbd179d94b6d4dabaf51",
+    "semantic_hash": "a738831e2dbbdbd179d94b6d4dabaf51"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\start.ts": {
+    "mtime": 1780522342.281185,
+    "ast_hash": "9194c218691e3dd0b8856096bb81c3b4",
+    "semantic_hash": "9194c218691e3dd0b8856096bb81c3b4"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\About.tsx": {
+    "mtime": 1781019701.683155,
+    "ast_hash": "df0c820779bbf44295a0c449c4170a36",
+    "semantic_hash": "df0c820779bbf44295a0c449c4170a36"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\BeforeAfterSlider.tsx": {
+    "mtime": 1780568743.0496142,
+    "ast_hash": "96b7aabdc21fad325e30f672ed3308e5",
+    "semantic_hash": "96b7aabdc21fad325e30f672ed3308e5"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Blog.tsx": {
+    "mtime": 1780750892.5275855,
+    "ast_hash": "154c833d7251b8aa124fd3ae3b160d2f",
+    "semantic_hash": "154c833d7251b8aa124fd3ae3b160d2f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\ClientLogos.tsx": {
+    "mtime": 1780567721.6975472,
+    "ast_hash": "8217a094484a72d40b1653ddec508752",
+    "semantic_hash": "8217a094484a72d40b1653ddec508752"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\CtaBand.tsx": {
+    "mtime": 1781019773.580177,
+    "ast_hash": "88cd2e9f0ee212efef7eff5d95c1bab1",
+    "semantic_hash": "88cd2e9f0ee212efef7eff5d95c1bab1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Footer.tsx": {
+    "mtime": 1781019630.5870209,
+    "ast_hash": "9930bd5191d7c087e716c7f5c3993ac4",
+    "semantic_hash": "9930bd5191d7c087e716c7f5c3993ac4"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Hero.tsx": {
+    "mtime": 1781019752.166671,
+    "ast_hash": "6c154554532f84229bd03085fd07706f",
+    "semantic_hash": "6c154554532f84229bd03085fd07706f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\icons.tsx": {
+    "mtime": 1780747158.5482805,
+    "ast_hash": "8418e601876254f8c74b2b191a00a33c",
+    "semantic_hash": "8418e601876254f8c74b2b191a00a33c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Navbar.tsx": {
+    "mtime": 1781019492.5824208,
+    "ast_hash": "ac979e664f5fd16204d6ecfd0ed7a28d",
+    "semantic_hash": "ac979e664f5fd16204d6ecfd0ed7a28d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\PageHeader.tsx": {
+    "mtime": 1780750857.4310195,
+    "ast_hash": "183cdec1904c46a9d258acd40d1a5e11",
+    "semantic_hash": "183cdec1904c46a9d258acd40d1a5e11"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Projects.tsx": {
+    "mtime": 1781019791.3161418,
+    "ast_hash": "c1fb020279dbc767e3217248b4f9337e",
+    "semantic_hash": "c1fb020279dbc767e3217248b4f9337e"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\SectionTitle.tsx": {
+    "mtime": 1780747158.6461742,
+    "ast_hash": "55aee8bc7117d6098138763c6cabd049",
+    "semantic_hash": "55aee8bc7117d6098138763c6cabd049"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Services.tsx": {
+    "mtime": 1781019727.9039967,
+    "ast_hash": "7153250c948a76ee66eefd70db72981e",
+    "semantic_hash": "7153250c948a76ee66eefd70db72981e"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\Team.tsx": {
+    "mtime": 1780561618.6164417,
+    "ast_hash": "16aaffd27ceb898b7a8351d00f83357f",
+    "semantic_hash": "16aaffd27ceb898b7a8351d00f83357f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\site\\VideoTestimonials.tsx": {
+    "mtime": 1780567716.449333,
+    "ast_hash": "2b2e281b9e914534d54c5e29fb7090bb",
+    "semantic_hash": "2b2e281b9e914534d54c5e29fb7090bb"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\accordion.tsx": {
+    "mtime": 1780522342.1893687,
+    "ast_hash": "8ecf0fa176c31be17b45a60ee2e758b6",
+    "semantic_hash": "8ecf0fa176c31be17b45a60ee2e758b6"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\alert-dialog.tsx": {
+    "mtime": 1780522342.190507,
+    "ast_hash": "d93a897b2af34657fc5ba1d1db303095",
+    "semantic_hash": "d93a897b2af34657fc5ba1d1db303095"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\alert.tsx": {
+    "mtime": 1780522342.1930394,
+    "ast_hash": "5a6d7c9719435e87ba5605fb5e7b0dc9",
+    "semantic_hash": "5a6d7c9719435e87ba5605fb5e7b0dc9"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\aspect-ratio.tsx": {
+    "mtime": 1780522342.195059,
+    "ast_hash": "14c12661aad8c80328c86a18b506c088",
+    "semantic_hash": "14c12661aad8c80328c86a18b506c088"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\avatar.tsx": {
+    "mtime": 1780522342.195059,
+    "ast_hash": "1c3bd25e3806bbc82f9513b789b14a30",
+    "semantic_hash": "1c3bd25e3806bbc82f9513b789b14a30"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\badge.tsx": {
+    "mtime": 1780522342.196914,
+    "ast_hash": "f712eba47d4263bea5f224eacc090cb0",
+    "semantic_hash": "f712eba47d4263bea5f224eacc090cb0"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\breadcrumb.tsx": {
+    "mtime": 1780522342.196914,
+    "ast_hash": "53f1ec4c38907530050142e3afa85cc7",
+    "semantic_hash": "53f1ec4c38907530050142e3afa85cc7"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\button.tsx": {
+    "mtime": 1780522342.1982803,
+    "ast_hash": "b45e483db7e5f192b347a86e486e5335",
+    "semantic_hash": "b45e483db7e5f192b347a86e486e5335"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\calendar.tsx": {
+    "mtime": 1780522342.1992981,
+    "ast_hash": "96e6b176a517edb8b0facbb922a8c78c",
+    "semantic_hash": "96e6b176a517edb8b0facbb922a8c78c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\card.tsx": {
+    "mtime": 1780522342.2003021,
+    "ast_hash": "053803f00d677727a20ac1af41ee599c",
+    "semantic_hash": "053803f00d677727a20ac1af41ee599c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\carousel.tsx": {
+    "mtime": 1780522342.2016358,
+    "ast_hash": "36dd085e09dbc3fe793c1708a6821204",
+    "semantic_hash": "36dd085e09dbc3fe793c1708a6821204"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\chart.tsx": {
+    "mtime": 1780522342.2026663,
+    "ast_hash": "e5bff896623339713c67d40cd8b8a74a",
+    "semantic_hash": "e5bff896623339713c67d40cd8b8a74a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\checkbox.tsx": {
+    "mtime": 1780522342.2037485,
+    "ast_hash": "f365b7eb8243d81cb5eab455675212ac",
+    "semantic_hash": "f365b7eb8243d81cb5eab455675212ac"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\collapsible.tsx": {
+    "mtime": 1780522342.204769,
+    "ast_hash": "eda123bd06c97202f8cf1483e62d1580",
+    "semantic_hash": "eda123bd06c97202f8cf1483e62d1580"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\command.tsx": {
+    "mtime": 1780522342.2057724,
+    "ast_hash": "9eba05d7f5d3fcfd642d9affb10b75c7",
+    "semantic_hash": "9eba05d7f5d3fcfd642d9affb10b75c7"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\context-menu.tsx": {
+    "mtime": 1780522342.2067647,
+    "ast_hash": "69270233091977e4dc575681b1ba3e87",
+    "semantic_hash": "69270233091977e4dc575681b1ba3e87"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\dialog.tsx": {
+    "mtime": 1780522342.2077687,
+    "ast_hash": "79b74d5876df6c4d696734273de5390a",
+    "semantic_hash": "79b74d5876df6c4d696734273de5390a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\drawer.tsx": {
+    "mtime": 1780522342.2090642,
+    "ast_hash": "ec99714627829d4a2ce0b03f3e2b3335",
+    "semantic_hash": "ec99714627829d4a2ce0b03f3e2b3335"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\dropdown-menu.tsx": {
+    "mtime": 1780522342.2101707,
+    "ast_hash": "1ae2005dbe29a013829fea9a6f1c67a6",
+    "semantic_hash": "1ae2005dbe29a013829fea9a6f1c67a6"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\form.tsx": {
+    "mtime": 1780522342.2115967,
+    "ast_hash": "5a003832fca7d213e5b805ec214d819c",
+    "semantic_hash": "5a003832fca7d213e5b805ec214d819c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\hover-card.tsx": {
+    "mtime": 1780522342.2115967,
+    "ast_hash": "82b2422c27dad853935c901f46966914",
+    "semantic_hash": "82b2422c27dad853935c901f46966914"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\input-otp.tsx": {
+    "mtime": 1780522342.212895,
+    "ast_hash": "d2323e8455e70b784db91ae646529481",
+    "semantic_hash": "d2323e8455e70b784db91ae646529481"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\input.tsx": {
+    "mtime": 1780522342.2140574,
+    "ast_hash": "bc58ae801e789ef86349bf93809c3534",
+    "semantic_hash": "bc58ae801e789ef86349bf93809c3534"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\label.tsx": {
+    "mtime": 1780522342.2150764,
+    "ast_hash": "919969cdd3255dc8aaed6ea15dc75166",
+    "semantic_hash": "919969cdd3255dc8aaed6ea15dc75166"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\menubar.tsx": {
+    "mtime": 1780522342.2164698,
+    "ast_hash": "ac230528a1a992f476ed8f5706a10763",
+    "semantic_hash": "ac230528a1a992f476ed8f5706a10763"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\navigation-menu.tsx": {
+    "mtime": 1780522342.217488,
+    "ast_hash": "c2b62d8c6898c6c5a15f50ce2c29b995",
+    "semantic_hash": "c2b62d8c6898c6c5a15f50ce2c29b995"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\pagination.tsx": {
+    "mtime": 1780522342.2189417,
+    "ast_hash": "0e8f9422cf3b259d1cfa8ff36bf8363c",
+    "semantic_hash": "0e8f9422cf3b259d1cfa8ff36bf8363c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\popover.tsx": {
+    "mtime": 1780522342.2204108,
+    "ast_hash": "4db76837576da0621b5810d9bea6767f",
+    "semantic_hash": "4db76837576da0621b5810d9bea6767f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\progress.tsx": {
+    "mtime": 1780522342.2216158,
+    "ast_hash": "77b2feba9a66fc89497a042b982bf7a1",
+    "semantic_hash": "77b2feba9a66fc89497a042b982bf7a1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\radio-group.tsx": {
+    "mtime": 1780522342.2227936,
+    "ast_hash": "b568877d2661e29b775d52222ed7e121",
+    "semantic_hash": "b568877d2661e29b775d52222ed7e121"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\resizable.tsx": {
+    "mtime": 1780522342.223885,
+    "ast_hash": "1f93a1a9c4b1e770e17a34dcf67e939b",
+    "semantic_hash": "1f93a1a9c4b1e770e17a34dcf67e939b"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\scroll-area.tsx": {
+    "mtime": 1780522342.2249029,
+    "ast_hash": "004b51b8d40b7518596df3be92da6a17",
+    "semantic_hash": "004b51b8d40b7518596df3be92da6a17"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\select.tsx": {
+    "mtime": 1780522342.2266545,
+    "ast_hash": "030580ae0c255538eca1667d9987703d",
+    "semantic_hash": "030580ae0c255538eca1667d9987703d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\separator.tsx": {
+    "mtime": 1780522342.227673,
+    "ast_hash": "81c2922b4be835b7455accbff8ec0ecd",
+    "semantic_hash": "81c2922b4be835b7455accbff8ec0ecd"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\sheet.tsx": {
+    "mtime": 1780522342.2297251,
+    "ast_hash": "a9760583b48b4192927e8f26bb2ef318",
+    "semantic_hash": "a9760583b48b4192927e8f26bb2ef318"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\sidebar.tsx": {
+    "mtime": 1780522342.23072,
+    "ast_hash": "c7d7b7b0d8159cf245eb67638a4b0a29",
+    "semantic_hash": "c7d7b7b0d8159cf245eb67638a4b0a29"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\skeleton.tsx": {
+    "mtime": 1780522342.2317185,
+    "ast_hash": "07675852ac2c3e4380129369a31cb44d",
+    "semantic_hash": "07675852ac2c3e4380129369a31cb44d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\slider.tsx": {
+    "mtime": 1780522342.2317185,
+    "ast_hash": "f51437b9ee04349e8af16e6366c28fee",
+    "semantic_hash": "f51437b9ee04349e8af16e6366c28fee"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\sonner.tsx": {
+    "mtime": 1780522342.2330499,
+    "ast_hash": "bdd1b9b20e6cd7b6977d371849d4c1e9",
+    "semantic_hash": "bdd1b9b20e6cd7b6977d371849d4c1e9"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\switch.tsx": {
+    "mtime": 1780522342.2343483,
+    "ast_hash": "e36f4816956e06b38f81a563297acb8f",
+    "semantic_hash": "e36f4816956e06b38f81a563297acb8f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\table.tsx": {
+    "mtime": 1780522342.2376492,
+    "ast_hash": "51562ced5e90e7352ed2694c903bd0d3",
+    "semantic_hash": "51562ced5e90e7352ed2694c903bd0d3"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\tabs.tsx": {
+    "mtime": 1780522342.2386644,
+    "ast_hash": "4175d0116efa9e701513e864bbdfae85",
+    "semantic_hash": "4175d0116efa9e701513e864bbdfae85"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\textarea.tsx": {
+    "mtime": 1780522342.2396724,
+    "ast_hash": "1b230007443ef12f365fbd94d443ea5c",
+    "semantic_hash": "1b230007443ef12f365fbd94d443ea5c"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\toggle-group.tsx": {
+    "mtime": 1780522342.2406642,
+    "ast_hash": "e1a2ed5eafef66716f034692f9ad46f4",
+    "semantic_hash": "e1a2ed5eafef66716f034692f9ad46f4"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\toggle.tsx": {
+    "mtime": 1780522342.2416685,
+    "ast_hash": "b411abadaeca033bc272e0f2c2e84238",
+    "semantic_hash": "b411abadaeca033bc272e0f2c2e84238"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\components\\ui\\tooltip.tsx": {
+    "mtime": 1780522342.2427104,
+    "ast_hash": "6dd894a539d5f97a0615c049be79a355",
+    "semantic_hash": "6dd894a539d5f97a0615c049be79a355"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\hooks\\use-mobile.tsx": {
+    "mtime": 1780522342.2445505,
+    "ast_hash": "1bb3ebac7752b497a78d34e341975bbd",
+    "semantic_hash": "1bb3ebac7752b497a78d34e341975bbd"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\config.server.ts": {
+    "mtime": 1780522342.247993,
+    "ast_hash": "a21606e1c1c2a2d6299bf98ca717bb31",
+    "semantic_hash": "a21606e1c1c2a2d6299bf98ca717bb31"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\error-capture.ts": {
+    "mtime": 1780522342.2490156,
+    "ast_hash": "1d158c2d639c781546da5f816c39f48d",
+    "semantic_hash": "1d158c2d639c781546da5f816c39f48d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\error-page.ts": {
+    "mtime": 1780522342.2546475,
+    "ast_hash": "cc10be665a4bf6be668d0c29c207b92d",
+    "semantic_hash": "cc10be665a4bf6be668d0c29c207b92d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\lovable-error-reporting.ts": {
+    "mtime": 1780522342.2556508,
+    "ast_hash": "b49ff1965eef0c8a30e88ae6d2b54fb9",
+    "semantic_hash": "b49ff1965eef0c8a30e88ae6d2b54fb9"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\site-data.ts": {
+    "mtime": 1780916357.2850697,
+    "ast_hash": "dd1750f95a87b147d09f62a502d675e1",
+    "semantic_hash": "dd1750f95a87b147d09f62a502d675e1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\utils.ts": {
+    "mtime": 1780522342.258118,
+    "ast_hash": "e3f848f1b39f863e6164cf58b5a8e752",
+    "semantic_hash": "e3f848f1b39f863e6164cf58b5a8e752"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\lib\\api\\example.functions.ts": {
+    "mtime": 1780522342.2466087,
+    "ast_hash": "c4f33b4e14ce87161874de189d9fe0e2",
+    "semantic_hash": "c4f33b4e14ce87161874de189d9fe0e2"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\antes-depois.tsx": {
+    "mtime": 1780756724.5160508,
+    "ast_hash": "bb2b0093fd09f5c9d83ac61592332a19",
+    "semantic_hash": "bb2b0093fd09f5c9d83ac61592332a19"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\blog.tsx": {
+    "mtime": 1780755394.9095972,
+    "ast_hash": "2d32dd327d529093d8f130e2f250281a",
+    "semantic_hash": "2d32dd327d529093d8f130e2f250281a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\contacto.tsx": {
+    "mtime": 1780755404.1695616,
+    "ast_hash": "6100897636d694f63428ccb3ddcaac27",
+    "semantic_hash": "6100897636d694f63428ccb3ddcaac27"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\empresa.tsx": {
+    "mtime": 1780916460.2504764,
+    "ast_hash": "496147c0f9d672c5f95edef72d662954",
+    "semantic_hash": "496147c0f9d672c5f95edef72d662954"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\equipa.tsx": {
+    "mtime": 1780756476.5832458,
+    "ast_hash": "2111adc51d300fa8941f22a44f17761a",
+    "semantic_hash": "2111adc51d300fa8941f22a44f17761a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\faq.tsx": {
+    "mtime": 1780748773.0861232,
+    "ast_hash": "9c5bc31d264952230333bd14f5a2e03b",
+    "semantic_hash": "9c5bc31d264952230333bd14f5a2e03b"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\galeria.masonry.tsx": {
+    "mtime": 1780907999.5281327,
+    "ast_hash": "41b294faba9fd1f8c60f5653a236fe32",
+    "semantic_hash": "41b294faba9fd1f8c60f5653a236fe32"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\galeria.tsx": {
+    "mtime": 1780756421.6352203,
+    "ast_hash": "d5627e747fc2a51cebcaeff8748c2174",
+    "semantic_hash": "d5627e747fc2a51cebcaeff8748c2174"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\index.tsx": {
+    "mtime": 1780522342.271934,
+    "ast_hash": "39b2f6f9039779cabd92b09c5673fa4a",
+    "semantic_hash": "39b2f6f9039779cabd92b09c5673fa4a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\politica-de-privacidade.tsx": {
+    "mtime": 1780907959.1716046,
+    "ast_hash": "59c3a54e80be2576b850bb1dada8520d",
+    "semantic_hash": "59c3a54e80be2576b850bb1dada8520d"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\precos.tsx": {
+    "mtime": 1780916506.5764096,
+    "ast_hash": "416b9c6680bea86645089a0034368a62",
+    "semantic_hash": "416b9c6680bea86645089a0034368a62"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.$slug.tsx": {
+    "mtime": 1780907942.477347,
+    "ast_hash": "76b73769e1d789bdd590f4fd660a5511",
+    "semantic_hash": "76b73769e1d789bdd590f4fd660a5511"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.fancy-filtro.tsx": {
+    "mtime": 1780907975.4549172,
+    "ast_hash": "6f472c61fec833508a65a1fa7fe6e6db",
+    "semantic_hash": "6f472c61fec833508a65a1fa7fe6e6db"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.fancy.tsx": {
+    "mtime": 1780907991.2263227,
+    "ast_hash": "796367d4ddf06a61ee2ee9fa4f6546bd",
+    "semantic_hash": "796367d4ddf06a61ee2ee9fa4f6546bd"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.filtro.tsx": {
+    "mtime": 1780908016.4038498,
+    "ast_hash": "441b3fb790b8fb1913b0bd5d218c44f4",
+    "semantic_hash": "441b3fb790b8fb1913b0bd5d218c44f4"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.index.tsx": {
+    "mtime": 1780907967.458385,
+    "ast_hash": "c1e6bd0a82c223bd6f95f8b4444db959",
+    "semantic_hash": "c1e6bd0a82c223bd6f95f8b4444db959"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\projetos.lista.tsx": {
+    "mtime": 1780908008.4139216,
+    "ast_hash": "014a16d7ee1afbc509e21f7d205fea43",
+    "semantic_hash": "014a16d7ee1afbc509e21f7d205fea43"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\servicos.$slug.tsx": {
+    "mtime": 1780907947.1128864,
+    "ast_hash": "e74405e6631c9088efb68d784d30693a",
+    "semantic_hash": "e74405e6631c9088efb68d784d30693a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\servicos.index.tsx": {
+    "mtime": 1780748547.417389,
+    "ast_hash": "3dc1df1eb9db7b8b597e8491c6751403",
+    "semantic_hash": "3dc1df1eb9db7b8b597e8491c6751403"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\sistema-construtivo.tsx": {
+    "mtime": 1780917103.316127,
+    "ast_hash": "6186b7ed4b25843e198a85d9818e3877",
+    "semantic_hash": "6186b7ed4b25843e198a85d9818e3877"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\sitemap[.]xml.ts": {
+    "mtime": 1780522342.277145,
+    "ast_hash": "823bd7cf7268bac0d36fb071f55d84b7",
+    "semantic_hash": "823bd7cf7268bac0d36fb071f55d84b7"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\termos-e-condicoes.tsx": {
+    "mtime": 1780907983.0975606,
+    "ast_hash": "4d8eb1b58113632e975c5769a244950a",
+    "semantic_hash": "4d8eb1b58113632e975c5769a244950a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\testemunhos.tsx": {
+    "mtime": 1780755546.0884604,
+    "ast_hash": "845ce87f9dd497e68f52ef8e1eab70f5",
+    "semantic_hash": "845ce87f9dd497e68f52ef8e1eab70f5"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\__root.tsx": {
+    "mtime": 1780747158.5526202,
+    "ast_hash": "2b953175bdcf9bd91b92f0d09b3c82f6",
+    "semantic_hash": "2b953175bdcf9bd91b92f0d09b3c82f6"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\CLAUDE.md": {
+    "mtime": 1780577405.4305477,
+    "ast_hash": "edb3335f3fa3ac88957b4c6fc59af002",
+    "semantic_hash": "edb3335f3fa3ac88957b4c6fc59af002"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\our-team.html": {
+    "mtime": 1780561397.513531,
+    "ast_hash": "e2adacfcf041af1695a80ec28f40dac1",
+    "semantic_hash": "e2adacfcf041af1695a80ec28f40dac1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\STATUS.md": {
+    "mtime": 1780588421.364431,
+    "ast_hash": "c082a942e41e46b920076527592eca04",
+    "semantic_hash": "c082a942e41e46b920076527592eca04"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\_tmp_docx_text.txt": {
+    "mtime": 1780910905.0269334,
+    "ast_hash": "6d62ae7525ce74fa9db24e5faf920da8",
+    "semantic_hash": "6d62ae7525ce74fa9db24e5faf920da8"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\.lovable\\plan.md": {
+    "mtime": 1780522342.1612625,
+    "ast_hash": "c51302e47f6f9f16ea320ff084b19f42",
+    "semantic_hash": "c51302e47f6f9f16ea320ff084b19f42"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\public\\robots.txt": {
+    "mtime": 1780522342.1721687,
+    "ast_hash": "a44903f940bc0e90631f7799d25f1a95",
+    "semantic_hash": "a44903f940bc0e90631f7799d25f1a95"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\UI.md": {
+    "mtime": 1780753181.1945784,
+    "ast_hash": "514b0e237659c338d6871bb8a202a1ef",
+    "semantic_hash": "514b0e237659c338d6871bb8a202a1ef"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\about_us\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "14fbbbd1733e8b832790f6c3db7234db",
+    "semantic_hash": "14fbbbd1733e8b832790f6c3db7234db"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\bauen_inspired_homepage\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "8e11cac3da626363e9cb10c2025b49bc",
+    "semantic_hash": "8e11cac3da626363e9cb10c2025b49bc"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\before_after_gallery\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "89bb03e921ccf7c2b18b21293c4d8fcb",
+    "semantic_hash": "89bb03e921ccf7c2b18b21293c4d8fcb"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\contact_us\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "9d996a90d5e6c53f7fe2d9d9f078c747",
+    "semantic_hash": "9d996a90d5e6c53f7fe2d9d9f078c747"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\faqs\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "cd31184b1c547c825716bbc1bca3381f",
+    "semantic_hash": "cd31184b1c547c825716bbc1bca3381f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\gallery_grid_modern\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "4236a62f3d1272e9c3ded9e97f1622c7",
+    "semantic_hash": "4236a62f3d1272e9c3ded9e97f1622c7"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\image_gallery_grid\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "2f9002a2698f68de6da619deecc42628",
+    "semantic_hash": "2f9002a2698f68de6da619deecc42628"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\our_services\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "6180802d294fcae311706c0aaef2f5f6",
+    "semantic_hash": "6180802d294fcae311706c0aaef2f5f6"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\our_team\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "e2adacfcf041af1695a80ec28f40dac1",
+    "semantic_hash": "e2adacfcf041af1695a80ec28f40dac1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\portfolio_grid\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "068b19146173446cf07992ad2252e82e",
+    "semantic_hash": "068b19146173446cf07992ad2252e82e"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\pricing_plans\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "d4dc9be579e93d1f963ffac82b3d5622",
+    "semantic_hash": "d4dc9be579e93d1f963ffac82b3d5622"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\structural_elegance\\DESIGN.md": {
+    "mtime": 1780742744.0,
+    "ast_hash": "cdf940d48de24ebd965f1775216b9c97",
+    "semantic_hash": "cdf940d48de24ebd965f1775216b9c97"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\testimonials\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "26b3279cbae2d577541dc05513aa6e0f",
+    "semantic_hash": "26b3279cbae2d577541dc05513aa6e0f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\video_gallery_grid\\code.html": {
+    "mtime": 1780742744.0,
+    "ast_hash": "96e1a2599605406f7c9814d21e7fb1a9",
+    "semantic_hash": "96e1a2599605406f7c9814d21e7fb1a9"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\src\\routes\\README.md": {
+    "mtime": 1780522342.2631392,
+    "ast_hash": "c458083035f5d9c0d92a96fa42ec13dc",
+    "semantic_hash": "c458083035f5d9c0d92a96fa42ec13dc"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-about-2.pdf": {
+    "mtime": 1780390516.0,
+    "ast_hash": "4d2b65d3aea0621a5bdc025e94b207d6",
+    "semantic_hash": "4d2b65d3aea0621a5bdc025e94b207d6"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-before-after.pdf": {
+    "mtime": 1780390582.0,
+    "ast_hash": "a0c91469ade7f6c1f8ffd4c7f984fe0a",
+    "semantic_hash": "a0c91469ade7f6c1f8ffd4c7f984fe0a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-blog-style.pdf": {
+    "mtime": 1780390616.0,
+    "ast_hash": "7439cb926337239bfbcd0363185274c0",
+    "semantic_hash": "7439cb926337239bfbcd0363185274c0"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-faqs.pdf": {
+    "mtime": 1780390598.0,
+    "ast_hash": "21eabd97a88787cfb7ab792704b6918f",
+    "semantic_hash": "21eabd97a88787cfb7ab792704b6918f"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-image-gallery-grid.pdf": {
+    "mtime": 1780390558.0,
+    "ast_hash": "ee920fcb615f0dfe320fe36c13509e69",
+    "semantic_hash": "ee920fcb615f0dfe320fe36c13509e69"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-portfolio-grid.pdf": {
+    "mtime": 1780390544.0,
+    "ast_hash": "4a1777424e800e735f61339082f8e692",
+    "semantic_hash": "4a1777424e800e735f61339082f8e692"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light-services.pdf": {
+    "mtime": 1780390530.0,
+    "ast_hash": "4cef7a52c2e8d577586e78273ad82cc1",
+    "semantic_hash": "4cef7a52c2e8d577586e78273ad82cc1"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\multi-classic-slider-light.pdf": {
+    "mtime": 1780390500.0,
+    "ast_hash": "7d5601ca3e4a75842e4b292c2b0aa236",
+    "semantic_hash": "7d5601ca3e4a75842e4b292c2b0aa236"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\our-team-screenshot.jpg": {
+    "mtime": 1780561399.2832692,
+    "ast_hash": "c8e991c5bb2a137290b0c159c6f8f2c0",
+    "semantic_hash": "c8e991c5bb2a137290b0c159c6f8f2c0"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\about_us\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "c9c49bd4755ba0cc8e42fef1897ae522",
+    "semantic_hash": "c9c49bd4755ba0cc8e42fef1897ae522"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\bauen_inspired_homepage\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "cdd2a290d58662fdde4370b16f8ff7db",
+    "semantic_hash": "cdd2a290d58662fdde4370b16f8ff7db"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\before_after_gallery\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "f37ebafb6fecc2d301236bd0df277556",
+    "semantic_hash": "f37ebafb6fecc2d301236bd0df277556"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\contact_us\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "dac371ba72fd0a94eb8ab5358056e6cb",
+    "semantic_hash": "dac371ba72fd0a94eb8ab5358056e6cb"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\faqs\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "8a2f21a1d7f022c9e1df634451c2b59a",
+    "semantic_hash": "8a2f21a1d7f022c9e1df634451c2b59a"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\gallery_grid_modern\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "aa5220acea20548cc9ee6898435b6b88",
+    "semantic_hash": "aa5220acea20548cc9ee6898435b6b88"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\image.png\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "f8d9e903f5d00b2bd7b967776b0b8146",
+    "semantic_hash": "f8d9e903f5d00b2bd7b967776b0b8146"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\image_gallery_grid\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "472f0792869b1ae18c0b8e80173b5c84",
+    "semantic_hash": "472f0792869b1ae18c0b8e80173b5c84"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\our_services\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "da2582b2af8b57b579da1271866472e4",
+    "semantic_hash": "da2582b2af8b57b579da1271866472e4"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\our_team\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "a442d18276f68992bc5b4460d52a7cbd",
+    "semantic_hash": "a442d18276f68992bc5b4460d52a7cbd"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\portfolio_grid\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "6afbf614ab5902e02ca4adc52c06d4e8",
+    "semantic_hash": "6afbf614ab5902e02ca4adc52c06d4e8"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\pricing_plans\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "8a5be71be52c6acde547a08d144b53c0",
+    "semantic_hash": "8a5be71be52c6acde547a08d144b53c0"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\testimonials\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "3653282da475b0c6e83639f595abddfd",
+    "semantic_hash": "3653282da475b0c6e83639f595abddfd"
+  },
+  "C:\\Users\\diogo\\Documents\\Documentos Diogo\\LinkedIn\\CLAUDE CODE SKILLS TERMINAL\\SITES LOVABLE\\DOMUSTECH SITE GIT LOVABLE\\SAMPLES A SEGUIR\\stitch_extracted_text_from_https_webredox.net_demo_wp_bauen_demo_multi_classic_slider\\video_gallery_grid\\screen.png": {
+    "mtime": 1780742744.0,
+    "ast_hash": "899338891374aa5519fea226551d6e69",
+    "semantic_hash": "899338891374aa5519fea226551d6e69"
+  }
+}

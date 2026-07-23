@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Investment | ARCHITECTURAL STUDIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Libre+Franklin:wght@200;300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .line-draw::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #BE9355;
+            transition: width 0.3s ease;
+        }
+        .line-draw:hover::after {
+            width: 100%;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#1a1c1c",
+                        "secondary-container": "#fdcc89",
+                        "on-tertiary-container": "#838484",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#eebf7c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "tertiary": "#000000",
+                        "background": "#f9f9f9",
+                        "secondary-fixed": "#ffddb2",
+                        "surface-container-low": "#f3f3f3",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-container": "#1b1b1b",
+                        "architectural-gold": "#BE9355",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "outline": "#747878",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#291800",
+                        "muted-gray": "#999999",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-secondary-fixed-variant": "#604008",
+                        "surface-container": "#eeeeee",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "secondary": "#7b581f",
+                        "pure-white": "#FFFFFF",
+                        "on-secondary-container": "#78551d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "display-lg": ["Oswald"],
+                        "body-lg": ["Libre Franklin"],
+                        "headline-lg-mobile": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "body-md": ["Libre Franklin"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-primary selection:bg-architectural-gold selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background transition-all duration-300 ease-in-out">
+<nav class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background tracking-widest">ARCHITECTURAL</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 relative line-draw transition-all duration-300 ease-in-out hover:text-architectural-gold" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 relative line-draw transition-all duration-300 ease-in-out hover:text-architectural-gold" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 relative line-draw transition-all duration-300 ease-in-out hover:text-architectural-gold" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 relative line-draw transition-all duration-300 ease-in-out hover:text-architectural-gold" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1 transition-all duration-300 ease-in-out" href="#">INVESTMENT</a>
+</div>
+<a class="font-label-caps text-label-caps bg-primary text-on-primary px-8 py-4 hover:bg-architectural-gold transition-colors duration-300" href="#">INQUIRE</a>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="px-margin-desktop pt-24 pb-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-8">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-6 block">INVESTMENT STRUCTURE</span>
+<h1 class="font-display-lg text-display-lg mb-8 text-primary uppercase">Calculated <br/>Precision.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Our fee structure is designed with the same clarity and intentionality as our buildings. We offer comprehensive engagement models tailored to the complexity and scale of your architectural vision.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Pricing Tiers (Cards Layout) -->
+<section class="px-margin-desktop py-section-padding bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Tier 1 -->
+<div class="bg-pure-white p-12 border border-surface-container flex flex-col h-full group transition-all duration-500 hover:border-architectural-gold">
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-muted-gray mb-2 block">PHASE 01</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">CONCEPTUAL</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Ideal for feasibility studies and early-stage spatial planning.</p>
+<div class="flex items-baseline">
+<span class="font-label-caps text-label-caps mr-2">FROM</span>
+<span class="font-headline-lg text-headline-lg">$4,500</span>
+</div>
+</div>
+<div class="flex-grow">
+<ul class="space-y-6 border-t border-surface-container pt-8">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Site analysis &amp; feasibility</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Initial spatial diagrams</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Moodboards &amp; materiality</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Preliminary budget forecast</span>
+</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-5 border border-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">SELECT PLAN</button>
+</div>
+<!-- Tier 2 (Featured) -->
+<div class="bg-primary p-12 border border-primary flex flex-col h-full relative z-10 scale-105 shadow-2xl">
+<div class="absolute top-0 right-0 bg-architectural-gold px-4 py-2 font-label-caps text-[10px] text-on-primary tracking-widest">MOST SELECTED</div>
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-on-primary-container mb-2 block">PHASE 02</span>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-primary">RESIDENTIAL</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim mb-8">Comprehensive design service for private custom residences.</p>
+<div class="flex items-baseline text-on-primary">
+<span class="font-label-caps text-label-caps mr-2">FROM</span>
+<span class="font-headline-lg text-headline-lg">$12,000</span>
+</div>
+</div>
+<div class="flex-grow">
+<ul class="space-y-6 border-t border-on-primary-fixed-variant pt-8">
+<li class="flex items-start gap-4 text-on-primary">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Full schematic design</span>
+</li>
+<li class="flex items-start gap-4 text-on-primary">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">3D photorealistic renderings</span>
+</li>
+<li class="flex items-start gap-4 text-on-primary">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Permit documentation</span>
+</li>
+<li class="flex items-start gap-4 text-on-primary">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Structural engineering sync</span>
+</li>
+<li class="flex items-start gap-4 text-on-primary">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Interior finish schedules</span>
+</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-5 bg-architectural-gold text-on-primary font-label-caps text-label-caps hover:bg-pure-white hover:text-primary transition-all duration-300">SELECT PLAN</button>
+</div>
+<!-- Tier 3 -->
+<div class="bg-pure-white p-12 border border-surface-container flex flex-col h-full group transition-all duration-500 hover:border-architectural-gold">
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-muted-gray mb-2 block">PHASE 03</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">COMMERCIAL</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Large scale developments, hospitality, and retail environments.</p>
+<div class="flex items-baseline">
+<span class="font-label-caps text-label-caps mr-2">FROM</span>
+<span class="font-headline-lg text-headline-lg">$28,000</span>
+</div>
+</div>
+<div class="flex-grow">
+<ul class="space-y-6 border-t border-surface-container pt-8">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Master planning &amp; urban sync</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Construction administration</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">Building code compliance</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-architectural-gold shrink-0">check</span>
+<span class="font-body-md text-body-md">BIM management services</span>
+</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-5 border border-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">SELECT PLAN</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Table Section -->
+<section class="px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter mb-20">
+<div class="col-span-12 lg:col-span-6">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6">Service Breakdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A detailed comparison of our core architectural deliverable streams for absolute transparency in your project journey.</p>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b-2 border-primary">
+<th class="py-8 text-left font-label-caps text-label-caps pr-8">SERVICE DELIVERABLE</th>
+<th class="py-8 text-left font-label-caps text-label-caps">CONCEPT</th>
+<th class="py-8 text-left font-label-caps text-label-caps text-architectural-gold">RESIDENTIAL</th>
+<th class="py-8 text-left font-label-caps text-label-caps">COMMERCIAL</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr>
+<td class="py-8 pr-8 font-headline-md text-headline-md">Discovery Sessions</td>
+<td class="py-8 font-body-md text-body-md">2 Meetings</td>
+<td class="py-8 font-body-md text-body-md">Unlimited</td>
+<td class="py-8 font-body-md text-body-md">Unlimited</td>
+</tr>
+<tr>
+<td class="py-8 pr-8 font-headline-md text-headline-md">3D Visualization</td>
+<td class="py-8 font-body-md text-body-md">Basic Clay</td>
+<td class="py-8 font-body-md text-body-md">Full Photoreal</td>
+<td class="py-8 font-body-md text-body-md">Full Photoreal + VR</td>
+</tr>
+<tr>
+<td class="py-8 pr-8 font-headline-md text-headline-md">Regulatory Filings</td>
+<td class="py-8 font-body-md text-body-md text-muted-gray">—</td>
+<td class="py-8 font-body-md text-body-md">Included</td>
+<td class="py-8 font-body-md text-body-md">Included</td>
+</tr>
+<tr>
+<td class="py-8 pr-8 font-headline-md text-headline-md">Material Sourcing</td>
+<td class="py-8 font-body-md text-body-md">Curated List</td>
+<td class="py-8 font-body-md text-body-md">Full Procurement</td>
+<td class="py-8 font-body-md text-body-md">Full Procurement</td>
+</tr>
+<tr>
+<td class="py-8 pr-8 font-headline-md text-headline-md">On-Site Supervision</td>
+<td class="py-8 font-body-md text-body-md text-muted-gray">—</td>
+<td class="py-8 font-body-md text-body-md">Bi-Weekly</td>
+<td class="py-8 font-body-md text-body-md">Weekly</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Atmospheric Image Section -->
+<section class="h-[716px] w-full relative">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="A grand, ultra-modern architectural facade featuring sharp angles and reflective glass surfaces during the blue hour. The lighting is cold and sophisticated, highlighting the minimalist structural lines and high-end materials. The mood is one of corporate authority and architectural precision, emphasizing the luxury and scale of professional architectural services in a monochrome gray and black palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJhCgIoq2W0QCM1geBwKguZY-1Fm-UbvZS4xM5B8bvzx8ab6qv-0LjgZH7Enqf8vdBlMbbpldtA6lOGjQNitEdj6DknONWVq2PtBoJx_25ByvCXDanWp2uaPyDafigl6LWMEO2NZV9f1IFvJWonUsxk8_9w4WcWhJUYXX7jG-OHVGb0A8OfGU4DMdOMDMUHtWFdNomE1Jv6LWgwJWD1LA7s5ay4JYCRjPthwBn2CRH9mexPve8jpHg7GhgcBW-def7X7iCXKbq9jgG"/>
+<div class="absolute inset-0 flex items-center justify-center bg-primary/20 backdrop-blur-sm">
+<div class="text-center px-margin-mobile">
+<h2 class="font-display-lg text-display-lg text-pure-white mb-8">BUILDING THE FUTURE.</h2>
+<a class="inline-block font-label-caps text-label-caps bg-architectural-gold text-on-primary px-12 py-6 hover:bg-pure-white hover:text-primary transition-all duration-300" href="#">START YOUR PROJECT</a>
+</div>
+</div>
+</section>
+<!-- FAQ or Info Section -->
+<section class="px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-4">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-8">Investment <br/>Guidance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Common inquiries regarding our engagement process and financial structures.</p>
+</div>
+<div class="col-span-12 lg:col-span-8">
+<div class="space-y-12">
+<div class="group border-b border-surface-container pb-8">
+<h4 class="font-headline-md text-headline-md mb-4 group-hover:text-architectural-gold transition-colors">How do you calculate architectural fees?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our fees are typically calculated as a percentage of the total construction cost, or as a fixed lump sum for specific design phases. We provide a full breakdown after our initial discovery session.</p>
+</div>
+<div class="group border-b border-surface-container pb-8">
+<h4 class="font-headline-md text-headline-md mb-4 group-hover:text-architectural-gold transition-colors">Can we start with Phase 01 and decide later?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Absolutely. Many of our clients prefer to engage us for a Conceptual Study first to define the vision before committing to full-service project delivery.</p>
+</div>
+<div class="group border-b border-surface-container pb-8">
+<h4 class="font-headline-md text-headline-md mb-4 group-hover:text-architectural-gold transition-colors">Are structural engineering costs included?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">While we manage the coordination with all consultants, specialized engineering fees are usually billed separately to ensure direct accountability and professional oversight from the specific discipline.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container dark:bg-surface-container">
+<div class="grid grid-cols-12 px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 lg:col-span-4 mb-12 lg:mb-0">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background mb-8">ARCHITECTURAL</div>
+<p class="font-body-md text-body-md text-muted-gray max-w-xs">Crafting silent masterpieces of modern space and structural integrity.</p>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h5 class="font-label-caps text-label-caps mb-8 text-primary">LEGAL</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary dark:hover:text-pure-white transition-colors" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary dark:hover:text-pure-white transition-colors" href="#">TERMS OF SERVICE</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h5 class="font-label-caps text-label-caps mb-8 text-primary">SOCIAL</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary dark:hover:text-pure-white transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary dark:hover:text-pure-white transition-colors" href="#">LINKEDIN</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4 mt-12 lg:mt-0 flex flex-col items-end">
+<p class="font-body-md text-body-md text-primary dark:text-on-background mb-4">© 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-architectural-gold">architecture</span>
+<span class="material-symbols-outlined text-architectural-gold">apartment</span>
+<span class="material-symbols-outlined text-architectural-gold">design_services</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll reveal or simple interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

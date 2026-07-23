@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Team | ARCHITECTURAL STUDIO</title>
+<!-- Google Fonts: Oswald for headings, Libre Franklin for body -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&amp;family=Libre+Franklin:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "error": "#ba1a1a",
+                "on-tertiary": "#ffffff",
+                "primary-fixed": "#e5e2e1",
+                "error-container": "#ffdad6",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#e3e2e2",
+                "inverse-surface": "#2f3131",
+                "tertiary-container": "#1a1c1c",
+                "secondary-container": "#fdcc89",
+                "on-tertiary-container": "#838484",
+                "surface-variant": "#e2e2e2",
+                "on-background": "#1a1c1c",
+                "surface-container-high": "#e8e8e8",
+                "primary-fixed-dim": "#c8c6c5",
+                "surface-dim": "#dadada",
+                "secondary-fixed-dim": "#eebf7c",
+                "on-secondary": "#ffffff",
+                "on-primary-container": "#858383",
+                "tertiary": "#000000",
+                "background": "#f9f9f9",
+                "secondary-fixed": "#ffddb2",
+                "surface-container-low": "#f3f3f3",
+                "on-error-container": "#93000a",
+                "outline-variant": "#c4c7c7",
+                "tertiary-fixed-dim": "#c7c6c6",
+                "inverse-on-surface": "#f1f1f1",
+                "surface": "#f9f9f9",
+                "surface-bright": "#f9f9f9",
+                "on-tertiary-fixed-variant": "#464747",
+                "inverse-primary": "#c8c6c5",
+                "primary-container": "#1b1b1b",
+                "architectural-gold": "#BE9355",
+                "surface-container-highest": "#e2e2e2",
+                "surface-tint": "#5f5e5e",
+                "outline": "#747878",
+                "on-surface-variant": "#444748",
+                "on-primary-fixed": "#1b1b1b",
+                "on-surface": "#1a1c1c",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed": "#291800",
+                "muted-gray": "#999999",
+                "on-primary-fixed-variant": "#474746",
+                "on-secondary-fixed-variant": "#604008",
+                "surface-container": "#eeeeee",
+                "primary": "#000000",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-primary": "#ffffff",
+                "secondary": "#7b581f",
+                "pure-white": "#FFFFFF",
+                "on-secondary-container": "#78551d"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "24px",
+                "margin-desktop": "80px",
+                "container-max": "1440px",
+                "gutter": "32px",
+                "section-padding": "120px"
+            },
+            "fontFamily": {
+                "label-caps": ["Oswald"],
+                "headline-lg": ["Oswald"],
+                "display-lg": ["Oswald"],
+                "body-lg": ["Libre Franklin"],
+                "headline-lg-mobile": ["Oswald"],
+                "headline-md": ["Oswald"],
+                "body-md": ["Libre Franklin"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .team-image-container:hover .team-overlay {
+            opacity: 1;
+        }
+        .team-image-container:hover img {
+            transform: scale(1.05);
+        }
+        .line-draw::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #BE9355;
+            transition: width 0.4s ease;
+        }
+        .line-draw:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-architectural-gold selection:text-pure-white">
+<!-- TopNavBar Shell -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 w-full max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background tracking-widest uppercase">
+                ARCHITECTURAL
+            </div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative line-draw" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1 transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative line-draw" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative line-draw" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative line-draw" href="#">CONTACT</a>
+<button class="font-label-caps text-label-caps px-8 py-3 bg-primary text-on-primary hover:bg-architectural-gold transition-colors duration-300">
+                    INQUIRE
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-8">
+<span class="font-label-caps text-label-caps text-architectural-gold uppercase mb-4 block">The Creative Force</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-8">OUR TEAM</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        At Architectural Studio, we believe that great design is a collective effort. Our studio brings together visionary architects, precise technicians, and creative designers who share a passion for structural clarity and modern minimalism. We don't just build spaces; we compose environments that resonate with purpose and elegance.
+                    </p>
+</div>
+<div class="hidden md:block md:col-span-4 self-end">
+<div class="h-px bg-outline-variant w-full mb-8"></div>
+</div>
+</div>
+</section>
+<!-- Team Grid Section -->
+<section class="px-margin-mobile md:px-margin-desktop pb-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Team Member 1 -->
+<div class="group">
+<div class="team-image-container relative overflow-hidden bg-surface-container aspect-[3/4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 grayscale" data-alt="A professional black and white studio portrait of Emily White, a female architect with a focused expression. The lighting is dramatic, highlighting architectural contours of the face against a clean, minimal gray background. The overall aesthetic is high-end corporate modern, reflecting the minimalist architectural brand with sharp focus and professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl6xxPpnI-ukfbsfJ5fVXnkGvxeOlvbYOdP3vIzoV01JHFLNOWS8lTmRuVMBWDVjPSIjm771Xg-F4VgnDsB4BsJjGH2lxShHNDlr0eGIBnF5jcq43mOH3aApvya3Akl0JGoyt6q4r7v8D5M6A323dTwoZgOkwFGBE5wORkcGBgL4IUcgsEXsuMXt7jRhM65aB2whLKcIlT94zqf_y0oZc0FFBTYfyvWLQxRzdKN0qfEEXt9gZY9W3sAcHwJDCVOAZTpAHvVDDXBHC_"/>
+<div class="team-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+<div class="flex space-x-4">
+<a class="w-10 h-10 bg-pure-white text-primary flex items-center justify-center hover:bg-architectural-gold hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">share</span>
+</a>
+</div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">Emily White</h3>
+<p class="font-label-caps text-label-caps text-architectural-gold mt-1">Founder &amp; Lead Architect</p>
+</div>
+<!-- Team Member 2 -->
+<div class="group">
+<div class="team-image-container relative overflow-hidden bg-surface-container aspect-[3/4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 grayscale" data-alt="A sophisticated black and white portrait of Jason Brown, a senior architect, dressed in a sharp black turtleneck. The setting is a minimalist architectural studio with soft daylight and clean geometric shadows. The image captures an aura of effortless authority and professional precision, mirroring the brand's minimalist and high-end aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_C_5NFvRoVAXZ1ZmlKoArYMxEa4XCWod7ZMWFgW5FfGWDRXaGGnbmXOHw2Hmby67jOyDMmcSJ4NKwqmWtQBmnsipjGdb2tAd7m5-zJCijoJ-cvtTNN6nvpVo9QXo4rvwpdP0gbG4YhafKbl9_z91UORtsvWkuZCjOLW4WRUB_lN5ecCbWxWdD3cMXYt0mqOxYSe_poVk48IXOIFRNym0NBASK8t5tvzf0T3Y6HUznmk3B_vfbMb963tVZ28G0X0OToOllqYlEMzC_"/>
+<div class="team-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">Jason Brown</h3>
+<p class="font-label-caps text-label-caps text-architectural-gold mt-1">dipl. Arch FH</p>
+</div>
+<!-- Team Member 3 -->
+<div class="group">
+<div class="team-image-container relative overflow-hidden bg-surface-container aspect-[3/4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 grayscale" data-alt="A high-contrast black and white studio photograph of Enrico Samara, a design director. The lighting creates a strong editorial feel with deep blacks and bright highlights. He is posed in a modern, professional manner against a solid neutral backdrop, embodying the precision and sophisticated luxury of the architectural firm's design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEZLqHpDmx4lgc9XTyonzcGKnyn_w-t-M4jEb4U0b1ZBaxGvWCAt6i-le5dsTV3pk0mytiw_5UTSpdscJnjxOG63KvzU6UDSgyyWwmp4EyJMHIlkj95Pb48PK1bu2vvW2cU0SRWo1Lyc_4OQzvJ3enNuIi7nf4vLw5oYnBNCo3tolL-GGAdOz-oGe0bSaeLEBcCNE55zLSGifrct6mrUIR3B_b2v8JpP984yJmiQombGRgMHQhHPPv8bGqBWuqheUNsXjX-97mt-at"/>
+<div class="team-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">Enrico Samara</h3>
+<p class="font-label-caps text-label-caps text-architectural-gold mt-1">Design Director</p>
+</div>
+<!-- Team Member 4 -->
+<div class="group">
+<div class="team-image-container relative overflow-hidden bg-surface-container aspect-[3/4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 grayscale" data-alt="A minimalist black and white portrait of Jesica Smith, a technical architect. She is captured in a bright, modern light-mode environment with subtle architectural lines in the background. The mood is serene and professional, featuring a palette of pristine whites and deep blacks that reinforce the studio's commitment to structural clarity and spatial awareness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyRzB9c_FbCLb_2zCqj6IsFWVodHLHPrPaMHFsCNcM9R-oRuNvB8TZsg5dyTHC0IT1xWCeSFtJ2f9IgTvXkli1rHUa3ggmaEdz0wEPcMb1XFsVx-jWXsZ9x4jcXElKUW0Nne-4IWZ_stQ_1YYzDqFXOiHFcWZ5bInkoHqKf85JinKDBhAs0AD6UIwOdfliNSwbfv3bqli9DZ3cIA9ZMCxD5Bhz995zJNB1VJ3ygA0emJHghbvTNUOaNyfE7_Hi4xalSG7LqS-jLxVz"/>
+<div class="team-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">Jesica Smith</h3>
+<p class="font-label-caps text-label-caps text-architectural-gold mt-1">Technical Architect</p>
+</div>
+</div>
+</section>
+<!-- Expertise Section (Asymmetric Layout) -->
+<section class="bg-surface-container py-section-padding">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 mb-12 md:mb-0">
+<h2 class="font-headline-lg text-headline-lg uppercase leading-tight">PRECISION IN<br/><span class="text-architectural-gold">EVERY DETAIL</span></h2>
+</div>
+<div class="col-span-1 md:col-span-7">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-caps text-label-caps mb-4">01 / CONCEPTUAL DESIGN</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We translate abstract ideas into tangible architectural frameworks, ensuring every line has a purpose.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps mb-4">02 / TECHNICAL RIGOR</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our technical team ensures that visionary designs are executed with uncompromising structural integrity.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps mb-4">03 / SUSTAINABLE VISION</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Integrating eco-conscious materials and methods into the core of our architectural philosophy.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps mb-4">04 / PROJECT MANAGEMENT</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">A seamless bridge between design and reality, managing every complexity with professional precision.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto text-center">
+<h2 class="font-display-lg text-display-lg uppercase mb-12">WORK WITH US</h2>
+<button class="font-label-caps text-label-caps px-16 py-5 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase tracking-widest">
+                START A CONVERSATION
+            </button>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-section-padding bg-surface-container dark:bg-surface-container">
+<div class="grid grid-cols-12 px-margin-mobile md:px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-6 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-primary dark:text-on-background mb-6 uppercase tracking-widest">
+                    ARCHITECTURAL
+                </div>
+<p class="font-body-md text-body-md text-muted-gray max-w-sm">
+                    Creating architectural excellence through minimalism, structural clarity, and spatial awareness since 2012.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-3 mb-12 md:mb-0">
+<h5 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-3">
+<h5 class="font-label-caps text-label-caps text-primary mb-6">CONNECT</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">LINKEDIN</a></li>
+</ul>
+</div>
+<div class="col-span-12 pt-16 border-t border-outline-variant mt-16">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-muted-gray">
+                        © 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.
+                    </p>
+<div class="flex space-x-6">
+<span class="material-symbols-outlined text-muted-gray">architecture</span>
+<span class="material-symbols-outlined text-muted-gray">villa</span>
+<span class="material-symbols-outlined text-muted-gray">apartment</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions: Smooth reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

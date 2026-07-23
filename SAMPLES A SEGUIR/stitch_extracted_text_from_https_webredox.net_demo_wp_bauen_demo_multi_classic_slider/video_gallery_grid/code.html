@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&amp;family=Libre+Franklin:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .video-thumbnail:hover .play-icon {
+            transform: scale(1.1);
+            color: #BE9355;
+        }
+        .line-draw {
+            position: relative;
+        }
+        .line-draw::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #BE9355;
+            transition: width 0.3s ease;
+        }
+        .line-draw:hover::after {
+            width: 100%;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #eeeeee;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #BE9355;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#291800",
+                        "secondary-fixed-dim": "#eebf7c",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-container": "#838484",
+                        "on-secondary-container": "#78551d",
+                        "on-primary-fixed": "#1b1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fdcc89",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#474746",
+                        "tertiary-container": "#1a1c1c",
+                        "on-background": "#1a1c1c",
+                        "tertiary": "#000000",
+                        "outline": "#747878",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "architectural-gold": "#BE9355",
+                        "on-secondary-fixed-variant": "#604008",
+                        "background": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#444748",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "pure-white": "#FFFFFF",
+                        "secondary": "#7b581f",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#000000",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed": "#e3e2e2",
+                        "muted-gray": "#999999",
+                        "secondary-fixed": "#ffddb2",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container": "#eeeeee",
+                        "primary-container": "#1b1b1b",
+                        "on-primary-container": "#858383",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "body-md": ["Libre Franklin"],
+                        "display-lg": ["Oswald"],
+                        "body-lg": ["Libre Franklin"],
+                        "headline-lg-mobile": ["Oswald"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-background transition-all duration-300 ease-in-out border-none">
+<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<a class="flex items-center" href="#">
+<img alt="Architectural Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsBRaP3z_A3s91m9M-Emltu2Iv03i30jqmOQuXRewRBl5PnvPUMumP012D48eOqeIHf48ug9cmyRiElw90fM19khJ1lo4Q8QDWCC60j2HAmXu2e55ECD9irN-zhLhvJVmC9iZTXi00lFUmSH-mDUmhIA5xH6Dq_YqkjYzbZpa2sWpf2yrhJ3ns0KgeRc0RjOeWT10yGTpCelWq-t0MkibI2UyhXBcYeUVlL1MIiuG5UdvVN-ZzR7PnFTrC8"/>
+</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary pb-1 line-draw hover:text-architectural-gold transition-colors duration-300" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 line-draw hover:text-architectural-gold transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 line-draw hover:text-architectural-gold transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 line-draw hover:text-architectural-gold transition-colors duration-300" href="#">CONTACT</a>
+</nav>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary px-8 py-3 hover:bg-architectural-gold transition-colors duration-300">
+                INQUIRE
+            </button>
+</div>
+</header>
+<main class="w-full max-w-container-max mx-auto px-margin-desktop py-section-padding">
+<!-- Title Section -->
+<div class="mb-16">
+<p class="font-label-caps text-label-caps text-architectural-gold mb-4">OUR PERSPECTIVE</p>
+<h1 class="font-headline-lg text-headline-lg text-primary uppercase">Video Gallery</h1>
+<div class="w-20 h-px bg-architectural-gold mt-6"></div>
+</div>
+<!-- Main Video Content -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Featured Video Player -->
+<div class="col-span-12 lg:col-span-8">
+<div class="relative aspect-video bg-surface-container group cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic wide shot of a futuristic skyscraper with sharp glass angles reflecting a golden sunset. The building's architectural precision is emphasized by high-contrast lighting and a clean, minimalist urban environment. The overall mood is sophisticated and authoritative, utilizing a palette of deep grays, blacks, and architectural gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIkyM68JS9mzfCtZvtG79PWojzCCIEmlXhWyNqwMRsKD5hdhd2cUOP9zx2Ddk8G3W5AbI8yuDfs_q9eMGWg_jZlF6DVwWht1l_wve644fhuS_BzxP-vikU27w1CBLYWp--JcqAFQF7eRkeNuQBSFHTvGGjpgjN2NvNEThwThoiJ7RbIRHYmNFVhoJC7Y1e4pTwqtFIn6rl4WzGtqfIRkFYjK5ZPWD_TITji6h7IrDHVPW4XQlMn_BD0RgAf1BgdNQlIczS0yj2REYp"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/40">
+<div class="w-24 h-24 border border-pure-white/40 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-sm group-hover:bg-architectural-gold group-hover:border-architectural-gold transition-all duration-500">
+<span class="material-symbols-outlined text-pure-white text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h2 class="font-headline-md text-headline-md text-primary mb-3">THE MONOLITH: RESIDENTIAL MASTERPIECE</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        A comprehensive walkthrough exploring the structural integrity and spatial fluidity of our latest residential project in the heart of the Swiss Alps.
+                    </p>
+</div>
+</div>
+<!-- Sidebar Playlist -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6 h-full">
+<div class="flex justify-between items-center border-b border-surface-container pb-4">
+<span class="font-label-caps text-label-caps text-primary">UP NEXT</span>
+<span class="font-label-caps text-label-caps text-muted-gray">12 VIDEOS</span>
+</div>
+<div class="flex flex-col gap-6 overflow-y-auto max-h-[600px] pr-2 custom-scrollbar">
+<!-- Playlist Items -->
+<div class="group flex gap-4 cursor-pointer">
+<div class="relative w-32 h-20 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up detail of a minimalist concrete staircase inside a luxury home. The lighting is soft and directional, highlighting the smooth texture of the concrete and the precision of the architecture. The scene is calm and contemporary, adhering to a monochromatic light-mode aesthetic with subtle golden undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlOJYR1bxMaYGbNNU_2EanAjNp6JrL-AwMChrVuVA1QIiOztR7F5uURdPKAhcu6Lk_xP2jrzzbGv8wZ6OPKDTeAKYQuIWL9TkGPAl2YlQjUmsaV5D6p1nrm1sZYvS8nR44_LS8AFrjjQR8pVurxoEyr0AK56nqCXmCRk9X9DJpQWOXriQj6r5vuxP60TccDRqJjJcfQnHiM9S2b13dSRwMEb1PXmB7qKqt_3O-rt1yx0ymvwIU2rXBrgz4eo8PWX7cN10rJbbVl64D"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-pure-white text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-caps text-[13px] leading-tight text-primary group-hover:text-architectural-gold transition-colors">CONCRETE &amp; LIGHT: INTERIOR STUDY</h4>
+<span class="font-body-md text-[12px] text-muted-gray mt-1">04:15</span>
+</div>
+</div>
+<div class="group flex gap-4 cursor-pointer">
+<div class="relative w-32 h-20 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An expansive open-plan corporate office space with large windows and a view of a modern cityscape. The interior features clean lines, white surfaces, and professional lighting. The style is minimalist and corporate, emphasizing spatial awareness and structural clarity in a bright, modern setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv58gU59cbibKP5NmpgfCBF6HwFsukz0fircCOQXiwKsY91Dm2PVX4OB02zUc8V0lARBIC-eBjjA0JVIpeXPLSyWEk5AesnxDkhDtBw52V82mMOEeBiinc8OAuBi2w_fF9lUF0kP4YkqxinsY7QHm3tIxQg-fJXbBx5Qdlp-B-UAHmxwq-4KY8ZIDhk4BJ--OKyPyPYaW9V0IIGeF82YZmoxh10jKhAIoFxK3qvXy3fvT-JSuZJfJQQbhHTjWHbTmVPM6l5Zz27P-k"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-pure-white text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-caps text-[13px] leading-tight text-primary group-hover:text-architectural-gold transition-colors">THE NEXUS CORPORATE CAMPUS</h4>
+<span class="font-body-md text-[12px] text-muted-gray mt-1">08:32</span>
+</div>
+</div>
+<div class="group flex gap-4 cursor-pointer">
+<div class="relative w-32 h-20 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern luxury villa at twilight, with glowing interior lights seen through floor-to-ceiling glass walls. The pool reflects the architectural lines and the deep blue evening sky. High-end editorial feel with a focus on luxury, symmetry, and sophisticated architectural form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5A09uBGiKu0EG3J9ddHlEmMFBhUzIP9gAqKBJqMAMTZzoPrDQTNrz71rxx7KH0v_rrwcCtqnOA_SL9xhIkYeIFgflnYZK7UlV5QToRTO2f-mLEOG1PxOWmP5QXbgCoP84-v_90vjjqXiPLvqmU6DpRDOuNXQ_Dbx2kTSFSPDrJw684t0dB0HEsGVC4fpomuxWXlYmdGVOLnG8izPB4DXcAAtoS-O-FmDel5zAvRxeHWOY_yNy74WHtUcW-ziHSNqCjXpFGOMlI8R"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-pure-white text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-caps text-[13px] leading-tight text-primary group-hover:text-architectural-gold transition-colors">TWILIGHT AT THE GLASS HOUSE</h4>
+<span class="font-body-md text-[12px] text-muted-gray mt-1">05:20</span>
+</div>
+</div>
+<div class="group flex gap-4 cursor-pointer">
+<div class="relative w-32 h-20 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist museum interior featuring wide open spaces, white walls, and a dramatic skylight casting geometric shadows. The lighting is bright and natural, creating a serene and thoughtful atmosphere. The architectural design is clean and uncompromisingly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXx2INZvbhk4YiPbllN7SJn-y8W63rUcoXr0eP0EVwI5_tBCHELAsRtX4SpsfU5dUnEvBWxUo8I_UIK5O9EerSRjSEKjPAYunmGDVlTs5HgB9JHfzO0f0jF-Z2UchFmcMD3IqnkSXiPIf09uYSiT9L1NzILYQH-Lsb4smH_8PU_ivvaq2lXnDSERpiYOoR8kYU7HG9b74Eos_mp7eZsOg_Vq38E2JLGnyWggWi21WS5qOP3ogeQG7TK1IlOi3waMD1pnGG8XU0QCc"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-pure-white text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-caps text-[13px] leading-tight text-primary group-hover:text-architectural-gold transition-colors">URBAN MUSEUM CONCEPT WALK</h4>
+<span class="font-body-md text-[12px] text-muted-gray mt-1">12:10</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Grid: Categories & More Videos -->
+<div class="mt-section-padding">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Explore Projects</h3>
+<p class="font-body-md text-muted-gray mt-2">Filter by typology and environmental context.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-surface-container flex items-center justify-center hover:border-architectural-gold transition-colors">
+<span class="material-symbols-outlined text-primary">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-surface-container flex items-center justify-center hover:border-architectural-gold transition-colors">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Thumbnail Card 1 -->
+<div class="video-thumbnail group cursor-pointer">
+<div class="relative aspect-[16/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern desert retreat with flat roofs and large windows, blending seamlessly into the arid landscape. The lighting is the harsh but beautiful sun of mid-afternoon, creating deep shadows and high highlights. The aesthetic is clean, luxurious, and respectful of the natural environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhiAVlAyDZeFcJINkdxfc09Loi5Snss9ZrnkEbU2F5q0ZDkP-vEm3j47qr0IY0jbP6hr2vDPTU2rOZxpt0C2vpHS4AkLiWxmXGpEoTRoQibuKyTyLsx_wPeQpz1DJd_RXzfXVtXlxE7QkSAl_HNbeFJ7zsEXooAidHwnMjJoICaDmiIk7mgFWkkvABNHd4kuYyF76YUGM4OUWF6ampaL4ftOzZ5TVR8SayTR3jTbaAvEAM28IUjaBWv7YwLI95mNZoAz0xpxUbn5qi"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300">
+<span class="play-icon material-symbols-outlined text-pure-white text-5xl transition-all duration-300">play_circle</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-black/60 px-2 py-1">
+<span class="font-label-caps text-[10px] text-pure-white">03:45</span>
+</div>
+</div>
+<div class="mt-5">
+<span class="font-label-caps text-[10px] text-architectural-gold">RESIDENTIAL</span>
+<h5 class="font-headline-md text-[20px] text-primary mt-1 group-hover:text-architectural-gold transition-colors">DESERT MIRAGE VILLA</h5>
+</div>
+</div>
+<!-- Thumbnail Card 2 -->
+<div class="video-thumbnail group cursor-pointer">
+<div class="relative aspect-[16/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end retail boutique with minimalist white shelving and sculptural lighting fixtures. The architecture creates a sophisticated frame for the products, focusing on clean lines and a high-key, modern light-mode aesthetic. The mood is exclusive and tranquil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Z83mh83dzZwxYrJoxY2e-APNgzSoXG7vh-gvQgPDsUJUrx4obNKNORsBzSwRXapmCP6II4E0id0s8dDvDwXiujxQbk7Rj_CUd0lpthHoVI6boDPB6jaVkDjjczBcnyL3Q8D3S0To6-MSQIYBm9FOJomRX1-xdtIh5Bda84lkudfailrjqnxyh95JFKWzXCOxgNudGdZ9adKNSBX1hDJ3yK9gcVo8Qv_P9tk6M3hpc4irtGz_ZVA_qZ-OQADjwLUZKqFVHy_HMmXz"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300">
+<span class="play-icon material-symbols-outlined text-pure-white text-5xl transition-all duration-300">play_circle</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-black/60 px-2 py-1">
+<span class="font-label-caps text-[10px] text-pure-white">06:20</span>
+</div>
+</div>
+<div class="mt-5">
+<span class="font-label-caps text-[10px] text-architectural-gold">COMMERCIAL</span>
+<h5 class="font-headline-md text-[20px] text-primary mt-1 group-hover:text-architectural-gold transition-colors">ATELIER RETAIL EXPERIENCE</h5>
+</div>
+</div>
+<!-- Thumbnail Card 3 -->
+<div class="video-thumbnail group cursor-pointer">
+<div class="relative aspect-[16/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detail shot of a contemporary bridge design with sharp, geometric steel cables against a bright blue sky. The structural clarity and engineering precision are the focal points. The lighting is crisp and clear, emphasizing the minimalist architectural movement and professional authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH7xMOnkL1WuCQjJkLuC-UFdYacWxeatFjHyb7kqI0yH75VXUHzeTotN1VlvSCIf5KXidTfQduLVNOoyovgahY2okfUHEQnlrmVtryIWx2BzaEz6lYsHQxA6_ZV9cK2IrdVs03oIINQ2suXZximEiZ6pyw1QLJGrhCIAh8oVEgFSW4lIdPsiXj8vtBdiRnCNjBkGlF7OiDXPnPgjJfDzCp7PixMsnE6U0yJeBmDTiEdm_cbSOS_Hm8KkXuRapdzzp_0EWXfDclkBeO"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300">
+<span class="play-icon material-symbols-outlined text-pure-white text-5xl transition-all duration-300">play_circle</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-black/60 px-2 py-1">
+<span class="font-label-caps text-[10px] text-pure-white">02:15</span>
+</div>
+</div>
+<div class="mt-5">
+<span class="font-label-caps text-[10px] text-architectural-gold">INFRASTRUCTURE</span>
+<h5 class="font-headline-md text-[20px] text-primary mt-1 group-hover:text-architectural-gold transition-colors">THE LINEAR SPAN PROJECT</h5>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container">
+<div class="grid grid-cols-12 px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<img alt="Architectural Logo" class="h-12 w-auto mb-8 object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLsBRaP3z_A3s91m9M-Emltu2Iv03i30jqmOQuXRewRBl5PnvPUMumP012D48eOqeIHf48ug9cmyRiElw90fM19khJ1lo4Q8QDWCC60j2HAmXu2e55ECD9irN-zhLhvJVmC9iZTXi00lFUmSH-mDUmhIA5xH6Dq_YqkjYzbZpa2sWpf2yrhJ3ns0KgeRc0RjOeWT10yGTpCelWq-t0MkibI2UyhXBcYeUVlL1MIiuG5UdvVN-ZzR7PnFTrC8"/>
+<p class="font-body-md text-muted-gray max-w-xs uppercase tracking-wider text-[11px] leading-relaxed">
+                    Crafting timeless spaces through the lens of structural clarity and minimalist precision.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h6 class="font-label-caps text-label-caps text-primary mb-6">STUDIO</h6>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">Projects</a></li>
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">Process</a></li>
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">Recognition</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h6 class="font-label-caps text-label-caps text-primary mb-6">CONNECT</h6>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">Instagram</a></li>
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-muted-gray hover:text-primary transition-colors uppercase text-[12px]" href="#">Vimeo</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0">
+<h6 class="font-label-caps text-label-caps text-primary mb-6">NEWSLETTER</h6>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-muted-gray py-4 font-label-caps text-[12px] focus:outline-none focus:border-architectural-gold transition-colors placeholder:text-muted-gray" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="absolute right-0 bottom-4 text-architectural-gold hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-12 mt-24 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-muted-gray/20 pt-8">
+<p class="font-body-md text-[11px] text-muted-gray">© 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="font-body-md text-[11px] text-muted-gray hover:text-primary uppercase" href="#">Privacy Policy</a>
+<a class="font-body-md text-[11px] text-muted-gray hover:text-primary uppercase" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll header effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-4', 'shadow-sm');
+                header.classList.remove('py-8');
+            } else {
+                header.classList.add('py-8');
+                header.classList.remove('py-4', 'shadow-sm');
+            }
+        });
+
+        // Interactive hover for playlist items
+        const playlistItems = document.querySelectorAll('.group.flex.gap-4');
+        playlistItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Potential logic for switching video content
+                console.log('Switching to video...');
+            });
+        });
+    </script>
+</body></html>
