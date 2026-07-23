@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(impeccable)",
+      "Skill(impeccable:*)",
+      "Bash(npm run *)",
+      "PowerShell(Get-ChildItem -Recurse \"C:\\\\Users\\\\diogo\\\\Documents\\\\Documentos Diogo\\\\LinkedIn\\\\CLAUDE CODE SKILLS TERMINAL\\\\.agents\\\\skills\\\\ui-ux-pro-max \\(Guia UI-UX com Paletas e Tipografia\\)\" -File | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\diogo\\\\Documents\\\\Documentos Diogo\\\\LinkedIn\\\\CLAUDE CODE SKILLS TERMINAL\\\\src\\\\ui-ux-pro-max\\\\scripts\" -File | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\diogo\\\\Documents\\\\Documentos Diogo\\\\LinkedIn\\\\CLAUDE CODE SKILLS TERMINAL\\\\.agents\" -Recurse -Filter \"search.py\" | ForEach-Object { $_.FullName })",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('scripts',{}\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./package.json'\\); console.log\\(JSON.stringify\\(d.scripts,null,2\\)\\); console.log\\('port check:'\\); const v=require\\('./vite.config.ts' \\) || ''\")",
+      "Bash(chromium-cli --session domustech)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(awk '/^## \\(God Nodes|Surprising Connections|Suggested Questions\\)/{p=1} /^## /{if\\(p && $0 !~ /God Nodes|Surprising Connections|Suggested Questions/ && seen\\){p=0}} p{print} /God Nodes|Surprising Connections|Suggested Questions/{seen=1}' GRAPH_REPORT.md)"
+    ]
+  }
+}

@@ -15,6 +15,7 @@ const SLIDES = [
     eyebrow: "Design Inteligente",
     title: "Construção Modular:\nDo Conceito à Realidade",
     sub: "Casas modulares pensadas para a vida contemporânea, com soluções personalizadas para cada cliente.",
+    imgPosition: "50% 80%",
   },
   {
     img: "/images/hero/hero-construcao-premium.webp",
@@ -49,7 +50,8 @@ export function Hero() {
   const slide = SLIDES[index];
 
   return (
-    <section className="relative min-h-[100dvh] w-full overflow-hidden">
+    <div className="w-full" style={{ backgroundColor: "var(--background)" }}>
+    <section className="relative mx-auto min-h-[100dvh] w-full max-w-[1440px] overflow-hidden">
       {/* Background images */}
       {SLIDES.map((s, i) => (
         <motion.div
@@ -63,6 +65,7 @@ export function Hero() {
             src={s.img}
             alt={`${s.eyebrow}, casas modulares EsDomusTech no Porto`}
             className="h-full w-full object-cover"
+            style={{ objectPosition: s.imgPosition ?? "50% 50%" }}
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
           />
@@ -203,5 +206,6 @@ export function Hero() {
         ))}
       </div>
     </section>
+    </div>
   );
 }

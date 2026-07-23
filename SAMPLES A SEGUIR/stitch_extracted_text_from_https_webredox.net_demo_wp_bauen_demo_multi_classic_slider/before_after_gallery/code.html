@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHITECTURAL | Before / After</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&amp;family=Libre+Franklin:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&amp;family=Oswald:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+            cursor: ew-resize;
+        }
+        .comparison-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+            user-select: none;
+        }
+        .comparison-slider .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+        .comparison-slider .handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: white;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .comparison-slider .handle::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3Cpolyline points='9 18 3 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .line-draw {
+            position: relative;
+        }
+        .line-draw::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #BE9355;
+            transition: width 0.3s ease;
+        }
+        .line-draw:hover::after {
+            width: 100%;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#291800",
+                    "secondary-fixed-dim": "#eebf7c",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-container": "#838484",
+                    "on-secondary-container": "#78551d",
+                    "on-primary-fixed": "#1b1b1b",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fdcc89",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-container": "#1a1c1c",
+                    "on-background": "#1a1c1c",
+                    "tertiary": "#000000",
+                    "outline": "#747878",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "architectural-gold": "#BE9355",
+                    "on-secondary-fixed-variant": "#604008",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444748",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-low": "#f3f3f3",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-dim": "#dadada",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "pure-white": "#FFFFFF",
+                    "secondary": "#7b581f",
+                    "surface-bright": "#f9f9f9",
+                    "primary": "#000000",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "surface-container-high": "#e8e8e8",
+                    "tertiary-fixed": "#e3e2e2",
+                    "muted-gray": "#999999",
+                    "secondary-fixed": "#ffddb2",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-tint": "#5f5e5e",
+                    "surface-container": "#eeeeee",
+                    "primary-container": "#1b1b1b",
+                    "on-primary-container": "#858383",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "80px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Oswald"],
+                    "headline-md": ["Oswald"],
+                    "headline-lg": ["Oswald"],
+                    "body-md": ["Libre Franklin"],
+                    "display-lg": ["Oswald"],
+                    "body-lg": ["Libre Franklin"],
+                    "headline-lg-mobile": ["Oswald"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-architectural-gold selection:text-pure-white font-body-md overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="w-full top-0 sticky z-50 bg-background transition-all duration-300 ease-in-out">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">ARCHITECTURAL</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-primary pb-1 transition-colors duration-300 hover:text-architectural-gold" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 transition-colors duration-300 hover:text-architectural-gold" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 transition-colors duration-300 hover:text-architectural-gold" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-primary pb-1 transition-colors duration-300 hover:text-architectural-gold" href="#">CONTACT</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps transition-all duration-300 hover:bg-architectural-gold">INQUIRE</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8">
+<p class="font-label-caps text-label-caps text-architectural-gold mb-4">RENOVATION PORTFOLIO</p>
+<h1 class="font-display-lg text-[48px] md:text-display-lg mb-8 uppercase leading-tight">Before / After</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Transformation is the soul of architecture. Witness the meticulous evolution of neglected structures into modern sanctuaries. We strip away the unnecessary to reveal the inherent potential of every space.
+                </p>
+</div>
+</section>
+<!-- Main Interactive Comparison -->
+<section class="mb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 lg:col-span-10 lg:col-start-2">
+<div class="comparison-slider aspect-[16/9] w-full" id="main-slider">
+<!-- Before Image -->
+<img alt="Before Renovation" class="object-cover w-full h-full" data-alt="A gritty, industrial warehouse interior before architectural renovation, characterized by peeling white paint on brick walls and dusty concrete floors. Sunlight filters through cracked glass in high windows, casting long, dramatic shadows. The space is empty and desolate, showing signs of abandonment and decay in a minimalist, high-contrast urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5QJYQ-JcB6WdVTQNirKyvdCeQ22Z_nbZLfiDUxM9wrfIlyBickVzi064xJ8dOEoFiK_OeWVqokcf_6I4I6w3zfLSDZbab4m5VLUUU5JEq9Esx61XUqb9-4LzBVrkVpHVefHz1XWg2GCWW4k6F0gbkIN_yBAT7wD-reY6jLWtjLZWMT5VBSiDALRlBMxzBAR26lcYWs03QlmJiMMteVlJZ0avcEGe85UmHkZEKv_tqRLliC-cbInP_3ROODk0figa0t4RIjTjxgj_8"/>
+<!-- After Image (Overlay) -->
+<div class="overlay" id="slider-overlay">
+<img alt="After Renovation" class="object-cover w-full h-full max-w-none" data-alt="The same warehouse interior completely transformed into a high-end minimalist luxury loft with polished concrete floors and pristine white gallery walls. A single piece of modern walnut furniture sits as a focal point under recessed architectural lighting. Large, clean floor-to-ceiling windows look out onto a crisp city skyline, creating a sophisticated and expensive atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXU8op3v-_eEYW7pfj6w0cVgU61sAyO3AklN5hmetL6wp6ivjde3IcLKzwUjkWSWTy7KyN89ZgU1NMe68fsstd-iv3X1zw8b7zetux0SVgkJryS_wYpbUWqtnJOvkQmkuhL8KjY1Uhu5wEYO7GROsLp5pfsJTh1dt4Sakkc2onNbP5uP48FKkmyBsELRmT97DyBhH7ZDzHc3N5E8IDJgGln85r2j_rMJWA0S3bTScSy8DYhO5H48jDVfAJeOFi5ya_yRz-LErkxNjT"/>
+<div class="absolute top-8 left-8 bg-primary/20 backdrop-blur-md px-4 py-2">
+<span class="font-label-caps text-label-caps text-pure-white">FINISHED PROJECT</span>
+</div>
+</div>
+<div class="absolute top-8 right-8 bg-primary/20 backdrop-blur-md px-4 py-2 z-20">
+<span class="font-label-caps text-label-caps text-pure-white">ORIGINAL STATE</span>
+</div>
+<div class="handle" id="slider-handle"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Bento Grid -->
+<section class="py-section-padding bg-surface-container">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-4 flex flex-col justify-between p-10 bg-background border border-surface-container-highest h-full">
+<div>
+<span class="material-symbols-outlined text-4xl text-architectural-gold mb-6" data-icon="architecture">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-4">Structural Integrity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The process begins by identifying the core structural bones of the original building, preserving character while ensuring modern safety standards.</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 relative group overflow-hidden h-[400px]">
+<img alt="Planning Phase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed architectural blueprints and technical drawings spread across a dark obsidian table in a dimly lit, professional studio. A single brass architect's scale and a sleek black pen rest on the paper. The mood is precise, intellectual, and focused, emphasizing the technical planning phase of a major renovation project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdll42w24xopqn5sGcTxgAxp6wYqWWGUnDEj_Pw32BlVtm8FkVlTDDF29E85pUCHAh7Mp7-BuIiZBd0Cs-P85zM3arjXZnWjXkoIYzYVazZALcgHeyJDKEWLEuGRVRLSOej0K-d_S_winrNF51gk0Y7tBfTsgrNYg97-ylAcQhnB7j1S2gVaK42GSnOtJ2yY77GxP-jI1g-as4KMUY95Eza4VQffEv3ZujoL6iOTDJUT619CEAYm7PgxHgAihy9fsFgLLyePlok7sL"/>
+<div class="absolute inset-0 bg-primary/40 flex items-end p-10">
+<h2 class="text-pure-white font-headline-lg text-headline-lg uppercase">Precision in Design</h2>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 h-[500px]">
+<img alt="Under Construction" class="w-full h-full object-cover" data-alt="A wide-angle shot of a minimalist construction site where a renovation is in progress. The raw wooden framing of a new modern wing is visible against a backdrop of a weathered brick chimney from the original structure. Bright, neutral daylight highlights the textures of the raw materials, creating a serene and industrious atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5LzanvGpRbBxlzGXPppNlveCOCJ-gxn-1sTldkbUj1RYcQ6cFk9dX_Gr5yLYCdUHXTTjwK6Xq1wQOt0MQ1U4qgG5h3L49XaA3vUjy8lf_Mss4GYhJ1WOJILkQEWWxwQoxjmHplYiUzVd5kfcy3QIKbSyiFqAM0G_wf3MFIuHNAfk-E84IWZIEJllmBisbvPtR0oxpE4DOQA8ag1no4rmF_9BKcxkrIxHZeEE8nTQI0bK0uh7WkvuJBKPXI9iqyuvwB_71yQtjB17Z"/>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center p-10 bg-primary text-on-primary">
+<p class="font-label-caps text-label-caps text-architectural-gold mb-6">THE ETHOS</p>
+<h3 class="font-headline-lg text-headline-lg mb-8">Respecting the Past, Defining the Future.</h3>
+<p class="font-body-lg text-body-lg opacity-80 mb-10">We believe that the most sustainable building is the one that already exists. Our renovations are a dialogue between history and contemporary living.</p>
+<a class="inline-flex items-center group" href="#">
+<span class="font-label-caps text-label-caps border-b border-on-primary-container pb-1 group-hover:border-architectural-gold group-hover:text-architectural-gold transition-all">VIEW ALL CASE STUDIES</span>
+<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- More Examples - Static Comparison Cards -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Evolution Stories</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Selected highlights from our recent transformations across residential and commercial sectors.</p>
+</div>
+<button class="font-label-caps text-label-caps text-primary border border-primary px-8 py-4 hover:bg-primary hover:text-on-primary transition-all">EXPLORE FULL PORTFOLIO</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Case Study 01 -->
+<div class="flex flex-col">
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img alt="Kitchen Before" class="w-full h-full object-cover grayscale brightness-75" data-alt="A small, dilapidated mid-century kitchen before renovation with peeling floral wallpaper, outdated green appliances, and cracked linoleum floors. The lighting is harsh and yellow, highlighting the neglect and the claustrophobic feel of the original space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNH2OJvH65aifU4ySgdSLdxf-SAkydmMtB1cxRJTteuTcqnVvBJ4ClHUZ0CGvm3cwWwHYyJoJ4Oi60usEZjdOADME3ZsqgFo5Oxxe5tL16sKLSuiZEXxBd9pfifWFqAYZbSu0craEm6ZohNmr9AWaSFIZFP-k9ETCxmsWDiC7cN70xCe2OHg4JEGV-ylXa6oTXgJg5vserMJBWs6SDM9mLR9nbffzwglhECS2dVE8Y6Mg8ekdoPsJwb4xpoETz54bZxyUTESoEeyW"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img alt="Kitchen After" class="w-full h-full object-cover" data-alt="The same kitchen transformed into a minimalist open-plan culinary space. It features seamless white cabinetry, a large marble island with integrated induction stovetops, and subtle matte black fixtures. The lighting is soft and natural from a new skylight, creating a bright, ethereal atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkwj4JECRZYw2zwFUaZwa65TZj85iWqxeckNSgKYoHUC0Yjr9yd5hYqEBN1Mu3YywTomptoh0iB8wbTz08YVnjUXAwqmnYLNulL914wCPexjonBIR2oEmnjb-Tk8cpLp8jRVtsA4Q6SQpScbOevagAFvYq2nbffl4pkvWoKbC-uDgtHPn9Af-z8BYIt1hCPLS4rNwMXoGziAf50u7Z53t2FNfuXILUCLX9_mSFASztWXpH_aQ7MbSAkO0R9H2coIvyafZtkLgbZOvq"/>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-label-caps text-muted-gray">PROJECT 01</span>
+<h4 class="font-headline-md text-headline-md mt-1">THE OBSIDIAN KITCHEN</h4>
+</div>
+<span class="font-label-caps text-label-caps text-architectural-gold">LONDON, UK</span>
+</div>
+</div>
+<!-- Case Study 02 -->
+<div class="flex flex-col">
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img alt="Attic Before" class="w-full h-full object-cover grayscale brightness-75" data-alt="An old, dark attic space with exposed dusty rafters, piles of discarded boxes, and a tiny, grime-covered window. The air looks thick with dust, and the overall mood is cramped, dark, and forgotten." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz_12vs1ojQwW-Y1YsRnlldxzLb_EAOkCuFpLfcbz2EG4MWV0YPFUYdRz8FOli8vTqQe1zkdb6Cc7BVOXQbrFYql4Rj81P2jM5TDuWlhYQfnOePtfToveDG_L5aMBv5M9w0pj90s3asGWXdtKSxiDjyzhmZqN8P1_6KVNiKd3nzzowzh45qgtadAJBh2bzE0d-4Al-aGIx8heUo03zXWezKs72D9Ng7CuFPBZ0bHPzejOkLYWVGxpw0fWgn5PUd_CQv_Ch3xJnEcP7"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img alt="Attic After" class="w-full h-full object-cover" data-alt="The same attic converted into a serene, minimalist primary bedroom. The rafters are now sandblasted and clean, white-painted walls reflect light from new floor-to-ceiling glass dormer windows. A low-profile bed with neutral linens sits on a light oak floor, embodying a calm, airy, and high-end sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXHq8W9Qjl9QUHnpO-AynEk025aBomHP4I8wpW0V3anGIzx7KWmRTDeb8iKboLsGK128VoqAqoKmNLWv2y12Qrg19Hjns6LcwuDwmyBI1XB1DO0cZrGZwpDqdSwkERgiXLnxRmdPchLe4ITh1GLmBU9VvhMYDAvc-atD-E8PMpCORO-Yrn3flUXgDn3BpNs-G6IWOYQ51IP7F2_kq5qvQmow6wzi5cS34F1xlbbSL8uuf-fD4TvK4v97S7i2IrGpnXsyJFwTRFgsSn"/>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-label-caps text-muted-gray">PROJECT 02</span>
+<h4 class="font-headline-md text-headline-md mt-1">SKYLIGHT SANCTUARY</h4>
+</div>
+<span class="font-label-caps text-label-caps text-architectural-gold">OSLO, NO</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-[160px] bg-primary text-center">
+<div class="px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto">
+<h2 class="font-display-lg text-[40px] md:text-display-lg text-pure-white uppercase mb-10">Begin Your Evolution</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-12">Every structure has a hidden story waiting to be rewritten. Let's discuss your vision and how we can transform your space into a masterpiece of modern architecture.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-architectural-gold text-pure-white px-12 py-5 font-label-caps text-label-caps hover:bg-pure-white hover:text-primary transition-all">CONSULTATION</button>
+<button class="border border-on-primary-container text-pure-white px-12 py-5 font-label-caps text-label-caps hover:bg-pure-white hover:text-primary transition-all">THE PROCESS</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container py-section-padding">
+<div class="grid grid-cols-12 px-margin-mobile md:px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-primary mb-6">ARCHITECTURAL</div>
+<p class="font-body-md text-body-md text-muted-gray max-w-xs">Precision-driven design for the modern era. Transforming the landscape of contemporary architecture.</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="font-label-caps text-label-caps text-primary mb-6">EXPLORE</p>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PROJECTS</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">STUDIO</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">AWARDS</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="font-label-caps text-label-caps text-primary mb-6">CONNECT</p>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">LINKEDIN</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PINTEREST</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0">
+<p class="font-label-caps text-label-caps text-primary mb-6">NEWSLETTER</p>
+<div class="flex border-b border-outline-variant py-2">
+<input class="bg-transparent border-none focus:ring-0 w-full font-label-caps text-label-caps" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</button>
+</div>
+</div>
+<div class="col-span-12 mt-section-padding pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between gap-4">
+<p class="font-label-caps text-[10px] tracking-widest text-muted-gray">© 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="font-label-caps text-[10px] tracking-widest text-muted-gray hover:text-primary" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-[10px] tracking-widest text-muted-gray hover:text-primary" href="#">TERMS OF SERVICE</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        const slider = document.getElementById('main-slider');
+        const overlay = document.getElementById('slider-overlay');
+        const handle = document.getElementById('slider-handle');
+
+        const moveSlider = (e) => {
+            const rect = slider.getBoundingClientRect();
+            let x = (e.pageX - rect.left) - window.pageXOffset;
+            
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            let percentage = (x / rect.width) * 100;
+            overlay.style.width = percentage + '%';
+            handle.style.left = percentage + '%';
+        };
+
+        const onTouchMove = (e) => {
+            moveSlider(e.touches[0]);
+        };
+
+        slider.addEventListener('mousemove', moveSlider);
+        slider.addEventListener('touchmove', onTouchMove);
+
+        // Header interaction on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-4', 'shadow-sm');
+                header.classList.remove('py-8');
+            } else {
+                header.classList.add('py-8');
+                header.classList.remove('py-4', 'shadow-sm');
+            }
+        });
+    </script>
+</body></html>

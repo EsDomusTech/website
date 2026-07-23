@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BAUEN | ARCHITECTURAL STUDIO TORONTO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&amp;family=Libre+Franklin:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#604008",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed-dim": "#eebf7c",
+                    "tertiary-fixed": "#e3e2e2",
+                    "on-surface": "#1a1c1c",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c8c6c5",
+                    "on-surface-variant": "#444748",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-secondary-container": "#78551d",
+                    "tertiary-container": "#1a1c1c",
+                    "tertiary": "#000000",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#000000",
+                    "secondary-container": "#fdcc89",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary-fixed": "#ffddb2",
+                    "inverse-surface": "#2f3131",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "on-tertiary-container": "#838484",
+                    "architectural-gold": "#BE9355",
+                    "secondary": "#7b581f",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "muted-gray": "#999999",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-background": "#1a1c1c",
+                    "surface-container": "#eeeeee",
+                    "on-error-container": "#93000a",
+                    "pure-white": "#FFFFFF",
+                    "on-secondary-fixed": "#291800",
+                    "surface-dim": "#dadada",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed": "#1b1b1b",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c7c7",
+                    "outline": "#747878",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "surface-container-low": "#f3f3f3",
+                    "primary-container": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Oswald"],
+                    "body-md": ["Libre Franklin"],
+                    "headline-lg": ["Oswald"],
+                    "headline-lg-mobile": ["Oswald"],
+                    "body-lg": ["Libre Franklin"],
+                    "label-caps": ["Oswald"],
+                    "display-lg": ["Oswald"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #BE9355;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background transition-all duration-300 ease-in-out">
+<nav class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<div class="flex items-center">
+<img alt="BAUEN logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsBRaP3z_A3s91m9M-Emltu2Iv03i30jqmOQuXRewRBl5PnvPUMumP012D48eOqeIHf48ug9cmyRiElw90fM19khJ1lo4Q8QDWCC60j2HAmXu2e55ECD9irN-zhLhvJVmC9iZTXi00lFUmSH-mDUmhIA5xH6Dq_YqkjYzbZpa2sWpf2yrhJ3ns0KgeRc0RjOeWT10yGTpCelWq-t0MkibI2UyhXBcYeUVlL1MIiuG5UdvVN-ZzR7PnFTrC8"/>
+</div>
+<ul class="hidden md:flex items-center gap-10">
+<li><a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1 tracking-widest" href="#">HOME</a></li>
+<li><a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative nav-link tracking-widest" href="#">ABOUT</a></li>
+<li><a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative nav-link tracking-widest" href="#">PROJECTS</a></li>
+<li><a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative nav-link tracking-widest" href="#">SERVICES</a></li>
+<li><a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300 relative nav-link tracking-widest" href="#">CONTACT</a></li>
+</ul>
+<div class="flex items-center">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-3 tracking-widest hover:bg-architectural-gold transition-colors duration-300 uppercase">
+                    INQUIRE
+                </button>
+</div>
+</nav>
+</header>
+<!-- Hero Slider -->
+<section class="relative h-screen w-full overflow-hidden bg-primary-container">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/30 z-10"></div>
+<img alt="Architecture Hero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvyXYFvZF5RE-X5MydTgwhMwyo9dCIh5LjdNS-bbYqOzXW67Wjw7LUn2OMXZ_-HpDWQoTTbU9qmYWhQAqIVYkaIliWZ30OoDgL9CP4b9KJRZgWyVp4Dp_OstGsnf-Cm-IoJ5fjw99w373MimZ2inUPxQQ65mG1Rvqlqooo7VWdZtSOpWX6uU0mhPEB-1zuelHMxvrh2dY8VvlMY_nuVYWVXo0ojFxWmAie7L4TnGd-ORimOGW9GSoFVXYFM"/>
+</div>
+<div class="relative z-20 flex flex-col justify-center h-full px-margin-desktop max-w-container-max mx-auto">
+<div class="w-full md:w-2/3">
+<span class="font-label-caps text-label-caps text-pure-white mb-6 block tracking-[0.5em] animate-fade-in uppercase">MODERN ARCHITECTURAL STUDIO</span>
+<h1 class="font-display-lg text-display-lg text-pure-white mb-8 leading-tight">
+                    Innovate Design in <br/><span class="italic text-architectural-gold">Toronto</span>
+</h1>
+<p class="font-body-lg text-body-lg text-pure-white/80 max-w-xl mb-12">
+                    Architecture viverra tellus nec massa dictum the euismoe. Curabitur viverra the posuere aukue velit architectural excellence and spatial precision.
+                </p>
+<div class="flex items-center gap-8">
+<a class="bg-architectural-gold text-pure-white px-10 py-5 font-label-caps text-label-caps tracking-widest hover:bg-pure-white hover:text-primary transition-all duration-500 uppercase" href="#">VIEW PROJECTS</a>
+<a class="text-pure-white font-label-caps text-label-caps tracking-widest flex items-center gap-4 group uppercase" href="#">
+                        LEARN MORE
+                        <span class="w-12 h-px bg-pure-white group-hover:w-16 transition-all duration-500"></span>
+</a>
+</div>
+</div>
+</div>
+<!-- Minimal Slider Controls -->
+<div class="absolute bottom-margin-desktop right-margin-desktop z-20 flex items-center gap-12">
+<div class="flex flex-col text-right">
+<span class="font-headline-md text-headline-md text-pure-white">01</span>
+<span class="font-label-caps text-label-caps text-pure-white/50">/ 04</span>
+</div>
+<div class="w-32 h-px bg-pure-white/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-architectural-gold w-1/4"></div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto bg-background">
+<div class="grid grid-cols-12 gap-gutter items-start">
+<div class="col-span-12 md:col-span-5">
+<span class="font-label-caps text-label-caps text-architectural-gold tracking-[0.3em] mb-4 block uppercase">ESTABLISHED 2012</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 leading-tight">
+                    ABOUT <br/>BAUEN STUDIO
+                </h2>
+</div>
+<div class="col-span-12 md:col-span-7 space-y-8">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Architecture viverra tristique justo duis vitae diam neque nivamus aestan ateuene artines aringianu atelit finibus viverra nec lacus. Nedana theme erodino setlie suscipe no curabit tristique.
+                </p>
+<div class="grid grid-cols-2 gap-gutter py-8 border-t border-outline-variant">
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">MODERNISM</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Design inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit.</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">PRECISION</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Planner inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto mb-16 flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps text-architectural-gold tracking-[0.3em] mb-4 block uppercase">SELECTED WORKS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">OUR PROJECTS</h2>
+</div>
+<a class="font-label-caps text-label-caps border-b border-primary pb-1 tracking-widest hover:text-architectural-gold hover:border-architectural-gold transition-all uppercase" href="#">VIEW ALL GALLERY</a>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project Item 1 -->
+<div class="project-card relative overflow-hidden group aspect-[4/5] bg-primary">
+<img alt="Interior Cotton House" class="w-full h-full object-cover transition-transform duration-700 ease-out grayscale hover:grayscale-0" data-alt="A hyper-minimalist architectural interior of a living space with soaring ceilings and expansive floor-to-ceiling glass windows. The room is furnished with mid-century modern pieces in neutral tones. Natural sunlight streams in, creating sharp geometric shadows on the polished concrete floor. The atmosphere is quiet, luxurious, and pristine." src="https://lh3.googleusercontent.com/aida/AP1WRLsrNMXs1l3SpLjlmEEvgxGd4T3zGT91I30z1sSznfrlJikVWutf1S2A-qmpnsDcvKGSqTScadEpYGG3Bv8mUL8ix8cv-koHwMpzuY8_uIyDgXV1uvLmDMJheTXeyujfsMgGU08sNNrjn_59_RCbBi0-0UlO6iUkqTOnQPnCMmhngcJYzjSX-nxV8mmbkboEKHyW4-rWj5GglCnyhcoD4lohOZXZQiZq7kvGB2LZCzJ-6KpGs8O5GESW1CA"/>
+<div class="project-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2 uppercase tracking-widest">RESIDENTIAL</span>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-6 uppercase">Interior Cotton House</h3>
+<div class="w-12 h-px bg-pure-white"></div>
+</div>
+</div>
+<!-- Project Item 2 -->
+<div class="project-card relative overflow-hidden group aspect-[4/5] bg-primary mt-0 md:mt-24">
+<img alt="Exterior Armada Center" class="w-full h-full object-cover transition-transform duration-700 ease-out grayscale hover:grayscale-0" data-alt="A sleek, contemporary multi-story building exterior with a facade made of light-colored brick and dark metal accents. The design features clean lines, cantilevered balconies, and large windows. The scene is set in an urban environment during the golden hour, with warm ambient light reflecting off the glass surfaces." src="https://lh3.googleusercontent.com/aida/AP1WRLuJyNoAoqZNuKoPAT-Eun8olIfaV2rWTDwFa2FufFLdzC1mdes34TBlLKOpjD0OSyBIw7t_A7gmh5jxRWEN12nEHF80ePfhhCyBzR1q7Me5-B-K2-j3WCZ4ymjInOlJ-6koXts8Jq13Rb9zUAmg2Vx9Rl7-V4SCnM1ZIpAf8TfiGMMrUcg3eEdK9k_pjWRLjetYHYuTvFYQ2q0nAjnNuIiKejvAfT2ZruE4MYC91rOA2f3QI5vgVNqI6_A"/>
+<div class="project-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2 uppercase tracking-widest">COMMERCIAL</span>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-6 uppercase">Exterior Armada Center</h3>
+<div class="w-12 h-px bg-pure-white"></div>
+</div>
+</div>
+<!-- Project Item 3 -->
+<div class="project-card relative overflow-hidden group aspect-[4/5] bg-primary">
+<img alt="Urban Stonya Villa" class="w-full h-full object-cover transition-transform duration-700 ease-out grayscale hover:grayscale-0" data-alt="A modern luxury villa with a unique curved white brick facade. The architecture integrates with the surrounding landscape, featuring a large old-growth tree in the foreground. Large glass walls reveal a minimally designed interior. The lighting is soft and overcast, emphasizing the texture of the masonry and the sculptural form of the building." src="https://lh3.googleusercontent.com/aida/AP1WRLuGpj3PeBEehI_c8h7xJ2bwv-eGDlGBvh2uMtxre9wFUJO8hLX67fF4_gecfrAqqkmfQ9sFOAXV7tWfVyDhwCGRCtGQeQcVvV70ZgZWlQUL19fykqKGfrhEJFTLHF3dnHZ1_rcWM4ndD_nPnEDSB8PMLaPeafbvsNbAFDVrRr-Hkzo1es2D2p6Xp5BEILK7tMPGz8hP0hMK1UDt7D4CNnlDkOWBh7YzzK_yR6JGJ4WHxpthCB3yVL_Ww6a3"/>
+<div class="project-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2 uppercase tracking-widest">RESIDENTIAL</span>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-6 uppercase">Urban Stonya Villa</h3>
+<div class="w-12 h-px bg-pure-white"></div>
+</div>
+</div>
+<!-- Project Item 4 -->
+<div class="project-card relative overflow-hidden group aspect-[4/5] bg-primary mt-0 md:mt-24">
+<img alt="Interior Prime Hotel" class="w-full h-full object-cover transition-transform duration-700 ease-out grayscale hover:grayscale-0" data-alt="A high-end modern hotel lobby featuring vertical wooden slats and large windows looking out onto a manicured garden. The space is dimly lit with warm, integrated accent lighting that highlights the textures of stone and wood. Minimalist furniture is arranged in conversation clusters, creating a sophisticated and welcoming atmosphere." src="https://lh3.googleusercontent.com/aida/AP1WRLtBL1EFFCWYyQmr2Pj_Mzz52sz6YeL3-4q95akZ4jfL-yKSkeiTcZxhAw2Ktxuxdg-HY07MfRytEw_aOY-OarHK3rHCj16iW3VqHYxv5JslW2gLs5sy_BVVaU6Q1sZG5Ya28iLhS_QwlYuhf_9u-uS5Nii0tdUMAOH1koKnSTNqu9s7Nphrki3NPsrvnPxSg90_GsKCP1sWNRF-NzbqMI6QSTOD8KtfbCRvkmCP0TwBLNpS6hCsTE1izRc"/>
+<div class="project-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2 uppercase tracking-widest">HOSPITALITY</span>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-6 uppercase">Interior Prime Hotel</h3>
+<div class="w-12 h-px bg-pure-white"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto bg-background">
+<div class="grid grid-cols-12 gap-gutter mb-20">
+<div class="col-span-12 md:col-span-6">
+<span class="font-label-caps text-label-caps text-architectural-gold tracking-[0.3em] mb-4 block uppercase">EXPERTISE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 leading-tight">OUR SERVICES</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Architecture -->
+<div class="group border-l border-outline-variant pl-8 pt-4 pb-12 hover:border-architectural-gold transition-colors duration-500">
+<span class="font-headline-lg text-headline-lg text-surface-container-highest group-hover:text-architectural-gold/20 transition-colors duration-500 block mb-6">01</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase tracking-widest">ARCHITECTURE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Architecture bibendum eros eget lacus the vulputate sit amet vehicuta nibhen ulicera in the vitae miss.</p>
+<a class="material-symbols-outlined text-architectural-gold text-4xl group-hover:translate-x-4 transition-transform duration-500" href="#">arrow_forward</a>
+</div>
+<!-- Interior Design -->
+<div class="group border-l border-outline-variant pl-8 pt-4 pb-12 hover:border-architectural-gold transition-colors duration-500">
+<span class="font-headline-lg text-headline-lg text-surface-container-highest group-hover:text-architectural-gold/20 transition-colors duration-500 block mb-6">02</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase tracking-widest">INTERIOR DESIGN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Interior bibendum eros eget lacus the vulputate sit amet vehicuta nibhen ulicera in the vitae miss.</p>
+<a class="material-symbols-outlined text-architectural-gold text-4xl group-hover:translate-x-4 transition-transform duration-500" href="#">arrow_forward</a>
+</div>
+<!-- Urban Design -->
+<div class="group border-l border-outline-variant pl-8 pt-4 pb-12 hover:border-architectural-gold transition-colors duration-500">
+<span class="font-headline-lg text-headline-lg text-surface-container-highest group-hover:text-architectural-gold/20 transition-colors duration-500 block mb-6">03</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase tracking-widest">URBAN DESIGN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Urban bibendum eros eget lacus the vulputate sit amet vehicuta nibhen ulicera in the vitae miss.</p>
+<a class="material-symbols-outlined text-architectural-gold text-4xl group-hover:translate-x-4 transition-transform duration-500" href="#">arrow_forward</a>
+</div>
+</div>
+</section>
+<!-- Map CTA Section -->
+<section class="h-[500px] w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/40 z-10"></div>
+<img alt="Toronto Map Context" class="w-full h-full object-cover" data-alt="A dramatic aerial perspective of Toronto's skyline during the evening twilight. The city lights glow in warm amber tones against the deep blue of the sky and lake. The architectural forms of skyscrapers are sharp and defined, illustrating a modern urban landscape that is both dense and sophisticated. The mood is ambitious and metropolitan." data-location="Toronto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjjuXJVqjcrVaJXOYe7KZh52euaqxuTZ7FG6PmEB7tzJ29iR8QwpCkPI-Fjmz16RbPOVfgQxQyJmkbfxRhQNWbnuoxgo6MjOdWAhFSun-DhKxXMw0P7gjP5Qm1JPb7IAO4liksoX35YJ5y6vTt8cwuC02SprBJqPv0fweUWa1t1WbSoLA5zntazzerrzbjtl1IE_G-B_ExMLpPKhF1d8mFdESD2vNexNP7uIv6R1SsZEA5xxgGf96btFjzhnmp0BjgmeBFlIrlAGg1"/>
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<div class="text-center">
+<h2 class="font-headline-lg text-pure-white mb-6 uppercase tracking-[0.2em]">CANADA OFFICE</h2>
+<p class="text-pure-white font-body-lg mb-8 uppercase tracking-widest">24 KING ST, CHARLESTON, SC 29401 USA</p>
+<a class="bg-pure-white text-primary px-12 py-4 font-label-caps text-label-caps tracking-widest hover:bg-architectural-gold hover:text-pure-white transition-all duration-300 uppercase" href="#">GET DIRECTIONS</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container w-full py-section-padding mt-0">
+<div class="grid grid-cols-12 px-margin-desktop gap-gutter w-full max-w-container-max mx-auto items-start">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<img alt="BAUEN logo" class="h-10 mb-8 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLsBRaP3z_A3s91m9M-Emltu2Iv03i30jqmOQuXRewRBl5PnvPUMumP012D48eOqeIHf48ug9cmyRiElw90fM19khJ1lo4Q8QDWCC60j2HAmXu2e55ECD9irN-zhLhvJVmC9iZTXi00lFUmSH-mDUmhIA5xH6Dq_YqkjYzbZpa2sWpf2yrhJ3ns0KgeRc0RjOeWT10yGTpCelWq-t0MkibI2UyhXBcYeUVlL1MIiuG5UdvVN-ZzR7PnFTrC8"/>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">
+                    Modernism mixed with Corporate Modern refinements. Architecture viverra tristique justo duis vitae diam.
+                </p>
+<div class="flex gap-6">
+<a class="text-primary hover:text-architectural-gold transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="#">INSTAGRAM</a>
+<a class="text-primary hover:text-architectural-gold transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="#">LINKEDIN</a>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 uppercase tracking-widest">CONTACT</h4>
+<div class="space-y-4">
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-4">
+<span class="material-symbols-outlined text-architectural-gold">phone</span>
+                        +1-203-123-0606
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-4">
+<span class="material-symbols-outlined text-architectural-gold">mail</span>
+                        support@bauen.com
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-4">
+<span class="material-symbols-outlined text-architectural-gold">location_on</span>
+                        24 King St, Charleston, SC 29401 USA
+                    </p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 uppercase tracking-widest">QUICK LINKS</h4>
+<div class="grid grid-cols-2 gap-4">
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors uppercase" href="#">HOME</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors uppercase" href="#">ABOUT</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors uppercase" href="#">PROJECTS</a></li>
+</ul>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors uppercase" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors uppercase" href="#">TERMS OF SERVICE</a></li>
+</ul>
+</div>
+</div>
+<div class="col-span-12 pt-20 border-t border-outline-variant mt-20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-muted-gray uppercase tracking-widest">
+                    © 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.
+                </p>
+<p class="font-body-md text-body-md text-muted-gray uppercase tracking-widest">
+                    DEVELOPED BY WEBREDOX
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for header on scroll
+        window.onscroll = function() {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.classList.add('py-4', 'shadow-sm');
+                header.classList.remove('py-8');
+            } else {
+                header.classList.add('py-8');
+                header.classList.remove('py-4', 'shadow-sm');
+            }
+        };
+
+        // Smooth fade-in animation for hero elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroText = document.querySelectorAll('.animate-fade-in');
+            heroText.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 1s ease-out ' + (index * 0.2) + 's';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

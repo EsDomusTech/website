@@ -5,7 +5,7 @@ import { BLOG_POSTS, type BlogPost } from "@/lib/site-data";
 import { ArrowRight, Calendar, Newspaper } from "lucide-react";
 
 export function Blog({ posts }: { posts?: BlogPost[] }) {
-  const items = posts ?? BLOG_POSTS;
+  const items = [...(posts ?? BLOG_POSTS)].sort((a, b) => b.isoDate.localeCompare(a.isoDate));
   return (
     <section id="blog" className="section-pad" style={{ backgroundColor: "var(--logo-strip)" }}>
       <div className="s-wrap">
@@ -31,7 +31,7 @@ export function Blog({ posts }: { posts?: BlogPost[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col bg-white border"
+              className={`group flex-col bg-white border ${i === 0 ? "flex" : i === 1 ? "hidden sm:flex" : "hidden lg:flex"}`}
               style={{ borderColor: "var(--border)" }}
             >
               {/* Image */}

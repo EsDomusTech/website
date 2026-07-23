@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&amp;family=Libre+Franklin:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#1a1c1c",
+                        "secondary-container": "#fdcc89",
+                        "on-tertiary-container": "#838484",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#eebf7c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "tertiary": "#000000",
+                        "background": "#f9f9f9",
+                        "secondary-fixed": "#ffddb2",
+                        "surface-container-low": "#f3f3f3",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-container": "#1b1b1b",
+                        "architectural-gold": "#BE9355",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "outline": "#747878",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#291800",
+                        "muted-gray": "#999999",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-secondary-fixed-variant": "#604008",
+                        "surface-container": "#eeeeee",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "secondary": "#7b581f",
+                        "pure-white": "#FFFFFF",
+                        "on-secondary-container": "#78551d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "display-lg": ["Oswald"],
+                        "body-lg": ["Libre Franklin"],
+                        "headline-lg-mobile": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "body-md": ["Libre Franklin"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "90px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px #1a1c1c;
+            color: transparent;
+        }
+        .testimonial-divider {
+            height: 1px;
+            background: linear-gradient(to right, #BE9355 10%, #eeeeee 10%);
+        }
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="w-full top-0 sticky z-50 bg-background dark:bg-background transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary dark:text-on-background tracking-widest" href="#">ARCHITECTURAL</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background pb-1 hover:text-architectural-gold transition-colors duration-300" href="#">CONTACT</a>
+<button class="ml-4 px-6 py-2 bg-primary text-on-primary font-label-caps text-label-caps hover:bg-architectural-gold transition-colors duration-300">INQUIRE</button>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Page Header -->
+<section class="w-full pt-20 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-4 block">CLIENT VOICES</span>
+<h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight mb-8">ELEVATED <br/><span class="md:ml-20">PARTNERSHIPS.</span></h1>
+</div>
+</div>
+<div class="w-full testimonial-divider mt-8"></div>
+</section>
+<!-- Testimonials List -->
+<section class="w-full py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-y-24 md:gap-y-32">
+<!-- Testimonial 01 -->
+<div class="col-span-12 md:col-span-10 md:col-start-2 stagger-item">
+<div class="grid grid-cols-1 md:grid-cols-10 gap-gutter items-start">
+<div class="md:col-span-2">
+<span class="font-label-caps text-label-caps text-muted-gray">01 / CASE STUDY</span>
+</div>
+<div class="md:col-span-8">
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic mb-12 relative">
+<span class="absolute -left-8 md:-left-12 top-0 text-architectural-gold opacity-30 text-8xl font-display-lg pointer-events-none">"</span>
+                                The Architectural Studio didn't just design a building; they crafted an atmosphere that perfectly aligns with our brand's ethos of luxury and precision. Their attention to structural clarity and spatial awareness is unmatched in the industry.
+                            </p>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-l border-architectural-gold pl-6 py-2">
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">JASON BROWN</h4>
+<p class="font-label-caps text-label-caps text-muted-gray">CROWNE PLAZA OWNER</p>
+</div>
+<div class="hidden md:block">
+<img class="w-32 h-20 object-cover grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500" data-alt="A sophisticated architectural detail showing clean concrete lines and large glass panes of a modern luxury hotel at dusk. The lighting is warm and inviting, highlighting the structural precision of the Crowne Plaza project in a minimalist light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHhTUO8Eqc4QPg4Rh3UoFBZPS97qE9Ej9QM_N9QdOc5o-nInuJ9YbFRmyRI9cl89_ReIBf-0Z8ovr_-UuV0Vm3xNd-5-MfnoRVF2-syoFOJb8x9uIICoQu-onk8Z6KFylH9w1zHhjfTzmvsmeXwYfNpFXY2Tf4NdHxKLMBZP2DfttDENQbtrb3yBma7IT-TcL2_PFYxLx4m_9C-HhZZAsyHMly_seD80cLeQNMr_trVlbGIW7CGLZ9stzChcJL-f-ffIpXsECzOh6V"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 02 - Asymmetric Layout -->
+<div class="col-span-12 stagger-item">
+<div class="w-full h-px bg-surface-container mb-24 md:mb-32"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-7 md:col-start-1">
+<span class="font-label-caps text-label-caps text-muted-gray mb-8 block">02 / VISIONARY PARTNER</span>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 leading-snug">
+                                Working with this team felt like a high-end editorial experience. Every line drawn serves a purpose. They turned a complex brief into a masterclass of minimalist design.
+                            </p>
+<div class="border-l border-architectural-gold pl-6 py-2">
+<h4 class="font-headline-md text-headline-md mb-1">EMILY WHITE</h4>
+<p class="font-label-caps text-label-caps text-muted-gray">ARMADA OWNER</p>
+</div>
+</div>
+<div class="hidden md:block col-span-4 col-start-9 mt-20">
+<img class="w-full aspect-[4/5] object-cover" data-alt="A low-angle shot of a striking corporate skyscraper featuring reflective glass and a sharp, geometric design against a clear, high-key blue sky. The image emphasizes high-end professional authority and modern architectural flow, using a clean, professional palette of whites and silvers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQAUcdPKlrW4Odq31aFLmfrj3FhyKESVJ3T9ZyN2F5q8YDK-3I6z4smw7yaP3kKDYZqZw0BWJ829U_S9_g92BpCJo1-Ageo88nOmKzubnIqIOjOrmDoQP4wl4NznTmm_N--xoojYFbBLRDkAcaWGHBa_X2rBQaMMICHAtM6zQDQ8OMS3P3If86jHpSFQTXvgo5snWUy2ui8OyJ4jFw-xSSQLMPiKZjcu0uGSOuFsQYOrYchh3Tf0AHHHZN57TC3tZs33KHPeENTBah"/>
+</div>
+</div>
+</div>
+<!-- Testimonial 03 -->
+<div class="col-span-12 md:col-span-10 md:col-start-3 stagger-item">
+<div class="w-full h-px bg-surface-container mb-24 md:mb-32"></div>
+<div class="grid grid-cols-1 md:grid-cols-10 gap-gutter items-start">
+<div class="md:col-span-2">
+<span class="font-label-caps text-label-caps text-muted-gray">03 / PRECISION</span>
+</div>
+<div class="md:col-span-8">
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic mb-12 relative">
+<span class="absolute -left-8 md:-left-12 top-0 text-architectural-gold opacity-30 text-8xl font-display-lg pointer-events-none">"</span>
+                                Effortless authority is the best way to describe their process. They guided our project with uncompromising professionalism and a sophisticated eye for detail that exceeded all expectations.
+                            </p>
+<div class="border-l border-architectural-gold pl-6 py-2">
+<h4 class="font-headline-md text-headline-md mb-1">MARCUS REED</h4>
+<p class="font-label-caps text-label-caps text-muted-gray">FOUNDER, REED ENTERPRISES</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 04 - Modern Bento Style Card -->
+<div class="col-span-12 stagger-item">
+<div class="w-full h-px bg-surface-container mb-24 md:mb-32"></div>
+<div class="bg-surface-container-low p-12 md:p-24 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6">
+<div class="mb-12">
+<span class="material-symbols-outlined text-architectural-gold text-4xl mb-4">star_rate</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-md mb-6">A Legacy of Design Excellence.</h3>
+<p class="font-body-lg text-body-lg text-muted-gray">Join the roster of visionary clients who have redefined their environments with our minimalist approach.</p>
+</div>
+</div>
+<div class="md:col-span-6 grid grid-cols-2 gap-4">
+<div class="aspect-square bg-white flex items-center justify-center p-8 border border-surface-container">
+<span class="font-headline-md text-headline-md opacity-20">LOGO 01</span>
+</div>
+<div class="aspect-square bg-white flex items-center justify-center p-8 border border-surface-container">
+<span class="font-headline-md text-headline-md opacity-20">LOGO 02</span>
+</div>
+<div class="aspect-square bg-white flex items-center justify-center p-8 border border-surface-container">
+<span class="font-headline-md text-headline-md opacity-20">LOGO 03</span>
+</div>
+<div class="aspect-square bg-white flex items-center justify-center p-8 border border-surface-container">
+<span class="font-headline-md text-headline-md opacity-20">LOGO 04</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="w-full py-section-padding px-margin-mobile md:px-margin-desktop bg-primary-container text-on-primary">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-display-lg text-4xl md:text-6xl mb-12 tracking-widest">READY TO BEGIN?</h2>
+<div class="flex justify-center">
+<a class="group flex items-center gap-4 border border-on-primary px-12 py-5 font-label-caps text-label-caps hover:bg-architectural-gold hover:border-architectural-gold transition-all duration-300" href="#">
+                        START A PROJECT
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container dark:bg-surface-container">
+<div class="grid grid-cols-12 px-margin-mobile md:px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-6 mb-12 md:mb-0">
+<h3 class="font-headline-md text-headline-md text-primary dark:text-on-background mb-8">ARCHITECTURAL STUDIO</h3>
+<p class="font-body-md text-body-md text-muted-gray max-w-xs">Crafting structural clarity and modern precision for the global visionary.</p>
+</div>
+<div class="col-span-6 md:col-span-3">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">NAVIGATION</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">HOME</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">ABOUT</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PROJECTS</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">SERVICES</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-3">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">CONNECT</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">LINKEDIN</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-muted-gray hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a></li>
+</ul>
+</div>
+<div class="col-span-12 mt-20 border-t border-muted-gray/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-md text-body-md text-muted-gray">© 2024 ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-muted-gray cursor-pointer hover:text-architectural-gold transition-colors">architecture</span>
+<span class="material-symbols-outlined text-muted-gray cursor-pointer hover:text-architectural-gold transition-colors">apartment</span>
+<span class="material-symbols-outlined text-muted-gray cursor-pointer hover:text-architectural-gold transition-colors">design_services</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for stagger animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-item').forEach((el) => observer.observe(el));
+
+        // Sticky Nav Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm', 'py-4');
+                nav.classList.remove('py-8');
+            } else {
+                nav.classList.remove('shadow-sm', 'py-4');
+                nav.classList.add('py-8');
+            }
+        });
+    </script>
+</body></html>
