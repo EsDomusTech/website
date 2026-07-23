@@ -308,6 +308,20 @@ function VantagensFiscaisPage() {
             a eventuais alterações. Confirme sempre a sua situação específica junto de um profissional
             qualificado e das entidades competentes.
           </p>
+
+          {/* Fonte externa */}
+          <p className="mt-6 mx-auto text-center" style={{ color: "#9a9a9a", fontSize: "12px", lineHeight: 1.6, maxWidth: 760 }}>
+            Para mais detalhes sobre o IVA a 6% nas obras, consulte também{" "}
+            <a
+              href="https://contaspoupanca.pt/impostos/2026-05-27-iva-a-6-nas-obras-tudo-o-que-precisa-de-saber-sobre-as-novas-medidas-d8c17638"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors hover:text-[#BE9355]"
+            >
+              este artigo da Contas Poupança
+            </a>
+            .
+          </p>
         </div>
       </section>
 

@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PROJECTS, type Project } from "@/lib/site-data";
 
 export function Projects({ projects }: { projects?: Project[] }) {
   const items = projects ?? PROJECTS;
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered ?? 0;
+  const [slide, setSlide] = useState(0);
+  const shown = items.slice(0, 6);
+  const prevSlide = () => setSlide((s) => (s - 1 + shown.length) % shown.length);
+  const nextSlide = () => setSlide((s) => (s + 1) % shown.length);
   return (
     <section id="projects" className="section-pad" style={{ backgroundColor: "var(--secondary)" }}>
       <div className="s-wrap">
@@ -35,9 +40,77 @@ export function Projects({ projects }: { projects?: Project[] }) {
           </Link>
         </div>
 
-        {/* 3-col grid — smaller tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.slice(0, 6).map((p, i) => (
+        {/* Mobile — 1 project + arrows, no full grid */}
+        <div className="relative sm:hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={shown[slide].slug}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Link
+                to="/projetos/$slug"
+                params={{ slug: shown[slide].slug }}
+                className="group relative block aspect-square overflow-hidden"
+              >
+                <img
+                  src={shown[slide].image}
+                  alt={`${shown[slide].name}, projeto de ${shown[slide].category.toLowerCase()} EsDomusTech`}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6">
+                  <span className="s-label-caps mb-2 block" style={{ color: "var(--gold)", letterSpacing: "0.2em" }}>
+                    {shown[slide].category}
+                  </span>
+                  <h3 className="s-headline-md mb-4 text-white">{shown[slide].name}</h3>
+                  <span className="block h-px w-12 bg-white" />
+                </div>
+              </Link>
+            </motion.div>
+          </AnimatePresence>
+
+          <button
+            type="button"
+            aria-label="Projeto anterior"
+            onClick={(e) => {
+              e.preventDefault();
+              prevSlide();
+            }}
+            className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
+          >
+            <ChevronLeft className="h-5 w-5" style={{ color: "#000000" }} />
+          </button>
+          <button
+            type="button"
+            aria-label="Próximo projeto"
+            onClick={(e) => {
+              e.preventDefault();
+              nextSlide();
+            }}
+            className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
+          >
+            <ChevronRight className="h-5 w-5" style={{ color: "#000000" }} />
+          </button>
+
+          <div className="mt-4 flex justify-center gap-2">
+            {shown.map((p, i) => (
+              <button
+                key={p.slug}
+                type="button"
+                aria-label={`Ir para projeto ${i + 1}`}
+                onClick={() => setSlide(i)}
+                className="h-1.5 w-1.5"
+                style={{ backgroundColor: i === slide ? "var(--gold)" : "#dddddd" }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* 3-col grid — smaller tiles, desktop/tablet only */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {shown.map((p, i) => (
             <motion.div
               key={p.slug}
               initial={{ opacity: 0, y: 32 }}

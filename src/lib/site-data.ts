@@ -207,40 +207,6 @@ export const PROJECTS: Project[] = [
     ],
     gallery: ["/projects/m100-exterior.jpg"],
   },
-  {
-    slug: "moradia-t2-92",
-    name: "Moradia T2 · 92 m²",
-    category: "Casa Modular",
-    spec: "T2 · 92 m²",
-    year: "2026",
-    image: "/projects/t2-92-hero.jpg",
-    summary:
-      "Moradia T2 de 92 m² implantada em terreno arborizado, com módulos transportados prontos e assentes sobre fundações pontuais.",
-    description: [
-      "Os módulos desta moradia T2 chegaram à obra já com paredes, vãos e instalações integradas, sendo assentes sobre apoios pontuais — uma implantação de impacto mínimo no terreno, sem grandes movimentações de terras.",
-      "O registo fotográfico da fase de obra mostra a vantagem do sistema: em poucos dias a casa fica fechada e estanque, pronta para a fase de acabamentos, independentemente das condições do terreno envolvente.",
-    ],
-    gallery: ["/projects/t2-92-exterior.jpg"],
-  },
-  {
-    slug: "moradia-dois-pisos",
-    name: "Moradia de Dois Pisos",
-    category: "Casa Modular",
-    spec: "Dois pisos",
-    year: "2026",
-    image: "/projects/dois-pisos-hero.jpg",
-    summary:
-      "Moradia de dois pisos em estrutura de aço leve, com painéis de fachada em betão reforçado e instalações técnicas integradas na estrutura.",
-    description: [
-      "Este projeto demonstra a escalabilidade do sistema construtivo: dois pisos completos em estrutura de aço leve galvanizado, com lajes treliçadas, painéis de fachada e pé-direito generoso no vazio da escada.",
-      "Toda a rede técnica — eletricidade, águas e climatização — é integrada na estrutura antes do fecho das paredes, o que elimina roços e retrabalho e permite inspecionar cada instalação antes dos acabamentos.",
-    ],
-    gallery: [
-      "/projects/dois-pisos-exterior.jpg",
-      "/projects/dois-pisos-estrutura.jpg",
-      "/projects/dois-pisos-instalacoes.jpg",
-    ],
-  },
 ];
 
 export function getProject(slug: string) {
@@ -260,25 +226,6 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    slug: "manutencao-casa-modular-aco-vs-tradicional",
-    title: "Manutenção de casa modular: o que muda a longo prazo",
-    cat: "Manutenção",
-    date: "Set 2026",
-    isoDate: "2026-09-01",
-    readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop&auto=format&q=80",
-    excerpt: "Uma casa modular dá mais trabalho a manter do que uma construção tradicional? A resposta depende do material da estrutura. Explicamos o que muda de facto na manutenção ao longo dos anos.",
-    body: [
-      "Uma dúvida recorrente entre quem pondera construir casa modular é a manutenção a longo prazo: dá mais trabalho do que uma casa tradicional? A resposta honesta é que depende sobretudo do material da estrutura, e é aqui que muitas comparações genéricas falham ao tratar todas as casas modulares como iguais.",
-      "Grande parte da oferta modular no mercado ibérico usa estrutura em madeira. É um material nobre, mas receptivo à humidade e à absorção de água, o que exige tratamentos periódicos e cuidado redobrado em climas húmidos, como o do Norte de Portugal. A EsDomusTech usa estrutura em aço galvanizado DX51D de 3 mm, um material com elevada resistência à corrosão que dispensa os tratamentos de proteção contra insectos e humidade típicos da madeira estrutural.",
-      "Há um ponto de manutenção que é real e comum a qualquer construção modular, independentemente do material: as juntas entre módulos. É aí que se concentra o maior risco de infiltração, caso a selagem não seja bem executada na montagem. Na EsDomusTech, este é um passo controlado e verificado em obra antes dos acabamentos finais, mas continua a ser boa prática, como em qualquer casa, incluir uma inspeção visual periódica a vedantes e caixilharias, sobretudo após os primeiros invernos.",
-      "No exterior, os acabamentos usados em construção modular moderna tendem a exigir menos manutenção do que o reboco pintado tradicional: revestimentos e vernizes de especificação industrial resistem melhor à exposição solar e à chuva, o que se traduz em menos repintagens ao longo dos anos. O isolamento térmico, pensado desde o desenho inicial da casa, reduz também o desgaste associado aos sistemas de climatização, que trabalham com menos esforço.",
-      "Em termos de garantias legais, a lei portuguesa exige um mínimo de 5 anos de garantia estrutural e 2 anos para equipamentos em qualquer habitação nova, modular ou tradicional. Na EsDomusTech, a garantia estrutural oferecida é de 10 anos, o dobro do mínimo legal, precisamente porque a estrutura em aço galvanizado permite esse compromisso com confiança.",
-      "Na prática, a rotina de manutenção de uma casa modular em aço não é diferente da de qualquer habitação: verificação anual de canalizações, quadro elétrico, caixilharia e vedantes, limpeza de caleiras e manutenção normal dos equipamentos de climatização. O que muda é a ausência de tarefas específicas ligadas à madeira estrutural, como o tratamento contra térmitas ou a verificação de apodrecimento, simplesmente porque essa estrutura não existe na casa.",
-      "É por isto que optámos por construir sempre em aço galvanizado na EsDomusTech, e não em madeira: é a estrutura que dá menos trabalho ao cliente ao longo dos anos, sem tratamentos periódicos contra humidade ou insectos, com menos repintagens e uma garantia estrutural que conseguimos sustentar em 10 anos. Quando fala connosco sobre o seu projeto, é essa tranquilidade a longo prazo que estamos a construir consigo, não só a casa em si.",
-    ],
-  },
   {
     slug: "iva-6-construcao-casas-modulares-2026",
     title: "IVA a 6% na construção: o que muda para quem constrói casa modular em 2026",
@@ -355,7 +302,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "O primeiro ponto é o processo. Numa obra tradicional, tudo acontece no terreno: fundações, paredes, cobertura, instalações, meses de trabalho exposto às condições meteorológicas, a subcontratados diferentes, a imprevistos em cadeia. Numa casa modular, a estrutura é produzida em fábrica, em condições controladas, antes de ser transportada e montada em obra. O que chega ao terreno é um produto já fabricado, não uma obra a construir.",
       "Em termos de prazo, a diferença é significativa. Uma construção tradicional de 120 m² pode demorar entre 18 e 36 meses, dependendo de licenciamentos, disponibilidade de mão-de-obra e imprevistos. Com construção modular, o licenciamento camarário ronda os 2 a 4 meses e a construção em si fica concluída entre 12 a 18 meses após aprovação: um prazo mais previsível, mesmo que não instantâneo.",
       "E a qualidade? É aqui que mais surpresas existem. As casas modulares modernas usam materiais de especificação industrial. Na EsDomusTech, a estrutura é em aço galvanizado DX51D de 3 mm, com isolamentos de alto desempenho nas paredes, piso e tecto. A produção em fábrica permite controlos de qualidade que são difíceis de replicar em obra, onde as condições mudam todos os dias.",
-      "No que toca à durabilidade, é importante distinguir o material da estrutura. As estimativas genéricas de 'casa modular' que circulam (50 a 70 anos) referem-se sobretudo a soluções em madeira, comuns no mercado ibérico. A estrutura em aço galvanizado que usamos na EsDomusTech tem uma vida útil estrutural estimada acima de 100 anos em condições de manutenção adequada, alinhada com a durabilidade de uma construção tradicional bem executada. Está sujeita às mesmas normas sísmicas e de segurança aplicáveis em Portugal. O facto de ser modular não significa que seja temporária ou menos robusta.",
+      "No que toca à durabilidade, é importante distinguir o material da estrutura. As estimativas genéricas de 'casa modular' que circulam (50 a 70 anos) referem-se sobretudo a soluções em madeira, comuns no mercado ibérico. A estrutura em aço galvanizado que usamos na EsDomusTech, com elevada resistência à corrosão, comporta-se de forma comparável à de uma construção tradicional bem executada, quando sujeita a manutenção adequada. Está sujeita às mesmas normas sísmicas e de segurança aplicáveis em Portugal. O facto de ser modular não significa que seja temporária ou menos robusta.",
       "A personalização também é maior do que a maioria imagina. Dentro de limites técnicos, é possível configurar o número de divisões, o pé-direito, os acabamentos interiores, a orientação solar e a expansibilidade futura da casa. Não é um produto de catálogo, é uma construção pensada para a situação específica de cada cliente.",
       "Onde a construção tradicional ainda tem vantagem é na integração de soluções muito específicas ou em lotes com geometrias complexas. Para terrenos com acessos difíceis ou inclinações pronunciadas, o transporte e montagem dos módulos pode exigir soluções adicionais. É algo que avaliamos caso a caso antes de avançar.",
       "A conclusão prática: para quem procura uma habitação permanente de qualidade, com prazo previsível e custo transparente, a construção modular elimina grande parte da incerteza associada às obras tradicionais. Não é a solução certa para toda a gente, mas para muitos dos nossos clientes, foi a decisão que mais gostariam de ter tomado mais cedo.",
