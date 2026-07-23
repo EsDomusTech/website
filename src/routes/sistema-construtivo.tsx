@@ -7,18 +7,18 @@ import { SITE } from "@/lib/site-data";
 
 /* Anatomia da casa — sequência "Física das Construções" (12 camadas, exterior → interior) */
 const LAYERS = [
-  { num: "01", title: "Acabamento de piso", text: "Revestimento à escolha: laminado/flutuante ou cerâmico." },
-  { num: "02", title: "Placa OSB 22 mm", text: "Base estrutural do piso, fixada sobre a laje." },
-  { num: "03", title: "ETICS / EPS 10 cm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa." },
-  { num: "04", title: "Lã de Rocha", text: "Isolamento térmico e acústico no interior das paredes." },
-  { num: "05", title: "Placa OSB 12 mm", text: "Revestimento estrutural da parede." },
-  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 3 mm (parede do tubo). O esqueleto da casa." },
-  { num: "07", title: "Guias e montantes", text: "Subestrutura metálica de fixação e alinhamento." },
-  { num: "08", title: "Gesso cartonado", text: "Acabamento interior: branco, hidrófugo (WC) ou anti-fogo, conforme a zona." },
-  { num: "09", title: "Camada impermeabilizante", text: "Barreira entre a laje e a estrutura, protege da humidade ascendente." },
-  { num: "10", title: "Chapa metálica + varão roscado", text: "Ligação mecânica entre a estrutura e o terreno." },
-  { num: "11", title: "Laje em betão armado", text: "Fundação contínua, permite ainda a instalação de piso radiante." },
-  { num: "12", title: "Cobertura, telha sandwich", text: "5 cm de espessura, com lã de rocha e tecto falso em gesso cartonado por baixo." },
+  { num: "01", title: "Acabamento de piso", text: "Revestimento à escolha: laminado/flutuante ou cerâmico.", img: "/images/sistema-construtivo/camada-01-acabamento-piso.webp" },
+  { num: "02", title: "Placa OSB 22 mm", text: "Base estrutural do piso, fixada sobre a laje.", img: "/images/sistema-construtivo/camada-02-osb-22mm.webp" },
+  { num: "03", title: "ETICS / EPS 10 cm", text: "Sistema SATE: capoto + tela de fibra de vidro + argamassa.", img: "/images/sistema-construtivo/camada-03-etics.webp" },
+  { num: "04", title: "Lã de Rocha", text: "Isolamento térmico e acústico no interior das paredes.", img: "/images/sistema-construtivo/camada-04-la-de-rocha.webp" },
+  { num: "05", title: "Placa OSB 12 mm", text: "Revestimento estrutural da parede.", img: "/images/sistema-construtivo/camada-05-osb-12mm.webp" },
+  { num: "06", title: "Tubo de aço galvanizado", text: "Estrutura tubular DX51D, 3 mm (parede do tubo). O esqueleto da casa.", img: "/images/sistema-construtivo/camada-06-tubo-aco-galvanizado.webp" },
+  { num: "07", title: "Guias e montantes", text: "Subestrutura metálica de fixação e alinhamento.", img: "/images/sistema-construtivo/camada-07-guias-montantes.webp" },
+  { num: "08", title: "Gesso cartonado", text: "Acabamento interior: branco, hidrófugo (WC) ou anti-fogo, conforme a zona.", img: "/images/sistema-construtivo/camada-08-gesso-cartonado.webp" },
+  { num: "09", title: "Camada impermeabilizante", text: "Barreira entre a laje e a estrutura, protege da humidade ascendente.", img: "/images/sistema-construtivo/camada-09-impermeabilizacao.webp" },
+  { num: "10", title: "Chapa metálica + varão roscado", text: "Ligação mecânica entre a estrutura e o terreno.", img: "/images/sistema-construtivo/camada-10-chapa-varao-roscado.webp" },
+  { num: "11", title: "Laje em betão armado", text: "Fundação contínua, permite ainda a instalação de piso radiante.", img: "/images/sistema-construtivo/camada-11-laje-betao-armado.webp" },
+  { num: "12", title: "Cobertura, telha sandwich", text: "5 cm de espessura, com lã de rocha e tecto falso em gesso cartonado por baixo.", img: "/images/sistema-construtivo/camada-12-cobertura-telha.webp" },
 ];
 
 /* Os dois sistemas construtivos */
@@ -133,16 +133,28 @@ function SistemaConstrutivoPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
-                className="flex gap-6 border-t pt-6"
+                className="relative flex min-h-[150px] gap-6 overflow-hidden border-t pb-2 pt-6"
                 style={{ borderColor: "#e8e8e8" }}
               >
+                {layer.img && (
+                  <img
+                    src={layer.img}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-y-0 right-0 h-full w-1/2 object-cover"
+                    style={{
+                      WebkitMaskImage: "linear-gradient(90deg, transparent 0%, transparent 8%, black 78%, black 100%)",
+                      maskImage: "linear-gradient(90deg, transparent 0%, transparent 8%, black 78%, black 100%)",
+                    }}
+                  />
+                )}
                 <span
-                  className="s-headline-lg shrink-0"
+                  className="relative s-headline-lg shrink-0"
                   style={{ color: "#EEEEEE", fontFamily: "var(--font-display)", lineHeight: 1 }}
                 >
                   {layer.num}
                 </span>
-                <div>
+                <div className="relative" style={{ maxWidth: layer.img ? "48%" : undefined }}>
                   <h3 className="s-headline-md mb-2" style={{ color: "#000000" }}>{layer.title}</h3>
                   <p className="s-body-md" style={{ color: "#444748" }}>{layer.text}</p>
                 </div>

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PROJECTS, type Project } from "@/lib/site-data";
 
 export function Projects({ projects }: { projects?: Project[] }) {
   const items = projects ?? PROJECTS;
+  const [hovered, setHovered] = useState<number | null>(null);
+  const active = hovered ?? 0;
   return (
     <section id="projects" className="section-pad" style={{ backgroundColor: "var(--secondary)" }}>
       <div className="s-wrap">
@@ -46,16 +49,18 @@ export function Projects({ projects }: { projects?: Project[] }) {
                 to="/projetos/$slug"
                 params={{ slug: p.slug }}
                 className="group relative block aspect-square overflow-hidden"
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
               >
-                {/* Image — grayscale default, color on hover. First tile pre-activated on desktop so users notice it's interactive. */}
+                {/* Image — grayscale default, color on active. Only one tile active at a time: first by default, hovered one otherwise. */}
                 <img
                   src={p.image}
                   alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
-                  className={`h-full w-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.05] touch:!grayscale-0 touch:scale-[1.05] ${i === 0 ? "" : "md:grayscale"}`}
+                  className={`h-full w-full object-cover transition-all duration-700 touch:!grayscale-0 touch:scale-[1.05] ${i === active ? "md:scale-[1.05]" : "md:grayscale"}`}
                 />
 
-                {/* Overlay — always visible on mobile, hover on desktop (first tile pre-activated) */}
-                <div className={`absolute inset-0 flex flex-col justify-end bg-black/40 p-6 md:p-8 opacity-100 transition-opacity duration-500 md:group-hover:opacity-100 touch:!opacity-100 ${i === 0 ? "" : "md:opacity-0"}`}>
+                {/* Overlay — always visible on mobile, only on the active tile on desktop */}
+                <div className={`absolute inset-0 flex flex-col justify-end bg-black/40 p-6 md:p-8 opacity-100 transition-opacity duration-500 touch:!opacity-100 ${i === active ? "" : "md:opacity-0"}`}>
                   <span
                     className="s-label-caps mb-2 block"
                     style={{ color: "var(--gold)", letterSpacing: "0.2em" }}
