@@ -12,7 +12,7 @@ const BENEFITS = [
     title: "IVA a 6% na construção *",
     points: [
       "Aplica-se a empreitadas de construção/reabilitação para habitação própria permanente (até 660.982 €) ou arrendamento habitacional (renda até 2.300 €/mês).",
-      "Válido para obras iniciadas entre 23/set/2025 e 31/dez/2029, com vigência até 31/dez/2032.",
+      "Válido para obras iniciadas entre 25/set/2025 e 31/dez/2029, com vigência até 31/dez/2032.",
       "Se for para venda, esta tem de ocorrer no prazo de 24 meses após o início de utilização.",
       "Se for para arrendamento, o imóvel tem de ficar arrendado pelo menos 36 meses nos primeiros 5 anos.",
       "* Sujeito a condições e requisitos — confirme a sua situação com um contabilista.",
@@ -33,7 +33,8 @@ const BENEFITS = [
     points: [
       "Para particulares fora de atividade empresarial, em obras na própria habitação própria permanente.",
       "Recupera a diferença entre os 23% pagos e os 6% que seriam devidos.",
-      "Pedidos abrem em outubro de 2026, com prazo de resposta até 150 dias.",
+      "Pedido até 12 meses após a licença de utilização; a AT tem 150 dias para responder.",
+      "Regime transitório: para licenças já emitidas nos 3 primeiros trimestres de 2026, os pedidos abrem a partir de 1/out/2026, com o mesmo prazo de 12 meses a contar dessa data.",
       "Documentação: contrato de empreitada escrito, faturas, título de utilização e valor do terreno.",
     ],
   },
@@ -75,11 +76,11 @@ const FAQS = [
   },
   {
     q: "O IVA reduzido aplica-se sempre?",
-    a: "Não. O IVA a 6% aplica-se a empreitadas de construção ou reabilitação para habitação própria permanente (até 660.982 €) ou arrendamento habitacional (renda até 2.300 €/mês), em obras iniciadas entre 23/set/2025 e 31/dez/2029. No caso de venda, esta tem de ocorrer em 24 meses após o início de utilização; no arrendamento, o imóvel tem de ficar arrendado pelo menos 36 meses nos primeiros 5 anos.",
+    a: "Não. O IVA a 6% aplica-se a empreitadas de construção ou reabilitação para habitação própria permanente (até 660.982 €) ou arrendamento habitacional (renda até 2.300 €/mês), em obras iniciadas entre 25/set/2025 e 31/dez/2029. No caso de venda, esta tem de ocorrer em 24 meses após o início de utilização; no arrendamento, o imóvel tem de ficar arrendado pelo menos 36 meses nos primeiros 5 anos.",
   },
   {
     q: "Até quando dura este pacote?",
-    a: "O IVA a 6% é válido para obras iniciadas entre 23/set/2025 e 31/dez/2029, com vigência até 31/dez/2032. Os pedidos de restituição parcial de IVA para autoconstrução abrem em outubro de 2026, com prazo de resposta até 150 dias.",
+    a: "O IVA a 6% é válido para obras iniciadas entre 25/set/2025 e 31/dez/2029, com vigência até 31/dez/2032. Na autoconstrução, o pedido de restituição é feito até 12 meses após a licença de utilização, com resposta da AT em 150 dias; para licenças já emitidas nos 3 primeiros trimestres de 2026, este prazo só começa a contar a partir de 1 de outubro de 2026.",
   },
   {
     q: "A exclusão de mais-valias aplica-se a casas modulares?",
