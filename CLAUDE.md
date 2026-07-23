@@ -131,6 +131,7 @@ Utilitários CSS:
 - [ ] Confirmar tipologia/área de Ivan Barroso e Ema e Quim (dados em falta nas pastas de cliente)
 - [ ] 152 vídeos MP4 em `Trello\Clientes\Transporte casa cleila` — potencial vídeo/reel "processo de transporte e montagem"
 - [ ] **Blog post "novas regras de crédito" — publicar em agosto 2026**: artigo escrito (2026-07-09), pronto a colar em `BLOG_POSTS` (`src/lib/site-data.ts`) quando chegar a data. Motivo do adiamento: regra entra em vigor 1 ago 2026, faz sentido editorial publicar à volta dessa data, não antes. Ver bloco pronto a colar mais abaixo (secção "Draft: blog post crédito habitação"). **Nota (2026-07-23)**: entretanto já foi publicado outro post de Agosto (`iva-6-construcao-casas-modulares-2026`, ver abaixo) — este da crédito fica disponível como post extra/próximo mês, não é obrigatório os dois saírem no mesmo mês.
+- [ ] **Blog post "Manutenção de casa modular" — publicar em setembro 2026**: post `manutencao-casa-modular-aco-vs-tradicional` (aço galvanizado vs madeira) removido de `BLOG_POSTS` em 2026-07-23 a pedido — publicado cedo demais para a data de setembro. Bloco completo guardado abaixo (secção "Draft: blog post manutenção") para colar de volta quando chegar a altura.
 
 ---
 
@@ -298,6 +299,41 @@ Para publicar: colar o objecto abaixo no início do array `BLOG_POSTS` em `src/l
       "É aqui que o modelo de pagamento faseado da EsDomusTech ajuda a planear com mais folga. Não exigimos uma única aprovação de crédito de grande valor no arranque, como é comum na construção tradicional: o pagamento está dividido em 4 tranches de 25% (assinatura do contrato, início de produção, entrega em obra e conclusão). Isto dá tempo para reorganizar finanças, amortizar outros créditos ou negociar condições com o banco entre fases, em vez de depender de uma aprovação única no primeiro dia.",
       "O nosso conselho prático: se está a pensar construir e vai precisar de financiamento bancário, fale com o seu banco antes de comprar terreno ou avançar com o projeto. Uma simulação de crédito prévia, mesmo informal, evita surpresas mais tarde, sobretudo com o limite mais apertado a partir de agosto. Se tiver outros créditos em curso, avaliar se compensa liquidá-los ou consolidá-los antes de pedir o crédito habitação pode fazer diferença na capacidade de financiamento aprovada.",
       "Este artigo é informativo e não substitui aconselhamento financeiro personalizado. As condições finais de crédito dependem sempre da análise de cada banco. Para informação oficial e atualizada, consulte o site do Banco de Portugal.",
+    ],
+  },
+```
+
+</details>
+
+---
+
+## Draft: blog post manutenção (publicar setembro 2026)
+
+Post `manutencao-casa-modular-aco-vs-tradicional` — aço galvanizado (EsDomusTech) vs madeira (comum no mercado ibérico) em manutenção a longo prazo. Estava publicado (data Set 2026), removido em 2026-07-23 a pedido por estar cedo demais. Também contém a correção do claim de durabilidade do post `casa-modular-vs-construcao-tradicional` (ver [[feedback_domustech_no_durability_years_claim]]).
+
+Para publicar: colar o objecto abaixo no início do array `BLOG_POSTS` em `src/lib/site-data.ts`, antes do post `iva-6-construcao-casas-modulares-2026`.
+
+<details>
+<summary>Código do post (colar em BLOG_POSTS)</summary>
+
+```tsx
+  {
+    slug: "manutencao-casa-modular-aco-vs-tradicional",
+    title: "Manutenção de casa modular: o que muda a longo prazo",
+    cat: "Manutenção",
+    date: "Set 2026",
+    isoDate: "2026-09-01",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop&auto=format&q=80",
+    excerpt: "Uma casa modular dá mais trabalho a manter do que uma construção tradicional? A resposta depende do material da estrutura. Explicamos o que muda de facto na manutenção ao longo dos anos.",
+    body: [
+      "Uma dúvida recorrente entre quem pondera construir casa modular é a manutenção a longo prazo: dá mais trabalho do que uma casa tradicional? A resposta honesta é que depende sobretudo do material da estrutura, e é aqui que muitas comparações genéricas falham ao tratar todas as casas modulares como iguais.",
+      "Grande parte da oferta modular no mercado ibérico usa estrutura em madeira. É um material nobre, mas receptivo à humidade e à absorção de água, o que exige tratamentos periódicos e cuidado redobrado em climas húmidos, como o do Norte de Portugal. A EsDomusTech usa estrutura em aço galvanizado DX51D de 3 mm, um material com elevada resistência à corrosão que dispensa os tratamentos de proteção contra insectos e humidade típicos da madeira estrutural.",
+      "Há um ponto de manutenção que é real e comum a qualquer construção modular, independentemente do material: as juntas entre módulos. É aí que se concentra o maior risco de infiltração, caso a selagem não seja bem executada na montagem. Na EsDomusTech, este é um passo controlado e verificado em obra antes dos acabamentos finais, mas continua a ser boa prática, como em qualquer casa, incluir uma inspeção visual periódica a vedantes e caixilharias, sobretudo após os primeiros invernos.",
+      "No exterior, os acabamentos usados em construção modular moderna tendem a exigir menos manutenção do que o reboco pintado tradicional: revestimentos e vernizes de especificação industrial resistem melhor à exposição solar e à chuva, o que se traduz em menos repintagens ao longo dos anos. O isolamento térmico, pensado desde o desenho inicial da casa, reduz também o desgaste associado aos sistemas de climatização, que trabalham com menos esforço.",
+      "Em termos de garantias legais, a lei portuguesa exige um mínimo de 5 anos de garantia estrutural e 2 anos para equipamentos em qualquer habitação nova, modular ou tradicional. Na EsDomusTech, a garantia estrutural oferecida é de 10 anos, o dobro do mínimo legal, precisamente porque a estrutura em aço galvanizado permite esse compromisso com confiança.",
+      "Na prática, a rotina de manutenção de uma casa modular em aço não é diferente da de qualquer habitação: verificação anual de canalizações, quadro elétrico, caixilharia e vedantes, limpeza de caleiras e manutenção normal dos equipamentos de climatização. O que muda é a ausência de tarefas específicas ligadas à madeira estrutural, como o tratamento contra térmitas ou a verificação de apodrecimento, simplesmente porque essa estrutura não existe na casa.",
+      "É por isto que optámos por construir sempre em aço galvanizado na EsDomusTech, e não em madeira: é a estrutura que dá menos trabalho ao cliente ao longo dos anos, sem tratamentos periódicos contra humidade ou insectos, com menos repintagens e uma garantia estrutural que conseguimos sustentar em 10 anos. Quando fala connosco sobre o seu projeto, é essa tranquilidade a longo prazo que estamos a construir consigo, não só a casa em si.",
     ],
   },
 ```
