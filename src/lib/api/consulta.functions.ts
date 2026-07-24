@@ -17,15 +17,15 @@ const leadSchema = z.object({
   descricao: z.string(),
   formaPagamento: z.string(),
   nome: z.string().min(1),
-  email: z.string().email(),
-  telefone: z.string(),
+  email: z.string().email().or(z.literal("")),
+  telefone: z.string().min(1),
   timestamp: z.string(),
 });
 
 function leadEmailHtml(lead: z.infer<typeof leadSchema>) {
   const rows: [string, string][] = [
     ["Nome", lead.nome],
-    ["Email", lead.email],
+    ["Email", lead.email || "—"],
     ["Telefone", lead.telefone],
     ["Tipologia", lead.tipologia],
     ["Quando pretende avançar", lead.quando],
@@ -55,7 +55,7 @@ async function sendResendEmail(lead: z.infer<typeof leadSchema>) {
     body: JSON.stringify({
       from: resendFromEmail,
       to: [resendToEmail],
-      reply_to: lead.email,
+      ...(lead.email ? { reply_to: lead.email } : {}),
       subject: `Novo pedido de consulta — ${lead.nome} (${lead.tipologia})`,
       html: leadEmailHtml(lead),
     }),
