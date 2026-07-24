@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { SITE } from "@/lib/site-data";
-import { fetchServices, fetchProjects, fetchBlogPosts } from "@/lib/sanity-queries";
+import { fetchProjects, fetchBlogPosts } from "@/lib/sanity-queries";
 
 const BASE_URL = SITE.domain;
 
@@ -27,8 +27,8 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const [SERVICES, PROJECTS, BLOG_POSTS] = await Promise.all([
-          fetchServices(), fetchProjects(), fetchBlogPosts(),
+        const [PROJECTS, BLOG_POSTS] = await Promise.all([
+          fetchProjects(), fetchBlogPosts(),
         ]);
         const today = new Date().toISOString().split("T")[0];
         const entries: SitemapEntry[] = [
@@ -45,12 +45,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/contacto", changefreq: "yearly", priority: "0.7", lastmod: today },
           { path: "/politica-de-privacidade", changefreq: "yearly", priority: "0.3", lastmod: today },
           { path: "/termos-e-condicoes", changefreq: "yearly", priority: "0.3", lastmod: today },
-          ...SERVICES.map((s) => ({
-            path: `/servicos/${s.slug}`,
-            changefreq: "monthly" as const,
-            priority: "0.8",
-            lastmod: today,
-          })),
           ...PROJECTS.map((p) => ({
             path: `/projetos/${p.slug}`,
             changefreq: "monthly" as const,

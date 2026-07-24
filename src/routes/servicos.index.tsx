@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
@@ -48,7 +48,7 @@ function ServicosPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              Expertise <span style={{ color: "#BE9355" }}>&amp;</span> Precisão
+              Serviços <span style={{ color: "#BE9355" }}>de Construção Modular</span>
             </motion.h1>
             <motion.p
               className="s-body-lg"
@@ -133,14 +133,6 @@ function ServicosPage() {
                   ))}
                 </div>
 
-                <Link
-                  to="/servicos/$slug"
-                  params={{ slug: s.slug }}
-                  className="s-label-caps inline-block border-b pb-1 transition-colors duration-300 hover:text-[#BE9355] hover:border-[#BE9355]"
-                  style={{ color: "#000000", borderColor: "#000000" }}
-                >
-                  Ver detalhe do serviço →
-                </Link>
               </motion.div>
             </div>
           </section>

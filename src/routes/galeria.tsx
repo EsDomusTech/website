@@ -75,7 +75,7 @@ function GaleriaPage() {
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                   <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                     <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
-                      {item.cat} · {item.year}
+                      {item.cat}
                     </span>
                     <h3 className="text-[14px] text-white" style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                       {item.title}

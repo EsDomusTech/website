@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: "EsDomusTech",
-  domain: "https://domustech.lovable.app",
+  domain: "https://esdomustech.lovable.app",
   tagline: "Casas Modulares Tecnológicas",
   phone: "+351 935 677 556",
   email: "geral@esdomustech.com",

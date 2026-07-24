@@ -24,7 +24,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -103,11 +102,6 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
-const ServicosSlugRoute = ServicosSlugRouteImport.update({
-  id: '/servicos/$slug',
-  path: '/servicos/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   id: '/projetos/$slug',
   path: '/projetos/$slug',
@@ -134,7 +128,6 @@ export interface FileRoutesByFullPath {
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
@@ -153,7 +146,6 @@ export interface FileRoutesByTo {
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/blog': typeof BlogIndexRoute
   '/projetos': typeof ProjetosIndexRoute
   '/servicos': typeof ServicosIndexRoute
@@ -174,7 +166,6 @@ export interface FileRoutesById {
   '/vantagens-fiscais': typeof VantagensFiscaisRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
-  '/servicos/$slug': typeof ServicosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
   '/servicos/': typeof ServicosIndexRoute
@@ -196,7 +187,6 @@ export interface FileRouteTypes {
     | '/vantagens-fiscais'
     | '/blog/$slug'
     | '/projetos/$slug'
-    | '/servicos/$slug'
     | '/blog/'
     | '/projetos/'
     | '/servicos/'
@@ -215,7 +205,6 @@ export interface FileRouteTypes {
     | '/vantagens-fiscais'
     | '/blog/$slug'
     | '/projetos/$slug'
-    | '/servicos/$slug'
     | '/blog'
     | '/projetos'
     | '/servicos'
@@ -235,7 +224,6 @@ export interface FileRouteTypes {
     | '/vantagens-fiscais'
     | '/blog/$slug'
     | '/projetos/$slug'
-    | '/servicos/$slug'
     | '/blog/'
     | '/projetos/'
     | '/servicos/'
@@ -255,7 +243,6 @@ export interface RootRouteChildren {
   TermosECondicoesRoute: typeof TermosECondicoesRoute
   VantagensFiscaisRoute: typeof VantagensFiscaisRoute
   ProjetosSlugRoute: typeof ProjetosSlugRoute
-  ServicosSlugRoute: typeof ServicosSlugRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
 }
@@ -367,13 +354,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
-    '/servicos/$slug': {
-      id: '/servicos/$slug'
-      path: '/servicos/$slug'
-      fullPath: '/servicos/$slug'
-      preLoaderRoute: typeof ServicosSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projetos/$slug': {
       id: '/projetos/$slug'
       path: '/projetos/$slug'
@@ -417,7 +397,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermosECondicoesRoute: TermosECondicoesRoute,
   VantagensFiscaisRoute: VantagensFiscaisRoute,
   ProjetosSlugRoute: ProjetosSlugRoute,
-  ServicosSlugRoute: ServicosSlugRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
   ServicosIndexRoute: ServicosIndexRoute,
 }
