@@ -139,21 +139,6 @@ export const PROJECTS: Project[] = [
     gallery: ["/projects/t3-hero.jpg"],
   },
   {
-    slug: "moradia-t1-48-ii",
-    name: "Moradia T1 · 48 m²",
-    category: "Casa Modular",
-    spec: "T1 · 48 m²",
-    year: "2026",
-    image: "/projects/t1-48-ii-hero.jpg",
-    summary:
-      "Moradia T1 de 48 m² com fachada totalmente branca, cobertura plana e deck em compósito de madeira ao longo de toda a frente envidraçada.",
-    description: [
-      "Um volume compacto e limpo: fachada branca sem interrupções, alpendre integrado sob a cobertura e uma frente contínua de portas e estores elétricos que abre a casa para o deck exterior.",
-      "O deck em compósito de madeira acompanha todo o comprimento da fachada, criando uma zona de estar exterior directamente ligada à sala — o mesmo conceito chave-na-mão da tipologia T1 · 48 m², aplicado a um terreno diferente.",
-    ],
-    gallery: ["/projects/t1-48-ii-hero.jpg"],
-  },
-  {
     slug: "moradia-t2-72",
     name: "Moradia T2 · 72 m²",
     category: "Casa Modular",

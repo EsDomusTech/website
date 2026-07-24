@@ -41,58 +41,60 @@ export function Projects({ projects }: { projects?: Project[] }) {
         </div>
 
         {/* Mobile — 1 project + arrows, no full grid */}
-        <div className="relative sm:hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={shown[slide].slug}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Link
-                to="/projetos/$slug"
-                params={{ slug: shown[slide].slug }}
-                className="group relative block aspect-square overflow-hidden"
+        <div className="sm:hidden">
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={shown[slide].slug}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <img
-                  src={shown[slide].image}
-                  alt={`${shown[slide].name}, projeto de ${shown[slide].category.toLowerCase()} EsDomusTech`}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6">
-                  <span className="s-label-caps mb-2 block" style={{ color: "var(--gold)", letterSpacing: "0.2em" }}>
-                    {shown[slide].category}
-                  </span>
-                  <h3 className="s-headline-md mb-4 text-white">{shown[slide].name}</h3>
-                  <span className="block h-px w-12 bg-white" />
-                </div>
-              </Link>
-            </motion.div>
-          </AnimatePresence>
+                <Link
+                  to="/projetos/$slug"
+                  params={{ slug: shown[slide].slug }}
+                  className="group relative block aspect-square overflow-hidden"
+                >
+                  <img
+                    src={shown[slide].image}
+                    alt={`${shown[slide].name}, projeto de ${shown[slide].category.toLowerCase()} EsDomusTech`}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6">
+                    <span className="s-label-caps mb-2 block" style={{ color: "var(--gold)", letterSpacing: "0.2em" }}>
+                      {shown[slide].category}
+                    </span>
+                    <h3 className="s-headline-md mb-4 text-white">{shown[slide].name}</h3>
+                    <span className="block h-px w-12 bg-white" />
+                  </div>
+                </Link>
+              </motion.div>
+            </AnimatePresence>
 
-          <button
-            type="button"
-            aria-label="Projeto anterior"
-            onClick={(e) => {
-              e.preventDefault();
-              prevSlide();
-            }}
-            className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
-          >
-            <ChevronLeft className="h-5 w-5" style={{ color: "#000000" }} />
-          </button>
-          <button
-            type="button"
-            aria-label="Próximo projeto"
-            onClick={(e) => {
-              e.preventDefault();
-              nextSlide();
-            }}
-            className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
-          >
-            <ChevronRight className="h-5 w-5" style={{ color: "#000000" }} />
-          </button>
+            <button
+              type="button"
+              aria-label="Projeto anterior"
+              onClick={(e) => {
+                e.preventDefault();
+                prevSlide();
+              }}
+              className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
+            >
+              <ChevronLeft className="h-5 w-5" style={{ color: "#000000" }} />
+            </button>
+            <button
+              type="button"
+              aria-label="Próximo projeto"
+              onClick={(e) => {
+                e.preventDefault();
+                nextSlide();
+              }}
+              className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center bg-white/90"
+            >
+              <ChevronRight className="h-5 w-5" style={{ color: "#000000" }} />
+            </button>
+          </div>
 
           <div className="mt-4 flex justify-center gap-2">
             {shown.map((p, i) => (
