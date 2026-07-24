@@ -160,7 +160,7 @@ export function Hero() {
                   className="s-label-caps group inline-flex items-center gap-4 text-white uppercase"
                 >
                   Falar Connosco
-                  <span className="hidden sm:block h-px w-12 bg-white transition-all duration-500 group-hover:w-16" />
+                  <span className="hidden sm:block h-px w-12 transition-all duration-500 group-hover:w-16" style={{ backgroundColor: "var(--gold)" }} />
                 </Link>
               </motion.div>
             </motion.div>
