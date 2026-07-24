@@ -9,7 +9,7 @@ export function Projects({ projects }: { projects?: Project[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered ?? 0;
   const [slide, setSlide] = useState(0);
-  const shown = items.slice(0, 6);
+  const shown = items.slice(0, 3);
   const prevSlide = () => setSlide((s) => (s - 1 + shown.length) % shown.length);
   const nextSlide = () => setSlide((s) => (s + 1) % shown.length);
   return (
