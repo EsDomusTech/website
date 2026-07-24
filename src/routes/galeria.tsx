@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
   { id: 1, cat: "Exterior", title: "Moradia T3, Entrada e Jardim", year: "2026", image: "/projects/t3-hero.jpg", slug: "moradia-t3-jardim" },
-  { id: 2, cat: "Exterior", title: "Moradia T1 · 48 m², Deck e Fachada Branca", year: "2026", image: "/projects/t1-48-ii-hero.jpg", slug: "moradia-t1-48-ii" },
+  { id: 2, cat: "Exterior", title: "Moradia T1 · 48 m², Deck e Fachada Branca", year: "2026", image: "/projects/t1-48-ii-hero.jpg", slug: null },
   { id: 3, cat: "Exterior", title: "Moradia T2 · 72 m², Fachada", year: "2025", image: "/projects/t2-72-hero.jpg", slug: "moradia-t2-72" },
   { id: 4, cat: "Exterior", title: "Moradia T2 · 72 m², Piscina e Deck", year: "2025", image: "/projects/t2-72-piscina.jpg", slug: "moradia-t2-72" },
   { id: 5, cat: "Interior", title: "Moradia T2 · 72 m², Cozinha", year: "2025", image: "/projects/t2-72-cozinha.jpg", slug: "moradia-t2-72" },
