@@ -87,7 +87,7 @@ export function ConsultaModal() {
 
   const step1Valid = !!(data.tipologia && data.quando && data.situacaoTerreno);
   const step2Valid = !!(data.localizacao && data.formaPagamento);
-  const step3Valid = !!(data.nome && data.email && data.telefone && data.aceitoTermos);
+  const step3Valid = !!(data.nome && data.telefone && data.aceitoTermos);
 
   const isBot = () => {
     if (honeypot) return true;
@@ -284,7 +284,6 @@ export function ConsultaModal() {
                               type="email"
                               value={data.email}
                               onChange={(v) => set("email", v)}
-                              required
                             />
                             <TextField
                               label="Número telemóvel"
