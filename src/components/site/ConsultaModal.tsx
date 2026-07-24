@@ -87,7 +87,7 @@ export function ConsultaModal() {
 
   const step1Valid = !!(data.tipologia && data.quando && data.situacaoTerreno);
   const step2Valid = !!(data.localizacao && data.formaPagamento);
-  const step3Valid = !!(data.nome && data.telefone && data.aceitoTermos);
+  const step3Valid = !!(data.nome && data.telefone.length === 9 && data.aceitoTermos);
 
   const isBot = () => {
     if (honeypot) return true;
@@ -291,6 +291,7 @@ export function ConsultaModal() {
                               value={data.telefone}
                               onChange={(v) => set("telefone", v.replace(/\D/g, "").slice(0, 9))}
                               maxLength={9}
+                              minLength={9}
                               required
                             />
                             <label className="flex items-start gap-3 cursor-pointer pt-1">
@@ -444,10 +445,10 @@ function SelectField({
 }
 
 function TextField({
-  label, value, onChange, type = "text", placeholder, required, maxLength,
+  label, value, onChange, type = "text", placeholder, required, maxLength, minLength,
 }: {
   label: string; value: string; onChange: (v: string) => void;
-  type?: string; placeholder?: string; required?: boolean; maxLength?: number;
+  type?: string; placeholder?: string; required?: boolean; maxLength?: number; minLength?: number;
 }) {
   return (
     <div>
@@ -461,6 +462,7 @@ function TextField({
         placeholder={placeholder}
         required={required}
         maxLength={maxLength}
+        minLength={minLength}
         inputMode={type === "tel" ? "numeric" : undefined}
         className="w-full px-4 py-[14px] bg-transparent outline-none text-sm"
         style={{

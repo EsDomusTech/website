@@ -18,7 +18,7 @@ const leadSchema = z.object({
   formaPagamento: z.string(),
   nome: z.string().min(1),
   email: z.string().email().or(z.literal("")),
-  telefone: z.string().min(1),
+  telefone: z.string().regex(/^\d{9}$/, "Telefone deve ter 9 dígitos"),
   timestamp: z.string(),
 });
 
