@@ -303,6 +303,17 @@ export function Navbar() {
         </nav>
       </header>
 
+      {/* Floating CTA — sempre visível abaixo do hamburger, mobile/tablet (desktop já tem o botão no nav) */}
+      <button
+        type="button"
+        onClick={openConsulta}
+        aria-label="Pedir Orçamento"
+        title="Pedir Orçamento"
+        className="fixed right-6 top-24 z-40 flex h-14 w-14 items-center justify-center bg-white shadow-md transition-transform hover:scale-105 xl:hidden"
+      >
+        <img src="/icons/orcamento.svg" alt="" aria-hidden className="h-7 w-7" />
+      </button>
+
       {/* Full-screen overlay menu */}
       <AnimatePresence>
         {menuOpen && (
