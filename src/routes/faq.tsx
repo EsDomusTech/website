@@ -10,7 +10,7 @@ export const Route = createFileRoute("/faq")({
   loader: async () => ({ faqs: await fetchFaqs() }),
   head: ({ loaderData }) => ({
     meta: [
-      { title: "FAQ | Perguntas Frequentes sobre Casas Modulares, EsDomusTech" },
+      { title: "Perguntas Frequentes | Casas Modulares EsDomusTech" },
       {
         name: "description",
         content:

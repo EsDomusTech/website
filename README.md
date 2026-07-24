@@ -2,7 +2,7 @@
 
 Site institucional premium para empresa de casas modulares no Porto. Estética **Structural Elegance** (inspirada no tema Bauen, identidade própria). SSR para SEO.
 
-URL de produção: https://domustech.lovable.app
+URL de produção: https://esdomustech.lovable.app
 
 ## Stack
 

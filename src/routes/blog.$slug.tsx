@@ -5,6 +5,11 @@ import { SITE } from "@/lib/site-data";
 import { fetchBlogPost, fetchBlogPosts } from "@/lib/sanity-queries";
 import { useConsultaModal } from "@/lib/consulta-store";
 
+function truncate(s: string, max: number): string {
+  if (s.length <= max) return s;
+  return `${s.slice(0, max - 1).replace(/\s+\S*$/, "")}…`;
+}
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
     const [post, allPosts] = await Promise.all([fetchBlogPost(params.slug), fetchBlogPosts()]);
@@ -14,12 +19,14 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.post;
     if (!p) return { meta: [{ title: "Artigo não encontrado | EsDomusTech" }] };
+    const metaTitle = `${truncate(p.title, 45)} | EsDomusTech`;
+    const metaDescription = truncate(p.excerpt, 155);
     return {
       meta: [
-        { title: `${p.title} | EsDomusTech` },
-        { name: "description", content: p.excerpt },
+        { title: metaTitle },
+        { name: "description", content: metaDescription },
         { property: "og:title", content: p.title },
-        { property: "og:description", content: p.excerpt },
+        { property: "og:description", content: metaDescription },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `${SITE.domain}/blog/${p.slug}` },
         { property: "og:image", content: p.image },

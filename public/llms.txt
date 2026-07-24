@@ -1,0 +1,26 @@
+# EsDomusTech
+
+> Empresa de construção de casas modulares no Porto e Norte de Portugal (Vila Nova da Telha). Estrutura em aço galvanizado, projeto e licenciamento incluídos, entrega chave na mão com garantia estrutural de 10 anos.
+
+EsDomusTech projeta, fabrica e monta casas modulares personalizadas — desde a consulta inicial e visita ao terreno até à entrega chave na mão. Também executa construção modular para comércio e espaços corporativos, e design de interiores. Área de atuação: Porto, Braga, Aveiro, Viana do Castelo, Vila Real, Bragança.
+
+## Serviços
+
+- [Casas Modulares no Porto](https://esdomustech.lovable.app/servicos/casas-modulares-porto): projeto, fabrico e montagem chave na mão, eficiência energética classe A.
+- [Construção Modular](https://esdomustech.lovable.app/servicos/construcao-modular): habitação, comércio e espaços corporativos, estruturas escaláveis.
+- [Serviços](https://esdomustech.lovable.app/servicos): listagem completa de serviços.
+
+## Páginas principais
+
+- [Empresa](https://esdomustech.lovable.app/empresa): quem somos, desde 2012.
+- [Sistema Construtivo](https://esdomustech.lovable.app/sistema-construtivo): ficha técnica, camadas de construção, aço galvanizado DX51D.
+- [Preços](https://esdomustech.lovable.app/precos): estimativas por tipologia, preço de referência por m².
+- [Vantagens Fiscais](https://esdomustech.lovable.app/vantagens-fiscais): IVA reduzido e licenciamento de casas modulares em Portugal.
+- [Projetos](https://esdomustech.lovable.app/projetos): portfólio de obras reais.
+- [FAQ](https://esdomustech.lovable.app/faq): perguntas frequentes sobre prazos, personalização e licenciamento.
+- [Blog](https://esdomustech.lovable.app/blog): artigos sobre construção modular, fiscalidade e manutenção.
+- [Contacto](https://esdomustech.lovable.app/contacto): pedido de orçamento e informações de contacto.
+
+## Contacto
+
+Telefone: +351 935 677 556 · Email: geral@esdomustech.com · Morada: Tv. Joaquim Dias Salgueiro 186, 4470-558 Vila Nova da Telha, Porto.

@@ -38,8 +38,9 @@ function ContactoPage() {
 
       {/* Hero */}
       <PageHeader
-        titleFirst="Vamos construir algo"
-        titleSecond="duradouro."
+        eyebrow="Contacto"
+        titleFirst="Fale"
+        titleSecond="Connosco"
         subtitle="O nosso estúdio está localizado em Vila Nova da Telha, Porto. Recebemos consultas para discutir a sua visão de espaço e estrutura."
         image="/images/hero/page-header-fallback.webp"
         variant="light"
