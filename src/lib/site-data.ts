@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: "EsDomusTech",
-  domain: "https://esdomustech.lovable.app",
+  domain: "https://esdomustech.vercel.app",
   tagline: "Casas Modulares Tecnológicas",
   phone: "+351 935 677 556",
   email: "geral@esdomustech.com",
@@ -38,14 +38,15 @@ export type Service = {
   /** Page H1, split into two words for the gold-accent title pattern. */
   titleFirst: string;
   titleSecond: string;
-  metaTitle: string;
-  metaDescription: string;
   excerpt: string;
   intro: string[];
   features: string[];
   image: string;
+  image2?: string;
   process: { num: string; title: string; text: string }[];
 };
+
+const SERVICE_PRICE = PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN : PRICING.REGULAR;
 
 export const SERVICES: Service[] = [
   {
@@ -53,55 +54,25 @@ export const SERVICES: Service[] = [
     name: "Casas Modulares no Porto",
     titleFirst: "CASAS",
     titleSecond: "MODULARES",
-    metaTitle: "Casas Modulares Porto | Construção Modular | EsDomusTech",
-    metaDescription:
-      "Casas modulares no Porto: rápidas, sustentáveis e totalmente personalizadas. Projeto, fabrico e montagem chave na mão pela EsDomusTech.",
     excerpt:
-      "Casas modulares pré-fabricadas, entregues chave na mão, com eficiência energética e prazos de construção reduzidos.",
+      `Casas modulares chave na mão, construídas por processo modular, a partir de ${SERVICE_PRICE.toLocaleString("pt-PT")} €/m² + IVA, com garantia estrutural de 10 anos.`,
     intro: [
-      "Construímos casas modulares no Porto que unem arquitetura contemporânea, conforto e sustentabilidade. Cada módulo é fabricado em ambiente controlado, garantindo qualidade superior e prazos de obra muito mais curtos do que na construção tradicional.",
-      "Do estudo do terreno à montagem final, acompanhamos todo o processo. Personalizamos plantas, acabamentos e soluções energéticas para que a sua casa modular reflita exatamente o seu estilo de vida.",
+      `Fazemos construção modular de casas modulares: projeto, fabrico da estrutura e montagem no terreno, entregues chave na mão a partir de ${SERVICE_PRICE.toLocaleString("pt-PT")} €/m² + IVA. A estrutura é em aço galvanizado, com garantia estrutural de 10 anos, o dobro do mínimo legal.`,
+      "Do estudo do terreno à entrega chave na mão, acompanhamos todo o processo com a mesma equipa. Plantas, acabamentos e soluções energéticas são personalizados caso a caso, e o pagamento está dividido em 4 prestações de 25%, sem exigir uma única aprovação de crédito de grande valor no arranque.",
     ],
     features: [
-      "Projeto e licenciamento incluídos",
-      "Eficiência energética classe A",
-      "Prazos de construção até 60% mais rápidos",
-      "Acabamentos totalmente personalizáveis",
+      `Preço de referência: ${SERVICE_PRICE.toLocaleString("pt-PT")} €/m² + IVA, chave na mão`,
+      "Estrutura em aço galvanizado, garantia estrutural de 10 anos",
+      "Projeto, licenciamento e acompanhamento de obra incluídos",
+      "Pagamento faseado em 4 prestações de 25%",
     ],
-    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&h=800&fit=crop&auto=format&q=80",
+    image: "/projects/t1-48-hero.jpg",
+    image2: "/projects/t1-48-deck.jpg",
     process: [
-      { num: "01", title: "Consulta e Terreno", text: "Visita técnica ao terreno, análise de condicionantes legais e briefing detalhado do programa de necessidades." },
-      { num: "02", title: "Projeto e Licenciamento", text: "Arquitetura, engenharia estrutural e gestão completa do processo de licenciamento camarário." },
-      { num: "03", title: "Fabrico em Fábrica", text: "Produção dos módulos em ambiente fabril controlado, em paralelo com a aprovação do projeto — sem paragens de obra." },
-      { num: "04", title: "Montagem e Entrega", text: "Transporte e montagem dos módulos no terreno em poucos dias, seguidos de acabamentos e ligações às redes. Entrega chave na mão com garantia estrutural de 10 anos. Prazos e condições sob consulta." },
-    ],
-  },
-  {
-    slug: "construcao-modular",
-    name: "Construção Modular",
-    titleFirst: "CONSTRUÇÃO",
-    titleSecond: "MODULAR",
-    metaTitle: "Construção Modular Porto | Edifícios e Habitação | EsDomusTech",
-    metaDescription:
-      "Construção modular para habitação, comércio e espaços corporativos no Porto. Soluções pré-fabricadas escaláveis, sustentáveis e de montagem rápida.",
-    excerpt:
-      "Soluções de construção modular escaláveis para habitação, comércio e espaços corporativos, com montagem rápida e limpa.",
-    intro: [
-      "A nossa construção modular adapta-se a projetos de qualquer escala: desde moradias unifamiliares a edifícios comerciais e estruturas corporativas. O fabrico em fábrica reduz desperdício, ruído e impacto ambiental na obra.",
-      "Combinamos engenharia rigorosa com design flexível, permitindo expandir ou reconfigurar os espaços à medida que as suas necessidades evoluem.",
-    ],
-    features: [
-      "Estruturas escaláveis e reconfiguráveis",
-      "Menor desperdício e impacto ambiental",
-      "Controlo de qualidade em fábrica",
-      "Integração de domótica e energias renováveis",
-    ],
-    image: "/images/servicos/construcao-modular.webp",
-    process: [
-      { num: "01", title: "Análise de Requisitos", text: "Estudo da escala do projeto, uso pretendido (habitacional, comercial ou corporativo) e requisitos técnicos e regulamentares." },
-      { num: "02", title: "Engenharia e Sistemas", text: "Cálculo estrutural, dimensionamento de especialidades (AVAC, elétrica, redes) e integração de domótica e energias renováveis." },
-      { num: "03", title: "Pré-fabricação", text: "Módulos produzidos em fábrica com controlo de qualidade rigoroso — rastreabilidade total de materiais e inspecção final antes do envio." },
-      { num: "04", title: "Montagem no Local", text: "Instalação com mínima perturbação do entorno, baixa produção de resíduos e cronograma cumprido — entregamos o que prometemos." },
+      { num: "01", title: "Consulta e Projeto", text: "Visita técnica ao terreno, arquitetura e engenharia estrutural, com gestão completa do processo de licenciamento camarário." },
+      { num: "02", title: "Fabrico da Estrutura", text: "Construção da estrutura em fábrica e execução da base em betão no terreno, em paralelo com a aprovação do projeto." },
+      { num: "03", title: "Materiais e Acabamentos", text: "Aquisição dos materiais de cobertura, paredes e acabamentos finos, de acordo com o projeto aprovado." },
+      { num: "04", title: "Montagem e Entrega", text: "Montagem final, ligações às redes e conclusão da obra. Entrega chave na mão com garantia estrutural de 10 anos." },
     ],
   },
 ];
