@@ -15,8 +15,9 @@ export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, 
   const isCenter = align === "center";
   const isLight = variant === "light";
   return (
+    <div className="w-full" style={{ backgroundColor: "var(--background)" }}>
     <section
-      className="relative overflow-hidden"
+      className="relative mx-auto max-w-[1440px] overflow-hidden"
       style={{ height: 614, backgroundColor: image ? undefined : isLight ? "var(--background)" : "var(--dark-section)" }}
     >
       {image && (
@@ -92,5 +93,6 @@ export function PageHeader({ titleFirst, titleSecond, image, eyebrow, subtitle, 
         </div>
       </div>
     </section>
+    </div>
   );
 }

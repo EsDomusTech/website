@@ -3,8 +3,10 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Projects } from "@/components/site/Projects";
 import { Blog } from "@/components/site/Blog";
-import { SITE } from "@/lib/site-data";
+import { SITE, PRICING } from "@/lib/site-data";
 import { fetchProjects, fetchBlogPosts } from "@/lib/sanity-queries";
+
+const HOME_PRICE = PRICING.CAMPAIGN_ACTIVE ? PRICING.CAMPAIGN : PRICING.REGULAR;
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -16,8 +18,7 @@ export const Route = createFileRoute("/")({
       { title: "EsDomusTech | Casas Modulares Inteligentes no Porto" },
       {
         name: "description",
-        content:
-          "Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a 1.500 €/m². Construção em todo o território nacional.",
+        content: `Casas modulares tecnológicas no Porto. Estrutura em aço galvanizado, classe A, chave-na-mão a ${HOME_PRICE.toLocaleString("pt-PT")} €/m². Construção em todo o território nacional.`,
       },
       { property: "og:title", content: "EsDomusTech | Casas Modulares Tecnológicas no Porto" },
       {
