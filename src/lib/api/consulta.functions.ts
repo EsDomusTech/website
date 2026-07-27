@@ -18,9 +18,19 @@ const leadSchema = z.object({
   formaPagamento: z.string(),
   nome: z.string().min(1),
   email: z.string().email().or(z.literal("")),
-  telefone: z.string().regex(/^\d{9}$/, "Telefone deve ter 9 dígitos"),
+  telefone: z.string().regex(/^\+?\d{9,13}$/, "Telefone inválido"),
   timestamp: z.string(),
+  honeypot: z.string().optional().default(""),
+  openedAt: z.number().optional(),
 });
+
+const MIN_FILL_TIME_MS = 4000;
+
+function looksLikeBot(data: z.infer<typeof leadSchema>): boolean {
+  if (data.honeypot) return true;
+  if (data.openedAt && Date.now() - data.openedAt < MIN_FILL_TIME_MS) return true;
+  return false;
+}
 
 function leadEmailHtml(lead: z.infer<typeof leadSchema>) {
   const rows: [string, string][] = [
@@ -81,6 +91,7 @@ async function appendToGoogleSheet(lead: z.infer<typeof leadSchema>) {
 export const submitConsultaLead = createServerFn({ method: "POST" })
   .inputValidator(leadSchema)
   .handler(async ({ data }) => {
+    if (looksLikeBot(data)) return { ok: true, errors: [] };
     const results = await Promise.allSettled([sendResendEmail(data), appendToGoogleSheet(data)]);
     const errors = results
       .filter((r): r is PromiseRejectedResult => r.status === "rejected")

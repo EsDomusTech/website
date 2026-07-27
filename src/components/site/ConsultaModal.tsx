@@ -87,12 +87,12 @@ export function ConsultaModal() {
 
   const step1Valid = !!(data.tipologia && data.quando && data.situacaoTerreno);
   const step2Valid = !!(data.localizacao && data.formaPagamento);
-  const step3Valid = !!(data.nome && data.telefone.length === 9 && data.aceitoTermos);
+  const step3Valid = !!(data.nome.trim().length >= 3 && data.telefone.length >= 9 && data.aceitoTermos);
 
   const isBot = () => {
     if (honeypot) return true;
     const elapsed = openedAt.current ? Date.now() - openedAt.current : 0;
-    if (elapsed < 8000) return true;
+    if (elapsed < 4000) return true;
     return false;
   };
 
@@ -102,7 +102,14 @@ export function ConsultaModal() {
     setSubmitting(true);
     if (!isBot()) {
       try {
-        const result = await submitConsultaLead({ data: { ...data, timestamp: new Date().toISOString() } });
+        const result = await submitConsultaLead({
+          data: {
+            ...data,
+            timestamp: new Date().toISOString(),
+            honeypot,
+            openedAt: openedAt.current ?? undefined,
+          },
+        });
         if (result.errors.length) console.error("Lead enviado mas com erros no fan-out:", result.errors);
       } catch (err) { console.error("submitConsultaLead failed:", err); /* still show success to visitor */ }
     }
@@ -226,12 +233,14 @@ export function ConsultaModal() {
                               value={data.quando}
                               onChange={(v) => set("quando", v)}
                               options={QUANDO}
+                              required
                             />
                             <SelectField
                               label="Situação do terreno"
                               value={data.situacaoTerreno}
                               onChange={(v) => set("situacaoTerreno", v)}
                               options={SITUACAO_TERRENO}
+                              required
                             />
                             <NavBtns isFirst onNext={() => go(1)} nextDisabled={!step1Valid} />
                           </div>
@@ -244,6 +253,7 @@ export function ConsultaModal() {
                               value={data.localizacao}
                               onChange={(v) => set("localizacao", v)}
                               options={DISTRITOS}
+                              required
                             />
                             <TextareaField
                               label="Descrição do projeto"
@@ -255,6 +265,7 @@ export function ConsultaModal() {
                               value={data.formaPagamento}
                               onChange={(v) => set("formaPagamento", v)}
                               options={FORMA_PAGAMENTO}
+                              required
                             />
                             <NavBtns onBack={() => go(-1)} onNext={() => go(1)} nextDisabled={!step2Valid} />
                           </div>
@@ -277,6 +288,8 @@ export function ConsultaModal() {
                               label="Nome"
                               value={data.nome}
                               onChange={(v) => set("nome", v)}
+                              placeholder="Nome Apelido"
+                              minLength={3}
                               required
                             />
                             <TextField
@@ -289,8 +302,9 @@ export function ConsultaModal() {
                               label="Número telemóvel"
                               type="tel"
                               value={data.telefone}
-                              onChange={(v) => set("telefone", v.replace(/\D/g, "").slice(0, 9))}
-                              maxLength={9}
+                              onChange={(v) => set("telefone", v.replace(/[^\d+]/g, "").slice(0, 13))}
+                              placeholder="+351 912 345 678"
+                              maxLength={13}
                               minLength={9}
                               required
                             />
@@ -307,7 +321,7 @@ export function ConsultaModal() {
                                 className="text-sm leading-snug"
                                 style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}
                               >
-                                Aceito os{" "}
+                                <span style={{ color: "var(--gold)" }}>*</span> Aceito os{" "}
                                 <Link
                                   to="/termos-e-condicoes"
                                   className="underline transition-colors hover:text-[color:var(--gold)]"
@@ -344,7 +358,7 @@ function TipologiaField({ value, onChange }: { value: string; onChange: (v: stri
   return (
     <div>
       <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
-        Tipologia
+        Tipologia <span style={{ color: "var(--gold)" }}>*</span>
       </p>
       <div className="grid grid-cols-3 gap-2">
         {TIPOLOGIAS.map((opt) => {
@@ -409,12 +423,12 @@ function StepLine({ done }: { done: boolean }) {
 }
 
 function SelectField({
-  label, value, onChange, options,
-}: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
+  label, value, onChange, options, required,
+}: { label: string; value: string; onChange: (v: string) => void; options: readonly string[]; required?: boolean }) {
   return (
     <div>
       <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
-        {label}
+        {label} {required && <span style={{ color: "var(--gold)" }}>*</span>}
       </p>
       <div
         className="relative transition-colors"
@@ -453,7 +467,7 @@ function TextField({
   return (
     <div>
       <p className="mb-1.5 text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
-        {label}
+        {label} {required && <span style={{ color: "var(--gold)" }}>*</span>}
       </p>
       <input
         type={type}
