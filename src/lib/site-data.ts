@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
       "Pagamento faseado em 4 prestações de 25%",
     ],
     image: "/projects/t1-48-hero.jpg",
-    image2: "/projects/t1-48-deck.jpg",
+    image2: "/projects/t1-48-fachada.jpg",
     process: [
       { num: "01", title: "Consulta e Projeto", text: "Visita técnica ao terreno, arquitetura e engenharia estrutural, com gestão completa do processo de licenciamento camarário." },
       { num: "02", title: "Fabrico da Estrutura", text: "Construção da estrutura em fábrica e execução da base em betão no terreno, em paralelo com a aprovação do projeto." },
