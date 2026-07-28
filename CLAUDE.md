@@ -3,7 +3,7 @@
 ## Objetivo
 Site institucional premium para empresa de casas modulares no Porto. Estética **Structural Elegance** — inspirada no tema Bauen mas com identidade própria desenvolvida via Stitch MCP. Referência visual: `SAMPLES A SEGUIR/` (PDFs do demo Bauen).
 
-> **Domínio**: o domínio real é `esdomustech.com` (já adquirido), mas **ainda não foi migrado** para este site. Enquanto não migrar, o `SITE.domain` em `site-data.ts` aponta para `https://esdomustech.vercel.app` (deploy Vercel, corrigido 2026-07-27 — projeto saiu do Lovable para Vercel, nota anterior desatualizada). `public/robots.txt` e `public/llms.txt` seguem o mesmo domínio. Quando migrar: atualizar `SITE.domain` para `https://esdomustech.com`, rever `public/robots.txt`, `public/llms.txt` e todos os canonical/og:url.
+> **Domínio**: o domínio real é `esdomustech.com` (já adquirido), mas **ainda não foi migrado** para este site. Enquanto não migrar, o `SITE.domain` em `site-data.ts` aponta para `https://esdomustech.lovable.app` (revertido 2026-07-28 — bug no sitemap/GSC quando domínio é `*.vercel.app`, fica em lovable.app até migrar para o domínio real; breve troca para vercel.app em 2026-07-27 foi desfeita). `public/robots.txt` e `public/llms.txt` seguem o mesmo domínio. Quando migrar: atualizar `SITE.domain` para `https://esdomustech.com`, rever `public/robots.txt`, `public/llms.txt` e todos os canonical/og:url.
 
 ---
 
