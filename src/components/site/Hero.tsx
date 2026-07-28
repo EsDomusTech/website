@@ -154,13 +154,13 @@ export function Hero() {
                   Ver Projetos
                 </Link>
 
-                {/* Ghost — text + extending line */}
+                {/* Ghost — text with gold underline */}
                 <Link
                   to="/contacto"
-                  className="s-label-caps group inline-flex items-center gap-4 text-white uppercase"
+                  className="s-label-caps inline-block border-b-2 pb-2 text-white uppercase transition-colors duration-500 hover:text-[color:var(--gold)]"
+                  style={{ borderColor: "var(--gold)" }}
                 >
                   Falar Connosco
-                  <span className="hidden sm:block h-px w-12 transition-all duration-500 group-hover:w-16" style={{ backgroundColor: "var(--gold)" }} />
                 </Link>
               </motion.div>
             </motion.div>
