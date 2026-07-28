@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://esdomustech.vercel.app/sitemap.xml
+Sitemap: https://esdomustech.lovable.app/sitemap.xml

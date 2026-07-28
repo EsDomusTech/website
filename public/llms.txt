@@ -6,19 +6,19 @@ EsDomusTech projeta, fabrica e monta casas modulares personalizadas — desde a 
 
 ## Serviços
 
-- [Casas Modulares no Porto](https://esdomustech.vercel.app/servicos#casas-modulares-porto): projeto, fabrico e montagem chave na mão, estrutura em aço galvanizado, garantia estrutural de 10 anos.
-- [Serviços](https://esdomustech.vercel.app/servicos): listagem completa de serviços.
+- [Casas Modulares no Porto](https://esdomustech.lovable.app/servicos#casas-modulares-porto): projeto, fabrico e montagem chave na mão, estrutura em aço galvanizado, garantia estrutural de 10 anos.
+- [Serviços](https://esdomustech.lovable.app/servicos): listagem completa de serviços.
 
 ## Páginas principais
 
-- [Empresa](https://esdomustech.vercel.app/empresa): quem somos, desde 2012.
-- [Sistema Construtivo](https://esdomustech.vercel.app/sistema-construtivo): ficha técnica, camadas de construção, aço galvanizado DX51D.
-- [Preços](https://esdomustech.vercel.app/precos): estimativas por tipologia, preço de referência por m².
-- [Vantagens Fiscais](https://esdomustech.vercel.app/vantagens-fiscais): IVA reduzido e licenciamento de casas modulares em Portugal.
-- [Projetos](https://esdomustech.vercel.app/projetos): portfólio de obras reais.
-- [FAQ](https://esdomustech.vercel.app/faq): perguntas frequentes sobre prazos, personalização e licenciamento.
-- [Blog](https://esdomustech.vercel.app/blog): artigos sobre construção modular, fiscalidade e manutenção.
-- [Contacto](https://esdomustech.vercel.app/contacto): pedido de orçamento e informações de contacto.
+- [Empresa](https://esdomustech.lovable.app/empresa): quem somos, desde 2012.
+- [Sistema Construtivo](https://esdomustech.lovable.app/sistema-construtivo): ficha técnica, camadas de construção, aço galvanizado DX51D.
+- [Preços](https://esdomustech.lovable.app/precos): estimativas por tipologia, preço de referência por m².
+- [Vantagens Fiscais](https://esdomustech.lovable.app/vantagens-fiscais): IVA reduzido e licenciamento de casas modulares em Portugal.
+- [Projetos](https://esdomustech.lovable.app/projetos): portfólio de obras reais.
+- [FAQ](https://esdomustech.lovable.app/faq): perguntas frequentes sobre prazos, personalização e licenciamento.
+- [Blog](https://esdomustech.lovable.app/blog): artigos sobre construção modular, fiscalidade e manutenção.
+- [Contacto](https://esdomustech.lovable.app/contacto): pedido de orçamento e informações de contacto.
 
 ## Contacto
 
