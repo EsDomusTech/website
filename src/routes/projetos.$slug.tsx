@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
+import { ImageWatermark } from "@/components/site/ImageWatermark";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { SITE } from "@/lib/site-data";
 import { fetchProject, fetchProjects } from "@/lib/sanity-queries";
@@ -103,13 +104,14 @@ function ProjectDetail() {
             <SectionTitle first="REGISTO" second="DE OBRA" align="left" />
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {p.gallery.map((src: string, i: number) => (
-                <div key={src} className={`overflow-hidden ${i === 0 && p.gallery!.length % 2 !== 0 ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
+                <div key={src} className={`relative overflow-hidden ${i === 0 && p.gallery!.length % 2 !== 0 ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
                   <img
                     src={src}
                     alt={`${p.name}, registo de obra ${i + 1}, EsDomusTech`}
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
+                  <ImageWatermark />
                 </div>
               ))}
             </div>
@@ -133,6 +135,7 @@ function ProjectDetail() {
                   alt={`${o.name}, projeto de ${o.category.toLowerCase()} EsDomusTech`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <ImageWatermark size="sm" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
                 <h3 className="absolute bottom-5 left-5 right-5 font-display text-xl font-medium text-white">
                   {o.name}

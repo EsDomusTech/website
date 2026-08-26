@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CtaBand } from "@/components/site/CtaBand";
+import { ImageWatermark } from "@/components/site/ImageWatermark";
 import { SITE } from "@/lib/site-data";
 import { fetchProjects } from "@/lib/sanity-queries";
 
@@ -58,6 +59,7 @@ function ProjetosPage() {
                 alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <ImageWatermark />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <div className="absolute bottom-6 left-6">
                 <p className="tracked text-[10px] text-gold">

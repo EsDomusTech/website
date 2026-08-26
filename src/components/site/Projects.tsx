@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ImageWatermark } from "@/components/site/ImageWatermark";
 import { PROJECTS, type Project } from "@/lib/site-data";
 
 export function Projects({ projects }: { projects?: Project[] }) {
@@ -60,6 +61,7 @@ export function Projects({ projects }: { projects?: Project[] }) {
                   alt={`${shown[slide].name}, projeto de ${shown[slide].category.toLowerCase()} EsDomusTech`}
                   className="h-full w-full object-cover"
                 />
+                <ImageWatermark />
                 <div className="absolute inset-0 flex flex-col items-center justify-end bg-black/40 p-6 text-center">
                   <span className="s-label-caps mb-2 block" style={{ color: "var(--gold)", letterSpacing: "0.2em" }}>
                     {shown[slide].category}
@@ -131,6 +133,7 @@ export function Projects({ projects }: { projects?: Project[] }) {
                   alt={`${p.name}, projeto de ${p.category.toLowerCase()} EsDomusTech`}
                   className={`h-full w-full object-cover transition-all duration-700 touch:!grayscale-0 touch:scale-[1.05] ${i === active ? "md:scale-[1.05]" : "md:grayscale"}`}
                 />
+                <ImageWatermark size="sm" />
 
                 {/* Overlay — always visible on mobile, only on the active tile on desktop */}
                 <div className={`absolute inset-0 flex flex-col justify-end bg-black/40 p-6 md:p-8 opacity-100 transition-opacity duration-500 touch:!opacity-100 ${i === active ? "" : "md:opacity-0"}`}>

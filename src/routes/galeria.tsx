@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
+import { ImageWatermark } from "@/components/site/ImageWatermark";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
@@ -13,16 +14,16 @@ export const GALLERY_ITEMS = [
   { id: 6, cat: "Detalhe", title: "Moradia T2 · 72 m², Terraço", year: "2025", image: "/projects/t2-72-terraco.jpg", slug: "moradia-t2-72" },
   { id: 7, cat: "Exterior", title: "Moradia T1 · 48 m², Volume Principal", year: "2026", image: "/projects/t1-48-hero.jpg", slug: "moradia-t1-48" },
   { id: 8, cat: "Exterior", title: "Moradia T1 · 48 m², Fachada Bitone", year: "2026", image: "/projects/t1-48-fachada.jpg", slug: "moradia-t1-48" },
-  { id: 9, cat: "Estrutura", title: "Moradia T1 · 48 m², Estrutura LSF", year: "2026", image: "/projects/t1-48-estrutura.jpg", slug: "moradia-t1-48" },
+  { id: 9, cat: "Estrutura", title: "Moradia T1 · 48 m², Estrutura em LSF (Aço Galvanizado Soldado)", year: "2026", image: "/projects/t1-48-estrutura.jpg", slug: "moradia-t1-48" },
   { id: 10, cat: "Exterior", title: "Moradia · 100 m², Pátio Coberto", year: "2026", image: "/projects/m100-hero.jpg", slug: "moradia-100" },
   { id: 11, cat: "Estrutura", title: "Moradia · 100 m², Volumetria em L", year: "2026", image: "/projects/m100-exterior.jpg", slug: "moradia-100" },
   { id: 12, cat: "Exterior", title: "Moradia T2 · 92 m², Implantação dos Módulos", year: "2026", image: "/projects/t2-92-hero.jpg", slug: null },
   { id: 13, cat: "Estrutura", title: "Moradia T2 · 92 m², Fundações Pontuais", year: "2026", image: "/projects/t2-92-exterior.jpg", slug: null },
   { id: 14, cat: "Estrutura", title: "Moradia de Dois Pisos, Painéis de Fachada", year: "2026", image: "/projects/dois-pisos-hero.jpg", slug: null },
   { id: 15, cat: "Estrutura", title: "Moradia de Dois Pisos, Instalações Técnicas", year: "2026", image: "/projects/dois-pisos-instalacoes.jpg", slug: null },
-  { id: 16, cat: "Estrutura", title: "Moradia de Dois Pisos, Estrutura Interior LSF", year: "2026", image: "/projects/dois-pisos-estrutura.jpg", slug: null },
-  { id: 17, cat: "Interior", title: "Acabamentos Interiores, Gesso Cartonado", year: "2026", image: "/projects/interiores-pladur-01.jpg", slug: null },
-  { id: 18, cat: "Interior", title: "Acabamentos Interiores, Corredor em Pladur", year: "2026", image: "/projects/interiores-pladur-02.jpg", slug: null },
+  { id: 16, cat: "Estrutura", title: "Moradia de Dois Pisos, Estrutura Interior em LSF (Aço Galvanizado Soldado)", year: "2026", image: "/projects/dois-pisos-estrutura.jpg", slug: null },
+  { id: 17, cat: "Interior", title: "Acabamentos Interiores, Gesso Cartonado", year: "2026", image: "/projects/interiores-pladur-01.jpg", slug: null, noWatermark: true },
+  { id: 18, cat: "Interior", title: "Acabamentos Interiores, Corredor em Pladur", year: "2026", image: "/projects/interiores-pladur-02.jpg", slug: null, noWatermark: true },
 ];
 
 export const Route = createFileRoute("/galeria")({
@@ -72,6 +73,7 @@ function GaleriaPage() {
               const tileContent = (
                 <>
                   <img src={item.image} alt={`${item.title}, projeto EsDomusTech`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  {!item.noWatermark && <ImageWatermark />}
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                   <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                     <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
