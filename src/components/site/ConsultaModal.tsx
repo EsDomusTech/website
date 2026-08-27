@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useConsultaModal } from "@/lib/consulta-store";
-import { DISTRITOS_PT } from "@/lib/site-data";
+import { DISTRITOS_PT, SITE } from "@/lib/site-data";
 import { submitConsultaLead } from "@/lib/api/consulta.functions";
 
 const DISTRITOS = DISTRITOS_PT.filter((d) => d !== "Açores" && d !== "Madeira");
@@ -61,6 +61,7 @@ export function ConsultaModal() {
   const [dir, setDir] = useState(1);
   const [data, setData] = useState<FormData>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const openedAt = useRef<number | null>(null);
@@ -74,7 +75,7 @@ export function ConsultaModal() {
   useEffect(() => {
     if (!isOpen) {
       const t = setTimeout(() => {
-        setStep(0); setSubmitted(false); setData(EMPTY); setHoneypot("");
+        setStep(0); setSubmitted(false); setSubmitFailed(false); setData(EMPTY); setHoneypot("");
       }, 350);
       return () => clearTimeout(t);
     }
@@ -100,6 +101,7 @@ export function ConsultaModal() {
     e.preventDefault();
     if (!step3Valid) return;
     setSubmitting(true);
+    let failed = false;
     if (!isBot()) {
       try {
         const result = await submitConsultaLead({
@@ -110,11 +112,19 @@ export function ConsultaModal() {
             openedAt: openedAt.current ?? undefined,
           },
         });
-        if (result.errors.length) console.error("Lead enviado mas com erros no fan-out:", result.errors);
-      } catch (err) { console.error("submitConsultaLead failed:", err); /* still show success to visitor */ }
+        if (result.errors.length) {
+          console.error("Lead enviado mas com erros no fan-out:", result.errors);
+          // Ambos os destinos (email + sheet) falharam — o lead morreu, avisa o visitante em vez de fingir sucesso.
+          if (result.errors.length >= 2) failed = true;
+        }
+      } catch (err) {
+        console.error("submitConsultaLead failed:", err);
+        failed = true;
+      }
     }
     setSubmitting(false);
-    setSubmitted(true);
+    setSubmitFailed(failed);
+    setSubmitted(!failed);
   };
 
   return (
@@ -159,7 +169,37 @@ export function ConsultaModal() {
                 <X size={20} />
               </button>
 
-              {submitted ? (
+              {submitFailed ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="py-16 text-center"
+                >
+                  <div className="text-5xl mb-6" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>!</div>
+                  <h3
+                    className="text-2xl mb-4"
+                    style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", letterSpacing: "0.04em" }}
+                  >
+                    NÃO FOI POSSÍVEL ENVIAR
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+                    Houve um problema técnico e o pedido não chegou até nós. Contacte-nos diretamente:
+                  </p>
+                  <p className="mt-4 text-sm font-medium" style={{ color: "var(--foreground)", fontFamily: "var(--font-body)" }}>
+                    <a href={`tel:${SITE.phone.replace(/\s+/g, "")}`} className="underline">{SITE.phone}</a>
+                    {" · "}
+                    <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>
+                  </p>
+                  <button
+                    type="button"
+                    onClick={close}
+                    className="mt-8 px-10 py-4 text-white text-xs tracking-widest uppercase transition-opacity hover:opacity-80"
+                    style={{ backgroundColor: "var(--gold)", fontFamily: "var(--font-display)" }}
+                  >
+                    FECHAR
+                  </button>
+                </motion.div>
+              ) : submitted ? (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}

@@ -9,7 +9,7 @@ import { getServerConfig } from "../config.server";
 // visitor — the modal always shows the success state, same as the previous
 // Make.com webhook behavior.
 
-const leadSchema = z.object({
+export const leadSchema = z.object({
   tipologia: z.string(),
   quando: z.string(),
   situacaoTerreno: z.string(),
@@ -26,7 +26,7 @@ const leadSchema = z.object({
 
 const MIN_FILL_TIME_MS = 4000;
 
-function looksLikeBot(data: z.infer<typeof leadSchema>): boolean {
+export function looksLikeBot(data: z.infer<typeof leadSchema>): boolean {
   if (data.honeypot) return true;
   if (data.openedAt && Date.now() - data.openedAt < MIN_FILL_TIME_MS) return true;
   return false;
