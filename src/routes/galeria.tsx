@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
-import { ImageWatermark } from "@/components/site/ImageWatermark";
 import { SITE } from "@/lib/site-data";
 
 export const GALLERY_ITEMS = [
@@ -73,7 +72,6 @@ function GaleriaPage() {
               const tileContent = (
                 <>
                   <img src={item.image} alt={`${item.title}, projeto EsDomusTech`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  {!item.noWatermark && <ImageWatermark />}
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/55" />
                   <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-all duration-400 group-hover:opacity-100">
                     <span className="tracked mb-1 text-[10px] font-medium" style={{ color: "var(--gold)", fontFamily: "var(--font-display)" }}>
