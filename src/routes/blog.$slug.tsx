@@ -141,6 +141,7 @@ function BlogPostPage() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Article + Sidebar */}
       <section style={{ paddingBlock: 80 }}>
