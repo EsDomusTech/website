@@ -105,8 +105,9 @@ function BlogPostPage() {
   return (
     <main style={{ backgroundColor: "#f9f9f9" }}>
 
-      {/* Hero image */}
-      <div className="relative overflow-hidden" style={{ height: 420, marginTop: 80 }}>
+      {/* Hero image — capped at max-w-[1440px] like PageHeader, so it doesn't bleed past the site's page width on ultra-wide viewports */}
+      <div className="w-full" style={{ backgroundColor: "var(--background)" }}>
+      <div className="relative mx-auto max-w-[1440px] overflow-hidden" style={{ height: 420, marginTop: 80 }}>
         <img
           src={p.image}
           alt={p.title}
